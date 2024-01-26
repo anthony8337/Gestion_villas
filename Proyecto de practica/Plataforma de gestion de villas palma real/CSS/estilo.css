@@ -1,0 +1,372 @@
+html body
+{
+    overflow: auto;
+    background-color: #d4d4d4;
+}
+
+/*atributos de la pagina*/
+.cuerpo
+{
+    margin-left: 200px;
+}
+
+.centro
+{
+font-family: lato,'Courier New', Courier, monospace;
+font-size: 30px;
+text-align: center;
+}
+
+a
+{
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#p_busca
+{
+    width: 450px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+label
+{
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.grupo_busqueda
+{
+margin-left: 25%;
+}
+
+button
+{
+    width: 150px;
+    padding: 15px;
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 10px;
+}
+
+.registrar
+{
+    width: 150px;
+    padding: 15px;
+    border: 2px solid #329e00;
+    background-color: #aeff88;
+    border-radius: 10px;
+    float: left;
+}
+
+button:hover
+{background-color: #555;
+    color: yellow;
+}
+
+.lb_busca
+{
+margin-right: 10px;
+}
+
+.crea
+{
+    margin-right: 20px;
+}
+
+.logo
+{
+    align-items: center;
+    margin-left: 10%;
+}
+
+input[type="text"],input[type="date"],#txt_descripcion_v
+{
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+    margin-bottom: 10px;
+    width: 250px;
+    height: 20px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+input[type="radio"]
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+select
+{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 275px; 
+}
+
+
+
+/*menu horizontal*/
+
+.divicion
+{
+background: linear-gradient(to right,#ffeb9c, rgb(218, 132, 71));
+
+width: 100%;
+height: 10px;
+padding: 0px;
+border: 1px solid #7c7c7c;
+border-top-left-radius: 15px;
+border-bottom-left-radius: 15px;
+overflow: hidden;
+list-style-type: none;
+}
+
+.menu ul
+{
+background: linear-gradient(to right,#ffeb9c, rgb(218, 132, 71));
+
+width: 100%;
+padding: 0px;
+border: 1px solid #7c7c7c;
+border-top-left-radius: 15px;
+border-bottom-left-radius: 15px;
+overflow: hidden;
+list-style-type: none;
+}
+
+.menu ul li
+{
+float: left;
+width: 150px;
+}
+
+.menu ul li a:hover
+{
+background-color: #555;
+color: yellow;
+}
+
+.menu ul li a
+{
+border-right: 1px solid chocolate;
+border-bottom: 1px solid #7c7c7c;
+padding: 10px;
+display: block;
+text-decoration: none;
+}
+
+
+.menu li a
+{
+color: black;
+}
+/*menu vertical*/
+.menu2 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh; 
+    width: 200px; 
+    background: linear-gradient(to top,#ffeb9c, rgb(218, 132, 71));
+    color: white; 
+  }
+  
+  .menu2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu2 li {
+    padding: 0px;
+    border-bottom: 1px solid #555; 
+  }
+  
+  .menu2 a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .menu2 a:hover {
+    background-color: #555; 
+    color: yellow;
+  }
+
+  .menu2 ul li a
+{
+border-left: 3px solid red;
+border-right: 1px solid #7c7c7c;
+text-shadow: 0px 0px #333333;
+padding: 15px;
+display: block;
+text-decoration: none;
+}
+
+/*cuadro marcado por mostrar ventana*/
+
+.marcado a
+{
+    background-color: #555; 
+    color: yellow;
+}
+
+/*Atributos de la tabla*/
+table
+{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border-radius: 10px;
+    width: 100%;
+}
+
+th,td
+{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid chocolate;
+    height: 25px;
+}
+
+.contenido:hover
+{
+    background-color: rgb(255, 183, 50); 
+    color: black;
+}
+
+.tabla_herramienta td
+{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0;
+    height: 190px;
+    width: 190px; 
+    text-align: center;
+}
+
+/*Ventana emergente*/
+
+.mod
+{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.mod_contenido
+{
+    background-color: #b9af83;
+    margin: 0% auto;
+    padding: 2%;
+    border: 2px solid #ffeb9c;
+    border-radius: 20px;
+    width: 90%;
+    height: 90%;
+}
+
+/*Ventana de ingreso*/
+.mod_ingreso
+{
+    background-color: white;
+    margin: 0% auto;
+    padding: 10px;
+    border: 2px solid #ffeb9c;
+    border-radius: 20px;
+    width: 920px;
+    height: 275px;
+}
+
+.cerrar
+{
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+fieldset
+{
+    margin-bottom: 10px;
+    background-color: white;
+    border: 2px solid #b99400;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    width: 95.5%;
+}
+
+legend
+{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.precio_ver
+{   font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.total_pago
+{
+    background-color: white;
+    border: 2px solid #b99400;
+    border-radius: 10px;
+    padding: 10px;
+    width: 275px;
+    float: left;
+}
+
+.fondo_emergente tr td
+{
+    border: 0px;
+}
+
+
+/*Estilo de los botones en herramienta*/
+.E_herramienta
+{
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 600px;
+    height: 200px;
+    border:2px solid gray;
+    background-color: white;
+    border-radius: 50px;
+}
+
+
+.f_boton
+{
+    margin: 0% auto;
+    border: 2px solid chocolate;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+.f_boton:hover
+{
+    background-color:rgb(255, 183, 50);
+}
+
+.im_ico
+{
+    margin-top: 35px;
+}
