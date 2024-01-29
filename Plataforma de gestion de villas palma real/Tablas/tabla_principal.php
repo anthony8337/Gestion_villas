@@ -1,15 +1,14 @@
+<div class="grupo_busqueda">
+<label class="lb_busca">Buscar Cliente:</label>
+<input type="text" id="p_busca" name="p_busca">
+</div>
+
+
+
 <?php
 
 echo"
-"//acciones de busqueda
-,"<div class='grupo_busqueda'>
-<label class='lb_busca'>Buscar Cliente:</label>
-<input type='text' id='p_busca' name='p_busca'>
-</div>
-
-"//Tabla donde muestra todos los registros
-,"
-<table>
+<table id='tabla'>
 <tr>
 <th>",'Villa',"</th>
 <th>",'Propietario',"</th>
@@ -26,8 +25,8 @@ $i = 0;
 while($i <= 100)
 {
     echo "
-    <tr class='contenido' onclick='mostrarcuadro()'>
-    <td>",'Hola',"</td>
+    <tr class='contenido'>
+    <td>",$i,"</td>
     <td>",$i,"</td>
     <td>",$i,"</td>
     <td>",$i,"</td>
@@ -40,3 +39,5 @@ while($i <= 100)
 }
 echo "</table>";
 ?>
+
+<script src="Tablas\Busqueda.js"></script>

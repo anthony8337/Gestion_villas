@@ -83,3 +83,14 @@ function cerrarcuadro_villa()
 {
     document.getElementById('ingresar_villa').style.display = 'none'; 
 }
+
+// Mostrar cuadro de editar villa
+function mostrarcuadro_villa()
+{
+    document.getElementById('editar_villa').style.display = 'block';
+}
+
+function cerrarcuadro_villa()
+{
+    document.getElementById('editar_villa').style.display = 'none'; 
+}
