@@ -21,7 +21,10 @@ include "1_Raiz/cabezal.php";
         <div><input type="text" id="Usuario" name="Usuario"></div>
         <div><label>Ingrese su contraseña</label></div>
         <div><input type="password" id="Clave" name="Clave"></div>
-        <button class="ingresar" type="button">Entrar</button>
+
+        <button class="ingresar" type="button" onclick="abrir()">Entrar</button>
         </div>
     </div>
 </form>
+
+<script src="Extencion\ac_login.js"></script>

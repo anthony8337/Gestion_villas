@@ -2,11 +2,7 @@
 <label class="lb_busca">Buscar Cliente:</label>
 <input type="text" id="p_busca" name="p_busca">
 </div>
-
-
-
 <?php
-
 echo"
 <table id='tabla'>
 <tr>
@@ -17,10 +13,7 @@ echo"
 <th>",'Telefono',"</th>
 <th>",'Medidor EEH',"</th>
 <th>",'Saldo',"</th>
-</tr>
-
-";
-
+</tr>";
 $i = 0;
 while($i <= 100)
 {
