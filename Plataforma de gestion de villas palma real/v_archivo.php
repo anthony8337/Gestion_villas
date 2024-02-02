@@ -61,13 +61,36 @@ include "Ventana_emergente/cliente_villa/e_nuevo.php";
 include "Ventana_emergente/cliente_villa/e_venta.php";
 ?>
 
-<?php
-//tabla de renta
-include "Ventana_emergente/cliente_villa/e_renta.php";
-?>
 
 <?php
-//tabla de villas ingreo
+//tabla de villas ingreso
 include "Ventana_emergente/cliente_villa/e_villa.php";
 ?>
 
+<?php
+//tabla de seleccion de cliente a editar
+include "Ventana_emergente/edicion/selec_cliente.php";
+?>
+
+<?php
+//tabla de seleccion de villa a editar
+include "Ventana_emergente/edicion/selec_villa.php";
+?>
+
+<?php
+//tabla de seleccion de cliente a editar
+include "Ventana_emergente/edicion/editar_villa.php";
+?>
+
+<?php
+//tabla de seleccion de cliente a editar
+include "Ventana_emergente/edicion/editar_cliente.php";
+?>
+
+<?php
+include "Ventana_emergente/suspencion/selec_villa_sus.php";
+?>
+
+<?php
+include "Ventana_emergente/suspencion/decicion_sus_villa.php";
+?>

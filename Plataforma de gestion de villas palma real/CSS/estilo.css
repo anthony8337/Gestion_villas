@@ -35,9 +35,11 @@ label
     font-family: Arial, Helvetica, sans-serif; 
 }
 
+
+
 .grupo_busqueda
 {
-margin-left: 25%;
+    margin-left: 25%;
 }
 
 button
@@ -52,11 +54,32 @@ button
 {
     width: 150px;
     padding: 15px;
+    height: 60px;
     border: 2px solid #329e00;
     background-color: #aeff88;
     border-radius: 10px;
-    float: left;
-    margin-right: 10px;
+    float: inline-end;
+}
+
+.confirma
+{
+    margin-top: 15px;
+    width: 150px;
+    padding: 15px;
+    height: 60px;
+    border: 2px solid #329e00;
+    background-color: #aeff88;
+    border-radius: 10px;
+}
+.cancelar
+{
+    margin-top: 15px;
+    width: 150px;
+    padding: 15px;
+    height: 60px;
+    border: 2px solid #9e0000;
+    background-color: #ff8888;
+    border-radius: 10px;
 }
 
 button:hover
@@ -64,10 +87,7 @@ button:hover
     color: yellow;
 }
 
-.lb_busca
-{
-margin-right: 10px;
-}
+
 
 .crea
 {
@@ -319,16 +339,51 @@ th,td
     padding: 10px;
     border: 2px solid #ffeb9c;
     border-radius: 20px;
+    width: 950px;
+    height: 450px;  
+}
+
+/*Ventana de saleccion*/
+.mod_seleccionar_edi_cliente
+{
+    background-color: white;
+    margin: 0% auto;
+    margin-top: 5%;
+    padding: 10px;
+    border: 2px solid #ffeb9c;
+    border-radius: 20px;
     width: 920px;
-    height: 500px;  
+    height: 500px; 
+    
+}
+
+.ejecutar
+{
+    background-color: white;
+    margin: 0% auto;
+    margin-top: 15%;
+    padding: 10px;
+    border: 2px solid #ffeb9c;
+    border-radius: 20px;
+    width: 600px;
+    height: 150px;
+}
+
+.cuerpo_cuadros
+{
+    border: 2px solid chocolate;
+    border-radius: 10px;
+    height: 440px; 
+    overflow: auto;
 }
 
 .ver_villas
 {
 
-    border: 2px solid gray;
-    width: 200px;
-    height: 250px;
+    margin-bottom: 10px;
+    border: 2px solid chocolate;
+    width: 98%;
+    height: 80px;
     overflow: auto;
 }
 
@@ -352,7 +407,11 @@ fieldset
     padding-bottom: 1%;
     border-radius: 10px;
     width: 95.5%;
+    float: left;
 }
+
+
+
 
 legend
 {
@@ -363,7 +422,17 @@ legend
 .precio_ver
 {   font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 10px;
-    width: 250px;
+    width:200px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#cbx_mt_pago
+{   font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    width:225px;
     padding: 10px;
     border: 2px solid black;
     border-radius: 5px;
@@ -383,7 +452,7 @@ legend
 /*Solo activar cuando se ordena*/
 .fondo_emergente tr td
 {
-    border: 0;
+    border: 0px solid chocolate;
 }
 
 
@@ -475,3 +544,10 @@ width: 10px;
     margin-bottom: 10px;
     padding: 10px;
 }
+
+
+form
+{
+    margin-bottom: 10px;
+}
+

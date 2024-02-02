@@ -2,7 +2,7 @@
     <form action="#" method="post" autocomplete="off">
 <div id="editar_villa" class="mod">
     <div class="mod_ingreso_villa">
-    <span onclick="cerrarcuadro_edita_villa()" class="cerrar">&times;</span>
+    <span onclick="cerrarcuadro_villa_editar()" class="cerrar">&times;</span>
 
     <fieldset class="cuerpo_registrar">
     <legend>Edicion de datos de villa</legend>

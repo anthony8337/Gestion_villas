@@ -49,8 +49,7 @@
 
 </fieldset>
 
-<button class="registrar" type="button" onclick="mostrarcuadro_renta()">Realizar renta de villa</button>
-<button class="registrar" type="button" onclick="mostrarcuadro_venta()">Realizar compra de villa</button>
+<button class="registrar" type="button" onclick="mostrarcuadro_venta()">Tramite de villa</button>
 </div>
 </form>
 </nav>

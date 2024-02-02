@@ -23,14 +23,14 @@
     <table class="botones_tb">
         <tr>
             <td>
-            <div class="f_boton">
+            <div class="f_boton" onclick="mostrar_cuadro_selec_cliente()">
             <img class="im_ico" src="imagenes/cliente.png" width="50px" height="50px">
             <br>
             <label>Editar Cliente</label>
             </div>
             </td>
             <td>
-            <div class="f_boton">
+            <div class="f_boton" onclick="mostrar_cuadro_selec_villa()">
             <img class="im_ico" src="imagenes/casa.png" width="50px" height="50px">
             <br>
             <label>Editar Villa</label>

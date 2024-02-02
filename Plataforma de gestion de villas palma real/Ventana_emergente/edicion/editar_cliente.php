@@ -1,8 +1,52 @@
 <nav>
     <form action="#" method="post" autocomplete="off">
-<div id="venta" class="mod">
-<div class="mod_venta">
-<span onclick="cerrarcuadro_venta()" class="cerrar">&times;</span>
+<div id="editar_cliente" class="mod">
+    <div class="mod_ingreso_villa">
+    <span onclick="cerrarcuadro_cliente_editar()" class="cerrar">&times;</span>
+
+    <label>Datos del cliente a editar</label>
+
+    <fieldset class="cuerpo_registrar">
+
+<table class="fondo_emergente">
+<tr>
+
+<td>    
+    <label>Nombre y apellido</label>
+    <br>
+    <input type="text" id="txt_nombre" name="txt_nombre">
+</td>
+
+<td>    
+    <label>RTN</label>
+    <br>
+    <input type="text" id="txt_rid" name="txt_rid">
+</td>
+
+<td>
+<label>Numero telefónico</label>
+<br>
+<input type="text" id="txt_telefono" name="txt_telefono">
+</td>
+</tr>
+
+<tr>
+    <td>    
+    <label>Cantidad de personas</label>
+    <br>
+    <input type="text" id="txt_cantidad" name="txt_cantidad">
+</td>
+
+<td>
+<label>Fecha de ingreso </label>
+<br>
+<input type="date" id="dt_facha" name="dt_facha">
+</td>
+
+</tr>
+</table>
+
+</fieldset>
 
 <fieldset>
 
@@ -42,7 +86,7 @@
          <td>
                 <label>Descripcion de la villa</label>
                 <br>
-                <textarea disabled id="txt_descripcion_v" name="txt_descripcion_v" style="height: 120px;"></textarea>
+                <textarea disabled id="txt_descripcion_v" name="txt_descripcion_v" style="height: 52px;"></textarea>
          </td>
     </tr>
 </table>
@@ -144,12 +188,11 @@
     </tr>
 </table>
 </fieldset>
-<button class="registrar" type="button" onclick="">Confirmar renta</button>
+<button class="registrar" type="button" onclick="" style="height: 50px;">Realizar edicion</button>
 </fieldset>
 
-</div>
-</div>
+
+    </div>
+    </div>
 </form>
 </nav>
-
-<script src="Ventana_emergente/cliente_villa/buscar_villa_cliente.js"></script>
