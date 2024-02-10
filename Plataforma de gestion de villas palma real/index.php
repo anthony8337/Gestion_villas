@@ -1,3 +1,3 @@
 <?php
-header ('Location: v_archivo.php');
+header ('Location: 1_archivo.php');
 ?>

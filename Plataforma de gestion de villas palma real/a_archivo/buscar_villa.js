@@ -1,9 +1,9 @@
 //tabla de villa
 function buscar() {
     var input, filtro, tabla, tr, td, i, j, textoValor;
-    input = document.getElementById("busca_villa");
+    input = document.getElementById("b_villa");
     filtro = input.value.toUpperCase();
-    tabla = document.getElementById("tabla_villa");
+    tabla = document.getElementById("t_villa");
     tr = tabla.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
@@ -20,4 +20,4 @@ function buscar() {
     }
 }
 
-document.getElementById("busca_villa").addEventListener("keyup", buscar);
+document.getElementById("b_villa").addEventListener("keyup", buscar);

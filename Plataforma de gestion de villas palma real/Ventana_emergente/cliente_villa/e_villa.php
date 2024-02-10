@@ -48,7 +48,7 @@
                 </td>
 
                 <td> 
-                            <label>Estatus</label>
+                <label>Estatus</label>
                 <br>
                 <select style="width: 150px;">
                     <?php

@@ -17,7 +17,7 @@ $i = 0;
 while($i <= 390)
 {
     echo "
-    <tr class='contenido' onclick='mostrarcuadro_cliente_editar()'>
+    <tr class='contenido' onclick='mostrar_cuadro_cliente_suspender_d()'>
     <td>",$i,"</td>
     <td>",$i,"</td>
     <td>",$i,"</td>

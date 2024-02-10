@@ -162,3 +162,24 @@ function cerrar_villa_suspender_d()
     document.getElementById('Selec_villa_sus_des').style.display = 'none'; 
 }
 
+// Mostrar decidir suspencion de cliente
+function mostrar_cuadro_cliente_suspender()
+{
+    document.getElementById('Selec_cliente_sus').style.display = 'block';
+}
+
+function cerrar_cliente_suspender()
+{
+    document.getElementById('Selec_cliente_sus').style.display = 'none'; 
+}
+
+// Mostrar decidir suspencion de cliente
+function mostrar_cuadro_cliente_suspender_d()
+{
+    document.getElementById('Selec_cliente_sus_des').style.display = 'block';
+}
+
+function cerrar_cliente_suspender_d()
+{
+    document.getElementById('Selec_cliente_sus_des').style.display = 'none'; 
+}

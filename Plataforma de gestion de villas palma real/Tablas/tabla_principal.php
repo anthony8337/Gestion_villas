@@ -2,7 +2,14 @@
 <label class="lb_busca">Buscar Cliente:</label>
 <input type="text" id="p_busca" name="p_busca">
 </div>
+
+
+<div class="tabla_principal">
 <?php
+
+$letra = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+
 echo"
 <table id='tabla'>
 <tr>
@@ -15,23 +22,28 @@ echo"
 <th>",'Saldo',"</th>
 </tr>";
 $i = 0;
-while($i <= 390)
+
+
+while($i < count($letra))
+{
+
+for($j = 1; $j <= 12; $j++)
 {
     echo "
     <tr class='contenido'>
-    <td>",$i,"</td>
-    <td>",$i,"</td>
-    <td>",$i,"</td>
-    <td>",$i,"</td>
-    <td>",$i,"</td>
-    <td>",$i,"</td>
-    <td>",$i,"</td>
+    <td>",$letra[$i],$j,"</td>
+    <td>",$letra[$i],$j,"</td>
+    <td>",$letra[$i],$j,"</td>
+    <td>",$letra[$i],$j,"</td>
+    <td>",$letra[$i],$j,"</td>
+    <td>",$letra[$i],$j,"</td>
+    <td>",$letra[$i],$j,"</td>
     </tr>
     ";
-    $i++;
+}
+$i++;
 }
 echo "</table>";
 ?>
-
+</div>
 <script src="Tablas\Busqueda.js"></script>
-

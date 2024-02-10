@@ -1,6 +1,6 @@
 <nav>
     <form action="#" method="post" autocomplete="off">
-<div id="ingresar" class="mod">
+    <div id="ingresar" class="mod">
     <div class="mod_ingreso">
     <span onclick="cerrarcuadro_agregar()" class="cerrar">&times;</span>
     

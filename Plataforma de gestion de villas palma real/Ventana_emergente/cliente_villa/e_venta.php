@@ -143,6 +143,7 @@
         </td>
     </tr>
 </table>
+
 </fieldset>
 <button class="registrar" type="button" onclick="">Confirmar renta</button>
 </fieldset>

@@ -7,7 +7,5 @@
     <title>Registro de villas Palma real</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="CSS/estilo.css">
-    <script src="Extencion/acciones.js"></script>
-    
 </head>
 <body>

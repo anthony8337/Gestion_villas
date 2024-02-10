@@ -1,8 +1,12 @@
-<nav>
-    <form action="#" method="post" autocomplete="off">
-<div id="cuadro_seleccion_suspender" class="mod">
-    <div class="mod_contenido_suspender">
-    <span onclick="cerrarcuadro_selec_suspender()" class="cerrar">&times;</span>
+
+
+
+<form action="#" method="post" autocomplete="off">
+    <div id="seleccionar_insertar" class="mod">
+    <div class="mod_contenido_editar">
+    <span onclick="cerrar_decision_insertar()" class="cerrar">&times;</span>
+
+    
     <style>
         .botones_tb td
         {
@@ -21,23 +25,22 @@
     <table class="botones_tb">
         <tr>
             <td>
-            <div class="f_boton" onclick="mostrar_cuadro_cliente_suspender()">
+            <div class="f_boton" onclick="mostrar_insertar_cliente(),cerrar_decision_insertar()">
             <img class="im_ico" src="imagenes/cliente.png" width="50px" height="50px">
             <br>
-            <label>Suspender Cliente</label>
+            <label>Insertar Cliente</label>
             </div>
             </td>
             <td>
-            <div class="f_boton" onclick="mostrar_cuadro_villa_suspender()">
+            <div class="f_boton" onclick="mostrar_insertar_villa(),cerrar_decision_insertar()">
             <img class="im_ico" src="imagenes/casa.png" width="50px" height="50px">
             <br>
-            <label>Suspender Villa</label>
+            <label>Insertar Villa</label>
     </div>
             </td>
         </tr>
     </table>
- 
+
 </div>
 </div>
 </form>
-</nav>
