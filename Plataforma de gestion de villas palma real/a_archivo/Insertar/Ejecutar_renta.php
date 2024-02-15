@@ -13,14 +13,14 @@
         <td>
             <fieldset style="width: 120px;">
             <legend>Codigo de villa</legend>
-            <input id="b_villa" type="text" style="width: 100px;">
+            <input id="b_i_villa" type="text" style="width: 100px;">
             </fieldset>
         </td>
 
         <td>
         <fieldset>
                 <legend>Precio de renta</legend>
-                <label class="precio_ver">$100.00</label>
+                <label class="precio_ver">$5.00</label>
             </fieldset>
         </td>
     </tr>
@@ -31,7 +31,7 @@
         <legend>Villas disponibles</legend>
         <div class="ver_villas">
 
-        <table class="tabla_principal" style="text-align: center;" id="t_villa">
+        <table class="tabla_principal" style="text-align: center;" id="t_i_villa">
 
         <?php
         $i = 0;
@@ -39,9 +39,9 @@
         {
             echo"
             <tr class='contenido'>
-            <td style='width: 15%; border: 1px solid chocolate;'> A-",$i,"</td>
-            <td style='border: 1px solid chocolate;'>",$i," descripciones</td>
-            <td style='border: 1px solid chocolate;'>bloquedo</td>
+            <td style='height: 50px; width: 15%; border: 1px solid chocolate;'> A-",$i,"</td>
+            <td style='height: 50px; border: 1px solid chocolate;'>",$i," descripciones</td>
+            <td style='height: 50px; border: 1px solid chocolate;'>bloquedo</td>
             </tr>
             ";
             $i++;
@@ -54,7 +54,9 @@
     <td style="width: 50%;">
     <fieldset style="height: 330px;">
         <legend>Descripcion completa de la villa</legend>
-        <textarea disabled id="txt_descripcion_v" name="txt_descripcion_v" style="width: 93%; height: 90%;"></textarea>
+        <Label>Villa seleccionada:</Label>
+        <Label>A-1</Label>
+        <textarea disabled id="txt_descripcion_v" name="txt_descripcion_v" style="width: 93%; height: 85%;"></textarea>
     </fieldset>
     </td>
     </tr>

@@ -1,5 +1,5 @@
 <?php
-include "1_Raiz\cabezal.php";
+include "1_Raiz/cabezal.php";
 ?>
 
 <nav class ="cuerpo">
@@ -39,4 +39,8 @@ include "1_Raiz\cabezal.php";
 <?php
 //tabla de compra
 include "Ventana emergente/v_compra.php";
+?>
+
+<?php
+include "1_Raiz/final.php";
 ?>

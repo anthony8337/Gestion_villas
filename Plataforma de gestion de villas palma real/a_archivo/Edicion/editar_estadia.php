@@ -1,11 +1,11 @@
 <nav>
 <form action="#" method="post" autocomplete="off">
-<div id="venta" class="mod">
+<div id="ejecutar_estadia" class="mod">
 <div class="ejecutar_renta">
-<span onclick="cerrar_compra()" class="cerrar">&times;</span>
+<span onclick="cerrar_edicion_Estadia()" class="cerrar">&times;</span>
 
 <fieldset style=" width:95.5%; height: 500px; overflow: auto; padding-bottom: 5px;">
-<legend class="titulo">Datos al solicitar la compra</legend>
+<legend class="titulo">Estadia confimada: inquilino</legend>
 
 <div style="width: 65%; margin-right: 40px;" class="ajuste_cuado">
 <table class="fondo_emergente">
@@ -13,13 +13,13 @@
         <td>
             <fieldset style="width: 120px;">
             <legend>Codigo de villa</legend>
-            <input id="b_v_villa" type="text" style="width: 100px;">
+            <input id="b_villa_renta" type="text" style="width: 100px;">
             </fieldset>
         </td>
 
         <td>
         <fieldset>
-                <legend>Precio de venta</legend>
+                <legend>Precio de renta</legend>
                 <label class="precio_ver">$100.00</label>
             </fieldset>
         </td>
@@ -31,8 +31,8 @@
         <legend>Villas disponibles</legend>
         <div class="ver_villas">
 
-        <table class="tabla_principal" style="text-align: center;" id="t_v_villa">
-
+        <table class="tabla_principal" style="text-align: center;" id="t_villa_renta">
+        
         <?php
         $i = 0;
         while($i <= 100)
@@ -53,10 +53,8 @@
     </td>
     <td style="width: 50%;">
     <fieldset style="height: 330px;">
-    <legend>Descripcion completa de la villa</legend>
-        <Label>Villa seleccionada:</Label>
-        <Label>A-1</Label>
-        <textarea disabled id="txt_descripcion_v" name="txt_descripcion_v" style="width: 93%; height: 85%;"></textarea>
+        <legend>Descripcion completa de la villa</legend>
+        <textarea disabled id="txt_descripcion_v" name="txt_descripcion_v" style="width: 93%; height: 90%;"></textarea>
     </fieldset>
     </td>
     </tr>
@@ -103,7 +101,7 @@
                 <input type="text" style=" width: 50px;">
                 <select  id="cbx_mt_pago" name="cbx_mt_pago" style="width: 160px;">
         <?php
-        $a = ["Semana(s)","Mes(es)","años(s)"];
+        $a = ["Dia(s)","Semana(s)","Meses(s)"];
         $i = 0;
 
         while($i < count($a))
@@ -154,7 +152,7 @@
 <table class="fondo_emergente">
     <tr>
         <td style="text-align: center;">
-        <button class="registrar" type="button" onclick="">Confirmar venta</button>
+        <button class="registrar" type="button" onclick="">Confirmar renta</button>
         </td>
     </tr>
 </table>
@@ -164,5 +162,3 @@
 </div>
 </form>
 </nav>
-
-<script src="a_archivo/buscar_villa.js"></script>

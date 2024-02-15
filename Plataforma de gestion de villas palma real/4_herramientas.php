@@ -1,5 +1,5 @@
 <?php
-include "1_Raiz\cabezal.php";
+include "1_Raiz/cabezal.php";
 ?>
 
 <nav class ="cuerpo">
@@ -55,4 +55,8 @@ include "1_Raiz\cabezal.php";
 <?php
 //tabla de compra
 include "Ventana_emergente/cliente_villa/e_nuevo.php";
+?>
+
+<?php
+include "1_Raiz/final.php";
 ?>

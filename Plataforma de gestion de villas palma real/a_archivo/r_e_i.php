@@ -24,11 +24,41 @@ include "a_archivo/Insertar/Ejecutar_renta.php";
 ?>
 
 <?php
+//ejecutar accion a editar
+include "a_archivo/Edicion/seleccion_accion_edi.php";
+?>
+
+<?php
+//ejecutar accion a editar
+include "a_archivo/Edicion/selec_cliente.php";
+?>
+
+<?php
+//ejecutar Edicion cliente
+include "a_archivo/Edicion/editar_cliente.php";
+?>
+
+<?php
+//ejecutar editar estadia
+include "a_archivo/Edicion/editar_estadia.php";
+?>
+
+<?php
+//ejecutar seleccion de villa
+include "a_archivo/Edicion/selec_villa.php";
+?>
+
+<?php
+//ejecutar edicion de villa
+include "a_archivo/Edicion/editar_villa.php";
+?>
+
+<?php
 //Insertar ejecutar caracteristica
 include "a_archivo/Insertar/insertar_caracteristica.php";
 ?>
 
 <?php
 //Insertar ejecutar insertar caracteristica
-include "a_archivo/Insertar/Ingerto/agregar_caracte.php";
+include "a_archivo/Insertar/agregar_caracte.php";
 ?>

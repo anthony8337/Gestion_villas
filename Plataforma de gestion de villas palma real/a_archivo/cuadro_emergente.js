@@ -73,3 +73,83 @@ function cerrar_insertar_carac()
 {
     document.getElementById('carac_nuevo').style.display = 'none'; 
 }
+
+
+//Mostrar confirmacion
+function confirmacion_carac()
+{
+    var resultado = window.confirm("La caracteristica fue agregada exitosamente.\n¿deseas continuar agregando?");
+
+if (resultado) {
+    document.getElementById('a_caracter').value = "";
+} else {
+    document.getElementById('a_caracter').value = "";
+    document.getElementById('carac_nuevo').style.display = 'none'; 
+}
+}
+
+//Mostrar cuadro de editar
+function selec_editar()
+{
+    document.getElementById('seleccionar_editar').style.display = 'flex';
+}
+
+function cerrar_selec_editar()
+{
+    document.getElementById('seleccionar_editar').style.display = 'none'; 
+}
+
+//Mostrar cuadro para seleccionar el cliente a editar
+function selec_cliente_editar()
+{
+    document.getElementById('seleccionar_editar_C').style.display = 'flex';
+}
+
+function cerrar_selec_cliente_editar()
+{
+    document.getElementById('seleccionar_editar_C').style.display = 'none'; 
+}
+
+//Mostrar cuadro de editar cliente
+function edicion_cliente()
+{
+    document.getElementById('Editar_cliente').style.display = 'flex';
+}
+
+function cerrar_edicion_cliente()
+{
+    document.getElementById('Editar_cliente').style.display = 'none'; 
+}
+
+//Mostrar cuadro de mosificar estadia
+function edicion_Estadia()
+{
+    document.getElementById('ejecutar_estadia').style.display = 'flex';
+}
+
+function cerrar_edicion_Estadia()
+{
+    document.getElementById('ejecutar_estadia').style.display = 'none'; 
+}
+
+//Mostrar cuadro de mosificar estadia
+function edicion_selec_villa()
+{
+    document.getElementById('Selec_villa').style.display = 'flex';
+}
+
+function cerrar_selec_edicion_villa()
+{
+    document.getElementById('Selec_villa').style.display = 'none'; 
+}
+
+//Mostrar cuadro de mosificar estadia
+function edicion_villa()
+{
+    document.getElementById('modificar_villa').style.display = 'flex';
+}
+
+function cerrar_edicion_villa()
+{
+    document.getElementById('modificar_villa').style.display = 'none'; 
+}

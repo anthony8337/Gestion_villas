@@ -4,7 +4,7 @@
 </div>
 
 
-<div class="tabla_principal">
+<div class="tabla_primaria">
 <?php
 
 $letra = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -31,13 +31,13 @@ for($j = 1; $j <= 12; $j++)
 {
     echo "
     <tr class='contenido'>
-    <td>",$letra[$i],$j,"</td>
-    <td>",$letra[$i],$j,"</td>
-    <td>",$letra[$i],$j,"</td>
-    <td>",$letra[$i],$j,"</td>
-    <td>",$letra[$i],$j,"</td>
-    <td>",$letra[$i],$j,"</td>
-    <td>",$letra[$i],$j,"</td>
+    <td>",$letra[$i],"-",$j,"</td>
+    <td>Anthony Oliva</td>
+    <td>Activo</td>
+    <td>0101-199",$j,"-03209</td>
+    <td>+504 94856463</td>
+    <td>45628",$j,"</td>
+    <td>$ 4",$j,"</td>
     </tr>
     ";
 }

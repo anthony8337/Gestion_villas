@@ -1,5 +1,5 @@
 <?php
-include "1_Raiz\cabezal.php";
+include "1_Raiz/cabezal.php";
 ?>
 
 
@@ -23,7 +23,7 @@ include "1_Raiz\cabezal.php";
 
     <ul>
         <li><a href="#" onclick="mostrar_decision_insertar()">Nuevo</a></li>
-        <li><a href="#" onclick="mostrarcuadro_selec_editar()">Edicion</a></li>
+        <li><a href="#" onclick="selec_editar()">Edicion</a></li>
         <li><a href="#" onclick="mostrarcuadro_selec_suspender()">Suspender</a></li>
      </ul>
 
@@ -42,3 +42,9 @@ include "1_Raiz\cabezal.php";
 ?>
 
 <script src="a_archivo/cuadro_emergente.js"></script>
+<script src="a_archivo/Edicion/Traslado_edicion.js"></script>
+<script src="a_archivo/Edicion/Traslado_edicion_villa.js"></script>
+
+<?php
+include "1_Raiz/final.php";
+?>

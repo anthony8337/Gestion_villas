@@ -13,7 +13,7 @@
         <td>
             <fieldset style="width: 120px;">
             <legend>Codigo de villa</legend>
-            <input id="b_v_villa" type="text" style="width: 100px;">
+            <input id="b_villa_compra" type="text" style="width: 100px;">
             </fieldset>
         </td>
 
@@ -31,7 +31,7 @@
         <legend>Villas disponibles</legend>
         <div class="ver_villas">
 
-        <table class="tabla_principal" style="text-align: center;" id="t_v_villa">
+        <table class="tabla_principal" style="text-align: center;" id="t_villa_compra">
 
         <?php
         $i = 0;
@@ -53,10 +53,8 @@
     </td>
     <td style="width: 50%;">
     <fieldset style="height: 330px;">
-    <legend>Descripcion completa de la villa</legend>
-        <Label>Villa seleccionada:</Label>
-        <Label>A-1</Label>
-        <textarea disabled id="txt_descripcion_v" name="txt_descripcion_v" style="width: 93%; height: 85%;"></textarea>
+        <legend>Descripcion completa de la villa</legend>
+        <textarea disabled id="txt_descripcion_v" name="txt_descripcion_v" style="width: 93%; height: 90%;"></textarea>
     </fieldset>
     </td>
     </tr>
@@ -164,5 +162,3 @@
 </div>
 </form>
 </nav>
-
-<script src="a_archivo/buscar_villa.js"></script>
