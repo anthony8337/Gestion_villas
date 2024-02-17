@@ -1,6 +1,7 @@
 html body
 {
-    background-color: #d4d4d4;
+    background-color:rgb(228, 228, 228) ;
+    overflow: hidden;
 }
 
 /*Tabla principal*/
@@ -9,16 +10,16 @@ html body
 
 .tabla_principal
 {
-border: 2px solid chocolate;
+border: 2px solid #7c7c7c;
 width: 100%;
 overflow: auto;
 }
 
 .tabla_primaria
 {
-border: 2px solid chocolate;
+border: 2px solid #7c7c7c;
 width: 100%;
-height: 68vh;
+height: 75vh;
 overflow: auto;
 }
 
@@ -54,11 +55,17 @@ font-family: Arial, Helvetica, sans-serif;
 
 #p_busca
 {
-    width: 450px;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 600px;
     padding: 10px;
-    border: 2px solid black;
-    border-radius: 5px;
+    border-bottom: 1px solid black;
+    font-size: 18px;
 }
+
+
 
 label
 {
@@ -69,7 +76,7 @@ label
 
 .grupo_busqueda
 {
-    margin-left: 25%;
+   text-align: center;
 }
 
 button
@@ -130,16 +137,40 @@ button:hover
     margin-left: 10%;
 }
 
-input[type="text"],input[type="date"],#txt_descripcion_v,input[type="number"]
+input[type="text"],input[type="date"],input[type="number"]
 {
+
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
     font-family: Arial, Helvetica, sans-serif;
     resize: none;
+    outline: none;
+    margin-bottom: 10px;
+    width: 250px;
+    height: 20px;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    
+}
+
+#txt_descripcion_v
+{
+
+
+
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+    outline: none;
     margin-bottom: 10px;
     width: 250px;
     height: 20px;
     padding: 10px;
     border: 2px solid black;
-    border-radius: 5px;
+    
 }
 
 input[type="radio"]
@@ -152,12 +183,15 @@ input[type="radio"]
 
 select
 {
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 275px; 
+    width: 275px;
 }
 
 
@@ -166,24 +200,21 @@ select
 
 .divicion
 {
-background: linear-gradient(to right,#ffeb9c, rgb(218, 132, 71));
+    background: linear-gradient(to left,#ffeb9c, rgb(218, 132, 71));
 
 width: 100%;
 height: 10px;
 padding: 0px;
-border: 1px solid #7c7c7c;
-border-top-left-radius: 15px;
-border-bottom-left-radius: 15px;
+
 list-style-type: none;
 }
 
 .menu ul
 {
-background: linear-gradient(to right,#ffeb9c, rgb(218, 132, 71));
+background: linear-gradient(to left,#ffeb9c, rgb(218, 132, 71));
 
 width: 100%;
 padding: 0px;
-border: 1px solid #7c7c7c;
 border-top-left-radius: 15px;
 border-bottom-left-radius: 15px;
 overflow: hidden;
@@ -205,7 +236,6 @@ color: yellow;
 .menu ul li a
 {
 border-right: 1px solid chocolate;
-border-bottom: 1px solid #7c7c7c;
 padding: 10px;
 display: block;
 text-decoration: none;
@@ -224,7 +254,7 @@ color: black;
     height: 100%; 
     width: 200px; 
     background: linear-gradient(to top,#ffeb9c, rgb(218, 132, 71));
-    color: white; 
+    color: rgb(228, 228, 228); 
   }
   
   .menu2 ul {
@@ -235,7 +265,7 @@ color: black;
   
   .menu2 li {
     padding: 0px;
-    border-bottom: 1px solid #555; 
+    
   }
   
   .menu2 a {
@@ -246,13 +276,11 @@ color: black;
   .menu2 a:hover {
     background-color: #555; 
     color: yellow;
+    border-left: 3px solid red;
   }
 
   .menu2 ul li a
 {
-border-left: 3px solid red;
-border-right: 1px solid #7c7c7c;
-text-shadow: 0px 0px #333333;
 padding: 15px;
 display: block;
 text-decoration: none;
@@ -262,6 +290,7 @@ text-decoration: none;
 
 .marcado a
 {
+    border-left: 3px solid red;
     background-color: #555; 
     color: yellow;
 }
@@ -275,12 +304,37 @@ table
     width: 100%;
 }
 
-th,td
+thead,th
 {
     
     font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid chocolate;
+    
     height: 25px;
+
+    background-color: #555;
+
+    color: white;
+
+    position: static;
+
+    
+}
+
+td
+{
+    font-family: Arial, Helvetica, sans-serif;
+    
+    height: 25px;
+}
+
+.td1
+{
+    background-color: white;
+}
+
+.td2
+{
+    background-color: rgb(206, 205, 205);
 }
 
 .contenido:hover
@@ -327,9 +381,9 @@ th,td
 
 .mod_contenido_editar
 {
-    background-color: #d4d4d4;
+    background-color:rgb(228, 228, 228);
     padding: 10px;
-    border: 2px solid chocolate;
+    border: 2px solid #7c7c7c;
     border-radius: 20px;
     width: 400px;
     height: 300px;
@@ -350,9 +404,9 @@ th,td
 /*Ventana de ingreso*/
 .mod_ingreso
 {
-    background-color: #d4d4d4;
+    background-color:rgb(228, 228, 228);
     padding: 10px;
-    border: 2px solid chocolate;
+    border: 2px solid #7c7c7c;
     border-radius: 20px;
     width: 920px;
     height: 350px;
@@ -361,8 +415,8 @@ th,td
 /*ventana de venta*/
 .mod_venta
 {
-    background-color: #d4d4d4;
-    border: 2px solid chocolate;
+    background-color:rgb(228, 228, 228);
+    border: 2px solid #7c7c7c;
     border-radius: 10px;
     padding: 10px;
     width: 95%;
@@ -371,8 +425,8 @@ th,td
 
 .ejecutar_renta
 {
-    background-color: #d4d4d4;
-    border: 2px solid chocolate;
+    background-color:rgb(228, 228, 228);
+    border: 2px solid #7c7c7c;
     border-radius: 10px;
     padding: 10px;
     width: 95%;
@@ -381,8 +435,8 @@ th,td
 
 .ejecutar_caracteristica
 {
-    background-color: #d4d4d4;
-    border: 2px solid chocolate;
+    background-color:rgb(228, 228, 228);
+    border: 2px solid #7c7c7c;
     border-radius: 10px;
     padding: 10px;
     width: 80%;
@@ -391,8 +445,8 @@ th,td
 
 .agre_carac
 {
-    background-color: #d4d4d4;
-    border: 2px solid chocolate;
+    background-color:rgb(228, 228, 228);
+    border: 2px solid #7c7c7c;
     border-radius: 10px;
     padding: 10px;
     width: 800px;
@@ -401,8 +455,8 @@ th,td
 
 .agre_ca
 {
-    background-color: #d4d4d4;
-    border: 2px solid chocolate;
+    background-color:rgb(228, 228, 228);
+    border: 2px solid #7c7c7c;
     border-radius: 10px;
     padding: 10px;
     width: 520px;
@@ -413,18 +467,35 @@ th,td
 /*Ventana de saleccion*/
 .mod_seleccionar_edi_cliente
 {
-    background-color: white;
+    background-color: rgb(228, 228, 228);
     padding: 10px;
     border: 2px solid #ffeb9c;
     border-radius: 20px;
     width: 80%;
     height: 500px; 
     
+    
+}
+
+.eje_confirma
+{
+    background-color: rgb(255, 105, 130);
+}
+
+.mod_confirmacion
+{
+    background-color: rgb(228, 228, 228);
+
+    border: 2px solid #ffeb9c;
+    border-radius: 20px;
+    width: 500px;
+    height: 350px; 
+    
 }
 
 .ejecutar
 {
-    background-color: white;
+    background-color: rgb(228, 228, 228);
     margin: 0% auto;
     margin-top: 15%;
     padding: 10px;
@@ -436,7 +507,7 @@ th,td
 
 .cuerpo_cuadros
 {
-    border: 2px solid chocolate;
+    border: 2px solid #7c7c7c;
     border-radius: 10px;
     height: 440px; 
     overflow: auto;
@@ -446,7 +517,7 @@ th,td
 {
 
     margin-bottom: 10px;
-    border: 2px solid chocolate;
+    border: 2px solid #7c7c7c;
     width: 98%;
     height: 300px;
     overflow: auto;
@@ -475,7 +546,7 @@ th,td
 fieldset
 {
     margin-bottom: 10px;
-    background-color: white;
+    background-color: rgb(228, 228, 228);
     border: 2px solid #b99400;
     padding-left: 2%;
     padding-right: 2%;
@@ -488,7 +559,7 @@ fieldset
 .interior
 {
     margin-bottom: 10px;
-    background-color: white;
+    background-color: rgb(228, 228, 228);
     border: 2px solid #b99400;
     padding-left: 2%;
     padding-right: 2%;
@@ -509,8 +580,7 @@ legend
     margin-bottom: 10px;
     width:92%;
     padding: 10px;
-    border: 2px solid black;
-    border-radius: 5px;
+    border-bottom: 2px solid black;
     display: inline-block;
 }
 
@@ -519,14 +589,15 @@ legend
     margin-bottom: 10px;
     width:98%;
     padding: 10px;
-    border: 2px solid black;
-    border-radius: 5px;
+    border-bottom : 2px solid black;
+    
     display: inline-block;
+    background-color: transparent;
 }
 
 .total_pago
 {
-    background-color: white;
+    background-color: rgb(228, 228, 228);
     border: 2px solid #b99400;
     border-radius: 10px;
     padding: 10px;
@@ -538,6 +609,11 @@ legend
 .fondo_emergente tr td
 {
     border: 0px solid chocolate;
+}
+.confirmado tr td
+{
+    border: 0px solid chocolate;
+    height: 30px;
 }
 
 .ajuste_cuado
@@ -568,7 +644,7 @@ legend
     width: 600px;
     height: 200px;
     border:2px solid gray;
-    background-color: white;
+    background-color: rgb(228, 228, 228);
     border-radius: 50px;
 }
 
@@ -576,7 +652,7 @@ legend
 .f_boton
 {
     margin: 0% auto;
-    border: 2px solid chocolate;
+    border: 2px solid #7c7c7c;
     border-radius: 10px;
     width: 150px;
     height: 150px;
@@ -597,9 +673,9 @@ legend
 
 .mod_ingreso_villa
 {
-    background-color: #d4d4d4;
+    background-color:rgb(228, 228, 228);
     padding: 10px;
-    border: 2px solid chocolate;
+    border: 2px solid #7c7c7c;
     border-radius: 20px;
     width: 10px;
     height: 10px;
@@ -608,7 +684,7 @@ legend
 .orden tr td
 {
 vertical-align: top;
-border: 2px solid chocolate;
+border: 2px solid #7c7c7c;
 width: 10px;
 }
 
@@ -633,9 +709,9 @@ form
 
 .titulo
 {
-    border: 2px solid chocolate;
+    border: 2px solid #7c7c7c;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgb(228, 228, 228);
     font-size: 20px;
     padding: 5px;
 }

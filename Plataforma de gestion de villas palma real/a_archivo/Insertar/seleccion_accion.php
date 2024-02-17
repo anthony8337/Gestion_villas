@@ -32,7 +32,7 @@
             </div>
             </td>
             <td>
-            <div class="f_boton" onclick="mostrar_insertar_villa(),cerrar_decision_insertar()">
+            <div class="f_boton" onclick="mostrar_insertar_villa(),limpiar_campos(),cerrar_decision_insertar()">
             <img class="im_ico" src="imagenes/casa.png" width="50px" height="50px">
             <br>
             <label>Insertar Villa</label>

@@ -3,10 +3,7 @@
 include "a_archivo/Insertar/seleccion_accion.php";
 ?>
 
-<?php
-//Insertar villas
-include "a_archivo/Insertar/insertar_villa.php";
-?>
+
 
 <?php
 //Insertar cliente
@@ -48,9 +45,10 @@ include "a_archivo/Edicion/editar_estadia.php";
 include "a_archivo/Edicion/selec_villa.php";
 ?>
 
+
 <?php
-//ejecutar edicion de villa
-include "a_archivo/Edicion/editar_villa.php";
+//Insertar villas
+include "a_archivo/Insertar/insertar_villa.php";
 ?>
 
 <?php
@@ -61,4 +59,29 @@ include "a_archivo/Insertar/insertar_caracteristica.php";
 <?php
 //Insertar ejecutar insertar caracteristica
 include "a_archivo/Insertar/agregar_caracte.php";
+?>
+
+<?php
+//Insertar ejecutar insertar caracteristica
+include "a_archivo/Suspender/seleccion_accion_sus.php";
+?>
+
+<?php
+//suspender cliente
+include "a_archivo/Suspender/selec_cliente_suspender.php";
+?>
+
+<?php
+//suspender cliente
+include "a_archivo/Suspender/confirmar_sus_cli.php";
+?>
+
+<?php
+//suspender cliente
+include "a_archivo/Suspender/selec_villa_suspender.php";
+?>
+
+<?php
+//suspender cliente
+include "a_archivo/Suspender/confirmar_sus_vi.php";
 ?>

@@ -1,10 +1,14 @@
 <div class="grupo_busqueda">
-<label class="lb_busca">Buscar Cliente:</label>
-<input type="text" id="p_busca" name="p_busca">
+<input type="text" id="p_busca" name="p_busca" placeholder="Por favor, escriba para buscar un elemento">
 </div>
 
 
 <div class="tabla_primaria">
+
+<table>
+    
+</table>
+
 <?php
 
 $letra = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -12,6 +16,7 @@ $letra = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R
 
 echo"
 <table id='tabla'>
+<thead>
 <tr>
 <th>",'Villa',"</th>
 <th>",'Propietario',"</th>
@@ -20,7 +25,8 @@ echo"
 <th>",'Telefono',"</th>
 <th>",'Medidor EEH',"</th>
 <th>",'Saldo',"</th>
-</tr>";
+</tr>
+</thead>";
 $i = 0;
 
 

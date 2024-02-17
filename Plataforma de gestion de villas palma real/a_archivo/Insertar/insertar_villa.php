@@ -5,7 +5,7 @@
         
     <span onclick="cerrar_insertar_villa()" class="cerrar">&times;</span>
     <fieldset class="cuerpo_registrar">
-            <legend class="titulo">Ingresar villa</legend>
+            <legend class="titulo" id="lg_titulo"></legend>
 
             <fieldset class="ajuste_villa">
                 <legend>Caracteristicas de las villas</legend>
@@ -27,23 +27,9 @@
                     
                     
                     <?php
-                    $i=0;
-                    $contados = ["Dormitorio principal con walk in closet","Dormitorio con closet","Dormitorio de visitas"
-                    ,"Baños completos","Unidades de aire acondicionado"];
-
-                    while($i < count($contados))
-                    {
-                        echo"
-                        <tr class:'tabla_caracteristica'>
-                        <td><input type='text' style='width: 50px; text-align: center';></td>
-                        <td><label class='espacio'>",$contados[$i],"</label></td>
-                        </tr>";
-
-                        $i++;
-                    }
-
                     $j = 0;
-                    $tachar = ["Porche","Porche frontal","Sala","Sala principal",
+                    $tachar = ["Dormitorio principal con walk in closet","Dormitorio con closet","Dormitorio de visitas"
+                    ,"Baños completos","Unidades de aire acondicionado","Porche","Porche frontal","Sala","Sala principal",
                     "Lobby","Comedor","Cocina con estufa y refrigeradora incluida",
                     "Cocina estilo americano con estufa y refrigeradora incluida","Sala Familiar",
                     "Área de lavandería con centro de lavado","Calentador de agua","Terraza techada",
@@ -93,14 +79,14 @@
                 <td>
                 <label>Contador EHH</label>
                 <br>
-                <input type="text" name="v_numero" id="v_numero" style="width: 100px;">
+                <input type="text" name="v_numero" id="txt_con_e" style="width: 100px;">
                 </td>
                 <td>
                 <label>Estatus</label>
                 <br>
-                <select style="width: 150px;">
+                <select style="width: 150px;" id="sl_estado_e">
                     <?php
-                    $i = ["Activo","Mantenimiento","Descartado"];
+                    $i = ["Disponible","Mantenimiento","Descartado"];
                     $a = 0;
 
                     while($a < count($i))
@@ -123,10 +109,10 @@
                     <table class="fondo_emergente">
                         <tr>
                             <td>
-                            <label><input type="radio" name="v_tipo" id="v_tipo_1">Villa coracol</label>
+                            <label><input type="radio" name="v_tipo" id="v_tipo_1" value="Villa coracol">Villa coracol</label>
                             </td>
                             <td>
-                            <label><input type="radio" name="v_tipo" id="v_tipo_2">Villa arrecife</label>
+                            <label><input type="radio" name="v_tipo" id="v_tipo_2" value="Villa arrecife">Villa arrecife</label>
                             </td>
                         </tr>
                     </table>
@@ -137,13 +123,13 @@
                 <td colspan="2">
                     <fieldset>
                     <legend>Tamaño del lote</legend>
-                    <input type="text" id="medidas_lote">
+                    <input type="number" id="medidas_lote">
                     <br>
-                    <label id="metros_lote"></label>
+                    <label id="metros_l"></label>
                     <label> Mts²/</label>
-                    <label id="varas_lote"></label>
+                    <label id="varas_l"></label>
                     <label> Vr²/</label>
-                    <label id="pies_lote"></label>
+                    <label id="pies_l"></label>
                     <label> Ft²</label>
                     </fieldset>
                 </td>
@@ -151,7 +137,7 @@
                 <td colspan="2">
                     <fieldset>
                     <legend>Area de construccion</legend>
-                    <input type="text" id="medidas_construccion">
+                    <input type="number" id="medidas_construccion">
                     <br>
                     <label id="metros_construccion"></label>
                     <label> Mts²/</label>
@@ -168,7 +154,7 @@
                     <fieldset>
                     <legend>costo de renta</legend>
                     <label>$ </label>
-                    <input type="text" style="width: 240px;">
+                    <input type="text" style="width: 240px;" id="txt_costo_renta">
                     </fieldset>
                 </td>
 
@@ -176,7 +162,7 @@
                     <fieldset>
                     <legend>Costo de venta</legend>
                     <label>$ </label>
-                    <input type="text" style="width: 240px;">
+                    <input type="text" style="width: 240px;" id="txt_costo_venta">
                     </fieldset>
                 </td>
             </tr>
@@ -191,7 +177,7 @@
         <table class="fondo_emergente">
         <tr>
         <td style="text-align: center;">
-        <button class="registrar" type="button">Previsualizar villa</button>
+        <button class="registrar" type="button" style="display: block;">Previsualizar villa</button>
         </td>
         </tr>
         </table>

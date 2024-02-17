@@ -41,7 +41,7 @@ while($i < count($letra))
         }
 
         echo "
-        <tr class='contenido' onclick='mostrar_editar_villa()'>
+        <tr class='contenido' onclick='confirma_eliminar_villa()'>
         <td>",$letra[$i],'-',$j,"</td>
         <td>21222112</td>
         <td>",$estado,"</td>

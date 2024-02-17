@@ -24,7 +24,7 @@ include "1_Raiz/cabezal.php";
     <ul>
         <li><a href="#" onclick="mostrar_decision_insertar()">Nuevo</a></li>
         <li><a href="#" onclick="selec_editar()">Edicion</a></li>
-        <li><a href="#" onclick="mostrarcuadro_selec_suspender()">Suspender</a></li>
+        <li><a href="#" onclick="seleccionar_suspender()">Suspender</a></li>
      </ul>
 
 </nav>
