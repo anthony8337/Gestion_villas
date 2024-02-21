@@ -4,12 +4,13 @@ include "1_Raiz/cabezal.php";
 
 <nav class ="cuerpo">
 <nav class="menu2">
+<button type="button" class="menu_2"></button>
     <ul>
-    <li><img class="logo" src="imagenes/logo principal.png" width="150" height="150"></li>
-    <li><a href="1_archivo.php">Archivo</a></li>
-    <li class="marcado"><a href="2_edicion.php">Edicion</a></li>
-    <li><a href="3_reportes.php">Reportes</a></li>
-    <li><a href="4_herramientas.php">Herramientas</a></li>
+    <li><table><tr><td class="t_l"><img class="logo" src="imagenes/logo principal.png" ></td></tr></table></li>
+    <li><a href="1_archivo.php"><table><tr><td class="imagen"><img src="imagenes/2.png" class="imagen"></td><td class="te_menu2">Archivo</td></tr></table></a></li>
+    <li class="marcado"><a href="2_edicion.php"><table><tr><td class="imagen"><img src="imagenes/6.png" class="imagen"></td><td class="te_menu2">Edición</td></tr></table></a></li>
+    <li><a href="3_reportes.php"><table><tr><td class="imagen"><img src="imagenes/1.png" class="imagen"></td><td class="te_menu2">Reportes</td></tr></table></a></li>
+    <li><a href="4_herramientas.php"><table><tr><td class="imagen"><img src="imagenes/3.png" class="imagen"></td><td class="te_menu2">Herramientas</td></tr></table></a></li>
     <li><a href="#5">Salir</a></li>
     <li><a href="login.php">Visualizar login</a></li>
     </ul>
@@ -19,29 +20,26 @@ include "1_Raiz/cabezal.php";
 <nav class="menu">
 
     <ul>
-        <li><a href="">Monedas</a></li>
-        <li><a href="">Conceptos</a></li>
-        <li><a href="">Movimientos</a></li>
-        <li><a href="">G. Cuentas</a></li>
-        <li><a href="">Multipagos</a></li>
-        <li><a href="">Reimpresion</a></li>
+        <li><a href="#" onclick="abrir_moneda()">Monedas</a></li>
+        <li><a href="#" onclick="abrir_co()">Conceptos</a></li>
+        <li><a href="#" onclick="abrir_mov()">Movimientos</a></li>
+        <li><a href="#" onclick="abrir_ges()"> G. Cuentas</a></li>
+        <li><a href="#" onclick="abrir_concepto()">Multipagos</a></li>
+        <li><a href="#" onclick="abrir_rei()">Reimpresion</a></li>
      </ul>
 
-</nav>
 
-<div>
 <?php
 //Tabla principal y busqueda
  include "Tablas/tabla_principal.php";
 ?>
+</nav>
 
-</div>
-
-<?php
-//tabla de compra
-include "Ventana emergente/v_compra.php";
-?>
 
 <?php
-include "1_Raiz/final.php";
+//Tabla principal y busqueda
+ include "a_edicion/e_e_l.php";
 ?>
+
+
+<script src="a_edicion/ventanas_emergentes.js"></script>

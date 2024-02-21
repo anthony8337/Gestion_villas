@@ -4,12 +4,13 @@ include "1_Raiz/cabezal.php";
 
 <nav class ="cuerpo">
 <nav class="menu2">
+<button type="button" class="menu_2"></button>
     <ul>
-    <li><img class="logo" src="imagenes/logo principal.png" width="150" height="150"></li>
-    <li><a href="1_archivo.php">Archivo</a></li>
-    <li><a href="2_edicion.php">Edicion</a></li>
-    <li class="marcado"><a href="3_reportes.php">Reportes</a></li>
-    <li><a href="4_herramientas.php">Herramientas</a></li>
+    <li><table><tr><td class="t_l"><img class="logo" src="imagenes/logo principal.png" ></td></tr></table></li>
+    <li><a href="1_archivo.php"><table><tr><td class="imagen"><img src="imagenes/2.png" class="imagen"></td><td class="te_menu2">Archivo</td></tr></table></a></li>
+    <li><a href="2_edicion.php"><table><tr><td class="imagen"><img src="imagenes/6.png" class="imagen"></td><td class="te_menu2">Edición</td></tr></table></a></li>
+    <li class="marcado"><a href="3_reportes.php"><table><tr><td class="imagen"><img src="imagenes/1.png" class="imagen"></td><td class="te_menu2">Reportes</td></tr></table></a></li>
+    <li><a href="4_herramientas.php"><table><tr><td class="imagen"><img src="imagenes/3.png" class="imagen"></td><td class="te_menu2">Herramientas</td></tr></table></a></li>
     <li><a href="#5">Salir</a></li>
     <li><a href="login.php">Visualizar login</a></li>
     </ul>

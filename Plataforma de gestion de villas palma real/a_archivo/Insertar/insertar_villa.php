@@ -8,7 +8,7 @@
             <legend class="titulo" id="lg_titulo"></legend>
 
             <fieldset class="ajuste_villa">
-                <legend>Caracteristicas de las villas</legend>
+                <legend>Caracteristicas</legend>
 
                 <table class="fondo_emergente">
                     <tr>
@@ -52,12 +52,14 @@
                 </div>
             </fieldset>
             <fieldset class="ajuste_villa">
+            <legend>Datos correspondites</legend>
             <table class="fondo_emergente">
             <tr>
-                <td>
-                <label>Grupo de villa</label>
-                <br>
-                <select style="width: 100px;">
+                <td style="width: 25%;">
+                <fieldset class="mini">
+                <legend>Grupo de villa</legend>
+               
+                <select style="width: 100px; background-color: transparent;">
                     <?php
                     $i = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
                     $a = 0;
@@ -70,21 +72,26 @@
 
                     ?>
                 </select>
+                </fieldset>
                 </td>
-                <td>
-                <label>Numero de villa</label>
-                <br>
+                <td style="width: 25%;">
+                <fieldset class="mini">
+                <legend>Numero de villa</legend>
+                
                 <input type="text" name="v_numero" id="v_numero" style="width: 100px;">
+                </fieldset>
                 </td>
-                <td>
-                <label>Contador EHH</label>
-                <br>
+                <td style="width: 25%;">
+                <fieldset class="mini">
+                <legend>Contador EHH</legend>
+                
                 <input type="text" name="v_numero" id="txt_con_e" style="width: 100px;">
+                </fieldset>
                 </td>
-                <td>
-                <label>Estatus</label>
-                <br>
-                <select style="width: 150px;" id="sl_estado_e">
+                <td style="width: 25%;">
+                <fieldset class="mini">
+                <legend>Estatus</legend>
+                <select style="width: 150px; background-color: transparent;"  id="sl_estado_e">
                     <?php
                     $i = ["Disponible","Mantenimiento","Descartado"];
                     $a = 0;
@@ -97,6 +104,7 @@
 
                     ?>
                 </select>
+                </fieldset>
                 </td>
             </tr>
             
@@ -108,10 +116,10 @@
 
                     <table class="fondo_emergente">
                         <tr>
-                            <td>
+                            <td  style="width: 50%;">
                             <label><input type="radio" name="v_tipo" id="v_tipo_1" value="Villa coracol">Villa coracol</label>
                             </td>
-                            <td>
+                            <td style="width: 50%;">
                             <label><input type="radio" name="v_tipo" id="v_tipo_2" value="Villa arrecife">Villa arrecife</label>
                             </td>
                         </tr>
@@ -134,7 +142,7 @@
                     </fieldset>
                 </td>
 
-                <td colspan="2">
+                <td colspan="2" style="width: 50%;">
                     <fieldset>
                     <legend>Area de construccion</legend>
                     <input type="number" id="medidas_construccion">
@@ -150,11 +158,11 @@
             </tr>
 
             <tr>
-                <td colspan="2">
+                <td colspan="2" style="width: 50%;">
                     <fieldset>
                     <legend>costo de renta</legend>
-                    <label>$ </label>
-                    <input type="text" style="width: 240px;" id="txt_costo_renta">
+                    <label>$</label>
+                    <input type="text" style="width: 85%" id="txt_costo_renta">
                     </fieldset>
                 </td>
 
@@ -162,7 +170,7 @@
                     <fieldset>
                     <legend>Costo de venta</legend>
                     <label>$ </label>
-                    <input type="text" style="width: 240px;" id="txt_costo_venta">
+                    <input type="text" style="width: 85%" id="txt_costo_venta">
                     </fieldset>
                 </td>
             </tr>
