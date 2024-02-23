@@ -1,9 +1,9 @@
 <nav>
     <form action="#" method="post" autocomplete="off">
-    <div id="concepto" class="mod">
+    <div id="concepto_mov" class="mod">
     <fieldset class="mod_Moneda">
     <legend class="titulo">Conceptos de cuenta por cobrar</legend>
-    <span onclick="cerrar_co()" class="cerrar">&times;</span>
+    <span onclick="cerrar_con_mo()" class="cerrar">&times;</span>
     <br>
     
     <div>
@@ -11,7 +11,7 @@
 
         <fieldset style="margin-top: 10px; padding: 0px; width: 99.5%; height: 350px; border-radius: 0px; overflow: auto;">
             
-        <table id="tb_concepto">
+        <table id="tb_concepto_mo">
             <tr>
                 <th >
                     Descripción
@@ -34,7 +34,7 @@
             {
 
                 echo"
-                <tr class='contenido' onclick='abrir_accion_co_nuevo()'>
+                <tr class='contenido' onclick='cerrar_con_mo()'>
                 <td>Anticipo</td>
                 <td>C</td>
                 <td>N</td>

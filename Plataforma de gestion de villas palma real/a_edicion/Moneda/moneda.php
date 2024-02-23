@@ -7,11 +7,11 @@
     <br>
 
     <div>
-        <button type="button" class="regis_accion" >Nuevo</button>
+        <button type="button" class="regis_accion" onclick="abrir_agre_moneda()">Nuevo</button>
 
         <fieldset style="margin-top: 10px; padding: 0px; width: 99.5%; height: 350px; border-radius: 0px; overflow: auto;">
             
-        <table>
+        <table id="tb_moneda">
             <tr>
                 <th>
                     Descripción
@@ -33,13 +33,14 @@
             
             $i = 0;
 
-            while($i <= 250)
+
+            while($i <= 12)
             {
 
                 echo"
-                <tr class='contenido'>
-                <td>$i</td>
-                <td>$i</td>
+                <tr class='contenido' onclick='abrir_accion_moneda()'>
+                <td>lempira</td>
+                <td>$. </td>
                 <td>$i</td>
                 </tr>";
 
@@ -53,5 +54,3 @@
     </div>
 </form>
 </nav>
-
-<script src="a_archivo/Insertar/transcribir.js"></script>

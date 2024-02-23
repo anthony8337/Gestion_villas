@@ -48,7 +48,7 @@
     </fieldset>
 
     <div style="text-align: center;">
-    <button type="button" style="margin-top: 20px;"> Buscar</button>
+    <button type="button" style="margin-top: 20px;" onclick="abrir_gestion_resultado()"> Buscar</button>
     </div>
     
 

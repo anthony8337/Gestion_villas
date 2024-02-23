@@ -7,78 +7,121 @@
     <br>
 
     <div>
-        <button type="button" class="regis_accion" >Guardar</button>
-        <button type="button" class="regis_accion" >Cliente</button>
-        <button type="button" class="regis_accion" >Documento</button>
+        <button type="button" class="regis_accion" onclick="abrir_cli_mo()" >Cliente</button>
+        <button type="button" class="regis_accion" onclick="abrir_con_mo()" >Documento</button>
         <button type="button" class="regis_accion" >Limpiar</button>
-        <button type="button" class="regis_accion" >Observacion</button>
+
+
+        <fieldset style="width:150px; height: 50px; text-align: center; float: inline-end;" >
+        <legend>Numero de factura</legend>
+
+        <table style="height: 100%;">
+            <tr>
+                <td>
+                <label>A10210</label>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
     </div>
 
     <br>
-   
-        <fieldset style="width:95%; height: 80px; ">
-        <legend>Cliente: A-1</legend>
 
-        <label>Nombre: Anthony Clemente Oliva Murillo</label>
-        <br>
-        <label>Numero: 94816463</label>
-        <br>
-        <label>Estadia: Propietario</label>
 
-    </fieldset>
-
-    <fieldset style="width:45%; height: 100px;">
-        <legend>Tipo</legend>
-
-        <div style="margin-top: 10px;">
-        <input type="radio" name="rb_tipo" value="Cargo">
-        <label>Cargo</label>
-        <br>
-        <input type="radio" name="rb_tipo" value="Abono">
-        <label>Abono</label>
-        </div>
-    </fieldset>
-
-    <fieldset style="width:45%; height: 100px;">
-        <legend>Fecha</legend>
-
-        <table style="width: 100%;">
-            <tr>
-                <td style="text-align: start;"><label>Fecha de aplicacion:</label></td>
-                <td><input type="date"></td>
-            </tr>
-
-            <tr>
-                <td style="text-align: start;"><label>Fecha de Vencimiento:</label></td>
-                <td><input type="date"></td>
-            </tr>
-        </table>
-
-    </fieldset>
-
-    <fieldset style="width:45%; height: 150px;">
-        <legend>Concepto</legend>
-
-        <table style="width: 80%;">
-            <tr>
-                <td style="text-align: start;"><label>Concepto:</label></td>
-                <td><input type="text"></td>
-            </tr>
-
-            <tr>
-                <td style="text-align: start;"><label>Monto:</label></td>
-                <td><input type="text"></td>
-            </tr>
-        </table>
-    </fieldset>
-
-    <fieldset style="width:45%; height: 150px;">
-        <legend>Documento</legend>
-        <label>Factura: A10210</label>
+        <fieldset style="width:49%; height: 100px; padding: 0px;">
         
+        <table style="height: 100%;">
+
+            <tr>
+                <td class="tama_izquierda">
+                <label>Codigo: </label>
+                </td>
+                <td class="tama_derecha">
+                <label id="lb_co_m"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="tama_izquierda">
+                <label>Nombre: </label>
+                </td>
+
+                <td class="tama_derecha">
+                <label id="lb_nom_m"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="tama_izquierda">
+                <label>Numero: </label>
+                </td>
+                <td class="tama_derecha">
+                <label id="lb_num_m"></label>
+                </td>
+            </tr>
+            
+
+        </table>
+
     </fieldset>
+
+    <fieldset style="width:49%; height: 100px; padding: 0px;">
+        
+
+    <table style="height: 100%;">
+
+    <tr>
+        <td class="tama_izquierda">Documento:</td>
+        <td class="tama_derecha"><label id="lb_doc_m"></label></td>
+    </tr>
+        <tr>
+            <td class="tama_izquierda">
+            <input type="radio" name="rb_tipo" value="Cargo">
+            <label>Cargo</label>
+        </td>
+
+            <td class="tama_derecha">
+            <input type="radio" name="rb_tipo" value="Abono">
+            <label>Abono</label>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+
+    <fieldset style="width:49%; height: 100px; padding: 0px;">
+    <table style="width: 100%;">
+            <tr>
+                <td class="tama_izquierda">
+                <label>Fecha de aplicacion:</label></td>
+                <td><input type="date" style="width: 80%;"></td>
+            </tr>
+
+            <tr>
+                <td class="tama_izquierda">
+                <label>Fecha de Vencimiento:</label></td>
+                <td><input type="date" style="width: 80%;"></td>
+            </tr>
+        </table>
+
+    </fieldset>
+
+    <fieldset style="width:49%; height: 100px; padding: 0px;">
+        
+
+        <table style="width: 100%; height: 100%;">
+            <tr>
+                <td class="tama_izquierda">
+                <label>Monto:</label></td>
+                <td class="tama_derecha"><input type="number" style=" width: 80%;"></td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <button type="button" class="regis_accion" >Guardar</button>
+
+    
+
+
     </div>
 </form>
 </nav>
-
-<script src="a_archivo/Insertar/transcribir.js"></script>
