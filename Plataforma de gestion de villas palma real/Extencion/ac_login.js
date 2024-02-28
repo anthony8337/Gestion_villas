@@ -1,4 +1,4 @@
 function abrir()
 {
-    window.location.href ='1_archivo.php';
+    window.location.href ='pantalla_inicio.php';
 }

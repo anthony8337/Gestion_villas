@@ -167,7 +167,7 @@ function cerrar_gestion_resultado()
     document.getElementById('resul_busqueda').style.display = 'none';
 }
 
-//gestinoar cuenta
+//reimprecion cliente
 function abrir_reimpre_cliente()
 {
     document.getElementById('cli_reimpre').style.display = 'flex';
@@ -176,4 +176,15 @@ function abrir_reimpre_cliente()
 function cerrar_reimpre_cliente()
 {
     document.getElementById('cli_reimpre').style.display = 'none';
+}
+
+//reimprecion fecha
+function abrir_reimpre_fecha()
+{
+    document.getElementById('Reimpreso_fecha').style.display = 'flex';
+}
+
+function cerrar_reimpre_fecha()
+{
+    document.getElementById('Reimpreso_fecha').style.display = 'none';
 }

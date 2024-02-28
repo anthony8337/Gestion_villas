@@ -228,3 +228,14 @@ function suspencion_exitosa_cliente()
     window.alert("Accion ejecutada con exito");  
     document.getElementById('confi_sus_cliente').style.display = 'none'; 
 }
+
+//Mostrar confirmar villa
+function Seleccionar_villa_in()
+{
+    document.getElementById('Selec_villa_inser').style.display = 'flex';
+}
+
+function cerrar_Seleccionar_villa_in()
+{
+    document.getElementById('Selec_villa_inser').style.display = 'none'; 
+}

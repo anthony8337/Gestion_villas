@@ -45,3 +45,7 @@ include "a_edicion/ges_guardadas/resultado.php";
 <?php
 include "a_edicion/Reimpresion/selec_cliente.php";
 ?>
+
+<?php
+include "a_edicion/Reimpresion/Fechas.php";
+?>

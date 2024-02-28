@@ -20,7 +20,7 @@ include "1_Raiz/cabezal.php";
 <nav class="menu">
 
     <ul>
-        <li><a href="">Saldos</a></li>
+        <li><a href="#" onclick="abrir_saldo()">Saldos</a></li>
         <li><a href="">Estado de cuenta</a></li>
         <li><a href="">Recuperaciones</a></li>
         <li><a href="">Cobro de facturas</a></li>
@@ -39,9 +39,11 @@ include "1_Raiz/cabezal.php";
 
 <?php
 //tabla de compra
-include "Ventana emergente/v_compra.php";
+include "a_reportes/r_r.php";
 ?>
 
 <?php
 include "1_Raiz/final.php";
 ?>
+
+<script src="a_reportes/Saldos/abrir_emergrnte.js"></script>

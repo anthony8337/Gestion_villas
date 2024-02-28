@@ -1,166 +1,111 @@
 <nav>
 <form action="#" method="post" autocomplete="off">
 <div id="venta" class="mod">
-<div class="ejecutar_renta">
+<fieldset class="ejecutar_inscripcion">
+<legend class="titulo">Datos de la villa del propietario</legend>
 <span onclick="cerrar_compra()" class="cerrar">&times;</span>
+<br>
 
-<fieldset style=" width:95.5%; height: 500px; overflow: auto; padding-bottom: 5px;">
-<legend class="titulo">Datos al solicitar la compra</legend>
+<fieldset style="padding: 5px; width: 500px; height: 460px; text-align: center; float: inline-start; border: 0px;">
 
-<div style="width: 65%; margin-right: 40px;" class="ajuste_cuado">
-<table class="fondo_emergente">
+<fieldset style="width: 200px;">
+<legend>Cuota mensual</legend>
+<table style="height: 100%;">
     <tr>
-        <td>
-            <fieldset style="width: 120px;">
-            <legend>Codigo de villa</legend>
-            <input id="b_v_villa" type="text" style="width: 100px;">
-            </fieldset>
-        </td>
-
-        <td>
-        <fieldset>
-                <legend>Precio de venta</legend>
-                <label class="precio_ver">$100.00</label>
-            </fieldset>
-        </td>
-    </tr>
-
-    <tr>
-    <td style="width: 50%;">
-    <fieldset style="height: 330px;">
-        <legend>Villas disponibles</legend>
-        <div class="ver_villas">
-
-        <table class="tabla_principal" style="text-align: center;" id="t_v_villa">
-
-        <?php
-        $i = 0;
-        while($i <= 100)
-        {
-            echo"
-            <tr class='contenido'>
-            <td style='height: 50px; width: 15%; border: 1px solid chocolate;'> A-",$i,"</td>
-            <td style='height: 50px; border: 1px solid chocolate;'>",$i," descripciones</td>
-            <td style='height: 50px; border: 1px solid chocolate;'>bloquedo</td>
-            </tr>
-            ";
-            $i++;
-        }
-        ?>
-        </table>
-        </div>
-    </fieldset>
-    </td>
-    <td style="width: 50%;">
-    <fieldset style="height: 330px;">
-    <legend>Descripcion completa de la villa</legend>
-        <Label>Villa seleccionada:</Label>
-        <Label>A-1</Label>
-        <textarea disabled id="txt_descripcion_v" name="txt_descripcion_v" style="width: 93%; height: 85%;"></textarea>
-    </fieldset>
-    </td>
-    </tr>
-</table>
-</div>
-
-<div style="width:30%;" class="ajuste_cuado">
-<table class="fondo_emergente">
-    <tr>
-        <td>
-            <fieldset>
-                <legend>Forma de pago</legend>
-                <label><input type="radio" name="opcion" id="rb_unico">Pago unico</label>
-                <label><input type="radio" name="opcion" id="rb_cuota">Pago por cuota</label>
-            </fieldset>
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            <fieldset>
-                <legend>Metodo de pago</legend>
-                <select  id="cbx_mt_pago" name="cbx_mt_pago">
-        <?php
-        $a = ["Efectivo","Cheque","Tarjeta de credito","Tarjeta de debito"];
-        $i = 0;
-
-        while($i < count($a))
-        {
-            echo "<option value='periodo",$i,"'>",$a[$i],"</option>";
-            $i++;
-        }
-        ?>
-        </select>
-            </fieldset>
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            <fieldset>
-                <legend>Periodo de cuota</legend>
-                
-                <input type="text" style=" width: 50px;">
-                <select  id="cbx_mt_pago" name="cbx_mt_pago" style="width: 160px;">
-        <?php
-        $a = ["Semana(s)","Mes(es)","años(s)"];
-        $i = 0;
-
-        while($i < count($a))
-        {
-            echo "<option value='periodo",$i,"'>",$a[$i],"</option>";
-            $i++;
-        }
-        ?>
-        
-    </select>
-            </fieldset>
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            <fieldset>
-                <legend>Aplica un descuento de:</legend>
-                <select  id="cbx_mt_pago" name="cbx_mt_pago">
-        <?php
-        $i = 0;
-
-        while($i <= 5)
-        {
-            echo "<option value='periodo",$i,"'>",$i*10,"%</option>";
-            $i++;
-        }
-        ?>
-        
-    </select>
-            </fieldset>
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            <fieldset>
-                <legend>Total a pagar</legend>
-                <label class="precio_ver"><?php $i = 50; echo "$ ",round($i/12,2);?></label>
-            </fieldset>
+        <td style="text-align: center;">
+        <input type="number" style="width: 80%;" id="num_cuota">
         </td>
     </tr>
 </table>
-</div>
+</fieldset>
 
+<fieldset style="width: 95%; height: 330px;">
+<legend>Observacion</legend>
+<table style="height: 100%;">
+    <tr>
+        <td style="text-align: center;">
+        <textarea style="resize: none; width: 98%; height: 290px; color: black; padding: 5px;" name="" id="" cols="30" rows="10"></textarea>
+
+        </td>
+    </tr>
+</table>
+</fieldset>
 
 </fieldset>
+
+<fieldset style="padding: 5px; width: 500px; height: 460px; text-align: center; float: inline-end; border: 0px;">
+
+<button type="button" style="height: 60px; float: left; margin-top: 15px;" onclick="Seleccionar_villa_in()">Seleccionar villa</button>
+
+<fieldset style="width: 320px; float: left;">
+<legend>Datos de villa</legend>
+<table style="height: 100%;">
+    <tr>
+        <td>Clave:</td>
+        <td><label id="lb_clave_villa"></label></td>
+    </tr>
+
+    <tr>
+        <td>Contador EHH:</td>
+        <td><label id="lb_EHH_villa"></label></td>
+    </tr>
+</table>
+</fieldset>
+
+
+
+<fieldset style="width:94%; height: 150px;">
+    <legend>Detalles de la villa</legend>
+    <table>
+    <?php
+    $i = ["2 habitaciones","2 baño","1 piscina","1 corredor","1 fuente"];
+    $a = 0;
+
+    while($a < count($i))
+    {
+        echo"
+        <tr>
+        <td  style='text-align: start;'><li>
+            ",$i[$a],"
+        </li></td>
+        </tr>
+        ";
+        $a++;
+    }
+
+    ?>
+
+    </table>
+
+</fieldset>
+
+<fieldset style="width:96%; height: 150px; text-align: center; padding: 5px;">
+<legend >Direccion</legend>
+
+<textarea style="resize: none; width: 98%; height: 120px; color: black; padding: 5px;" name="" id="" cols="30" rows="10" disabled></textarea>
+
+</fieldset>
+
+</fieldset>
+
+
+
+
+
+
+
+
 <table class="fondo_emergente">
     <tr>
         <td style="text-align: center;">
-        <button class="registrar" type="button" onclick="">Confirmar venta</button>
+        <button class="con" type="button" style="float: inline-start;" onclick="confirmar()">Confirmar</button>
+        <button class="can" type="button" onclick="cerrar_compra(),cerrar_insertar_cliente()">Cancelar</button>
         </td>
     </tr>
 </table>
 
 
-</div>
+</fieldset>
 </div>
 </form>
 </nav>

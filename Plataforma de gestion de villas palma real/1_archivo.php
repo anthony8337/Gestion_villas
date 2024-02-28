@@ -47,6 +47,7 @@ include "1_Raiz/cabezal.php";
 <script src="a_archivo/cuadro_emergente.js"></script>
 <script src="a_archivo/Edicion/Traslado_edicion.js"></script>
 <script src="a_archivo/Edicion/Traslado_edicion_villa.js"></script>
+<script src="a_archivo/Insertar/tralado_villa_insertar.js"></script>
 
 <?php
 include "1_Raiz/final.php";

@@ -9,24 +9,72 @@
     
     <div>
         <button type="button" class="regis_accion" onclick="abrir_reimpre_cliente()">Clientes</button>
-        <button type="button" class="regis_accion" >Imprimir</button>
-    </div>
-    <br>
-    <fieldset style="width:50%; height:80px; padding: 0px;">
-       <table style="width: 100%; height: 100%;">
+        <fieldset style="height: 80px; width: 50%; padding: 0px; float: left;">
+        <table style="height: 100%;">
             <tr>
-                <td style="text-align: end; width: 100px; margin-left: 20px">
-                    <label>Clave:</label>
+                <td>
+                <input type="radio" name="estilo de imprecion" id="rb_historia" onclick="no_mostrar()" checked>
+                <label>imprimir todo el historial</label>
+                </td>
+                
+                <td>
+                <input type="radio" name="estilo de imprecion" id="rb_ultimo" onclick="no_mostrar()">
+                <label>imprimir ultimo movimiento</label>
                 </td>
 
                 <td>
-                <label id="id_clave_re"></label>
+                <input type="radio" name="estilo de imprecion" id="rb_es_fecha" onclick="mostrar()">
+                <label>Especificar fecha</label>
+                </td>
+            </tr>
+        </table>
+        </fieldset>
+
+        <fieldset id="fiel_desde_hasta" style="height: 80px; width: 36%; padding: 0px; float: left;" disabled>
+        <table style="height: 100%;">
+            <tr>
+                <td>
+                <label>Desde:</label>
+                </td>
+                
+                <td>
+                <input type="date" style="width: 80%;">
+                </td>
+
+                <td>
+                <label>Hasta:</label>
+                </td>
+                
+                <td>
+                <input type="date" style="width: 80%;">
+                </td>
+            </tr>
+        </table>
+        </fieldset>
+
+        <button type="button" class="regis_accion" onclick="abrir_reimpre_fecha()">Imprimir</button>
+    </div>
+    <br>
+    <fieldset style="width:68%; height:80px; padding: 0px;">
+       <table style="width: 100%; height: 100%;">
+            <tr>
+                <td style="width: 50%; text-align: end;">
+                <label>Clave:</label>
+                </td>
+
+                <td style="text-align: start;">
+                <label style="margin-left: 20px;" id="id_clave_re"></label>
                 </td>
             </tr>
 
             <tr>
-                <td style="text-align: end; margin-left: 20px;"><label>Nombre:</label></td>
-                <td><label id="lb_nombre_re"></label></td>
+            <td style="width: 50%; text-align: end;">
+                <label>Nombre:</label>
+                </td>
+
+                <td style="text-align: start;">
+                <label style="margin-left: 20px;" id="lb_nombre_re"></label>
+                </td>
             </tr>
             
         </table>
@@ -35,17 +83,20 @@
     <fieldset style="width:30%; height:80px; padding: 0px;">
        <table style="width: 100%; height: 100%;">
             <tr>
-                <td style="text-align: end; width: 100px; margin-left: 20px">
-                    <label>Fecha de imprecion:</label>
-                </td>
-
-                <td>
-                <input type="date" name="" id="">
+                <td style="width: 50%;">
+                <label>Saldo actual</label>
                 </td>
             </tr>
+
+            <tr>
+                <td>
+                <label id="lb_saldo_re"></label>
+                </td>
+            </tr>
+            
         </table>
     </fieldset>
-    
+
     <div class="tabla_principal" style="width: 99%; height: 350px; overflow: auto; float: left; margin-bottom: 10px;">
     
     <table>
@@ -78,4 +129,20 @@
 </form>
 </nav>
 
-<script src="a_archivo/Insertar/transcribir.js"></script>
+
+
+
+<script>
+
+function mostrar()
+{
+    document.getElementById("fiel_desde_hasta").disabled = false;
+}
+
+function no_mostrar()
+{
+    document.getElementById("fiel_desde_hasta").disabled = true;
+}
+
+
+</script>

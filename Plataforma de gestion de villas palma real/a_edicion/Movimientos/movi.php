@@ -7,9 +7,9 @@
     <br>
 
     <div>
-        <button type="button" class="regis_accion" onclick="abrir_cli_mo()" >Cliente</button>
-        <button type="button" class="regis_accion" onclick="abrir_con_mo()" >Documento</button>
-        <button type="button" class="regis_accion" >Limpiar</button>
+        <button type="button" class="regis_accion_movi" onclick="abrir_cli_mo()" >Cliente</button>
+        <button type="button" class="regis_accion_movi" onclick="abrir_con_mo()" >Documento</button>
+        <button type="button" class="regis_accion_movi" >Limpiar</button>
 
 
         <fieldset style="width:150px; height: 50px; text-align: center; float: inline-end;" >
@@ -37,7 +37,7 @@
                 <label>Codigo: </label>
                 </td>
                 <td class="tama_derecha">
-                <label id="lb_co_m"></label>
+                <label id="lb_co_mov"></label>
                 </td>
             </tr>
 
@@ -47,7 +47,7 @@
                 </td>
 
                 <td class="tama_derecha">
-                <label id="lb_nom_m"></label>
+                <label id="lb_nom_mov"></label>
                 </td>
             </tr>
 
@@ -56,7 +56,7 @@
                 <label>Numero: </label>
                 </td>
                 <td class="tama_derecha">
-                <label id="lb_num_m"></label>
+                <label id="lb_num_mov"></label>
                 </td>
             </tr>
             

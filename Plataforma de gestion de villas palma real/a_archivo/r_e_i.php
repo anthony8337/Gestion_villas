@@ -85,3 +85,8 @@ include "a_archivo/Suspender/selec_villa_suspender.php";
 //suspender cliente
 include "a_archivo/Suspender/confirmar_sus_vi.php";
 ?>
+
+<?php
+//suspender cliente
+include "a_archivo\Insertar\selec_villa.php";
+?>
