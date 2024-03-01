@@ -1,8 +1,10 @@
-<div class="grupo_busqueda">
-<label class="lb_busca">Buscar Villas:</label>
-<input type="text" id="bus_v" name="bus_v">
-<button type="button">Agregar nueva villa</button>
-</div>
+<fieldset class="grupo_busqueda" style="border: 0px;">
+
+<input type="text" id="bus_v" name="bus_v" placeholder="Buscar codigo de villa" style="float: inline-start; width: 500px; margin-left: 25%;">
+<button type="button" style="float: inline-end;">Agregar nueva villa</button>
+</fieldset>
+
+<br>
 
 <div class="cuerpo_cuadros">
 <?php
@@ -38,7 +40,7 @@ while($i < count($letra))
         }
 
         echo "
-        <tr class='contenido' onclick='cerrar_Seleccionar_villa_in()'>
+        <tr class='contenido' onclick='edi_s_villa_cerrar()'>
         <td>",$letra[$i],'-',$j,"</td>
         <td>21222112</td>
         <td>",$estado,"</td>

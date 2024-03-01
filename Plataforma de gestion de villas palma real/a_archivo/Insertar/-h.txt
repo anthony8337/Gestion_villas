@@ -156,3 +156,18 @@
         </tr>
         </table>
     </div>
+
+            <fieldset style="float: inline-start; text-align: center; float: left;" class="f_boton" onclick="mostrar_insertar_cliente(),cerrar_decision_insertar()">
+            <img class="im_ico" src="imagenes/cliente.png" width="50px" height="50px">
+            <br>
+            <label>Insertar Cliente</label>
+            </fieldset>
+            </td>
+
+            <td>
+            <fieldset style="float: inline-end; text-align: center; float: left;" class="f_boton" onclick="mostrar_insertar_villa(),limpiar_campos(),cerrar_decision_insertar()">
+            <img class="im_ico" src="imagenes/casa.png" width="50px" height="50px">
+            <br>
+            <label>Insertar Villa</label>
+            </fieldset>
+            </td>

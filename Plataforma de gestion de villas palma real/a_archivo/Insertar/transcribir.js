@@ -46,3 +46,8 @@ texto_construccion.addEventListener('input', function() {
     nume = parseFloat(texto_construccion.value);
     c_ft.textContent = (nume.toFixed(2)* 10.764).toFixed(2);
   });
+
+
+  ///limpieza de direccion
+
+document.getElementById('atxt_direccion').textContent ="";

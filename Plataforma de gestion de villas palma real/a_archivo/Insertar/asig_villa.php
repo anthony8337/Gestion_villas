@@ -1,9 +1,11 @@
 <nav>
 <form action="#" method="post" autocomplete="off">
-<div id="venta" class="mod">
+<div id="asig_villa" class="mod">
 <fieldset class="ejecutar_inscripcion">
+<span onclick="asig_villa_cerrar()" class="cerrar">&times;</span>
+
 <legend class="titulo">Datos de la villa del propietario</legend>
-<span onclick="cerrar_compra()" class="cerrar">&times;</span>
+
 <br>
 
 <fieldset style="padding: 5px; width: 500px; height: 460px; text-align: center; float: inline-start; border: 0px;">
@@ -18,6 +20,8 @@
     </tr>
 </table>
 </fieldset>
+
+<button style="margin-top: 15px;" type="button" onclick="edi_s_villa()">Seleccionar villa</button>
 
 <fieldset style="width: 95%; height: 330px;">
 <legend>Observacion</legend>
@@ -35,9 +39,8 @@
 
 <fieldset style="padding: 5px; width: 500px; height: 460px; text-align: center; float: inline-end; border: 0px;">
 
-<button type="button" style="height: 60px; float: left; margin-top: 15px;" onclick="Seleccionar_villa_in()">Seleccionar villa</button>
 
-<fieldset style="width: 320px; float: left;">
+<fieldset style="width: 94%; float: left;">
 <legend>Datos de villa</legend>
 <table style="height: 100%;">
     <tr>
@@ -99,7 +102,7 @@
     <tr>
         <td style="text-align: center;">
         <button class="con" type="button" style="float: inline-start;" onclick="confirmar()">Confirmar</button>
-        <button class="can" type="button" onclick="cerrar_compra(),cerrar_insertar_cliente()">Cancelar</button>
+        <button class="can" type="button" onclick="cliente_cerrar(),cliente_villa_asig_cerrar()">Cancelar</button>
         </td>
     </tr>
 </table>

@@ -1,9 +1,9 @@
 <nav>
     <form action="#" method="post" autocomplete="off">
-    <div id="ingresar_cliente" class="mod">
+    <div id="cliente_insertar" class="mod">
     <fieldset class="mod_ingreso">
     <legend class="titulo">Datos del nuevo cliente</legend>
-    <span onclick="cerrar_insertar_cliente()" class="cerrar">&times;</span>
+    <span onclick="cerrar_inser_cliente()" class="cerrar">&times;</span>
 
     <table class="fondo_emergente">
         <tr>
@@ -76,8 +76,8 @@
 <table class="fondo_emergente">
     <tr>
         <td style="text-align: center;">
-        <button class="registrar" name="botones" type="button" onclick="mostrar_compra()">Datos de villa</button>
-        <button class="can" name="botones" type="button" onclick="cerrar_insertar_cliente()">Cancelar</button>
+        <button class="registrar" name="botones" type="button" onclick="asig_villa()">Asignar villa</button>
+        <button class="can" name="botones" type="button" onclick="cerrar_inser_cliente()">Cancelar</button>
         </td>
     </tr>
 </table>

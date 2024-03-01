@@ -1,4 +1,4 @@
-<div id="caracteristica" class="mod">
+<div id="villa_e_d" class="mod">
 <div class="ejecutar_caracteristica">
 <span onclick="cerrar_caracteristica()" class="cerrar">&times;</span>
 

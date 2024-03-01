@@ -1,11 +1,12 @@
 <nav>
     <form action="#" method="post" autocomplete="off">
-    <div id="ingresar_villa" class="mod">
+    <div id="villa_insertar" class="mod">
     <fieldset class="villa_nueva">
-    <span onclick="cerrar_insertar_villa()" class="cerrar">&times;</span>
+    <span onclick="insert_villa_cerrar()" class="cerrar">&times;</span>
     <legend class="titulo" id="lg_titulo"></legend>
 
-
+    <br>
+    <fieldset class="grupos_inser_villa">
     <table class="dimencion">
         <tr>
             <td>
@@ -31,7 +32,7 @@
 
             <td>
             <fieldset class="dimencione">
-                <legend>Grupo</legend>
+                <legend>Estado</legend>
                 <select style="width: 80%; background-color: transparent;"  id="sl_estado_e">
                     <?php
                     $i = ["Disponible","Mantenimiento","Descartado"];
@@ -50,10 +51,59 @@
     </table>
 
     <br>
-    <fieldset style="width: 45%; height: 340px; float: inline-end; text-align: center;">
+                <fieldset class="dimencione" style="width: 49%; height: 85px; float: inline-start;">
+                    <legend>Tamaño del lote</legend>
+                    <input type="number" id="medidas_lote" style="width: 80%;">
+                    <br>
+                    <label id="metros_l"></label>
+                    <label> Mts²/</label>
+                    <label id="varas_l"></label>
+                    <label> Vr²/</label>
+                    <label id="pies_l"></label>
+                    <label> Ft²</label>
+                    </fieldset>
+
+                    <fieldset class="dimencione" style="width: 49%; height: 85px; float: inline-end;">
+                    <legend>Area de construccion</legend>
+                    <input type="number" id="medidas_construccion" style="width: 80%;">
+                    <br>
+                    <label id="metros_construccion"></label>
+                    <label> Mts²/</label>
+                    <label id="varas_construccion"></label>
+                    <label> Vr²/</label>
+                    <label id="pies_construccion"></label>
+                    <label> Ft²</label>
+                    </fieldset>
+
+                    <br>
+                    <fieldset class="dimencione" style="width: 49%; height: 100px; margin-top: 20px; float: inline-start;">
+                    <legend>Modelo de villa</legend>
+
+                    <table class="fondo_emergente" style="height: 100%;">
+                        <tr>
+                            <td  style="width: 50%;">
+                            <label><input type="radio" name="v_tipo" id="v_tipo_1" value="Villa coracol">Villa coracol</label>
+                            </td>
+                            <td style="width: 50%;">
+                            <label><input type="radio" name="v_tipo" id="v_tipo_2" value="Villa arrecife">Villa arrecife</label>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+                <fieldset class="dimencione" style="width: 49%; height: 100px; margin-top: 20px;">
+                    <legend>Direccion</legend>
+                <textarea style="resize: none; width: 95%; height: 89%;"></textarea>
+                    
+                </fieldset>
+
+    </fieldset>
+
+    <fieldset class="grupos_inser_villa">
+    <fieldset style="text-align: center; width: 44.5%; float: left;">
     <legend>Caracteristicas</legend>
-    <button type="button">Agregar</button>
-    <div class="tabla_principal" style=" width: 98%; height: 260px; overflow: auto;">
+    <button type="button" onclick="insertar_carac()" class="boton_agre_ca">Agregar</button>
+    <div class="tabla_principal" style="margin-top: 10px; width: 98%; height: 230px; overflow: auto;">
                 <table>
                     <tr>
                         <th style="width: 50px;">Cantidad</th>
@@ -80,60 +130,21 @@
                 </div>
     </fieldset>
 
+    <fieldset style="text-align: center; width: 44.5%; height: 290px; float: left;">
+    <legend>Observaciones</legend>
+    <textarea style="resize: none; width: 100%; height: 270px;" id="atxt_direccion">
+
+    </textarea>
     
-
-    <fieldset style="width: 49%; height: 289px; padding: 0px; text-align: center; border: 0px;">
-    <fieldset class="dimencione" style="width: 99.5%; height: 80px; margin-bottom: 20px;">
-                    <legend>Modelo de villa</legend>
-
-                    <table class="fondo_emergente" style="height: 100%;">
-                        <tr>
-                            <td  style="width: 50%;">
-                            <label><input type="radio" name="v_tipo" id="v_tipo_1" value="Villa coracol">Villa coracol</label>
-                            </td>
-                            <td style="width: 50%;">
-                            <label><input type="radio" name="v_tipo" id="v_tipo_2" value="Villa arrecife">Villa arrecife</label>
-                            </td>
-                        </tr>
-                    </table>
-                </fieldset>
-
-
-                <fieldset class="dimencione" style="width: 49%; height: 85px; float: inline-start;">
-                    <legend>Tamaño del lote</legend>
-                    <input type="number" id="medidas_lote" style="width: 80%;">
-                    <br>
-                    <label id="metros_l"></label>
-                    <label> Mts²/</label>
-                    <label id="varas_l"></label>
-                    <label> Vr²/</label>
-                    <label id="pies_l"></label>
-                    <label> Ft²</label>
-                    </fieldset>
-
-                    <fieldset class="dimencione" style="width: 49%; height: 85px; float: inline-end;">
-                    <legend>Area de construccion</legend>
-                    <input type="number" id="medidas_construccion" style="width: 80%;">
-                    <br>
-                    <label id="metros_construccion"></label>
-                    <label> Mts²/</label>
-                    <label id="varas_construccion"></label>
-                    <label> Vr²/</label>
-                    <label id="pies_construccion"></label>
-                    <label> Ft²</label>
-                    </fieldset>
-
-                    <br>
-
-
-            
     </fieldset>
-    <button type="button" class="can" style="float:inline-start;">Cancelar</button>
-    <button type="button" class="registrar" style="float: inline-end;">Registrar</button>
+    </fieldset>
+    
+    <table>
+        <tr>
+            <td style="text-align: center;">
 
-    
-    
-    
+    <button type="button" class="registrar" style="float:none;" onclick="cerrar_insertar_villa()">Registrar</button>
+    <button type="button" class="can" style="float:none;" onclick="insertar_villa_cerrar()">Cancelar</button>
 
     </fieldset>
     </div>

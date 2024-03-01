@@ -2,10 +2,7 @@
 include "1_Raiz/cabezal.php";
 ?>
 
-
-
 <nav class ="cuerpo">
-
 <nav class="menu2">
 <button type="button" class="menu_2"> <img src="imagenes\7.png" width="32px" height="32px"> </button>
     <ul> 
@@ -19,18 +16,15 @@ include "1_Raiz/cabezal.php";
     <li><a href="pantalla_inicio.php">menu mi rey</Menu></a></li>
     </ul>
 </nav>
-
-<h1 class="centro">Registro de villas Palma real</h1>
+<h1 class="centro">Registro de villas Palma real </h1>
 
 <nav class="menu">
 
     <ul>
-        <li><a href="#" onclick="mostrar_decision_insertar()">Nuevo</a></li>
-        <li><a href="#" onclick="selec_editar()">Edicion</a></li>
-        <li><a href="#" onclick="seleccionar_suspender()">Suspender</a></li>
+        <li><a href="#" onclick="abrir_Seleccion()">Nuevo</a></li>
+        <li><a href="#" onclick="abrir_m_Seleccion()">Editar</a></li>
+        <li><a href="#" onclick="abrir_mov()">Suspender</a></li>
      </ul>
-
-</nav>
 
 
 <?php
@@ -39,16 +33,11 @@ include "1_Raiz/cabezal.php";
 ?>
 </nav>
 
-<?php
-//Cuadros emergentes
- include "a_archivo/r_e_i.php";
-?>
-
-<script src="a_archivo/cuadro_emergente.js"></script>
-<script src="a_archivo/Edicion/Traslado_edicion.js"></script>
-<script src="a_archivo/Edicion/Traslado_edicion_villa.js"></script>
-<script src="a_archivo/Insertar/tralado_villa_insertar.js"></script>
 
 <?php
-include "1_Raiz/final.php";
+//Tabla principal y busqueda
+ include "a_archivo/completar_archivo.php";
 ?>
+
+
+<script src="a_archivo\mostar.js"></script>

@@ -1,28 +1,25 @@
 <nav>
 <form action="#" method="post" autocomplete="off">
 <div id="carac_nuevo" class="mod">
-<div class="agre_ca" style="background-color: white;">
-<span onclick="cerrar_insertar_carac()" class="cerrar">&times;</span>
-<br>
+<fieldset class="agre_ca">
+<span onclick="insertar_carac_cerrar()" class="cerrar">&times;</span>
+<legend class="titulo">Descripcion del caracteristica</legend>
 <br>
 
-<fieldset style="height: 70px; width: 95%; float: left;">
-<legend >Descripcion del caracteristica</legend>
-<input type="text" style="width: 95%;" id="a_caracter">
+<fieldset style="text-align: center; width: 100px;">
+<legend>Cantidad</legend>
+<input type="text" style="width:80%;">
 </fieldset>
 
+<fieldset style="text-align: center; width: 360px;">
+<legend>Caracteristica</legend>
+<input type="text" style="width:80%;">
+</fieldset>
 
-
-
-<button class="confirma" type="button" onclick="confirmacion_carac()">Agregar</button>
-
-<input type="text" style="display: none;">
-
-
-
+<button class="confirma" type="button" onclick="insertar_carac_cerrar()">Agregar</button>
 
 </div>
-</div>
+</fieldset>
 </form>
 </nav>
 
