@@ -1,8 +1,6 @@
-<nav>
-<form action="#" method="post" autocomplete="off">
-<div id="carac_nuevo" class="mod">
+<div id="caracteristica" class="mod">
 <fieldset class="agre_ca">
-<span onclick="insertar_carac_cerrar()" class="cerrar">&times;</span>
+<span onclick="cerrar_caracteristica_villa()" class="cerrar">&times;</span>
 <legend class="titulo">Descripcion del caracteristica</legend>
 <br>
 
@@ -16,10 +14,9 @@
 <input type="text" style="width:80%;">
 </fieldset>
 
-<button class="confirma" type="button" onclick="insertar_carac_cerrar()">Agregar</button>
+<button class="confirma" type="button" onclick="cerrar_caracteristica_villa()">Agregar</button>
 
-</div>
 </fieldset>
-</form>
-</nav>
+</div>
+
 

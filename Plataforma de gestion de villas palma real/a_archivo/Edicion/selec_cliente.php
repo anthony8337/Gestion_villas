@@ -10,6 +10,11 @@
     include "Tablas/tabla_cliente.php";
     ?>
 
+<br>
+    <div style="text-align: center;">
+    <button class="can" name="botones" type="button" onclick="cerrar_selec_cliente()" style="float: none;">Cancelar</button>
+    </div>
+
 </fieldset>   
 </div>
 </form>

@@ -47,6 +47,10 @@ function cerrar_selec_cliente()
 function inser_cliente()
 {
     document.getElementById('cliente_insertar').style.display = 'flex';
+    document.getElementById('div_insertar').style.display = 'block';
+    document.getElementById('div_modificar').style.display = 'none';
+    document.getElementById('div_insertar_asig').style.display = 'block';
+    document.getElementById('div_modificar_asig').style.display = 'none';
 }
 
 function cerrar_inser_cliente()
@@ -57,11 +61,14 @@ function cerrar_inser_cliente()
 function insert_villa()
 {
     document.getElementById('villa_insertar').style.display = 'flex';
+    document.getElementById('div_regis_villa').style.display = 'block';
+    document.getElementById('div_modificar_villa').style.display = 'none';
 }
 
 function insert_villa_cerrar()
 {
     document.getElementById('villa_insertar').style.display = 'none';
+
 }
 
 //asignar
@@ -84,4 +91,72 @@ function edi_s_villa()
 function edi_s_villa_cerrar()
 {
     document.getElementById('elegir_villa').style.display = 'none';
+}
+
+//caracteristicas
+
+function agre_carac()
+{
+    document.getElementById('caracteristica').style.display = 'flex';
+}
+
+function cerrar_caracteristica_villa()
+{
+    document.getElementById('caracteristica').style.display = 'none';
+}
+
+//caracteristicas
+
+function modificar_cliente()
+{
+    document.getElementById('cliente_insertar').style.display = 'flex';
+    document.getElementById('div_insertar').style.display = 'none';
+    document.getElementById('div_modificar').style.display = 'block';
+    document.getElementById('div_insertar_asig').style.display = 'none';
+    document.getElementById('div_modificar_asig').style.display = 'block';
+}
+
+function modificar_villa()
+{
+    document.getElementById('villa_insertar').style.display = 'flex';
+    document.getElementById('div_regis_villa').style.display = 'none';
+    document.getElementById('div_modificar_villa').style.display = 'block';
+}
+
+
+//suspencion
+
+function seleccion_sus()
+{
+    document.getElementById('sele_sus').style.display = 'flex';  
+}
+
+function seleccion_sus_cerrar()
+{
+    document.getElementById('sele_sus').style.display = 'none';  
+}
+
+
+//seleccionar suspencion de cliente
+
+function seleccion_sus_cli()
+{
+    document.getElementById('sele_cli_sus').style.display = 'flex';  
+}
+
+function seleccion_sus_cli_cerrar()
+{
+    document.getElementById('sele_cli_sus').style.display = 'none';  
+}
+
+//seleccionar suspencion de villa
+
+function seleccion_sus_vi()
+{
+    document.getElementById('sele_vi_sus').style.display = 'flex';  
+}
+
+function seleccion_sus_vi_cerrar()
+{
+    document.getElementById('sele_vi_sus').style.display = 'none';  
 }

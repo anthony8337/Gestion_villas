@@ -96,17 +96,27 @@
 
 
 
-
-
+<div id="div_insertar_asig">
 <table class="fondo_emergente">
     <tr>
         <td style="text-align: center;">
-        <button class="con" type="button" style="float: inline-start;" onclick="confirmar()">Confirmar</button>
-        <button class="can" type="button" onclick="cliente_cerrar(),cliente_villa_asig_cerrar()">Cancelar</button>
+        <button class="con" type="button" style="float: inline-start;" onclick="cerrar_inser_cliente(),asig_villa_cerrar()">Confirmar</button>
+        <button class="can" type="button" onclick="cerrar_inser_cliente(),asig_villa_cerrar()">Cancelar</button>
         </td>
     </tr>
 </table>
+</div>
 
+<div id="div_modificar_asig">
+<table class="fondo_emergente">
+    <tr>
+        <td style="text-align: center;">
+        <button class="con" type="button" style="float: inline-start;" onclick="cerrar_inser_cliente(),asig_villa_cerrar()">Confirmar modificacion</button>
+        <button class="can" type="button" onclick="cerrar_inser_cliente(),asig_villa_cerrar()">Cancelar</button>
+        </td>
+    </tr>
+</table>
+</div>
 
 </fieldset>
 </div>

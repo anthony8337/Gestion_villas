@@ -9,7 +9,7 @@
 
     <br>
             <fieldset style="float: inline-start; text-align: center; float: left; margin-right: 60px;" class="f_boton" 
-            onclick="selec_cliente()">
+            onclick="selec_cliente(),cerrar_m_Seleccion()">
             <img class="im_ico" src="imagenes/cliente.png" width="50px" height="50px">
             <br>
             <label>Modificar Cliente</label>
@@ -17,7 +17,7 @@
             </td>
 
             <fieldset style="float: inline-end; text-align: center; float: left;" class="f_boton"
-             onclick="selec_villa()">
+             onclick="selec_villa(),cerrar_m_Seleccion()">
             <img class="im_ico" src="imagenes/casa.png" width="50px" height="50px">
             <br>
             <label>Modificar Villa</label>

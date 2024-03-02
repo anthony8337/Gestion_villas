@@ -73,7 +73,8 @@
     </table>
 
 
-<table class="fondo_emergente">
+    <div id="div_insertar">
+    <table class="fondo_emergente">
     <tr>
         <td style="text-align: center;">
         <button class="registrar" name="botones" type="button" onclick="asig_villa()">Asignar villa</button>
@@ -81,6 +82,20 @@
         </td>
     </tr>
 </table>
+</div>
+
+<div id="div_modificar">
+    <table class="fondo_emergente">
+    <tr>
+        <td style="text-align: center;">
+        <button class="registrar" name="botones" type="button" onclick="asig_villa()">Confirmar edicion</button>
+        <button class="registrar" name="botones" type="button" onclick="asig_villa()">Modificar villa asignada</button>
+        <button class="can" name="botones" type="button" onclick="cerrar_inser_cliente(),cerrar_selec_cliente()">Cancelar</button>
+        </td>
+    </tr>
+</table>
+</div>
+
 </fieldset>
 </div>
 </form>

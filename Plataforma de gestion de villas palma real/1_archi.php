@@ -23,7 +23,7 @@ include "1_Raiz/cabezal.php";
     <ul>
         <li><a href="#" onclick="abrir_Seleccion()">Nuevo</a></li>
         <li><a href="#" onclick="abrir_m_Seleccion()">Editar</a></li>
-        <li><a href="#" onclick="abrir_mov()">Suspender</a></li>
+        <li><a href="#" onclick="seleccion_sus()">Suspender</a></li>
      </ul>
 
 
@@ -35,9 +35,9 @@ include "1_Raiz/cabezal.php";
 
 
 <?php
-//Tabla principal y busqueda
  include "a_archivo/completar_archivo.php";
 ?>
+
 
 
 <script src="a_archivo\mostar.js"></script>

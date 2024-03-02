@@ -3,7 +3,7 @@
     <div id="villa_insertar" class="mod">
     <fieldset class="villa_nueva">
     <span onclick="insert_villa_cerrar()" class="cerrar">&times;</span>
-    <legend class="titulo" id="lg_titulo"></legend>
+    <legend class="titulo">Ingresar datos para nueva villa</legend>
 
     <br>
     <fieldset class="grupos_inser_villa">
@@ -102,7 +102,7 @@
     <fieldset class="grupos_inser_villa">
     <fieldset style="text-align: center; width: 44.5%; float: left;">
     <legend>Caracteristicas</legend>
-    <button type="button" onclick="insertar_carac()" class="boton_agre_ca">Agregar</button>
+    <button type="button" class="boton_agre_ca" onclick="agre_carac()">Agregar</button>
     <div class="tabla_principal" style="margin-top: 10px; width: 98%; height: 230px; overflow: auto;">
                 <table>
                     <tr>
@@ -143,8 +143,16 @@
         <tr>
             <td style="text-align: center;">
 
-    <button type="button" class="registrar" style="float:none;" onclick="cerrar_insertar_villa()">Registrar</button>
-    <button type="button" class="can" style="float:none;" onclick="insertar_villa_cerrar()">Cancelar</button>
+
+    <div id="div_regis_villa">
+    <button type="button" class="registrar" style="float:none;" onclick="insert_villa_cerrar()">Registrar</button>
+    <button type="button" class="can" style="float:none;" onclick="insert_villa_cerrar()">Cancelar</button>
+    </div>
+
+    <div id="div_modificar_villa">
+    <button type="button" class="registrar" style="float:none;" onclick="insert_villa_cerrar()">Confirmar edicion</button>
+    <button type="button" class="can" style="float:none;" onclick="insert_villa_cerrar(),cerrar_selec_villa()">Cancelar</button>
+    </div>
 
     </fieldset>
     </div>

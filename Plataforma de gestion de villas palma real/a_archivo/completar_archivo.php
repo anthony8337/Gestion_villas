@@ -1,3 +1,6 @@
+
+
+
 <!--Modificar-->
 
 <?php
@@ -30,7 +33,26 @@ include "a_archivo/Insertar/asig_villa.php";
 include "a_archivo/Insertar/edi_s_cliente.php";
 ?>
 
+<!--suspender V-->
+<?php
+include "a_archivo/Suspender/seleccion_sus.php";
+?>
+
+<?php
+include "a_archivo/Suspender/selec_cliente_sus.php";
+?>
+
+<?php
+include "a_archivo/Suspender/selec_villa_sus.php";
+?>
+
+
+<!--suspender A-->
 <?php
 include "a_archivo/Insertar/insertar_villa.php";
+?>
+
+<?php
+include "a_archivo/Insertar/cara_agre.php";
 ?>
 

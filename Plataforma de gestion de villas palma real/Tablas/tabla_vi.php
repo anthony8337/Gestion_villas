@@ -1,6 +1,5 @@
 <div class="grupo_busqueda">
-<label class="lb_busca">Buscar Villas:</label>
-<input type="text" id="bus_v" name="bus_v">
+<input type="text" id="bus_v" name="bus_v" placeholder="Buscar codigo de villa">
 </div>
 
 <div class="cuerpo_cuadros">
@@ -18,8 +17,6 @@ echo"
 <th>",'Modelo de villa',"</th>
 <th>",'Tamaño de lote',"</th>
 <th>",'Area de contruccion',"</th>
-<th>",'Costo de venta',"</th>
-<th>",'Costo de renta',"</th>
 </tr>";
 $i = 0;
 $tipo;
@@ -41,15 +38,13 @@ while($i < count($letra))
         }
 
         echo "
-        <tr class='contenido' onclick='mostrar_editar_villa()'>
+        <tr class='contenido' onclick='modificar_villa()'>
         <td>",$letra[$i],'-',$j,"</td>
         <td>21222112</td>
         <td>",$estado,"</td>
         <td>",$tipo,"</td>
         <td>200</td>
         <td>150</td>
-        <td>$125,000.00</td>
-        <td>$100.00</td>
         </tr>
         ";
     }
