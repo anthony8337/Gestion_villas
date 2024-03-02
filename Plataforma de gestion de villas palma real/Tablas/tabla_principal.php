@@ -48,7 +48,7 @@ for($j = 1; $j <= 12; $j++)
     echo "
     <tr class='contenido'>
     <td>",$letra[$i],"-",$j,"<label style='display: none;'>.</label></td>
-    <td>45628",$j,"</td>
+    <td>",rand(10000000,99999999),"</td>
     <td>",$nombre[rand(0,count($nombre)-1)]," ",$Snombre[rand(0,count($Snombre)-1)]," ",
     $apellido[rand(0,count($apellido)-1)]," ",$sapellido[rand(0,count($sapellido)-1)],"</td>
     <td>0101-",rand(1950,2000),"-",rand(10000,50000),"</td>

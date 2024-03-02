@@ -12,7 +12,7 @@
 
 <br>
     <div style="text-align: center;">
-    <button class="can" name="botones" type="button" onclick="seleccion_sus_cli_cerrar()" style="float: none;">Cancelar</button>
+    <button class="can" name="botones" type="button" onclick="seleccion_sus_cli_cerrar(),seleccion_sus_cerrar()" style="float: none;">Cancelar</button>
     </div>
 
 </fieldset>   

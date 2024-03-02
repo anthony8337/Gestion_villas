@@ -46,7 +46,17 @@ include "a_archivo/Suspender/selec_cliente_sus.php";
 include "a_archivo/Suspender/selec_villa_sus.php";
 ?>
 
+<?php
+include "a_archivo/Suspender/confirmar_sus_cli.php";
+?>
 
+<?php
+include "a_archivo/Suspender/confirmar_sus_vi.php";
+?>
+
+<?php
+include "a_archivo/Suspender/confirmar_sus_vi.php";
+?>
 <!--suspender A-->
 <?php
 include "a_archivo/Insertar/insertar_villa.php";

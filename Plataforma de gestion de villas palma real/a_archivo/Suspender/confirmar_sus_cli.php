@@ -2,12 +2,12 @@
     <form action="#" method="post" autocomplete="off">
 
     
-    <div id="confi_sus_cliente" class="mod">
+    <div id="confi_cli_sus" class="mod">
     <fieldset class="mod_confirmacion">
         <legend class="titulo">Deseas eliminar el siguiente cliente</legend>
     
         <div style="margin-top: 25px; height: 65%;">
-        <table class="confirmado">
+        <table style="height: 100%;">
             <tr>
                 <td ><label style="font-size: 18px;">Nombre: </label></td>
                 <td><label style="font-size: 18px;"> Anthony Clemente Oliva Murillo</label></td>
@@ -35,10 +35,11 @@
         </table>
         </div>
 
-    
+    <div style="text-align: center;">
     <button class="eje_confirma" type="button" style="margin-top: 20px;" onclick="suspencion_exitosa_cliente()">Si</button>
-    <button type="button" style="margin-top: 20px;" onclick="cerrar_confirmar_suspencion_cliente()">No</button>
-    </div>
+    <button type="button" style="margin-top: 20px;" onclick="confirma_sus_cli_cerrar()">No</button>
+    </div>    
+</div>
 
     </fieldset>
 </div>   

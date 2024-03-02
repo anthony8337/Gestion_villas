@@ -40,7 +40,7 @@ while($i < count($letra))
         echo "
         <tr class='contenido' onclick='modificar_villa()'>
         <td>",$letra[$i],'-',$j,"</td>
-        <td>21222112</td>
+        <td>",rand(10000000,99999999),"</td>
         <td>",$estado,"</td>
         <td>",$tipo,"</td>
         <td>200</td>

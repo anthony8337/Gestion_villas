@@ -160,3 +160,27 @@ function seleccion_sus_vi_cerrar()
 {
     document.getElementById('sele_vi_sus').style.display = 'none';  
 }
+
+//confirmar suspencion de cliente
+
+function confirma_sus_cli()
+{
+    document.getElementById('confi_cli_sus').style.display = 'flex';  
+}
+
+function confirma_sus_cli_cerrar()
+{
+    document.getElementById('confi_cli_sus').style.display = 'none';  
+}
+
+//confirmar suspencion de cliente
+
+function confirma_sus_vi()
+{
+    document.getElementById('confi_vi_sus').style.display = 'flex';  
+}
+
+function confirma_sus_vi_cerrar()
+{
+    document.getElementById('confi_vi_sus').style.display = 'none';  
+}

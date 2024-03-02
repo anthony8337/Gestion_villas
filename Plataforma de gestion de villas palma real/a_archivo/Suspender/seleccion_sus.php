@@ -8,14 +8,14 @@
     <br>
 
             <fieldset style="float: inline-start; text-align: center; float: left; margin-right: 60px;" class="f_boton" 
-            onclick="seleccion_sus_cli()">
+            onclick="seleccion_sus_cli(),seleccion_sus_cerrar()">
             <img class="im_ico" src="imagenes/cliente.png" width="50px" height="50px">
             <br>
             <label>Suspender Cliente</label>
             </fieldset>
             
             <fieldset style="float: inline-end; text-align: center; float: left;" class="f_boton" 
-            onclick="seleccion_sus_vi()">
+            onclick="seleccion_sus_vi(),seleccion_sus_cerrar()">
             <img class="im_ico" src="imagenes/casa.png" width="50px" height="50px">
             <br>
             <label>Suspender Villa</label>
