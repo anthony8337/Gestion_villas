@@ -1,0 +1,53 @@
+.boton_inicio,.boton_perfil,.boton_usuario,.boton_confi
+{
+    border-end-end-radius: 0px;
+    border-end-start-radius: 0px;
+    border: 1px solid grey;
+    background-color: rgb(230, 230, 230);
+}
+
+.boton_inicio:hover,.boton_perfil:hover,.boton_usuario:hover,.boton_confi:hover
+{
+color: black;
+background-color: rgb(230, 230, 230);;
+}
+
+.centro_subtitulo
+{
+font-family: lato,'Courier New', Courier, monospace;
+font-size: 25px;
+text-align: center;
+padding: 0px;
+}
+
+.alinear_titulo td
+{
+    text-align: end;
+}
+
+.boto_agre
+{
+    height: 60px;
+}
+
+.ajus_imajen_principal
+{
+position: absolute;
+top: 55%;
+left: 50%;
+transform: translate(-50%,-50%);
+
+    width: 500px;
+    height: 500px;
+
+    opacity: .5;
+}
+
+.mod_agre_usuaro
+{
+    margin-top: 25px;
+    width: 32%; 
+    height: 520px;
+    border-radius: 10px;
+    float: inline-start;
+}

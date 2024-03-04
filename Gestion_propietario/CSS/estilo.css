@@ -62,8 +62,9 @@ overflow: auto;
 font-family: lato,'Courier New', Courier, monospace;
 font-size: 30px;
 text-align: center;
-
 }
+
+
 
 .menu_2
 {
@@ -116,6 +117,7 @@ button
     padding: 15px;
     border: 1px solid rgb(185, 185, 185);
     border-radius: 10px;
+    background-color: white;
 }
 
 .registrar
@@ -480,6 +482,18 @@ td
 
 }
 
+#tab_vi tr:nth-child(even) td ,#tabla tr:nth-child(even) td,#tabla_cliente tr:nth-child(even) td
+{
+    background-color: rgb(202, 201, 201);
+
+}
+
+#tab_vi tr:nth-child(even):hover td ,#tabla tr:nth-child(even):hover td,#tabla_cliente tr:nth-child(even):hover td
+{
+background-color: rgb(255, 183, 50); 
+}
+
+
 .td1
 {
     background-color: white;
@@ -489,6 +503,7 @@ td
 {
     background-color: rgb(206, 205, 205);
 }
+
 
 .contenido:hover
 {
@@ -928,10 +943,12 @@ legend
     float: left;
 }
 
+.muestra tr:nth-child(even) td {
+    background-color: rgb(255, 255, 255);
+}
 
-.b_t_villa tr td
-{
-    border: 1px solid chocolate;
+.muestra tr:nth-child(even):hover td {
+    background-color: rgb(255, 183, 50); 
 }
 
 .b_t_villa tr td:hover

@@ -4,6 +4,7 @@
 
 <div class="cuerpo_cuadros">
 <table id='tabla_cliente'>
+
 <?php
 
 include "Tablas/datos_random.php";
@@ -38,7 +39,7 @@ while($i < count($letra))
         }
 
         echo "
-        <tr class='contenido' onclick='modificar_cliente()'>
+        <tr  class='contenido' onclick='modificar_cliente()'>
         <td>",$letra[$i],'-',$j,"</td>
         <td>",$nombre[rand(0,count($nombre)-1)]," ",$Snombre[rand(0,count($Snombre)-1)],
         $apellido[rand(0,count($apellido)-1)],$sapellido[rand(0,count($sapellido)-1)],"</td>

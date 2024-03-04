@@ -1,0 +1,86 @@
+.body
+{ 
+background: linear-gradient(to right,rgb(255, 249, 161), rgb(207, 141, 94))
+}
+
+.panel
+{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+
+width: 500px;
+height: 350px;
+border: 2px solid chocolate;
+border-radius: 20px;
+background: white;
+}
+
+.panel_contra
+{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+
+width: 500px;
+height: 350px;
+border: 2px solid chocolate;
+border-radius: 20px;
+background: white;
+
+display: none;
+}
+
+#usuario
+{
+    margin: 10px;
+    width: 300px;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom: 1px;
+    font-size: 18px;
+    text-align: start;
+}
+
+#clave
+{
+    margin: 10px;
+    width: 300px;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom: 2px;
+    font-size: 18px;
+    text-align: start;
+
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    outline: none;
+}
+
+
+.centrar
+{
+border: 1px solid black;
+height: 1px
+}
+
+.log_imagen
+{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+
+.ingresar
+{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%,-95%);
+    width: 150px;
+}

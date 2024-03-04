@@ -1,6 +1,6 @@
 function abrir_principal()
 {
-    window.location.href ='1_archivo.php';
+    window.location.href ='1_archi.php';
 }
 
 function salir_login()

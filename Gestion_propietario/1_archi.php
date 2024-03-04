@@ -11,12 +11,10 @@ include "1_Raiz/cabezal.php";
     <li><a href="2_edicion.php"><table><tr><td class="imagen"><img src="imagenes/6.png" class="imagen"></td><td class="te_menu2">Edición</td></tr></table></a></li>
     <li><a href="3_reportes.php"><table><tr><td class="imagen"><img src="imagenes/1.png" class="imagen"></td><td class="te_menu2">Reportes</td></tr></table></a></li>
     <li><a href="4_herramientas.php"><table><tr><td class="imagen"><img src="imagenes/3.png" class="imagen"></td><td class="te_menu2">Herramientas</td></tr></table></a></li>
-    <li><a href="#5">Salir</a></li>
-    <li><a href="login.php">Visualizar login</a></li>
-    <li><a href="pantalla_inicio.php">menu mi rey</Menu></a></li>
+    <li><a href="pantalla_inicio.php">Atras</a></li>
     </ul>
 </nav>
-<h1 class="centro">Registro de villas Palma real </h1>
+<h1 class="centro">Gestion del propietario de villa</h1>
 
 <nav class="menu">
 
