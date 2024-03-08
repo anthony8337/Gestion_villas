@@ -6,55 +6,80 @@
     <span onclick="cerrar_concepto()" class="cerrar">&times;</span>
     <br>
 
-    <div>
-        <button type="button" class="regis_accion" >Guardar</button>
-        <button type="button" class="regis_accion" >Cliente</button>
-        <button type="button" class="regis_accion" >Selección</button>
-        <button type="button" class="regis_accion" >Limpiar</button>
-        <button type="button" class="regis_accion" >Observacion</button>
+    <div style=" height: 48px;">
+        <button type="button" class="botones_multipagos">Cliente</button>
+        <button type="button" class="botones_multipagos">G. cuentas</button>
+        <button type="button" class="botones_multipagos">Selección</button>
+        <button type="button" class="botones_multipagos">Limpiar</button>
+        <button type="button" class="botones_multipagos">Observacion</button>
+        <button type="button" class="botones_multipagos">Guardar</button>
+
+
+        <fieldset class="peque_fecha">
+
+            <legend>Saldo</legend>
+            <table>
+                <tr>
+                    <td>
+                    <label style="font-weight: bold;">$16,000.00</label>
+                    </td>
+                </tr>
+            </table>
+            
+        </fieldset>
+
+
+    </div>
+
+    <div style=" height: 110px; margin-top: 10px;">
+
+        <fieldset style="width:79%; height: 80px; text-align: center;">
+        <legend>Cliente: A-1</legend>
+        <table class="tabla_movi" style="height: 100%;">
+            <tr>
+                <td><label>Nombre:</label></td>
+                <td><label>Anthony Clemente Oliva Murillo</label></td>
+            </tr>
+            <tr>
+                <td><label>Numero:</label></td>
+                <td><label>94816463</label></td>
+            </tr>
+        </table>
+
+        
+
+
+    </fieldset>
+
+   
 
     <fieldset class="peque">
-        <legend>Saldo</legend>
-        <label class="ver_saldo" style="width: 200px;"></label>
-    </fieldset>
-    </div>
-
-    <br>
-    <div>
-        <fieldset style="width:54.5%; height: 80px;">
-        <legend>Cliente: A-1</legend>
-
-        <label>Nombre: Anthony Clemente Oliva Murillo</label>
-        <br>
-        <label>Numero: 94816463</label>
-        <br>
-        <label>Estadia: Propietario</label>
-
-    </fieldset>
-
-    <fieldset style="height: 80px; width: 20%; padding-right: 0px; padding-left: 0px; text-align: center;">
-    <legend style="margin-left: -20%;">Metodo de pago</legend>
-
-<select style=" width: 90%; margin-top: 10px;">
-
-
-
-</select>
-
-</fieldset>
-
-    <fieldset class="peque_fecha">
         <legend>Documento</legend>
-        <input type="date" style="width: 180px;">
-        <label>Recibo: R3301</label>
+
+        <table>
+            <tr>
+                <td>
+                    <input type="date" style="width: 80%;">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Recibo: R3301</label>
+                </td>
+            </tr>
+        </table>
 
     </fieldset>
+
+
     </div>
+
 
     
 
-    <div class="tabla_principal" style="width: 100%; height: 150px; overflow: auto; float: left; margin-bottom: 10px;">
-                <table>
+    <div class="tabla_principal" style="width: 99.5%; height: 150px; overflow: auto; float: left; margin-bottom: 10px;">
+                <table id="tabla_multi">
                     <tr>
                     <th>Concepto</th>    
                     <th>Documento</th>
@@ -78,20 +103,22 @@
                 </table>
                 </div>
                 <br>
-            <fieldset style="width: 69%; height: 30%; padding: 0px; border: 1px solid black; border-radius: 0px;">
-            <table>
+            <fieldset style=" text-align: center; width: 30%; height: 30%; padding: 0px;"> 
+        <legend>Concepto de pago</legend>
+    
+            
+            <table id="descrip_multi">
                     <tr>
-                    <th>Descripción</th>    
-                    <th>Pago</th>  
+                    <th>Descripción</th>
                     </tr>
                     
                     <tr>
-                    <td>Pago anticipado</td>    
-                    <td>250</td>
+                    <td>Anticipo</td>
                     </tr>
 
                 </table>
             </fieldset>
+
 
             <fieldset style="width: 29.5%; height: 30%; border-radius: 0px; border: 0px solid black; padding: 0px; float: inline-end;">
                 
@@ -117,7 +144,7 @@
                     </tr>
                 </table>
                 </fieldset>
-
+    </fieldset>
     </div>
 </form>
 </nav>

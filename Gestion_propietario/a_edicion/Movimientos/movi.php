@@ -22,7 +22,7 @@
                 </td>
             </tr>
         </table>
-    </fieldset>
+        </fieldset>
     </div>
 
     <br>

@@ -14,14 +14,14 @@ include "1_Raiz/cabezal.php";
     <li><a href="pantalla_inicio.php">Atras</a></li>
     </ul>
 </nav>
-<h1 class="centro">Gestion del propietario de villa</h1>
+<h1 class="centro">Gestion de propietario</h1>
+<h2 class="centrados">Villas palma real</h2>
 
 <nav class="menu">
 
     <ul>
         <li><a href="#" onclick="abrir_moneda()">Monedas</a></li>
         <li><a href="#" onclick="abrir_co()">Conceptos</a></li>
-        <li><a href="#" onclick="abrir_mov()">Movimientos</a></li>
         <li><a href="#" onclick="abrir_ges()"> G. Cuentas</a></li>
         <li><a href="#" onclick="abrir_concepto()">Multipagos</a></li>
         <li><a href="#" onclick="abrir_rei()">Reimpresion</a></li>

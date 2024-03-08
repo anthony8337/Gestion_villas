@@ -62,6 +62,15 @@ overflow: auto;
 font-family: lato,'Courier New', Courier, monospace;
 font-size: 30px;
 text-align: center;
+
+}
+
+.centrados
+{
+margin-top: -20px;
+font-family: lato,'Courier New', Courier, monospace;
+font-size: 20px;
+text-align: center;
 }
 
 
@@ -171,15 +180,8 @@ button
 
 .regis_accion_movi
 {
-    width: 80px;
-    height: 80px;
-    border: 1px solid #585858;
-    background-color: #e9e9e9;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 12px;
-    text-align: center;
-    padding: 0px;
+    margin-right: 10px;
+    width: 100px;
 }
 
 .confirma
@@ -215,8 +217,9 @@ button
 
 
 button:hover
-{background-color: #555;
-    color: yellow;
+{background-color: #c4c4c4;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
 }
 
 .btn_nueva_moneda
@@ -259,6 +262,7 @@ input[type="text"],input[type="date"],input[type="number"]
     border-bottom: 1px solid black;
     background-color: transparent;
     text-align: center;
+    font-size: 15px;
     
 }
 
@@ -482,13 +486,13 @@ td
 
 }
 
-#tab_vi tr:nth-child(even) td ,#tabla tr:nth-child(even) td,#tabla_cliente tr:nth-child(even) td
+#tab_vi tr:nth-child(even) td ,#tabla tr:nth-child(even) td,#tabla_cliente tr:nth-child(even) td,#tabla_multi tr:nth-child(even) td,#descrip_multi tr:nth-child(even) td
 {
     background-color: rgb(202, 201, 201);
 
 }
 
-#tab_vi tr:nth-child(even):hover td ,#tabla tr:nth-child(even):hover td,#tabla_cliente tr:nth-child(even):hover td
+#tab_vi tr:nth-child(even):hover td ,#tabla tr:nth-child(even):hover td,#tabla_cliente tr:nth-child(even):hover td,#tabla_multi tr:nth-child(even):hover td,#descrip_multi tr:nth-child(even):hover td
 {
 background-color: rgb(255, 183, 50); 
 }
@@ -598,7 +602,7 @@ background-color: rgb(255, 183, 50);
     border-radius: 10px;
     padding: 10px;
     width: 95%;
-    height: 600px;
+    height: 550px;
 }
 
 .mod_reimprimir
@@ -647,8 +651,8 @@ background-color: rgb(255, 183, 50);
     border: 2px solid #7c7c7c;
     border-radius: 10px;
     padding: 10px;
-    width: 800px;
-    height: 380px;
+    width: 80%;
+    height: 500px;
 }
 
 .txt_d
@@ -850,8 +854,21 @@ fieldset
     border: 2px solid #7c7c7c;
     border-radius: 10px;
     width: 200px;
-    height: 60px;
     float: inline-end;
+    text-align: center;
+    padding: 0px;
+}
+
+.peque2
+{
+    background-color: rgb(228, 228, 228);
+    border: 2px solid #7c7c7c;
+    border-radius: 10px;
+    width: 410px;
+    height: 99px;
+    float: inline-end;
+    text-align: center;
+    padding:0px;
 }
 
 .peque_fecha
@@ -860,8 +877,11 @@ fieldset
     border: 2px solid #7c7c7c;
     border-radius: 10px;
     width: 200px;
-    height: 80px;
+    float: inline-end;
+    text-align: center;
+    padding: 0px;
 }
+
 
 .interior
 {
@@ -893,10 +913,9 @@ legend
 
 .ver_saldo
 {   font-family: Arial, Helvetica, sans-serif;
-    width:100%;
     border-bottom: 2px solid black;
-    display: inline-block;
     margin-top: 50px;
+    display: inline-block;
 }
 
 #cbx_mt_pago
@@ -1144,4 +1163,20 @@ text-align: center;
 
 width: 50px;
 height: 50px;
+}
+
+.botones_multipagos
+{
+    margin-right: 10px;
+    width: 100px;
+}
+
+.tabla_movi td
+{
+width: 50%;
+}
+
+.botones_generar
+{
+    margin-right: 10px;
 }
