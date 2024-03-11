@@ -2,41 +2,86 @@
 include "1_Raiz/cabezal.php";
 ?>
 
-<nav class ="cuerpo">
-<nav class="menu2">
-<button type="button" class="menu_2"> <img src="imagenes\7.png" width="32px" height="32px"> </button>
-    <ul> 
-    <li><table><tr><td class="t_l"><img class="logo" src="imagenes/logo principal.png" ></td></tr></table></li>
-    <li class="marcado"><a href="1_archivo.php"><table><tr><td class="imagen"><img src="imagenes/2.png" class="imagen"></td><td class="te_menu2">Archivo</td></tr></table></a></li>
-    <li><a href="2_edicion.php"><table><tr><td class="imagen"><img src="imagenes/6.png" class="imagen"></td><td class="te_menu2">Edición</td></tr></table></a></li>
-    <li><a href="3_reportes.php"><table><tr><td class="imagen"><img src="imagenes/1.png" class="imagen"></td><td class="te_menu2">Reportes</td></tr></table></a></li>
-    <li><a href="4_herramientas.php"><table><tr><td class="imagen"><img src="imagenes/3.png" class="imagen"></td><td class="te_menu2">Herramientas</td></tr></table></a></li>
-    <li><a href="pantalla_inicio.php">Atras</a></li>
+<nav class ="cuerpo" id="cuerpo" onload="archivo()">
+
+<nav id="m2" class="menu2">
+<ul>
+<button type="button" id="b_des" class="menu_2" onclick="accion_menu_lateral()"> <img src="imagenes\7.png" width="32px" height="32px"></button>
+    <li><table style="height: 150px; padding: 0px;"><tr><td class="t_l"><img id="logo" class="logo" src="imagenes/logo principal.png" ></td></tr></table></li>
+    <li id="bb1" ><a href="#" onclick="archivo()"><table class="tab_menu"><tr><td class="imagen"><img src="imagenes/2.png" class="imagen"></td><td id="a1" class="te_menu2">Archivo</td></tr></table></a></li>
+    <li><a id="bb2" href="#" onclick="adicion()"><table class="tab_menu"><tr><td class="imagen"><img src="imagenes/6.png" class="imagen"></td><td id="a2" class="te_menu2">Agregar</td></tr></table></a></li>
+    <li><a id="bb3" href="#" onclick="reporte()"><table class="tab_menu"><tr><td class="imagen"><img src="imagenes/1.png" class="imagen"></td><td id="a3" class="te_menu2">Reportes</td></tr></table></a></li>
+    <li><a id="bb4" href="#" onclick="herramenta()"><table class="tab_menu"><tr><td class="imagen"><img src="imagenes/3.png" class="imagen"></td><td id="a4" class="te_menu2">Herramientas</td></tr></table></a></li>
+    <li><a id="bb5" href="pantalla_inicio.php"><table class="tab_menu"><tr><td class="imagen"><img src="imagenes/8.png" class="imagen"></td><td id="a5" class="te_menu2">Atras</td></tr></table></a></li>
     </ul>
 </nav>
+
 <h1 class="centro">Gestion de propietario</h1>
 <h2 class="centrados">Villas palma real</h2>
 
-<nav class="menu">
+
+<nav id="menu_archi" class="menu">
 
     <ul>
         <li><a href="#" onclick="abrir_Seleccion()">Nuevo</a></li>
         <li><a href="#" onclick="abrir_m_Seleccion()">Editar</a></li>
         <li><a href="#" onclick="seleccion_sus()">Suspender</a></li>
+        <li><a href="#" onclick="">Ver villas</a></li>
+     </ul>
+</nav>
+
+<nav id="menu_edi" class="menu">
+
+    <ul>
+        <li><a href="#" onclick="abrir_moneda()">Monedas</a></li>
+        <li><a href="#" onclick="abrir_co()">Conceptos</a></li>
+        <li><a href="#" onclick="abrir_ges()"> G. Cuentas</a></li>
+        <li><a href="#" onclick="abrir_concepto()">Multipagos</a></li>
+        <li><a href="#" onclick="abrir_rei()">Reimpresion</a></li>
      </ul>
 
+</nav>
+
+<nav id="menu_repor" class="menu">
+<ul>
+    <li><a href="#" onclick="abrir_saldo()">Saldos</a></li>
+    <li><a href="">Estado de cuenta</a></li>
+    <li><a href="">Recuperaciones</a></li>
+    <li><a href="">Cobro de facturas</a></li>
+    <li><a href="">Docto. Cobrar</a></li>
+ </ul>
+
+</nav>
+
+
+<nav id="menu_her" class="menu">
+
+    <ul>
+        <li></li>
+    </ul>
+
+</nav>
 
 <?php
 //Tabla principal y busqueda
  include "Tablas/tabla_principal.php";
 ?>
 </nav>
-
+<?php
+ include "a_edicion/e_e_l.php";
+?>
 
 <?php
  include "a_archivo/completar_archivo.php";
 ?>
 
+</nav>
 
 
-<script src="a_archivo\mostar.js"></script>
+<script src="a_archivo/mostar.js"></script>
+
+<script src="menu_izquierdo.js"></script>
+
+<script src="a_reportes/Saldos/abrir_emergrnte.js"></script>
+
+<script src="accionar.js"></script>

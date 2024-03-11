@@ -17,7 +17,7 @@ include "1_Raiz/cabezal.php";
 <h1 class="centro">Gestion de propietario</h1>
 <h2 class="centrados">Villas palma real</h2>
 
-<nav class="menu">
+<nav id="menu_repor" class="menu">
 
     <ul>
         <li><a href="#" onclick="abrir_saldo()">Saldos</a></li>
@@ -26,6 +26,12 @@ include "1_Raiz/cabezal.php";
         <li><a href="">Cobro de facturas</a></li>
         <li><a href="">Docto. Cobrar</a></li>
      </ul>
+
+</nav>
+
+<nav id="menu_her" class="divicion">
+
+    <ul></ul>
 
 </nav>
 

@@ -17,13 +17,13 @@ include "1_Raiz/cabezal.php";
 <h1 class="centro">Gestion de propietario</h1>
 <h2 class="centrados">Villas palma real</h2>
 
-<nav class="divicion">
+<nav id="menu_her" class="divicion">
 
     <ul></ul>
 
 </nav>
 
-<div class="E_herramienta">
+<div id="menu_her" class="E_herramienta">
 
 <table class="tabla_herramienta">
     <tr>

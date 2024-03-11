@@ -81,7 +81,7 @@ text-align: center;
     width: 50px;
     height:50px;
     border-radius: 100%;
-    margin-left: 110px;
+    margin-left: 105px;
     margin-top: 10px;
     border: 0px;
     background-color: rgb(240, 157, 98);
@@ -351,6 +351,11 @@ padding: 0px;
 list-style-type: none;
 }
 
+.menu
+{
+    display: none;
+}
+
 .menu ul
 {
 background: linear-gradient(to left,#ffeb9c, rgb(240, 157, 98));
@@ -416,18 +421,14 @@ color: black;
     text-decoration: none;
   }
   
-  .menu2 a:hover {
-    background-color: #555; 
-    color: yellow;
-    border-left: 3px solid red;
-  }
+
 
   .menu2 ul li a
 {
 padding: 15px;
 display: block;
 text-decoration: none;
-border-bottom: 1px solid rgb(209, 133, 79);
+border-top: 1px solid rgb(209, 133, 79);
 }
 
 .imagen
@@ -436,10 +437,17 @@ border-bottom: 1px solid rgb(209, 133, 79);
     height: 32px;
 }
 
+.tab_menu
+{
+    height: 100%;
+}
+
 .te_menu2
 {
 text-align: start;
 padding-left: 10px;
+padding-top: 5%;
+display: inline-block;
 }
 
 /*cuadro marcado por mostrar ventana*/

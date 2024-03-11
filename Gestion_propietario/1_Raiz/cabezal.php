@@ -10,4 +10,4 @@
     <link rel="stylesheet" href="CSS/login_estilo.css">
     <link rel="stylesheet" href="CSS/principal.css">
 </head>
-<body>
+<body onload="minizar()">

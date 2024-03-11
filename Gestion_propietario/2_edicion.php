@@ -17,7 +17,7 @@ include "1_Raiz/cabezal.php";
 <h1 class="centro">Gestion de propietario</h1>
 <h2 class="centrados">Villas palma real</h2>
 
-<nav class="menu">
+<nav id="menu_edi" class="menu">
 
     <ul>
         <li><a href="#" onclick="abrir_moneda()">Monedas</a></li>
@@ -27,12 +27,13 @@ include "1_Raiz/cabezal.php";
         <li><a href="#" onclick="abrir_rei()">Reimpresion</a></li>
      </ul>
 
+ </nav>
 
 <?php
 //Tabla principal y busqueda
  include "Tablas/tabla_principal.php";
 ?>
-</nav>
+
 
 
 <?php
