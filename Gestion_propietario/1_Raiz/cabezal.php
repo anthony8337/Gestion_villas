@@ -9,5 +9,7 @@
     <link rel="stylesheet" href="CSS/estilo.css">
     <link rel="stylesheet" href="CSS/login_estilo.css">
     <link rel="stylesheet" href="CSS/principal.css">
+    <link rel="stylesheet" href="CSS/carga.css">
 </head>
-<body onload="minizar()">
+
+<body onload="reunion()">

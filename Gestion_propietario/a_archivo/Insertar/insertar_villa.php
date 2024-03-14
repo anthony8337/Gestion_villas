@@ -55,11 +55,11 @@
                     <legend>Tamaño del lote</legend>
                     <input type="number" id="medidas_lote" style="width: 80%;">
                     <br>
-                    <label id="metros_l"></label>
+                    <label id="metros_lote"></label>
                     <label> Mts²/</label>
-                    <label id="varas_l"></label>
+                    <label id="varas_lote"></label>
                     <label> Vr²/</label>
-                    <label id="pies_l"></label>
+                    <label id="pies_lote"></label>
                     <label> Ft²</label>
                     </fieldset>
 
@@ -82,7 +82,7 @@
                     <table class="fondo_emergente" style="height: 100%;">
                         <tr>
                             <td  style="width: 50%;">
-                            <label><input type="radio" name="v_tipo" id="v_tipo_1" value="Villa coracol">Villa coracol</label>
+                            <label><input type="radio" name="v_tipo" id="v_tipo_1" value="Villa coracol" checked>Villa coracol</label>
                             </td>
                             <td style="width: 50%;">
                             <label><input type="radio" name="v_tipo" id="v_tipo_2" value="Villa arrecife">Villa arrecife</label>
@@ -104,28 +104,13 @@
     <legend>Caracteristicas</legend>
     <button type="button" class="boton_agre_ca" onclick="agre_carac()">Agregar</button>
     <div class="tabla_principal" style="margin-top: 10px; width: 98%; height: 230px; overflow: auto;">
-                <table>
-                    <tr>
-                        <th style="width: 50px;">Cantidad</th>
-                        <th>Descripcion</th>
+                <table id="t_carac">
+                <tr>
+                        <th colspan="2">Descripcion</th>
                     </tr>
-                    <?php
-                    $j = 0;
-                    $tachar = ["Habitaciones","Comedor","Baños","Porche"];
 
-                    while($j < count($tachar))
-                    {
-                        echo"
-                        <tr class:'tabla_caracteristica'>
-                        <td style='text-align: center;'>
-                        2
-                        </td>
-                        <td><label class='espacio'> ",$tachar[$j],"</label></td>
-                        </tr>";
-                        $j++;
-                    }
-                    ?>
-
+                    <tbody>
+                    </tbody>
                 </table>
                 </div>
     </fieldset>
@@ -160,3 +145,5 @@
 </nav>
 
 <script src="a_archivo/Insertar/transcribir.js"></script>
+
+<script src="a_archivo/Insertar/agregar_celdas.js"></script>

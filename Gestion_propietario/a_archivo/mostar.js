@@ -105,6 +105,23 @@ function cerrar_caracteristica_villa()
     document.getElementById('caracteristica').style.display = 'none';
 }
 
+function cerrar_caracteristica_villa_a()
+{
+
+    var continuar = confirm("Caracteristica agregada con exito.\n¿Deseas continuar agregando?");
+
+    if(continuar)
+    {
+        
+    }
+    else
+    {
+        document.getElementById('caracteristica').style.display = 'none';
+    }
+
+    
+}
+
 //caracteristicas
 
 function modificar_cliente()

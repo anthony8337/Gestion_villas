@@ -4,54 +4,46 @@
 <legend class="titulo">Insertar nuevo usuario</legend>
 <span onclick="insertar_usuario_cerrar()" class="cerrar">&times;</span>
 
+<br>
 <table class="alinear_titulo" >
     
     <tr>
-    <td><label for="nombre">Usuario:</label></td>
-    <td style="text-align: center;"><input type="text" style="width: 80%;"></td>
-            </tr>
 
-            <tr>                
-                <td ><label for="nombre">Nombre completo:</label></td>
-                <td style="text-align: center;"><input type="text" style="width: 80%;"></td>
+    <td><label for="nombre">Nombre completo:</label></td>
+    <td><input type="text" style="width: 80%;"></td>
+    <td><label for="nombre">Usuario:</label></td>
+    <td><input type="text" style="width: 80%;"></td>
+            
+
              </tr>
 
             <tr>
                 <td><label for="edad">DNI:</label></td>
-                <td style="text-align: center;"><input type="text" style="width: 80%;"></td>
-            </tr>
+                <td ><input type="number" style="width: 80%;"></td>
 
-            <tr>
-                <td><label for="Fecha de nacimiento">Fecha de nacimiento:</label></td>
-                <td style="text-align: center;"><input type="text" style="width: 80%;"></td>
-            </tr>
-
-            <tr>
                 <td><label for="correo">Correo electrónico:</label></td>
-                <td style="text-align: center;"><input type="text" style="width: 80%;"></td>
+                <td><input type="text" style="width: 80%;"></td>
             </tr>
 
-            <tr>
-                <td><label for="ciudad">Residencia:</label></td>
-                <td style="text-align: center;"><input type="text" style="width: 80%;"></td>
-            </tr>
+
 
             <tr>
                 <td><label for="acceso">Tipo de Acceso:</label></td>
-                <td style="text-align: center;"><input type="text" style="width: 80%;"></td>
-            </tr>
-
-            <tr>
-                <td><label for="acceso">Contraseña:</label></td>
-                <td style="text-align: center;"><input type="text" style="width: 80%;"></td>
-            </tr>
-
-            <tr>
-                <td colspan="2" style="text-align: center;">
-                <button type="button" onclick="insertar_usuario_cerrar()">Insertar nuevo</button>
+                <td>
+                    <select style="width: 80%;">
+                    <option>Usuario</option>
+                    <option>Tecnico</option>
+                    </select>
                 </td>
+
+                <td><label for="acceso">Contraseña:</label></td>
+                <td><input type="text" style="width: 80%;"></td>
             </tr>
         </table>
+
+        <br>
+
+        <button type="button" onclick="insertar_usuario_cerrar()">Insertar nuevo</button>
 
 </fieldset>
 </div>

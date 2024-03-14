@@ -1,52 +1,37 @@
-function inicio()
+//Botones
+var bt_inicio = document.getElementById('b_p1');
+var bt_perfiles = document.getElementById('b_p2');
+var bt_ajustes = document.getElementById('b_p3');
+
+//paneles
+var pan_inicio = document.getElementById('pp1');
+var pan_perfiles = document.getElementById('pp2');
+var pan_ajustes = document.getElementById('pp3');
+
+pan_inicio.style.display = 'block';
+
+function inicio_principal()
 {
-document.getElementById('p1').style.display = 'block';
-document.getElementById('p2').style.display = 'none';
-document.getElementById('p3').style.display = 'none';
-document.getElementById('p4').style.display = 'none';
 
-document.getElementById('b_1').style.backgroundColor = 'rgb(170, 170, 170)';
-document.getElementById('b_2').style.backgroundColor = 'rgb(230, 230, 230)';
-document.getElementById('b_3').style.backgroundColor = 'rgb(230, 230, 230)';
-document.getElementById('b_4').style.backgroundColor = 'rgb(230, 230, 230)';
-
+    pan_inicio.style.display = 'block';
+    pan_perfiles.style.display = 'none';
+    pan_ajustes.style.display = 'none';
 }
 
-function perfil()
+function perfiles_principal()
 {
-document.getElementById('p1').style.display = 'none';
-document.getElementById('p2').style.display = 'block';
-document.getElementById('p3').style.display = 'none';
-document.getElementById('p4').style.display = 'none';
 
-document.getElementById('b_1').style.backgroundColor = 'rgb(230, 230, 230)';
-document.getElementById('b_2').style.backgroundColor = 'rgb(170, 170, 170)';
-document.getElementById('b_3').style.backgroundColor = 'rgb(230, 230, 230)';
-document.getElementById('b_4').style.backgroundColor = 'rgb(230, 230, 230)';
+
+    pan_inicio.style.display = 'none';
+    pan_perfiles.style.display = 'block';
+    pan_ajustes.style.display = 'none';
 }
 
-function a_usuario()
+function ajustes_principal()
 {
-document.getElementById('p1').style.display = 'none';
-document.getElementById('p2').style.display = 'none';
-document.getElementById('p3').style.display = 'block';
-document.getElementById('p4').style.display = 'none';
 
-document.getElementById('b_1').style.backgroundColor = 'rgb(230, 230, 230)';
-document.getElementById('b_2').style.backgroundColor = 'rgb(230, 230, 230)';
-document.getElementById('b_3').style.backgroundColor = 'rgb(170, 170, 170)';
-document.getElementById('b_4').style.backgroundColor = 'rgb(230, 230, 230)';
-}
 
-function confi()
-{
-    document.getElementById('p1').style.display = 'none';
-    document.getElementById('p2').style.display = 'none';
-    document.getElementById('p3').style.display = 'none';
-    document.getElementById('p4').style.display = 'block';
-
-    document.getElementById('b_1').style.backgroundColor = 'rgb(230, 230, 230)';
-    document.getElementById('b_2').style.backgroundColor = 'rgb(230, 230, 230)';
-    document.getElementById('b_3').style.backgroundColor = 'rgb(230, 230, 230)';
-    document.getElementById('b_4').style.backgroundColor = 'rgb(170, 170, 170)';
+    pan_inicio.style.display = 'none';
+    pan_perfiles.style.display = 'none';
+    pan_ajustes.style.display = 'block';
 }

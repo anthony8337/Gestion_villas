@@ -494,13 +494,13 @@ td
 
 }
 
-#tab_vi tr:nth-child(even) td ,#tabla tr:nth-child(even) td,#tabla_cliente tr:nth-child(even) td,#tabla_multi tr:nth-child(even) td,#descrip_multi tr:nth-child(even) td
+#t_carac tr:nth-child(even) td ,#tab_vi tr:nth-child(even) td ,#tabla tr:nth-child(even) td,#tabla_cliente tr:nth-child(even) td,#tabla_multi tr:nth-child(even) td,#descrip_multi tr:nth-child(even) td
 {
     background-color: rgb(202, 201, 201);
 
 }
 
-#tab_vi tr:nth-child(even):hover td ,#tabla tr:nth-child(even):hover td,#tabla_cliente tr:nth-child(even):hover td,#tabla_multi tr:nth-child(even):hover td,#descrip_multi tr:nth-child(even):hover td
+#t_carac tr:nth-child(even):hover td ,#tab_vi tr:nth-child(even):hover td ,#tabla tr:nth-child(even):hover td,#tabla_cliente tr:nth-child(even):hover td,#tabla_multi tr:nth-child(even):hover td,#descrip_multi tr:nth-child(even):hover td
 {
 background-color: rgb(255, 183, 50); 
 }
@@ -545,7 +545,6 @@ background-color: rgb(255, 183, 50);
     display: none;
     justify-content: center;
     align-items: center;
-
 }
 
 .mod_contenido
@@ -757,6 +756,7 @@ background-color: rgb(255, 183, 50);
     padding: 10px;
     width: 520px;
     height: 200px;
+    text-align: center;
 }
 
 
@@ -1119,7 +1119,7 @@ text-align: left;
 
 html body
 {
-    background-color:rgb(228, 228, 228);
+    background-color:#e4e4e4;
     overflow: hidden;
     font-size: 16px;
 }

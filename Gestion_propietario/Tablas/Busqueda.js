@@ -92,3 +92,6 @@ function buscar_villa_suspender() {
     }
 }
 document.getElementById("bus_v_sus").addEventListener("keyup", buscar_villa_suspender);
+
+
+//principal
