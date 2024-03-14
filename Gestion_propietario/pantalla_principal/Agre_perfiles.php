@@ -1,7 +1,7 @@
 
 <div id="agre_perfil" class="mod">
 <fieldset class="mod_agre_usuaro">
-<legend class="titulo">Insertar nuevo usuario</legend>
+<legend id="per_t" class="titulo"></legend>
 <span onclick="insertar_usuario_cerrar()" class="cerrar">&times;</span>
 
 <br>
@@ -43,7 +43,16 @@
 
         <br>
 
-        <button type="button" onclick="insertar_usuario_cerrar()">Insertar nuevo</button>
+        
+
+        <div id="habi_inser_perfil">
+        <button  type="button" onclick="confirm_agregado(),insertar_usuario_cerrar()">Insertar nuevo</button>
+        </div>
+
+        <div id="habi_modi_perfil">
+        <button type="button" onclick="confrmar_modificacion(),insertar_usuario_cerrar()">Modificar</button>
+        <button style="margin-left: 100px;" type="button" onclick="supender_usuario(),insertar_usuario_cerrar()">Eliminar</button>
+        </div>
 
 </fieldset>
 </div>

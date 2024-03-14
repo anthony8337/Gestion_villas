@@ -27,41 +27,44 @@ for ($i=0; $i < count($nombre); $i++) {
     }
     
     echo"
-    <div class='formato_perfiles'>
-    <div class='contenidos'>
+    
 
-    <div class='confi_perfiles'>
-    <img src='imagenes/configuracion.png' width='50px' height='50px'>
-    </div>
+<div class='formato_perfiles'>
+<div class='contenidos'>
 
-    <div class='per_usuarios'>
-    <img src='imagenes/perfil.png' width='110px' height='110px'>
-    </div>
+<div class='confi_perfiles' onclick='modificar_usuario()'>
+<img src='imagenes/configuracion.png' width='50px' height='50px'>
+</div>
 
-    <div class='datos_usuarios'>
-    <table class='b_t_perfiles'>
-        <tr>
-        <td>
-        <label>$nombre[$i] $apellido[$i]</label>
-        </td>
-        </tr>
 
-        <tr>
-        <td>
-        <label>$nombre[$i]$apellido[$i]@gmail.com</label>
-        </td>
-        </tr>
+<div class='per_usuarios'>
+<img src='imagenes/perfil.png' width='110px' height='110px'>
+</div>
 
-        <tr>
-        <td>
-        <label>$puesto</label>
-        </td>
-        </tr>
-        </table>
-    </div>
+<div class='datos_usuarios'>
+<table class='b_t_perfiles'>
+    <tr>
+    <td>
+    <label>$nombre[$i] $apellido[$i]</label>
+    </td>
+    </tr>
 
-    </div>
-    </div>
+    <tr>
+    <td>
+    <label>$nombre[$i]$apellido[$i]@gmail.com</label>
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+    <label>$puesto</label>
+    </td>
+    </tr>
+    </table>
+</div>
+
+</div>
+</div>
     ";
 
 }

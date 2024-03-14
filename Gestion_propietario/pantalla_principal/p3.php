@@ -1,34 +1,66 @@
+<div class="contanedores_configurado">
+<h3>Conexión SQL</h3>
+<br>
 
-<div style="margin-top: 10px;">
-<button type="button" class="boto_agre" onclick="insertar_usuario()">Agregar nuevo usuario</button>
-<button type="button" class="boto_agre">Imprimir lista de usuarios</button>
-</div>
-
-
-
-<div style="margin-top: 10px; width: 100%; height: 480px; border: 2px solid black; border-radius: 10px; float: inline-end;">
 
 <table>
     <tr>
-        <th>Usuario</th>
-        <th>Nombre Completo</th>
-        <th>DNI</th>
-        <th>Fecha Nac.</th>
-        <th>Correo Electronico.</th>
-        <th>Residencia</th>
-        <th>Tipo de acceso</th>
-        <th>contraseña</th>
+        <td style="padding-left: 50px; padding-right: 50px;">
+        <fieldset>
+            <table>
+                <tr>
+                    <td><input type="radio" name="activo" id="r_desactivar" onchange="deshabilitar()" checked>Desactivar edición</td>
+                    <td><input type="radio" name="activo" id="r_activar" onchange="habilitar()">Activar edición</td>
+                </tr>
+            </table>
+        </fieldset>
+        </td>
+    </tr>
+</table>
+
+
+
+<br>
+
+<div id="funciones_sql" style="pointer-events: none; opacity: 0.6;">
+<table class="conexion">
+
+
+    <tr>
+        <td><label>Nombre del servidor:</label></td>
+        <td><input id="txt_servidor" type="text" placeholder="Ej: localhost" ></td>
     </tr>
 
     <tr>
-        <td>anthonyoliva</td>
-        <td>Anthony Clemente Oliva Murillo</td>
-        <td>0101199903209</td>
-        <td>12/08/1999</td>
-        <td>anthony@gmail.com</td>
-        <td>La ceiba</td>
-        <td>Usuario</td>
-        <td>HolaMundo</td>
+        <td><label>Usuario:</label></td>
+        <td><input type="text" placeholder="Ej: Juan"></td>
+    </tr>
+
+    <tr>
+        <td><label>Contraseña:</label></td>
+        <td><input type="password" placeholder="Ej: admin"></td>
+    </tr>
+</table>
+
+<br>
+
+<button type="button">Conectar</button>
+</div>
+
+</div>
+
+<div class="contanedores_configurado">
+<h3>Permisos a usuarios</h3>
+
+<table>
+    <tr>
+        <td>
+            <input type="checkbox" checked> Permitir alteración de datos
+        </td>
+
+        <td>
+            <input type="checkbox" checked> Permitir eliminación de datos
+        </td>
     </tr>
 </table>
 

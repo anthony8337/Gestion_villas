@@ -83,21 +83,21 @@
                     <tr>
                     <th>Concepto</th>    
                     <th>Documento</th>
-                    <th>Importe</th>    
                     <th>Fecha Apli.</th>
-                    <th>Fecha Venc.</th>    
-                    <th>Saldo</th>
-                    <th>Cobrar</th>    
+                    <th>Fecha Venc.</th>  
+                    <th>Abono</th>  
+                    <th>Importes</th>
+                    <th>Saldo</th>    
                     </tr>
                     
                     <tr>
                     <td>Saldo mensual</td>    
                     <td>A-2</td>
-                    <td>145.00</td>    
                     <td>12-08-2024</td>
-                    <td>12-09-2024</td>    
-                    <td>145.00</td>
-                    <td>N</td>  
+                    <td>12-09-2024</td> 
+                    <td>0.00</td>  
+                    <td>145.00</td>     
+                    <td>0.00</td>
                     </tr>
 
                 </table>

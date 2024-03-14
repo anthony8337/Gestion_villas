@@ -52,6 +52,12 @@
     padding: 10px;
     display: none;
 }
+
+.cuerpo_inicio
+{
+    text-align: center;
+}
+
 .cuerpo_perfiles
 {
     text-align: center;
@@ -114,7 +120,28 @@
     text-align: center;
 }
 
-.alinear_titulo td:nth-child(1),.alinear_titulo td:nth-child(3)
+.alinear_titulo td:nth-child(1),.alinear_titulo td:nth-child(3),.conexion td:nth-child(1)
 {
     text-align: right;
+}
+
+.ima_fondo
+{
+    opacity: 0.5;
+}
+
+.contanedores_configurado
+{
+
+border: 1px solid green;
+width: 49.8%;
+height: 100%;
+float: left;
+text-align: center;
+
+}
+
+h3
+{
+    font-family: lato,'Courier New', Courier, monospace;
 }
