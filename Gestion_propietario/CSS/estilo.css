@@ -494,7 +494,7 @@ td
 
 }
 
-#t_carac tr:nth-child(even) td ,#tab_vi tr:nth-child(even) td ,#tabla tr:nth-child(even) td,#tabla_cliente tr:nth-child(even) td,#tabla_multi tr:nth-child(even) td,#descrip_multi tr:nth-child(even) td
+#t_carac tr:nth-child(even) td ,#tab_vi tr:nth-child(even) td ,#tabla tr:nth-child(even) td,#tabla_cliente tr:nth-child(even) td,#tabla_multi tr:nth-child(even) td,#descrip_multi tr:nth-child(even) td,.cuerpo_tabla tr:nth-child(even) td
 {
     background-color: rgb(202, 201, 201);
 
@@ -1187,4 +1187,35 @@ width: 50%;
 .botones_generar
 {
     margin-right: 10px;
+}
+
+.datos_b_sal
+{
+height: 100%;
+}
+
+.dat_saldo
+{
+    text-align: center;
+    height: 130px;
+
+}
+
+.cuerpo_tabla
+{
+    border: 1px solid gray;
+    width: 100%;
+   height: 150px;
+   overflow: auto;
+}
+
+.mod_saldos
+{
+    background-color:rgb(228, 228, 228);
+    padding: 10px;
+    border: 2px solid #7c7c7c;
+    border-radius: 20px;
+    width: 920px;
+    height: 540px;
+    
 }
