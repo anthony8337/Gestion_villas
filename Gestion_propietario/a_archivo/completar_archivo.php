@@ -1,5 +1,8 @@
 
-
+<!--Saldo-->
+<?php
+include "a_archivo/Saldo/ver_saldo.php";
+?>
 
 <!--Modificar-->
 

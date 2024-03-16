@@ -28,19 +28,13 @@
             
             <?php
             
-            $i = 0;
-
-            while($i <= 250)
-            {
-
+            for ($i=0; $i < 1; $i++) { 
                 echo"
                 <tr class='contenido' onclick='abrir_accion_co_nuevo()'>
                 <td>Anticipo</td>
                 <td>C</td>
                 <td>N</td>
                 </tr>";
-
-                $i++;
             }
             ?>
         </table>

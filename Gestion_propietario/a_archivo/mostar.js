@@ -201,3 +201,13 @@ function confirma_sus_vi_cerrar()
 {
     document.getElementById('confi_vi_sus').style.display = 'none';  
 }
+//Saldo
+function saldo_abrir()
+{
+    document.getElementById('saldos_abrir').style.display = 'flex';  
+}
+
+function saldo_cerrar()
+{
+    document.getElementById('saldos_abrir').style.display = 'none';  
+} 

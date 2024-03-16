@@ -19,6 +19,7 @@ include "1_Raiz/cabezal.php";
     <li id="bb3"><a href="#Reportes" onclick="reporte()"><table class="tab_menu"><tr><td class="imagen"><img src="imagenes/1.png" class="imagen"></td><td id="a3" class="te_menu2">Reportes</td></tr></table></a></li>
     <li id="bb4"><a href="#Herramientas" onclick="herramenta()"><table class="tab_menu"><tr><td class="imagen"><img src="imagenes/3.png" class="imagen"></td><td id="a4" class="te_menu2">Herramientas</td></tr></table></a></li>
     <li id="bb5"><a href="pantalla_inicio.php"><table class="tab_menu"><tr><td class="imagen"><img src="imagenes/8.png" class="imagen"></td><td id="a5" class="te_menu2">Atras</td></tr></table></a></li>
+    
     </ul>
 </nav>
 
@@ -41,7 +42,7 @@ include "1_Raiz/cabezal.php";
         <li><a href="#" onclick="abrir_moneda()">Monedas</a></li>
         <li><a href="#" onclick="abrir_co()">Conceptos</a></li>
         <li><a href="#" onclick="abrir_ges()"> G. Cuentas</a></li>
-        <li><a href="#" onclick="abrir_concepto()">Multipagos</a></li>
+        <li><a href="#" onclick="abrir_concepto()">Pago multiple</a></li>
         <li><a href="#" onclick="abrir_rei()">Reimpresion</a></li>
      </ul>
 
@@ -51,9 +52,7 @@ include "1_Raiz/cabezal.php";
 <ul>
     <li><a href="#" onclick="abrir_saldo()">Saldos</a></li>
     <li><a href="">Estado de cuenta</a></li>
-    <li><a href="">Recuperaciones</a></li>
     <li><a href="">Cobro de facturas</a></li>
-    <li><a href="">Docto. Cobrar</a></li>
  </ul>
 
 </nav>

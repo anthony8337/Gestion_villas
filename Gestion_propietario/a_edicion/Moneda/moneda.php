@@ -31,21 +31,19 @@
             
             <?php
             
-            $i = 0;
+            $moneda = ['Lempira','Dolar','Euro'];
+            $simbolo = ['L.','$','€'];
+            $valor = ['1','24.79','29.58'];
 
-
-            while($i <= 12)
-            {
-
+            for ($i=0; $i < 3; $i++) { 
                 echo"
-                <tr class='contenido' onclick='abrir_accion_moneda()'>
-                <td>lempira</td>
-                <td>$. </td>
-                <td>$i</td>
+                <tr onclick='abrir_accion_moneda()'>
+                <td>$moneda[$i]</td>
+                <td>$simbolo[$i]</td>
+                <td>$valor[$i]</td>
                 </tr>";
-
-                $i++;
             }
+
             ?>
         </table>
         

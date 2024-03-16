@@ -494,15 +494,25 @@ td
 
 }
 
-#t_carac tr:nth-child(even) td ,#tab_vi tr:nth-child(even) td ,#tabla tr:nth-child(even) td,#tabla_cliente tr:nth-child(even) td,#tabla_multi tr:nth-child(even) td,#descrip_multi tr:nth-child(even) td,.cuerpo_tabla tr:nth-child(even) td
+#t_carac tr:nth-child(even) td ,#tab_vi tr:nth-child(even) td ,
+#tabla tr:nth-child(even) td,#tabla_cliente tr:nth-child(even) td,
+#tabla_multi tr:nth-child(even) td,#descrip_multi tr:nth-child(even) td,
+.cuerpo_tabla tr:nth-child(even) td,#tab_vi_insertar tr:nth-child(even) td, #tb_moneda tr:nth-child(even) td
 {
     background-color: rgb(202, 201, 201);
 
 }
 
-#t_carac tr:nth-child(even):hover td ,#tab_vi tr:nth-child(even):hover td ,#tabla tr:nth-child(even):hover td,#tabla_cliente tr:nth-child(even):hover td,#tabla_multi tr:nth-child(even):hover td,#descrip_multi tr:nth-child(even):hover td
+#t_carac tr:nth-child(even):hover td ,#tab_vi tr:nth-child(even):hover td ,
+#tabla tr:nth-child(even):hover td,#tabla_cliente tr:nth-child(even):hover td,
+#tabla_multi tr:nth-child(even):hover td,#descrip_multi tr:nth-child(even):hover td,#tab_vi_insertar tr:nth-child(even):hover td
 {
 background-color: rgb(255, 183, 50); 
+}
+
+#tb_moneda tr:hover, #tb_moneda tr:nth-child(even):hover td
+{
+    background-color: rgb(255, 183, 50); 
 }
 
 

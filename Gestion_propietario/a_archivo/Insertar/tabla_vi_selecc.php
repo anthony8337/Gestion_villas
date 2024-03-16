@@ -1,7 +1,7 @@
 <fieldset class="grupo_busqueda" style="border: 0px;">
 
 <input type="text" id="bus_v" name="bus_v" placeholder="Buscar codigo de villa" style="float: inline-start; width: 500px; margin-left: 25%;">
-<button type="button" style="float: inline-end;">Agregar nueva villa</button>
+<button type="button" style="float: inline-end;" onclick="insert_villa()">Agregar nueva villa</button>
 </fieldset>
 
 <br>
