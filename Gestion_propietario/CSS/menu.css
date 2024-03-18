@@ -1,0 +1,71 @@
+#menu_lateral
+{
+position: fixed;    
+top: 0;
+left: 0;
+height: 100%;
+width: 200px;
+background: linear-gradient(to top,#ffeb9c, #da8447);
+text-align: center;
+overflow-y: auto;
+}
+
+#menu_lateral #logo
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+
+#menu_lateral ul
+{
+
+position: relative;
+top: 180px;
+list-style: none;
+padding: 0px;
+margin: 0px;
+}
+
+
+#menu_lateral ul li #icono
+{
+margin-left: 20px;    
+width: 32px;
+height: 32px;
+}
+
+#menu_lateral ul li
+{
+height: 60px;
+}
+
+
+#encojer_menu
+{
+    position: fixed;
+    top: 5px;
+    left: 205px;
+    background-color: #da8447;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-items: center;
+}
+
+#encojer_menu img
+{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+
+
+li:hover,#encojer_menu:hover
+{
+    cursor: pointer;
+}
