@@ -24,6 +24,8 @@ function maximizar()
     document.getElementById('logo').style.top = '0px';
     for (let i = 0; i < 5; i++) {
     document.getElementById('m_la_'+i).style.display = 'block';
+    document.getElementById('m_la_'+i).style.paddingLeft = '20px';
+    document.getElementById('m_la_'+i).style.paddingTop = '5px';
     }
     document.getElementById('menu_lateral').style.width = '200px';
     document.getElementById('encojer_menu').style.left = '205px';

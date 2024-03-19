@@ -4,24 +4,25 @@ position: fixed;
 top: 0;
 left: 0;
 height: 100%;
-width: 200px;
+width: 90px;
 background: linear-gradient(to top,#ffeb9c, #da8447);
 text-align: center;
-overflow-y: auto;
+overflow: auto;
 }
 
 #menu_lateral #logo
 {
     position: absolute;
-    top: 0px;
+    top: 45px;
     left: 0px;
+    width: 80px;
+    height: 80px;
 }
 
 
 
 #menu_lateral ul
 {
-
 position: relative;
 top: 180px;
 list-style: none;
@@ -63,9 +64,36 @@ height: 60px;
     height: 30px;
 }
 
+li
+{
+padding-top: 10px;
+}
 
-
-li:hover,#encojer_menu:hover
+li:hover,#encojer_menu:hover, .menu_horizontal ul li:hover 
 {
     cursor: pointer;
+    background-color: rgba(252, 0, 0, 0.2);
 }
+
+.menu_horizontal
+{
+    position: relative;
+    margin-left: 95px;
+    background: linear-gradient(to left, #ffeb9c, #da8447);
+    z-index: -1;
+    height: 50px;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.menu_horizontal button
+{
+    border-radius: 0px;
+    border: 0px;
+    height: 50px;
+    margin-left: 10px;
+    width: 100px;
+    background-color: white;
+}
+
