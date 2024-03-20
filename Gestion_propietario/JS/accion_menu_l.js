@@ -1,7 +1,4 @@
 var abierto;
-
-
-
 function minimizar()
 {
     abierto = false;

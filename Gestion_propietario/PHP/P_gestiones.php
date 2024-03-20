@@ -38,13 +38,34 @@ echo"
 <h1>Gestion de propietario</h1>
 <h2>villa palma real</h2>
 
-<div>
-<ul>
-    <li>Nuevo</li>
-    <li>Nuevo</li>
-    <li>Nuevo</li>
-    <li>Nuevo</li>
-</ul>
+<?php
+include "PHP/archivo/archi.php";
+?>
+
+<div id="ver_cuadros">
+
+<table>
+    <tr>
+        <td>
+        <input type="radio" name="v_lista" id="rb_pro" checked>Ver propietarios
+        <br>
+        <input type="radio" name="v_lista" id="rb_villas">Ver villas
+        </td>
+        
+        <td>
+        <input type="text" name="Busca_prin" id="Busca_prin" placeholder="Buscar propietario">
+        </td>
+
+        <td><button type="button">Imprimir</button></td>
+    </tr>
+</table>
+
+
+
+
+
+
+
 </div>
 
 

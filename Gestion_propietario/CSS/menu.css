@@ -69,31 +69,11 @@ li
 padding-top: 10px;
 }
 
-li:hover,#encojer_menu:hover, .menu_horizontal ul li:hover 
+li:hover,#encojer_menu:hover, #cuerpo_pagina div div ul li:hover
 {
     cursor: pointer;
     background-color: rgba(252, 0, 0, 0.2);
 }
 
-.menu_horizontal
-{
-    position: relative;
-    margin-left: 95px;
-    background: linear-gradient(to left, #ffeb9c, #da8447);
-    z-index: -1;
-    height: 50px;
-    align-items: center;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
 
-.menu_horizontal button
-{
-    border-radius: 0px;
-    border: 0px;
-    height: 50px;
-    margin-left: 10px;
-    width: 100px;
-    background-color: white;
-}
 
