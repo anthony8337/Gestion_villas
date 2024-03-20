@@ -1,9 +1,15 @@
-html body
+html body 
 {
     background-color: #e6e3e3;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     overflow: auto;
+}
+
+button
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 

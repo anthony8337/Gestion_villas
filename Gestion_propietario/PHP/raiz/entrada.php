@@ -8,7 +8,9 @@
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/menu.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/elementos.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/pagina.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='CSS/formatos_tabla.css'>
     <script src='JS/accion_menu_l.js'></script>
+    <script src='JS/selec_tablas.js'></script>
 </head>
 <body>
     

@@ -103,8 +103,14 @@ img
     width: 200px;
     height: 50px;
     border-radius: 30px;
-    
     border: 1px solid black;
+    background-color: white;
+}
+
+#cuerpo_pagina #ver_cuadros button:hover
+{
+background-color: rgb(202, 202, 202);
+cursor: pointer;
 }
 
 #cuerpo_pagina #ver_cuadros table
@@ -120,5 +126,5 @@ width: 100%;
 
 #cuerpo_pagina #ver_cuadros table td:nth-child(3)
 {
-    text-align: center;
+    text-align: end;
 }
