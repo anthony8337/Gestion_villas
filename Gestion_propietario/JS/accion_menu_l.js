@@ -52,8 +52,7 @@ function acciones_botones()
 //Acciones de los boton de izquierda
 function precionar_b0()
 {
-    document.getElementById('nombre_car').textContent = 'Archivo'; 
-
+    document.getElementById('nombre_car').textContent = 'Archivo';
     minimizar();
     for (let j = 0; j < 5; j++) {
      if(j == 0)
@@ -72,7 +71,6 @@ function precionar_b0()
 function precionar_b1()
 {
     document.getElementById('nombre_car').textContent = 'Agregar';
-
     minimizar();
     for (let j = 0; j < 5; j++) {
         if(j == 1)

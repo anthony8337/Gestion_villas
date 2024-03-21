@@ -39,9 +39,8 @@ echo"
 <!--Ajusta el interior-->
 <div>
 
-<br>
+<h1>Gestion de Propietario</h1>
 <h2 id="nombre_car">Archivo</h2>
-<br>
 
 <?php
 include "PHP/unir_fragmentos.php";

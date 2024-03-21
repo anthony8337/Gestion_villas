@@ -3,13 +3,13 @@
 #cuerpo_pagina  #tabla_contenido_villa,#cuerpo_pagina  #tabla_contenido_propi
 {
     position: absolute;
-    top: 210px;
+    top: 230px;
     
     margin:0px;
     margin-top: 10px;
     overflow: auto;
     width: calc(100% - 95px);
-    height: calc(100% - 220px);
+    height: calc(100% - 240px);
     background-color: white;
     padding: 0px;
 }
