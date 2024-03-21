@@ -1,9 +1,17 @@
-<div id="menu_horizontal">
+<div id="m_0" class="m_archivo">
 
 <ul>
-    <li><img src="Imagenes/perfil.png">Nuevo prop.</li>
-    <li><img src="Imagenes/casa_b.png">Nueva villa</li>
-    <li><img src="Imagenes/5.png">Editar</li>
+
+<?php
+    $titulos_archi = ['Nuevo prop.','Nueva villa','Monedas','Conceptos'];
+    $img_archi = ['perfil.png','casa_b.png','cash-coin.svg','card-text.svg'];
+
+    for ($i=0; $i < count($titulos_archi); $i++) { 
+        echo"
+        <li><img src='Imagenes/$img_archi[$i]'>$titulos_archi[$i]</li>
+        ";
+    }
+    ?>
 </ul>
 
 </div>

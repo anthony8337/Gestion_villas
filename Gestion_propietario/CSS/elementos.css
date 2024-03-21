@@ -23,14 +23,16 @@ h2
     overflow: auto;
     z-index: -1;
     padding: 0px;
+    
 }
+
 
 #cuerpo_pagina div
 {
     margin-left: 95px;
 }
 
-#cuerpo_pagina div #menu_horizontal
+#cuerpo_pagina div .m_archivo,#cuerpo_pagina div .m_expo,#cuerpo_pagina div .m_reporte,#cuerpo_pagina div .m_agregar
 {
     background-color: #eea36e;
     height: 50px;
@@ -41,7 +43,7 @@ h2
     overflow-x: auto;
 }
 
-#cuerpo_pagina div #menu_horizontal ul
+#cuerpo_pagina div .m_archivo ul,#cuerpo_pagina div .m_expo ul,#cuerpo_pagina div .m_reporte ul,#cuerpo_pagina div .m_agregar ul
 {
     list-style: none;
     padding: 0;
@@ -51,13 +53,13 @@ h2
 
 }
 
-#cuerpo_pagina div #menu_horizontal ul li
+#cuerpo_pagina div .m_archivo ul li,#cuerpo_pagina div .m_expo ul li,#cuerpo_pagina div .m_reporte ul li,#cuerpo_pagina div .m_agregar ul li
 {
-    width: 200px; /* Ancho del <li> */
-    height: 50px; /* Alto del <li> */
+    width: 200px; 
+    height: 50px; 
     display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
+    justify-content: center; 
+    align-items: center;
     padding: 0px;
     border-right: 1px solid rgb(250, 171, 114);
 }
@@ -76,6 +78,17 @@ img
     margin:0px;
     margin-top: 10px;
     overflow: auto;
+
+}
+
+#cuerpo_pagina #concentrar_tablas
+{  
+    margin:0px;
+    margin-top: 10px;
+    overflow: auto;
+    background-color: #eea36e;
+    height: 100%;
+
 }
 
 #cuerpo_pagina #ver_cuadros input[type="radio"]
@@ -127,4 +140,9 @@ width: 100%;
 #cuerpo_pagina #ver_cuadros table td:nth-child(3)
 {
     text-align: end;
+}
+
+#protector
+{
+    display: none;
 }

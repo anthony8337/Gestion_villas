@@ -38,17 +38,26 @@ width: 32px;
 height: 32px;
 }
 
+#menu_lateral ul li .nombres_boton
+{
+display: none;
+}
+
 #menu_lateral ul li
 {
 height: 60px;
 }
 
+#menu_lateral ul #li_0
+{
+    border-left: 5px solid red;
+}
 
 #encojer_menu
 {
     position: fixed;
     top: 5px;
-    left: 205px;
+    left: 95px;
     background-color: #da8447;
     width: 50px;
     height: 50px;
@@ -75,5 +84,17 @@ li:hover,#encojer_menu:hover, #cuerpo_pagina div div ul li:hover
     background-color: rgba(252, 0, 0, 0.2);
 }
 
+.m_expo,.m_agregar,.m_reporte
+{
+    display: none;
+}
 
-
+#protector
+{
+    position: fixed;
+    top: 0;
+    left: 200px;
+    width: calc(100% - 200px);
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.5);
+}

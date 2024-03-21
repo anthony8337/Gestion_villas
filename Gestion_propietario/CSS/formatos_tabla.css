@@ -1,17 +1,20 @@
-#cuerpo_pagina #tabla_contenido_villa,#cuerpo_pagina #tabla_contenido_propi
-{
 
-    position: fixed;
+
+#cuerpo_pagina  #tabla_contenido_villa,#cuerpo_pagina  #tabla_contenido_propi
+{
+    position: absolute;
+    top: 210px;
+    
     margin:0px;
     margin-top: 10px;
     overflow: auto;
-    width: 93%;
-    height: 69%;
+    width: calc(100% - 95px);
+    height: calc(100% - 220px);
     background-color: white;
-    border: 1px solid black;
+    padding: 0px;
 }
 
-#tabla_contenido_villa table,#cuerpo_pagina #tabla_contenido_propi table
+#cuerpo_pagina  #tabla_contenido_villa table,#cuerpo_pagina #tabla_contenido_propi table
 {
 
 width: 100%;
@@ -23,10 +26,11 @@ border-collapse: collapse;
 #tabla_contenido_villa table th, #tabla_contenido_propi table th
 {
     background-color: rgb(97, 97, 97);
-    position: sticky;
     top: 0;
     height: 30px;
     color: white;
+    position: sticky;
+    top: 0;
 }
 
 #tabla_contenido_villa table td, #tabla_contenido_propi table td
@@ -61,5 +65,6 @@ font-weight: normal;
 #ver_cuadros table tr #lis_vi_cu,#ver_cuadros table tr #lis_pro_cu
 {
     cursor: pointer;
+
 }
 
