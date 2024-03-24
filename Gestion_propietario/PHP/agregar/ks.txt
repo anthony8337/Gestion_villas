@@ -1,0 +1,24 @@
+<button type="button" class="salir"> <img src="Imagenes/x-lg.svg"> </button>
+
+<div id="ingreso_mod" class="mod">
+<div id="interno_registrar">
+
+<table>
+
+
+
+
+<?php
+for ($i=0; $i < 100; $i++) { 
+    echo
+    "
+    <tr>
+        <td style='width: 50px;'>ma</td>
+    </tr>
+    ";
+}
+?>
+</table>
+
+<div>
+</div>

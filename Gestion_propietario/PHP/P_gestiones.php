@@ -36,10 +36,12 @@ echo"
 <!--cuerpo-->
 
 <div id="cuerpo_pagina">
-<!--Ajusta el interior-->
-<div>
 
-<h1>Gestion de Propietario</h1>
+<!--Ajusta el interior-->
+
+
+
+<h1>Gestión de Propietario</h1>
 <h2 id="nombre_car">Archivo</h2>
 
 <?php
@@ -56,8 +58,6 @@ include "PHP/tablas/unir_tablas_principales.php";
 
 </div>
 
-
-
-
-
-</div>
+<?php
+include "PHP/agregar/ingreso_editar_pro.php";
+?>

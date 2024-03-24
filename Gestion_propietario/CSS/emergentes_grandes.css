@@ -1,0 +1,129 @@
+#ingreso_mod
+{
+position: fixed;
+top: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.9);
+width: 100%;
+height: 100%;
+overflow: auto;
+}
+
+#ingreso_mod #interno_registrar
+{
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(236, 234, 234);
+    width: 1300px;
+    height: 600px;
+    border-radius: 5px;
+}
+
+#ingreso_mod #interno_registrar .cabezal_e
+{
+
+    width: 100%;
+    height: 60px;
+    padding-top: 5px;
+
+}
+
+#ingreso_mod #interno_registrar .cabezal_e button
+{
+    float: inline-end;
+    margin-top: -50px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    padding-left: 3px;
+    padding-top: 3px;
+    background-color: red;
+    border: 1px solid black;
+}
+
+#ingreso_mod #interno_registrar .cabezal_e button:hover
+{
+    cursor: pointer;
+    background-color: rgb(206, 6, 6);
+}
+
+#ingreso_mod #interno_registrar .cabezal_e button img
+{
+filter: invert(100%);
+}
+
+#ingreso_mod #interno_registrar .cuerpo_e
+{
+    position: relative;
+    width: calc(100% - 30px);
+    height: 110px;
+    background-color: rgba(0, 0, 0,0.1);
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding-left: 30px;
+    padding-top: 10px;
+
+}
+
+#ingreso_mod #interno_registrar .cuerpo_e input[type="text"] ,#ingreso_mod #interno_registrar .cuerpo_e input[type="date"]
+{
+    margin:0px;
+    float: inline-start;
+    width: 300px;
+    height: 40px;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 15px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#ingreso_mod #interno_registrar .cuerpo_e fieldset
+{
+    margin:0px;
+    float: inline-start;
+    width: 400px;
+    height: 30px;
+    border-radius: 50px;
+    padding: 0px;
+
+    padding-top: 10px;
+    font-size: 15px;
+    border: 1px solid black;
+    text-align: center;
+
+}
+
+
+
+#ingreso_mod #interno_registrar .cuerpo_e_2
+{
+    position: relative;
+    width: calc(100% - 30px);
+    height: calc(100% - 190px);
+    background-color: #00fff2;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding-left: 30px;
+    padding-top: 10px;
+    text-align: center;
+
+}
+
+#ingreso_mod #interno_registrar .cuerpo_e_2 .sel_villa
+{
+    width: 50px;
+}
+
+#ingreso_mod #interno_registrar .cuerpo_e_2 .cabezal_villa
+{
+    width: 100px;
+}

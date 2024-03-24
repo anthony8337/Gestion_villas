@@ -17,22 +17,15 @@ h2
 {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 95px;
+    width: calc(100% - 95px);
     height: 100%;
     overflow: auto;
     z-index: -1;
     padding: 0px;
-    
 }
 
-
-#cuerpo_pagina div
-{
-    margin-left: 95px;
-}
-
-#cuerpo_pagina div .m_archivo,#cuerpo_pagina div .m_expo,#cuerpo_pagina div .m_reporte,#cuerpo_pagina div .m_agregar
+#cuerpo_pagina .m_archivo,#cuerpo_pagina .m_expo,#cuerpo_pagina .m_reporte,#cuerpo_pagina .m_agregar
 {
     background-color: #eea36e;
     height: 50px;
@@ -40,20 +33,20 @@ h2
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     padding-left: 0px;
-    overflow-x: auto;
 }
 
-#cuerpo_pagina div .m_archivo ul,#cuerpo_pagina div .m_expo ul,#cuerpo_pagina div .m_reporte ul,#cuerpo_pagina div .m_agregar ul
+#cuerpo_pagina .m_archivo ul,#cuerpo_pagina .m_expo ul,#cuerpo_pagina .m_reporte ul,#cuerpo_pagina .m_agregar ul
 {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center;
 
 }
 
-#cuerpo_pagina div .m_archivo ul li,#cuerpo_pagina div .m_expo ul li,#cuerpo_pagina div .m_reporte ul li,#cuerpo_pagina div .m_agregar ul li
+#cuerpo_pagina .m_archivo ul li,#cuerpo_pagina .m_expo ul li,#cuerpo_pagina .m_reporte ul li,#cuerpo_pagina .m_agregar ul li
 {
     width: 200px; 
     height: 50px; 
@@ -111,13 +104,24 @@ img
     border: 1px solid black;
 }
 
-#cuerpo_pagina #ver_cuadros button
+#cuerpo_pagina #ver_cuadros select
 {
     width: 200px;
-    height: 50px;
+    height: 40px;
     border-radius: 30px;
     border: 1px solid black;
     background-color: white;
+    text-align: center;
+}
+
+#cuerpo_pagina #ver_cuadros button
+{
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
 }
 
 #cuerpo_pagina #ver_cuadros button:hover
@@ -134,7 +138,7 @@ width: 100%;
 
 #cuerpo_pagina #ver_cuadros table td
 {
-    width: 33%;
+    
 }
 
 #cuerpo_pagina #ver_cuadros table td:nth-child(3)
@@ -142,7 +146,30 @@ width: 100%;
     text-align: end;
 }
 
+#cuerpo_pagina #ver_cuadros table td:nth-child(4)
+{
+    text-align: end;
+}
+
+#cuerpo_pagina #ver_cuadros table td:nth-child(2)
+{
+    text-align: center;
+}
+
 #protector
 {
     display: none;
+}
+
+#cuerpo_pagina .fijo
+{
+    position: sticky;
+    padding: 0px;
+    margin: 0px;
+    top: 0;
+    left: 0px;
+    z-index: 9999;
+    background-color: #e6e3e3;
+    width: 100%;
+
 }

@@ -10,7 +10,15 @@
         <input type="text" name="Busca_prin" id="Busca_prin" placeholder="Buscar propietario">
         </td>
 
-        <td rowspan="2"><button type="button">Imprimir</button></td>
+        <td rowspan="2"><select>
+            <option>Todos</option>
+            <option>Pronto a vencer</option>
+            <option>Vencido</option>
+        </select></td>
+
+        <td rowspan="2">
+            <button type="button"><img src="Imagenes/printer-fill.svg"></button>
+        </td>
     </tr>
 
     <tr>

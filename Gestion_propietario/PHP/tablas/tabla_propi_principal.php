@@ -8,7 +8,7 @@
 <th>RTN</th>
 <th>Telefono</th>
 <th>Estado</th>
-<th>Fecha de ingreso</th>
+<th>Fecha ultimo pago</th>
 <th>Saldo</th>
 </tr>
 
@@ -48,8 +48,8 @@ for($j = 1; $j <= 12; $j++)
     <td>0101-",rand(1950,2000),"-",rand(10000,50000),"</td>
     <td>+504 ",rand(80000000,99999999),"</td>
     <td>",$estadia[$j],"</td>
-    <td>",rand(2000,2024),"-",rand(01,12),"-",rand(1,31),"</td>
-    <td>$ 4",$j,"</td>
+    <td>",rand(2022,2024),"-",rand(01,12),"-",rand(1,31),"</td>
+    <td>$ ",rand(0,5000),".00</td>
     </tr>
     ";
 }
