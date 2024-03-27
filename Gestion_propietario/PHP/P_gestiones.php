@@ -55,9 +55,8 @@ include "PHP/tablas/Buscardor_tabla.php";
 <?php
 include "PHP/tablas/unir_tablas_principales.php";
 ?>
-
 </div>
 
 <?php
-include "PHP/agregar/ingreso_editar_pro.php";
+include "PHP/archivo/unir_emergentes.php";
 ?>

@@ -1,0 +1,168 @@
+#pro .centro
+{
+position: absolute;
+
+justify-content: center;
+align-items: center;
+width: 1300px;
+height: 600px;
+background-color: white;
+border-radius: 5px;
+}
+
+#pro .centro .c1
+{
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 50px;
+padding-top:1px;
+}
+
+#pro .centro .c1 button
+{
+float: inline-end;
+height: 32px;
+width: 32px;
+margin-top: 10px;
+margin-right: 10px;
+background-color: rgb(233, 0, 0);
+border: 0px;
+color: white;
+}
+
+#pro .centro .c1 button:hover
+{
+cursor: pointer;
+}
+
+#pro .centro .c2
+{
+position: relative;
+top: 0;
+left: 0;
+width: calc(100% - padding);
+height: 100px;
+background-color: rgba(0, 0, 0,0.1);
+padding-left: 35px;
+padding-top: 10px;
+}
+
+#pro .centro .c3
+{
+position: relative;
+top: 0;
+left: 0;
+width: calc(100% - padding);
+height: calc(100% - 170px);
+background-color: rgba(0, 0, 0, 0.1);
+padding-left: 35px;
+padding-top: 10px;
+}
+
+#pro input[type="text"],#pro input[type="date"], #pro fieldset
+{
+    margin:0px;
+    float: inline-start;
+    width: 300px;
+    height: 40px;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 15px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#pro fieldset
+{
+    margin:0px;
+    float: inline-start;
+    width: 400px;
+    height: 30px;
+    border-radius: 50px;
+    padding: 0px;
+
+    padding-top: 10px;
+    font-size: 15px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#pro .centro .c3 button
+{
+    width: 200px;
+    height: 50px;
+    float: inline-start;
+    border-radius: 30px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#pro .centro .c3 .cabezal_villa
+{
+    width: 500px;
+    height: 50px;
+    float: inline-start;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 0px;
+    margin-left: 160px;
+}
+
+#pro .centro .c3 .cabezal_villa table
+{
+    width: 100%;
+    height: 100%;
+}
+
+#pro .centro .c3 #id_direccion
+{
+    margin-top: 10px;
+    width: calc(100% - 70px);
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#pro .centro .c3 .mas_detalle
+{
+    margin-top: 10px;
+    width: 47.2%;
+    height: calc(100% - 220px);
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+#pro .centro .c3 textarea
+{
+    resize: none;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    padding: 10px;
+}
+
+#pro .centro #agre_confirmar
+{
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    border: 1px solid black;
+    background-color: white;
+    
+    margin-top: 10px;
+}
+
+#pro .centro #agre_cance
+{
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    border: 1px solid black;
+    background-color: white;
+    margin-right: 40px;
+    margin-top: 10px;
+    float: inline-end;
+}
