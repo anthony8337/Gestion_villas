@@ -3,7 +3,8 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Proyecto</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="Imagenes/logo empresa.png">
+    <title>Gestión de propietario</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/menu.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/elementos.css'>
@@ -15,6 +16,7 @@
     <script src='JS/selec_tablas.js'></script>
     <script src='JS/max_min.js'></script>
     <script src='JS/archivo/emergentes.js'></script>
+    <script src='JS/agregar/emergentes.js'></script>
 </head>
 <body>
     

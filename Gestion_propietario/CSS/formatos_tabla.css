@@ -26,7 +26,6 @@ overflow: auto;
 #tabla_contenido_villa table th, #tabla_contenido_propi table th
 {
     background-color: rgb(97, 97, 97);
-    top: 0;
     height: 30px;
     color: white;
     position: sticky;

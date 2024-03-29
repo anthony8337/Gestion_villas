@@ -1,3 +1,4 @@
+/*
 // Función para verificar el estado de la ventana
 function verificarEstadoVentana() {
     // Obtenemos el ancho y alto de la ventana del navegador
@@ -19,4 +20,4 @@ function verificarEstadoVentana() {
 
 // Llamamos a la función al cargar la página y cada vez que se redimensiona la ventana
 window.onload = verificarEstadoVentana;
-window.onresize = verificarEstadoVentana;
+window.onresize = verificarEstadoVentana;*/

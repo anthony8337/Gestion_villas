@@ -42,12 +42,13 @@ for ($i=0; $i < count($pal); $i++) {
 
 <div class="c3">
 
-<table>
+<table id="tama">
     <tr>
+     <td></td>
     <td>Tam. Lote</td>
-    <td><input type="text"></td>
-    <td style="padding-left: 20px;">Tam. Const.</td>
-    <td><input type="text"></td>
+    <td><input type="number" placeholder="Mts²"></td>
+    <td>Tam. Const.</td>
+    <td><input type="number" placeholder="Mts²"></td>
     </tr>
     <tr>
 
@@ -62,7 +63,7 @@ for ($i=0; $i < count($pal); $i++) {
 
 
 <fieldset id="cara" class="mas_detalle">
-    <legend>Detalles</legend>
+<legend>Detalles</legend>
     <table>
         <tr>
         <?php
@@ -71,7 +72,15 @@ for ($i=0; $i < count($pal); $i++) {
 
             for ($i=0; $i < count($detalles); $i++) { 
 
-                if($i == 0 || $i == 1)
+                if($i == 0)
+                {
+                    echo"
+                    <td>
+                    <input type='radio' name='modelo' id='modelo[$i]' checked> $detalles[$i]
+                    </td>
+                    ";
+                }
+                else if($i == 1)
                 {
                     echo"
                     <td>
@@ -91,6 +100,38 @@ for ($i=0; $i < count($pal); $i++) {
             ?>
         </tr>
     </table>
+
+    <div id="ta_cara">
+        <table class="ta_ca_cont">
+            <tr>
+                <th colspan="2">Caracteristicas</th>
+            </tr>
+
+            <?php
+            $carac = ['2 Baños', '2 Habitaciones','2 Salas','2 Corredor','1 Picina'];
+            for ($i=0; $i < count($carac); $i++) { 
+                echo"
+                
+            <tr>
+            <td style='width: 500px'>
+            $carac[$i]
+            </td>
+            <td>    
+            <button id='modi_carac'>
+            <img src='Imagenes/pencil-fill.svg'>
+            </button>
+            <button id='eli_carac'>
+                <img src='Imagenes/trash3-fill.svg'>
+            </button>
+            </td>
+                ";
+            }
+
+            ?>
+
+            </tr>
+        </table>
+    </div>
 
 </fieldset>
 

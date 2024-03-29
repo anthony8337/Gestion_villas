@@ -53,8 +53,8 @@ for ($i=0; $i < count($pal); $i++) {
 <fieldset class="cabezal_villa">
     <table>
         <tr>
-            <td><Label>Codigo: </Label><Label></Label></td>
-            <td><Label>Cont. EEH: </Label><Label></Label></td>
+            <td><Label>Codigo: </Label><Label>A-1</Label></td>
+            <td><Label>Cont. EEH: </Label><Label>A12345678</Label></td>
         </tr>
     </table>
 </fieldset>

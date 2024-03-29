@@ -1,0 +1,198 @@
+#gene_cuenta .centro
+{
+position: absolute;
+justify-content: center;
+align-items: center;
+width: 1200px;
+height: 570px;
+background-color: white;
+border-radius: 5px;
+}
+
+#gene_cuenta .centro .c1
+{
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 50px;
+padding-top:1px;
+}
+
+#gene_cuenta .centro .c1 button
+{
+float: inline-end;
+height: 32px;
+width: 32px;
+margin-top: 10px;
+margin-right: 10px;
+background-color: rgb(233, 0, 0);
+border: 0px;
+color: white;
+}
+
+
+
+#gene_cuenta .centro .c1 button:hover
+{
+cursor: pointer;
+}
+
+#gene_cuenta .centro .c2
+{
+position: relative;
+top: 0;
+left: 0;
+width: calc(100% - padding);
+height: 50px;
+background-color: rgba(0, 0, 0, 0.1);
+padding-left: 35px;
+padding-right: 35px;
+padding-top: 10px;
+}
+
+#gene_cuenta .centro .c2 button
+{
+    width: 150px;
+    height: 40px;
+    float: inline-start;
+    border-radius: 30px;
+    border: 1px solid black;
+    background-color: white;
+    margin-right: 10px;
+}
+
+#gene_cuenta .centro .c2 button:hover
+{
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#gene_cuenta .centro .c2 fieldset
+{
+    display: flex;
+    width: 200px;
+    height: 40px;
+    float: inline-end;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+#gene_cuenta .centro .c2 .filtro
+{
+    display: flex;
+    width: 400px;
+    height: 40px;
+    float: inline-start;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+}
+
+#gene_cuenta .centro .c2 .filtro table td
+{
+padding-left: 20px;
+padding-right: 20px;
+}
+
+#gene_cuenta .centro .c3
+{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: calc(100% - 70px);
+    height: calc(100% - 115px);
+    padding-right: 35px;
+    padding-left: 35px;
+    padding-top: 5px;
+}
+
+#gene_cuenta .centro .c3 fieldset
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 500px;
+    height: 150px;
+    float: left;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#gene_cuenta .centro .c3 fieldset input[type="date"]
+{
+width: 400px;
+height: 30px;
+border: 1px solid black;
+border-radius: 30px;
+padding: 0px;
+text-align: center;
+font-size: 15px;
+padding-right: 20px;
+}
+
+#gene_cuenta .centro .c3 fieldset input[type="text"]
+{
+width: 300px;
+height: 50px;
+border: 1px solid black;
+border-radius: 30px;
+padding: 0px;
+text-align: center;
+font-size: 15px;
+color: black;
+}
+
+#gene_cuenta .centro .c3 .g_a1
+{
+float: inline-start;
+}
+
+#gene_cuenta .centro .c3 .g_a2
+{
+float: inline-end;
+}
+
+#gene_cuenta .centro .c3 fieldset table
+{
+width: 100%;
+height: 100%;
+}
+
+#gene_cuenta .centro .c3 fieldset button
+{
+    height: 30px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 30px;
+}
+
+#gene_cuenta .centro .c3 fieldset button:hover
+{
+background-color: rgba(0, 0, 0, 0.1);
+cursor: pointer;
+}
+
+#gene_cuenta .centro .c3 button
+{
+    height: 50px;
+    width: 200px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 30px;
+
+    margin-top: 25px;
+}
+
+#gene_cuenta .centro .c3 #g_re
+{
+float: inline-start;
+}
+
+#gene_cuenta .centro .c3 #g_can
+{
+float: inline-end;
+}

@@ -19,7 +19,17 @@
             echo"
             <li onclick='ingreso_vi()'><img src='Imagenes/$img_archi[$i]'>$titulos_archi[$i]</li>
             ";
-        }
+        }else if ($i == 2)
+        {
+            echo"
+            <li onclick='ingreso_moneda()'><img src='Imagenes/$img_archi[$i]'>$titulos_archi[$i]</li>
+            ";
+        } else if ($i == 3)
+        {
+            echo"
+            <li onclick='ingreso_concepto()'><img src='Imagenes/$img_archi[$i]'>$titulos_archi[$i]</li>
+            ";
+        } 
         else
         {
             echo"

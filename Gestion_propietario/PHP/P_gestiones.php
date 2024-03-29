@@ -60,3 +60,7 @@ include "PHP/tablas/unir_tablas_principales.php";
 <?php
 include "PHP/archivo/unir_emergentes.php";
 ?>
+
+<?php
+include "PHP/agregar/unir_emergentes.php";
+?>

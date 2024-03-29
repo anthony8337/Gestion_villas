@@ -3,7 +3,7 @@
     position: absolute;
     justify-content: center;
     align-items: center;
-width: 1300px;
+width: 1100px;
 height: 600px;
 background-color: white;
 border-radius: 5px;
@@ -75,10 +75,10 @@ padding-top: 10px;
     font-size: 15px;
     border: 1px solid black;
     margin-bottom: 10px;
-    margin-right: 10px;
+    margin-right: 35px;
 }
 
-#vi .centro .c3 input[type="text"],#vi .centro .c3 input[type="date"], #vi .centro .c3 select
+#vi .centro .c3 input[type="text"],#vi .centro .c3 input[type="date"], #vi .centro .c3 select,#vi input[type = "number"]
 {
     margin:0px;
     float: inline-start;
@@ -163,7 +163,7 @@ padding-top: 10px;
 #vi .centro .c3 .mas_detalle
 {
     margin-top: 10px;
-    width: 47.2%;
+    width: 500px;
     height: calc(100% - 250px);
     
     border-radius: 5px;
@@ -172,6 +172,17 @@ padding-top: 10px;
 #vi .centro .c3 #cara table td
 {
 width: 33%;
+}
+
+#vi .centro .c3 #tama td:nth-child(1)
+{
+    width: 130px;
+}
+
+#vi .centro .c3 #tama td:nth-child(2),#vi .centro .c3 #tama td:nth-child(4)
+{
+width: 110px;
+text-align: start;
 }
 
 #vi #a_c
@@ -215,4 +226,62 @@ margin-right: 0px;
     margin-right: 40px;
     margin-top: 10px;
     float: inline-end;
+}
+
+#vi .centro .c3 #ta_cara
+{
+padding: 0px;
+width: 500px;
+height: calc(100% - 50px);
+overflow: auto;
+background-color: white;
+}
+
+.ta_ca_cont
+{
+    border-collapse: collapse;
+}
+
+.ta_ca_cont th
+{
+    background-color: rgb(97, 97, 97);
+    height: 30px;
+    color: white;
+    position: sticky;
+    top: 0px;
+}
+
+
+.ta_ca_cont tr:nth-child(even) td
+{
+    background-color: rgb(194, 193, 193);
+}
+
+.ta_ca_cont td:nth-child(1)
+{
+
+height: 30px;
+}
+
+.ta_ca_cont td:nth-child(2)
+{
+
+height: 30px;
+padding-left: 40px;
+}
+
+#cara #modi_carac,#cara #eli_carac
+{
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+}
+
+#cara #modi_carac img,#cara #eli_carac img
+{
+    width: 20px;
+    height: 20px;
 }
