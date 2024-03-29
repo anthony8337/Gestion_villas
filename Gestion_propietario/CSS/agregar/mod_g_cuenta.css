@@ -196,3 +196,8 @@ float: inline-start;
 {
 float: inline-end;
 }
+
+#gene_cuenta .centro .c3 table td:nth-child(1)
+{
+    text-align: start;
+}

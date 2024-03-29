@@ -14,7 +14,13 @@
             <li onclick='ingreso_g()'><img src='Imagenes/$img_agre[$i]'>$titulos_agre[$i]</li>
             ";
         }
-        else{
+        else if($i == 1)
+        {
+            echo"
+            <li onclick='ingreso_mul()'><img src='Imagenes/$img_agre[$i]'>$titulos_agre[$i]</li>
+            ";
+        }
+        else {
         echo"
         <li><img src='Imagenes/$img_agre[$i]'>$titulos_agre[$i]</li>
         ";

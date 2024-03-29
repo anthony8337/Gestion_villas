@@ -44,17 +44,17 @@
 <table>
     <tr>
         <td>Cod. villa: </td>
-        <td>A-5</td>
+        <td></td>
     </tr>
 
     <tr>
         <td>Propietario: </td>
-        <td>Anthony Clemente Oliva Murillo</td>
+        <td></td>
     </tr>
 
     <tr>
         <td>Telefono: </td>
-        <td>94856463</td>
+        <td></td>
     </tr>
 </table>
 
@@ -66,18 +66,23 @@
             
             <table>
                 <tr>
+                    <td><input type="radio" name="abonar">Seleccionar concepto</td>
+                    <td><input type="radio" name="abonar">Agregar abono</td>
+                </tr>
+
+                <tr>
                     <td style='text-align: center;' colspan='2'><button type='button'>Selec. concepto</button></td>
                     
                 </tr>
             
                 <tr>
-                    <td>Concepto:</td>
-                    <td>Mantenimiento</td>
+                    <td colspan="2">Concepto:</td>
+                    
                 </tr>
             
                 <tr>
-                    <td>Tipo: </td>
-                    <td>Abono</td>
+                    <td colspan="2">Tipo: </td>
+                    
                 </tr>
             </table>
             
@@ -105,8 +110,13 @@
             <legend>Monto del documento</legend>
             
             <table>
+            <tr>
+                <td><input type="radio" name="monto" checked>Mantener monto</td>
+                <td><input type="radio" name="monto">Modificar monto</td>
+                </tr>
+
                 <tr>
-                    <td><input type="text" placeholder="Monto" disabled></td>
+                    <td style='text-align: center;' colspan="2"><input type="text" placeholder="Monto" disabled></td>
                 </tr>
             </table>
             

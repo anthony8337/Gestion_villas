@@ -1,0 +1,239 @@
+#multi .centro
+{
+position: absolute;
+justify-content: center;
+align-items: center;
+width: 1300px;
+height: 570px;
+background-color: white;
+border-radius: 5px;
+}
+
+#multi .centro .c1
+{
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 50px;
+padding-top:1px;
+}
+
+#multi .centro .c1 button
+{
+float: inline-end;
+height: 32px;
+width: 32px;
+margin-top: 10px;
+margin-right: 10px;
+background-color: rgb(233, 0, 0);
+border: 0px;
+color: white;
+}
+
+
+
+#multi .centro .c1 button:hover
+{
+cursor: pointer;
+}
+
+#multi .centro .c2
+{
+position: relative;
+top: 0;
+left: 0;
+width: calc(100% - padding);
+height: 50px;
+background-color: rgba(0, 0, 0, 0.1);
+padding-left: 35px;
+padding-right: 35px;
+padding-top: 10px;
+}
+
+#multi .centro .c2 button
+{
+    width: 150px;
+    height: 40px;
+    float: inline-start;
+    border-radius: 30px;
+    border: 1px solid black;
+    background-color: white;
+    margin-right: 10px;
+}
+
+#multi .centro .c2 button:hover
+{
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#multi .centro .c2 fieldset
+{
+    display: flex;
+    width: 400px;
+    height: 40px;
+    float: inline-end;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 0px;
+    align-items: center;
+    padding-left: 5px;
+}
+
+#multi .centro .c2 fieldset input[type="date"]
+{
+    width: 150px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid black;
+    float: inline-start;
+    text-align: center;
+    padding-right: 30px;
+    color: black;
+}
+
+#multi .centro .c2 fieldset label
+{
+
+margin-left: 20px;
+    float: inline-end;
+}
+
+#multi .centro .c2 .filtro
+{
+    display: flex;
+    width: 400px;
+    height: 40px;
+    float: inline-start;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+}
+
+
+
+
+
+#multi .centro .c3
+{
+width: calc(100% - 70px);
+height: calc(100% - 110px);
+background-color: rgba(0,0,0,0.1);
+padding-left: 35px;
+padding-right: 35px;
+}
+
+#multi .centro .c3 fieldset
+{
+width: calc(100% - 10px);
+height: 30px;
+border-radius: 10px;
+border: 1px solid black;
+padding: 0px;
+}
+
+#multi .centro .c3 fieldset table
+{
+border-collapse: collapse;
+width: 100%;
+height: 100%;
+}
+
+#multi .centro .c3 fieldset table td
+{
+    text-align: center;
+}
+
+
+
+#multi .centro .c3 div
+{
+    margin-top: 10px;
+    width: calc(100% - 5px);
+    height: 330px;
+    background-color: #ffffff;
+    overflow: auto;
+    border: 1px solid black;
+}
+
+#multi .centro .c3 div table
+{
+    border-collapse: collapse;
+width: 100%;
+}
+
+
+#multi .centro .c3 div table th
+{
+    background-color: rgb(97, 97, 97);
+    height: 30px;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+#multi .centro .c3 div table td
+{
+height: 30px;
+}
+
+#multi .centro .c3 div table tr:nth-child(even) td
+{
+    background-color: rgb(194, 193, 193);
+}
+
+#multi .centro .c3 div table tr:nth-child(even):hover td, #multi .centro .c3 div table tr:hover
+{
+    cursor: pointer;
+    background-color: orange;
+}
+
+
+#multi .centro .c3 .saldo_total
+{
+    margin-top: 10px;
+    width: 300px;
+    height: 60px;
+    float: inline-end;
+    display: flex;
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold; 
+}
+
+#multi .centro .c3 .filtro_cuenta
+{
+    margin-top: 10px;
+    width: 800px;
+    height: 60px;
+    float: inline-start;
+    display: flex;
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold; 
+}
+
+#multi .centro .c3 .filtro_cuenta table
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#multi .centro .c3 .filtro_cuenta table input[type="date"]
+{
+    width: 80%;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-left: 20px;
+}
