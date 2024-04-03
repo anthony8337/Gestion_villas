@@ -1,0 +1,222 @@
+#lis_pro_sal .centro
+{
+position: absolute;
+justify-content: center;
+align-items: center;
+width: 600px;
+height: 280px;
+background-color: white;
+border-radius: 5px;
+}
+
+#lis_pro_sal .centro .c1
+{
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 50px;
+padding-top:1px;
+}
+
+#lis_pro_sal .centro .c1 button
+{
+float: inline-end;
+height: 32px;
+width: 32px;
+margin-top: 10px;
+margin-right: 10px;
+background-color: rgb(233, 0, 0);
+border: 0px;
+color: white;
+}
+
+
+
+#lis_pro_sal .centro .c1 button:hover
+{
+cursor: pointer;
+}
+
+#lis_pro_sal .centro .c2
+{
+position: relative;
+top: 0;
+left: 0;
+width: calc(100% - padding);
+height: calc(100% - 120px);
+background-color: rgba(0,0, 0, 0.1);
+padding-left: 35px;
+padding-right: 35px;
+padding-top: 10px;
+}
+
+#lis_pro_sal .centro .c2 fieldset
+{
+text-align: center;
+padding: 0px;
+border-radius: 10px;
+border: 1px solid black;
+height: 140px;
+width: 100%;
+float: left;
+}
+
+#lis_pro_sal .centro .c2 table
+{
+    width: 100%;
+    height: 100%;
+}
+
+#lis_pro_sal .centro .c2 table td
+{
+    text-align: center;
+}
+
+#lis_pro_sal .centro .c2 table select
+{
+    width: 200px;
+    height: 25px;
+    padding-left: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+/*Modelo*/
+
+#lis_pro_sal .centro .c2 .modelo
+{
+text-align: center;
+padding: 0px;
+border-radius: 10px;
+border: 1px solid black;
+height: 60px;
+width: 100%;
+float: inline-end;
+margin-top: 10px;
+}
+
+#lis_pro_sal .centro .c2 table
+{
+    width: 100%;
+    height: 100%;
+}
+
+#lis_pro_sal .centro .c2 table td
+{
+    text-align: center;
+}
+
+
+/*Construcion*/
+
+
+
+#lis_pro_sal .centro .c2 .contru
+{
+text-align: center;
+padding: 0px;
+border-radius: 10px;
+border: 1px solid black;
+height: 100px;
+width: 100%;
+float: inline-end;
+margin-top: 10px;
+}
+
+#lis_pro_sal .centro .c2 table
+{
+    width: 100%;
+    height: 100%;
+}
+
+#lis_pro_sal .centro .c2 table td
+{
+    text-align: center;
+}
+
+
+
+#lis_pro_sal .centro .c2 table input[type = "number"],#lis_pro_sal .centro .c2 table input[type = "text"]
+{
+    width: 100px;
+    height: 25px;
+    padding-left: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+#lis_pro_sal .centro .c2 table .grupo_cod
+{
+    width: 100px;
+    height: 25px;
+    padding-left: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+/*Grupo*/
+
+#lis_pro_sal .centro .c2 .grupo
+{
+text-align: center;
+padding: 0px;
+border-radius: 10px;
+border: 1px solid black;
+height: 140px;
+width: 100%;
+float: inline-end;
+}
+
+#lis_pro_sal .centro .c2 table
+{
+    width: 100%;
+    height: 100%;
+}
+
+#lis_pro_sal .centro .c2 table td
+{
+    text-align: center;
+}
+
+
+
+#lis_pro_sal .centro .c2 table input[type = "number"]
+{
+    width: 100px;
+    height: 25px;
+    padding-left: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+#lis_pro_sal .centro .c3
+{
+position: relative;
+top: 0;
+left: 0;
+width: calc(100% - padding);
+height: calc(100% - 220px);
+background-color: rgba(0, 0, 0, 0.1);
+padding-left: 35px;
+padding-right: 35px;
+}
+
+#lis_pro_sal .centro .c3 button
+{
+width: 150px;
+height: 50px;
+border-radius: 30px;
+border: 1px solid black;
+background-color:white;
+}
+
+#lis_pro_sal .centro .c3 button:hover
+{
+background-color:rgba(0, 0, 0,0.1);
+cursor: pointer;
+}

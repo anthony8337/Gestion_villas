@@ -64,3 +64,11 @@ include "PHP/archivo/unir_emergentes.php";
 <?php
 include "PHP/agregar/unir_emergentes.php";
 ?>
+
+<?php
+include "PHP/reportes/unir_emergentes.php";
+?>
+
+<?php
+include "PHP/Selecionador/unir_emergentes.php";
+?>

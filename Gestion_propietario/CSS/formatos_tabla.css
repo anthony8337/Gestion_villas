@@ -67,3 +67,9 @@ font-weight: normal;
 
 }
 
+#cuerpo_pagina #tabla_contenido_villa table td,#cuerpo_pagina  #tabla_contenido_propi table td
+{
+    border-left: 1px solid rgb(97, 97, 97);
+    border-right: 1px solid rgb(97, 97, 97);
+}
+

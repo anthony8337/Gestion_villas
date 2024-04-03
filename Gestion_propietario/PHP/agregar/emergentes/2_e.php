@@ -46,7 +46,7 @@ for ($i=0; $i < count($botones); $i++) {
 <div>
     <table>
         <tr>
-            <th>Con. cuenta</th>
+            <th>Concep. cuenta</th>
             <th>Cod. cuenta</th>
             <th>Fecha Apli.</th>
             <th>Fecha Ven.</th>

@@ -1,17 +1,18 @@
 <?php
-$nombre = ["Anthony","Clemente","Elder","Ricardo","Nestor","Vanderzar","Issac","Romario","Jose",
-"Mainor","Orlando","Cristian","Wilson","Edgardo","Eduardo","Victor","Johan","Orlyn","Reinaldo","Carlos","Jack",
-"Max","Rex","Josue"];
+$nombre = ["ANTHONY","CLEMENTE","ELDER","RICARDO","NESTOR","VANDERZAR","ISSAC","ROMARIO","JOSE",
+"MAINOR","ORLANDO","CRISTIAN","WILSON","EDGARDO","EDUARDO","VICTOR","JOHAN","ORLYN","REINALDO","CARLOS","JACK",
+"MAX","REX","JOSUE"];
 
-$Snombre = ["Wilson","Edgardo","Eduardo","Victor","Johan","Orlyn","Reinaldo","Carlos","Jack",
-"Max","Rex","Josue","Anthony","Clemente","Elder","Ricardo","Nestor","Vanderzar","Issac","Romario","Jose",
-"Mainor","Orlando","Cristian"];
+$Snombre = ["WILSON","EDGARDO","EDUARDO","VICTOR","JOHAN","ORLYN","REINALDO","CARLOS","JACK",
+"MAX","REX","JOSUE","ANTHONY","CLEMENTE","ELDER","RICARDO","NESTOR","VANDERZAR","ISSAC","ROMARIO","JOSE",
+"MAINOR","ORLANDO","CRISTIAN"];
 
-$apellido = ["Oliva","Murillo","Jackson","Winston","Arteaga","Zelaya","Pastor","Arzu","Moreno",
-"Paz","Calderon","Palacios","Blanco","Flores","Guty","Hernandez","Wood","Castillo","Muros","Cano","Guerrero",
-"Gonzales","Diaz","Lozano"];
+$apellido = ["OLIVA","MURILLO","JACKSON","WINSTON","ARTEAGA","ZELAYA","PASTOR","ARZU","MORENO",
+"PAZ","CALDERON","PALACIOS","BLANCO","FLORES","GUTY","HERNANDEZ","WOOD","CASTILLO","MUROS","CANO","GUERRERO",
+"GONZALES","DIAZ","LOZANO"];
 
-$sapellido = ["Oliva","Murillo","Jackson","Winston","Arteaga","Zelaya","Pastor","Arzu","Moreno",
-"Paz","Calderon","Palacios","Blanco","Flores","Guty","Hernandez","Wood","Castillo","Muros","Cano","Guerrero",
-"Gonzales","Diaz","Lozano"];
+$sapellido = ["OLIVA","MURILLO","JACKSON","WINSTON","ARTEAGA","ZELAYA","PASTOR","ARZU","MORENO",
+"PAZ","CALDERON","PALACIOS","BLANCO","FLORES","GUTY","HERNANDEZ","WOOD","CASTILLO","MUROS","CANO","GUERRERO",
+"GONZALES","DIAZ","LOZANO"];
+
 ?>

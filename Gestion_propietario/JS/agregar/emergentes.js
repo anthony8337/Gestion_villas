@@ -19,3 +19,14 @@ function ingreso_mul()
 {
     document.getElementById('multi').style.display = 'flex';
 }
+
+//generar reimprecion
+function cerrar_ingreso_reim()
+{
+    document.getElementById('reimpre').style.display = 'none';
+}
+
+function ingreso_reim()
+{
+    document.getElementById('reimpre').style.display = 'flex';
+}

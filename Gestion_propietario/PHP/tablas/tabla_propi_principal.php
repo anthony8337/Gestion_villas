@@ -8,7 +8,8 @@
 <th>RTN</th>
 <th>Telefono</th>
 <th>Estado</th>
-<th>Fecha ultimo pago</th>
+<th>Ul. pago</th>
+<th>Pro. pago</th>
 <th>Saldo</th>
 </tr>
 
@@ -40,7 +41,7 @@ for($j = 1; $j <= 12; $j++)
         }
     
     echo "
-    <tr class='contenido' onclick='saldo_abrir()'>
+    <tr class='contenido' onclick='ingreso_cuadro_pro()'>
     <td>",$letra[$i],"-",$j,"<label style='display: none;'>-</label>","</td>
     <td>",rand(10000000,99999999),"</td>
     <td>",$nombre[rand(0,count($nombre)-1)]," ",$Snombre[rand(0,count($Snombre)-1)]," ",
@@ -48,6 +49,7 @@ for($j = 1; $j <= 12; $j++)
     <td>0101-",rand(1950,2000),"-",rand(10000,50000),"</td>
     <td>+504 ",rand(80000000,99999999),"</td>
     <td>",$estadia[$j],"</td>
+    <td>",rand(2022,2024),"-",rand(01,12),"-",rand(1,31),"</td>
     <td>",rand(2022,2024),"-",rand(01,12),"-",rand(1,31),"</td>
     <td>$ ",rand(0,5000),".00</td>
     </tr>

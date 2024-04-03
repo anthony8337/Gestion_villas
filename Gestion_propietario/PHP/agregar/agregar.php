@@ -20,6 +20,12 @@
             <li onclick='ingreso_mul()'><img src='Imagenes/$img_agre[$i]'>$titulos_agre[$i]</li>
             ";
         }
+        else if($i == 2)
+        {
+            echo"
+            <li onclick='ingreso_reim()'><img src='Imagenes/$img_agre[$i]'>$titulos_agre[$i]</li>
+            ";
+        }
         else {
         echo"
         <li><img src='Imagenes/$img_agre[$i]'>$titulos_agre[$i]</li>
