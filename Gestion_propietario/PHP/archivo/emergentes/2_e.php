@@ -68,7 +68,7 @@ for ($i=0; $i < count($pal); $i++) {
         <tr>
         <?php
             
-            $detalles = ['Coral','Arrecife','Agre. Carac.'];
+            $detalles = ['Coral','Arrecife','Carey','Agre. Carac.'];
 
             for ($i=0; $i < count($detalles); $i++) { 
 
@@ -87,7 +87,16 @@ for ($i=0; $i < count($pal); $i++) {
                     <input type='radio' name='modelo' id='modelo[$i]'> $detalles[$i]
                     </td>
                     ";
-                }else
+                }
+                else if($i == 2)
+                {
+                    echo"
+                    <td>
+                    <input type='radio' name='modelo' id='modelo[$i]'> $detalles[$i]
+                    </td>
+                    ";
+                }
+                else
                 {
                     echo"
                     <td>

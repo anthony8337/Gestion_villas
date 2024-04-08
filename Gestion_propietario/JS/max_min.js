@@ -5,6 +5,9 @@ function verificarEstadoVentana() {
     // Obtenemos el ancho y alto de la ventana del navegador
     var anchoVentana = window.innerWidth;
     var altoVentana = window.innerHeight;
+    var vent_pro = document.getElementById('tabla_contenido_propi');
+    var vent_vi = document.getElementById('tabla_contenido_villa');
+    
 
     var mod = document.getElementsByClassName("mod");
 
@@ -14,6 +17,9 @@ function verificarEstadoVentana() {
        for (var i = 0; i < mod.length; i++) {
         mod[i].style.justifyContent = "center";
         mod[i].style.alignItems = "center";
+
+        vent_pro.style.height = 'calc(100% - 235px)';
+        vent_vi.style.height = 'calc(100% - 235px)';
        }
 
 
@@ -22,6 +28,8 @@ function verificarEstadoVentana() {
         for (var i = 0; i < mod.length; i++) {
             mod[i].style.justifyContent = "start";
             mod[i].style.alignItems = "start";
+            vent_pro.style.height = '200px';
+            vent_vi.style.height = '200px';
            }
         
     } else
@@ -29,6 +37,9 @@ function verificarEstadoVentana() {
         for (var i = 0; i < mod.length; i++) {
             mod[i].style.justifyContent = "center";
             mod[i].style.alignItems = "center";
+
+            vent_pro.style.height = 'calc(100% - 235px)';
+            vent_vi.style.height = 'calc(100% - 235px)';
            }
     }
 }
