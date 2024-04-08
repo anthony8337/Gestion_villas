@@ -11,9 +11,9 @@
 </div>
 
 <div class="c2">
-    <button type="button">Propietario</button>
-    <button type="button">Limpiar</button>
-    <fieldset>
+    <button type="button" class="btn_re">Propietario</button>
+    <button type="button" class="btn_re">Limpiar</button>
+    <fieldset id="filtro_fechas">
         <table>
             <tr>
              <td> <input type="radio" name="filtar_recibo" checked> Ultimo pago</td>
@@ -38,12 +38,11 @@
     <div>
     <table>
         <tr>
+        <th>Fecha de pago</th>
             <th>Cod. Factura</th>
-            <th>Cod. cuenta</th>
             <th>Concep. cuenta</th>
-            <th>Concep. Pago</th>
             <th>Cod. cuenta</th>
-            <th>Fecha de pago</th>
+            <th>Concep. Pago</th>
             <th>Costo</th>
             <th>Pago</th>
         </tr>
@@ -56,3 +55,5 @@
 </div>
 
 </div>
+
+<label style="display: none;" id="lb_cel_re"></label>

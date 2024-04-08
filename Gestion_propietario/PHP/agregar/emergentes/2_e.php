@@ -97,3 +97,5 @@ for ($i=0; $i < count($botones); $i++) {
 </div>
 
 </div>
+
+<label style="display: none;" id="lb_cel_multi"></label>

@@ -7,7 +7,7 @@
 <div class="c1">
 
 <button onclick="cerrar_ingreso()" type="button">X</button>
-<h2>Ingresar nuevo propietario</h2>
+<h2 id="titulo_pro">Ingresar nuevo propietario</h2>
 
 
 

@@ -14,7 +14,7 @@
 </div>
 
 <div class="c2">
-   <button>Agregar nuevo</button> 
+   <button onclick="ingreso_concepto_r()">Agregar nuevo</button> 
 
    <input type="text" placeholder="Buscar concepto">
 </div>

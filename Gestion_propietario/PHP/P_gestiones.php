@@ -70,5 +70,5 @@ include "PHP/reportes/unir_emergentes.php";
 ?>
 
 <?php
-include "PHP/Selecionador/unir_emergentes.php";
+include "PHP/celda/unir_emergentes.php";
 ?>

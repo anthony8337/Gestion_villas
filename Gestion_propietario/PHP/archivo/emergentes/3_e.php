@@ -14,7 +14,7 @@
 </div>
 
 <div class="c2">
-   <button>Agregar nueva</button> 
+   <button onclick="ingreso_moneda_r()">Agregar nueva</button> 
 
    <input type="text" placeholder="Buscar moneda">
 </div>

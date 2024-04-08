@@ -97,8 +97,9 @@ padding-top: 10px;
 {
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: calc(100% - 5px);
+    height: calc(100% - 40px);
     overflow: auto;
+    border: 1px solid rgb(77, 77, 77);
 }
 
 #con_1 .centro .c3 table
@@ -134,7 +135,11 @@ padding-top: 10px;
     margin-right: 20px;
     padding-top: 5px;
     padding-left: 5px;
+}
 
+#con_1 .centro .c3 #modi_carac:hover,#con_1 .centro .c3 #eli_carac:hover
+{
+cursor: pointer;
 }
 
 #con_1 .centro .c3 #modi_carac img,#con_1 .centro .c3 #eli_carac img

@@ -1,0 +1,172 @@
+#moneda_registro .centro
+{
+position: absolute;
+justify-content: center;
+align-items: center;
+width: 500px;
+height: 250px;
+background-color: white;
+border-radius: 5px;
+}
+
+#moneda_registro .centro .c1
+{
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 50px;
+padding-top:1px;
+}
+
+#moneda_registro .centro .c1 button
+{
+float: inline-end;
+height: 32px;
+width: 32px;
+margin-top: 10px;
+margin-right: 10px;
+background-color: rgb(233, 0, 0);
+border: 0px;
+color: white;
+}
+
+
+
+#moneda_registro .centro .c1 button:hover
+{
+cursor: pointer;
+}
+
+#moneda_registro .centro .c2
+{
+position: relative;
+top: 0;
+left: 0;
+width: calc(100% - padding);
+height: 190px;
+background-color: rgb(0, 0, 0,0.1);
+padding-left: 35px;
+padding-right: 35px;
+padding-top: 10px;
+}
+
+
+#moneda_registro .centro .c2 button
+{
+    width: 200px;
+    height: 40px;
+    float: inline-start;
+    border-radius: 30px;
+    border: 1px solid black;
+    background-color: white;
+    margin-top: 20px;
+}
+
+#moneda_registro .centro .c2 button:hover
+{
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#moneda_registro .centro .c2 .a_0
+{
+    margin:0px;
+    width: calc(100% - 100px);
+    height: 40px;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 15px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+#moneda_registro .centro .c2 .a_1, #moneda_registro .centro .c2 .a_2
+{
+    margin:0px;
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 15px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+#moneda_registro .centro .c2 .a_2
+{
+    float: inline-end;
+    padding-right: 10px;
+}
+
+
+
+
+#moneda_registro .centro .c3
+{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: calc(100% - 70px);
+    height: calc(100% - 115px);
+    padding-right: 35px;
+    padding-left: 35px;
+    padding-top: 5px;
+}
+
+#moneda_registro .centro .c3 .interior
+{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: calc(100% - 5px);
+    overflow: auto;
+}
+
+#moneda_registro .centro .c3 table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#moneda_registro .centro .c3 table th, #moneda_registro .centro .c3 table td
+{
+     height: 30px;
+     text-align: center;
+}
+
+#moneda_registro .centro .c3 table th
+{
+    background-color: rgb(97, 97, 97);
+    height: 30px;
+    color: white;
+    position: sticky;
+    top: 0px;
+}
+
+#moneda_registro .centro .c3 tr:nth-child(even) td
+{
+    background-color: rgb(194, 193, 193);
+}
+
+#moneda_registro .centro .c3 #modi_carac,#moneda_registro .centro .c3 #eli_carac
+{
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+}
+
+#moneda_registro .centro .c3 #modi_carac img,#moneda_registro .centro .c3 #eli_carac img
+{
+    width: 20px;
+    height: 20px;
+}
+
+#moneda_registro table td,#moneda_registro table td
+{
+    border-left: 1px solid rgb(97, 97, 97);
+    border-right: 1px solid rgb(97, 97, 97);
+}
+
