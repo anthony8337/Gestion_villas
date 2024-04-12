@@ -34,6 +34,7 @@ color: white;
 #vi .centro .c1 button:hover
 {
 cursor: pointer;
+background-color: rgb(134, 0, 0);
 }
 
 #vi .centro .c2

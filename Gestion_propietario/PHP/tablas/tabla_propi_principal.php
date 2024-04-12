@@ -1,6 +1,6 @@
 <div id="tabla_contenido_propi">
 
-<table> 
+<table id="prin_propietario"> 
 <tr class="cabezal">
 <th>Villa</th>
 <th>Cont. EEH</th>

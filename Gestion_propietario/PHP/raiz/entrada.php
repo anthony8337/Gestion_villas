@@ -19,8 +19,12 @@
     <script src='JS/agregar/emergentes.js'></script>
     <script src='JS/reportes/emergentes.js'></script>
     <script src='JS/celda/emergentes.js'></script>
-    <script src='JS/com_text.js'></script>
     <script src='JS/archivo/sub_emergentes.js'></script>
+    <script src='JS/redirijir.js'></script>
+    <script src='JS/principal/ven_usuario.js'></script>
+    <script src='JS/principal/login.js'></script>
+    <script src='JS/com_text.js'></script>
+
+
 </head>
 <body>
-

@@ -36,6 +36,7 @@ color: white;
 #lis_pro .centro .c1 button:hover
 {
 cursor: pointer;
+background-color: rgb(134, 0, 0);
 }
 
 #lis_pro .centro .c2

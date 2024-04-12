@@ -38,6 +38,13 @@ color: white;
 cursor: pointer;
 }
 
+
+#moneda_registro .centro .c1 button:hover
+{
+cursor: pointer;
+background-color: rgb(134, 0, 0);
+}
+
 #moneda_registro .centro .c2
 {
 position: relative;

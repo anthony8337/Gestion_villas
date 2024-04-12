@@ -36,6 +36,7 @@ color: white;
 #acc_cel .centro .c1 button:hover
 {
 cursor: pointer;
+background-color: rgb(134, 0, 0);
 }
 
 #acc_cel .centro .c2
@@ -68,7 +69,8 @@ padding-top: 10px;
 #acc_cel .centro .c2 div:hover
 {
     background-color: rgb(255, 166, 2);
-    cursor: pointer;}
+    cursor: pointer;
+}
 
 #acc_cel .centro .c2 div img
 {

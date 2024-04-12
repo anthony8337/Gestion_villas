@@ -36,6 +36,7 @@ color: white;
 #con_registro .centro .c1 button:hover
 {
 cursor: pointer;
+background-color: rgb(134, 0, 0);
 }
 
 #con_registro .centro .c2

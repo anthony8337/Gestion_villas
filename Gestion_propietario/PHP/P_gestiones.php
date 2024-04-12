@@ -3,7 +3,7 @@
 <ul>
 <?php
 $nombre_botones = ['Archivo','Agregar','Reportes','Exportar','Salir'];
-$imagenes_botones = ['Imagenes/2.png','Imagenes/5.png','Imagenes/6.png','Imagenes/3.png','Imagenes/8.png'];
+$imagenes_botones = ['Imagenes/2.png','Imagenes/5.png','Imagenes/6.png','Imagenes/3.png','Imagenes/box-arrow-left.svg'];
 
 for ($i=0; $i < count($nombre_botones); $i++) { 
 

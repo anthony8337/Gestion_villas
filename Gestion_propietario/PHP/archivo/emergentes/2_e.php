@@ -16,7 +16,7 @@
 <div class="c2">
 <?php
 
-$pal = ['Codigo de villa','Cont. Ehh','Estado'];
+$pal = ['Codigo de villa','Contador Ehh','Estado'];
 
 
 for ($i=0; $i < count($pal); $i++) { 

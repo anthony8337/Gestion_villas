@@ -36,6 +36,7 @@ color: white;
 #gene_cuenta .centro .c1 button:hover
 {
 cursor: pointer;
+background-color: rgb(134, 0, 0);
 }
 
 #gene_cuenta .centro .c2

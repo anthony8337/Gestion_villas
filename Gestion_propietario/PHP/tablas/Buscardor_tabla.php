@@ -29,3 +29,6 @@
 
 </table>
 </div>
+
+
+<script src="JS/buscar/buscar_pro.js"></script>

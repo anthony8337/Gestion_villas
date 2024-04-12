@@ -5,10 +5,12 @@ top: 0;
 left: 0;
 height: 100%;
 width: 90px;
-background: linear-gradient(to top,#ffeb9c, #da8447);
+background: #f19858;
 text-align: center;
 overflow: auto;
 }
+
+/*background: linear-gradient(to top,#ffeb9c, #da8447);*/
 
 #menu_lateral #logo
 {
@@ -58,7 +60,7 @@ height: 60px;
     position: fixed;
     top: 5px;
     left: 95px;
-    background-color: #da8447;
+    background-color: #f19858;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -81,7 +83,7 @@ padding-top: 10px;
 li:hover,#encojer_menu:hover, #cuerpo_pagina div div ul li:hover
 {
     cursor: pointer;
-    background-color: rgba(252, 0, 0, 0.2);
+    background: #ffb27a;
 }
 
 .m_expo,.m_agregar,.m_reporte

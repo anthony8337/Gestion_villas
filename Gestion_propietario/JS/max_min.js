@@ -10,14 +10,23 @@ function verificarEstadoVentana() {
     
 
     var mod = document.getElementsByClassName("mod");
+    var c_login = document.getElementsByClassName("entrada");
 
     // Verificamos si el ancho o alto de la ventana es igual al tamaño de la pantalla
     if (anchoVentana === screen.width && altoVentana === screen.height) {
         
+
+        for (var i = 0; i < c_login.length; i++) {
+            c_login[i].style.justifyContent = "center";
+            c_login[i].style.alignItems = "center";
+            }
+
+
+
        for (var i = 0; i < mod.length; i++) {
         mod[i].style.justifyContent = "center";
         mod[i].style.alignItems = "center";
-
+        
         vent_pro.style.height = 'calc(100% - 235px)';
         vent_vi.style.height = 'calc(100% - 235px)';
        }
@@ -25,18 +34,30 @@ function verificarEstadoVentana() {
 
     } else if (anchoVentana != screen.availWidth && altoVentana != screen.availHeight) {
 
+        for (var i = 0; i < c_login.length; i++) {
+            c_login[i].style.justifyContent = "start";
+            c_login[i].style.alignItems = "start";
+            }
+
         for (var i = 0; i < mod.length; i++) {
             mod[i].style.justifyContent = "start";
             mod[i].style.alignItems = "start";
+            c_login[i].style.alignItems = "start";
             vent_pro.style.height = '200px';
             vent_vi.style.height = '200px';
            }
         
     } else
     {
+        for (var i = 0; i < c_login.length; i++) {
+            c_login[i].style.justifyContent = "center";
+            c_login[i].style.alignItems = "center";
+            }
+
         for (var i = 0; i < mod.length; i++) {
             mod[i].style.justifyContent = "center";
             mod[i].style.alignItems = "center";
+            c_login[i].style.alignItems = "center";
 
             vent_pro.style.height = 'calc(100% - 235px)';
             vent_vi.style.height = 'calc(100% - 235px)';
