@@ -1,7 +1,23 @@
+<link rel='stylesheet' type='text/css' media='screen' href='CSS/archivos/sub_emergente/mod_v_pro.css'>
+<script src="JS/archivo/accion_sub.js"></script>
 
-<div class="tab_principal" id="tabla_contenido_villa">
+<div id="v_pro" class="mod">
 
-<table id='tab_vi'>
+<div class="centro">
+
+<div class="c1">
+
+<button onclick="ingreso_pro_villa_cerrar()" type="button">X</button>
+<h2>Seleccionar villa disponible</h2>
+</div>
+
+<div class="c2">
+    <input type="text" placeholder="Buscar villa disponible">
+
+    <button>Agregar nueva villa</button>
+
+    <div>
+    <table id='tab_vi'>
 <tr>
 <th>Villa</th>
 <th>Contador EEH</th>
@@ -15,9 +31,6 @@
 <?php
 
 $letra = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-
-
-
 
 $i = 0;
 $tipo;
@@ -58,4 +71,14 @@ while($i < count($letra))
 ?>
 
 </table>
+    </div>
+</div>
+
+<div class="c3">
+</div>
+
+
+
+</div>
+
 </div>

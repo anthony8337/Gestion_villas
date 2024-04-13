@@ -1,7 +1,7 @@
 
 function buscar() {
   var textoBusqueda = document.getElementById('Busca_prin').value.toLowerCase();
-  var tabla = document.getElementById('prin_propietario');
+  var tabla = document.getElementById('tab_pro');
   var filas = tabla.getElementsByTagName('tr');
   for (var i = 1; i < filas.length; i++) {
     var celdas = filas[i].getElementsByTagName('td');

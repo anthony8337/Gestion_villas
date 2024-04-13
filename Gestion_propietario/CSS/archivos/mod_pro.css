@@ -102,6 +102,12 @@ padding-top: 10px;
     background-color: white;
 }
 
+#pro .centro .c3 button:hover
+{
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
 #pro .centro .c3 .cabezal_villa
 {
     width: 400px;
@@ -156,6 +162,12 @@ padding-top: 10px;
     margin-top: 10px;
 }
 
+#pro .centro #agre_confirmar:hover
+{
+    
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 #pro .centro #agre_cance
 {
     width: 200px;
@@ -166,4 +178,11 @@ padding-top: 10px;
     margin-right: 40px;
     margin-top: 10px;
     float: inline-end;
+}
+
+#pro .centro #agre_cance:hover
+{
+    
+    background-color: rgb(201, 1, 1);
+    color: white;
 }

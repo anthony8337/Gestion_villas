@@ -1,0 +1,126 @@
+#v_pro .centro
+{
+position: absolute;
+justify-content: center;
+align-items: center;
+width: 1200px;
+height: 500px;
+background-color: white;
+border-radius: 5px;
+}
+
+#v_pro .centro .c1
+{
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 50px;
+padding-top:1px;
+}
+
+#v_pro .centro .c1 button
+{
+float: inline-end;
+height: 32px;
+width: 32px;
+margin-top: 10px;
+margin-right: 10px;
+background-color: rgb(233, 0, 0);
+border: 0px;
+color: white;
+}
+
+
+
+#v_pro .centro .c1 button:hover
+{
+cursor: pointer;
+}
+
+
+#v_pro .centro .c1 button:hover
+{
+cursor: pointer;
+background-color: rgb(134, 0, 0);
+}
+
+#v_pro .centro .c2 
+{
+    width: calc(100% - padding);
+    height: calc(100% - 70px);
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+#v_pro .centro .c2 input[type = "text"]
+{
+    position: relative;
+    left: 350px;
+    width: 400px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: white;
+    border: 1px solid black;
+    padding-left: 20px;
+}
+
+#v_pro .centro .c2 button
+{
+
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: white;
+    border: 1px solid black;
+    float: inline-end;
+}
+
+#v_pro .centro .c2 div
+{
+    margin-top: 10px;
+    overflow: auto;
+    height: calc(100% - 60px);
+    border: 1px solid black;
+    background-color: white;
+}
+
+/*tabla*/
+
+#v_pro .centro .c2 table
+{
+    width: 100%;
+    height: 35px;
+    border-collapse: collapse;
+}
+
+#v_pro .centro .c2 table th
+{
+    background-color: gray;
+    color: white;
+    position: sticky;
+    top: 0px;
+}
+
+#v_pro .centro .c2 table tr
+{
+    text-align: center;
+    height: 35px;
+}
+
+#v_pro .centro .c2 table td
+{
+border-left: 1px solid black;
+border-right: 1px solid black;
+}
+
+#v_pro .centro .c2 table tr:nth-child(even) td
+{
+    background-color: rgb(194, 193, 193);
+}
+
+#v_pro .centro .c2 table tr:nth-child(even):hover td ,#v_pro .centro .c2 table tr:hover
+{
+    background: #f19858;
+   cursor: pointer;
+}

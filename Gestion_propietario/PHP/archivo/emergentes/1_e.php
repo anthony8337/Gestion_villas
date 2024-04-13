@@ -48,7 +48,7 @@ for ($i=0; $i < count($pal); $i++) {
 
 <div class="c3">
 
-<button type="button" class="sel_villa">Selec. Villa</button>
+<button type="button" class="sel_villa" onclick="ingreso_pro_villa()">Seleccionar Villa</button>
 
 <fieldset class="cabezal_villa">
     <table>

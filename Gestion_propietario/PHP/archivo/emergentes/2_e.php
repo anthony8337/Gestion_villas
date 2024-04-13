@@ -14,6 +14,10 @@
 </div>
 
 <div class="c2">
+
+<table>
+    <tr>
+
 <?php
 
 $pal = ['Codigo de villa','Contador Ehh','Estado'];
@@ -24,30 +28,41 @@ for ($i=0; $i < count($pal); $i++) {
     if($i == 2)
     {
         echo"
+        <td>
         <select>
         <option value='Disponible'>Disponible</option>
         <option value='Mantenimiento'>Mantenimiento</option>
         <option value='Descartado'>Descartado</option>
-</select>";
+        </select>
+        
+        </td>";
     }
     else
     {
-        echo"<input type='text' placeholder='$pal[$i]'>";
+        echo"
+        
+        <td>
+        <input type='text' placeholder='$pal[$i]'>
+        </td>";
     }
    
 }
 
 ?>
+
+</tr>
+</table>
 </div>
 
 <div class="c3">
 
 <table id="tama">
     <tr>
-     <td></td>
-    <td>Tam. Lote</td>
+     <td>Cantidad de habitaciones</td>
+     <td><input type="number" placeholder="Habitaciones"></td>
+    <td>Area de lote</td>
     <td><input type="number" placeholder="Mts²"></td>
-    <td>Tam. Const.</td>
+    <td>Area de construcción.</td>
     <td><input type="number" placeholder="Mts²"></td>
     </tr>
     <tr>
@@ -113,7 +128,7 @@ for ($i=0; $i < count($pal); $i++) {
     <div id="ta_cara">
         <table class="ta_ca_cont">
             <tr>
-                <th colspan="2">Caracteristicas</th>
+                <th colspan="4">Caracteristicas</th>
             </tr>
 
             <?php
@@ -149,6 +164,10 @@ for ($i=0; $i < count($pal); $i++) {
 <textarea></textarea>
 </fieldset>
 
+
+</div>
+
+<div class="c4">
 <button id="agre_confirmar">Agregar Nuevo</button>
 
 <button id="agre_cance">Cancelar</button>
