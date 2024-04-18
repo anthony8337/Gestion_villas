@@ -1,10 +1,15 @@
 <link rel='stylesheet' type='text/css' media='screen' href='CSS/ventana_principal/usuarios.css'>
 
 
-<div class="encabezado">
+<div onload="cu_1()" class="encabezado">
 <h1>Gestion de propietario</h1>
 
 <h2>Bienvenido Usuario</h2>
+
+<div onclick="redirigir_login()" class="retorno" title="Salir">
+    <img src="Imagenes/box-arrow-left.svg">
+</div>
+
 </div>
 
 <div id="acc_1">
@@ -23,8 +28,8 @@
 
 <div id="ac_2">
     <?php
-    $a = ['Ingresar','Salir'];
-    $b = ['redirigir_sistema()','redirigir_login()'];
+    $a = ['Ingresar'];
+    $b = ['redirigir_sistema()'];
     
     for($i = 0; $i < count($a); $i++)
     {
@@ -36,9 +41,13 @@
 </div>
 
 <div id="ac_3">
-    <button>Agregar nuevo</button>
+    <button onclick="ingresar_usuario_in()">Agregar nuevo</button>
     <input type="text" placeholder="Buscar usuario">
-
+    <select title="Estado">
+        <option>Activos</option>
+        <option>Suspendidos</option>
+        <option>Todo</option>
+    </select>
     <div>
         <table>
             <tr>
@@ -54,17 +63,28 @@
             </tr>
 
             <?php
-            for ($i=0; $i < 100; $i++) { 
+
+include "PHP/tablas/datos_random.php";
+
+            for ($i=0; $i < 9; $i++) { 
               echo"
             <tr>
+            <td>",$nombre[rand(0,count($nombre)-1)],"</td>
+            <td>",$nombre[rand(0,count($nombre)-1)]," ",$Snombre[rand(0,count($Snombre)-1)]," ",
+            $apellido[rand(0,count($apellido)-1)]," ",$sapellido[rand(0,count($sapellido)-1)],"</td>
+            <td>0101-",rand(1950,2000),"-",rand(10000,50000),"</td>
+            <td>+504 ",rand(80000000,99999999),"</td>
+            <td>ejemplo@gmail.com</td>
             <td>Usuario</td>
-            <td>Nombre Completo</td>
-            <td>DNI</td>
-            <td>Teléfono</td>
-            <td>Correo</td>
-            <td>Tipo de usuario</td>
-            <td>Contraseña</td>
-            <td></td>
+            <td>12345678</td>
+            <td>
+            <button id='modi_carac'>
+            <img src='Imagenes/pencil-fill.svg'>
+            </button>
+            <button id='eli_carac'>
+                <img src='Imagenes/trash3-fill.svg'>
+            </button>
+            </td>
             </tr>
               ";
             }
@@ -104,9 +124,3 @@
 </div>
 
 </div>
-
-<script>
-
-window.onload = cu_1();
-
-</script>

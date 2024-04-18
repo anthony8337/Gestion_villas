@@ -57,6 +57,11 @@ font-weight: normal;
     cursor: pointer;
 }
 
+#Busca_vi_prin
+{
+    display: none;
+}
+
 #cuerpo_pagina #tabla_contenido_villa table td,#cuerpo_pagina  #tabla_contenido_propi table td
 {
     border-left: 1px solid rgb(97, 97, 97);

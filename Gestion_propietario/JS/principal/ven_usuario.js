@@ -1,6 +1,3 @@
-
-
-
 function cu_1()
 {
 for (var i = 2; i <= 4; i++) {

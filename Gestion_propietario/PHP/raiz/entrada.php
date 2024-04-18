@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -24,6 +24,8 @@
     <script src='JS/principal/ven_usuario.js'></script>
     <script src='JS/principal/login.js'></script>
     <script src='JS/com_text.js'></script>
+    <script src='JS/limpiar_campos.js'></script>
+    <script src='JS/principal/emergente.js'></script>
 
 
 </head>

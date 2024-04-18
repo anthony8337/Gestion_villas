@@ -7,13 +7,15 @@
         </td>
         
         <td rowspan="2">
-        <input type="text" name="Busca_prin" id="Busca_prin" placeholder="Buscar propietario">
+        <input type="text" class="buscador_prin" id="Busca_prin" placeholder="Buscar propietario">
+        <input type="text" class="buscador_prin" id="Busca_vi_prin" placeholder="Buscar Villa">
         </td>
 
         <td rowspan="2"><select>
             <option>Todos</option>
             <option>Pronto a vencer</option>
             <option>Vencido</option>
+            <option>Suspendidos</option>
         </select></td>
 
         <td rowspan="2">
@@ -32,3 +34,4 @@
 
 
 <script src="JS/buscar/buscar_pro.js"></script>
+<script src="JS/buscar/buscar_vi.js"></script>
