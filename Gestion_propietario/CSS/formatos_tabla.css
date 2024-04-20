@@ -22,7 +22,7 @@
 .tab_principal table th
 {
     background-color: rgb(97, 97, 97);
-    height: 35px;
+    height: 30px;
     color: white;
     position: sticky;
     top: 0;
@@ -31,7 +31,7 @@
 .tab_principal table td
 {
 text-align: center;
-height: 35px;
+height: 30px;
 font-weight: normal;
 }
 
@@ -58,6 +58,11 @@ font-weight: normal;
 }
 
 #Busca_vi_prin
+{
+    display: none;
+}
+
+#filtro_vi
 {
     display: none;
 }

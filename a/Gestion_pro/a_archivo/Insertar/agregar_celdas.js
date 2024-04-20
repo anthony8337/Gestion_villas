@@ -14,9 +14,7 @@ function agregarDato() {
     celda1.innerHTML = datoInput;
 
     var celda2 = fila.insertCell(1);
-    celda2.innerHTML = 
-    '<button type="button" style="width: 100%; height: 32px; padding: 0px; font-weight: bold; color: white; background-color: salmon;">X</button>';
-
+    celda2.innerHTML = '<?php echo"Hola";?>';
 
 
     // Asignar eventos onclick a la celda para eliminar o modificar la fila al hacer clic

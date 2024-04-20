@@ -1,61 +1,99 @@
-
-<div class="tab_principal" id="tabla_contenido_villa">
-
-<table id='tab_vi'>
-<tr>
-<th>Villa</th>
-<th>Contador EEH</th>
-<th>Estado</th>
-<th>Modelo de villa</th>
-<th>Cantidad de habitaciones</th>
-<th>Tamaño de lote</th>
-<th>Area de contruccion</th>
-</tr>
-
 <?php
 
-$letra = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+$servername = "localhost"; 
+$username = "root";
+$password = "";
+$database = "pg_gestion_pro";
 
+$conn = new mysqli($servername, $username, $password, $database);
 
-
-
-$i = 0;
-$tipo;
-$estado;
-while($i < count($letra))
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+} 
+else
 {
-    for($j = 1; $j <= 12; $j++)
-    {
+}
 
-        if(($j % 5) == 0)
+$sql = "SELECT * FROM pg_gestion_pro.vista_villa ORDER BY id_villa ASC;";
+
+$result = $conn->query($sql);
+
+if($result -> num_rows > 0)
+{
+    echo"
+    <table id='tab_vi'>
+    ";
+
+    echo"
+    <tr>
+    <th>id</th>
+    <th>Villa</th>
+    <th>Contador EEH</th>
+    <th>Modelo de villa</th>
+    <th>Habitaciones</th>
+    <th>Tamaño de lote</th>
+    <th>Area de contrucción</th>
+    <th>Condición</th>
+    <th>Estado</th>
+    </tr>
+    ";
+
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" , $row["id_villa"] , "</td>";
+        echo "<td>" , $row["cod_villa"] , "</td>";
+        echo "<td>" , $row["cont_ehh"] , "</td>";
+        echo "<td>" , $row["modelo"] , "</td>";
+        echo "<td>" , $row["habitacion"] , "</td>";
+        echo "<td>" , $row["tam_lote"] , " Mts²</td>";
+        echo "<td>" , $row["tam_cons"] , " Mts²</td>";
+        echo "<td>" , $row["condicion"] , "</td>";
+        
+
+        
+
+
+        if($row["estado_villa"] == "Activo")
         {
-            $tipo = "Villa arrecife";
-            $estado = "Disponible";
+            echo "<td><select>
+            <option selected>Activo</option>
+            <option>Mantenimiento</option>
+            <option>Suspendida</option>
+            </select>
+            <label class='verde'></label>
+            </td>
+            ";
         }
-        else
-        { 
-            $tipo ="Villa coracol";
-            $estado = "Mantenimiento";
+        else if($row["estado_villa"] == "Mantenimiento")
+        {
+            echo "<td><select>
+            <option>Activo</option>
+            <option selected>Mantenimiento</option>
+            <option>Suspendida</option>
+            </select>
+            <label class='amarillo'></label> 
+            </td>
+            ";
         }
-
-        echo "
-        <tr class='contenido' onclick='modificar_villa()'>
-        <td>",$letra[$i],'-',$j,"</td>
-        <td>",rand(10000000,99999999),"</td>
-        <td>",$estado,"</td>
-        <td>",$tipo,"</td>
-        <td>2</td>
-        <td>200</td>
-        <td>150</td>
-        </tr>
-        ";
+        else if($row["estado_villa"] == "Suspendida")
+        {
+            echo "<td><select>
+            <option>Activo</option>
+            <option>Mantenimiento</option>
+            <option selected>Suspendida</option>
+            </select>
+            <label class='rojo'></label>
+            </td>
+            ";
+        }
+        echo "</tr>";
     }
-
-
-    $i++;
+    echo"
+    </table>
+    ";
+}else
+{
+    echo"no se encontro resultados";
 }
 
 ?>
-
-</table>
-</div>
