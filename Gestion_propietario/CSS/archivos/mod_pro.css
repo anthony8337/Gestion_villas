@@ -44,8 +44,8 @@ position: relative;
 top: 0;
 left: 0;
 width: calc(100% - padding);
-height: 100px;
-background-color: rgba(0, 0, 0,0.1);
+height: 160px;
+background-color: rgba(0, 0, 0, 0.1);
 padding-left: 35px;
 padding-top: 10px;
 }
@@ -56,32 +56,131 @@ position: relative;
 top: 0;
 left: 0;
 width: calc(100% - padding);
-height: calc(100% - 170px);
+height: 390px;
 background-color: rgba(0, 0, 0, 0.1);
 padding-left: 35px;
 padding-top: 10px;
 }
 
+#pro .c2 table
+{
+    display: block;
+    border-collapse: collapse;
+    
+}
+
+#pro .c2 table td
+{
+    border-collapse: collapse;
+    border: none;
+    width: 350px;
+    height: 45px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+
+}
+
+#pro .c2 table td div
+{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border: 1px solid grey;
+    
+}
+
+#pro .c2 table td div .numeros
+{
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    overflow: auto;
+}
+
+#pro .c2 table td div .numeros th
+{
+    width: 400px;
+    height: 20px;
+    background-color: rgb(117, 117, 117);
+    color: white;
+    position: sticky;
+    top: 0px;
+}
+
+#pro .c2 table td div .numeros td
+{
+height: 30px;
+padding: 0px;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#pro .c2 table td div .numeros tr:hover
+{
+    background: #f19858;
+    cursor: pointer;
+}
+
+#pro .c2 table td div .numeros td:nth-child(2)
+{
+    width: 40px;
+}
+
+#pro .c2 table td div .numeros td .accion_tel
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 0px;
+    background-color: white;
+    
+    text-align: center;
+}
+
+#pro .c2 table td div .numeros td .accion_tel img
+{
+    width: 20px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+#pro .c2 table td div .numeros td .accion_tel:hover
+{
+    background-color: rgb(190, 190, 190);
+}
+
+#pro .c2 table td div .numeros tr:nth-child(even) td
+{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#pro .c2 table td div .numeros .agre_tele
+{
+    height: 20px;
+    width: 100px;
+    padding: 0;
+    float: inline-end;
+    border-radius: 0px;
+}
+
+
 #pro input[type="text"],#pro input[type="date"], #pro fieldset
 {
     margin:0px;
     float: inline-start;
-    width: 300px;
+    width: 290px;
     height: 40px;
     border-radius: 50px;
     padding-left: 50px;
     padding-right: 50px;
     font-size: 15px;
     border: 1px solid black;
-    margin-bottom: 10px;
-    margin-right: 10px;
 }
 
 #pro fieldset
 {
     margin:0px;
     float: inline-start;
-    width: 400px;
+    width: 390px;
     height: 30px;
     border-radius: 50px;
     padding: 0px;
@@ -92,23 +191,22 @@ padding-top: 10px;
     text-align: center;
 }
 
-#pro .centro .c3 button
+#pro .centro .c2 button
 {
     width: 200px;
-    height: 50px;
-    float: inline-start;
+    height: 40px;
     border-radius: 30px;
     border: 1px solid black;
     background-color: white;
 }
 
-#pro .centro .c3 button:hover
+#pro .centro .c2 button:hover
 {
     background-color: rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
-#pro .centro .c3 .cabezal_villa
+#pro .centro .c2 .cabezal_villa
 {
     width: 400px;
     height: 40px;
@@ -116,13 +214,11 @@ padding-top: 10px;
     border-radius: 30px;
     border: 1px solid black;
     padding: 0px;
-    margin-left: 210px;
 }
 
-#pro .centro .c3 .cabezal_villa table
+#pro .centro .c2 fieldset #cabezal
 {
-    width: 100%;
-    height: 100%;
+border: none;
 }
 
 #pro .centro .c3 #id_direccion
@@ -159,7 +255,7 @@ padding-top: 10px;
     border: 1px solid black;
     background-color: white;
     
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 #pro .centro #agre_confirmar:hover
@@ -176,7 +272,7 @@ padding-top: 10px;
     border: 1px solid black;
     background-color: white;
     margin-right: 40px;
-    margin-top: 10px;
+    margin-top: 30px;
     float: inline-end;
 }
 

@@ -28,6 +28,7 @@
     <script src='JS/com_text.js'></script>
     <script src='JS/limpiar_campos.js'></script>
     <script src='JS/principal/emergente.js'></script>
+    <script src='JS/archivo/agre_telefono.js'></script>
 
 
 </head>

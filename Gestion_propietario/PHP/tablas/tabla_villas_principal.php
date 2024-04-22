@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost"; 
 $username = "root";
 $password = "";
@@ -14,7 +13,33 @@ else
 {
 }
 
-$sql = "SELECT * FROM pg_gestion_pro.vista_villa ORDER BY id_villa ASC;";
+$filtro_vi = $_POST['filtro_vi'];
+
+switch ($filtro_vi) {
+    case 'filtro_vi1':
+        $sql = "SELECT * FROM vista_villa WHERE condicion = 'Habitado' AND (estado_villa = 'Activo' OR estado_villa = 'Mantenimiento') ORDER BY id_villa ASC;";
+        break;
+    case 'filtro_vi2':
+        $sql = "SELECT * FROM vista_villa WHERE condicion = 'Disponible' AND (estado_villa = 'Activo' OR estado_villa = 'Mantenimiento') ORDER BY id_villa ASC";
+        break;
+        case 'filtro_vi4':
+            $sql = "SELECT * FROM vista_villa WHERE estado_villa = 'Activo' ORDER BY id_villa ASC;";
+            break;
+        case 'filtro_vi5':
+            $sql = "SELECT * FROM vista_villa WHERE estado_villa = 'Mantenimiento' ORDER BY id_villa ASC;";
+            break;
+        case 'filtro_vi6':
+            $sql = "SELECT * FROM vista_villa WHERE estado_villa = 'Suspendida' ORDER BY id_villa ASC;";
+            break;
+            case 'filtro_vi7':
+                $sql = "SELECT * FROM pg_gestion_pro.vista_villa ORDER BY id_villa ASC;";
+                break;
+    default:
+    $sql = "SELECT * FROM pg_gestion_pro.vista_villa ORDER BY id_villa ASC;";
+        break;
+}
+
+
 
 $result = $conn->query($sql);
 
@@ -48,45 +73,38 @@ if($result -> num_rows > 0)
         echo "<td>" , $row["tam_lote"] , " Mts²</td>";
         echo "<td>" , $row["tam_cons"] , " Mts²</td>";
         echo "<td>" , $row["condicion"] , "</td>";
+        echo "<td><select>";
+        $campos = ['Activo','Mantenimiento','Suspendida'];
+        $color = ['verde','amarillo','rojo'];
+
+        for ($i=0; $i <= 2; $i++) 
+        { 
+            if($row["estado_villa"] == $campos[$i])
+            {
+                echo"
+                <option selected>$campos[$i] </option>
+                ";
+            }
+            else
+            {
+                echo"
+                <option>$campos[$i]</option>
+                ";
+            }
+        }
+echo"</select>";
         
-
-        
-
-
-        if($row["estado_villa"] == "Activo")
+    for ($i=0; $i <= 2; $i++) 
+    { 
+        if($row["estado_villa"] == $campos[$i])
         {
-            echo "<td><select>
-            <option selected>Activo</option>
-            <option>Mantenimiento</option>
-            <option>Suspendida</option>
-            </select>
-            <label class='verde'></label>
-            </td>
-            ";
+            echo"<label class='$color[$i]'></label>";
         }
-        else if($row["estado_villa"] == "Mantenimiento")
-        {
-            echo "<td><select>
-            <option>Activo</option>
-            <option selected>Mantenimiento</option>
-            <option>Suspendida</option>
-            </select>
-            <label class='amarillo'></label> 
-            </td>
-            ";
-        }
-        else if($row["estado_villa"] == "Suspendida")
-        {
-            echo "<td><select>
-            <option>Activo</option>
-            <option>Mantenimiento</option>
-            <option selected>Suspendida</option>
-            </select>
-            <label class='rojo'></label>
-            </td>
-            ";
-        }
-        echo "</tr>";
+        else
+        {}
+    }
+
+        echo"</tr>";
     }
     echo"
     </table>

@@ -1,67 +1,42 @@
-<?php
-// Define el arreglo de opciones
-$opciones = array(
-    "opcion1" => "Opción 1",
-    "opcion2" => "Opción 2",
-    "opcion3" => "Opción 3"
-);
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mostrar contenido según la opción seleccionada</title>
+</head>
+<body>
+    <form method="post">
+        <label for="opcion">Selecciona una opción:</label>
+        <select name="opcion" id="opcion">
+            <option value="opcion1">Opción 1</option>
+            <option value="opcion2">Opción 2</option>
+            <option value="opcion3">Opción 3</option>
+        </select>
+        <button type="submit">Mostrar contenido</button>
+    </form>
 
-// Verifica si el formulario se ha enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verifica si el campo 'opciones' está presente en el formulario
-    if (isset($_POST['opciones'])) {
-        // Obtiene el valor seleccionado del campo 'opciones'
-        $valorSeleccionado = $_POST['opciones'];
-        echo json_encode(array("resultado" => $opciones[$valorSeleccionado]));
-        exit; // Detiene la ejecución del script después de enviar la respuesta JSON
-    } else {
-        echo json_encode(array("error" => "No se seleccionó ninguna opción."));
-        exit;
-    }
-}
-?>
+    <?php
+    // Verificar si se ha enviado el formulario
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Obtener el valor seleccionado del select
+        $opcionSeleccionada = $_POST["opcion"];
 
-<!-- Formulario HTML -->
-<form id="miFormulario">
-    <select name="opciones">
-        <?php
-        // Genera las opciones del select usando el arreglo definido arriba
-        foreach ($opciones as $valor => $etiqueta) {
-            echo "<option value='" . $valor . "'>" . $etiqueta . "</option>";
+        // Mostrar contenido según la opción seleccionada
+        switch ($opcionSeleccionada) {
+            case 'opcion1':
+                echo "Has seleccionado la opción 1";
+                break;
+            case 'opcion2':
+                echo "Has seleccionado la opción 2";
+                break;
+            case 'opcion3':
+                echo "Has seleccionado la opción 3";
+                break;
+            default:
+                echo "Selecciona una opción válida";
+                break;
         }
-        ?>
-    </select>
-    <input type="submit" value="Enviar">
-</form>
+    }
+    ?>
+</body>
+</html>
 
-<div id="resultado"></div>
-
-<!-- Agrega jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
-    $(document).ready(function() {
-        // Maneja el evento submit del formulario
-        $('#miFormulario').submit(function(e) {
-            e.preventDefault(); // Evita el envío del formulario por defecto
-
-            // Realiza una solicitud AJAX para procesar el formulario
-            $.ajax({
-                type: 'POST',
-                url: '<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>',
-                data: $(this).serialize(), // Serializa los datos del formulario
-                success: function(response) {
-                    var data = JSON.parse(response);
-                    if (data.error) {
-                        $('#resultado').html(data.error);
-                    } else {
-                        $('#resultado').html("El valor seleccionado es: " + data.resultado);
-                    }
-                },
-                error: function() {
-                    $('#resultado').html("Error al procesar el formulario.");
-                }
-            });
-        });
-    });
-</script>

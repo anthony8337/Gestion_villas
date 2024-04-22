@@ -33,11 +33,14 @@
 text-align: center;
 height: 30px;
 font-weight: normal;
+border-bottom: 1px solid rgb(194, 193, 193);
 }
 
 .tab_principal table tr:nth-child(even) td
 {
     background-color: rgb(194, 193, 193);
+
+    
 }
 
 .tab_principal table tr:hover,.tab_principal table tr:nth-child(even):hover td
@@ -71,5 +74,6 @@ font-weight: normal;
 {
     border-left: 1px solid rgb(97, 97, 97);
     border-right: 1px solid rgb(97, 97, 97);
+    border-bottom: 1px solid rgb(194, 193, 193);
 }
 

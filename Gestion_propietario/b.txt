@@ -1,0 +1,23 @@
+for ($i=0; $i < count($pal); $i++) { 
+
+    if($i == 2)
+    {
+        echo"<input type='text' placeholder='$pal[$i]'>";
+    }
+    else if ($i == 4) {
+    echo"<input type='date' placeholder='$pal[$i]'>";
+    }
+    else if($i == 5)
+    {
+        echo"
+        <fieldset>
+        <input type='radio' name='Estado' id='es_cli1' checked>Aplica cuenta
+        <input type='radio' name='Estado' id='es_cli2'>Suspendido
+        </fieldset>
+        ";
+    }else
+    {
+        echo"<input type='text' placeholder='$pal[$i]'>";
+    }
+   
+}

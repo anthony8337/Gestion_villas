@@ -20,15 +20,18 @@
             <option>Todo</option>
             </select>
 
-            <select id="filtro_vi">
-            <option>Condición Habitado</option>
-            <option>Condición Disponible</option>
-            <option>Condición Suspendida</option>
-            <option>Estado Activo</option>
-            <option>Estado Mantenimiento</option>
-            <option>Estado Suspendido</option>
-            <option>Todo</option>
+            <form>
+            <select name="filtro_vi" id="filtro_vi">
+            <option value="filtro_vi1">Condición Habitado</option>
+            <option value="filtro_vi2">Condición Disponible</option>
+            <option value="filtro_vi4">Estado Activo</option>
+            <option value="filtro_vi5">Estado Mantenimiento</option>
+            <option value="filtro_vi6">Estado Suspendido</option>
+            <option value="filtro_vi7">Todo</option>
             </select>
+            </form>
+        </select>
+        
         </td>
 
         <td rowspan="2">
@@ -45,33 +48,29 @@
 </table>
 </div>
 
-<button id="recargar">Recargar Tabla</button>
-
 <div class="tab_principal" id="tabla_contenido_villa">
-    <?php
-    include 'PHP/tablas/tabla_villas_principal.php';
-    ?>
 </div>
 
 <script>
         $(document).ready(function(){
-            // Función para recargar la tabla sin recargar la página
-            function recargarTabla() {
+            // Función para mostrar el contenido según la opción seleccionada
+            function mostrarContenido(filtro_vi) {
                 $.ajax({
-                    url: 'PHP/tablas/tabla_villas_principal.php',
+                    url: 'PHP/tablas/tabla_villas_principal.php', // Cambia esto por la ruta correcta
                     type: 'post',
+                    data: {filtro_vi: filtro_vi},
                     success:function(data){
                         $('#tabla_contenido_villa').html(data);
                     }
                 });
             }
 
-            // Llamada inicial para cargar la tabla
-            recargarTabla();
+            // Llamada inicial para mostrar el contenido basado en la opción seleccionada actualmente
+            mostrarContenido($('#filtro_vi').val());
 
-            // Evento de click para recargar la tabla
-            $('#recargar').click(function(){
-                recargarTabla();
+            // Evento de cambio para mostrar el contenido cuando se selecciona una opción diferente
+            $('#filtro_vi').change(function(){
+                mostrarContenido($(this).val());
             });
         });
     </script>

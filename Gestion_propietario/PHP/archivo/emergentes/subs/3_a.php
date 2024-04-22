@@ -12,73 +12,70 @@
 </div>
 
 <div class="c2">
-    <input type="text" placeholder="Buscar villa disponible">
+<input type="text" placeholder="Buscar villa disponible" id="bus_v_p">
 
-    <button>Agregar nueva villa</button>
+<button>Agregar nueva villa</button>
 
-    <div>
-    <table id='tab_vi'>
-<tr>
-<th>Villa</th>
-<th>Contador EEH</th>
-<th>Estado</th>
-<th>Modelo de villa</th>
-<th>Cantidad de habitaciones</th>
-<th>Tamaño de lote</th>
-<th>Area de contruccion</th>
-</tr>
+<div>
 
 <?php
+include "PHP/1_sql/conexion.php";
 
-$letra = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+$sql="SELECT * FROM vista_villa WHERE condicion = 'Disponible' AND (estado_villa = 'Activo' OR estado_villa = 'Mantenimiento') ORDER BY id_villa ASC";
 
-$i = 0;
-$tipo;
-$estado;
-while($i < count($letra))
+$result = $conn->query($sql);
+
+if($result -> num_rows > 0)
 {
-    for($j = 1; $j <= 12; $j++)
-    {
+    echo"<table id='tab_vip'>";
+    echo"
+    <tr>
+    <th>id</th>
+    <th>Villa</th>
+    <th>Contador EEH</th>
+    <th>Modelo de villa</th>
+    <th>Habitaciones</th>
+    <th>Tamaño de lote</th>
+    <th>Area de contrucción</th>
+    <th>Condición</th>
+    <th>Estado</th>
+    </tr>
+    ";
 
-        if(($j % 5) == 0)
+    while ($row = $result->fetch_assoc()) 
+    {
+        echo "<tr>";
+        echo "<td>" , $row["id_villa"] , "</td>";
+        echo "<td>" , $row["cod_villa"] , "</td>";
+        echo "<td>" , $row["cont_ehh"] , "</td>";
+        echo "<td>" , $row["modelo"] , "</td>";
+        echo "<td>" , $row["habitacion"] , "</td>";
+        echo "<td>" , $row["tam_lote"] , " Mts²</td>";
+        echo "<td>" , $row["tam_cons"] , " Mts²</td>";
+        echo "<td>" , $row["condicion"] , "</td>";
+
+        if($row["estado_villa"] == "Activo")
         {
-            $tipo = "Villa arrecife";
-            $estado = "Disponible";
+            echo "<td>" , $row["estado_villa"] , " <label class='verde'></label></td>";
         }
         else
-        { 
-            $tipo ="Villa coracol";
-            $estado = "Mantenimiento";
+        {
+            echo "<td>" , $row["estado_villa"] , " <label class='amarillo'></label></td>";
         }
-
-        echo "
-        <tr class='contenido' onclick='modificar_villa()'>
-        <td>",$letra[$i],'-',$j,"</td>
-        <td>",rand(10000000,99999999),"</td>
-        <td>",$estado,"</td>
-        <td>",$tipo,"</td>
-        <td>2</td>
-        <td>200</td>
-        <td>150</td>
-        </tr>
-        ";
+        echo "</tr>";
     }
 
-
-    $i++;
+    echo"</table>";
 }
 
 ?>
 
-</table>
-    </div>
 </div>
 
-<div class="c3">
 </div>
-
-
 
 </div>
 
 </div>
+
+<script src="JS/buscar/subs/buscar_v_p.js"></script>
