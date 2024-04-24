@@ -14,57 +14,79 @@
 <div class="c2">
 
 
-<input type="text" placeholder="Concepto">
 
+<form id="miFormulario">
+
+<input type="text" name="txt_concepto" id="txt_concepto" placeholder="Nombre del concepto" title="Nombre del concepto">
 <table>
     <tr>
-        <?php
-        
-        $a = ['Abono','Cargo'];
+        <td><input type="radio" name="opcion" value="opcion1" onclick="abono()" checked> Abono</td>
 
-        for ($i=0; $i < count($a); $i++) { 
+        <td><input type="radio" name="opcion" value="opcion2" onclick="cargo()"> Cargo</td>
+    </tr>
 
-            if ($i == 0) {
-                echo"
-                <td>
-                <input type='radio' onclick='abono()' name='abono' id='rb_abono' checked> $a[$i]
-                </td>
-                ";
-            }
-            else
-            {
+    <tr>
+        <td><input type="number" name="txt_cantidad" id="txt_cantidad" placeholder="Valor" title="Valor del concepto"></td>
 
-            echo"
-            <td>
-            <input type='radio' onclick='cargo()' name='abono' id='rb_cargo' > $a[$i]
-            </td>
-            ";
-        }
-        }
+        <td><input type="checkbox" id="ck_refe" disabled> Referencia</td>
+    </tr>
 
-        ?>
+    <tr>
+       <td><button type="submit">Enviar</button></td>
+       <td><div id="respuesta"></div></td>
     </tr>
 </table>
 
-
-
-
-<input id="txt_valor_con" type="number" placeholder="valor">
-
-<fieldset id="ch_referencia">
-<input type="checkbox" checked disabled> Referencia
-</fieldset>
-
-
     
+</form>
+
+
+
 </div>
+
 
 <div class="c3">
-<button>Agregar</button>
-</div>
-
-
 
 </div>
 
+
+
 </div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+    $('#miFormulario').submit(function(e){
+        e.preventDefault(); // Evitar el envío del formulario estándar
+        
+        $.ajax({
+            type: 'POST',
+            url: 'PHP/archivo/sub_4_e/insertar.php',
+            data: $(this).serialize(), // Serializar los datos del formulario
+            success: function(response){
+                $('#respuesta').html(response); // Mostrar la respuesta del servidor en el div #respuesta
+                avisar_con();
+
+                $.ajax({
+                url: 'PHP/archivo/sub_4_e/tabla.php',
+                type: 'GET',
+                success: function(data) {
+                    document.getElementById("interior_concepto").innerHTML = data;
+                }
+            });
+            }
+        });
+    });
+
+    
+});
+
+
+function avisar_con()
+{
+window.alert('Concepto registrado con exito');
+document.getElementById('con_registro').style.display = "none";
+}
+
+</script>

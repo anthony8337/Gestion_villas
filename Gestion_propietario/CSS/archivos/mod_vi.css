@@ -43,8 +43,8 @@ position: relative;
 top: 0;
 left: 0;
 width: calc(100% - padding);
-height: 50px;
-background-color: rgba(0, 0, 0, .1);
+height: 110px;
+background-color: rgba(0, 0, 0, 0.1);
 padding-left: 35px;
 padding-right: 35px;
 padding-top: 10px;
@@ -56,13 +56,18 @@ padding-top: 10px;
     width: 100%;
 }
 
+#vi .c2 table td
+{
+    padding-left: 20px;
+}
+
 #vi .centro .c3
 {
 position: relative;
 top: 0;
 left: 0;
 width: calc(100% - padding);
-height: calc(100% - 190px);
+height: calc(100% - 250px);
 background-color: rgba(0, 0, 0, 0.1);
 padding-left: 35px;
 padding-right: 35px;
@@ -70,22 +75,41 @@ padding-top: 10px;
 }
 
 
-#vi input[type="text"],#vi input[type="date"], #vi select
+#vi input[type="text"],#vi input[type="date"], #vi select, #vi input[type = "number"]
 {
     margin:0px;
     float: inline-start;
-    width: 250px;
+    width: 330px;
     height: 40px;
     border-radius: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 15px;
     border: 1px solid black;
     margin-bottom: 10px;
     margin-right: 35px;
+    
+    background-color: white;
 }
 
-#vi .centro .c3 input[type="text"],#vi .centro .c3 input[type="date"], #vi .centro .c3 select,#vi input[type = "number"]
+
+#vi select
+{
+    margin:0px;
+    float: inline-start;
+    width: 350px;
+    height: 40px;
+    border-radius: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-right: 35px;
+    background-color: white;
+}
+
+#vi .centro .c3 input[type="text"],#vi .centro .c3 input[type="date"]
 {
     margin:0px;
     float: inline-start;
@@ -101,11 +125,7 @@ padding-top: 10px;
 }
 
 
-#vi select
-{
-    float: inline-end;
-    margin-right: 0px;
-}
+
 
 #vi fieldset
 {
@@ -140,12 +160,18 @@ padding-top: 10px;
 
 #vi .centro .c3 button
 {
-    width: 200px;
-    height: 50px;
-    float: inline-start;
-    border-radius: 30px;
+    width: 150px;
+    height: 20px;
+    border-radius: 0px;
     border: 1px solid black;
     background-color: white;
+    float: inline-start;
+}
+
+#vi .centro .c3 button:hover
+{
+    background-color: rgb(160, 160, 160);
+    cursor: pointer;
 }
 
 #vi .centro .c3 .cabezal_villa
@@ -170,8 +196,8 @@ padding-top: 10px;
 #vi .centro .c3 .mas_detalle
 {
     margin-top: 10px;
-    width: 550px;
-    height: calc(100% - 180px);
+    width: 590px;
+    height: 230px;
     
     border-radius: 5px;
 }
@@ -243,8 +269,8 @@ margin-right: 0px;
 #vi .centro .c3 #ta_cara
 {
 padding: 0px;
-width: 500px;
-height: calc(100% - 50px);
+width: 100%;
+height: calc(100% - 28px);
 overflow: auto;
 background-color: white;
 }
@@ -252,8 +278,10 @@ background-color: white;
 .ta_ca_cont
 {
     border-collapse: collapse;
-    width: 100%;
+    width: 10px;
 }
+
+
 
 .ta_ca_cont th
 {
@@ -262,6 +290,14 @@ background-color: white;
     color: white;
     position: sticky;
     top: 0px;
+}
+
+#agregar_c
+{
+    width: 10px;
+    height: 20px;
+    padding: 0px;
+    border-radius: 0px;
 }
 
 
@@ -283,14 +319,26 @@ height: 30px;
 padding-left: 40px;
 }
 
-#cara #modi_carac,#cara #eli_carac
+#cara #eli_carac
 {
     width: 32px;
     height: 32px;
-    margin-right: 20px;
     padding-top: 5px;
     padding-left: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 106, 106);
+    border: 1px solid rgb(187, 0, 0);
+}
 
+#cara #modi_carac
+{
+    width: 32px;
+    height: 32px;
+    padding-top: 5px;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: rgb(148, 255, 106);
+    border: 1px solid rgb(53, 187, 0);
 }
 
 #cara #modi_carac img,#cara #eli_carac img

@@ -107,6 +107,12 @@ padding-top: 10px;
 {
     width: 100%;
     border-collapse: collapse;
+    font-weight: normal;
+}
+
+#moneda .centro .c3 table td
+{
+    border-bottom: 1px solid rgb(165, 164, 164);
 }
 
 #moneda .centro .c3 table th, #moneda .centro .c3 table td
@@ -133,11 +139,23 @@ padding-top: 10px;
 {
     width: 32px;
     height: 32px;
-    margin-right: 20px;
     padding-top: 5px;
     padding-left: 5px;
-
+    border-radius: 5px;
 }
+
+#moneda .centro .c3 #eli_carac
+{
+background-color: rgb(255, 106, 106);
+border: 1px solid rgb(187, 0, 0);
+}
+
+#moneda .centro .c3 #modi_carac
+{
+    background-color: rgb(148, 255, 106);
+    border: 1px solid rgb(53, 187, 0);
+}
+
 
 #moneda .centro .c3 #modi_carac:hover,#moneda .centro .c3 #eli_carac:hover
 {

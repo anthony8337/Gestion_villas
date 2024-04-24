@@ -128,19 +128,20 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
 #pro .c2 table td div .numeros td .accion_tel
 {
-    width: 40px;
-    height: 40px;
-    border-radius: 0px;
-    background-color: white;
-    
-    text-align: center;
+    width: 32px;
+    height: 32px;
+    padding-top: 5px;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 106, 106);
+    border: 1px solid rgb(187, 0, 0);
 }
 
 #pro .c2 table td div .numeros td .accion_tel img
 {
     width: 20px;
-    height: 30px;
-    margin-left: 5px;
+    height: 20px;
+    
 }
 
 #pro .c2 table td div .numeros td .accion_tel:hover

@@ -2,14 +2,18 @@
 
 function abono()
 {
-    document.getElementById('txt_valor_con').style.display = 'flex';
-    document.getElementById('txt_valor_con').style.float = 'inline-start';
-    document.getElementById('ch_referencia').style.display = 'none';
+
+document.getElementById('ck_refe').checked = false;
+document.getElementById('txt_cantidad').disabled = false;
+document.getElementById('txt_cantidad').value = "";
+
 }
 
 function cargo()
 {
-    document.getElementById('txt_valor_con').style.display = 'none';
-    document.getElementById('ch_referencia').style.display = 'flex';
-    document.getElementById('txt_valor_con').style.float = 'inline-start';
+    
+    document.getElementById('ck_refe').checked = true;
+    document.getElementById('txt_cantidad').disabled = true;
+    document.getElementById('txt_cantidad').value = 0;
+
 }

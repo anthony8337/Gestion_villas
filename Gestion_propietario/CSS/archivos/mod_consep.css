@@ -107,12 +107,14 @@ padding-top: 10px;
 {
     width: 100%;
     border-collapse: collapse;
+    font-weight: normal;
 }
 
 #con_1 .centro .c3 table th, #con_1 .centro .c3 table td
 {
      height: 30px;
      text-align: center;
+     border-bottom: 1px solid rgb(165, 164, 164);
 }
 
 #con_1 .centro .c3 table th
@@ -133,9 +135,21 @@ padding-top: 10px;
 {
     width: 32px;
     height: 32px;
-    margin-right: 20px;
     padding-top: 5px;
     padding-left: 5px;
+    border-radius: 5px;
+}
+
+#con_1 .centro .c3 #eli_carac
+{
+background-color: rgb(255, 106, 106);
+border: 1px solid rgb(187, 0, 0);
+}
+
+#con_1 .centro .c3 #modi_carac
+{
+    background-color: rgb(148, 255, 106);
+    border: 1px solid rgb(53, 187, 0);
 }
 
 #con_1 .centro .c3 #modi_carac:hover,#con_1 .centro .c3 #eli_carac:hover

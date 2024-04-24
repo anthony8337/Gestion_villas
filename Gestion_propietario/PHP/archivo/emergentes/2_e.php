@@ -11,65 +11,57 @@
 
 
 
+
 </div>
 
 <div class="c2">
 
-<table>
-    <tr>
-
 <?php
 
-$pal = ['Codigo de villa','Contador Ehh','Estado'];
+$p1 = ['Codigo de villa','Contador de eeh','Estado'];
+
+echo"<table>";
+echo"<tr>";
+for($i = 0; $i < count($p1); $i++)
+{
 
 
-for ($i=0; $i < count($pal); $i++) { 
-
-    if($i == 2)
-    {
-        echo"
-        <td>
-        <select>
-        <option value='Disponible'>Disponible</option>
-        <option value='Mantenimiento'>Mantenimiento</option>
-        <option value='Descartado'>Descartado</option>
-        </select>
-        
-        </td>";
-    }
-    else
-    {
-        echo"
-        
-        <td>
-        <input type='text' placeholder='$pal[$i]'>
-        </td>";
-    }
-   
+if($i == (count($p1) - 1))
+{
+    echo"<td>
+    <select title='$p1[$i]'>
+    <option>Activo</option>
+    <option>Mantenimiento</option>
+    <option>Suspendida</option>
+    </select>
+    </td>";
 }
+else
+{
+    echo"<td>
+    <input type='text' placeholder='$p1[$i]' title='$p1[$i]'>
+    </td>";
+}
+
+}
+echo"</tr>";
+
+$p2 = ['Habitaciones','Area del lote','Area de contrución'];
+echo"<tr>";
+for($i = 0; $i < count($p2); $i++)
+{
+    echo"<td>
+    <input type='number' placeholder='$p2[$i]' title='$p2[$i]'>
+    </td>";
+}
+echo"</tr>";
+echo"</table>";
 
 ?>
 
-</tr>
-</table>
 </div>
 
 <div class="c3">
-
-<table id="tama">
-    <tr>
-     <td>Cantidad de habitaciones</td>
-     <td><input type="number" placeholder="Habitaciones"></td>
-    <td>Area de lote</td>
-    <td><input type="number" placeholder="Mts²"></td>
-    <td>Area de construcción.</td>
-    <td><input type="number" placeholder="Mts²"></td>
-    </tr>
-    <tr>
-
-    </tr>
-
-</table>
 
 <fieldset id="id_direccion">
 <legend>Direccion</legend>
@@ -79,11 +71,12 @@ for ($i=0; $i < count($pal); $i++) {
 
 <fieldset id="cara" class="mas_detalle">
 <legend>Detalles</legend>
-    <table>
+
+    <table  title="Modelo de villa">
         <tr>
         <?php
             
-            $detalles = ['Coral','Arrecife','Carey','Agre. Carac.'];
+            $detalles = ['Coral','Arrecife','Carey'];
 
             for ($i=0; $i < count($detalles); $i++) { 
 
@@ -111,14 +104,6 @@ for ($i=0; $i < count($pal); $i++) {
                     </td>
                     ";
                 }
-                else
-                {
-                    echo"
-                    <td>
-                    <button id='a_c'>$detalles[$i]</button>
-                    </td>
-                    ";
-                }
 
             }
             ?>
@@ -128,7 +113,8 @@ for ($i=0; $i < count($pal); $i++) {
     <div id="ta_cara">
         <table class="ta_ca_cont">
             <tr>
-                <th colspan="4">Caracteristicas</th>
+                <th>Caracteristicas</th>
+                <th><button>Agregar</button></th>
             </tr>
 
             <?php
