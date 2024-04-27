@@ -301,6 +301,18 @@ background-color: white;
 }
 
 
+.ta_ca_cont td
+{
+
+height: 30px;
+
+}
+
+.ta_ca_cont td .txt_carate
+{
+border-radius: 0px;
+}
+
 .ta_ca_cont tr:nth-child(even) td
 {
     background-color: rgb(194, 193, 193);
@@ -308,20 +320,22 @@ background-color: white;
 
 .ta_ca_cont td:nth-child(1)
 {
-
-height: 30px;
+padding-top: 5px;
+padding-bottom: 0px;
 }
 
-.ta_ca_cont td:nth-child(2)
+.ta_ca_cont th:nth-child(1)
 {
-
-height: 30px;
-padding-left: 40px;
+padding-top: 5px;
+padding-bottom: 0px;
+width: 400px;
 }
+
+
 
 #cara #eli_carac
 {
-    width: 32px;
+    width: 150px;
     height: 32px;
     padding-top: 5px;
     padding-left: 5px;
@@ -353,4 +367,13 @@ padding-left: 40px;
     padding-left: 20px;
     padding-bottom: 10px;
     background-color: rgba(0, 0, 0, .1);
+}
+
+#vi .centro .c3 #ta_cara input[type="text"]
+{
+    border-radius: 0px;
+    padding: 0px;
+    text-align: center;
+    height: 30px;
+    width: 400px;
 }

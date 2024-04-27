@@ -17,25 +17,25 @@ $filtro_vi = $_POST['filtro_vi'];
 
 switch ($filtro_vi) {
     case 'filtro_vi1':
-        $sql = "SELECT * FROM vista_villa WHERE condicion = 'Habitado' AND (estado_villa = 'Activo' OR estado_villa = 'Mantenimiento') ORDER BY id_villa ASC;";
+        $sql = "SELECT * FROM vista_villa WHERE condicion = 'Habitado' AND (estado_villa = 'Activo' OR estado_villa = 'Mantenimiento') ORDER BY id_con_vi ASC;";
         break;
     case 'filtro_vi2':
-        $sql = "SELECT * FROM vista_villa WHERE condicion = 'Disponible' AND (estado_villa = 'Activo' OR estado_villa = 'Mantenimiento') ORDER BY id_villa ASC";
+        $sql = "SELECT * FROM vista_villa WHERE condicion = 'Disponible' AND (estado_villa = 'Activo' OR estado_villa = 'Mantenimiento') ORDER BY id_con_vi ASC";
         break;
         case 'filtro_vi4':
-            $sql = "SELECT * FROM vista_villa WHERE estado_villa = 'Activo' ORDER BY id_villa ASC;";
+            $sql = "SELECT * FROM vista_villa WHERE estado_villa = 'Activo' ORDER BY id_con_vi ASC;";
             break;
         case 'filtro_vi5':
-            $sql = "SELECT * FROM vista_villa WHERE estado_villa = 'Mantenimiento' ORDER BY id_villa ASC;";
+            $sql = "SELECT * FROM vista_villa WHERE estado_villa = 'Mantenimiento' ORDER BY id_con_vi ASC;";
             break;
         case 'filtro_vi6':
-            $sql = "SELECT * FROM vista_villa WHERE estado_villa = 'Suspendida' ORDER BY id_villa ASC;";
+            $sql = "SELECT * FROM vista_villa WHERE estado_villa = 'Suspendida' ORDER BY id_con_vi ASC;";
             break;
             case 'filtro_vi7':
-                $sql = "SELECT * FROM pg_gestion_pro.vista_villa ORDER BY id_villa ASC;";
+                $sql = "SELECT * FROM pg_gestion_pro.vista_villa ORDER BY id_con_vi ASC;";
                 break;
     default:
-    $sql = "SELECT * FROM pg_gestion_pro.vista_villa ORDER BY id_villa ASC;";
+    $sql = "SELECT * FROM pg_gestion_pro.vista_villa ORDER BY id_con_vi ASC;";
         break;
 }
 
@@ -65,7 +65,7 @@ if($result -> num_rows > 0)
 
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" , $row["id_villa"] , "</td>";
+        echo "<td>" , $row["id_con_vi"] , "</td>";
         echo "<td>" , $row["cod_villa"] , "</td>";
         echo "<td>" , $row["cont_ehh"] , "</td>";
         echo "<td>" , $row["modelo"] , "</td>";

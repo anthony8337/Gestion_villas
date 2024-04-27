@@ -21,7 +21,7 @@
 <?php
 include "PHP/1_sql/conexion.php";
 
-$sql="SELECT * FROM vista_villa WHERE condicion = 'Disponible' AND (estado_villa = 'Activo' OR estado_villa = 'Mantenimiento') ORDER BY id_villa ASC";
+$sql="SELECT * FROM vista_villa WHERE condicion = 'Disponible' AND (estado_villa = 'Activo' OR estado_villa = 'Mantenimiento') ORDER BY id_con_vi ASC";
 
 $result = $conn->query($sql);
 
@@ -45,7 +45,7 @@ if($result -> num_rows > 0)
     while ($row = $result->fetch_assoc()) 
     {
         echo "<tr>";
-        echo "<td>" , $row["id_villa"] , "</td>";
+        echo "<td>" , $row["id_con_vi"] , "</td>";
         echo "<td>" , $row["cod_villa"] , "</td>";
         echo "<td>" , $row["cont_ehh"] , "</td>";
         echo "<td>" , $row["modelo"] , "</td>";
@@ -67,6 +67,10 @@ if($result -> num_rows > 0)
 
     echo"</table>";
 }
+else
+{
+    echo"No se encontro ningun elemento";
+}
 
 ?>
 
@@ -79,3 +83,5 @@ if($result -> num_rows > 0)
 </div>
 
 <script src="JS/buscar/subs/buscar_v_p.js"></script>
+
+<script src="JS/archivo/selec_villa_pro.js"></script>

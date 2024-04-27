@@ -1,23 +1,8 @@
-for ($i=0; $i < count($pal); $i++) { 
-
-    if($i == 2)
-    {
-        echo"<input type='text' placeholder='$pal[$i]'>";
-    }
-    else if ($i == 4) {
-    echo"<input type='date' placeholder='$pal[$i]'>";
-    }
-    else if($i == 5)
-    {
-        echo"
-        <fieldset>
-        <input type='radio' name='Estado' id='es_cli1' checked>Aplica cuenta
-        <input type='radio' name='Estado' id='es_cli2'>Suspendido
-        </fieldset>
-        ";
-    }else
-    {
-        echo"<input type='text' placeholder='$pal[$i]'>";
-    }
-   
-}
+CREATE VIEW vista_villa
+AS
+SELECT        con_vi.id_con_vi, villa.cod_villa, villa.cont_ehh, villa.habitacion, modelo_villa.modelo, villa.tam_lote, villa.tam_cons, estado_villa.estado_villa, condicion_villa.condicion
+FROM            con_vi INNER JOIN
+                         condicion_villa ON con_vi.id_condicion = condicion_villa.id_condicion INNER JOIN
+                         villa ON con_vi.id_villa = villa.id_villa INNER JOIN
+                         modelo_villa ON villa.id_modelo = modelo_villa.id_modelo INNER JOIN
+                         estado_villa ON villa.id_estado_villa = estado_villa.id_estado_villa

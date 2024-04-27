@@ -59,7 +59,7 @@ width: calc(100% - padding);
 height: 390px;
 background-color: rgba(0, 0, 0, 0.1);
 padding-left: 35px;
-padding-top: 10px;
+padding-top: 5px;
 }
 
 #pro .c2 table
@@ -113,17 +113,30 @@ padding-top: 10px;
 height: 30px;
 padding: 0px;
 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
 }
 
-#pro .c2 table td div .numeros tr:hover
+#pro .c2 table td div .numeros td .txt_numeros
 {
-    background: #f19858;
-    cursor: pointer;
+border-radius: 0px;
+height: 25px;
+width: 170px;
+text-align: center;
+}
+
+#pro .c2 table td div .numeros th:nth-child(2)
+{
+    width: 64px;
 }
 
 #pro .c2 table td div .numeros td:nth-child(2)
 {
-    width: 40px;
+    width: 32px;
+}
+
+#pro .c2 table td div .numeros td:nth-child(3)
+{
+    width: 32px;
 }
 
 #pro .c2 table td div .numeros td .accion_tel
@@ -132,6 +145,26 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     height: 32px;
     padding-top: 5px;
     padding-left: 5px;
+    border-radius: 5px;
+}
+
+#pro .c2 table td div .numeros td #editar_numero
+{
+    width: 100%;
+    height: 32px;
+    padding-top: 5px;
+    padding-left: 15px;
+    border-radius: 5px;
+    background-color: rgb(148, 255, 106);
+    border: 1px solid rgb(53, 187, 0);
+}
+
+#pro .c2 table td div .numeros td #eliminar_numero
+{
+    width: 100%;
+    height: 32px;
+    padding-top: 5px;
+    padding-left: 15px;
     border-radius: 5px;
     background-color: rgb(255, 106, 106);
     border: 1px solid rgb(187, 0, 0);
@@ -164,11 +197,24 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 
-#pro input[type="text"],#pro input[type="date"], #pro fieldset
+#pro input[type="text"],#pro input[type="date"],#pro input[type="email"], #pro fieldset
 {
     margin:0px;
     float: inline-start;
     width: 290px;
+    height: 40px;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 15px;
+    border: 1px solid black;
+}
+
+#pro #Estado_pro
+{
+    margin:0px;
+    float: inline-start;
+    width: 350px;
     height: 40px;
     border-radius: 50px;
     padding-left: 50px;
@@ -226,9 +272,17 @@ border: none;
 {
     margin-top: 10px;
     width: calc(100% - 70px);
-    height: 40px;
+    height: 60px;
     border-radius: 5px;
     padding: 10px;
+
+    
+}
+
+#pro .centro .c3 #encabezado_villa
+{
+width: 100%;
+height: 40px;
 }
 
 #pro .centro .c3 .mas_detalle
@@ -282,4 +336,14 @@ border: none;
     
     background-color: rgb(201, 1, 1);
     color: white;
+}
+
+#id_vp
+{
+    display: none;
+}
+
+#respuesta_pro
+{
+    background-color: white;
 }

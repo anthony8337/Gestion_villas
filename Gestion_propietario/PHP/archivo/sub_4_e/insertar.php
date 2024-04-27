@@ -32,7 +32,7 @@ if($opcionSeleccionada == 'opcion1')
 {
 
     $sql = "INSERT INTO concepto(concepto, id_tipo, valor, referencia,id_estado)
-    VALUES ('$txt1',2,'$txt2','SI','1')";
+    VALUES ('$txt1',2,0,'SI','1')";
 
 } else {
 echo "La opción seleccionada es: " . $opcionSeleccionada;

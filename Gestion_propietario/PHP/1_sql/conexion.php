@@ -1,6 +1,6 @@
 <?php
 // Detalles de la conexión a la base de datos
-$servername = "localhost"; // Cambia esto si tu base de datos está en un servidor remoto
+$servername = "localhost"; 
 $username = "root";
 $password = "";
 $database = "pg_gestion_pro";

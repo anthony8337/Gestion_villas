@@ -14,11 +14,13 @@
 
 </div>
 
+<form id="miFormulario_villa">
 <div class="c2">
 
 <?php
 
 $p1 = ['Codigo de villa','Contador de eeh','Estado'];
+$p1_ni=['txt_cod_villa','txt_eeh_villa','txt_estado'];
 
 echo"<table>";
 echo"<tr>";
@@ -29,17 +31,17 @@ for($i = 0; $i < count($p1); $i++)
 if($i == (count($p1) - 1))
 {
     echo"<td>
-    <select title='$p1[$i]'>
-    <option>Activo</option>
-    <option>Mantenimiento</option>
-    <option>Suspendida</option>
+    <select name='$p1_ni[$i]' id='$p1_ni[$i]' title='$p1[$i]'>
+    <option value='Activo'>Activo</option>
+    <option value='Mantenimiento'>Mantenimiento</option>
+    <option value='Suspendida'>Suspendida</option>
     </select>
     </td>";
 }
 else
 {
     echo"<td>
-    <input type='text' placeholder='$p1[$i]' title='$p1[$i]'>
+    <input type='text' name='$p1_ni[$i]' id='$p1_ni[$i]' placeholder='$p1[$i]' title='$p1[$i]'>
     </td>";
 }
 
@@ -47,11 +49,12 @@ else
 echo"</tr>";
 
 $p2 = ['Habitaciones','Area del lote','Area de contrución'];
+$p2_ni = ['txt_cuarto_vi','txt_lote_vi','txt_construc_vi'];
 echo"<tr>";
 for($i = 0; $i < count($p2); $i++)
 {
     echo"<td>
-    <input type='number' placeholder='$p2[$i]' title='$p2[$i]'>
+    <input type='number' name='$p2_ni[$i]' id='$p2_ni[$i]' placeholder='$p2[$i]' title='$p2[$i]'>
     </td>";
 }
 echo"</tr>";
@@ -65,7 +68,7 @@ echo"</table>";
 
 <fieldset id="id_direccion">
 <legend>Direccion</legend>
-<textarea></textarea>
+<textarea name="txa_direccion" id="txa_direccion"></textarea>
 </fieldset>
 
 
@@ -76,7 +79,7 @@ echo"</table>";
         <tr>
         <?php
             
-            $detalles = ['Coral','Arrecife','Carey'];
+            $detalles = ['Caracol','Arrecife','Carey'];
 
             for ($i=0; $i < count($detalles); $i++) { 
 
@@ -84,7 +87,7 @@ echo"</table>";
                 {
                     echo"
                     <td>
-                    <input type='radio' name='modelo' id='modelo[$i]' checked> $detalles[$i]
+                    <input type='radio' name='modelo' id='modelo[$i]' value='$detalles[$i]' checked> $detalles[$i]
                     </td>
                     ";
                 }
@@ -92,7 +95,7 @@ echo"</table>";
                 {
                     echo"
                     <td>
-                    <input type='radio' name='modelo' id='modelo[$i]'> $detalles[$i]
+                    <input type='radio' name='modelo' id='modelo[$i]' value='$detalles[$i]' > $detalles[$i]
                     </td>
                     ";
                 }
@@ -100,7 +103,7 @@ echo"</table>";
                 {
                     echo"
                     <td>
-                    <input type='radio' name='modelo' id='modelo[$i]'> $detalles[$i]
+                    <input type='radio' name='modelo' id='modelo[$i]' value='$detalles[$i]' > $detalles[$i]
                     </td>
                     ";
                 }
@@ -111,35 +114,20 @@ echo"</table>";
     </table>
 
     <div id="ta_cara">
-        <table class="ta_ca_cont">
-            <tr>
-                <th>Caracteristicas</th>
-                <th><button>Agregar</button></th>
-            </tr>
+    <?php
 
-            <?php
-            $carac = ['2 Baños', '2 Habitaciones','2 Salas','2 Corredor','1 Picina'];
-            for ($i=0; $i < count($carac); $i++) { 
-                echo"
-                
-            <tr>
-            <td style='width: 500px'>
-            $carac[$i]
-            </td>
-            <td>    
-            <button id='modi_carac'>
-            <img src='Imagenes/pencil-fill.svg'>
-            </button>
-            <button id='eli_carac'>
-                <img src='Imagenes/trash3-fill.svg'>
-            </button>
-            </td>
-                ";
-            }
+    echo"<table id='carac_vi' class='ta_ca_cont'>";
 
-            ?>
+    echo"
+    <tr>
+    <th>Caracteristicas</th>
+    <th><button type='button' onclick='agregarDato_cara()'>Agregar</button></th>
+    </tr>
+    ";
 
-            </tr>
+    echo"</table>";
+    
+    ?>
         </table>
     </div>
 
@@ -147,7 +135,7 @@ echo"</table>";
 
 <fieldset id="observa" class="mas_detalle">
 <legend>Observaciones</legend>
-<textarea></textarea>
+<textarea name="txa_observacion" id="txa_observacion"></textarea>
 </fieldset>
 
 
@@ -159,8 +147,34 @@ echo"</table>";
 <button id="agre_cance">Cancelar</button>
 </div>
 
-
-
+<div id="respuesta_villa"></div>
+</form>
 </div>
 
 </div>
+
+
+<script>
+$(document).ready(function(){
+    $('#miFormulario_villa').submit(function(e){
+        e.preventDefault(); // Evitar el envío del formulario estándar
+        
+        $.ajax({
+            type: 'POST',
+            url: 'PHP/archivo/sub_2_e/insertar.php',
+            data: $(this).serialize(), // Serializar los datos del formulario
+            success: function(response){
+                $('#respuesta_villa').html(response); // Mostrar la respuesta del servidor en el div #respuesta
+                cerrar_villa1();
+            }
+        });
+    }); 
+});
+
+function cerrar_villa1()
+{
+    window.alert('Registro insertado con exito');
+    document.getElementById('vi').style.display = "none";
+}
+
+</script>

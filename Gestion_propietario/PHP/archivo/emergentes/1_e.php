@@ -13,10 +13,13 @@
 
 </div>
 
+<form id="miFormulario_pro">
 <div class="c2">
+
 <?php
 
 $pal = ['Nombre Completo','DNI','Telefono','Correo','Estado','Fecha de ingreso'];
+$id_nombre = ['nombre_pro','dni_pro','telefono_pro','correo_pro','estado_pro','fecha_pro'];
 
 echo"<table>";
 echo"<tr>";
@@ -26,9 +29,10 @@ if($i == 2)
 {
     echo"<td rowspan=2>";
     echo"<div title='Teléfono'>
-    <table id='tele_agregar' class='numeros'>
+    <table name='tele_agregar' id='tele_agregar' class='numeros'>
     <tr>
-    <th colspan = 3>Teléfono <button class='agre_tele' onclick='agregarDato_num()'>Agregar</button></th>
+    <th>Teléfono</th>
+    <th><button type='button' class='agre_tele' onclick='agregarDato_num()'>Agregar</button></th>
     </tr>
 
     </table>
@@ -38,7 +42,7 @@ if($i == 2)
 else
 {
     echo"<td>";
-    echo"<input type='text' title='$pal[$i]' placeholder='$pal[$i]'>";
+    echo"<input type='text' name='$id_nombre[$i]' id='$id_nombre[$i]' title='$pal[$i]' placeholder='$pal[$i]'>";
     echo"</td>";
 }
 }
@@ -50,12 +54,12 @@ for ($i=0; $i < count($pal); $i++) {
     if($i == 3)
     {    
         echo"<td>";
-        echo"<input type='text' title='$pal[$i]' placeholder='$pal[$i]'>";
+        echo"<input type='email' title='$pal[$i]' name='$id_nombre[$i]' id='$id_nombre[$i]' placeholder='$pal[$i]'>";
         echo"</td>";
     }else if($i == 5)
     {
         echo"<td>";
-        echo"<input type='date' title='$pal[$i]' placeholder='$pal[$i]'>";
+        echo"<input type='date' title='$pal[$i]' name='$id_nombre[$i]' id='$id_nombre[$i]' placeholder='$pal[$i]'>";
         echo"</td>";
     }else
     {}
@@ -76,21 +80,21 @@ for ($i=0; $i < 3; $i++) {
     else if($i == 1)
     {
         echo"<td>
-        <fieldset>
+        <fieldset title='Codigo de villa'>
         <label>Villa:</label>
-        <label>A-1</label>
-
-        <label>Cont. eeh:</label>
-        <label>A12345678</label>
+        <label id='cod_villa_p'></label>
+        
         </fieldset>
         </td>";
     }else if($i == 2)
     {
         echo"<td>
-        <fieldset>
-        <input type='radio' name='Estado' id='es_cli1' checked>Aplica cuenta
-        <input type='radio' name='Estado' id='es_cli2'>Suspendido
-        </fieldset>
+
+        <select name='Estado_pro' id='Estado_pro'>
+        <option id='es_cli1' value='es_cli1'>Aplica cuenta
+        <option id='es_cli2' value='es_cli2'>Suspendido
+        </option>
+        </select>
         </td>";
     }
 
@@ -104,9 +108,21 @@ echo"</table>";
 </div>
 
 <div class="c3">
-        
+
 <fieldset id="id_direccion">
-<legend>Direccion</legend>
+<legend>Datos de villa</legend>
+
+<input type="text" id="id_vp" name="id_vp">
+
+<table id="encabezado_villa">
+    <tr>
+        <td><label>Contador eeh:</label> <label id='cod_eeh_p'></label></td>
+        <td><label>Cantidad de habitaciones:</label> <label id='habitacion_p'></label></td>
+        <td><label>Modelo de villa:</label> <label id='modelo_p'></label></td>
+    </tr>
+</table>
+
+
 </fieldset>
 
 <fieldset class="mas_detalle">
@@ -115,16 +131,51 @@ echo"</table>";
 
 <fieldset class="mas_detalle">
 <legend>Observaciones</legend>
-<textarea></textarea>
+<textarea id="observacion_pro" name="observacion_pro"></textarea>
 </fieldset>
 
-<button id="agre_confirmar">Agregar Nuevo</button>
+<button type="submit" id="agre_confirmar" >Agregar Nuevo</button>
 
-<button id="agre_cance">Cancelar</button>
+<button type="button" id="agre_cance">Cancelar</button>
 </div>
 
 
+<div id="respuesta_pro"></div>
+</form>
 
 </div>
 
 </div>
+
+<script>
+$(document).ready(function(){
+    $('#miFormulario_pro').submit(function(e){
+        e.preventDefault(); // Evitar el envío del formulario estándar
+        
+        if(document.getElementById("id_vp").value != "")
+    {
+        $.ajax({
+            type: 'POST',
+            url: 'PHP/archivo/sub_1_e/insertar.php',
+            data: $(this).serialize(), // Serializar los datos del formulario
+            success: function(response){
+                $('#respuesta_pro').html(response); // Mostrar la respuesta del servidor en el div #respuesta
+            }
+        });
+        cerrar_pro1();
+    }
+    else
+    {
+        window.alert('Por favor, selecciona una villa');
+    }
+    }); 
+});
+
+function cerrar_pro1()
+{
+    window.alert('Registro insertado con exito');
+    document.getElementById('pro').style.display = "none";
+}
+
+</script>
+
