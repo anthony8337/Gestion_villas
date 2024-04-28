@@ -4,7 +4,7 @@ position: absolute;
 justify-content: center;
 align-items: center;
 width: 1200px;
-height: 570px;
+height: 590px;
 background-color: white;
 border-radius: 5px;
 }
@@ -82,6 +82,43 @@ padding-top: 10px;
     align-items: center;
 }
 
+#gene_cuenta .centro .c2 #cuenta_seleccionar
+{
+    display: flex;
+    width: 350px;
+    height: 40px;
+    float: inline-end;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+#gene_cuenta .centro .c3 #abono_total
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 518px;
+    height: 60px;
+    float: inline-end;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+#gene_cuenta .centro .c2 #cuenta_seleccionar table
+{
+width: 100%;
+}
+
+#gene_cuenta .centro .c2 #cuenta_seleccionar table td
+{
+    text-align: center;
+}
+
 #gene_cuenta .centro .c2 .filtro
 {
     display: flex;
@@ -106,7 +143,7 @@ padding-right: 20px;
 {
     background-color: rgba(0, 0, 0, 0.1);
     width: calc(100% - 70px);
-    height: calc(100% - 115px);
+    height: 475px;
     padding-right: 35px;
     padding-left: 35px;
     padding-top: 5px;
@@ -116,10 +153,13 @@ padding-right: 20px;
 {
     border: 1px solid black;
     border-radius: 5px;
-    width: 500px;
+    width: 518px;
     height: 150px;
     float: left;
+    margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     text-align: center;
 }
 
@@ -135,10 +175,10 @@ font-size: 15px;
 padding-right: 20px;
 }
 
-#gene_cuenta .centro .c3 fieldset input[type="text"]
+#gene_cuenta .centro .c3 fieldset input[type="text"],#gene_cuenta .centro .c3 fieldset input[type="number"]
 {
 width: 300px;
-height: 50px;
+height: 30px;
 border: 1px solid black;
 border-radius: 30px;
 padding: 0px;
@@ -157,6 +197,12 @@ float: inline-start;
 float: inline-end;
 }
 
+#gene_cuenta .centro .c3 .g_a2 table td
+{
+    height: 20px;
+}
+
+
 #gene_cuenta .centro .c3 fieldset table
 {
 width: 100%;
@@ -169,6 +215,7 @@ height: 100%;
     border: 1px solid black;
     background-color: white;
     border-radius: 30px;
+    margin-top: 0;
 }
 
 #gene_cuenta .centro .c3 fieldset button:hover
@@ -184,8 +231,7 @@ cursor: pointer;
     border: 1px solid black;
     background-color: white;
     border-radius: 30px;
-
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 #gene_cuenta .centro .c3 #g_re
@@ -201,4 +247,10 @@ float: inline-end;
 #gene_cuenta .centro .c3 table td:nth-child(1)
 {
     text-align: start;
+}
+
+
+.interno
+{
+    display: none;
 }

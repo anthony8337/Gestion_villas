@@ -19,9 +19,22 @@
 <div>
 
 <?php
-include "PHP/1_sql/conexion.php";
 
-$sql="SELECT * FROM vista_villa WHERE condicion = 'Disponible' AND (estado_villa = 'Activo' OR estado_villa = 'Mantenimiento') ORDER BY id_con_vi ASC";
+$servername = "localhost"; 
+$username = "root";
+$password = "";
+$database = "pg_gestion_pro";
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+} 
+else
+{
+}
+
+$sql="SELECT id_con_vi, cod_villa, cont_ehh, habitacion, modelo, tam_lote, tam_cons, estado_villa, condicion FROM vista_villa";
 
 $result = $conn->query($sql);
 

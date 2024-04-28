@@ -93,8 +93,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $id_vi_p = intval($_POST['id_vp']);
 
-$sql4 = "INSERT INTO propietario_villa(id_pro, id_villa, id_estado)
-VALUES ('$ultimo','$id_vi_p',$estado_pro)";
+$sql4 = "INSERT INTO propietario_villa(id_pro, id_con_vi, id_estado) 
+VALUES ($ultimo,$id_vi_p,$estado_pro)
+";
+
 
 if ($conn->query($sql4) === TRUE) 
 {

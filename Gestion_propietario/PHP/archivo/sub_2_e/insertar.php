@@ -80,13 +80,11 @@ if ($conn->query($sql) === TRUE)
 }
 
 
-
-
-
-
 /*________________________________________________________________________________seleccionar id_pro*/
 
-$sql2 = "SELECT MAX(id_pro) AS ultimo FROM d_propietario ORDER BY id_pro ASC; ";
+$sql2 = "SELECT MAX(id_villa) AS ultimo FROM villa ORDER BY id_villa ASC ";
+
+
 $result = $conn->query($sql2);
 
 $ultimo;
@@ -105,13 +103,15 @@ else
 }
 
 /*________________________________________________________________________________tabla caracteristicas*/
-if(isset($_POST['telefono'])) {
+if(isset($_POST['caracteristica'])) {
   // Iterar sobre cada fila de datos enviados desde el formulario
-  for ($i = 0; $i < count($_POST['telefono']); $i++) {
-    $telefono = $_POST['telefono'][$i];
+  for ($i = 0; $i < count($_POST['caracteristica']); $i++) {
+    $caracteristica = $_POST['caracteristica'][$i];
 
     // Preparar la consulta SQL con valores directamente incrustados
-    $sql3 = "INSERT INTO tel(telefono, id_pro) VALUES ('$telefono',$ultimo)";
+    $sql3 = "INSERT INTO carac_villa(caracteristica, id_villa) 
+    VALUES ('$caracteristica',$ultimo)
+    ";
 
     // Ejecutar la consulta
     if ($conn->query($sql3) === TRUE) {
@@ -121,5 +121,15 @@ if(isset($_POST['telefono'])) {
   }
 } else {
 }
+/*____________________________________________________*/
 
+$sql4 = "INSERT INTO con_vi(id_villa, id_condicion) 
+VALUES ($ultimo,1)";
+
+if ($conn->query($sql4) === TRUE) 
+{
+  echo "Registrado exitosa mente";  
+} else {
+    echo "Error al insertar datos: " . $conn->error;
+}
 ?>

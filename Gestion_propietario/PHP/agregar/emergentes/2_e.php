@@ -14,10 +14,11 @@
 
 <?php
 $botones = ['Propietario', 'G. Cuenta','Limpiar'];
+$acciones = ['selec_pro_pago()','',''];
 
 for ($i=0; $i < count($botones); $i++) { 
    echo"
-   <button type='button'>$botones[$i]</button>
+   <button type='button' onclick='$acciones[$i]'>$botones[$i]</button>
    ";
 }
 
@@ -36,9 +37,9 @@ for ($i=0; $i < count($botones); $i++) {
 <fieldset class="d_pro">
     <table>
         <tr>
-            <td><label>Codigo: </label><label>A-1</label></td>
-            <td><label>Propietario: </label><label>Anthony Clemente Oliva Murillo</label></td>
-            <td><label>Abono disponible: </label><label>$. 900.00</label></td>
+            <td><label>Codigo: </label><label id="pago_codigo" name="pago_codigo"></label></td>
+            <td><label>Propietario: </label><label id="pago_nombre" name="pago_nombre"></label></td>
+            <td><label>Abono disponible: </label><label id="pago_abono" name="pago_abono"></label></td>
         </tr>
     </table>
 </fieldset>
@@ -46,13 +47,12 @@ for ($i=0; $i < count($botones); $i++) {
 <div>
     <table>
         <tr>
-            <th>Concep. cuenta</th>
             <th>Cod. cuenta</th>
+            <th>Concep. cuenta</th>
             <th>Fecha Apli.</th>
             <th>Fecha Ven.</th>
             <th>Costo</th>
             <th>Abono</th>
-            <th>Importe</th>
             <th>Saldo</th>
         </tr>
     </table>
@@ -99,3 +99,5 @@ for ($i=0; $i < count($botones); $i++) {
 </div>
 
 <label style="display: none;" id="lb_cel_multi"></label>
+
+<script src="JS/agregar/selec_pro_pago.js"></script>

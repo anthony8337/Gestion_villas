@@ -16,7 +16,6 @@
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/sql/comportamientos.css'>
     <script src='JS/accion_menu_l.js'></script>
     <script src='JS/selec_tablas.js'></script>
-    <script src='JS/max_min.js'></script>
     <script src='JS/archivo/emergentes.js'></script>
     <script src='JS/agregar/emergentes.js'></script>
     <script src='JS/reportes/emergentes.js'></script>
@@ -25,11 +24,12 @@
     <script src='JS/redirijir.js'></script>
     <script src='JS/principal/ven_usuario.js'></script>
     <script src='JS/principal/login.js'></script>
-    <script src='JS/com_text.js'></script>
     <script src='JS/limpiar_campos.js'></script>
     <script src='JS/principal/emergente.js'></script>
     <script src='JS/archivo/agre_telefono.js'></script>
     <script src='JS/archivo/agre_caracteristicas.js'></script>
+    <script src='JS/max_min.js'></script>
+    <script src='JS/com_text.js'></script>
 
 
 </head>

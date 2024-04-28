@@ -18,7 +18,7 @@ z-index: 999;
     margin-top: 4px;
 }
 
-#tab_vi td .verde ,#tab_vip td .verde
+.verde
 {
     width: 20px;
     height: 20px;
@@ -28,7 +28,7 @@ z-index: 999;
     float: inline-end;
 }
 
-#tab_vi td .amarillo ,#tab_vip td .amarillo
+.amarillo
 {
 
     width: 20px;
@@ -39,7 +39,7 @@ z-index: 999;
     float: inline-end;
 }
 
-#tab_vi td .rojo,#tab_vip td .rojo
+.rojo
 {
     width: 20px;
     height: 20px;

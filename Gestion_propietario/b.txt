@@ -1,8 +1,6 @@
-CREATE VIEW vista_villa
+CREATE VIEW [dbo].[cuenta_ver]
 AS
-SELECT        con_vi.id_con_vi, villa.cod_villa, villa.cont_ehh, villa.habitacion, modelo_villa.modelo, villa.tam_lote, villa.tam_cons, estado_villa.estado_villa, condicion_villa.condicion
-FROM            con_vi INNER JOIN
-                         condicion_villa ON con_vi.id_condicion = condicion_villa.id_condicion INNER JOIN
-                         villa ON con_vi.id_villa = villa.id_villa INNER JOIN
-                         modelo_villa ON villa.id_modelo = modelo_villa.id_modelo INNER JOIN
-                         estado_villa ON villa.id_estado_villa = estado_villa.id_estado_villa
+SELECT        dbo.cuenta.id_cuenta, dbo.concepto.concepto, dbo.cuenta.fe_desde, dbo.cuenta.fe_hasta, dbo.cuenta.monto, dbo.estado_cuenta.estado
+FROM            dbo.cuenta INNER JOIN
+                         dbo.concepto ON dbo.cuenta.id_concepto = dbo.concepto.id_concepto INNER JOIN
+                         dbo.estado_cuenta ON dbo.cuenta.id_estado_cuenta = dbo.estado_cuenta.id_estado_cuenta

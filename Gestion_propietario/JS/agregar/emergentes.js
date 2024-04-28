@@ -56,3 +56,36 @@ function ingreso_reim()
         elementos[i].style.visibility = 'visible';
     }
 }
+
+function sele_propietario()
+{
+    document.getElementById('propietario_seleccionar').style.display = "flex"; 
+}
+
+function sele_propietario_cerrar()
+{
+    document.getElementById('propietario_seleccionar').style.display = "none"; 
+}
+//////////////////////////////////////////////////////////////////////////////////////
+function sele_concepto_gc()
+{
+    document.getElementById('concepto_seleccionar').style.display = "flex"; 
+}
+
+function sele_concepto_gc_cerrar()
+{
+    document.getElementById('concepto_seleccionar').style.display = "none"; 
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+function selec_pro_pago()
+{
+    document.getElementById('propietario_seleccionar_pago').style.display = "flex";
+}
+
+function selec_pro_pago_cerrar()
+{
+    document.getElementById('propietario_seleccionar_pago').style.display = "none";
+}
+
