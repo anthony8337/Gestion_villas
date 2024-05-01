@@ -33,10 +33,6 @@
         </select>
         
         </td>
-
-        <td rowspan="2">
-            <button type="button"><img src="Imagenes/printer-fill.svg"></button>
-        </td>
     </tr>
 
     <tr>

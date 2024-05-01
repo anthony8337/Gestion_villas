@@ -12,6 +12,27 @@ left: 0;
 .encabezado .retorno
 {
 display: flex;
+width: 40px;
+height: 50px;
+
+position: fixed;
+top: 20px;
+left: 20px;
+justify-content: center;
+align-items: center;
+border-radius: 30px;
+padding-left: 10px;
+}
+
+.encabezado .retorno:hover
+{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.encabezado .entrada
+{
+display: flex;
 width: 50px;
 height: 50px;
 
@@ -23,7 +44,7 @@ align-items: center;
 border-radius: 30px;
 }
 
-.encabezado .retorno:hover
+.encabezado .entrada:hover
 {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.1);
@@ -61,7 +82,7 @@ border-radius: 30px;
 
 #ac_2
 {
-    display: flex;
+    display: none;
     background-color: rgba(0,0,0,0.1);
     width: 100%;
     height: calc(100% - 170px);
@@ -90,7 +111,7 @@ border-radius: 30px;
 
 #ac_3
 {
-    display: none;
+    display: block;
     background-color: rgba(0,0,0,0.1);
     width: 100%;
     height: calc(100% - 170px);

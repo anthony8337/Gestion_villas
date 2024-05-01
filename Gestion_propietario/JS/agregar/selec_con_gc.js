@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
 
         document.getElementById("concepto_seleccionar").style.display = "none";
+        calcular_valor();
       });
     }
   });

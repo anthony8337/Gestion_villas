@@ -44,18 +44,10 @@ for ($i=0; $i < count($botones); $i++) {
     </table>
 </fieldset>
 
-<div>
-    <table>
-        <tr>
-            <th>Cod. cuenta</th>
-            <th>Concep. cuenta</th>
-            <th>Fecha Apli.</th>
-            <th>Fecha Ven.</th>
-            <th>Costo</th>
-            <th>Abono</th>
-            <th>Saldo</th>
-        </tr>
-    </table>
+<div id="cuentas_a_pagar">
+<?php
+include "PHP/agregar/sub_2_e/tabla.php";
+?>
 </div>
 
 <fieldset class="filtro_cuenta">

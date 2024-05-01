@@ -88,10 +88,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 
+$dato_1;
+$dato_2;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+  if (isset($_POST['cuenta_aporte'])) {
+    $opcionSeleccionada = $_POST['cuenta_aporte'];
+
+    if($opcionSeleccionada == 'monto')
+    {
+      $dato_1 = $cuenta_monto;
+      $dato_2 = 0;
+    }
+    else if($opcionSeleccionada == 'abonar')
+    {
+      $dato_1 = 0;
+      $dato_2 = $_POST['cuenta_abono2'];
+    }
+
+  }
+}
 
 
 $sql = "INSERT INTO cuenta(cuenta, id_c_pro, id_concepto, fe_desde, fe_hasta, monto, abono, id_estado_cuenta) VALUES
-('$codigo_cuenta_exis','$cuenta_id','$cuenta_con','$f1','$f2','$cuenta_monto',0,1)";
+('$codigo_cuenta_exis','$cuenta_id','$cuenta_con','$f1','$f2',$dato_1,$dato_2,1)";
 
 if ($conn->query($sql) === TRUE) 
 {

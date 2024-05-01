@@ -18,10 +18,12 @@ function cambio_monto_cuenta()
 {    
     document.getElementById('cuenta_monto_parte').style.display = 'flex';
     document.getElementById('cuenta_abono_parte').style.display = 'none';
+    document.getElementById('abono_total').style.display = 'none';
 }
 
 function cambio_abono_cuenta()
 {
+    document.getElementById('abono_total').style.display = 'flex';
     document.getElementById('cuenta_abono_parte').style.display = 'flex';
     document.getElementById('cuenta_monto_parte').style.display = 'none';
 }

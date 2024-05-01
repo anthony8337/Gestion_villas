@@ -1,6 +1,6 @@
-CREATE VIEW [dbo].[cuenta_ver]
+CREATE VIEW cuenta_ver
 AS
-SELECT        dbo.cuenta.id_cuenta, dbo.concepto.concepto, dbo.cuenta.fe_desde, dbo.cuenta.fe_hasta, dbo.cuenta.monto, dbo.estado_cuenta.estado
-FROM            dbo.cuenta INNER JOIN
-                         dbo.concepto ON dbo.cuenta.id_concepto = dbo.concepto.id_concepto INNER JOIN
-                         dbo.estado_cuenta ON dbo.cuenta.id_estado_cuenta = dbo.estado_cuenta.id_estado_cuenta
+SELECT        cuenta.id_cuenta, cuenta.cuenta, concepto.concepto, cuenta.fe_desde, cuenta.fe_hasta, cuenta.monto, cuenta.abono, estado_cuenta.estado, cuenta.id_c_pro
+FROM            cuenta INNER JOIN
+                         concepto ON cuenta.id_concepto = concepto.id_concepto INNER JOIN
+                         estado_cuenta ON cuenta.id_estado_cuenta = estado_cuenta.id_estado_cuenta

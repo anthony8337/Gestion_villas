@@ -1,21 +1,25 @@
 <link rel='stylesheet' type='text/css' media='screen' href='CSS/ventana_principal/usuarios.css'>
 
 
-<div onload="cu_1()" class="encabezado">
+<div  class="encabezado">
 <h1>Gestion de propietario</h1>
 
 <h2>Bienvenido Usuario</h2>
 
 <div onclick="redirigir_login()" class="retorno" title="Salir">
-    <img src="Imagenes/box-arrow-left.svg">
+<img src="Imagenes/box-arrow-in-left.svg">
+</div>
+
+<div onclick="redirigir_sistema()" class="entrada" title="Entrar a gestión">
+    <img src="Imagenes/box-arrow-in-right.svg">
 </div>
 
 </div>
 
 <div id="acc_1">
     <?php
-    $a = ['Inicio','Usuario','Actividad'];
-    $b = ['cu_1()','cu_2()','cu_3()'];
+    $a = ['Usuario','Actividad'];
+    $b = ['cu_2()','cu_3()'];
     
     for($i = 0; $i < count($a); $i++)
     {

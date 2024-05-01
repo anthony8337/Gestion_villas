@@ -27,8 +27,8 @@
 
 <table>
     <tr>
-        <td><input type="radio" name="cuenta_aporte" id="cuenta_aporte1" onclick="cambio_monto_cuenta()" checked>Monto</td>
-        <td><input type="radio" name="cuenta_aporte" id="cuenta_aporte2" onclick="cambio_abono_cuenta()">Abonar</td>
+        <td><input type="radio" name="cuenta_aporte" id="cuenta_aporte1" value="monto" onclick="cambio_monto_cuenta()" checked>Monto</td>
+        <td><input type="radio" name="cuenta_aporte" id="cuenta_aporte2" value="abonar" onclick="cambio_abono_cuenta()">Abonar</td>
     </tr>
 </table>
 
@@ -85,12 +85,12 @@
 <table>
     <tr>
         <td>Desde:</td>
-        <td><input type="date" name="cuenta_desde" id="cuenta_desde"></td>
+        <td><input type="date" name="cuenta_desde" id="cuenta_desde" onchange="calcular_fecha()"></td>
     </tr>
 
     <tr>
         <td>Hasta:</td>
-        <td><input type="date" name="cuenta_hasta" id="cuenta_hasta"></td>
+        <td><input type="date" name="cuenta_hasta" id="cuenta_hasta" onchange="calcular_fecha()"></td>
     </tr>
 
 </table>
@@ -114,24 +114,32 @@
 
 <fieldset style="display: none;" title="Cantidad de abono" id="cuenta_abono_parte">
 <legend>Cantidad a abonar</legend>
+
+<input class="interno" type="number" name="cuenta_abono2" id="cuenta_abono2" onchange="calcular_valor()">
 <table>
     <tr>
-        <td><input type="radio" name="cuenta_abono" id="cuenta_abono1" onclick="mantener_abono_cuenta()" value="mantener" checked>Mantener valor</td>
-        <td><input type="radio" name="cuenta_abono" id="cuenta_abono1" onclick="editar_abono_cuenta()" value="editar">Editar valor</td>
+        <td><input type="radio" name="cuenta_abono" id="cuenta_abono1" onclick="mantener_abono_cuenta(),calcular_valor()"  value="mantener" checked>Mantener valor</td>
+        <td><input type="radio" name="cuenta_abono" id="cuenta_abono1" onclick="editar_abono_cuenta(),calcular_valor()" value="editar">Editar valor</td>
     </tr>
 
     <tr>
-        <td colspan="2" style=" text-align: center;"><input type="number" name="cuenta_abono" id="cuenta_abono" disabled></td>
+        <td colspan="2" style=" text-align: center;"><input type="number" name="cuenta_abono" id="cuenta_abono" onchange="calcular_valor()" disabled></td>
     </tr>
 
 </table>
 </fieldset>
 
-<fieldset id="abono_total">
+<fieldset style="display: none;" title="Cantidad total al abonar" id="abono_total">
 
 <legend>Abono total</legend>
 
-
+<table>
+    <tr>
+        <td style="text-align: center;">
+            <input type="number" name="abono_total_txt" id="abono_total_txt" disabled>
+        </td>
+    </tr>
+</table>
     
 </fieldset>
 
@@ -155,6 +163,73 @@
 <script src="JS/agregar/compor_radio_gc.js"></script>
 
 <script>
+
+var txt1 = document.getElementById("cuenta_abono");
+var txt2 = document.getElementById("abono_total_txt");
+var txt3 = document.getElementById("cuenta_abono2");
+
+function reescribir(event)
+{
+var value = event.target.value;
+txt1.value = value;
+txt2.value = value;
+txt3.value = value;
+calcular_fecha();
+}
+
+txt1.addEventListener('input',reescribir);
+
+function calcular_valor()
+{
+    var dato3 = document.getElementById("cuenta_abono").value
+
+    document.getElementById("abono_total_txt").value = dato3;
+
+    calcular_fecha();
+}
+
+
+function calcular_fecha() {
+    var date1 = document.getElementById("cuenta_desde").value;
+    var date2 = document.getElementById("cuenta_hasta").value;
+    var dato3 = document.getElementById("cuenta_abono").value;
+    var dato4 = document.getElementById("cuenta_abono2").value;
+    
+    // Verificar si se han proporcionado ambas fechas
+    if (date1 && date2) {
+        var date1Obj = new Date(date1);
+        var date2Obj = new Date(date2);
+        
+        // Calcular la diferencia en meses
+        var diffMonths = (date2Obj.getFullYear() - date1Obj.getFullYear()) * 12;
+        diffMonths += date2Obj.getMonth() - date1Obj.getMonth();
+        
+        // Manejar el caso en el que las fechas pueden estar en diferentes años
+        if (date1Obj > date2Obj) {
+            diffMonths *= -1;
+        }
+        
+        // Mostrar el resultado
+
+        if(diffMonths == 0)
+        {
+            document.getElementById("abono_total_txt").value = dato3;
+            document.getElementById("cuenta_abono2").value = dato3;
+        }
+        else
+        {
+            document.getElementById("abono_total_txt").value = dato3 * diffMonths;
+            document.getElementById("cuenta_abono2").value = dato3 * diffMonths;
+        }
+
+
+    } else {
+        document.getElementById("abono_total_txt").value = dato3;
+    }
+}
+
+
+
 $(document).ready(function(){
     $('#miFormulario_cuenta').submit(function(e){
         e.preventDefault();

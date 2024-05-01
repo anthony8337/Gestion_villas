@@ -180,6 +180,11 @@ width: 100%;
 #multi .centro .c3 div table td
 {
 height: 30px;
+border-bottom: 1px solid rgb(194, 193, 193);
+border-left: 1px solid rgb(97, 97, 97);
+border-right: 1px solid rgb(97, 97, 97);
+text-align: center;
+font-weight: normal;
 }
 
 #multi .centro .c3 div table tr:nth-child(even) td
@@ -190,7 +195,7 @@ height: 30px;
 #multi .centro .c3 div table tr:nth-child(even):hover td, #multi .centro .c3 div table tr:hover
 {
     cursor: pointer;
-    background-color: orange;
+    background-color: #f19858;
 }
 
 
