@@ -91,18 +91,7 @@ img
     margin-right: 10px;
 }
 
-#cuerpo_pagina #ver_cuadros input[type="text"]
-{
-    margin:0px;
-    float: inline-start;
-    width: 500px;
-    height: 40px;
-    border-radius: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-    font-size: 15px;
-    border: 1px solid black;
-}
+
 
 #cuerpo_pagina #ver_cuadros select
 {

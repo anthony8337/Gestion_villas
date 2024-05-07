@@ -1,4 +1,4 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/archivos/mod_consep.css'>
+
 
 <div id="con_1" class="mod">
 

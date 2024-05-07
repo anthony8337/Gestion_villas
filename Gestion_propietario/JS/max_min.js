@@ -2,21 +2,23 @@ window.addEventListener('resize', function() {
     var width = window.innerWidth;
     var height = window.innerHeight;
 
-    var mod = document.getElementsByClassName("mod");
+    var acomodar = document.getElementsByClassName("dentro_acomodar");
 
-    if (width > 800 && height > 600) {
-
-        for (var i = 0; i < mod.length; i++) {
-            mod[i].style.justifyContent = "center";
-            mod[i].style.alignItems = "center";
-        }
-        
-    } else {
-
-        for (var i = 0; i < mod.length; i++) {
-            mod[i].style.justifyContent = "start";
-            mod[i].style.alignItems = "start";
-        }
+    if (width > 600 && height > 600) 
+    {
+        window.alert("pantalla grande");
     }
-});
+    else if(width < 600 && height > 600)
+    {
+        window.alert("pantalla grande de alto, no largo");
+    }
+    else if(width > 600 && height < 600)
+    {
+        window.alert("pantalla grande de largo, no alto");
+    }    
+    else if(width < 600 && height < 600)
+    {
+        window.alert("pantalla pequeña");
+    }
 
+});

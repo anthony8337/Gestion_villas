@@ -1,4 +1,4 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/archivos/mod_vi.css'>
+
 
 <div id="vi" class="mod">
 

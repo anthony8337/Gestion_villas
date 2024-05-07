@@ -1,6 +1,9 @@
-CREATE VIEW cuenta_ver
-AS
-SELECT        cuenta.id_cuenta, cuenta.cuenta, concepto.concepto, cuenta.fe_desde, cuenta.fe_hasta, cuenta.monto, cuenta.abono, estado_cuenta.estado, cuenta.id_c_pro
-FROM            cuenta INNER JOIN
-                         concepto ON cuenta.id_concepto = concepto.id_concepto INNER JOIN
-                         estado_cuenta ON cuenta.id_estado_cuenta = estado_cuenta.id_estado_cuenta
+<div title='Teléfono'>
+    <table name='tele_agregar' id='tele_agregar' class='numeros'>
+    <tr>
+    <th>Teléfono</th>
+    <th><button type='button' class='agre_tele' onclick='agregarDato_num()'>Agregar</button></th>
+    </tr>
+
+    </table>
+    </div>

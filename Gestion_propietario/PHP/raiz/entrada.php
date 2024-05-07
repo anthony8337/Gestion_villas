@@ -14,6 +14,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/formatos_tabla.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/1_mod.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/sql/comportamientos.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='CSS/super_archivo.css'>
     <script src='JS/accion_menu_l.js'></script>
     <script src='JS/selec_tablas.js'></script>
     <script src='JS/archivo/emergentes.js'></script>
