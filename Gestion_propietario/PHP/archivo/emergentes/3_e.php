@@ -14,15 +14,30 @@
 </div>
 
 <div class="c2">
-   <button onclick="ingreso_moneda_r()">Agregar nueva</button> 
+<table>
+   <tr>
+      <td>
+      <button onclick="ingreso_moneda_r()">Agregar nueva</button>
+      </td>
 
-   <input type="text" id="bus_moneda" placeholder="Buscar moneda">
+      <td>
+      <input type="text" id="bus_moneda" placeholder="Buscar moneda">
+      </td>
+   </tr>
+</table>
 </div>
 
-<div class="c3">
-
+<div class="c4">
 <div id= "interior_moneda" class= "interior">
-<?php include "PHP/archivo/sub_3_e/tabla.php"; ?>
+
+<table>
+   <tr>
+      <th>Moneda</th>
+      <th>Abreviado</th>
+      <th>Cambio</th>
+   </tr>
+
+</table>
 </div>
 
 </div>

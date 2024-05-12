@@ -9,26 +9,40 @@
 <button onclick="cerrar_ingreso_concepto()" type="button">X</button>
 <h2>Conceptos registrados</h2>
 
+
+
 </div>
 
 <div class="c2">
-   <button onclick="ingreso_concepto_r()">Agregar nuevo</button> 
+<table>
+   <tr>
+      <td>
+      <button onclick="ingreso_concepto_r()">Agregar nuevo</button>
+      </td>
 
-   <input type="text" id="bus_concepto" placeholder="Buscar concepto">
+      <td>
+      <input type="text" id="bus_moneda" placeholder="Buscar concepto">
+      </td>
+   </tr>
+</table>
 </div>
 
-<div class="c3">
+<div class="c4">
+<div id= "interior_moneda" class= "interior">
 
-<div id="interior_concepto" class= "interior">
-    <?php include "PHP/archivo/sub_4_e/tabla.php";?>
+<table>
+   <tr>
+      <th>Descripción</th>
+      <th>Tipo</th>
+      <th>Valor</th>
+      <th>Referencia</th>
+   </tr>
+
+</table>
 </div>
 
 </div>
 
-
-
 </div>
 
 </div>
-
-<script src="JS/buscar/subs/buscar_concepto.js"></script>

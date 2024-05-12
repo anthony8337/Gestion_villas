@@ -10,36 +10,47 @@
 <h2>Accion al realizar: A-1</h2>
 </div>
 
-<div class="c2">
-
-
-
-<?php
-
-$objetivo = ['Saldo','Pago multiple','Gestionar cuenta','Reimprimir factura','Modificar','Suspender'];
-$icono = ['cash-stack.svg','cash-coin.svg','journal-check.svg','receipt-cutoff.svg','5.png','trash3-fill.svg'];
-$abrir = ['ingreso_saldo()','ingreso_mul_cel()','ingreso_gc()','ingreso_refactura()','ingreso_modificar_pro()','eliminar_propietario()'];
-
-
-for ($i=0; $i < count($objetivo); $i++)
-{ 
-echo"<div onclick='$abrir[$i]'>
-
+<div class="c5">
 
 <table>
-    <tr>
-        <td><img src='Imagenes/$icono[$i]'></td>
-    </tr>
+        <tr>
 
-    <tr>
-        <td><label>$objetivo[$i]</label></td>
-    </tr>
-</table>
+        <?php
+        
+$objetivo = ['Saldo','Pago<br>multiple','Gestionar<br>cuenta'];
+$icono = ['cash-stack.svg','cash-coin.svg','journal-check.svg'];
+$abrir = ['ingreso_saldo()','ingreso_mul_cel()','ingreso_gc()'];
 
-
-</div>";    
+for ($i=0; $i < count($objetivo); $i++) { 
+    echo"<td>";
+    echo"<button type='button' onclick='$abrir[$i]'><img src='Imagenes/$icono[$i]'>
+    <br>
+    $objetivo[$i]</button>";
+    echo"</td>";
 }
-?>
+
+        ?>
+        </tr>
+
+        <tr>
+        <?php
+        
+        $objetivo = ['Reimprimir<br>factura','Modificar','Suspender'];
+        $icono = ['receipt-cutoff.svg','5.png','trash3-fill.svg'];
+        $abrir = ['ingreso_refactura()','ingreso_modificar_pro()','eliminar_propietario()'];
+        
+
+for ($i=0; $i < count($objetivo); $i++) { 
+    echo"<td>";
+    echo"<button type='button' onclick='$abrir[$i]'><img src='Imagenes/$icono[$i]'>
+    <br>
+    $objetivo[$i]</button>";
+    echo"</td>";
+}
+
+        ?>
+        </tr>
+    </table>
 
 </div>
 

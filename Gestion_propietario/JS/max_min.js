@@ -1,3 +1,4 @@
+/*
 window.addEventListener('resize', function() {
     var width = window.innerWidth;
     var height = window.innerHeight;
@@ -22,3 +23,5 @@ window.addEventListener('resize', function() {
     }
 
 });
+
+*/

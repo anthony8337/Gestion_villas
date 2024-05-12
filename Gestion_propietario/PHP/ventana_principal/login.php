@@ -9,8 +9,6 @@
 </div>
 
 
-<div class="interno">
-
 <div id="ingresar">
     <table>
         <tr>
@@ -81,6 +79,5 @@
 
 
 
-</div>
 
 </body>

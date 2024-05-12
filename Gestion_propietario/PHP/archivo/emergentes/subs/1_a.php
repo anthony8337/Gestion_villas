@@ -14,6 +14,11 @@
 
 <form id="formulario_moneda" method="post">
 
+<table>
+    <tr>
+
+    
+
 <?php
 
 $m_d= ['txt_m_1','txt_m_2','txt_m_3'];
@@ -24,21 +29,32 @@ for ($i=0; $i < count($m_d); $i++) {
     if($i == (count($m_d) -1))
     {
         echo"
+        <td>
         <input type='number' id='$m_d[$i]' name='$m_d[$i]' placeholder='$m_p[$i]' title='$m_p[$i]'>
+        </td>
         ";
     }else
     {
         echo"
+        <td>
         <input type='text' id='$m_d[$i]' name='$m_d[$i]' placeholder='$m_p[$i]' title='$m_p[$i]'>
+        </td>
+
         ";
     }
 }
 
 
 ?>
+    </tr>
 
+    <tr>
+        <td>
+        <button id="agre_moneda" name="agre_moneda" type="button" onclick="insertarDatos()">Agregar</button>
+        </td>
+    </tr>
+</table>
 
-<button id="agre_moneda" name="agre_moneda" type="button" onclick="insertarDatos()">Agregar</button>
 
     
 </form>
@@ -52,39 +68,3 @@ for ($i=0; $i < count($m_d); $i++) {
 </div>
 
 
-
-<script>
-    function insertarDatos() {
-        var txt_m_1 = document.getElementById("txt_m_1").value;
-        var txt_m_2 = document.getElementById("txt_m_2").value;
-        var txt_m_3 = document.getElementById("txt_m_3").value;
-
-        $.ajax({
-            url: 'PHP/archivo/sub_3_e/insertar.php',
-            type: 'POST',
-            data: {txt_m_1: txt_m_1, txt_m_2: txt_m_2, txt_m_3: txt_m_3},
-            success: function(response) {
-                document.getElementById("resultado_moneda").innerHTML = response;
-                confir_moneda();
-
-                $.ajax({
-                url: 'PHP/archivo/sub_3_e/tabla.php',
-                type: 'GET',
-                success: function(data) {
-                    document.getElementById("interior_moneda").innerHTML = data;
-                }
-            });
-
-            }
-        });
-    }
-
-    function confir_moneda()
-    {
-
-        window.alert("Dato registrado con exito");
-        document.getElementById("moneda_registro").style.display = 'none';
-    }
-
-
-</script>

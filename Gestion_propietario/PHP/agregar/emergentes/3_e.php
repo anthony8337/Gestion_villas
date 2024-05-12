@@ -11,20 +11,34 @@
 </div>
 
 <div class="c2">
-    <button type="button" class="btn_re">Propietario</button>
-    <button type="button" class="btn_re">Limpiar</button>
-    <fieldset id="filtro_fechas">
-        <table>
-            <tr>
-             <td> <input type="radio" name="filtar_recibo" checked> Ultimo pago</td>
-             <td> <input type="radio" name="filtar_recibo"> Todos los pagos anteriores</td>
-            </tr>
-        </table>
-    </fieldset>
+
+<table>
+    <td><button type="button" class="btn_re">Propietario</button></td>
+    <td><button type="button" class="btn_re">Limpiar</button></td>
+    <td>
+
+    <select name="ranco_factura" id="ranco_factura">
+        <option>Ultimo pago</option>
+        <option>Historial de pagos</option>
+        <option>Rango de pago</option>
+    </select>
+    </td>
+    <td>
+        <input type="date" name="desde_factura" id="desde_factura">
+    </td>
+
+    <td>
+        <input type="date" name="hasta_factura" id="hasta_factura">
+    </td>
+</table>
+
+
+    
+
 </div>
 
 
-<div class="c3">
+<div class="c4">
     <fieldset>
         <table>
             <tr>
@@ -35,8 +49,8 @@
         </table>
     </fieldset>
 
-    <div>
-    <table>
+    <div class="re">
+    <table class="contenido">
         <tr>
         <th>Fecha de pago</th>
             <th>Cod. Factura</th>
@@ -48,8 +62,10 @@
         </tr>
     </table>
     </div>
+</div>
 
-    <button type="button" id="btn_imp">Imprimir</button>
+<div class="c3">
+<button type="button" id="btn_imp">Imprimir</button>
 </div>
 
 </div>

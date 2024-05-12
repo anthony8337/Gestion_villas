@@ -1,9 +1,24 @@
-<div title='Teléfono'>
-    <table name='tele_agregar' id='tele_agregar' class='numeros'>
-    <tr>
-    <th>Teléfono</th>
-    <th><button type='button' class='agre_tele' onclick='agregarDato_num()'>Agregar</button></th>
-    </tr>
+<script>
+$(document).ready(function(){
+    $('#miFormulario_villa').submit(function(e){
+        e.preventDefault(); // Evitar el envío del formulario estándar
+        
+        $.ajax({
+            type: 'POST',
+            url: 'PHP/archivo/sub_2_e/insertar.php',
+            data: $(this).serialize(), // Serializar los datos del formulario
+            success: function(response){
+                $('#respuesta_villa').html(response); // Mostrar la respuesta del servidor en el div #respuesta
+                cerrar_villa1();
+            }
+        });
+    }); 
+});
 
-    </table>
-    </div>
+function cerrar_villa1()
+{
+    window.alert('Registro insertado con exito');
+    document.getElementById('vi').style.display = "none";
+}
+
+</script>

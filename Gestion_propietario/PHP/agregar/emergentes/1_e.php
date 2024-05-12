@@ -14,33 +14,44 @@
 <form id="miFormulario_cuenta">
 
 <div class="c2">
-<button type="button" title="Ingresar propietario" onclick="sele_propietario()">Propietario</button>
-<button type="button" title="Ingresar concepto a pagar" onclick="sele_concepto_gc()">Concepto</button>
 
+<table>
+    <tr>
+        <td>
+        <button type="button" title="Ingresar propietario" onclick="sele_propietario()">Propietario</button>
+        </td>
 
+        <td>
+        <button type="button" title="Ingresar concepto a pagar" onclick="sele_concepto_gc()">Concepto</button>
+        </td>
 
-<fieldset title="Codigo de cuenta" id="codigo_cuenta">
-<?php include "PHP/agregar/sub_1_e/ulltimo.php";?>
-</fieldset>
-
-<fieldset title="Seleccionar aportación" id="cuenta_seleccionar">
-
+        <td>
+        <fieldset title="Seleccionar aportación" id="cuenta_seleccionar">
 <table>
     <tr>
         <td><input type="radio" name="cuenta_aporte" id="cuenta_aporte1" value="monto" onclick="cambio_monto_cuenta()" checked>Monto</td>
         <td><input type="radio" name="cuenta_aporte" id="cuenta_aporte2" value="abonar" onclick="cambio_abono_cuenta()">Abonar</td>
     </tr>
 </table>
-
-
-
 </fieldset>
+        </td>
 
+
+        <td>
+
+        <input type="text" title="Codigo de cuenta" id="codigo_cuenta" disabled>
+        </td>
+    </tr>
+</table>
 </div>
 
-<div class="c3">
+<div class="c4">
 
-<fieldset title="Datos del propietario">
+
+<table>
+    <tr>
+        <td>
+        <fieldset title="Datos del propietario">
 <legend>Propietario</legend>
 
 
@@ -60,8 +71,10 @@
 </table>
 
 </fieldset>
+        </td>
 
-<fieldset title="Concepto de cargo">
+        <td>
+        <fieldset title="Concepto de cargo">
 <legend>Concepto</legend>
 <input type="text" class="interno" name="cuenta_con" id="cuenta_con">
 <table>
@@ -78,8 +91,12 @@
 </table>
 
 </fieldset>
+        </td>
+    </tr>
 
-<fieldset title="Rango de fecha">
+    <tr>
+        <td>
+        <fieldset title="Rango de fecha">
 <legend>Fechas</legend>
 
 <table>
@@ -95,9 +112,12 @@
 
 </table>
 </fieldset>
+        </td>
 
-<fieldset title="Monto del concepto" id="cuenta_monto_parte">
-<legend>Valor del concepto</legend>
+        <td>
+
+        <fieldset title="Monto del concepto" id="cuenta_monto_parte">
+<legend>Valor</legend>
 <input type="number" class="interno" name="antes_cuenta_monto" id="antes_cuenta_monto">
 <table>
     <tr>
@@ -113,7 +133,7 @@
 </fieldset>
 
 <fieldset style="display: none;" title="Cantidad de abono" id="cuenta_abono_parte">
-<legend>Cantidad a abonar</legend>
+<legend>Abonar</legend>
 
 <input class="interno" type="number" name="cuenta_abono2" id="cuenta_abono2" onchange="calcular_valor()">
 <table>
@@ -129,24 +149,27 @@
 </table>
 </fieldset>
 
-<fieldset style="display: none;" title="Cantidad total al abonar" id="abono_total">
-
-<legend>Abono total</legend>
-
-<table>
-    <tr>
-        <td style="text-align: center;">
-            <input type="number" name="abono_total_txt" id="abono_total_txt" disabled>
         </td>
     </tr>
+
 </table>
-    
-</fieldset>
+</div>
 
-
+<div class="c3">
 
 <button type="submit">Insertar</button>
 
+<div style="display: none;" title="Cantidad total al abonar" id="abono_total">
+Abono Total
+<input type="number" name="abono_total_txt" id="abono_total_txt" placeholder="Abono Total" title="Abono Total" disabled>
+</div>
+
+
+    
+</fieldset>
+            </td>
+        </tr>
+    </table>
 </div>
 
 

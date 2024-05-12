@@ -2,16 +2,20 @@
 <table>
 
     <tr>
-        <td id="lis_pro_cu" onclick="l_pro()">
-        <input type="radio" name="v_lista" id="rb_pro" checked>Lista de propietarios
+        <td>
+            <select>
+                <option>Lista de saldos</option>
+                <option>Lista de propietarios</option>
+                <option>Lista de villas</option>
+            </select>
         </td>
         
-        <td rowspan="2">
+        <td>
         <input type="text" class="buscador_prin" id="Busca_prin" placeholder="Buscar propietario">
         <input type="text" class="buscador_prin" id="Busca_vi_prin" placeholder="Buscar Villa">
         </td>
 
-        <td rowspan="2">
+        <td>
             <select id="filtro_pro">
             <option>Aplica cuota</option>
             <option>Pronto a vencer</option>
@@ -35,11 +39,6 @@
         </td>
     </tr>
 
-    <tr>
-        <td id="lis_vi_cu" onclick="l_villa()">
-        <input type="radio" name="v_lista" id="rb_villas">Lista de villas
-        </td>
-    </tr>
 
 </table>
 </div>

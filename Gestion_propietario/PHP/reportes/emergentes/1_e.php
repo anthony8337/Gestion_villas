@@ -10,34 +10,25 @@
 <h2>Reporte de villas</h2>
 </div>
 
-<div class="c2">
+<div class="c4">
+
+<table>
+    <tr>
+        <td>
+            
 
 <fieldset>
     <legend>Estado</legend>
     
-    <table>
-        <tr>
-            <td>
-            <input type="radio" name="estado_radio" id="" checked>Todo
-            </td>
-            <td>
-            <input type="radio" name="estado_radio" id="">Especificar
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="2">
-                <select>
-                    <option>Ocupado</option>
-                    <option>Disponible</option>
-                    <option>Mantenimiento</option>
-                    <option>Descartado</option>
-                </select>
-            </td>
-        </tr>
-    </table>
+    <select>
+        <option></option>
+    </select>
 </fieldset>
 
+</td>
+
+<td>
+    
 <fieldset class="grupo">
     <legend>Grupo</legend>
     
@@ -89,6 +80,13 @@
     </table>
 </fieldset>
 
+</td>
+    </tr>
+
+    <tr>
+        <td>
+            
+
 <fieldset class="modelo">
     <legend>Modelo</legend>
     
@@ -109,6 +107,9 @@
     </table>
 </fieldset>
 
+</td>
+<td>
+    
 <fieldset class="contru">
     <legend>Tamaño</legend>
     
@@ -145,6 +146,10 @@
         </tr>
     </table>
 </fieldset>
+
+</td>
+    </tr>
+</table>
 </div>
 
 <div class="c3">

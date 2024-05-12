@@ -37,56 +37,11 @@
     </tr>
 </table>
 
-    
 </form>
 
-
-
 </div>
-
-
-<div class="c3">
-
-</div>
-
 
 
 </div>
 
 </div>
-
-<script>
-$(document).ready(function(){
-    $('#miFormulario').submit(function(e){
-        e.preventDefault(); // Evitar el envío del formulario estándar
-        
-        $.ajax({
-            type: 'POST',
-            url: 'PHP/archivo/sub_4_e/insertar.php',
-            data: $(this).serialize(), // Serializar los datos del formulario
-            success: function(response){
-                $('#respuesta').html(response); // Mostrar la respuesta del servidor en el div #respuesta
-                avisar_con();
-
-                $.ajax({
-                url: 'PHP/archivo/sub_4_e/tabla.php',
-                type: 'GET',
-                success: function(data) {
-                    document.getElementById("interior_concepto").innerHTML = data;
-                }
-            });
-            }
-        });
-    });
-
-    
-});
-
-
-function avisar_con()
-{
-window.alert('Concepto registrado con exito');
-document.getElementById('con_registro').style.display = "none";
-}
-
-</script>

@@ -12,78 +12,92 @@
 
 <div class="c2">
 
+<table>
+    <tr>
+
 <?php
 $botones = ['Propietario', 'G. Cuenta','Limpiar'];
 $acciones = ['selec_pro_pago()','',''];
 
 for ($i=0; $i < count($botones); $i++) { 
    echo"
+   <td>
    <button type='button' onclick='$acciones[$i]'>$botones[$i]</button>
+   </td>
    ";
 }
 
 ?>
 
-<fieldset>
-    <input type="date" disabled>
-    <label>R12345</label>
-</fieldset>
+<td>
+<input type="date" disabled>
+</td>
+
+<td>
+<input type="text" disabled>
+</td>
+
+</tr>
+</table>
 
 </div>
 
 
-<div class="c3">
+<div class="c4">
 
 <fieldset class="d_pro">
     <table>
         <tr>
-            <td><label>Codigo: </label><label id="pago_codigo" name="pago_codigo"></label></td>
-            <td><label>Propietario: </label><label id="pago_nombre" name="pago_nombre"></label></td>
-            <td><label>Abono disponible: </label><label id="pago_abono" name="pago_abono"></label></td>
+            <td><label>Codigo: </label><label id="pago_codigo" name="pago_codigo">A-1</label></td>
+            <td><label>Propietario: </label><label id="pago_nombre" name="pago_nombre">ANTHONY CLEMENTE OLIVA MURILLO</label></td>
+            <td><label>Abono disponible: </label><label id="pago_abono" name="pago_abono">$0.00</label></td>
+            <td><label>Saldo actual: </label><label id="pago_saldo" name="pago_saldo"></label>$500.60</td>
         </tr>
     </table>
 </fieldset>
 
 <div id="cuentas_a_pagar">
-<?php
-include "PHP/agregar/sub_2_e/tabla.php";
-?>
-</div>
-
 <fieldset class="filtro_cuenta">
-    <legend>Filtro de tiempo</legend>
     <table>
         <tr>
             <td>
-                <input type="radio" name="activo" checked> Mes Actual
+                <select name="cuando_cuenta" id="cuando_cuenta">
+                    <option value="actual">Mes Actual</option>
+                    <option value="anterior">Meses anteriores de este año</option>
+                    <option value="todo">Todo el historial</option>
+                </select>
             </td>
 
             <td>
-                <input type="radio" name="activo"> Todo
+                <input type="text" name="pago_cuenta_buscar" id="pago_cuenta_buscar" placeholder="Buscar cuenta a pagar" title="Buscar cuenta a pagar">
             </td>
 
             <td>
-                <input type="radio" name="activo"> Rango
-            </td>
-
-            <td>
-                <input type="date" disabled>
-            </td>
-
-            <td>
-                <input type="date" disabled>
             </td>
         </tr>
     </table>
 </fieldset>
 
-<fieldset class="saldo_total">
-    <legend>Saldo total a pagar</legend>
-    <label>$. </label><label>700</label>
-</fieldset>
 
+<div>
+    <table class="contenido">
+        <tr>
+            <th>a</th>
+        </tr>
+    </table>
+</div>
 
+</div>
 
+</div>
+
+<div class="conocer_pago">
+<table>
+    <tr>
+        <td>Total a pagar</td>
+        <td>$5</td>
+    </tr>
+</table>
 </div>
 
 </div>

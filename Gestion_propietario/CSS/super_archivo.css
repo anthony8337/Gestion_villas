@@ -1,11 +1,18 @@
+#lis_villa
+{
+    display: flex;
+}
+
+
 .centro
 {
 position: absolute;
 justify-content: center;
 align-items: center;
-width: 95%;
-background-color: white;
+background-color: rgb(211, 211, 211);
 border-radius: 5px;
+width: 95%;
+height: 95%;
 }
 
  .c1
@@ -17,6 +24,7 @@ width: 100%;
 height: 50px;
 padding-top: 1px;
 border-bottom: 1px solid grey;
+background-color: rgb(255, 255, 255);
 }
 
  .c1 button
@@ -77,15 +85,17 @@ button
     padding: 0px;
 }
 
-#pro
-{
-    display: flex;
-}
+
 
 .c2
 {
     background-color: red;
     padding: 10px;
+}
+
+#vi .c2 table td:nth-child(1) input[type = "number"],#vi .c2 table td:nth-child(1) select
+{
+    width: 40%;
 }
 
 .c2 table
@@ -101,8 +111,16 @@ button
 
 .c3 button
 {
-width: 10%;
+    width: 30%;
 }
+
+@media screen and (min-width: 600px) {
+    /* Estilos que se aplicarán cuando la pantalla tenga más de 800px de ancho */
+    .c3 button
+    {
+        width: 150px;
+    }
+  }
 
 
 .c3 table td fieldset
@@ -116,6 +134,8 @@ width: 10%;
     background-color: green;
     padding: 10px;
 }
+
+
 
 .c4 table
 {
@@ -158,6 +178,231 @@ background-color: white;
 }
 
 .c4 table div table tr:nth-child(even) td
+{
+    background-color: rgb(202, 202, 202);
+}
+
+#vi #m_villa td
+{
+    width: 33%;
+}
+
+#moneda .c4 div, #con_1 .c4 div
+{
+background-color: white;
+border: 1px solid grey;
+height: 250px;
+overflow: auto;
+}
+
+#moneda .c4 table, #con_1 .c4 table
+{
+width: 100%;
+}
+
+#moneda .c4 table th, #con_1 .c4 table th
+{
+    position: sticky;
+    top: 0px;
+    background-color: gray;
+    color: white;
+    border-left: 1px solid rgb(185, 185, 185);
+}
+
+#moneda .c4 table td, #con_1 .c4 table td
+{
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+#moneda .c4 table td
+{
+    width: 25%;
+}
+
+.c5
+{
+    background-color: pink;
+}
+
+.c5 table 
+{
+width: 100%;
+height: 100%;
+}
+
+.c5 table td
+{
+text-align: center;
+width: 33%;
+}
+
+.c5 table td button
+{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.c5 table td button:hover
+{cursor: pointer;
+}
+
+.interno
+{
+    display: none;
+}
+
+#gene_cuenta .c4 table
+{
+    width: 100%;
+    height: 100%;
+}
+
+#gene_cuenta .c4 table fieldset
+{
+    margin: 10px;
+    height: 100px;
+}
+
+#gene_cuenta .c3 div
+{
+float: inline-end;
+width: 40%;
+}
+
+#gene_cuenta .c3 input[type = "number"]
+{
+    background-color: white;
+    color: black;
+}  
+
+#gene_cuenta .c2 table td
+{
+    width: 25%;
+    text-align: center;
+}
+
+#multi .c2 table td
+{
+    width: 20%;
+    text-align: center;
+}
+
+#multi .c4 .d_pro table td
+{
+width: 25%;
+}
+
+#multi .filtro_cuenta table td
+{
+    width: 20%;
+}
+
+#multi #inferior td
+{
+    width: 50%;
+}
+
+#multi #inferior td
+{
+    width: 50%;
+}
+
+#multi #inferior fieldset
+{
+    height: 80px;
+}
+
+#multi #inferior fieldset table
+{
+    height: 100%;
+}
+
+#multi .filtro_cuenta table td,#multi .filtro_cuenta
+{
+    padding: 0px;
+    border: none;
+}
+
+#multi .filtro_cuenta table td select, #multi .filtro_cuenta table td input[type = "date"],#multi .filtro_cuenta table td input[type = "text"]
+{
+    height: 20px;
+}
+
+#multi #cuentas_a_pagar
+{
+    background-color: white;
+    height: 200px;
+}
+
+#multi #cuentas_a_pagar div
+{background-color: white;
+    height: calc(100% - 20px);
+}
+
+.conocer_pago
+{
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    width: 400px;
+    float: inline-end;
+    margin: 10px;
+}
+
+.conocer_pago table
+{
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.conocer_pago table td
+{
+border: 1px solid grey;
+width: 50%;
+text-align: center;
+}
+
+.conocer_pago table td:nth-child(1)
+{
+    background-color: black;
+    color: white;
+}
+
+#reimpre .c2 td
+{
+width: 20%;
+}
+
+#reimpre fieldset table td
+{
+width: 33%;
+}
+
+#reimpre .re table td
+{
+width: 14%;
+}
+
+#reimpre .re
+{
+background-color: white;
+height: 300px;
+}
+
+.contenido th, .contenido td
+{
+    height: 30px;
+}
+
+.contenido th
+{
+    background-color: grey;
+    color: white;
+}
+
+.contenido tr:nth-child(even) td
 {
     background-color: rgb(202, 202, 202);
 }
