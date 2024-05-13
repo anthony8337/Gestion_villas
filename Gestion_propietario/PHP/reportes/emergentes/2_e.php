@@ -7,48 +7,31 @@
 <div class="c1">
 
 <button onclick="cerrar_ingreso_lp()" type="button">X</button>
-<h2>Reporte de propietario</h2>
+<h2>Reporte de saldos</h2>
 </div>
 
-<div class="c2">
+<div class="c4">
 
 <fieldset>
     <legend>Estado</legend>
     
     <table>
         <tr>
-            <td>
-            <input type="radio" name="estado_pro_radio" id="" checked>Todo
-            </td>
-            <td>
-            <input type="radio" name="estado_pro_radio" id="">Especificar
-            </td>
-        </tr>
-
-        <tr>
             <td colspan="2">
                 <select>
                     <option>Aplica cuenta</option>
                     <option>Suspendido</option>
+                    <option>Todas las opciones</option>
                 </select>
             </td>
         </tr>
     </table>
-</fieldset>
+    </fieldset>
 
 <fieldset class="grupo">
     <legend>Grupo</legend>
     
     <table>
-        <tr>
-            <td>
-            <input type="radio" name="grupo_pro1_radio" id="" checked>Todo
-            </td>
-            <td>
-            <input type="radio" name="grupo_pro1_radio" id="">Especificar
-            </td>
-        </tr>
-
         <tr>
             <td>
             Desde
@@ -92,44 +75,38 @@
 </fieldset>
 
 <fieldset class="modelo">
-    <legend>Estado de villa</legend>
+    <legend>Periodo de saldo</legend>
     
     <table>
         <tr>
             <td>
-            <input type="radio" name="Es_vi_radio" id="" checked>Todo
+            <select>
+                <option>
+                    Mes actual
+                </option>
+                <option>
+                    Todo el año
+                </option>
+                <option>
+                    Rango de tiempo
+                </option>
+            </select>
             </td>
 
             <td>
-            <input type="radio" name="Es_vi_radio" id="">Disponible
+                Desde
+            <input type="date">
             </td>
 
             <td>
-            <input type="radio" name="Es_vi_radio" id="">Mantenimiento
+                Hasta
+            <input type="date">
             </td>
         </tr>
     </table>
 </fieldset>
 
-<fieldset class="modelo">
-    <legend>Cantidad de saldo</legend>
-    
-    <table>
-        <tr>
-            <td>
-            <input type="radio" name="Es_sal_pro_radio" id="" checked>Todo
-            </td>
 
-            <td>
-            <input type="radio" name="Es_sal_pro_radio" id="">Menor de: <input type="number">
-            </td>
-
-            <td>
-            <input type="radio" name="Es_sal_pro_radio" id="">Mayor de: <input type="number">
-            </td>
-        </tr>
-    </table>
-</fieldset>
 </div>
 
 <div class="c3">

@@ -1,4 +1,4 @@
-#lis_villa
+#lis_pro
 {
     display: flex;
 }
@@ -405,4 +405,24 @@ height: 300px;
 .contenido tr:nth-child(even) td
 {
     background-color: rgb(202, 202, 202);
+}
+
+.contru table td
+{
+    width: 33%;
+}
+
+#lis_villa .c4 fieldset
+{
+height: 80px;
+}
+
+#lis_villa .c4 fieldset table
+{
+height: 100%;
+}
+
+#lis_pro .modelo td
+{
+width: 33%;
 }

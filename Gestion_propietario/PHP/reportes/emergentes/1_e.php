@@ -20,9 +20,21 @@
 <fieldset>
     <legend>Estado</legend>
     
+    <table>
+        <tr>
+            <td>
+
     <select>
-        <option></option>
+        <option>Todas las opciones</option>
+        <option>Disponible</option>
+        <option>Ocupado</option>
+        <option>Mantenimiento</option>
+        <option>Descartado</option>
     </select>
+
+    </td>
+        </tr>
+    </table>
 </fieldset>
 
 </td>
@@ -33,14 +45,7 @@
     <legend>Grupo</legend>
     
     <table>
-        <tr>
-            <td>
-            <input type="radio" name="grupo_radio" id="" checked>Todo
-            </td>
-            <td>
-            <input type="radio" name="grupo_radio" id="">Especificar
-            </td>
-        </tr>
+
 
         <tr>
             <td>
@@ -89,20 +94,18 @@
 
 <fieldset class="modelo">
     <legend>Modelo</legend>
-    
-    <table>
-        <tr>
-            <td>
-            <input type="radio" name="modelo_radio" id="" checked>Todo
-            </td>
 
-            <td>
-            <input type="radio" name="modelo_radio" id="">Coral
-            </td>
+<table>
+    <tr>
+        <td>
+<select>
+    <option>Todas las opciones</option>
+    <option>Caracol</option>
+    <option>Arrecife</option>
+    <option>Carey</option>
+</select>
 
-            <td>
-            <input type="radio" name="modelo_radio" id="">Arrecife
-            </td>
+</td>
         </tr>
     </table>
 </fieldset>
@@ -116,33 +119,23 @@
     <table>
         <tr>
             <td>
-            <input type="radio" name="tamaño_parte_radio" id="" checked> Todo
+            <select>
+                <option>Todas las opciones</option>
+                <option>Lote</option>
+                <option>Construcción</option>
+            </select>
             </td>
 
             <td>
-            <input type="radio" name="tamaño_parte_radio" id="">Lote
+            <select>
+                <option>Mayor de</option>
+                <option>Menor de</option>
+            </select>
             </td>
 
             <td>
-            <input type="radio" name="tamaño_parte_radio" id="">Construcción
+            <input type="number" placeholder="Tamaño a seleccionar" title="Dejar en blanco para seleccionar todos los valores">
             </td>
-        </tr>
-
-        <tr>
-            <td>
-            <input type="radio" name="tamaño_radio" id="" checked> Todo
-            </td>
-
-            <td>
-            <input type="radio" name="tamaño_radio" id=""> Menor de <input type="number">
-            </td>
-
-            <td>
-            <input type="radio" name="tamaño_radio" id=""> Mayor de <input type="number">
-            </td>
-        </tr>
-
-        
         </tr>
     </table>
 </fieldset>

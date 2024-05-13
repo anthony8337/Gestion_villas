@@ -1,14 +1,9 @@
 <div id="m_2" class="m_reporte">
 
-
-
-
-
-
 <ul>
 <?php
-    $titulos_agre = ['Lista de villas','Lista de prop.','Saldo Total'];
-    $img_agre = ['card-text.svg','card-text.svg','cash-coin.svg'];
+    $titulos_agre = ['Estado de<br>cuenta','Reporte de villas','Reporte de saldos'];
+    $img_agre = ['person-lines-fill(1).svg','card-text.svg','cash-coin.svg'];
     
     for ($i=0; $i < count($titulos_agre); $i++) { 
 
