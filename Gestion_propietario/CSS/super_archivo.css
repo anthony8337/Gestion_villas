@@ -1,7 +1,17 @@
-#lis_pro
+.titulos_grandes
 {
-    display: flex;
+    display: none;
 }
+
+@media screen and (min-width: 600px) {
+    
+    .titulos_grandes
+    {
+        display: block;
+    }
+
+}
+
 
 
 .centro
@@ -13,6 +23,15 @@ background-color: rgb(211, 211, 211);
 border-radius: 5px;
 width: 95%;
 height: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    
+    .centro
+    {
+        width: auto;
+        height: auto;
+    }
 }
 
  .c1

@@ -1,41 +1,19 @@
-<div id="m_0" class="m_archivo">
+<div id="m_0" class="m_archivo" title>
 
 <ul>
 
-
-
 <?php
-    $titulos_archi = ['Nuevo prop.','Nueva villa','Monedas','Conceptos'];
+    $titulos_archi = ['Nuevo propietario','Nueva villa','Monedas','Conceptos'];
     $img_archi = ['perfil.png','casa_b.png','cash-coin.svg','card-text.svg'];
-    
+    $accion = ['ingreso()','ingreso_vi()','ingreso_moneda()','ingreso_concepto()'];
 
     for ($i=0; $i < count($titulos_archi); $i++) { 
 
-        if ($i == 0) {
-            echo"
-            <li onclick='ingreso()'><img src='Imagenes/$img_archi[$i]'>$titulos_archi[$i]</li>
-            ";
-        }else if ($i == 1) {
-            echo"
-            <li onclick='ingreso_vi()'><img src='Imagenes/$img_archi[$i]'>$titulos_archi[$i]</li>
-            ";
-        }else if ($i == 2)
-        {
-            echo"
-            <li onclick='ingreso_moneda()'><img src='Imagenes/$img_archi[$i]'>$titulos_archi[$i]</li>
-            ";
-        } else if ($i == 3)
-        {
-            echo"
-            <li onclick='ingreso_concepto()'><img src='Imagenes/$img_archi[$i]'>$titulos_archi[$i]</li>
-            ";
-        } 
-        else
-        {
-            echo"
-            <li><img src='Imagenes/$img_archi[$i]'>$titulos_archi[$i]</li>
-            ";
-        }
+        echo"
+        <li onclick='$accion[$i]' title='$titulos_archi[$i]'><img src='Imagenes/$img_archi[$i]'>
+        <label class='titulos_grandes' title='$titulos_archi[$i]'>$titulos_archi[$i]</label></li>
+        ";
+
 
     }
     ?>
