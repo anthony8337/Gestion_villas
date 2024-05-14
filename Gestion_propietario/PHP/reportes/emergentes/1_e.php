@@ -146,7 +146,9 @@
 </div>
 
 <div class="c3">
-<button>Imprimir</button>
+<button type="button">Imprimir</button>
+<button type="button">Exportar PDF</button>
+<button type="button">Exportar Ecxel</button>
 </div>
 
 

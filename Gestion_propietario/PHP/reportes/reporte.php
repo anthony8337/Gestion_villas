@@ -2,9 +2,9 @@
 
 <ul>
 <?php
-    $titulos_agre = ['Estado de<br>cuenta','Reporte de villas','Reporte de saldos'];
+    $titulos_agre = ['Estados de cuentas','Reporte de villas','Reporte de saldos'];
     $img_agre = ['person-lines-fill(1).svg','card-text.svg','cash-coin.svg'];
-    $accion = ['','ingreso_lis_villa()','ingreso_lis_pro()'];
+    $accion = ['ingreso_lis_pro_sal()','ingreso_lis_villa()','ingreso_lis_pro()'];
     
     for ($i=0; $i < count($titulos_agre); $i++) { 
         echo"

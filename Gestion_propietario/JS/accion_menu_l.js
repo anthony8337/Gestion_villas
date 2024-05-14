@@ -5,7 +5,7 @@ function minimizar()
     document.getElementById('logo').style.width = '80px';
     document.getElementById('logo').style.height = '80px';
     document.getElementById('logo').style.top = '45px';
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
     document.getElementById('m_la_'+i).style.display = 'none';
     }
     document.getElementById('menu_lateral').style.width = '90px';
@@ -20,7 +20,7 @@ function maximizar()
     document.getElementById('logo').style.width = '180px';
     document.getElementById('logo').style.height = '180px';
     document.getElementById('logo').style.top = '0px';
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
     document.getElementById('m_la_'+i).style.display = 'block';
     document.getElementById('m_la_'+i).style.paddingLeft = '20px';
     document.getElementById('m_la_'+i).style.paddingTop = '5px';
@@ -34,6 +34,7 @@ function maximizar()
 document.addEventListener('DOMContentLoaded', function(){
     minimizar();
 });
+
 
 function acciones_botones()
 {
@@ -54,7 +55,7 @@ function precionar_b0()
 {
     document.getElementById('nombre_car').textContent = 'Archivo';
     minimizar();
-    for (let j = 0; j < 5; j++) {
+    for (let j = 0; j < 4; j++) {
      if(j == 0)
         {
             document.getElementById('li_'+j).style.borderLeft = '5px solid red';      
@@ -72,7 +73,7 @@ function precionar_b1()
 {
     document.getElementById('nombre_car').textContent = 'Agregar';
     minimizar();
-    for (let j = 0; j < 5; j++) {
+    for (let j = 0; j < 4; j++) {
         if(j == 1)
         {
             document.getElementById('li_'+j).style.borderLeft = '5px solid red';      
@@ -91,7 +92,7 @@ function precionar_b2()
     document.getElementById('nombre_car').textContent = 'Reportes';
 
     minimizar();
-    for (let j = 0; j < 5; j++) {
+    for (let j = 0; j < 4; j++) {
         if(j == 2)
         {
             document.getElementById('li_'+j).style.borderLeft = '5px solid red';      
@@ -110,7 +111,7 @@ function precionar_b3()
     document.getElementById('nombre_car').textContent = 'Exportar';
 
     minimizar();
-    for (let j = 0; j < 5; j++) {
+    for (let j = 0; j < 4; j++) {
         if(j == 3)
         {
             document.getElementById('li_'+j).style.borderLeft = '5px solid red';      

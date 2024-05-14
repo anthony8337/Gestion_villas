@@ -389,22 +389,22 @@ text-align: center;
     color: white;
 }
 
-#reimpre .c2 td
+#reimpre .c2 td,#lis_pro_sal .c2 td
 {
 width: 20%;
 }
 
-#reimpre fieldset table td
+#reimpre fieldset table td,#lis_pro_sal fieldset table td
 {
 width: 33%;
 }
 
-#reimpre .re table td
+#reimpre .re table td,#lis_pro_sal .re table td
 {
 width: 14%;
 }
 
-#reimpre .re
+#reimpre .re,#lis_pro_sal .re
 {
 background-color: white;
 height: 300px;

@@ -2,15 +2,16 @@
 <img src="Imagenes/logo_principal.png" id="logo">
 <ul>
 <?php
-$nombre_botones = ['Archivo','Agregar','Reportes','Exportar','Salir'];
-$imagenes_botones = ['Imagenes/2.png','Imagenes/5.png','Imagenes/6.png','Imagenes/3.png','Imagenes/box-arrow-left.svg'];
-$titulos = ['Nueva información','Pago de propietario','Reportes de movimientos','Exportación de reportes','Salir'];
+$nombre_botones = ['Archivo','Agregar','Reportes','Salir'];
+$imagenes_botones = ['Imagenes/2.png','Imagenes/5.png','Imagenes/6.png','Imagenes/box-arrow-left.svg'];
+$titulos = ['Nueva información','Pago de propietario','Reportes de movimientos','Salir'];
+$acciones = ['precionar_b0()','precionar_b1()','precionar_b2()',''];
 
 for ($i=0; $i < count($nombre_botones); $i++) { 
 
 
 echo"
-<li id='li_$i' onclick='precionar_b$i()' title='$titulos[$i]'>
+<li id='li_$i' onclick='$acciones[$i]' title='$titulos[$i]'>
 <table>
 <tr>
     <td id='i_la_$i'><img src='$imagenes_botones[$i]' id='icono'></td>
