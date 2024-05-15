@@ -18,25 +18,29 @@
 
 .login .imagen img
 {
-    width: 500px;
-    height: 500px;
-    filter: drop-shadow(5px 5px 10px rgba(143, 79, 19,0.8));
+    display: none;
 }
  
 .login #ingresar, .login #recuperar
 {
     background-color: rgba(255, 255, 255, 0.8);
     width: 400px;
-    height: 100%;
+    height: 500px;
 
     position:absolute;
-    top: 0px;
-    right: 0px;
+    top: 25px;
 
     display: flex;
     justify-content: center;
-    align-items: center;
+
+
+    filter: drop-shadow(5px 5px 10px rgba(143, 79, 19,0.8));
+    border-radius: 10px;
+
+    overflow: auto;
+
 }
+
 
 .login #recuperar
 {
@@ -60,8 +64,79 @@ height: 50px;
 .login label
 {
     border-bottom: 1px solid black;
+    
 }
 
-@media screen and (min-width: 600px){
-    
+.login .mapa
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login #ingresar img, .login #recuperar img
+{
+    width: 200px;
+    height: 200px;
+    position:relative;
+    left: 80px;
+
+    display: flex;
+}
+
+.login #ingresar table, .login #recuperar table
+{
+width: calc(100% - 20px);
+}
+
+.login #ingresar table td, .login #recuperar table td
+{
+    text-align: center;
+}
+
+
+@media screen and (min-width: 900px) and (min-height: 500px){
+    .login #ingresar img, .login #recuperar img
+{
+    width: 200px;
+    height: 200px;
+    display: none;
+}
+
+
+    .login .imagen img
+{
+    display: flex;
+    width: 500px;
+    height: 500px;
+    filter: drop-shadow(5px 5px 10px rgba(143, 79, 19,0.8));
+}
+
+.login #ingresar, .login #recuperar
+{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 400px;
+    height: 100%;
+
+    position:absolute;
+    top: 0px;
+    right: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login #recuperar
+{
+    display: none;
+}
+
+.login .mapa
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 }

@@ -10,7 +10,16 @@
 
 
 <div id="ingresar">
+
+
     <table>
+
+    <tr>
+            <td>
+            <img src="Imagenes/logo_principal.png">
+            </td>
+        </tr>
+
         <tr>
             <td>
                 <h2>Gestión de propietario</h2>
@@ -46,7 +55,16 @@
 </div>
 
 <div id="recuperar">
+
+
+
     <table>
+
+    <tr>
+            <td>
+            <img src="Imagenes/logo_principal.png">
+            </td>
+        </tr>
         <tr>
             <td>
                 <h2>Gestión de propietario</h2>
