@@ -1,4 +1,4 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/ventana_principal/login.css'>
+<link rel='stylesheet' type='text/css' media='screen' href='CSS/login.css'>
 
 <body class="login">
 

@@ -1,0 +1,67 @@
+.login
+{
+    background: linear-gradient(to right, #ffaa49, #ffcea8);
+}
+
+.login .imagen
+{
+    width: calc(100% - 400px);
+    height: 100%;
+
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .imagen img
+{
+    width: 500px;
+    height: 500px;
+    filter: drop-shadow(5px 5px 10px rgba(143, 79, 19,0.8));
+}
+ 
+.login #ingresar, .login #recuperar
+{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 400px;
+    height: 100%;
+
+    position:absolute;
+    top: 0px;
+    right: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login #recuperar
+{
+    display: none;
+}
+
+.login #ingresar td, .login #recuperar td
+{
+text-align: center;
+height: 50px;
+}
+
+.login label:hover
+{
+    cursor: pointer;
+    color: blueviolet;
+    border-bottom: 1px solid blueviolet;
+    
+}
+
+.login label
+{
+    border-bottom: 1px solid black;
+}
+
+@media screen and (min-width: 600px){
+    
+}
