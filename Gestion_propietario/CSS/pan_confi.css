@@ -1,0 +1,249 @@
+#confi_usuarios
+{
+    background-color: #f19858;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#confi_usuarios .retorno
+{
+    display: flex;
+    position: absolute;
+    left: 20px;
+}
+
+#confi_usuarios .entrada
+{
+    display: flex;
+    position: absolute;
+    right: 20px;
+}
+
+#confi_usuarios ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#confi_usuarios ul li
+{
+    
+    height: 50px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0 10px 0 10px;
+    border-right: 1px solid rgb(250, 171, 114);
+}
+
+
+.usuarios_tabla
+{
+    border: 1px solid gray;
+    background-color: white;
+    width: calc(100% - 20px);
+    height: calc(100% - 220px);
+    position: absolute;
+    overflow: auto;
+}
+
+.usuarios_tabla table
+{
+    width: calc(100% - 2px);
+    border-collapse: collapse;
+}
+
+.usuarios_tabla table th
+{
+    background-color: gray;
+    color: white;
+    border-left: 1px solid rgb(255, 255, 255);
+    position: sticky;
+    top: 0px;
+}
+
+.usuarios_tabla table td
+{
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    text-align: center;
+    font-weight: normal;
+    padding: 5px;
+}
+
+.usuarios_tabla table td:nth-child(9)
+{
+width: 100px;
+border-right: none;
+}
+
+.usuarios_tabla table td:nth-child(10)
+{
+    border-left: none;
+}
+.usuarios_tabla table td:nth-child(11)
+{
+   width: 50px;
+}
+
+.usuarios_tabla table tr:nth-child(even) td
+{
+background-color: rgb(209, 209, 209);
+}
+
+.usuarios_tabla table td button
+{
+width: 32px;
+height: 32px;
+}
+
+.usuarios_tabla table td button img
+{
+width: 28px;
+height: 28px;
+}
+
+.q_1
+{
+    margin-top: 10px;
+}
+
+
+#ac_2
+{
+    display: none;
+}
+
+
+
+#ac_2 .usuarios
+{
+ width: 385px;
+ height: 200px;
+}
+
+@media screen and (min-width: 500px)
+{
+    #ac_2 .usuarios
+{
+    width: 100%;
+    height: 120px;
+}
+}
+
+.usuarios_tabla td:nth-child(8)
+{
+    -webkit-text-security: disc;
+}
+
+.filtro_usuario
+{
+    width: auto;
+}
+
+.filtro_usuario td
+{
+    text-align: center;
+}
+
+.filtro_usuario td:nth-child(1),.filtro_usuario td:nth-child(3)
+{
+    width: 150px
+}
+
+@media screen and (min-width: 900px) {
+
+    .filtro_usuario
+{
+    width: 50%;
+}
+}
+
+.q_2
+{
+    margin-top: 10px;
+}
+
+.opciones_confi_usuario
+{
+
+background-color: white;
+overflow: auto;
+height: 200px;
+
+}
+
+.opciones_confi_usuario table
+{
+    width: 100%;
+    border-collapse: collapse;
+    font-weight: normal;
+}
+
+.opciones_confi_usuario table th
+{
+background-color: grey;
+color: white;
+border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+
+.opciones_confi_usuario table td
+{
+background-color: white;
+border: 1px solid rgba(0, 0, 0, 0.5);
+text-align: center;
+}
+
+
+.opciones_confi_modelo_villa table td
+{
+background-color: white;
+border: 1px solid rgba(0, 0, 0, 0.5);
+text-align: center;
+}
+
+.opciones_confi_modelo_villa table
+{
+    width: 100%;
+    border-collapse: collapse;
+    font-weight: normal;
+}
+
+.opciones_confi_modelo_villa table th
+{
+background-color: grey;
+color: white;
+border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.opciones_confi_modelo_villa
+{
+
+background-color: white;
+overflow: auto;
+height: 200px;
+
+}
+
+.opciones_confi_modelo_villa td:nth-child(3)
+{
+width: 50px;
+}
+
+.opciones_confi_modelo_villa td:nth-child(3) button
+{
+width: 36px;
+}
+
+.opciones_confi_modelo_villa td:nth-child(1)
+{
+display: none;
+}

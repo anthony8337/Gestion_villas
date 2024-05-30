@@ -14,7 +14,6 @@
 <div class="c2">
 
 <table>
-
 <tr>
 <?php
 
@@ -25,7 +24,10 @@ $tipo = ['text','number','email','date'];
 for ($i=0; $i < count($pal); $i++) {
         echo"
         <td>
+        <fieldset>
+        <legend>$pal[$i]</legend>
         <input type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]'>
+        </fieldset>
         </td>
         ";
 }
@@ -33,11 +35,16 @@ for ($i=0; $i < count($pal); $i++) {
 ?>
 
 <td>
+<fieldset>
+<legend>Agregar contactos</legend>
 <button type="button">Contactos</button>
+</fieldset>
 </td>
+</tr>
 
+<tr>
 <td>
-<button type="button">Seleccionar <br> villa</button>
+
 </td>
 </tr>
 </table>
@@ -46,60 +53,36 @@ for ($i=0; $i < count($pal); $i++) {
 
 <div class="c4">
 
-<table>
-    <tr>
-        <td rowspan="2">
-            <div>
-                <table>
-                    <tr>
-                        <th>Detalles</th>
-                    </tr>
-                </table>
-            </div>
-        </td>
-        <td>
-        <div class="div_otro">
+
+<fieldset>
+    
+    <button type="button">Agregar una villa</button>
+    <fieldset>
+    <legend>Datos de villa</legend>
+    <div>
         <table>
                     <tr>
-                        <th colspan="2">Datos de villa</th>
-                    </tr>
-
-                    <tr>
-                        <td>Villa:</td>
-                        <td>A-1</td>
-                    </tr>
-
-                    <tr>
-                        <td>Cont. eeh:</td>
-                        <td>123456789</td>
-                    </tr>
-
-                    <tr>
-                        <td>Modelo:</td>
-                        <td>Villa caracol</td>
-                    </tr>
-
-                    <tr>
-                        <td>Habitaciones:</td>
-                        <td>5</td>
+                        <th>Villa</th>
+                        <th>Cont. eeh</th>
+                        <th>Modelo</th>
+                        <th>Habitaciones</th>
+                        <th>Costo</th>
                     </tr>
         </table>
         </div>
-        </td>
-    </tr>
+        </fieldset>
+</fieldset>
 
-    <tr>
-        <td>
-        <div class="div_otro">Observaciones
-            <br>
+<fieldset class="observaciones">
+    <legend>
+    Observaciones
+    </legend>
+<div>
             <textarea>
 
             </textarea>
         </div>
-        </td>
-    </tr>
-
-</table>
+</fieldset>
 
 </div>
 

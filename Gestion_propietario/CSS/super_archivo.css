@@ -1,3 +1,5 @@
+
+
 .titulos_grandes
 {
     display: none;
@@ -80,7 +82,7 @@ background-color: rgb(134, 0, 0);
 
 input[type="text"],input[type="email"],input[type="date"],input[type="number"],select,input[type="password"]
 {
-    width: 95%;
+    width: 100%;
     height: 40px;
     text-align: center;
     padding: 0px;
@@ -91,7 +93,7 @@ input[type="text"],input[type="email"],input[type="date"],input[type="number"],s
 textarea
 {
     resize: none;
-    width: 95%;
+    width: 99%;
     height: 70px;
 }
 
@@ -110,6 +112,13 @@ button
 {
     background-color: red;
     padding: 10px;
+}
+
+.c2 fieldset
+{
+   width: 100%;
+   padding: 0;
+   border: none;
 }
 
 #vi .c2 table td:nth-child(1) input[type = "number"],#vi .c2 table td:nth-child(1) select
@@ -154,6 +163,63 @@ button
     padding: 10px;
 }
 
+.c4 fieldset
+{
+    border: none;
+}
+
+.c4 fieldset fieldset
+{
+padding: 0px;
+margin-top: 10px;
+}
+
+.c4 fieldset fieldset table
+{
+border-collapse: collapse;
+width: 100%;
+}
+
+.c4 fieldset fieldset table th
+{
+
+background-color: gray;
+color: white;
+border-right: 1px solid rgb(50, 50, 50);
+}
+
+.c4 fieldset fieldset table td
+{
+border-right: 1px solid rgb(50, 50, 50);
+border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.c4 fieldset fieldset table tr:nth-child(ever) td
+{
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.c4 fieldset button
+{
+    width: 200px;
+}
+
+.c4 fieldset div
+{
+width: 100%;
+background-color: white;
+border: 1px solid gray;
+overflow: auto;
+}
+
+.c4 fieldset fieldset div
+{
+width: 100%;
+height: 150px;
+background-color: white;
+border: 1px solid gray;
+overflow: auto;
+}
 
 
 .c4 table
@@ -445,3 +511,26 @@ height: 100%;
 {
 width: 33%;
 }
+
+.filtro_principal
+{
+    width: auto;
+}
+
+.filtro_principal td
+{
+    text-align: center;
+}
+
+.filtro_principal td:nth-child(1),.filtro_principal td:nth-child(3)
+{
+    width: 120px;
+}
+
+@media screen and (min-width: 900px) {
+    .filtro_principal
+{
+    width: 50%;
+}
+}
+

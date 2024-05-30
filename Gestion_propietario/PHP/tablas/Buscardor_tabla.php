@@ -1,5 +1,5 @@
 <div id="ver_cuadros">
-<table>
+<table class="filtro_principal">
 
     <tr>
         <td>
@@ -11,7 +11,7 @@
         </td>
         
         <td>
-        <input type="text" class="buscador_prin" id="Busca_prin" placeholder="Buscar propietario">
+        <input type="text" class="buscador_prin" id="Busca_prin" placeholder="Buscar" title="Buscar información del propietario">
         <input type="text" class="buscador_prin" id="Busca_vi_prin" placeholder="Buscar Villa">
         </td>
 

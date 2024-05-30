@@ -1,6 +1,6 @@
 <link rel='stylesheet' type='text/css' media='screen' href='CSS/ventana_principal/mod_usu.css'>
 
-<div id="grupo_villa" class="mod">
+<div id="modelo_villa" class="mod">
 
 <div class="centro">
 
@@ -8,11 +8,11 @@
 
 
 
-<button onclick="cerrar_grupo_villa()" type="button">X</button>
-<h2>Ingresar nuevo grupo</h2>
+<button onclick="cerrar_modelos_villa()" type="button">X</button>
+<h2>Ingresar nuevo modelo</h2>
 </div>
 
-<form id="formulario_grupo_villa">
+<form id="formulario_modelo_villa">
 
 <div class="c2">
 
@@ -21,7 +21,7 @@
 
 <?php
 $campos = ['Grupo de villa',''];
-$nombre_id =['txt_grupo_villa','id_grupo_villa'];
+$nombre_id =['txt_modelo_villa','id_modelo_villa'];
 $tipo = ['text','text'];
 echo"<tr>";
 for ($i=0; $i < count($campos); $i++) {
@@ -57,9 +57,9 @@ echo"</tr>";
 
 <div class="c3">
 
-<button id="crear_grupo" type="submit">Crear</button>
-<button id="modificar_grupo" type="submit">Modificar</button>
-<button id="eliminar_grupo" type="submit">Eliminar</button>
+<button id="crear_modelo" type="submit">Crear</button>
+<button id="modificar_modelo" type="submit">Modificar</button>
+<button id="eliminar_modelo" type="submit">Eliminar</button>
 
 
 </div>
@@ -74,34 +74,34 @@ $(document).ready(function(){
 
     let accion = '';
 
-    $('#crear_grupo').click(function() {
+    $('#crear_modelo').click(function() {
         accion = 'crear';
     });
 
-    $('#modificar_grupo').click(function() {
+    $('#modificar_modelo').click(function() {
         accion = 'modificar';
     });
 
-    $('#eliminar_grupo').click(function() {
+    $('#eliminar_modelo').click(function() {
         accion = 'eliminar';
     });
 
-    $('#formulario_grupo_villa').submit(function(e){
+    $('#formulario_modelo_villa').submit(function(e){
         e.preventDefault();
 
         let url = '';
 
 if (accion === 'crear') {
-    url = 'PHP/ventana_principal/principales/interno/sql/accion_grupo/insertar_grupo.php';
+    url = 'PHP/ventana_principal/principales/interno/sql/accion_modelo/insertar_modelo.php';
 } else if (accion === 'modificar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/accion_grupo/modificar_grupo.php';
+    url = 'PHP/ventana_principal/principales/interno/sql/accion_modelo/modificar_modelo.php';
 }   else if(accion === 'eliminar'){
 
     var decidir = confirm("¿Deseas eliminar este registro?");
 
     if(decidir)
     {
-        url = 'PHP/ventana_principal/principales/interno/sql/accion_grupo/eliminar_grupo.php';
+        url = 'PHP/ventana_principal/principales/interno/sql/accion_modelo/eliminar_modelo.php';
     }
     else
     {
@@ -115,14 +115,14 @@ if (accion === 'crear') {
             url: url,
             data: $(this).serialize(),
             success: function(response){
-                $('#cont_grupo_villa').html(response);
+                $('#cont_modelo_villa').html(response);
 
                 $.ajax({
             type: 'GET',
-            url: 'PHP/ventana_principal/principales/interno/sql/pantalla_2/tabla_grupos_villas.php',
+            url: 'PHP/ventana_principal/principales/interno/sql/pantalla_2/tabla_modelo_villas.php',
             data: $(this).serialize(),
             success: function(response){
-                $('#cont_grupo_villa').html(response);
+                $('#cont_modelo_villa').html(response);
             }
         });
             }

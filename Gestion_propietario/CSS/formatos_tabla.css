@@ -77,3 +77,12 @@ border-bottom: 1px solid rgb(194, 193, 193);
     border-bottom: 1px solid rgb(194, 193, 193);
 }
 
+.opciones_villa input[type='text']
+{
+    width: 50%;
+}
+
+.opciones_villa button
+{
+    width: 49%;
+}

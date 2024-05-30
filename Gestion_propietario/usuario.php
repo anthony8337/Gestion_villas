@@ -3,7 +3,7 @@ include "PHP/raiz/entrada.php";
 ?>
 
 <?php
-include "PHP/ventana_principal/principales/unir_fracmento.php";
+include "PHP/ventana_principal/principales/usuarios_principal.php";
 ?>
 
 <?php

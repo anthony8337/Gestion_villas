@@ -5,7 +5,7 @@
 $nombre_botones = ['Archivo','Agregar','Reportes','Salir'];
 $imagenes_botones = ['Imagenes/2.png','Imagenes/5.png','Imagenes/6.png','Imagenes/box-arrow-left.svg'];
 $titulos = ['Nueva información','Pago de propietario','Reportes de movimientos','Salir'];
-$acciones = ['precionar_b0()','precionar_b1()','precionar_b2()',''];
+$acciones = ['precionar_b0()','precionar_b1()','precionar_b2()','redirigir_login()'];
 
 for ($i=0; $i < count($nombre_botones); $i++) { 
 

@@ -1,9 +1,18 @@
-<div  id="m_1" class="m_agregar">
+<link rel='stylesheet' type='text/css' media='screen' href='CSS/elementos.css'>
+
+<div>
+<h1>Gestión de propietarios</h1>
+
+<h2>Bienvenido Admin</h2>
+</div>
+
+
+<div class="m_agregar" style="display: flex;">
 
 <ul>
 
     <?php
-    $titulos_agre = ['Generar cuentas','Pago múltiple','reimpresión'];
+    $titulos_agre = ['Generar cuentas','Pago multiple','Reimprecion'];
     $img_agre = ['journal-plus.svg','cash-coin.svg','receipt-cutoff.svg'];
     $abrir = ['ingreso_g()','ingreso_mul()','ingreso_reim()'];
 

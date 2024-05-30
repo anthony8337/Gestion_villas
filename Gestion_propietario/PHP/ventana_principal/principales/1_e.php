@@ -1,130 +1,177 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/ventana_principal/usuarios.css'>
+<link rel='stylesheet' type='text/css' media='screen' href='CSS/ventana_principal/mod_usu.css'>
+
+<div id="usuarios_ingreso" class="mod">
+
+<div class="centro">
+
+<div class="c1">
 
 
-<div  class="encabezado">
-<h1>Gestion de propietario</h1>
 
-<h2>Bienvenido Usuario</h2>
-
-<div onclick="redirigir_login()" class="retorno" title="Salir">
-<img src="Imagenes/box-arrow-in-left.svg">
+<button onclick="cerrar_usuario_in()" type="button">X</button>
+<h2>Ingresar nuevo usuario</h2>
 </div>
 
-<div onclick="redirigir_sistema()" class="entrada" title="Entrar a gestión">
-    <img src="Imagenes/box-arrow-in-right.svg">
-</div>
+<form id="formulario_usuario">
 
-</div>
+<div class="c2">
 
-<div id="acc_1">
-    <?php
-    $a = ['Usuario','Actividad'];
-    $b = ['cu_2()','cu_3()'];
-    
-    for($i = 0; $i < count($a); $i++)
-    {
-        echo"
-        <button onclick='$b[$i]'>$a[$i]</button>
-        ";
-    }
-    ?>
-</div>
-
-<div id="ac_2">
-    <?php
-    $a = ['Ingresar'];
-    $b = ['redirigir_sistema()'];
-    
-    for($i = 0; $i < count($a); $i++)
-    {
-        echo"
-        <button onclick ='$b[$i]' >$a[$i]</button>
-        ";
-    }
-    ?>
-</div>
-
-<div id="ac_3">
-    <button onclick="ingresar_usuario_in()">Agregar nuevo</button>
-    <input type="text" placeholder="Buscar usuario">
-    <select title="Estado">
-        <option>Activos</option>
-        <option>Suspendidos</option>
-        <option>Todo</option>
-    </select>
-    <div>
-        <table>
-            <tr>
-                <th>Usuario</th>
-                <th>Nombre Completo</th>
-                <th>DNI</th>
-                <th>Teléfono</th>
-                <th>Correo</th>
-                <th>Tipo de usuario</th>
-                <th>Contraseña</th>
-                <th>Estado</th>
-                <th></th>
-            </tr>
-
-            <?php
-
-include "PHP/tablas/datos_random.php";
-
-            for ($i=0; $i < 9; $i++) { 
-              echo"
-            <tr>
-            <td>",$nombre[rand(0,count($nombre)-1)],"</td>
-            <td>",$nombre[rand(0,count($nombre)-1)]," ",$Snombre[rand(0,count($Snombre)-1)]," ",
-            $apellido[rand(0,count($apellido)-1)]," ",$sapellido[rand(0,count($sapellido)-1)],"</td>
-            <td>0101-",rand(1950,2000),"-",rand(10000,50000),"</td>
-            <td>+504 ",rand(80000000,99999999),"</td>
-            <td>ejemplo@gmail.com</td>
-            <td>Usuario</td>
-            <td>12345678</td>
-            <td>
-            <button id='modi_carac'>
-            <img src='Imagenes/pencil-fill.svg'>
-            </button>
-            <button id='eli_carac'>
-                <img src='Imagenes/trash3-fill.svg'>
-            </button>
-            </td>
-            </tr>
-              ";
-            }
-            ?>
-        </table>
-    </div>
-</div>
-
-<div id="ac_4">
-
-<div class="q_1">
-
-<label>Numero de Whatsaap Bussunes</label>
-<input type="text">
-
-</div>
-
-<div class="q_2">
-<h3>Configurar usuarios</h3>
 <table>
     <tr>
-        
-        <?php
-        $a = ['Permitir Edición','Permitir Suspención','Acceso a reportes'];
 
-        for ($i=0; $i < count($a); $i++) { 
-           echo"
-           <td>
-           <input id='cu_$i' type='checkbox' checked> $a[$i]
-           </td>
-           ";
-        }
-        ?>
-    </tr>
+<?php
+
+$campos = ['Usuario','Nombre Completo','DNI','Teléfono','Correo','Contraseña','Tipo de usuario','Estado',''];
+$nombre_id =['txt_usuario','txt_nombre','txt_dni','txt_tele','txt_correo','txt_clave','txt_tipo','txt_estado','txt_id'];
+$tipo = ['text','text','text','text','email','password','text','text','text'];
+
+
+
+
+    echo"<tr>";
+
+for ($i=0; $i < count($campos) - 5; $i++) {
+    
+        echo"
+        <td>
+        <fieldset>
+        <legend>$campos[$i]</legend>
+        <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]' placeholder='$campos[$i]' required title='Por favor, llenar este campo'>
+        </fieldset>
+        </td>
+        ";
+    }
+
+echo"</tr>";
+
+echo"<tr>";
+
+for ($i=4; $i < count($campos); $i++) { 
+
+    if($i == count($campos)-1)
+    {
+    echo"
+    <td>
+    <fieldset class='interno'>
+    <legend>$campos[$i]</legend>
+    <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]' placeholder='$campos[$i]'>
+    </fieldset>
+    </td>
+    ";
+    }else if($i == count($campos)-2)
+    {
+        echo"
+        <td>
+        <fieldset id='estado_usuario'>
+        <legend>$campos[$i]</legend>
+        <select id='$nombre_id[$i]' name='$nombre_id[$i]'>",
+        include "PHP/ventana_principal/principales/interno/sql/estado_usuario.php"
+        ,"
+        </select>
+        </fieldset>
+        </td>
+        ";
+
+
+        
+    }
+    else
+
+    if($i == count($campos)-3)
+    {
+    echo"
+    <td>
+    <fieldset>
+    <legend>$campos[$i]</legend>
+    <select id='$nombre_id[$i]' name='$nombre_id[$i]'>",
+    include "PHP/ventana_principal/principales/interno/sql/tipo_usuario.php"
+    ,"
+    </select>
+    </fieldset>
+    </td>
+    ";
+    }else{
+
+    echo"
+    <td>
+    <fieldset>
+    <legend>$campos[$i]</legend>
+    <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]' placeholder='$campos[$i]'>
+    </fieldset>
+    </td>
+    ";
+    }
+}
+echo"</tr>";
+    
+
+
+
+?>
+
+
+</tr>
 </table>
 
 </div>
 
+
+<div class="c3">
+
+<button id="crear_usuario" type="submit">Crear</button>
+<button id="modificar_usuario" type="submit">Modificar</button>
+
+
 </div>
+</form>
+
+</div>
+</div>
+
+
+
+<script>
+
+$(document).ready(function(){
+
+    let accion = '';
+
+    $('#crear_usuario').click(function() {
+        accion = 'crear';
+    });
+
+    $('#modificar_usuario').click(function() {
+        accion = 'modificar';
+    });
+
+    $('#formulario_usuario').submit(function(e){
+        e.preventDefault();
+
+        let url = '';
+
+if (accion === 'crear') {
+    url = 'PHP/ventana_principal/principales/interno/sql/insertar_usuarios.php';
+} else if (accion === 'modificar') {
+    url = 'PHP/ventana_principal/principales/interno/sql/modificar_usuarios.php';
+}       
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: $(this).serialize(),
+            success: function(response){
+                $('#lista_usuarios').html(response);
+
+                $.ajax({
+            type: 'GET',
+            url: 'PHP/ventana_principal/principales/tabla_usuarios.php',
+            data: $(this).serialize(),
+            success: function(response){
+                $('#lista_usuarios').html(response);
+            }
+        });
+            }
+        });
+
+    }); 
+});
+</script>
