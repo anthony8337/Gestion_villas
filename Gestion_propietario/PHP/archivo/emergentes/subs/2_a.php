@@ -15,25 +15,28 @@
 
 
 
-<form id="miFormulario">
+<form id="form_concepto">
+
+<input type="text" name="id_concepto" id="id_concepto" class="interno">
 
 <input type="text" name="txt_concepto" id="txt_concepto" placeholder="Nombre del concepto" title="Nombre del concepto">
 <table>
     <tr>
-        <td><input type="radio" name="opcion" value="opcion1" onclick="abono()" checked> Abono</td>
+        <td><input type="radio" name="opcion_concepto" id="rb_abono" value="Abono" onclick="abono()" checked> Abono</td>
 
-        <td><input type="radio" name="opcion" value="opcion2" onclick="cargo()"> Cargo</td>
+        <td><input type="radio" name="opcion_concepto" id="rb_abono" value="Cargo" onclick="cargo()"> Cargo</td>
     </tr>
 
     <tr>
-        <td><input type="number" name="txt_cantidad" id="txt_cantidad" placeholder="Valor" title="Valor del concepto"></td>
+        <td><input type="number" name="txt_valor_concepto" id="txt_cantidad" placeholder="Valor" title="Valor del concepto"></td>
 
-        <td><input type="checkbox" id="ck_refe" disabled> Referencia</td>
+        <td><input type="checkbox" id="ck_refe" name="ck_refe" disabled> Referencia</td>
     </tr>
 
     <tr>
-       <td><button type="submit">Enviar</button></td>
-       <td><div id="respuesta"></div></td>
+       <td><button id="crear_concepto" type="submit">Crear</button></td>
+       <td><button id="modificar_concepto" type="submit">Editar</button></td>
+       <td><button id="eliminar_concepto"type="submit">Eliminar</button></td>
     </tr>
 </table>
 
@@ -45,3 +48,56 @@
 </div>
 
 </div>
+
+
+<script>
+
+$(document).ready(function(){
+
+    let accion = '';
+
+    $('#crear_concepto').click(function() {
+        accion = 'crear';
+    });
+
+    $('#modificar_concepto').click(function() {
+        accion = 'modificar';
+    });
+
+    $('#eliminar_concepto').click(function() {
+        accion = 'eliminar';
+    });
+
+    $('#form_concepto').submit(function(e){
+        e.preventDefault();
+
+        let url = '';
+
+if (accion === 'crear') {
+    url = 'PHP/archivo/emergentes/subs/accion_concepto/insertar_concepto.php';
+} else if (accion === 'modificar') {
+    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+}   else if (accion === 'eliminar') {
+    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+}     
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: $(this).serialize(),
+            success: function(response){
+                $('#tabla_concepto').html(response);
+
+                $.ajax({
+            type: 'GET',
+            url: 'PHP/archivo/emergentes/subs/accion_concepto/tabla_concepto.php',
+            data: $(this).serialize(),
+            success: function(response){
+                $('#tabla_concepto').html(response);
+            }
+        });
+            }
+        });
+
+    }); 
+});
+</script>

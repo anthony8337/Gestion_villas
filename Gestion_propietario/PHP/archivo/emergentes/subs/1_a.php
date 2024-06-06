@@ -12,7 +12,7 @@
 
 <div class="c2">
 
-<form id="formulario_moneda" method="post">
+<form id="formulario_moneda">
 
 <table>
     <tr>
@@ -50,7 +50,7 @@ for ($i=0; $i < count($m_d); $i++) {
 
     <tr>
         <td>
-        <button id="agre_moneda" name="agre_moneda" type="button" onclick="insertarDatos()">Agregar</button>
+        <button id="agre_moneda" name="agre_moneda" type="submit" >Agregar</button>
         </td>
     </tr>
 </table>
@@ -67,4 +67,54 @@ for ($i=0; $i < count($m_d); $i++) {
 
 </div>
 
+<script>
 
+$(document).ready(function(){
+
+    let accion = '';
+
+    $('#agre_moneda').click(function() {
+        accion = 'crear';
+    });
+
+    $('#modificar_concepto').click(function() {
+        accion = 'modificar';
+    });
+
+    $('#eliminar_concepto').click(function() {
+        accion = 'eliminar';
+    });
+
+    $('#formulario_moneda').submit(function(e){
+        e.preventDefault();
+
+        let url = '';
+
+if (accion === 'crear') {
+    url = 'PHP/archivo/emergentes/subs/accion_moneda/insertar_moneda.php';
+} else if (accion === 'modificar') {
+    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+}   else if (accion === 'eliminar') {
+    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+}     
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: $(this).serialize(),
+            success: function(response){
+                $('#interior_moneda').html(response);
+
+                $.ajax({
+            type: 'GET',
+            url: 'PHP/archivo/emergentes/subs/accion_moneda/tabla_moneda.php',
+            data: $(this).serialize(),
+            success: function(response){
+                $('#interior_moneda').html(response);
+            }
+        });
+            }
+        });
+
+    }); 
+});
+</script>

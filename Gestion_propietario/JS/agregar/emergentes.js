@@ -89,3 +89,25 @@ function selec_pro_pago_cerrar()
     document.getElementById('propietario_seleccionar_pago').style.display = "none";
 }
 
+///////////////////////////////////////////// seleccionar propietario
+
+function sele_pro_gp()
+{
+    document.getElementById('gc_propietario').style.display = "flex"; 
+}
+
+function cerrar_sele_pro_gp()
+{
+    document.getElementById('gc_propietario').style.display = "none"; 
+}
+
+////////////////////////////////////////////////
+function sele_concep_gp()
+{
+    document.getElementById('gc_concepto').style.display = "flex"; 
+}
+
+function cerrar_sele_concep_gp()
+{
+    document.getElementById('gc_concepto').style.display = "none"; 
+}

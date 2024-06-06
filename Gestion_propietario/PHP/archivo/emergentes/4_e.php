@@ -21,24 +21,20 @@
       </td>
 
       <td>
-      <input type="text" id="bus_moneda" placeholder="Buscar concepto">
+      <input type="text" id="bus_concepto" placeholder="Buscar concepto">
       </td>
    </tr>
 </table>
 </div>
 
 <div class="c4">
-<div id= "interior_moneda" class= "interior">
 
-<table>
-   <tr>
-      <th>Descripción</th>
-      <th>Tipo</th>
-      <th>Valor</th>
-      <th>Referencia</th>
-   </tr>
+<div id="tabla_concepto">
+<?php
+include "PHP/archivo/emergentes/subs/accion_concepto/tabla_concepto.php";
+?>
+</div>
 
-</table>
 </div>
 
 </div>

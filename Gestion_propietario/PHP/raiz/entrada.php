@@ -31,6 +31,9 @@
     <script src='JS/archivo/agre_caracteristicas.js'></script>
     <script src='JS/max_min.js'></script>
     <script src='JS/com_text.js'></script>
+    <script src="JS/agregar/selec_pro_gc.js"></script>
+    <script src="JS/agregar/selec_con_gc.js"></script>
+    <script src="JS/archivo/selec_villa_pro.js"></script>
 
 
 </head>

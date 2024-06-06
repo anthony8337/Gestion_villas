@@ -28,17 +28,13 @@
 </div>
 
 <div class="c4">
-<div id= "interior_moneda" class= "interior">
-
-<table>
-   <tr>
-      <th>Moneda</th>
-      <th>Abreviado</th>
-      <th>Cambio</th>
-   </tr>
-
-</table>
+<div id= "interior_moneda">
+<?php 
+include "PHP/archivo/emergentes/subs/accion_moneda/tabla_moneda.php";
+?>
 </div>
+
+
 
 </div>
 

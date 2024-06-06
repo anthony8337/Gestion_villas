@@ -8,7 +8,7 @@
 <h2 id="titulo_pro">Ingresar nuevo propietario</h2>
 </div>
 
-<form id="miFormulario_pro">
+<form id="Formulario_pro">
 
 
 <div class="c2">
@@ -17,9 +17,9 @@
 <tr>
 <?php
 
-$pal = ['Nombre completo', 'Numero de identidad','Correo electronico','Fecha de ingreso'];
-$id = ['txtnombre','txtid','txtcorreo','txtfecha_i'];
-$tipo = ['text','number','email','date'];
+$pal = ['Nombre completo', 'Numero de identidad','Correo electronico','Fecha de ingreso','Teléfono'];
+$id = ['txtnombre','txtid','txtcorreo','txtfecha_i','txttelefono'];
+$tipo = ['text','number','email','date','number'];
 
 for ($i=0; $i < count($pal); $i++) {
         echo"
@@ -33,13 +33,6 @@ for ($i=0; $i < count($pal); $i++) {
 }
 
 ?>
-
-<td>
-<fieldset>
-<legend>Agregar contactos</legend>
-<button type="button">Contactos</button>
-</fieldset>
-</td>
 </tr>
 
 <tr>
@@ -56,18 +49,23 @@ for ($i=0; $i < count($pal); $i++) {
 
 <fieldset>
     
-    <button type="button">Agregar una villa</button>
+    <button type="button" onclick="selecciona_villa_propi()">Agregar una villa</button>
     <fieldset>
     <legend>Datos de villa</legend>
     <div>
-        <table>
+        <table id="tabla_villa_pro_selec">
+            <thead>
                     <tr>
-                        <th>Villa</th>
-                        <th>Cont. eeh</th>
-                        <th>Modelo</th>
-                        <th>Habitaciones</th>
-                        <th>Costo</th>
+                    <th>Villa</th>
+        <th>Cont. eeh</th>
+        <th>Modelo</th>
+        <th>Habitaciones</th>
+        <th>Condición</th>
                     </tr>
+            </thead>
+                    <tbody>
+
+                    </tbody>
         </table>
         </div>
         </fieldset>
@@ -78,7 +76,7 @@ for ($i=0; $i < count($pal); $i++) {
     Observaciones
     </legend>
 <div>
-            <textarea>
+            <textarea id="obs_propietario" name="obs_propietario">
 
             </textarea>
         </div>
@@ -87,7 +85,7 @@ for ($i=0; $i < count($pal); $i++) {
 </div>
 
 <div class = "c3">
-    <button type="submit">Agregar</button>
+    <button type="submit" id="agregar_propietario">Agregar</button>
     <button type="button">Limpiar</button>
     <button type="button">Cancelar</button>
 </div>
@@ -101,34 +99,54 @@ for ($i=0; $i < count($pal); $i++) {
 </div>
 
 <script>
+
 $(document).ready(function(){
-    $('#miFormulario_pro').submit(function(e){
-        e.preventDefault(); // Evitar el envío del formulario estándar
-        
-        if(document.getElementById("id_vp").value != "")
-    {
+
+    let accion = '';
+
+    $('#agregar_propietario').click(function() {
+        accion = 'crear';
+    });
+
+    $('#modificar_concepto').click(function() {
+        accion = 'modificar';
+    });
+
+    $('#eliminar_concepto').click(function() {
+        accion = 'eliminar';
+    });
+
+    $('#Formulario_pro').submit(function(e){
+        e.preventDefault();
+
+        let url = '';
+
+if (accion === 'crear') {
+    url = 'PHP/archivo/emergentes/subs/accion_propietario/insertar_propietario.php';
+} else if (accion === 'modificar') {
+    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+}   else if (accion === 'eliminar') {
+    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+}     
         $.ajax({
             type: 'POST',
-            url: 'PHP/archivo/sub_1_e/insertar.php',
-            data: $(this).serialize(), // Serializar los datos del formulario
+            url: url,
+            data: $(this).serialize(),
             success: function(response){
-                $('#respuesta_pro').html(response); // Mostrar la respuesta del servidor en el div #respuesta
+                $('#respuesta_villa').html(response);
+
+                /*
+                $.ajax({
+            type: 'GET',
+            url: 'PHP/archivo/emergentes/subs/accion_moneda/tabla_moneda.php',
+            data: $(this).serialize(),
+            success: function(response){
+                $('#interior_moneda').html(response);
+            }
+        });*/
             }
         });
-        cerrar_pro1();
-    }
-    else
-    {
-        window.alert('Por favor, selecciona una villa');
-    }
+
     }); 
 });
-
-function cerrar_pro1()
-{
-    window.alert('Registro insertado con exito');
-    document.getElementById('pro').style.display = "none";
-}
-
 </script>
-

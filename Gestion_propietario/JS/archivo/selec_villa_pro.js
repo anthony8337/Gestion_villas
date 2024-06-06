@@ -1,26 +1,28 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var tabla = document.getElementById("tab_vip");
-    var filas = tabla.getElementsByTagName("tr");
-  
-    for (var i = 0; i < filas.length; i++) {
-      var fila = filas[i];
-      fila.addEventListener("click", function() {
-        var celdas = this.getElementsByTagName("td");
-        var id = celdas[0].innerText;
-        var nombre = celdas[1].innerText;
-        var edad = celdas[2].innerText;
-        var habitacion = celdas[4].innerText;
-        var modelo = celdas[3].innerText;
-  
-        document.getElementById("cod_villa_p").textContent = nombre;
-        document.getElementById("cod_eeh_p").textContent = edad;
-        document.getElementById("habitacion_p").textContent = habitacion;
-        document.getElementById("modelo_p").textContent = modelo;
-        document.getElementById("id_vp").value = id;
+document.addEventListener('DOMContentLoaded', () => {
+    const originalTable = document.getElementById('tabla_villa_pro').getElementsByTagName('tbody')[0];
+    const destinationTable = document.getElementById('tabla_villa_pro_selec').getElementsByTagName('tbody')[0];
 
+    originalTable.addEventListener('click', (e) => {
+        let target = e.target;
+        while (target && target.nodeName !== 'TR') {
+            target = target.parentElement;
+        }
+        if (target && target.nodeName === 'TR') {
+            const newRow = target.cloneNode(true);
 
-        document.getElementById("v_pro").style.display = "none";
-      });
-    }
-  });
-  
+            // Añadir celda con botón de eliminación
+            const deleteCell = newRow.insertCell(-1);
+            deleteCell.innerHTML = '<button class="accion_tel" title="Eliminar fila"><img src="Imagenes/trash3-fill.svg"></button>';
+
+            // Añadir event listener al botón de eliminación
+            deleteCell.querySelector('button').addEventListener('click', (event) => {
+                event.stopPropagation(); // Evitar que el evento se propague y dispare otros listeners
+                newRow.remove(); // Eliminar la fila
+            });
+
+            destinationTable.appendChild(newRow);
+            cerrar_selecciona_villa_propi();
+        }
+    });
+    
+});

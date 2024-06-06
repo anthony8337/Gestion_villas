@@ -8,55 +8,75 @@
 
 <button onclick="cerrar_ingreso_vi()" type="button">X</button>
 <h2>Ingresar nueva villa</h2>
-
-
-
-
 </div>
 
-<form id="miFormulario_villa">
+<form id="Formulario_villa">
 <div class="c2">
+
+<table>
+<tr>
+
+
+
+
 
 <?php
 
-$p1 = ['Número de villa','Contador de eeh','Habitaciones','Area del lote','Area de contrución','Modelo de villa'];
-$p1_ni=['txt_cod_villa','txt_eeh_villa','txt_cuarto_vi','txt_lote_vi','txt_construc_vi','sel_villa'];
-$tipo = ['number','text','text','text','text',''];
+$titulo = ['Número de villa','Contador de eeh','Habitaciones','Area de contrución','Modelo de villa'];
+$nombre_id=['txt_cod_villa','txt_eeh_villa','txt_cuarto_vi','txt_construc_vi','sel_villa'];
+$tipo = ['number','text','text','text','text'];
 
-echo"<table>";
-echo"<tr>";
-for($i = 0; $i < count($p1); $i++)
-{
-    if($i == 0)
+for ($i=0; $i < count($titulo); $i++) { 
+
+    if ($i == 0) 
     {
-        echo"<td>
-        <select name='n_$p1_ni[$i]' id='n_$p1_ni[$i]' title = 'Grupo de villa'>
-        ",include 'PHP/archivo/sub_2_e/seleccion.php',"
-        </select>
-        <input type='$tipo[$i]' name='$p1_ni[$i]' id='$p1_ni[$i]' placeholder='$p1[$i]' title='$p1[$i]'>
-        </td>";
+        echo"
+        <td>
+        <fieldset>
+            <legend>$titulo[$i]</legend>
+            <select id='cb_grupo' name='cb_grupo'>
+            ",
+            include "PHP/archivo/emergentes/subs/accion_villas/grupo_villa.php"
+            ,"
+            </select>
+            <input type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]'>
+        </fieldset>
+        </td>
+        ";
+    }else if ($i == count($titulo)-1) 
+    {
+        echo"
+        <td>
+        <fieldset>
+            <legend>$titulo[$i]</legend>
+            <select id='cb_modelo' name='cb_modelo'>
+            ",
+            include "PHP/archivo/emergentes/subs/accion_villas/grupo_modelo.php"
+            ,"
+            </select>
+        </fieldset>
+        </td>
+        ";
+    }else
+    {
+        echo"
+        <td>
+        <fieldset>
+            <legend>$titulo[$i]</legend>
+            <input type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]'>
+        </fieldset>
+        </td>
+        ";
     }
-    else if($i == (count($p1) - 1))
-    {
-        echo"<td>
-        <select name='n_$p1_ni[$i]' id='n_$p1_ni[$i]' title = '$p1[$i]'>
-        <option>Caracol</option>
-        <option>Arrecife</option>
-        <option>Carey</option>
-        </select>
-        </td>";
-    } 
-    else
-    {
-        echo"<td>
-        <input type='$tipo[$i]' name='$p1_ni[$i]' id='$p1_ni[$i]' placeholder='$p1[$i]' title='$p1[$i]'>
-        </td>";
-    }
+
+
 }
-echo"</tr>";
-echo"</table>";
+
+
 
 ?>
+</tr>
+</table>
 
 </div>
 
@@ -86,21 +106,24 @@ echo"</table>";
     </div>
 
         </td>
-
         <td>   
+        <fieldset>
+            <legend>Dirección</legend>
         <div class="div_otro">
-        Dirección
-        <textarea name="txa_direccion" id="txa_direccion"></textarea>
+        <textarea class="apo_villa" name="txa_direccion" id="txa_direccion"></textarea>
         </div>
+        </fieldset>
         </td>
         </tr>
 
     <tr>
     <td>   
+    <fieldset>
+            <legend>Observaciones</legend>
         <div class="div_otro">
-        Observaciones
-        <textarea name="txa_observacion" id="txa_observacion"></textarea>
+        <textarea class="apo_villa" name="txa_observa_villa" id="txa_observa_villa"></textarea>
         </div>
+        </fieldset>
         </td>
     </tr>
 </table>
@@ -108,9 +131,7 @@ echo"</table>";
 </div>
 
 <div class="c3">
-<button id="agre_confirmar">Agregar Nuevo</button>
-
-<button id="agre_cance">Cancelar</button>
+<button id="agregar_villa" type="submit">Agregar</button>
 </div>
 
 <div id="respuesta_villa"></div>
@@ -118,3 +139,56 @@ echo"</table>";
 </div>
 
 </div>
+
+<script>
+
+$(document).ready(function(){
+
+    let accion = '';
+
+    $('#agregar_villa').click(function() {
+        accion = 'crear';
+    });
+
+    $('#modificar_concepto').click(function() {
+        accion = 'modificar';
+    });
+
+    $('#eliminar_concepto').click(function() {
+        accion = 'eliminar';
+    });
+
+    $('#Formulario_villa').submit(function(e){
+        e.preventDefault();
+
+        let url = '';
+
+if (accion === 'crear') {
+    url = 'PHP/archivo/emergentes/subs/accion_villas/insertar_villa.php';
+} else if (accion === 'modificar') {
+    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+}   else if (accion === 'eliminar') {
+    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+}     
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: $(this).serialize(),
+            success: function(response){
+                $('#respuesta_villa').html(response);
+
+                /*
+                $.ajax({
+            type: 'GET',
+            url: 'PHP/archivo/emergentes/subs/accion_moneda/tabla_moneda.php',
+            data: $(this).serialize(),
+            success: function(response){
+                $('#interior_moneda').html(response);
+            }
+        });*/
+            }
+        });
+
+    }); 
+});
+</script>

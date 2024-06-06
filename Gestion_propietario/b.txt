@@ -1,24 +1,45 @@
 <script>
+
 $(document).ready(function(){
-    $('#miFormulario_villa').submit(function(e){
-        e.preventDefault(); // Evitar el envío del formulario estándar
-        
+
+    let accion = '';
+
+    $('#crear_usuario').click(function() {
+        accion = 'crear';
+    });
+
+    $('#modificar_usuario').click(function() {
+        accion = 'modificar';
+    });
+
+    $('#formulario_usuario').submit(function(e){
+        e.preventDefault();
+
+        let url = '';
+
+if (accion === 'crear') {
+    url = 'PHP/ventana_principal/principales/interno/sql/insertar_usuarios.php';
+} else if (accion === 'modificar') {
+    url = 'PHP/ventana_principal/principales/interno/sql/modificar_usuarios.php';
+}       
         $.ajax({
             type: 'POST',
-            url: 'PHP/archivo/sub_2_e/insertar.php',
-            data: $(this).serialize(), // Serializar los datos del formulario
+            url: url,
+            data: $(this).serialize(),
             success: function(response){
-                $('#respuesta_villa').html(response); // Mostrar la respuesta del servidor en el div #respuesta
-                cerrar_villa1();
+                $('#lista_usuarios').html(response);
+
+                $.ajax({
+            type: 'GET',
+            url: 'PHP/ventana_principal/principales/tabla_usuarios.php',
+            data: $(this).serialize(),
+            success: function(response){
+                $('#lista_usuarios').html(response);
             }
         });
+            }
+        });
+
     }); 
 });
-
-function cerrar_villa1()
-{
-    window.alert('Registro insertado con exito');
-    document.getElementById('vi').style.display = "none";
-}
-
 </script>

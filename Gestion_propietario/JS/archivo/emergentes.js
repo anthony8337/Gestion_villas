@@ -21,6 +21,18 @@ function ingreso()
     document.getElementById('titulo_pro').textContent = 'Ingresar nuevo propietario';
 }
 
+
+function selecciona_villa_propi()
+{
+    document.getElementById('selec_villa_propietario').style.display = 'flex';
+}
+
+function cerrar_selecciona_villa_propi()
+{
+    document.getElementById('selec_villa_propietario').style.display = 'none';
+}
+
+
 //Villas ingeso
 function cerrar_ingreso_vi()
 {
