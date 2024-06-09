@@ -11,99 +11,110 @@
 </div>
 
 <div class="c2">
-
-<table>
-    <tr>
-
 <?php
-$botones = ['Propietario', 'G. Cuenta','Limpiar'];
-$acciones = ['selec_pro_pago()','',''];
+$botones = ['Propietario', 'G. Cuenta','Limpiar',];
+$acciones = ['sele_pro_multi()','ingreso_g_multi()',''];
 
 for ($i=0; $i < count($botones); $i++) { 
    echo"
-   <td>
+
    <button type='button' onclick='$acciones[$i]'>$botones[$i]</button>
-   </td>
+
    ";
 }
 
 ?>
 
-<td>
-<input type="date" disabled>
-</td>
-
-<td>
-<input type="text" disabled>
-</td>
-
-</tr>
-</table>
+<fieldset id="dato_multi">
+    <legend>Documento</legend>
+    <input type="text" name="cod_multi" id="cod_multi">
+    <input type="date" name="fecha_multi" id="fecha_multi">
+</fieldset>
 
 </div>
-
 
 <div class="c4">
+<fieldset class="d_propietario">
+    <legend>Clave: <label id="villa_multi" name="villa_multi"></label></legend>
 
-<fieldset class="d_pro">
-    <table>
-        <tr>
-            <td><label>Codigo: </label><label id="pago_codigo" name="pago_codigo">A-1</label></td>
-            <td><label>Propietario: </label><label id="pago_nombre" name="pago_nombre">ANTHONY CLEMENTE OLIVA MURILLO</label></td>
-            <td><label>Abono disponible: </label><label id="pago_abono" name="pago_abono">$0.00</label></td>
-            <td><label>Saldo actual: </label><label id="pago_saldo" name="pago_saldo"></label>$500.60</td>
-        </tr>
-    </table>
+    <label id="nombre_multi" name="nombre_multi">Nombre:</label>
+    <br>
+    <label id="telefono_multi" name="telefono_multi">Teléfono:</label>
+
 </fieldset>
 
-<div id="cuentas_a_pagar">
-<fieldset class="filtro_cuenta">
-    <table>
-        <tr>
-            <td>
-                <select name="cuando_cuenta" id="cuando_cuenta">
-                    <option value="actual">Mes Actual</option>
-                    <option value="anterior">Meses anteriores de este año</option>
-                    <option value="todo">Todo el historial</option>
-                </select>
-            </td>
+<fieldset class="sal_propietario">
+    <legend>Saldo:</legend>
 
-            <td>
-                <input type="text" name="pago_cuenta_buscar" id="pago_cuenta_buscar" placeholder="Buscar cuenta a pagar" title="Buscar cuenta a pagar">
-            </td>
+    <input type="text" name="saldo_multi" name="saldo_multi">
 
-            <td>
-            </td>
-        </tr>
-    </table>
 </fieldset>
+</div>
 
+<div class="c3">
 
 <div>
-    <table class="contenido">
+    <table>
         <tr>
-            <th>a</th>
+            <?php
+            $titulos = ['Concepto','Documento','Importe','Abono','Fecha Aplida','Fecha Vencimiento','Saldo'];
+
+            for ($i=0; $i < count($titulos); $i++) { 
+                echo"
+                <td>$titulos[$i]</td>
+                ";
+            }
+            ?>
         </tr>
+
+        <tbody>
+            <?php
+            include "PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php";
+            ?>
+        </tbody>
     </table>
 </div>
 
 </div>
 
+<div class="c5">
+
+<fieldset>
+    <div>
+    <table>
+        <tr>
+            <th colspan="2">
+            <input type="text" name="bus_concepto_multi" name="bus_concepto_multi" placeholder="Buscar concepto">
+            </th>
+        </tr>
+
+        <tbody>
+        </tbody>
+    </table>
+    </div>
+</fieldset>
+
+<fieldset>
+    <table>
+        <tr>
+            <td>Total a Pagar</td>
+            <td><input type="text" name="to_pago_multi" name="to_pago_multi"></td>
+        </tr>
+
+
+        <tr>
+            <td>Pendiente</td>
+            <td><input type="text" name="pendiente_pago" name="pendiente_pago"></td>
+        </tr>
+
+        <tr>
+            <td>Devolver</td>
+            <td><input type="text" name="devolver_pago" name="devolver_pago"></td>
+        </tr>
+    </table>
+</fieldset>
 </div>
 
-<div class="conocer_pago">
-<table>
-    <tr>
-        <td>Total a pagar</td>
-        <td>$5</td>
-    </tr>
-</table>
 </div>
 
 </div>
-
-</div>
-
-<label style="display: none;" id="lb_cel_multi"></label>
-
-<script src="JS/agregar/selec_pro_pago.js"></script>

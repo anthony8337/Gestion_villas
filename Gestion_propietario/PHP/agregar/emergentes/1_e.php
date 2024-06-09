@@ -22,8 +22,8 @@
         <fieldset>
         <legend>Rango de propietario</legend>
         <select name="sl_pro_gc" id="sl_pro_gc">
-            <option value="Unico">Unico</option>
-            <option value="Rango">Rango</option>
+            <option value="Unico" onclick="cambio()">Unico</option>
+            <option value="Rango" onclick="cambio()">Rango</option>
         </select>
         </fieldset>
     </td>
@@ -33,8 +33,8 @@
         <fieldset title="Seleccionar aportación" id="cuenta_seleccionar">
         <legend>Aportación</legend>
         <select name="sl_aportacion_gc" id="sl_aportacion_gc">
-            <option value="Monto">Monto</option>
-            <option value="Abonar">Abonar</option>
+            <option value="Monto" >Monto</option>
+            <option value="Abonar" >Abonar</option>
         </select>
         </fieldset>
         </td>
@@ -43,7 +43,7 @@
         <td>
         <fieldset title="Seleccionar aportación" id="cuenta_seleccionar">
         <legend>Codigo de cuenta</legend>
-        <input type="text" title="Codigo de cuenta" id="codigo_cuenta" disabled>
+        <input type="text" title="Codigo de cuenta" id="codigo_cuenta" value="<?php include "PHP/agregar/emergentes/subs/accion_generar/codigo_cuenta.php";?>" disabled>
         </fieldset>
         </td>
         
@@ -55,7 +55,7 @@
 
 <div class="c4">
 
-<fieldset>
+<fieldset id="propi_desde_hasta" style="display: none;">
     <legend>Propietario</legend>
 
     <table>
@@ -84,7 +84,7 @@
 
 </fieldset>
 
-<fieldset>
+<fieldset id="propi_unico">
     <legend>Propietario</legend>
 
     <table>
@@ -254,6 +254,10 @@ if (accion === 'crear') {
             data: $(this).serialize(),
             success: function(response){
                 $('#respuesta_cuenta').html(response);
+
+                var codigo_suma = document.getElementById('codigo_cuenta').value
+
+                document.getElementById('codigo_cuenta').value = +codigo_suma + 1;
 
                 /*
                 $.ajax({

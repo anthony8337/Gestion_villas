@@ -7,22 +7,19 @@ function cerrar_ingreso_g()
 function ingreso_g()
 {
     document.getElementById('gene_cuenta').style.display = 'flex';
+    document.getElementById('gene_cuenta').style.zIndex = '0';
+}
+
+function ingreso_g_multi()
+{
+    document.getElementById('gene_cuenta').style.display = 'flex';
+    document.getElementById('gene_cuenta').style.zIndex = '10';
 }
 
 //generar multipago
 function cerrar_ingreso_mul()
 {
-    if(document.getElementById('lb_cel_multi').textContent == 'celda')
-    {
-        document.getElementById('multi').style.display = 'none';
-        document.getElementById('acc_cel').style.display = 'flex';
-    }
-    else
-    {
-        document.getElementById('multi').style.display = 'none';
-    }
-
-    
+    document.getElementById('multi').style.display = 'none';
 }
 
 function ingreso_mul()
@@ -94,6 +91,7 @@ function selec_pro_pago_cerrar()
 function sele_pro_gp()
 {
     document.getElementById('gc_propietario').style.display = "flex"; 
+    document.getElementById('gc_propietario').style.zIndex = '11';
 }
 
 function cerrar_sele_pro_gp()
@@ -105,9 +103,23 @@ function cerrar_sele_pro_gp()
 function sele_concep_gp()
 {
     document.getElementById('gc_concepto').style.display = "flex"; 
+    document.getElementById('gc_concepto').style.zIndex = '11';
 }
 
 function cerrar_sele_concep_gp()
 {
     document.getElementById('gc_concepto').style.display = "none"; 
+}
+
+///////////////////////////////////////////// seleccionar propietario
+multi_propietario
+
+function sele_pro_multi()
+{
+    document.getElementById('multi_propietario').style.display = "flex";
+}
+
+function cerrar_sele_pro_multi()
+{
+    document.getElementById('multi_propietario').style.display = "none"; 
 }

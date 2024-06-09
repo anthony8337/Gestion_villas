@@ -27,32 +27,36 @@ if($result -> num_rows > 0)
     <table id='tabla_villa_pro'>
     <thead>
     <tr>
+    <th></th>
     <th>Villa</th>
     <th>Cont. eeh</th>
     <th>Modelo</th>
     <th>Habitaciones</th>
     <th>Condición</th>
     </tr>
-    </thead>";
+    </thead>
+    <tbody>";
+
 
  
 
     while ($row = $result->fetch_assoc()) {
         echo"
-        <tbody>
+        
         <tr>
-        <td class='interno'>",$row["id_villa"],"</td>
-        <td>",$row["grupo"],"-",$row["numero"],"</td>
+        <td>",$row["id_villa"],"</td>
+        <td>",$row["villas"],"</td>
         <td>",$row["cont_eeh"],"</td>
         <td>",$row["modelo"],"</td>
         <td>",$row["habitaciones"],"</td>
         <td>",$row["condicion"],"</td>
         </tr>
-        </tbody>
+        
         ";
     }
 
     echo"
+    </tbody>
     </table>
     ";
 }

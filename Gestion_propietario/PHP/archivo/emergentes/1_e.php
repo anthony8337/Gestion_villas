@@ -55,8 +55,9 @@ for ($i=0; $i < count($pal); $i++) {
     <div>
         <table id="tabla_villa_pro_selec">
             <thead>
-                    <tr>
-                    <th>Villa</th>
+        <tr>
+        <th></th>
+        <th>Villa</th>
         <th>Cont. eeh</th>
         <th>Modelo</th>
         <th>Habitaciones</th>
@@ -96,6 +97,8 @@ for ($i=0; $i < count($pal); $i++) {
 
 
 </div>
+
+<div id="respuesta_propietario"></div>
 </div>
 
 <script>
@@ -128,22 +131,25 @@ if (accion === 'crear') {
 }   else if (accion === 'eliminar') {
     url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
 }     
+
+        
+
         $.ajax({
             type: 'POST',
             url: url,
             data: $(this).serialize(),
             success: function(response){
-                $('#respuesta_villa').html(response);
+                $('respuesta_propietario').html(response);
 
-                /*
+                
                 $.ajax({
-            type: 'GET',
-            url: 'PHP/archivo/emergentes/subs/accion_moneda/tabla_moneda.php',
+            type: 'POST',
+            url: 'PHP/archivo/emergentes/subs/accion_propietario/insertar_p_v.php',
             data: $(this).serialize(),
             success: function(response){
-                $('#interior_moneda').html(response);
+                $('#respuesta_propietario').html(response);
             }
-        });*/
+        });
             }
         });
 

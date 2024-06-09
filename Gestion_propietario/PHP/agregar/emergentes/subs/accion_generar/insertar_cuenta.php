@@ -23,16 +23,38 @@ $hasta = $_POST['txt_fecha_gc_hasta'];
 
 $elegir_abono = $_POST['sl_aportacion_gc'];
 
+$cod;
+
+$sql1 = "SELECT * FROM cuentas ORDER BY id_cuenta DESC LIMIT 1;";
+$result1 = $conn->query($sql1);
+if($result1 -> num_rows > 0)
+{
+    while ($row = $result1->fetch_assoc()) 
+    {
+        $cod = $row["codigo"];
+    }
+}
+
+if($cod == null)
+{
+    $cod = "0000001";
+}
+else
+{
+    $cod = $cod + 1;
+}
+
+
 
 if($elegir_abono == "Monto")
 {
     $sql = "INSERT INTO cuentas(id_propietario, id_concepto, costo, abono, desde, hasta, pagado, codigo) VALUES
- ('$id_pro','$id_con','$costo','0','$desde','$hasta','No pagado','1')";
+ ('$id_pro','$id_con','$costo','0','$desde','$hasta','No pagado','$cod')";
 }
 else
 {
     $sql = "INSERT INTO cuentas(id_propietario, id_concepto, costo, abono, desde, hasta, pagado, codigo) VALUES
- ('$id_pro','$id_con','0','$abono','$desde','$hasta','No pagado','1')";
+ ('$id_pro','$id_con','0','$abono','$desde','$hasta','No pagado','$cod')";
 }
 
 

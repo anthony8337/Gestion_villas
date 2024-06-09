@@ -6,6 +6,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="Imagenes/logo empresa.png">
     <title>Gestión de propietario</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/menu.css'>
@@ -33,7 +35,10 @@
     <script src='JS/com_text.js'></script>
     <script src="JS/agregar/selec_pro_gc.js"></script>
     <script src="JS/agregar/selec_con_gc.js"></script>
+    <script src="JS/agregar/sub_cambio.js"></script>
+    <script src="JS/agregar/selec_pro_multi.js"></script>
     <script src="JS/archivo/selec_villa_pro.js"></script>
+    
 
 
 </head>

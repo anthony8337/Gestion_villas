@@ -15,40 +15,26 @@ else
 }
 
 
-$sql = "SELECT * FROM propietarios WHERE id_estado = '1'";
+$sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado'";
 
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
 
-    echo"
-    <table id='tabla_pro_gc'>
-    <tr>
-    <th></th>
-      <th>Nombre</th>
-      <th>RTN</th>
-      <th>Correo</th>
-      <th>Telefono</th>
-      <th>Villa</th>
-   </tr>";
-
     while ($row = $result->fetch_assoc()) {
         echo"
         <tr>
-        <td>",$row["id_propietario"],"</td>
-        <td>",$row["nombre"],"</td>
-        <td>",$row["dni"],"</td>
-        <td>",$row["correo"],"</td>
-        <td>",$row["telefono"],"</td>
-        <td>A-1</td>
+        <td>",$row["concepto"],"</td>
+        <td>",$row["codigo"],"</td>
+        <td>",$row["costo"],"</td>
+        <td>",$row["abono"],"</td>
+        <td>",$row["desde"],"</td>
+        <td>",$row["hasta"],"</td>
+        <td>",$row["costo"],"</td>
         </tr>
         ";
     }
-
-    echo"
-    </table>
-    ";
 }
 else
 {

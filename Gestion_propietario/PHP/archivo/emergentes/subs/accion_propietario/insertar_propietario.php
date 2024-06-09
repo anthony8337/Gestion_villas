@@ -42,4 +42,26 @@ else
     echo"No se encuentran datos";
 }
 
+
+
+//////////////////////////////////////////////
+
+
+$id_propietario;
+
+$sql1 = "SELECT * FROM propietarios ORDER BY id_propietario DESC LIMIT 1;";
+
+$result1 = $conn->query($sql1);
+
+if($result1 -> num_rows > 0)
+{
+    while ($row = $result1->fetch_assoc()) 
+    {
+        $id_propietario = $row["id_propietario"];
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+
 ?>

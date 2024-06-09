@@ -1,5 +1,13 @@
-SELECT        villas.id_villa, grupo_villa.grupo, villas.numero, villas.cont_eeh, villas.habitaciones, villas.lote, modelo_villa.modelo, condicion_villas.condicion, villas.costo
-FROM            villas INNER JOIN
-                         grupo_villa ON villas.id_grupo = grupo_villa.id_grupo INNER JOIN
-                         modelo_villa ON villas.id_modelo = modelo_villa.id_modelo INNER JOIN
-                         condicion_villas ON villas.id_condicion = condicion_villas.id_condicion
+<?php
+$botones = ['Propietario', 'G. Cuenta','Limpiar'];
+$acciones = ['sele_pro_multi()','ingreso_g_multi()',''];
+
+for ($i=0; $i < count($botones); $i++) { 
+   echo"
+   <td>
+   <button type='button' onclick='$acciones[$i]'>$botones[$i]</button>
+   </td>
+   ";
+}
+
+?>

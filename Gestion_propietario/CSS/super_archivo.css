@@ -541,3 +541,83 @@ width: 33%;
     border: 1px solid black;
     display: inline-flex;
 }
+
+#multi .centro
+{
+    
+}
+
+#multi .c2
+{
+    display: flex;
+    align-items: center;
+}
+
+#multi .c2 button
+{
+    margin-top: 10px;
+    width: 100px;
+    display: inline-block;
+}
+
+#multi .c2 fieldset
+{
+    width: 200px;
+    display: inline-block;
+    margin-left: auto;
+}
+
+#multi .c4
+{
+    display: flex;
+    align-items: center;
+}
+
+#multi .c4 fieldset
+{
+    border: 1px solid black;
+    display: inline-block;
+    height: 60px;
+}
+
+#multi .c4 .d_propietario
+{
+    width: 70%;
+}
+
+#multi .c4 .sal_propietario
+{
+    width: 30%;
+}
+
+.c5
+{
+    background-color: orange;
+    padding: 10px;
+}
+
+.c5 fieldset
+{
+    width: 300px;
+    height: 150px;
+    display: inline-block;
+    overflow: auto;
+}
+
+
+.c5 fieldset table th
+{   position: sticky;
+    top: 0; 
+    height: 50px;
+}
+
+#dato_multi input[type = "text"],#dato_multi input[type = "date"]
+{
+    height: 18px;
+    padding: 0px;
+}
+
+#multi .c3
+{
+    height: 180px;
+}

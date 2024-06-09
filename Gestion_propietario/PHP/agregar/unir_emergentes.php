@@ -18,3 +18,8 @@ include "PHP/agregar/emergentes/subs/1_a.php";
 <?php
 include "PHP/agregar/emergentes/subs/2_a.php";
 ?>
+
+<?php
+include "PHP/agregar/emergentes/subs/3_a.php";
+?>
+

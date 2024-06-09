@@ -23,7 +23,7 @@ if($result -> num_rows > 0)
 {
 
     echo"
-    <table id='tabla_pro_gc'>
+    <table id='tabla_pro_multi'>
     <tr>
     <th></th>
       <th>Nombre</th>
