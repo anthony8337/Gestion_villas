@@ -11,6 +11,8 @@
 </div>
 
 <div class="c2">
+
+
 <?php
 $botones = ['Propietario', 'G. Cuenta','Limpiar',];
 $acciones = ['sele_pro_multi()','ingreso_g_multi()',''];
@@ -34,6 +36,8 @@ for ($i=0; $i < count($botones); $i++) {
 </div>
 
 <div class="c4">
+
+
 <fieldset class="d_propietario">
     <legend>Clave: <label id="villa_multi" name="villa_multi"></label></legend>
 
@@ -46,33 +50,23 @@ for ($i=0; $i < count($botones); $i++) {
 <fieldset class="sal_propietario">
     <legend>Saldo:</legend>
 
-    <input type="text" name="saldo_multi" name="saldo_multi">
+    <input type="text" id="saldo_multi" name="saldo_multi">
 
 </fieldset>
 </div>
 
 <div class="c3">
 
-<div>
-    <table>
-        <tr>
-            <?php
-            $titulos = ['Concepto','Documento','Importe','Abono','Fecha Aplida','Fecha Vencimiento','Saldo'];
 
-            for ($i=0; $i < count($titulos); $i++) { 
-                echo"
-                <td>$titulos[$i]</td>
-                ";
-            }
-            ?>
-        </tr>
+<form id="formulario_datos_multi">
+    <input type="hidden" name="id_propi_uni" id="id_propi_uni">
+    <input type="hidden" name="codigo_cuenta_txt" id="codigo_cuenta_txt">
+</form>
 
-        <tbody>
-            <?php
-            include "PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php";
-            ?>
-        </tbody>
-    </table>
+<div id="respuesta_cuenta_multi">
+    <?php
+    include "PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php";
+    ?>
 </div>
 
 </div>
@@ -89,6 +83,9 @@ for ($i=0; $i < count($botones); $i++) {
         </tr>
 
         <tbody>
+            <?php
+            include "PHP/agregar/emergentes/subs/accion_generar/tabla_concepto_multi.php";
+            ?>
         </tbody>
     </table>
     </div>
@@ -98,18 +95,18 @@ for ($i=0; $i < count($botones); $i++) {
     <table>
         <tr>
             <td>Total a Pagar</td>
-            <td><input type="text" name="to_pago_multi" name="to_pago_multi"></td>
+            <td><input type="text" id="total_pago_multi" name="total_pago_multi"></td>
         </tr>
 
 
         <tr>
             <td>Pendiente</td>
-            <td><input type="text" name="pendiente_pago" name="pendiente_pago"></td>
+            <td><input type="text" id="pendiente_pago" name="pendiente_pago"></td>
         </tr>
 
         <tr>
             <td>Devolver</td>
-            <td><input type="text" name="devolver_pago" name="devolver_pago"></td>
+            <td><input type="text" id="devolver_pago" name="devolver_pago"></td>
         </tr>
     </table>
 </fieldset>
@@ -117,4 +114,6 @@ for ($i=0; $i < count($botones); $i++) {
 
 </div>
 
+
 </div>
+ 

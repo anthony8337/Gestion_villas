@@ -102,57 +102,32 @@ for ($i=0; $i < count($pal); $i++) {
 </div>
 
 <script>
+ $(document).ready(function(){
+        $('#Formulario_pro').submit(function(e){
+            e.preventDefault();
 
-$(document).ready(function(){
+            // Obtener los datos de la primera columna de la tabla
+            let table = $('#tabla_villa_pro_selec');
+            let data = [];
 
-    let accion = '';
+            table.find('tbody tr').each(function() {
+                let firstCellText = $(this).find('td').eq(0).text();
+                data.push(firstCellText);
+            });
 
-    $('#agregar_propietario').click(function() {
-        accion = 'crear';
-    });
+            // Añadir los datos de la tabla al formulario
+            let formData = $(this).serializeArray();
+            formData.push({ name: 'tabla_villa', value: JSON.stringify(data) });
 
-    $('#modificar_concepto').click(function() {
-        accion = 'modificar';
-    });
-
-    $('#eliminar_concepto').click(function() {
-        accion = 'eliminar';
-    });
-
-    $('#Formulario_pro').submit(function(e){
-        e.preventDefault();
-
-        let url = '';
-
-if (accion === 'crear') {
-    url = 'PHP/archivo/emergentes/subs/accion_propietario/insertar_propietario.php';
-} else if (accion === 'modificar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
-}   else if (accion === 'eliminar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
-}     
-
-        
-
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data: $(this).serialize(),
-            success: function(response){
-                $('respuesta_propietario').html(response);
-
-                
-                $.ajax({
-            type: 'POST',
-            url: 'PHP/archivo/emergentes/subs/accion_propietario/insertar_p_v.php',
-            data: $(this).serialize(),
-            success: function(response){
-                $('#respuesta_propietario').html(response);
-            }
+            $.ajax({
+                type: 'POST',
+                url: 'PHP/archivo/emergentes/subs/accion_propietario/insertar_propietario.php',
+                data: $.param(formData),
+                success: function(response){
+                    $('#respuesta_propietario').html(response);
+                }
+            });
         });
-            }
-        });
+    });
 
-    }); 
-});
 </script>

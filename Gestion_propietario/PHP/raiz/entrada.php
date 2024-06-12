@@ -38,8 +38,10 @@
     <script src="JS/agregar/sub_cambio.js"></script>
     <script src="JS/agregar/selec_pro_multi.js"></script>
     <script src="JS/archivo/selec_villa_pro.js"></script>
+    <script src="JS/agregar/pro_villa_tabla.js"></script>
+    <script src="JS/agregar/ajax_tabla_multi.js"></script>
+    <script src="JS/agregar/selec_cuenta_multipago.js"></script>
     
-
 
 </head>
 <body>

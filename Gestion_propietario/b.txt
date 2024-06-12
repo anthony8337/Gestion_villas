@@ -1,2 +1,16 @@
-SELECT `id_cuenta`, `codigo`, `id_unir`, `concepto`, 
-`costo`, `abono`, `desde`, `hasta`, `pagado` FROM `cuenta_vista` 
+CREATE VIEW pripietario_cuenta_vista
+AS
+SELECT        propietarios_villas.id_unir, CONCAT(grupo_villa.grupo,'-',villas.numero) AS villa, propietarios.nombre, propietarios.dni, propietarios.telefono
+FROM            propietarios_villas INNER JOIN
+                         propietarios ON propietarios_villas.id_propietario = propietarios.id_propietario INNER JOIN
+                         villas ON propietarios_villas.id_villa = villas.id_villa INNER JOIN
+                         grupo_villa ON villas.id_grupo = grupo_villa.id_grupo
+
+
+                         CREATE VIEW pripietario_cuenta_vista
+AS
+SELECT        propietarios_villas.id_unir, CONCAT(grupo_villa.grupo,'-',villas.numero) AS villa, propietarios.nombre, propietarios.dni, propietarios.telefono
+FROM            propietarios_villas INNER JOIN
+                         propietarios ON propietarios_villas.id_propietario = propietarios.id_propietario INNER JOIN
+                         villas ON propietarios_villas.id_villa = villas.id_villa INNER JOIN
+                         grupo_villa ON villas.id_grupo = grupo_villa.id_grupo

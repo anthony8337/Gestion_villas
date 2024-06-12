@@ -32,7 +32,7 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>window.alert('Villa registrada con exito');
+    echo"<script>window.alert('Propietario registrada con exito');
     </script>";
 
 
@@ -45,8 +45,6 @@ else
 
 
 //////////////////////////////////////////////
-
-
 $id_propietario;
 
 $sql1 = "SELECT * FROM propietarios ORDER BY id_propietario DESC LIMIT 1;";
@@ -61,7 +59,47 @@ if($result1 -> num_rows > 0)
     }
 }
 
+
+
 ///////////////////////////////////////////////////////////////////////
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtener los datos del formulario
+    $clientes = $_POST; // Todos los datos del formulario
+    $tabla_villa = json_decode($_POST['tabla_villa'], true); // Datos de la tabla
+
+    // Verificar que los datos se hayan recibido correctamente
+    if ($tabla_villa && is_array($tabla_villa)) {
+        echo "<ul>";
+        foreach ($tabla_villa as $fila) {
+
+            $sql2 = "INSERT INTO propietarios_villas(id_propietario, id_villa) VALUES ('$id_propietario','". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."')";
+            $result2 = $conn->query($sql2);
+
+            $sql3 = "UPDATE villas SET id_estado = '2' WHERE id_villa = '". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."'";
+            $result3 = $conn->query($sql3);
+
+            echo "<li>" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "</li>";
+        }
+        echo "</ul>";
+        echo"<script>
+        window.alert('Hurra');
+        </script>";
+    } else {
+        echo "No se recibieron datos válidos de la tabla.";
+        echo"<script>
+        window.alert('No se recibieron datos válidos de la tabla.');
+        </script>";
+    }
+
+    echo "<pre>";
+    print_r($clientes); // Muestra todos los datos del formulario
+    echo "</pre>";
+} else {
+    echo"<script>
+    window.alert('no funciono :(');
+    </script>";
+}
 
 
 ?>

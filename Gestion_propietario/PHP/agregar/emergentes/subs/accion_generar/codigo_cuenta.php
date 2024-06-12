@@ -16,27 +16,20 @@ else
 
 $cod_ver;
 
+// Ejecutar la consulta para obtener el último código
 $sql1 = "SELECT * FROM cuentas ORDER BY id_cuenta DESC LIMIT 1;";
 $result1 = $conn->query($sql1);
-if($result1 -> num_rows > 0)
+
+// Verificar si hay resultados
+if($result1->num_rows > 0) {
+    $row = $result1->fetch_assoc();
+    $cod_ver = $row["codigo"] + 1;
+}else
 {
-    while ($row = $result1->fetch_assoc()) 
-    {
-        $cod_ver = $row["codigo"];
-    }
+    $cod_ver = "1000000";
 }
 
-if($cod_ver == null)
-{
-    $cod_ver = "0000001";
-}
-else
-{
-    $cod_ver = $cod_ver + 1;
-}
-
-echo"
-$cod_ver
-";
+// Mostrar el valor de $cod_ver
+echo $cod_ver;
 
 ?>

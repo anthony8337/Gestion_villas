@@ -27,33 +27,24 @@ $cod;
 
 $sql1 = "SELECT * FROM cuentas ORDER BY id_cuenta DESC LIMIT 1;";
 $result1 = $conn->query($sql1);
-if($result1 -> num_rows > 0)
+if($result1->num_rows > 0) {
+    $row = $result1->fetch_assoc();
+    $cod = $row["codigo"] + 1;
+}else
 {
-    while ($row = $result1->fetch_assoc()) 
-    {
-        $cod = $row["codigo"];
-    }
-}
-
-if($cod == null)
-{
-    $cod = "0000001";
-}
-else
-{
-    $cod = $cod + 1;
+    $cod = "1000000";
 }
 
 
 
 if($elegir_abono == "Monto")
 {
-    $sql = "INSERT INTO cuentas(id_propietario, id_concepto, costo, abono, desde, hasta, pagado, codigo) VALUES
+    $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo) VALUES
  ('$id_pro','$id_con','$costo','0','$desde','$hasta','No pagado','$cod')";
 }
 else
 {
-    $sql = "INSERT INTO cuentas(id_propietario, id_concepto, costo, abono, desde, hasta, pagado, codigo) VALUES
+    $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo)  VALUES
  ('$id_pro','$id_con','0','$abono','$desde','$hasta','No pagado','$cod')";
 }
 

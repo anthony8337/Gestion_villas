@@ -8,11 +8,13 @@
       fila.addEventListener("click", function() {
         var celdas = this.getElementsByTagName("td");
 
-        var id = celdas[0].innerText;
-        var nombre = celdas[1].innerText;
+        
+        var nombre = celdas[2].innerText;
         var telefono = celdas[4].innerText;
-        var villa = celdas[5].innerText;
+        var villa = celdas[1].innerText;
+        var id = celdas[0].innerText;
 
+        document.getElementById('id_propi_uni').value = id;
         document.getElementById('villa_multi').textContent = villa;
         document.getElementById('nombre_multi').textContent ="Nombre: " + nombre;
         document.getElementById('telefono_multi').textContent ="Teléfono: " + telefono;

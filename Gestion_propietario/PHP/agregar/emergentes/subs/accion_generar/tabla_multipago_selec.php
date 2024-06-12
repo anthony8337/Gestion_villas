@@ -14,13 +14,13 @@ else
 {
 }
 
-if (isset($_POST['id_propi_uni'])) {
-    $id_pro_multi = $_POST['id_propi_uni'];
+if (isset($_POST['codigo_cuenta_txt'])) {
+   $codigo_cuenta = $_POST['codigo_cuenta_txt'];
 } else {
-    $id_pro_multi = 0;
+   $codigo_cuenta = 0;
 }
 
-$sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado' AND id_unir = '$id_pro_multi';";
+$sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado' AND codigo = '$codigo_cuenta';";
 
 /*$sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado';";*/
 
@@ -28,8 +28,9 @@ $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
+    /*cuenta_sele_multi*/
 
-    echo"<table id='multi_tabla_cuentas'>";
+    echo"<table>";
 
     echo"
     <tr>
@@ -47,7 +48,7 @@ if($result -> num_rows > 0)
 
     while ($row = $result->fetch_assoc()) {
         echo"
-        <tr class='fila_tabla_multi'>
+        <tr>
         <td>",$row["concepto"],"</td>
         <td>",$row["codigo"],"</td>
         <td>",$row["costo"],"</td>
@@ -82,25 +83,3 @@ else
 }
 ?>
 
-<script>
-    llamado_cuenta();
-</script>
-
-
-<script>
-$(document).ready(function(){
-$('.fila_tabla_multi').click(function(e){
-e.preventDefault();
-        
-        var form =$('#formulario_datos_multi').serialize();
-        $.ajax({
-            type: 'POST',
-            url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_multipago_selec.php',
-            data: form,
-            success: function(response){
-                $('#respuesta_cuenta_multi').html(response);
-            }
-        });
-    }); 
-});
-</script>

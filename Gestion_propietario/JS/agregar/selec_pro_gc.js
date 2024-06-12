@@ -10,7 +10,7 @@
 
         var id = celdas[0].innerText;
         var nombre = celdas[1].innerText;
-        var villa = celdas[5].innerText;
+        var villa = celdas[2].innerText;
 
         document.getElementById('id_propi_gc').value = id;
         document.getElementById('txt_villa_gc').value = nombre;

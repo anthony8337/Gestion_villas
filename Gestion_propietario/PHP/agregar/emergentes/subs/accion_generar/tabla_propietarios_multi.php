@@ -15,7 +15,7 @@ else
 }
 
 
-$sql = "SELECT * FROM propietarios WHERE id_estado = '1'";
+$sql = "SELECT * FROM pripietario_cuenta_vista WHERE id_estado = '1'";
 
 $result = $conn->query($sql);
 
@@ -26,22 +26,21 @@ if($result -> num_rows > 0)
     <table id='tabla_pro_multi'>
     <tr>
     <th></th>
+    <th>Villa</th>
       <th>Nombre</th>
       <th>RTN</th>
-      <th>Correo</th>
       <th>Telefono</th>
-      <th>Villa</th>
+      
    </tr>";
 
     while ($row = $result->fetch_assoc()) {
         echo"
-        <tr>
-        <td>",$row["id_propietario"],"</td>
+        <tr class='fila_tabla'>
+        <td>",$row["id_unir"],"</td>
+        <td>",$row["villa"],"</td>
         <td>",$row["nombre"],"</td>
         <td>",$row["dni"],"</td>
-        <td>",$row["correo"],"</td>
         <td>",$row["telefono"],"</td>
-        <td>A-1</td>
         </tr>
         ";
     }
@@ -55,3 +54,24 @@ else
     echo"No se encuentran datos";
 }
 ?>
+
+<script>
+$(document).ready(function(){
+$('.fila_tabla').click(function(e){
+        e.preventDefault();
+
+        var form =$('#formulario_datos_multi').serialize();
+        
+        $.ajax({
+            type: 'POST',
+            url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php',
+            data: form,
+            success: function(response){
+                $('#respuesta_cuenta_multi').html(response);
+
+                suma_saldo();
+            }
+        });
+    }); 
+});
+</script>

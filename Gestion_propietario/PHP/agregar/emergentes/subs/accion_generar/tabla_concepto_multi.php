@@ -14,39 +14,20 @@ else
 {
 }
 
-
-$sql = "SELECT * FROM pripietario_cuenta_vista WHERE id_estado = '1'";;
+$sql = "SELECT * FROM concepto WHERE id_estado = '1' and tipo = 'Cargo'";
 
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
-
-    echo"
-    <table id='tabla_pro_gc'>
-    <tr>
-    <th></th>
-    <th>Villa</th>
-      <th>Nombre</th>
-      <th>RTN</th>
-      <th>Telefono</th>
-   </tr>";
-
     while ($row = $result->fetch_assoc()) {
         echo"
         <tr>
-        <td>",$row["id_unir"],"</td>
-        <td>",$row["villa"],"</td>
-        <td>",$row["nombre"],"</td>
-        <td>",$row["dni"],"</td>
-        <td>",$row["telefono"],"</td>
+        <td class='interno'>",$row["id_concepto"],"</td>
+        <td>",$row["concepto"],"</td>
         </tr>
         ";
     }
-
-    echo"
-    </table>
-    ";
 }
 else
 {
