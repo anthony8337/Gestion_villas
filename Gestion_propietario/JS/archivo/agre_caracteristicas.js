@@ -1,21 +1,19 @@
 function agregarDato_cara() {
-  var caracteristica = prompt("Ingrese nueva caracteristica:");
+  var caracteristica = prompt("Ingrese nueva característica:");
   if (caracteristica !== null) {
-      var tabla = document.getElementById("carac_vi");
-      var fila = tabla.insertRow();
+      var tbody = document.querySelector("#carac_vi tbody");
+      var fila = tbody.insertRow();
 
       var celdacaracteristica = fila.insertCell(0);
-      celdacaracteristica.innerHTML = '<input class="txt_carate" type="text" name="caracteristica[]" value="'+caracteristica+'">' ;
+      celdacaracteristica.innerHTML = caracteristica;
 
       var celdaeli = fila.insertCell(1);
-      celdaeli.innerHTML = '<button class="accion_tel" id="eli_carac" title="Eliminar numero"><img src="Imagenes/trash3-fill.svg"></button>';
-  
+      celdaeli.innerHTML = '<button class="accion_tel" id="eli_carac" title="Eliminar número"><img src="Imagenes/trash3-fill.svg"></button>';
 
-      celdaeli.onclick = function() {
-        var filaPadre = this.parentNode;
-        filaPadre.parentNode.removeChild(filaPadre);
+      celdaeli.querySelector('button').onclick = function() {
+          var filaPadre = this.parentNode.parentNode;
+          filaPadre.parentNode.removeChild(filaPadre);
       };
-
   }
 }
 

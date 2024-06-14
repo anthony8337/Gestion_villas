@@ -1,120 +1,36 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/archivos/sub_emergente/mod_moneda_archivo.css'>
-
-<div id="moneda_registro" class="mod">
+<div id="pro_donar" class="mod">
 
 <div class="centro">
 
 <div class="c1">
 
-<button onclick="ingreso_moneda_r_cerrar()" type="button">X</button>
-<h2>Ingresar moneda</h2>
+<button onclick="cerrar_pro_donar()" type="button">X</button>
+<h2 id="titulo_pro_do">Seleccionar propietario</h2>
+
 </div>
+
+<form id="formulario_propietario_do">
 
 <div class="c2">
 
-<form id="formulario_moneda">
+<input type="text" name="busca_pro_do" id="busca_pro_do" placeholder="Buscar propietario">
 
-<table>
-    <tr>
+</div>
 
-    
+<div class="c4 ">
 
-<?php
+<div id="tabla_propietario_do">
+    <?php
+    include "PHP/archivo/emergentes/subs/donante/tabla_pro_do.php";
+    ?>
+</div>
 
-$m_d= ['txt_m_1','txt_m_2','txt_m_3'];
-$m_p= ['Nombre de moneda','Simbolo de moneda','Valor a lempira'];
+</div>
 
-for ($i=0; $i < count($m_d); $i++) { 
-
-    if($i == (count($m_d) -1))
-    {
-        echo"
-        <td>
-        <input type='number' id='$m_d[$i]' name='$m_d[$i]' placeholder='$m_p[$i]' title='$m_p[$i]'>
-        </td>
-        ";
-    }else
-    {
-        echo"
-        <td>
-        <input type='text' id='$m_d[$i]' name='$m_d[$i]' placeholder='$m_p[$i]' title='$m_p[$i]'>
-        </td>
-
-        ";
-    }
-}
-
-
-?>
-    </tr>
-
-    <tr>
-        <td>
-        <button id="agre_moneda" name="agre_moneda" type="submit" >Agregar</button>
-        </td>
-    </tr>
-</table>
-
-
-    
+<div id="respuesta_cuenta"></div>
 </form>
 
-<div id="resultado_moneda"></div>
-
 </div>
 
 </div>
 
-</div>
-
-<script>
-
-$(document).ready(function(){
-
-    let accion = '';
-
-    $('#agre_moneda').click(function() {
-        accion = 'crear';
-    });
-
-    $('#modificar_concepto').click(function() {
-        accion = 'modificar';
-    });
-
-    $('#eliminar_concepto').click(function() {
-        accion = 'eliminar';
-    });
-
-    $('#formulario_moneda').submit(function(e){
-        e.preventDefault();
-
-        let url = '';
-
-if (accion === 'crear') {
-    url = 'PHP/archivo/emergentes/subs/accion_moneda/insertar_moneda.php';
-} else if (accion === 'modificar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
-}   else if (accion === 'eliminar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
-}     
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data: $(this).serialize(),
-            success: function(response){
-                $('#interior_moneda').html(response);
-
-                $.ajax({
-            type: 'GET',
-            url: 'PHP/archivo/emergentes/subs/accion_moneda/tabla_moneda.php',
-            data: $(this).serialize(),
-            success: function(response){
-                $('#interior_moneda').html(response);
-            }
-        });
-            }
-        });
-
-    }); 
-});
-</script>

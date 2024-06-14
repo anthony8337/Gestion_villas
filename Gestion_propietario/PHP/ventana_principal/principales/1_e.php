@@ -23,7 +23,7 @@
 
 $campos = ['Usuario','Nombre Completo','DNI','Teléfono','Correo','Contraseña','Tipo de usuario','Estado',''];
 $nombre_id =['txt_usuario','txt_nombre','txt_dni','txt_tele','txt_correo','txt_clave','txt_tipo','txt_estado','txt_id'];
-$tipo = ['text','text','text','text','email','password','text','text','text'];
+$tipo = ['text','text','text','text','text','password','text','text','text'];
 
 
 

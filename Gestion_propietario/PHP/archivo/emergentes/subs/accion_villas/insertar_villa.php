@@ -67,5 +67,43 @@ else
 {
     echo"No se encuentran datos";
 }
+/////////////////////////////////////////////////////////////////////
+$id_villa;
+
+$sql1 = "SELECT * FROM villas ORDER BY id_villa DESC LIMIT 1;";
+
+$result1 = $conn->query($sql1);
+
+if($result1 -> num_rows > 0)
+{
+    while ($row = $result1->fetch_assoc()) 
+    {
+        $id_villa = $row["id_villa"];
+    }
+}
+
+/////////////////////////////////////////////////////////////////////
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtener los datos del formulario
+    $clientes = $_POST; // Todos los datos del formulario
+    $tabla_villa_carac = json_decode($_POST['tabla_villa_carac'], true); // Datos de la tabla
+
+    // Verificar que los datos se hayan recibido correctamente
+    if ($tabla_villa_carac && is_array($tabla_villa_carac)) {
+        
+        foreach ($tabla_villa_carac as $fila) {
+
+            $sql2 = "INSERT INTO caracteristicas(id_villa, caracteristica) VALUES ('$id_villa','" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "')";
+            $result2 = $conn->query($sql2);
+
+        }
+    } else {
+
+    }
+
+
+} else {
+
+}
 
 ?>

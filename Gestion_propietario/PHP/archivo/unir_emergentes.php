@@ -16,6 +16,7 @@ include "PHP/archivo/emergentes/4_e.php";
 
 <!--Sub emergentes-->
 
+
 <?php
 include "PHP/archivo/emergentes/subs/1_a.php";
 ?>
@@ -26,4 +27,12 @@ include "PHP/archivo/emergentes/subs/2_a.php";
 
 <?php
 include "PHP/archivo/emergentes/subs/3_a.php";
+?>
+
+<?php
+include "PHP/archivo/emergentes/subs/4_a.php";
+?>
+
+<?php
+include "PHP/archivo/emergentes/subs/5_a.php";
 ?>

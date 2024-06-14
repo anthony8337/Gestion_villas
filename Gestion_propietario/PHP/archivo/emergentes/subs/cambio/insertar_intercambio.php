@@ -1,4 +1,20 @@
+
+
 <?php
+
+if (isset($_POST['id_rec_pro'])) {
+    $id_pro = $_POST['id_rec_pro'];
+ } else {
+    $id_pro = 0;
+ }
+
+
+echo"
+<script>
+    window.alert('Sigan viendo');
+</script>
+";
+
 
 $servername = "localhost"; 
 $username = "root";
@@ -14,38 +30,34 @@ else
 {
 }
 
-$id = ['txtnombre','txtid','txtcorreo','txtfecha_i','txttelefono','obs_propietario'];
+
+
+$id = ['txtnombre_rec','txtrtn_rec','txtcorreo_rec','txt_fecha_rec','txttelefono_rec','Registro por intercambio'];
 
 $txtnombre = $_POST[$id[0]];
 $txtid = $_POST[$id[1]];
 $txtcorreo = $_POST[$id[2]];
 $txtfecha = $_POST[$id[3]];
 $txttelefono = $_POST[$id[4]];
-$obs_propietario = $_POST[$id[5]];
+$obs_propietario = $id[5];
 
 
+if ($id_pro == "" || $id_pro == 0)
+{
 
 $sql = "INSERT INTO propietarios(nombre, dni, correo, fecha, id_estado,observacion,telefono) 
 VALUES ('$txtnombre','$txtid','$txtcorreo','$txtfecha','1','$obs_propietario','$txttelefono')";
 
 $result = $conn->query($sql);
 
-if($result == true)
-{
-    echo"<script>window.alert('Propietario registrada con exito');
-    </script>";
-
-
 }
-else
-{
-    echo"No se encuentran datos";
-}
-
 
 
 //////////////////////////////////////////////
 $id_propietario;
+
+if ($id_pro == "" || $id_pro == 0)
+{
 
 $sql1 = "SELECT * FROM propietarios ORDER BY id_propietario DESC LIMIT 1;";
 
@@ -58,7 +70,7 @@ if($result1 -> num_rows > 0)
         $id_propietario = $row["id_propietario"];
     }
 }
-
+}
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -66,26 +78,31 @@ if($result1 -> num_rows > 0)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener los datos del formulario
     $clientes = $_POST; // Todos los datos del formulario
-    $tabla_villa = json_decode($_POST['tabla_villa'], true); // Datos de la tabla
+    $tabla_villa = json_decode($_POST['tabla_destino_villa'], true); // Datos de la tabla
 
     // Verificar que los datos se hayan recibido correctamente
     if ($tabla_villa && is_array($tabla_villa)) {
         
         foreach ($tabla_villa as $fila) {
 
-            $sql2 = "INSERT INTO propietarios_villas(id_propietario, id_villa) VALUES ('$id_propietario','". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."')";
-            $result2 = $conn->query($sql2);
+            if ($id_pro == "" || $id_pro == 0)
+            {
 
-            $sql3 = "UPDATE villas SET id_estado = '2' WHERE id_villa = '". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."'";
+
+            $sql3="UPDATE propietarios_villas SET id_propietario='$id_propietario' WHERE id_villa='". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."'";
             $result3 = $conn->query($sql3);
 
-            echo "<li>" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "</li>";
+            }
+            else
+            {
+
+            $sql3="UPDATE propietarios_villas SET id_propietario='$id_pro' WHERE id_villa='". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."'";
+            $result3 = $conn->query($sql3);
         }
 
+        }
     } else {
-
     }
-
 
 } else {
     echo"<script>

@@ -19,7 +19,7 @@
 
 $pal = ['Nombre completo', 'Numero de identidad','Correo electronico','Fecha de ingreso','Teléfono'];
 $id = ['txtnombre','txtid','txtcorreo','txtfecha_i','txttelefono'];
-$tipo = ['text','number','email','date','number'];
+$tipo = ['text','number','text','date','number'];
 
 for ($i=0; $i < count($pal); $i++) {
         echo"

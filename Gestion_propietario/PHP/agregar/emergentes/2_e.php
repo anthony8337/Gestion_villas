@@ -14,8 +14,8 @@
 
 
 <?php
-$botones = ['Propietario', 'G. Cuenta','Limpiar',];
-$acciones = ['sele_pro_multi()','ingreso_g_multi()',''];
+$botones = ['Propietario', 'G. Cuenta','Limpiar','Pagar'];
+$acciones = ['sele_pro_multi()','ingreso_g_multi()','',''];
 
 for ($i=0; $i < count($botones); $i++) { 
    echo"
@@ -61,6 +61,7 @@ for ($i=0; $i < count($botones); $i++) {
 <form id="formulario_datos_multi">
     <input type="hidden" name="id_propi_uni" id="id_propi_uni">
     <input type="hidden" name="codigo_cuenta_txt" id="codigo_cuenta_txt">
+    <input type="hidden" name="codigo_concepto" id="codigo_concepto">
 </form>
 
 <div id="respuesta_cuenta_multi">
@@ -75,14 +76,14 @@ for ($i=0; $i < count($botones); $i++) {
 
 <fieldset>
     <div>
-    <table>
+    <table id="concep_multipago">
         <tr>
             <th colspan="2">
             <input type="text" name="bus_concepto_multi" name="bus_concepto_multi" placeholder="Buscar concepto">
             </th>
         </tr>
 
-        <tbody>
+        <tbody id="datos_con_pago">
             <?php
             include "PHP/agregar/emergentes/subs/accion_generar/tabla_concepto_multi.php";
             ?>

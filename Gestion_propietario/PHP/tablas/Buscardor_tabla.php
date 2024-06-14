@@ -4,36 +4,24 @@
     <tr>
         <td>
             <select>
-                <option>Lista de saldos</option>
-                <option>Lista de propietarios</option>
-                <option>Lista de villas</option>
+                <option>Propietarios</option>
+                <option>Villas</option>
             </select>
         </td>
         
         <td>
-        <input type="text" class="buscador_prin" id="Busca_prin" placeholder="Buscar" title="Buscar información del propietario">
-        <input type="text" class="buscador_prin" id="Busca_vi_prin" placeholder="Buscar Villa">
+        <input type="text" class="buscador_prin" id="Busca_prin" placeholder="Buscar información del propietario" title="Buscar información del propietario">
         </td>
 
         <td>
+            <!--
             <select id="filtro_pro">
             <option>Aplica cuota</option>
             <option>Pronto a vencer</option>
             <option>Vencido</option>
             <option>Suspendidos</option>
             <option>Todo</option>
-            </select>
-
-            <form>
-            <select name="filtro_vi" id="filtro_vi">
-            <option value="filtro_vi1">Condición Habitado</option>
-            <option value="filtro_vi2">Condición Disponible</option>
-            <option value="filtro_vi4">Estado Activo</option>
-            <option value="filtro_vi5">Estado Mantenimiento</option>
-            <option value="filtro_vi6">Estado Suspendido</option>
-            <option value="filtro_vi7">Todo</option>
-            </select>
-            </form>
+            </select>-->
         </select>
         
         </td>

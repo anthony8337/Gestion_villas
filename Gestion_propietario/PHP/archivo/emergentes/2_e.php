@@ -81,56 +81,43 @@ for ($i=0; $i < count($titulo); $i++) {
 </div>
 
 <div class="c4">
-
-<table>
+<div class="c4_interno">
+<fieldset>
+    <legend>Características</legend>
+    <div>
+    <table id='carac_vi' class='ta_ca_cont'>
     <tr>
-        <td rowspan="2">
-
+    <th colspan="2"><button type='button' onclick='agregarDato_cara()'>Agregar</button></th>
+    </tr>
+    <tbody>
         
-
-        <div id="ta_cara">
-    <?php
-
-    echo"<table id='carac_vi' class='ta_ca_cont'>";
-
-    echo"
-    <tr>
-    <th>Caracteristicas</th>
-    <th><button type='button' onclick='agregarDato_cara()'>Agregar</button></th>
-    </tr>
-    ";
-
-    echo"</table>";
-    
-    ?>
+    </tbody>
+    </table>
     </div>
+</fieldset>
 
-        </td>
-        <td>   
-        <fieldset>
-            <legend>Dirección</legend>
-        <div class="div_otro">
-        <textarea class="apo_villa" name="txa_direccion" id="txa_direccion"></textarea>
-        </div>
-        </fieldset>
-        </td>
-        </tr>
 
-    <tr>
-    <td>   
-    <fieldset>
-            <legend>Observaciones</legend>
-        <div class="div_otro">
-        <textarea class="apo_villa" name="txa_observa_villa" id="txa_observa_villa"></textarea>
-        </div>
-        </fieldset>
-        </td>
-    </tr>
-</table>
+</div>
+<!--/////////-->
+<div class="c4_interno">
+<fieldset>
+    <legend>Dirección</legend>
+    <textarea class="apo_villa" name="txa_direccion" id="txa_direccion"></textarea>
+</fieldset>
+
+<fieldset>
+    <legend>Observaciones</legend>
+    <textarea class="apo_villa" name="txa_observa_villa" id="txa_observa_villa"></textarea>
+</fieldset>
+</div>
+
 
 </div>
 
 <div class="c3">
+
+
+
 <button id="agregar_villa" type="submit">Agregar</button>
 </div>
 
@@ -140,55 +127,38 @@ for ($i=0; $i < count($titulo); $i++) {
 
 </div>
 
+
+
 <script>
-
-$(document).ready(function(){
-
-    let accion = '';
-
-    $('#agregar_villa').click(function() {
-        accion = 'crear';
-    });
-
-    $('#modificar_concepto').click(function() {
-        accion = 'modificar';
-    });
-
-    $('#eliminar_concepto').click(function() {
-        accion = 'eliminar';
-    });
-
+ $(document).ready(function(){
     $('#Formulario_villa').submit(function(e){
         e.preventDefault();
 
-        let url = '';
+        // Obtener los datos de la primera columna de la tabla
+        let table = $('#carac_vi');
+        let data = [];
 
-if (accion === 'crear') {
-    url = 'PHP/archivo/emergentes/subs/accion_villas/insertar_villa.php';
-} else if (accion === 'modificar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
-}   else if (accion === 'eliminar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
-}     
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data: $(this).serialize(),
-            success: function(response){
-                $('#respuesta_villa').html(response);
-
-                /*
-                $.ajax({
-            type: 'GET',
-            url: 'PHP/archivo/emergentes/subs/accion_moneda/tabla_moneda.php',
-            data: $(this).serialize(),
-            success: function(response){
-                $('#interior_moneda').html(response);
-            }
-        });*/
+        table.find('tbody tr').each(function() {
+            let firstCellText = $(this).find('td').eq(0).text().trim(); // Trim elimina espacios en blanco
+            if (firstCellText) { // Solo agrega si no está vacío
+                data.push(firstCellText);
             }
         });
 
-    }); 
+        // Añadir los datos de la tabla al formulario
+        let formData = $(this).serializeArray();
+        formData.push({ name: 'tabla_villa_carac', value: JSON.stringify(data) });
+
+        $.ajax({
+            type: 'POST',
+            url : 'PHP/archivo/emergentes/subs/accion_villas/insertar_villa.php',
+            data: $.param(formData),
+            success: function(response){
+                $('#respuesta_villa').html(response);
+            }
+        });
+    });
 });
+
 </script>
+

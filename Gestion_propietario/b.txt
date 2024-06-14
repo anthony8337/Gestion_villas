@@ -1,16 +1,9 @@
-CREATE VIEW pripietario_cuenta_vista
+CREATE VIEW villa_completo
 AS
-SELECT        propietarios_villas.id_unir, CONCAT(grupo_villa.grupo,'-',villas.numero) AS villa, propietarios.nombre, propietarios.dni, propietarios.telefono
-FROM            propietarios_villas INNER JOIN
-                         propietarios ON propietarios_villas.id_propietario = propietarios.id_propietario INNER JOIN
-                         villas ON propietarios_villas.id_villa = villas.id_villa INNER JOIN
-                         grupo_villa ON villas.id_grupo = grupo_villa.id_grupo
+SELECT        villas.id_villa, CONCAT(grupo_villa.grupo,'-',villas.numero) AS villas, villas.cont_eeh, villas.habitaciones, villas.lote, modelo_villa.modelo, condicion_villas.condicion, 
+                         villas.id_estado
+FROM            villas INNER JOIN
+                         grupo_villa ON villas.id_grupo = grupo_villa.id_grupo INNER JOIN
+                         modelo_villa ON villas.id_modelo = modelo_villa.id_modelo INNER JOIN
+                         condicion_villas ON villas.id_condicion = condicion_villas.id_condicion
 
-
-                         CREATE VIEW pripietario_cuenta_vista
-AS
-SELECT        propietarios_villas.id_unir, CONCAT(grupo_villa.grupo,'-',villas.numero) AS villa, propietarios.nombre, propietarios.dni, propietarios.telefono
-FROM            propietarios_villas INNER JOIN
-                         propietarios ON propietarios_villas.id_propietario = propietarios.id_propietario INNER JOIN
-                         villas ON propietarios_villas.id_villa = villas.id_villa INNER JOIN
-                         grupo_villa ON villas.id_grupo = grupo_villa.id_grupo

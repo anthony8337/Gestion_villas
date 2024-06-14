@@ -37,6 +37,36 @@ include "PHP/ventana_principal/principales/interno/sql/pantalla_2/tabla_grupos_v
 </div>
 </fieldset>
 
+<fieldset>
+<legend>Monedas registradas</legend>
+<div class="opciones_villa">
+<input type="text" id="bus_moneda" name="bus_moneda" placeholder="Buscar moneda" title="Buscar moneda">
+<button type="button" onclick="ingreso_moneda_r()">Agregar</button>
+</div>
+
+
+<div class="opciones_confi_modelo_villa" id= "interior_moneda">
+<?php 
+include "PHP/ventana_principal/principales/interno/sql/accion_moneda/tabla_moneda.php";
+?>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Conceptos registrados</legend>
+<div class="opciones_villa">
+<input type="text" name="bus_concepto" id="bus_concepto" placeholder="Buscar concepto" title="Buscar concepto">
+<button type="button" onclick="ingreso_concepto_r()">Agregar</button>
+</div>
+
+
+<div class="opciones_confi_modelo_villa" id="tabla_concepto">
+<?php 
+include "PHP/ventana_principal/principales/interno/sql/accion_concepto/tabla_concepto.php";
+?>
+</div>
+</fieldset>
+
 </div>
 
 <script src="JS/principal/emergente.js"></script>

@@ -14,23 +14,22 @@ else
 {
 }
 
-if (isset($_POST['codigo_concepto'])) {
-    $codigo_concepto = $_POST['codigo_concepto'];
- } else {
-    $codigo_concepto = 0;
- }
 
-$sql = "SELECT * FROM concepto WHERE id_estado = '1' and id_concepto = '$codigo_concepto'";
+$sql = "SELECT * FROM propietario_principal";
 
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
-    while ($row = $result->fetch_assoc()) {
+   while ($row = $result->fetch_assoc()) {
         echo"
         <tr>
-        <td class='interno'>",$row["id_concepto"],"</td>
-        <td>",$row["concepto"],"</td>
+        <td>",$row["villa"],"</td>
+        <td>",$row["cont_eeh"],"</td>
+        <td>",$row["nombre"],"</td>
+        <td>",$row["dni"],"</td>
+        <td>",$row["telefono"],"</td>
+        <td>",$row["correo"],"</td>
         </tr>
         ";
     }
