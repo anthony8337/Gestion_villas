@@ -5,9 +5,9 @@
 <div class="centro">
 
 <div class="c1">
-
-<button onclick="cerrar_ingreso_vi()" type="button">X</button>
 <h2>Ingresar nueva villa</h2>
+<button onclick="cerrar_ingreso_vi()" type="button">X</button>
+
 </div>
 
 <form id="Formulario_villa">
@@ -24,7 +24,7 @@
 
 $titulo = ['Número de villa','Contador de eeh','Habitaciones','Area de contrución','Modelo de villa'];
 $nombre_id=['txt_cod_villa','txt_eeh_villa','txt_cuarto_vi','txt_construc_vi','sel_villa'];
-$tipo = ['number','text','text','text','text'];
+$tipo = ['text','text','text','text','text'];
 
 for ($i=0; $i < count($titulo); $i++) { 
 
@@ -84,11 +84,9 @@ for ($i=0; $i < count($titulo); $i++) {
 <div class="c4_interno">
 <fieldset>
     <legend>Características</legend>
-    <div>
+    <button type='button' onclick='agregarDato_cara()'>Agregar</button>
+    <div class="contenido_tabla">
     <table id='carac_vi' class='ta_ca_cont'>
-    <tr>
-    <th colspan="2"><button type='button' onclick='agregarDato_cara()'>Agregar</button></th>
-    </tr>
     <tbody>
         
     </tbody>

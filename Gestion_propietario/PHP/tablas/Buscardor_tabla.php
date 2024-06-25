@@ -10,7 +10,7 @@
         </td>
         
         <td>
-        <input type="text" class="buscador_prin" id="Busca_prin" placeholder="Buscar información del propietario" title="Buscar información del propietario">
+        <input type="text" class="buscador" id="Busca_prin" placeholder="Buscar información del propietario" title="Buscar información del propietario">
         </td>
 
         <td>
@@ -31,7 +31,8 @@
 </table>
 </div>
 
-<div class="tab_principal" id="tabla_contenido_villa">
+<!--
+<div class="contenido_tabla" id="tabla_contenido_villa">
 </div>
 
 <script>
@@ -57,6 +58,7 @@
             });
         });
     </script>
+-->
     
 
 <script src="JS/buscar/buscar_pro.js"></script>

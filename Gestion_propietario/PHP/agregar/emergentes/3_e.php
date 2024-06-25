@@ -5,9 +5,8 @@
 <div class="centro">
 
 <div class="c1">
-
-<button onclick="cerrar_ingreso_reim()" type="button">X</button>
 <h2>Reimpimir factura</h2>
+<button onclick="cerrar_ingreso_reim()" type="button">X</button>
 </div>
 
 <div class="c2">
@@ -49,7 +48,7 @@
         </table>
     </fieldset>
 
-    <div class="re">
+    <div class="contenido_tabla">
     <table class="contenido">
         <tr>
         <th>Fecha de pago</th>

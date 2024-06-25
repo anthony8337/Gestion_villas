@@ -1,16 +1,10 @@
 html body 
 {
-    background-color: #e6e3e3;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+    background-color: #ffffff;
+    font-family: Calibri;
     overflow: auto;
 }
 
-button
-{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
 
 
 ::-webkit-scrollbar

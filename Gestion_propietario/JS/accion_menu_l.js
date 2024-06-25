@@ -58,7 +58,7 @@ function precionar_b0()
     for (let j = 0; j < 4; j++) {
      if(j == 0)
         {
-            document.getElementById('li_'+j).style.borderLeft = '5px solid red';      
+            document.getElementById('li_'+j).style.borderLeft = '5px solid #3745a0';      
             document.getElementById('m_'+j).style.display = 'block';
         }
         else
@@ -76,7 +76,7 @@ function precionar_b1()
     for (let j = 0; j < 4; j++) {
         if(j == 1)
         {
-            document.getElementById('li_'+j).style.borderLeft = '5px solid red';      
+            document.getElementById('li_'+j).style.borderLeft = '5px solid #3745a0';      
             document.getElementById('m_'+j).style.display = 'block';
         }
         else
@@ -95,7 +95,7 @@ function precionar_b2()
     for (let j = 0; j < 4; j++) {
         if(j == 2)
         {
-            document.getElementById('li_'+j).style.borderLeft = '5px solid red';      
+            document.getElementById('li_'+j).style.borderLeft = '5px solid #3745a0';      
             document.getElementById('m_'+j).style.display = 'block';
         }
         else
@@ -114,7 +114,7 @@ function precionar_b3()
     for (let j = 0; j < 4; j++) {
         if(j == 3)
         {
-            document.getElementById('li_'+j).style.borderLeft = '5px solid red';      
+            document.getElementById('li_'+j).style.borderLeft = '5px solid #3745a0';      
             document.getElementById('m_'+j).style.display = 'block';
         }
         else

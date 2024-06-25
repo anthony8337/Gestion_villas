@@ -7,9 +7,9 @@
 <div class="c1">
 
 
-
-<button onclick="cerrar_grupo_villa()" type="button">X</button>
 <h2>Ingresar nuevo grupo</h2>
+<button onclick="cerrar_grupo_villa()" type="button">X</button>
+
 </div>
 
 <form id="formulario_grupo_villa">

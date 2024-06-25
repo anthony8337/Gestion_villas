@@ -6,10 +6,9 @@
 
 <div class="c1">
 
-
-
-<button onclick="cerrar_modelos_villa()" type="button">X</button>
 <h2>Ingresar nuevo modelo</h2>
+<button onclick="cerrar_modelos_villa()" type="button">X</button>
+
 </div>
 
 <form id="formulario_modelo_villa">

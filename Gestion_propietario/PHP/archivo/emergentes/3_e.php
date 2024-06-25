@@ -3,9 +3,8 @@
 <div class="centro">
 
 <div class="c1">
-
-<button onclick="v_cambio_cerrar()" type="button">X</button>
 <h2>Intercambio de propietario de villa</h2>
+<button onclick="v_cambio_cerrar()" type="button">X</button>
 </div>
 
 <form id="Formulario_intercambio">
@@ -20,7 +19,7 @@
 
 $pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electronico','Teléfono'];
 $id = ['','txtnombre_do','txtrtn_do','txtcorreo_do','txttelefono_do'];
-$tipo = ['button','text','number','text','number'];
+$tipo = ['button','text','text','text','text'];
 
 for ($i=0; $i < count($pal); $i++) {
 
@@ -52,7 +51,8 @@ for ($i=0; $i < count($pal); $i++) {
 </fieldset>
 </div>
 <div class="c4">
-    <div>
+    <fieldset>
+    <div class="contenido_tabla">
         <table id="tabla_donante_villa">
             <thead>
         <tr>
@@ -69,6 +69,7 @@ for ($i=0; $i < count($pal); $i++) {
                     </tbody>
         </table>
         </div>
+        </fieldset>
 </div>
 
 
@@ -85,7 +86,7 @@ for ($i=0; $i < count($pal); $i++) {
 
 $pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electronico','Teléfono'];
 $id = ['','txtnombre_rec','txtrtn_rec','txtcorreo_rec','txttelefono_rec'];
-$tipo = ['button','text','number','text','number'];
+$tipo = ['button','text','text','text','text'];
 
 for ($i=0; $i < count($pal); $i++) {
 
@@ -118,7 +119,8 @@ for ($i=0; $i < count($pal); $i++) {
 </div>
 
 <div class="c4">
-    <div>
+    <fieldset>
+    <div class="contenido_tabla">
         <table id="tabla_destino_villa">
             <thead>
         <tr>
@@ -135,6 +137,7 @@ for ($i=0; $i < count($pal); $i++) {
                     </tbody>
         </table>
         </div>
+        </fieldset>
 </div>
 
 <div class="c3">

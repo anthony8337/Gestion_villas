@@ -24,6 +24,7 @@ if($result -> num_rows > 0)
    while ($row = $result->fetch_assoc()) {
         echo"
         <tr>
+        <td></td>
         <td>",$row["villa"],"</td>
         <td>",$row["cont_eeh"],"</td>
         <td>",$row["nombre"],"</td>

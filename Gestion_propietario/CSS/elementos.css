@@ -27,7 +27,7 @@ h2
 
 #cuerpo_pagina .m_archivo,#cuerpo_pagina .m_expo,#cuerpo_pagina .m_reporte,#cuerpo_pagina .m_agregar
 {
-    background: #f19858;
+    background: #778aff;
     height: 50px;
     margin-left: 0px;
     border-top-left-radius: 10px;
@@ -50,11 +50,7 @@ h2
 {
     width: 200px; 
     height: 50px; 
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    padding: 0px;
-    border-right: 1px solid rgb(250, 171, 114);
+    
 }
 
 img
@@ -74,15 +70,6 @@ img
 
 }
 
-#cuerpo_pagina #concentrar_tablas
-{  
-    margin:0px;
-    margin-top: 10px;
-    overflow: auto;
-    background-color: #eea36e;
-    height: 100%;
-
-}
 
 #cuerpo_pagina #ver_cuadros input[type="radio"]
 {

@@ -7,23 +7,25 @@
 
 <div class="c1">
 
-<button onclick="cerrar_selecciona_villa_propi()" type="button">X</button>
 <h2>Seleccionar villa</h2>
+<button onclick="cerrar_selecciona_villa_propi()" type="button">X</button>
+
+</div>
+
+<div class="c2">
+<fieldset>
+    <legend>Buscar villa</legend>
+<input type="text" placeholder="Buscar villa" name="txt_busca_villa_propietario" id="txt_busca_villa_propietario" class="buscador">
+</fieldset>
 </div>
 
 <div class="c4">
 
-<input type="text" placeholder="Buscar villa" name="txt_busca_villa_propietario" id="txt_busca_villa_propietario">
-
- <fieldset>
-    <fieldset>
-    <div id="villa_propi_selec">
+    <div class="contenido_tabla" id="villa_propi_selec">
         <?php
         include "PHP/archivo/emergentes/subs/accion_propietario/tabla_propietario_villa.php";
         ?>
     </div>
-</fieldset>
-</fieldset>
 
 
 </div>

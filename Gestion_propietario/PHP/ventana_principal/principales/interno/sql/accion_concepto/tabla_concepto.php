@@ -27,6 +27,7 @@ if($result -> num_rows > 0)
     echo"
     <table id='tabla_concepto'>
     <tr>
+    <th></th>
       <th>Descripción</th>
       <th>Tipo</th>
       <th>Valor</th>

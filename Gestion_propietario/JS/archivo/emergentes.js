@@ -1,24 +1,14 @@
 //propietario ingreso
 function cerrar_ingreso()
 {
-    if(document.getElementById('titulo_pro').textContent =='Ingresar nuevo propietario')
-    {
-        document.getElementById('pro').style.display = 'none';
-    }
-    else
-    {
-        document.getElementById('pro').style.display = 'none';
-        document.getElementById('acc_cel').style.display = 'flex';
-    }
 
+    document.getElementById('pro').style.display = 'none';
     
 }
 
 function ingreso()
 {
     document.getElementById('pro').style.display = 'flex';
-
-    document.getElementById('titulo_pro').textContent = 'Ingresar nuevo propietario';
 }
 
 

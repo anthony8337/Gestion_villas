@@ -3,23 +3,22 @@
 <div class="centro">
 
 <div class="c1">
-
+<h2 >Seleccionar propietario</h2>
 <button onclick="cerrar_sele_pro_gp()" type="button">X</button>
-<h2 id="titulo_pro">Seleccionar propietario</h2>
-
 </div>
 
 <form id="formulario_propietario_gc">
 
 <div class="c2">
-
-<input type="text" name="busca_pro_gc" id="busca_pro_gc" placeholder="Buscar propietario">
-
+<fieldset>
+    <legend>Buscar propietario</legend>
+<input type="text" name="busca_pro_gc" id="busca_pro_gc" placeholder="Buscar propietario" class="buscador">
+</fieldset>
 </div>
 
 <div class="c4 ">
 
-<div id="tabla_propietario_gc">
+<div id="tabla_propietario_gc" class="contenido_tabla">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_propietarios.php";
     ?>

@@ -1,5 +1,5 @@
 function modificar_usuario(){
-  var tabla = document.getElementById("usuarios_tabla");
+  var tabla = document.getElementById("cont_usuarios_tabla");
   var filas = tabla.getElementsByTagName("tr");
 
   for (var i = 0; i < filas.length; i++) {

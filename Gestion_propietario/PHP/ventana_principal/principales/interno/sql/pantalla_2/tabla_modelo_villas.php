@@ -31,7 +31,7 @@ echo"
 <td>",$row["id_modelo"],"</td>
 <td>",$row["modelo"],"</td>
 <td>
-<button type='button' name='editar_usuario' onclick='modificar_modelo(),abrir_modelos_villa_edi()'>
+<button type='button' class='editar_usuario' onclick='modificar_modelo(),abrir_modelos_villa_edi()'>
 <img src='Imagenes/pencil-fill.svg'>
 </button>
 </td>

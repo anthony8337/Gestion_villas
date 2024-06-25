@@ -1,4 +1,4 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/elementos.css'>
+
 
 <div>
 <h1>Gestión de propietarios</h1>

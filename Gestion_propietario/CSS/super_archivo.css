@@ -1,647 +1,130 @@
-
-
-.titulos_grandes
-{
-    display: none;
-}
-
-@media screen and (min-width: 600px) {
-    
-    .titulos_grandes
-    {
-        display: block;
-    }
-
-}
-
-
-
 .centro
 {
-position: absolute;
-justify-content: center;
-align-items: center;
-background-color: rgb(211, 211, 211);
-border-radius: 5px;
-width: 95%;
-height: 95%;
+    background-color: #ffffff;
 }
 
-@media screen and (min-width: 600px) {
-    
-    .centro
-    {
-        width: auto;
-        height: auto;
-    }
-}
-
- .c1
+.c1
 {
-position: relative;
-top: 0;
-left: 0;
-width: 100%;
-height: 50px;
-padding-top: 1px;
-border-bottom: 1px solid grey;
-background-color: rgb(255, 255, 255);
-}
-
- .c1 button
-{
-float: inline-end;
-height: 32px;
-width: 32px;
-margin-top: 10px;
-margin-right: 10px;
-background-color: rgb(233, 0, 0);
-border: 0px;
-color: white;
-}
-
- .c1 button:hover
-{
-cursor: pointer;
-background-color: rgb(134, 0, 0);
+    background-color: #b4b4b4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .c1 h2
 {
-    font-size: 100%;
-}
-
-
-.cuatros
-{
-    background-color: greenyellow;
-    
-}
-
-
-
-input[type="text"],input[type="text"],input[type="date"],input[type="number"],select,input[type="password"]
-{
-    width: 100%;
-    height: 40px;
+    flex-grow: 1;
     text-align: center;
-    padding: 0px;
-    border-radius: 5px;
-    border: 1px solid gray;
 }
 
-textarea
+.c1 button
 {
-    resize: none;
-    width: 99%;
-    height: 70px;
+width: 40px;
+height: 40px;
+margin-right: 10px;
 }
 
 
-button
+/*Bontes de las tablas*/
+
+table td button
 {
-    width: 95%;
-    height: 40px;
-    text-align: center;
-    padding: 0px;
+    display: flex;
+    width: 35px;
+    height: 35px;
 }
 
 
-
-.c2
+button img
 {
-    background-color: red;
-    padding: 10px;
-}
-
-.c2 fieldset
-{
-   width: 100%;
-   padding: 0;
-   border: none;
-}
-
-#vi .c2 table td:nth-child(1) input[type = "number"],#vi .c2 table td:nth-child(1) select
-{
-    width: 46%;
-}
-
-.c2 table
-{
-    width: 100%;
-}
-
-.c3
-{
-    background-color: rgb(0, 60, 255);
-    padding: 10px;
-}
-
-.c3 button
-{
-    width: 30%;
-}
-
-@media screen and (min-width: 600px) {
-    /* Estilos que se aplicarán cuando la pantalla tenga más de 800px de ancho */
-    .c3 button
-    {
-        width: 150px;
-    }
-  }
-
-
-.c3 table td fieldset
-{
-    width: calc(100% - padding);
-    height: 250px;
-}
-
-#selec_villa_propietario .c4 div
-{
-    width: 100%;
-    height: 300px;
-    background-color: white;
-}
-
-#selec_villa_propietario #txt_busca_villa_propietario
-{
-    width: 200px;
-    margin-left: 15px;
-}
-
-.c4
-{
-    background-color: green;
-    padding: 10px;
-}
-
-.c4 fieldset
-{
-    border: none;
-}
-
-.c4 fieldset fieldset
-{
-padding: 0px;
-margin-top: 10px;
-}
-
-
-
-.c4 fieldset button
-{
-    width: 200px;
-}
-
-.c4 fieldset div
-{
-width: 100%;
-background-color: white;
-border: 1px solid gray;
-overflow: auto;
-}
-
-.c4 fieldset fieldset div
-{
-width: 100%;
-height: 150px;
-background-color: white;
-border: 1px solid gray;
-overflow: auto;
-}
-
-
-.c4 table
-{
-width: 100%;
-border-collapse: collapse;
-}
-
-.c4 table td
-{
-text-align: center;
-width: 50%;
-}
-
-.c4 table div
-{
-width: 98%;
-height: 215px;
-background-color: white;
-border: 1px solid gray;
-overflow: auto;
-}
-
-.c4 table .div_otro
-{
-height: 105px;
-background-color: white;
-}
-
-.c4 table div table th
-{
-    background-color: gray;
-    position: sticky;
-    top: 0px;
-}
-
-.c4 table div table td
-{
-    font-weight: normal;
-    border-bottom:1px  solid rgb(202, 202, 202);
-}
-
-.c4 table div table tr:nth-child(even) td
-{
-    background-color: rgb(202, 202, 202);
-}
-
-#vi #m_villa td
-{
-    width: 33%;
-}
-
-#moneda .c4 div, #con_1 .c4 div
-{
-background-color: white;
-border: 1px solid grey;
-height: 250px;
-overflow: auto;
-}
-
-#moneda .c4 table, #con_1 .c4 table
-{
-width: 100%;
-}
-
-#moneda .c4 table th, #con_1 .c4 table th
-{
-    position: sticky;
-    top: 0px;
-    background-color: gray;
     color: white;
-    border-left: 1px solid rgb(185, 185, 185);
+    max-height: 100%;
+    max-width: 100%;
+    fill: white;
 }
 
-#moneda .c4 table td, #con_1 .c4 table td
+
+.editar_usuario
 {
-    border-left: 1px solid gray;
-    border-bottom: 1px solid gray;
+    background-color: #01b601;
+    border: 1px solid #007900;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-#moneda .c4 table td
+.accion_tel
 {
-    width: 25%;
+    background-color: #b60101;
+    border: 1px solid #790000;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.c5
+/*Aspecto de las tablas*/
+
+.contenido_tabla
 {
-    background-color: pink;
+background-color: white;
+overflow: auto;
 }
 
-.c5 table 
+.contenido_tabla table
 {
-width: 100%;
-height: 100%;
-}
-
-.c5 table td
-{
-text-align: center;
-width: 33%;
-}
-
-.c5 table td button
-{
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-}
-
-.c5 table td button:hover
-{cursor: pointer;
-}
-
-.interno
-{
-    display: none;
-}
-
-#gene_cuenta .c4 table
-{
-    width: 100%;
-    height: 100%;
-}
-
-#gene_cuenta .c4 table fieldset
-{
-    margin: 10px;
-    height: 100px;
-}
-
-#gene_cuenta .c3 div
-{
-float: inline-end;
-width: 40%;
-}
-
-#gene_cuenta .c3 input[type = "number"]
-{
-    background-color: white;
-    color: black;
-}  
-
-#gene_cuenta .c2 table td
-{
-    width: 25%;
-    text-align: center;
-}
-
-#multi .c2 table td
-{
-    width: 20%;
-    text-align: center;
-}
-
-#multi .c4 .d_pro table td
-{
-width: 25%;
-}
-
-#multi .filtro_cuenta table td
-{
-    width: 20%;
-}
-
-#multi #inferior td
-{
-    width: 50%;
-}
-
-#multi #inferior td
-{
-    width: 50%;
-}
-
-#multi #inferior fieldset
-{
-    height: 80px;
-}
-
-#multi #inferior fieldset table
-{
-    height: 100%;
-}
-
-#multi .filtro_cuenta table td,#multi .filtro_cuenta
-{
-    padding: 0px;
-    border: none;
-}
-
-#multi .filtro_cuenta table td select, #multi .filtro_cuenta table td input[type = "date"],#multi .filtro_cuenta table td input[type = "text"]
-{
-    height: 20px;
-}
-
-#multi #cuentas_a_pagar
-{
-    background-color: white;
-    height: 200px;
-}
-
-#multi #cuentas_a_pagar div
-{background-color: white;
-    height: calc(100% - 20px);
-}
-
-.conocer_pago
-{
-    background-color: rgb(255, 255, 255);
-    height: 40px;
-    width: 400px;
-    float: inline-end;
-    margin: 10px;
-}
-
-.conocer_pago table
-{
-    height: 100%;
     width: 100%;
     border-collapse: collapse;
 }
 
-.conocer_pago table td
+.contenido_tabla table th
 {
-border: 1px solid grey;
-width: 50%;
+background-color: #b4b4b4;
+border: 1px solid #9b9b9b;
+height: 30px;
+}
+
+.contenido_tabla table td
+{
+height: 30px;
 text-align: center;
+border: 1px solid #9b9b9b;
 }
 
-.conocer_pago table td:nth-child(1)
+.contenido_tabla table tr:nth-child(even) td
 {
-    background-color: black;
-    color: white;
+background-color: #e5e5e5;
 }
 
-#reimpre .c2 td,#lis_pro_sal .c2 td
+.contenido_tabla table td:last-child
 {
-width: 20%;
+width: 35px;
 }
 
-#reimpre fieldset table td,#lis_pro_sal fieldset table td
+.contenido_tabla table td:first-child,.contenido_tabla table th:first-child
 {
-width: 33%;
+    display: none;
 }
 
-#reimpre .re table td,#lis_pro_sal .re table td
-{
-width: 14%;
-}
+/*Elementos*/
 
-#reimpre .re,#lis_pro_sal .re
+.c2,.c3,.c4,.c5,.c6
 {
-background-color: white;
-height: 300px;
-}
-
-.contenido th, .contenido td
-{
-    height: 30px;
-}
-
-.contenido th
-{
-    background-color: grey;
-    color: white;
-}
-
-.contenido tr:nth-child(even) td
-{
-    background-color: rgb(202, 202, 202);
-}
-
-.contru table td
-{
-    width: 33%;
-}
-
-#lis_villa .c4 fieldset
-{
-height: 80px;
-}
-
-#lis_villa .c4 fieldset table
-{
-height: 100%;
-}
-
-#lis_pro .modelo td
-{
-width: 33%;
-}
-
-.filtro_principal
-{
-    width: auto;
-}
-
-.filtro_principal td
-{
-    text-align: center;
-}
-
-.filtro_principal td:nth-child(1),.filtro_principal td:nth-child(3)
-{
-    width: 120px;
-}
-
-@media screen and (min-width: 900px) {
-    .filtro_principal
-{
-    width: 50%;
-}
-}
-
-#vi .apo_villa
-{
-    width: 98%;
-    height: 90%;
-}
-
-#gc_propietario .c4 div
-{
-    background-color: white;
-    height: 500px;
-}
-
-#gene_cuenta .c4 fieldset
-{
-    border: 1px solid black;
-    display: inline-flex;
-}
-
-#multi .centro
-{
-    
-}
-
-#multi .c2
-{
-    display: flex;
-    align-items: center;
-}
-
-#multi .c2 button
-{
-    margin-top: 10px;
-    width: 100px;
-    display: inline-block;
-}
-
-#multi .c2 fieldset
-{
-    width: 200px;
-    display: inline-block;
-    margin-left: auto;
-}
-
-#multi .c4
-{
-    display: flex;
-    align-items: center;
-}
-
-#multi .c4 fieldset
-{
-    border: 1px solid black;
-    display: inline-block;
-    height: 60px;
-}
-
-#multi .c4 .d_propietario
-{
-    width: 70%;
-}
-
-#multi .c4 .sal_propietario
-{
-    width: 30%;
-}
-
-.c5
-{
-    background-color: orange;
     padding: 10px;
 }
 
-.c5 fieldset
+textarea
 {
-    width: 300px;
-    height: 150px;
-    display: inline-block;
-    overflow: auto;
+    width: 100%;
+    height: 100%;
+    resize: none;
 }
 
-
-.c5 fieldset table th
-{   position: sticky;
-    top: 0; 
-    height: 50px;
+input[type = "text"],input[type = "date"],input[type = "password"]
+{
+height: 30px;
+width: 100%;
+text-align: center;
 }
 
-#dato_multi input[type = "text"],#dato_multi input[type = "date"]
+select
 {
-    height: 18px;
-    padding: 0px;
-}
-
-#multi .c3
-{
-    height: 180px;
-}
-
-.c4_interno
-{
-    background-color: white;
-    width: 500px;
-    height: 250px;
-    display: inline-block;
-}
-
-.c4_interno fieldset
-{
-    height: calc(50% - 20px);
-}
-
-.c4_interno div
-{
-    height: 200px;
-}
-
-.c4_interno div table th
-{
-    position: sticky;
-    top: 0px;
+    height: 35px;
 }

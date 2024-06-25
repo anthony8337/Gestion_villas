@@ -28,7 +28,7 @@ if($result -> num_rows > 0)
     echo"
     <table id='tabla_moneda'>
     <tr>
-    <tr>
+    <th></th>
     <th>Moneda</th>
     <th>Abreviado</th>
     <th>Cambio</th>

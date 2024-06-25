@@ -6,8 +6,9 @@
 
 <div class="c1">
 
-<button onclick="ingreso_moneda_r_cerrar()" type="button">X</button>
 <h2>Ingresar moneda</h2>
+<button onclick="ingreso_moneda_r_cerrar()" type="button">X</button>
+
 </div>
 
 <div class="c2">
@@ -30,7 +31,7 @@ for ($i=0; $i < count($m_d); $i++) {
     {
         echo"
         <td>
-        <input type='number' id='$m_d[$i]' name='$m_d[$i]' placeholder='$m_p[$i]' title='$m_p[$i]'>
+        <input type='text' id='$m_d[$i]' name='$m_d[$i]' placeholder='$m_p[$i]' title='$m_p[$i]'>
         </td>
         ";
     }else

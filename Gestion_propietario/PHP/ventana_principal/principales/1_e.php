@@ -6,10 +6,9 @@
 
 <div class="c1">
 
-
-
-<button onclick="cerrar_usuario_in()" type="button">X</button>
 <h2>Ingresar nuevo usuario</h2>
+<button onclick="cerrar_usuario_in()" type="button">X</button>
+
 </div>
 
 <form id="formulario_usuario">

@@ -5,9 +5,8 @@
 <div class="centro">
 
 <div class="c1">
-
-<button onclick="cerrar_ingreso_mul()" type="button">X</button>
 <h2>Pago multiple</h2>
+<button onclick="cerrar_ingreso_mul()" type="button">X</button>
 </div>
 
 <div class="c2">
@@ -64,7 +63,7 @@ for ($i=0; $i < count($botones); $i++) {
     <input type="hidden" name="codigo_concepto" id="codigo_concepto">
 </form>
 
-<div id="respuesta_cuenta_multi">
+<div id="respuesta_cuenta_multi" class="contenido_tabla">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php";
     ?>
@@ -75,13 +74,12 @@ for ($i=0; $i < count($botones); $i++) {
 <div class="c5">
 
 <fieldset>
-    <div>
+
+    <input type="text" name="bus_concepto_multi" name="bus_concepto_multi" placeholder="Buscar concepto" class="buscador">
+            
+    <div class="contenido_tabla">
+        
     <table id="concep_multipago">
-        <tr>
-            <th colspan="2">
-            <input type="text" name="bus_concepto_multi" name="bus_concepto_multi" placeholder="Buscar concepto">
-            </th>
-        </tr>
 
         <tbody id="datos_con_pago">
             <?php

@@ -4,8 +4,8 @@
 <div class="centro">
 
 <div class="c1">
+<h2>Ingresar nuevo propietario</h2>
 <button onclick="cerrar_ingreso()" type="button">X</button>
-<h2 id="titulo_pro">Ingresar nuevo propietario</h2>
 </div>
 
 <form id="Formulario_pro">
@@ -19,7 +19,7 @@
 
 $pal = ['Nombre completo', 'Numero de identidad','Correo electronico','Fecha de ingreso','Teléfono'];
 $id = ['txtnombre','txtid','txtcorreo','txtfecha_i','txttelefono'];
-$tipo = ['text','number','text','date','number'];
+$tipo = ['text','text','text','date','text'];
 
 for ($i=0; $i < count($pal); $i++) {
         echo"
@@ -52,7 +52,7 @@ for ($i=0; $i < count($pal); $i++) {
     <button type="button" onclick="selecciona_villa_propi()">Agregar una villa</button>
     <fieldset>
     <legend>Datos de villa</legend>
-    <div>
+    <div class="contenido_tabla">
         <table id="tabla_villa_pro_selec">
             <thead>
         <tr>

@@ -4,8 +4,8 @@
 <div class="centro">
 
 <div class="c1">
+<h2 >Adicionar villa a propietario</h2>
 <button onclick="cerrar_adicionar()" type="button">X</button>
-<h2 id="titulo_pro">Adicionar villa a propietario</h2>
 </div>
 
 <form id="Formulario_adicionar">
@@ -20,7 +20,7 @@
 
 $pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electronico','Teléfono'];
 $id = ['','txtnombre_adi','txtrtn_adi','txtcorreo_adi','txttelefono_adi'];
-$tipo = ['button','text','number','text','number'];
+$tipo = ['button','text','text','text','text'];
 
 for ($i=0; $i < count($pal); $i++) {
     if ($i == 0) {
@@ -64,7 +64,7 @@ for ($i=0; $i < count($pal); $i++) {
     <button type="button" onclick="abrir_pro_adicionar_tabla()">Agregar una villa</button>
     <fieldset>
     <legend>Datos de villa</legend>
-    <div>
+    <div class="contenido_tabla">
         <table id="tabla_villa_adi">
             <thead>
         <tr>

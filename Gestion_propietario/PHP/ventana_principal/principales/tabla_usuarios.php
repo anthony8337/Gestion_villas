@@ -34,11 +34,12 @@ $result = $conn->query($sql);
 if($result -> num_rows > 0)
 {
     echo"
-    <table id='usuarios_tabla'>
+    <table id='cont_usuarios_tabla'>
     ";
 
     echo"
     <tr>
+    <th></th>
     <th>Usuario</th>
     <th>Nombre Completo</th>
     <th>DNI</th>
@@ -82,7 +83,7 @@ if($result -> num_rows > 0)
 
         echo"
         <td>
-        <button type='button' name='editar_usuario' onclick='modificar_usuario(),ingresar_usuario_edi()'>
+        <button type='button' class='editar_usuario' onclick='modificar_usuario(),ingresar_usuario_edi()'>
         <img src='Imagenes/pencil-fill.svg'>
         </button>
         </td>

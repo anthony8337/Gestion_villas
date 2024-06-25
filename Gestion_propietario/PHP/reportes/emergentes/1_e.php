@@ -5,9 +5,8 @@
 <div class="centro">
 
 <div class="c1">
-
-<button onclick="cerrar_ingreso_lv()" type="button">X</button>
 <h2>Reporte de villas</h2>
+<button onclick="cerrar_ingreso_lv()" type="button">X</button>
 </div>
 
 <div class="c4">
@@ -134,7 +133,7 @@
             </td>
 
             <td>
-            <input type="number" placeholder="Tamaño a seleccionar" title="Dejar en blanco para seleccionar todos los valores">
+            <input type="text" placeholder="Tamaño a seleccionar" title="Dejar en blanco para seleccionar todos los valores">
             </td>
         </tr>
     </table>

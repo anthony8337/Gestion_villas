@@ -5,9 +5,9 @@
 <div class="centro">
 
 <div class="c1">
-
-<button onclick="cerrar_ingreso_celda()" type="button">X</button>
 <h2>Accion al realizar: A-1</h2>
+<button onclick="cerrar_ingreso_celda()" type="button">X</button>
+
 </div>
 
 <div class="c5">

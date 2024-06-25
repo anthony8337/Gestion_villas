@@ -1,7 +1,8 @@
-<div class="tab_principal" id="tabla_contenido_propi">
+<div class="contenido_tabla" id="tabla_contenido_propi">
 
 <table id="tab_pro"> 
 <tr class="cabezal">
+<th></th>
 <th>Villa</th>
 <th>Cont. EEH</th>
 <th>Propietario</th>

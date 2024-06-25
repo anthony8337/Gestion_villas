@@ -5,10 +5,13 @@ function agregarDato_cara() {
       var fila = tbody.insertRow();
 
       var celdacaracteristica = fila.insertCell(0);
+      celdacaracteristica.innerHTML = '';
+
+      var celdacaracteristica = fila.insertCell(1);
       celdacaracteristica.innerHTML = caracteristica;
 
-      var celdaeli = fila.insertCell(1);
-      celdaeli.innerHTML = '<button class="accion_tel" id="eli_carac" title="Eliminar número"><img src="Imagenes/trash3-fill.svg"></button>';
+      var celdaeli = fila.insertCell(2);
+      celdaeli.innerHTML = '<button class="accion_tel"  title="Eliminar característica"><img src="Imagenes/trash3-fill.svg"></button>';
 
       celdaeli.querySelector('button').onclick = function() {
           var filaPadre = this.parentNode.parentNode;

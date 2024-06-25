@@ -6,9 +6,9 @@
 <div class="centro">
 
 <div class="c1">
-
-<button onclick="ingreso_concepto_r_cerrar()" type="button">X</button>
 <h2>Ingresar concepto</h2>
+<button onclick="ingreso_concepto_r_cerrar()" type="button">X</button>
+
 </div>
 
 <div class="c2">
@@ -28,7 +28,7 @@
     </tr>
 
     <tr>
-        <td><input type="number" name="txt_valor_concepto" id="txt_cantidad" placeholder="Valor" title="Valor del concepto"></td>
+        <td><input type="text" name="txt_valor_concepto" id="txt_cantidad" placeholder="Valor" title="Valor del concepto"></td>
 
         <td><input type="checkbox" id="ck_refe" name="ck_refe" disabled> Referencia</td>
     </tr>

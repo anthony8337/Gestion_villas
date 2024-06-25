@@ -1,6 +1,6 @@
 function buscar_estado() {
   var textoBusqueda = document.getElementById('txt_dato_usuario').value.toLowerCase();
-  var tabla = document.getElementById('usuarios_tabla');
+  var tabla = document.getElementById('cont_usuarios_tabla');
   var filas = tabla.getElementsByTagName('tr');
   for (var i = 1; i < filas.length; i++) {
     var celdas = filas[i].getElementsByTagName('td');

@@ -5,10 +5,8 @@
 <div class="centro">
 
 <div class="c1">
-
+<h2 >Ingresar nueva cuenta</h2>
 <button onclick="cerrar_ingreso_g()" type="button">X</button>
-<h2 id="titulo_pro">Ingresar nueva cuenta</h2>
-
 </div>
 
 <form id="Formulario_cuenta">

@@ -5,7 +5,7 @@
             </td>
 
             <td>
-            <input id="txt_dato_usuario" type="text" placeholder="Buscar" title="Buscar información del usuario">
+            <input id="txt_dato_usuario" type="text" placeholder="Buscar" title="Buscar información del usuario" class="buscador">
             </td>
 
             <td>
@@ -21,7 +21,7 @@
         </tr>
     </table>
 
-    <div class="usuarios_tabla" id="lista_usuarios">
+    <div class="contenido_tabla" id="lista_usuarios">
         <?php
         include "PHP/ventana_principal/principales/tabla_usuarios.php";
         ?>

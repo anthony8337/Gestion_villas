@@ -6,8 +6,9 @@
 
 <div class="c1">
 
-<button onclick="cerrar_ingreso_lp()" type="button">X</button>
 <h2>Reporte de saldos</h2>
+<button onclick="cerrar_ingreso_lp()" type="button">X</button>
+
 </div>
 
 <div class="c4">
