@@ -1,5 +1,6 @@
 
-  document.addEventListener("DOMContentLoaded", function() {
+function tabla_multi_pro(){
+
     var tabla = document.getElementById("tabla_pro_multi");
     var filas = tabla.getElementsByTagName("tr");
   
@@ -14,12 +15,13 @@
         var villa = celdas[1].innerText;
         var id = celdas[0].innerText;
 
-        document.getElementById('id_propi_uni').value = id;
-        document.getElementById('villa_multi').textContent = villa;
-        document.getElementById('nombre_multi').textContent ="Nombre: " + nombre;
-        document.getElementById('telefono_multi').textContent ="Teléfono: " + telefono;
+        document.getElementById('hd_id_propietario').value = id;
+        document.getElementById('sp_codigo_multi').textContent = villa;
+        document.getElementById('txt_mn').value = nombre;
+        document.getElementById('txt_tl').value = telefono;
 
         cerrar_sele_pro_multi();
+
       });
     }
-  });
+  }

@@ -57,7 +57,7 @@ if($result -> num_rows > 0)
     <th>Modelo de villa</th>
     <th>Habitaciones</th>
     <th>Tamaño de lote</th>
-    <th>Area de contrucción</th>
+    <th>Área de contrucción</th>
     <th>Condición</th>
     <th>Estado</th>
     </tr>

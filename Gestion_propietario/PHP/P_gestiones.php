@@ -12,12 +12,10 @@ for ($i=0; $i < count($nombre_botones); $i++) {
 
 echo"
 <li id='li_$i' onclick='$acciones[$i]' title='$titulos[$i]'>
-<table>
-<tr>
-    <td id='i_la_$i'><img src='$imagenes_botones[$i]' id='icono'></td>
-    <td id='m_la_$i' class='nombres_boton'>$nombre_botones[$i]</td>
-</tr>
-</table>
+
+<img src='$imagenes_botones[$i]' id='icono'>
+<span id='m_la_$i' >$nombre_botones[$i]</span>
+
 </li>
 ";
 

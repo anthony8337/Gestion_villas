@@ -38,8 +38,8 @@ if($result -> num_rows > 0)
         <td>",$row["villa"],"</td>
         <td>",$row["cont_eeh"],"</td>
         <td>",$row["habitaciones"],"</td>
-        <td>",$row["condicion"],"</td>
         <td>",$row["modelo"],"</td>
+        <td>",$row["condicion"],"</td>
         </tr>
         ";
     }

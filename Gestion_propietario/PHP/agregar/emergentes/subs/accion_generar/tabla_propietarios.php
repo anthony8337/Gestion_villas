@@ -28,8 +28,8 @@ if($result -> num_rows > 0)
     <th></th>
     <th>Villa</th>
       <th>Nombre</th>
-      <th>RTN</th>
-      <th>Telefono</th>
+      <th>DNI</th>
+      <th>Teléfono</th>
    </tr>";
 
     while ($row = $result->fetch_assoc()) {

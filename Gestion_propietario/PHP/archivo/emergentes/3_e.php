@@ -10,14 +10,13 @@
 <form id="Formulario_intercambio">
 <div class="c2">
 
-<fieldset>
+<fieldset class="cambio_villa">
     <legend>Donante de villa</legend>
-<table>
-<tr>
+
 
 <?php
 
-$pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electronico','Teléfono'];
+$pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electrónico','Teléfono'];
 $id = ['','txtnombre_do','txtrtn_do','txtcorreo_do','txttelefono_do'];
 $tipo = ['button','text','text','text','text'];
 
@@ -25,31 +24,25 @@ for ($i=0; $i < count($pal); $i++) {
 
     if ($i == 0) {
         echo"
-        <td>
         <fieldset>
         <legend>Seleccionar</legend>
         <button type='button' onclick='abrir_pro_donar()'>Donante</button>
         </fieldset>
-        </td>
         ";
     }else {
         echo"
-        <td>
         <fieldset>
         <legend>$pal[$i]</legend>
         <input type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]'>
         </fieldset>
-        </td>
         ";
     }
 }
 
 ?>
-
-</tr>
-</table>
 </fieldset>
 </div>
+
 <div class="c4">
     <fieldset>
     <div class="contenido_tabla">
@@ -58,9 +51,9 @@ for ($i=0; $i < count($pal); $i++) {
         <tr>
         <th></th>
         <th>Villa</th>
-        <th>Cont. eeh</th>
-        <th>Modelo</th>
+        <th>Cont. EEH</th>
         <th>Habitaciones</th>
+        <th>Modelo</th>
         <th>Condición</th>
                     </tr>
             </thead>
@@ -74,17 +67,15 @@ for ($i=0; $i < count($pal); $i++) {
 
 
 <div class="c2">
-<fieldset>
+<fieldset class="cambio_villa">
     <legend>Destino de villa</legend>
-<table>
-<tr>
 
 <input type="hidden" name="id_rec_pro" id="id_rec_pro">
 <input type="date" name="txt_fecha_rec" id="txt_fecha_rec" class="interno">
 
 <?php
 
-$pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electronico','Teléfono'];
+$pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electrónico','Teléfono'];
 $id = ['','txtnombre_rec','txtrtn_rec','txtcorreo_rec','txttelefono_rec'];
 $tipo = ['button','text','text','text','text'];
 
@@ -92,43 +83,36 @@ for ($i=0; $i < count($pal); $i++) {
 
     if ($i == 0) {
         echo"
-        <td>
         <fieldset>
         <legend>Seleccionar</legend>
         <button type='button' onclick='abrir_pro_recibir()'>Destino</button>
         </fieldset>
-        </td>
         ";
     }else {
         echo"
-        <td>
         <fieldset>
         <legend>$pal[$i]</legend>
         <input type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]'>
         </fieldset>
-        </td>
         ";
     }
 }
 
 ?>
-
-</tr>
-</table>
 </fieldset>
 </div>
 
 <div class="c4">
     <fieldset>
-    <div class="contenido_tabla">
+    <div class="contenido_tabla contenido_tabla_ultima">
         <table id="tabla_destino_villa">
             <thead>
         <tr>
         <th></th>
         <th>Villa</th>
-        <th>Cont. eeh</th>
-        <th>Modelo</th>
+        <th>Cont. EEH</th>
         <th>Habitaciones</th>
+        <th>Modelo</th>
         <th>Condición</th>
                     </tr>
             </thead>

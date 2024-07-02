@@ -33,22 +33,18 @@ margin: 0px;
 }
 
 
-#menu_lateral ul li #icono
-{
-margin-left: 20px;    
-width: 32px;
-height: 32px;
-}
-
-#menu_lateral ul li .nombres_boton
-{
-display: none;
-}
-
 #menu_lateral ul li
 {
+display: flex;
+align-items: center;
+justify-content: left;
+padding: 0px;
+
 height: 60px;
+flex-direction: column;
+padding-left: 25%;
 }
+
 
 #menu_lateral ul #li_0
 {
@@ -86,10 +82,7 @@ li:hover,#encojer_menu:hover, #cuerpo_pagina div div ul li:hover
     background: #586ef1;
 }
 
-.m_expo,.m_agregar,.m_reporte
-{
-    display: none;
-}
+
 
 #protector
 {
@@ -99,4 +92,9 @@ li:hover,#encojer_menu:hover, #cuerpo_pagina div div ul li:hover
     width: calc(100% - 200px);
     height: 100%;
     background-color: rgba(0, 0, 0,0.5);
+}
+
+#m_2,#m_1
+{
+    display: none;
 }

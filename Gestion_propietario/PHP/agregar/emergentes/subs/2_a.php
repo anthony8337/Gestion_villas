@@ -9,7 +9,7 @@
 
 </div>
 
-<form id="formulario_propietario_gc">
+<form >
 
 <div class="c2">
 
@@ -19,7 +19,7 @@
 
 <div class="c4 ">
 
-<div id="tabla_concepto_gc" class="contenido_tabla">
+<div id="tabla_concepto_gc" class="contenido_tabla completar_vista_cuadro">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_concepto.php";
     ?>

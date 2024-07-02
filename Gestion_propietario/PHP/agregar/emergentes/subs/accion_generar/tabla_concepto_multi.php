@@ -35,9 +35,7 @@ else
 }
 ?>
 
-<script>
-    llamado_concepto();
-</script>
+
 
 <script>
 $(document).ready(function(){

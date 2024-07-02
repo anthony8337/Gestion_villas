@@ -7,7 +7,7 @@
 <button onclick="cerrar_sele_pro_gp()" type="button">X</button>
 </div>
 
-<form id="formulario_propietario_gc">
+<form>
 
 <div class="c2">
 <fieldset>
@@ -18,7 +18,7 @@
 
 <div class="c4 ">
 
-<div id="tabla_propietario_gc" class="contenido_tabla">
+<div id="tabla_propietario_gc" class="contenido_tabla completar_vista_cuadro">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_propietarios.php";
     ?>

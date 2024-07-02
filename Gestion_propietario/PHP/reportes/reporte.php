@@ -1,4 +1,4 @@
-<div id="m_2" class="m_reporte">
+<div id="m_2" class="menu_ho">
 
 <ul>
 <?php

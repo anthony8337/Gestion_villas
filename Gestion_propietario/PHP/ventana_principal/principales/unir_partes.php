@@ -7,12 +7,12 @@
 </div>
 
 
-<div class="m_agregar" style="display: flex;">
+<div class="menu_ho" style="display: flex;">
 
 <ul>
 
     <?php
-    $titulos_agre = ['Generar cuentas','Pago multiple','Reimprecion'];
+    $titulos_agre = ['Generar cuentas','Pago múltiple','Reimprecion'];
     $img_agre = ['journal-plus.svg','cash-coin.svg','receipt-cutoff.svg'];
     $abrir = ['ingreso_g()','ingreso_mul()','ingreso_reim()'];
 

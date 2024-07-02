@@ -14,8 +14,8 @@ else
 {
 }
 
-if (isset($_POST['id_propi_uni'])) {
-    $id_pro_multi = $_POST['id_propi_uni'];
+if (isset($_POST['hd_id_propietario'])) {
+    $id_pro_multi = $_POST['hd_id_propietario'];
 } else {
     $id_pro_multi = 0;
 }
@@ -37,7 +37,7 @@ if($result -> num_rows > 0)
     <th>Documento</th>
     <th>Importe</th>
     <th>Abono</th>
-    <th>Fecha Aplida</th>
+    <th>Fecha Aplicada</th>
     <th>Fecha Vencimiento</th>
     <th>Saldo</th>
     </tr>
@@ -73,7 +73,7 @@ else
     <th>Documento</th>
     <th>Importe</th>
     <th>Abono</th>
-    <th>Fecha Aplida</th>
+    <th>Fecha Aplicada</th>
     <th>Fecha Vencimiento</th>
     <th>Saldo</th>
     </tr>
@@ -95,7 +95,7 @@ e.preventDefault();
         var form =$('#formulario_datos_multi').serialize();
         $.ajax({
             type: 'POST',
-            url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_multipago_selec.php',
+            url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php',
             data: form,
             success: function(response){
                 $('#respuesta_cuenta_multi').html(response);

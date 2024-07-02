@@ -38,7 +38,7 @@ if($result -> num_rows > 0)
     <th>Documento</th>
     <th>Importe</th>
     <th>Abono</th>
-    <th>Fecha Aplida</th>
+    <th>Fecha Aplicada</th>
     <th>Fecha Vencimiento</th>
     <th>Saldo</th>
     </tr>
@@ -74,7 +74,7 @@ else
     <th>Documento</th>
     <th>Importe</th>
     <th>Abono</th>
-    <th>Fecha Aplida</th>
+    <th>Fecha Aplicada</th>
     <th>Fecha Vencimiento</th>
     <th>Saldo</th>
     </tr>

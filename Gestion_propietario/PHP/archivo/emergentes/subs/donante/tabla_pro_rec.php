@@ -27,7 +27,7 @@ if($result -> num_rows > 0)
     <tr>
       <th></th>
       <th>Nombre</th>
-      <th>RTN</th>
+      <th>DNI</th>
       <th>Correo</th>
       <th>Teléfono</th>
    </tr>";

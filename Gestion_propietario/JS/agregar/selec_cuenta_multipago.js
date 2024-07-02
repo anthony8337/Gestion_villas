@@ -16,6 +16,7 @@ function llamado_cuenta()
         document.getElementById('total_pago_multi').value = total;
         document.getElementById('pendiente_pago').value = pendiente;
 
+        sele_con_multi();
       });
     }
   }

@@ -12,35 +12,22 @@
 
 
 <div class="c2">
-
-<table>
-<tr>
 <?php
 
-$pal = ['Nombre completo', 'Numero de identidad','Correo electronico','Fecha de ingreso','Teléfono'];
+$pal = ['Nombre completo', 'Numero de identidad','Correo electrónico','Fecha de ingreso','Teléfono'];
 $id = ['txtnombre','txtid','txtcorreo','txtfecha_i','txttelefono'];
 $tipo = ['text','text','text','date','text'];
 
 for ($i=0; $i < count($pal); $i++) {
         echo"
-        <td>
         <fieldset>
         <legend>$pal[$i]</legend>
         <input type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]'>
         </fieldset>
-        </td>
         ";
 }
 
 ?>
-</tr>
-
-<tr>
-<td>
-
-</td>
-</tr>
-</table>
 </div>
 
 
@@ -52,13 +39,13 @@ for ($i=0; $i < count($pal); $i++) {
     <button type="button" onclick="selecciona_villa_propi()">Agregar una villa</button>
     <fieldset>
     <legend>Datos de villa</legend>
-    <div class="contenido_tabla">
+    <div class="contenido_tabla contenido_tabla_ultima">
         <table id="tabla_villa_pro_selec">
             <thead>
         <tr>
         <th></th>
         <th>Villa</th>
-        <th>Cont. eeh</th>
+        <th>Cont. EEH</th>
         <th>Modelo</th>
         <th>Habitaciones</th>
         <th>Condición</th>

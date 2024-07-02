@@ -7,11 +7,12 @@ function llamado_concepto()
       fila.addEventListener("click", function() {
         var celdas = this.getElementsByTagName("td");
 
-        
         var id = celdas[0].innerText;
 
         document.getElementById('codigo_concepto').value = id;
 
+        window.alert('Te espera una vejes solitaria');
+
       });
     }
-  }
+}

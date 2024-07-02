@@ -5,11 +5,11 @@ function cambio()
     if (cuadro_cambio == "Unico") 
     {
     document.getElementById("propi_desde_hasta").style.display = "none";  
-    document.getElementById("propi_unico").style.display = "inline-flex";  
+    document.getElementById("propi_unico").style.display = "block";  
     }
     else
     {
-        document.getElementById("propi_desde_hasta").style.display = "inline-flex";  
+        document.getElementById("propi_desde_hasta").style.display = "block";  
         document.getElementById("propi_unico").style.display = "none";  
     }
 }

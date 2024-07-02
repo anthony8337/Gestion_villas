@@ -1,7 +1,14 @@
 .centro
 {
     background-color: #ffffff;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 95%;
+    height: 95%;
+    overflow: auto;
 }
+
+
 
 .c1
 {
@@ -9,6 +16,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 35px;
+    padding: 5px;
+    position: sticky;
+    top: 0px;
 }
 
 .c1 h2
@@ -19,9 +30,8 @@
 
 .c1 button
 {
-width: 40px;
-height: 40px;
-margin-right: 10px;
+width: 35px;
+height: 35px;
 }
 
 
@@ -30,8 +40,8 @@ margin-right: 10px;
 table td button
 {
     display: flex;
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
 }
 
 
@@ -66,6 +76,13 @@ button img
 {
 background-color: white;
 overflow: auto;
+height: 100px;
+border: 1px solid gray;
+}
+
+.tabla_multi_cuentas
+{
+    height: 200px;
 }
 
 .contenido_tabla table
@@ -78,12 +95,14 @@ overflow: auto;
 {
 background-color: #b4b4b4;
 border: 1px solid #9b9b9b;
-height: 30px;
+height: 25px;
+position: sticky;
+top: 0px;
 }
 
 .contenido_tabla table td
 {
-height: 30px;
+height: 25px;
 text-align: center;
 border: 1px solid #9b9b9b;
 }
@@ -93,9 +112,9 @@ border: 1px solid #9b9b9b;
 background-color: #e5e5e5;
 }
 
-.contenido_tabla table td:last-child
+.contenido_tabla_ultima table td:last-child
 {
-width: 35px;
+    width: 25px;
 }
 
 .contenido_tabla table td:first-child,.contenido_tabla table th:first-child
@@ -105,9 +124,14 @@ width: 35px;
 
 /*Elementos*/
 
+.interno
+{
+    display: none;
+}
+
 .c2,.c3,.c4,.c5,.c6
 {
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
 }
 
 textarea
@@ -127,4 +151,126 @@ text-align: center;
 select
 {
     height: 35px;
+    width: 100%;
+    text-align: center;
+}
+
+button
+{
+    width: 100%;
+    height: 35px;
+}
+/*Especiales*/
+
+.c2
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.c2 fieldset
+{
+    flex: 1 1 200px;
+    min-width: 200px;
+    padding: 0px;
+    padding-left: 5px;
+    margin: 4px;
+    border: none;
+}
+
+.contenido_fieldset
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contenido_fieldset input[type="text"],.contenido_fieldset select
+{
+    flex: 1;
+}
+
+#vi .c4
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+#vi .c4 .c4_interno
+{
+    flex: 1 1 200px;
+}
+
+.carac_opcion
+{
+    height: 166px;
+}
+
+.c2 .cambio_villa
+{
+    border: 1px solid #9b9b9b;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cambio_villa input[type="text"]
+{
+width: 95%;
+}
+
+#gene_cuenta .c4
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#gene_cuenta .c4 fieldset
+{
+    flex: 1 1 200px;
+}
+
+#multi .c2 button
+{
+    flex: 1 1 200px;
+    margin: 5px;
+}
+
+#multi .c4 fieldset
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#multi .c4 fieldset fieldset
+{
+    flex: 1 1 200px;
+}
+
+#dato_multi
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#dato_multi input[type="text"],#dato_multi input[type="date"]
+{
+    flex: 1 1 50px;
+}
+
+.completar_vista_cuadro
+{
+    height: 450px;
+}
+
+/*borrar*/
+#multi
+{
+    display: flex;
 }

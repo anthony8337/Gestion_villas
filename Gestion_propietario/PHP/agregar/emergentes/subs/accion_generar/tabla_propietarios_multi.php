@@ -28,8 +28,8 @@ if($result -> num_rows > 0)
     <th></th>
     <th>Villa</th>
       <th>Nombre</th>
-      <th>RTN</th>
-      <th>Telefono</th>
+      <th>DNI</th>
+      <th>Teléfono</th>
       
    </tr>";
 
@@ -54,6 +54,10 @@ else
     echo"No se encuentran datos";
 }
 ?>
+
+<script>
+    tabla_multi_pro();
+</script>
 
 <script>
 $(document).ready(function(){

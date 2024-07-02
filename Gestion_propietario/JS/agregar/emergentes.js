@@ -123,3 +123,15 @@ function cerrar_sele_pro_multi()
 {
     document.getElementById('multi_propietario').style.display = "none"; 
 }
+
+/////////////////////////// seleccionar concepto de pago
+
+function sele_con_multi()
+{
+    document.getElementById('multi_concepto').style.display = "flex";
+}
+
+function cerrar_sele_con_multi()
+{
+    document.getElementById('multi_concepto').style.display = "none"; 
+}

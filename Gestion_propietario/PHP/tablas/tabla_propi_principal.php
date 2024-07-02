@@ -6,8 +6,8 @@
 <th>Villa</th>
 <th>Cont. EEH</th>
 <th>Propietario</th>
-<th>RTN</th>
-<th>Telefono</th>
+<th>DNI</th>
+<th>Teléfono</th>
 <th>Correo</th>
 </tr>
 

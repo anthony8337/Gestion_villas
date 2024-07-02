@@ -1,118 +1,81 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/agregar/mod_multipago.css'>
-
 <div id="multi" class="mod">
 
 <div class="centro">
 
 <div class="c1">
-<h2>Pago multiple</h2>
+<h2>Pago múltiple</h2>
 <button onclick="cerrar_ingreso_mul()" type="button">X</button>
 </div>
 
+
+
 <div class="c2">
 
+    <?php
+    $nombre=["Propietario","G. Cuenta","Limpiar"];
+    $id=["btn_propi_multi","btn_cuenta_multi","btn_limpiar_multi"];
+    $accion=["sele_pro_multi()","",""];
 
-<?php
-$botones = ['Propietario', 'G. Cuenta','Limpiar','Pagar'];
-$acciones = ['sele_pro_multi()','ingreso_g_multi()','',''];
+    for($i = 0; $i < count($nombre); $i++)
+    {
+        echo"
+        <button id='$id[$i]' name='$id[$i]' onclick='$accion[$i]' >$nombre[$i]</button>
+        ";
+    }
+    ?>
 
-for ($i=0; $i < count($botones); $i++) { 
-   echo"
+    <fieldset id="dato_multi">
 
-   <button type='button' onclick='$acciones[$i]'>$botones[$i]</button>
+    <?php
+    
+    $id=["txt_codigo_multi","txt_fecha_multi"];
+    $tipo=["text","date"];
 
-   ";
-}
+    for($i = 0; $i < count($id); $i++)
+    {
+        echo"
+        <input type='$tipo[$i]' id='$id[$i] name='$id[$i]'>
+        ";
+    }
+    ?>
+    </fieldset>
+</div>
+<form id="formulario_datos_multi">
 
-?>
+<div class="c4">
 
-<fieldset id="dato_multi">
-    <legend>Documento</legend>
-    <input type="text" name="cod_multi" id="cod_multi">
-    <input type="date" name="fecha_multi" id="fecha_multi">
-</fieldset>
+    <fieldset>
+        <legend>Codigo: <span id="sp_codigo_multi" name="sp_codigo_multi"></span></legend>
+        <input type="hidden" name="hd_id_propietario" id="hd_id_propietario">
+        
+        <?php
+        $nombre_dato = ['Nombre','Teléfono','Saldo'];
+        $id_datos = ['txt_mn','txt_tl','txt_sal'];
 
+        for ($i=0; $i < count($nombre_dato); $i++) { 
+        echo"
+            <fieldset>
+            <legend>$nombre_dato[$i]</legend>
+            <input type='text' name='$id_datos[$i]' id='$id_datos[$i]'>
+            </fieldset>
+        ";
+    }
+        ?>
+
+    </fieldset>
 </div>
 
 <div class="c4">
 
-
-<fieldset class="d_propietario">
-    <legend>Clave: <label id="villa_multi" name="villa_multi"></label></legend>
-
-    <label id="nombre_multi" name="nombre_multi">Nombre:</label>
-    <br>
-    <label id="telefono_multi" name="telefono_multi">Teléfono:</label>
-
-</fieldset>
-
-<fieldset class="sal_propietario">
-    <legend>Saldo:</legend>
-
-    <input type="text" id="saldo_multi" name="saldo_multi">
-
-</fieldset>
-</div>
-
-<div class="c3">
-
-
-<form id="formulario_datos_multi">
-    <input type="hidden" name="id_propi_uni" id="id_propi_uni">
-    <input type="hidden" name="codigo_cuenta_txt" id="codigo_cuenta_txt">
-    <input type="hidden" name="codigo_concepto" id="codigo_concepto">
-</form>
-
-<div id="respuesta_cuenta_multi" class="contenido_tabla">
+<div id="respuesta_cuenta_multi" class="contenido_tabla tabla_multi_cuentas">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php";
     ?>
 </div>
 
 </div>
-
-<div class="c5">
-
-<fieldset>
-
-    <input type="text" name="bus_concepto_multi" name="bus_concepto_multi" placeholder="Buscar concepto" class="buscador">
-            
-    <div class="contenido_tabla">
-        
-    <table id="concep_multipago">
-
-        <tbody id="datos_con_pago">
-            <?php
-            include "PHP/agregar/emergentes/subs/accion_generar/tabla_concepto_multi.php";
-            ?>
-        </tbody>
-    </table>
-    </div>
-</fieldset>
-
-<fieldset>
-    <table>
-        <tr>
-            <td>Total a Pagar</td>
-            <td><input type="text" id="total_pago_multi" name="total_pago_multi"></td>
-        </tr>
-
-
-        <tr>
-            <td>Pendiente</td>
-            <td><input type="text" id="pendiente_pago" name="pendiente_pago"></td>
-        </tr>
-
-        <tr>
-            <td>Devolver</td>
-            <td><input type="text" id="devolver_pago" name="devolver_pago"></td>
-        </tr>
-    </table>
-</fieldset>
-</div>
+</form>
 
 </div>
 
-
 </div>
- 

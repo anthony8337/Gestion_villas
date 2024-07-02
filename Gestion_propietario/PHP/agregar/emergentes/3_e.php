@@ -5,50 +5,54 @@
 <div class="centro">
 
 <div class="c1">
-<h2>Reimpimir factura</h2>
+<h2>Reimprimir factura</h2>
 <button onclick="cerrar_ingreso_reim()" type="button">X</button>
 </div>
 
 <div class="c2">
 
-<table>
-    <td><button type="button" class="btn_re">Propietario</button></td>
-    <td><button type="button" class="btn_re">Limpiar</button></td>
-    <td>
+    <button type="button" class="btn_re">Propietario</button>
 
-    <select name="ranco_factura" id="ranco_factura">
+    <fieldset>
+        <legend>Indicar fecha de pago</legend>
+        <select name="ranco_factura" id="ranco_factura">
         <option>Ultimo pago</option>
+        <option>Identificar fecha</option>
         <option>Historial de pagos</option>
-        <option>Rango de pago</option>
     </select>
-    </td>
-    <td>
+    </fieldset>
+
+    <fieldset>
+    <legend>Desde</legend>
         <input type="date" name="desde_factura" id="desde_factura">
-    </td>
-
-    <td>
-        <input type="date" name="hasta_factura" id="hasta_factura">
-    </td>
-</table>
-
-
+    </fieldset>
+    <fieldset>
+    <legend>Hasta</legend>
+    <input type="date" name="hasta_factura" id="hasta_factura">
+    </fieldset>
     
-
 </div>
 
 
 <div class="c4">
     <fieldset>
-        <table>
-            <tr>
-                <td><label>Codigo: </label> <label>A-1</label></td>
-                <td><label>Propietario: </label> <label>Anthony Clemente Oliva Murillo</label></td>
-                <td><label>Telefono: </label> <label>94856463</label></td>
-            </tr>
-        </table>
+        <legend>Código:  <span>A-1</span></legend>
+
+    <fieldset>
+        <legend>Propietario</legend>
+        <span>Anthony Clemente Oliva Murillo</span>
     </fieldset>
 
-    <div class="contenido_tabla">
+    <fieldset>
+        <legend>Teléfono</legend>
+        <span>94856463</span>
+    </fieldset>
+
+    </fieldset>
+</div>
+
+<div class="c4">
+<div class="contenido_tabla">
     <table class="contenido">
         <tr>
         <th>Fecha de pago</th>

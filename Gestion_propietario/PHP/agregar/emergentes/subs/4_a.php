@@ -1,11 +1,11 @@
-<div id="multi_propietario" class="mod">
+<div id="multi_concepto" class="mod">
 
 <div class="centro">
 
 <div class="c1">
 
-<h2 >Seleccionar propietario</h2>
-<button onclick="cerrar_sele_pro_multi()" type="button">X</button>
+<h2 >Seleccionar concepto</h2>
+<button onclick="cerrar_sele_con_multi()" type="button">X</button>
 
 </div>
 

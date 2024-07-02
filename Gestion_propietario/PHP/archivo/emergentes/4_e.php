@@ -14,45 +14,32 @@
 <div class="c2">
 
 <input type="hidden" name="id_pro_adi" id="id_pro_adi">
-<table>
-<tr>
+
 <?php
 
-$pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electronico','Teléfono'];
+$pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electrónico','Teléfono'];
 $id = ['','txtnombre_adi','txtrtn_adi','txtcorreo_adi','txttelefono_adi'];
 $tipo = ['button','text','text','text','text'];
 
 for ($i=0; $i < count($pal); $i++) {
     if ($i == 0) {
         echo"
-        <td>
         <fieldset>
         <legend>Seleccionar</legend>
         <button type='button' onclick='abrir_pro_adicionar()'>Propietario</button>
         </fieldset>
-        </td>
         ";
     }else {
         echo"
-        <td>
         <fieldset>
         <legend>$pal[$i]</legend>
         <input type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]'>
         </fieldset>
-        </td>
         ";
     }
 }
 
 ?>
-</tr>
-
-<tr>
-<td>
-
-</td>
-</tr>
-</table>
 </div>
 
 
@@ -64,15 +51,15 @@ for ($i=0; $i < count($pal); $i++) {
     <button type="button" onclick="abrir_pro_adicionar_tabla()">Agregar una villa</button>
     <fieldset>
     <legend>Datos de villa</legend>
-    <div class="contenido_tabla">
+    <div class="contenido_tabla contenido_tabla_ultima">
         <table id="tabla_villa_adi">
             <thead>
         <tr>
         <th></th>
         <th>Villa</th>
-        <th>Cont. eeh</th>
-        <th>Modelo</th>
+        <th>Cont. EEH</th>
         <th>Habitaciones</th>
+        <th>Modelo</th>
         <th>Condición</th>
                     </tr>
             </thead>

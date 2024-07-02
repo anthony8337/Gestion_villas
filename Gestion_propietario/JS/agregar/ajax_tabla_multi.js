@@ -6,6 +6,6 @@ function suma_saldo() {
         var celda = tabla.rows[i].cells[6].innerText;
         suma += parseFloat(celda);
     }
-    document.getElementById('saldo_multi').value = suma.toFixed(2);
+    document.getElementById('txt_sal').value = suma.toFixed(2);
 
 }
