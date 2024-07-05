@@ -24,5 +24,9 @@ include "PHP/agregar/emergentes/subs/3_a.php";
 ?>
 
 <?php
+include "PHP/agregar/emergentes/subs/5_a.php";
+?>
+
+<?php
 include "PHP/agregar/emergentes/subs/4_a.php";
 ?>

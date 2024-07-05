@@ -1,5 +1,5 @@
-function llamado_concepto()
-{   var tabla = document.getElementById("concep_multipago");
+function llamado_concepto_multi()
+{   var tabla = document.getElementById("tabla_concepto_ml");
     var filas = tabla.getElementsByTagName("tr");
   
     for (var i = 1; i < filas.length; i++) {
@@ -8,10 +8,11 @@ function llamado_concepto()
         var celdas = this.getElementsByTagName("td");
 
         var id = celdas[0].innerText;
+        var concepto = celdas[1].innerText;
 
-        document.getElementById('codigo_concepto').value = id;
-
-        window.alert('Te espera una vejes solitaria');
+        document.getElementById('con_pago_multi').textContent= concepto;
+        document.getElementById('hd_id_concepto').value= id;
+        cerrar_sele_con_multi();
 
       });
     }

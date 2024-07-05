@@ -20,6 +20,7 @@
     padding: 5px;
     position: sticky;
     top: 0px;
+    z-index: 999;
 }
 
 .c1 h2
@@ -83,6 +84,7 @@ border: 1px solid gray;
 .tabla_multi_cuentas
 {
     height: 200px;
+    margin-top: 10px;
 }
 
 .contenido_tabla table
@@ -267,6 +269,32 @@ width: 95%;
 .completar_vista_cuadro
 {
     height: 450px;
+}
+
+
+.c5
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.c5 .c4_acomodado_multi
+{
+    flex: 1 1 200px;
+    max-width: 400px;
+}
+
+.cuentas_multi_botones
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cuentas_multi_botones button
+{
+    width: 33%;
 }
 
 /*borrar*/

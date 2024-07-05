@@ -27,6 +27,7 @@ if($result -> num_rows > 0)
     echo"
     <table id='tabla_concepto_gc'>
     <tr>
+    <th></th>
       <th>Descripción</th>
       <th>Tipo</th>
       <th>Valor</th>
@@ -35,7 +36,7 @@ if($result -> num_rows > 0)
     while ($row = $result->fetch_assoc()) {
         echo"
         <tr>
-        <td class='interno'>",$row["id_concepto"],"</td>
+        <td>",$row["id_concepto"],"</td>
         <td>",$row["concepto"],"</td>
         <td>",$row["tipo"],"</td>
         <td>",$row["valor"],"</td>
@@ -52,3 +53,4 @@ else
     echo"No se encuentran datos";
 }
 ?>
+

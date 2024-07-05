@@ -24,7 +24,7 @@
 
 <div id="tabla_propietario_multi" class="contenido_tabla completar_vista_cuadro">
     <?php
-    include "PHP/agregar/emergentes/subs/accion_generar/tabla_propietarios_multi.php";
+    include "PHP/agregar/emergentes/subs/accion_generar/tabla_concepto_multi.php";
     ?>
 </div>
 

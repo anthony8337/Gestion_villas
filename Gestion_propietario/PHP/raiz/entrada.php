@@ -48,5 +48,7 @@
     <script src="JS/archivo/selec_recibir.js"></script>
     <script src="JS/archivo/selec_aporte.js"></script>
     <script src="JS/archivo/selec_villa_adi.js"></script>
+    <script src="JS/agregar/suma_pagar.js"></script>
+    <script src="JS/agregar/recargar_tm.js"></script>
 </head>
 <body>

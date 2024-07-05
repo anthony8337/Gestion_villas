@@ -136,7 +136,7 @@
     <legend>Valor</legend>
     
     <?php
-    $nombre = ['Costo:','Total:'];
+    $nombre = ['Costo de concepto:','Total:'];
     $id = ['txt_costo_gc','txt_total_gc'];
 
     for ($i=0; $i < count($nombre); $i++) { 

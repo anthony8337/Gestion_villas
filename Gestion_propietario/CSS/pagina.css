@@ -7,19 +7,3 @@ html body
 
 
 
-::-webkit-scrollbar
-{
-    width: 10px;
-    height: 10px;
-}
-
-::-webkit-scrollbar-track
-{
-    background: #e6e3e3;
-}
-
-::-webkit-scrollbar-thumb
-{
-    background: #da8447;
-    border-radius: 6px;
-}

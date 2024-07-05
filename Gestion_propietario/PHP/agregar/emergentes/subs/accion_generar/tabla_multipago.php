@@ -1,5 +1,6 @@
 <?php
 
+
 $servername = "localhost"; 
 $username = "root";
 $password = "";
@@ -17,12 +18,28 @@ else
 if (isset($_POST['hd_id_propietario'])) {
     $id_pro_multi = $_POST['hd_id_propietario'];
 } else {
-    $id_pro_multi = 0;
+    $id_pro_multi = "";
 }
 
-$sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado' AND id_unir = '$id_pro_multi';";
+if (isset($_POST['hd_id_cuenta'])) {
+    $id_multi = $_POST['hd_id_cuenta'];
+} else {
+    $id_multi = "";
+}
 
-/*$sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado';";*/
+if ($id_pro_multi == "" && $id_multi == "") 
+{
+    $sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado' AND id_unir = '$id_pro_multi';";
+}
+else if ($id_pro_multi != "" && $id_multi == "") 
+{
+    $sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado' AND id_unir = '$id_pro_multi';";
+}
+else if ($id_pro_multi != "" && $id_multi != "") 
+{
+    $sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado' AND id_unir = '$id_pro_multi' AND id_cuenta = '$id_multi';";
+}
+
 
 $result = $conn->query($sql);
 
@@ -35,6 +52,7 @@ if($result -> num_rows > 0)
     <tr>
     <th>Concepto</th>
     <th>Documento</th>
+    <th>Código</th>
     <th>Importe</th>
     <th>Abono</th>
     <th>Fecha Aplicada</th>
@@ -48,6 +66,7 @@ if($result -> num_rows > 0)
     while ($row = $result->fetch_assoc()) {
         echo"
         <tr class='fila_tabla_multi'>
+        <td>",$row["id_cuenta"],"</td>
         <td>",$row["concepto"],"</td>
         <td>",$row["codigo"],"</td>
         <td>",$row["costo"],"</td>
@@ -71,6 +90,7 @@ else
     <tr>
     <th>Concepto</th>
     <th>Documento</th>
+    <th>Código</th>
     <th>Importe</th>
     <th>Abono</th>
     <th>Fecha Aplicada</th>
@@ -90,15 +110,17 @@ else
 <script>
 $(document).ready(function(){
 $('.fila_tabla_multi').click(function(e){
-e.preventDefault();
-        
+        e.preventDefault();
+
         var form =$('#formulario_datos_multi').serialize();
+        
         $.ajax({
             type: 'POST',
             url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php',
             data: form,
             success: function(response){
                 $('#respuesta_cuenta_multi').html(response);
+
             }
         });
     }); 

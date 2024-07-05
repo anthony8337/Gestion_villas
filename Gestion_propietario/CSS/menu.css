@@ -10,7 +10,6 @@ text-align: center;
 overflow: auto;
 }
 
-/*background: linear-gradient(to top,#ffeb9c, #da8447);*/
 
 #menu_lateral #logo
 {
@@ -57,18 +56,17 @@ padding-left: 25%;
     top: 5px;
     left: 95px;
     background-color: #778aff;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    align-items: center;
 }
 
 #encojer_menu img
 {
-    margin-top: 10px;
-    margin-left: 10px;
-    width: 30px;
-    height: 30px;
+    margin-top: 2.4px;
+    margin-left: 2.4px;
+    width: 80%;
+    height: auto;
 }
 
 li

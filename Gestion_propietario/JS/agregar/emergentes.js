@@ -135,3 +135,15 @@ function cerrar_sele_con_multi()
 {
     document.getElementById('multi_concepto').style.display = "none"; 
 }
+
+///////////////////////////// cantidad de pago
+
+function costo_con_multi()
+{
+    document.getElementById('multi_cantidad_pago').style.display = "flex";
+}
+
+function cerrar_costo_con_multi()
+{
+    document.getElementById('multi_cantidad_pago').style.display = "none"; 
+}
