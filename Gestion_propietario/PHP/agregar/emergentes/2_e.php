@@ -14,7 +14,7 @@
     <?php
     $nombre=["Propietario","G. Cuenta","Limpiar","Ejecutar Pago"];
     $id=["btn_propi_multi","btn_cuenta_multi","btn_limpiar_multi","btn_pago_multi"];
-    $accion=["sele_pro_multi()","","",""];
+    $accion=["sele_pro_multi()","ingreso_g_multi()","",""];
 
     for($i = 0; $i < count($nombre); $i++)
     {
@@ -90,7 +90,7 @@
 
 <button type='button' onclick="recargar_tabla_multi()">Recargar cuentas</button>
 
-<button type="button">Cambiar concepto</button>
+<button type="button" onclick="sele_con_multi()">Cambiar concepto</button>
 
 </div>
 

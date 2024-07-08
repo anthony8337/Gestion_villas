@@ -8,12 +8,14 @@ function ingreso_g()
 {
     document.getElementById('gene_cuenta').style.display = 'flex';
     document.getElementById('gene_cuenta').style.zIndex = '0';
+    document.getElementById('principal_gc_mt').value = 'Principal';
 }
 
 function ingreso_g_multi()
 {
     document.getElementById('gene_cuenta').style.display = 'flex';
     document.getElementById('gene_cuenta').style.zIndex = '10';
+    document.getElementById('principal_gc_mt').value = 'Multipago';
 }
 
 //generar multipago

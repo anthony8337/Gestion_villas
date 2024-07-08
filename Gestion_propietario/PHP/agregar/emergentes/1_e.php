@@ -70,7 +70,11 @@
     
         <button type="button" title="Ingresar propietario" onclick="sele_pro_gp()">Seleccionar</button>
     
-    <input type="text" id="id_propi_gc" name="id_propi_gc" class="interno">
+    <input type="hidden" id="id_propi_gc" name="id_propi_gc">
+
+    <input type="hidden" id="principal_gc_mt" name="principal_gc_mt">
+
+    <input type="hidden" id="telefono_gc_mt" name="telefono_gc_mt">
 
     <?php
     $nombre = ['Villa:','Propietario:'];
@@ -198,6 +202,7 @@ $(document).ready(function(){
 
 if (accion === 'crear') {
     url = 'PHP/agregar/emergentes/subs/accion_generar/insertar_cuenta.php';
+
 } else if (accion === 'modificar') {
     url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
 }   else if (accion === 'eliminar') {
@@ -213,6 +218,12 @@ if (accion === 'crear') {
                 var codigo_suma = document.getElementById('codigo_cuenta').value
 
                 document.getElementById('codigo_cuenta').value = +codigo_suma + 1;
+                
+                if(document.getElementById('principal_gc_mt').value == 'Multipago')
+                {
+
+                    recargar_tabla_multi_gc();
+                }
 
                 /*
                 $.ajax({

@@ -73,12 +73,19 @@ button img
 
 /*Aspecto de las tablas*/
 
+
+
 .contenido_tabla
 {
 background-color: white;
 overflow: auto;
 height: 100px;
 border: 1px solid gray;
+}
+
+.principal_tabla_1
+{
+    height: calc(100% - 225px);
 }
 
 .tabla_multi_cuentas

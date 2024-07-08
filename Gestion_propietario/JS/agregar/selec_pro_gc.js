@@ -11,10 +11,12 @@
         var id = celdas[0].innerText;
         var nombre = celdas[1].innerText;
         var villa = celdas[2].innerText;
+        var telefono = celdas[4].innerText;
 
         document.getElementById('id_propi_gc').value = id;
         document.getElementById('txt_villa_gc').value = nombre;
         document.getElementById('txt_propietario_gc').value = villa;
+        document.getElementById('telefono_gc_mt').value = telefono;
 
         cerrar_sele_pro_gp();
       });

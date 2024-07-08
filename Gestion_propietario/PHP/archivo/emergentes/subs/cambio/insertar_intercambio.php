@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 } else {
     echo"<script>
-    window.alert('no funciono :(');
+    window.alert('no funciono');
     </script>";
 }
 

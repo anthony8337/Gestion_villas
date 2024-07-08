@@ -1,4 +1,4 @@
-<div class="contenido_tabla" id="tabla_contenido_propi">
+<div class="principal_tabla_1 contenido_tabla " id="tabla_contenido_propi">
 
 <table id="tab_pro"> 
 <tr class="cabezal">
