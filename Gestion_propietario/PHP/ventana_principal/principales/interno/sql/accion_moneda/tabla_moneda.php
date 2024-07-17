@@ -32,6 +32,7 @@ if($result -> num_rows > 0)
     <th>Moneda</th>
     <th>Abreviado</th>
     <th>Cambio</th>
+    <th></th>
     </tr>";
 
     while ($row = $result->fetch_assoc()) {
@@ -41,6 +42,11 @@ if($result -> num_rows > 0)
         <td>",$row["nombre"],"</td>
         <td>",$row["simbolo"],"</td>
         <td>",$row["valor"],"</td>
+         <td>
+<button type='button' class='editar_usuario' onclick='modificar_moneda(),ingreso_moneda_r()'>
+<img src='Imagenes/pencil-fill.svg'>
+</button>
+</td>
         </tr>
         ";
     }

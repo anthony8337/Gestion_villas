@@ -17,21 +17,19 @@ h2
 {
     position: fixed;
     top: 0;
-    left: 95px;
-    width: calc(100% - 95px);
+    left: 92px;
+    width: calc(100% - 92px);
     height: 100%;
     overflow: auto;
     z-index: -1;
     padding: 0px;
 }
 
-#cuerpo_pagina .menu_ho
+.menu_ho
 {
     background: #778aff;
     height: 50px;
     margin-left: 0px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
     padding-left: 0px;
     
 }

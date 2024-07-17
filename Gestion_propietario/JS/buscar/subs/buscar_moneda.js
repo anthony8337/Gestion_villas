@@ -1,7 +1,6 @@
-
-function buscar_moneda() {
-  var textoBusqueda = document.getElementById('bus_moneda').value.toLowerCase();
-  var tabla = document.getElementById('M_tabla');
+function bus_moneda_usar() {
+  var textoBusqueda = document.getElementById('txt_bus_moneda').value.toLowerCase();
+  var tabla = document.getElementById('tabla_moneda');
   var filas = tabla.getElementsByTagName('tr');
   for (var i = 1; i < filas.length; i++) {
     var celdas = filas[i].getElementsByTagName('td');
@@ -25,4 +24,4 @@ function buscar_moneda() {
   }
 }
 
-document.getElementById("bus_moneda").addEventListener("keyup", buscar_moneda);
+document.getElementById("txt_bus_moneda").addEventListener("keyup", bus_moneda_usar);

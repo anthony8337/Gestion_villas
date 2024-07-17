@@ -32,16 +32,22 @@ if($result -> num_rows > 0)
       <th>Tipo</th>
       <th>Valor</th>
       <th>Referencia</th>
+      <th></th>
    </tr>";
 
     while ($row = $result->fetch_assoc()) {
         echo"
-        <tr onclick='modificar_concepto()'>
+        <tr>
         <td class='interno'>",$row["id_concepto"],"</td>
         <td>",$row["concepto"],"</td>
         <td>",$row["tipo"],"</td>
         <td>",$row["valor"],"</td>
         <td>",$row["referencia"],"</td>
+        <td>
+<button type='button' class='editar_usuario' onclick='modificar_concepto(),ingreso_concepto_r()'>
+<img src='Imagenes/pencil-fill.svg'>
+</button>
+</td>
         </tr>
         ";
     }

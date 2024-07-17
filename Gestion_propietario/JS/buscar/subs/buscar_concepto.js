@@ -1,7 +1,7 @@
 
-function buscar_moneda() {
+function bus_con_usar() {
   var textoBusqueda = document.getElementById('bus_concepto').value.toLowerCase();
-  var tabla = document.getElementById('C_tabla');
+  var tabla = document.getElementById('tabla_concepto');
   var filas = tabla.getElementsByTagName('tr');
   for (var i = 1; i < filas.length; i++) {
     var celdas = filas[i].getElementsByTagName('td');
@@ -25,4 +25,4 @@ function buscar_moneda() {
   }
 }
 
-document.getElementById("bus_concepto").addEventListener("keyup", buscar_moneda);
+document.getElementById("bus_concepto").addEventListener("keyup", bus_con_usar);

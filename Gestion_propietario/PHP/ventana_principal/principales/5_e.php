@@ -3,7 +3,7 @@
 
 <div id="con_registro" class="mod">
 
-<div class="centro">
+<div class="centro centro_emergentes_admin">
 
 <div class="c1">
 <h2>Ingresar concepto</h2>
@@ -11,24 +11,41 @@
 
 </div>
 
-<div class="c2">
-
-
-
 <form id="form_concepto">
 
-<input type="text" name="id_concepto" id="id_concepto" class="interno">
+<div class="c2">
 
+<input type="hidden" name="id_concepto" id="id_concepto">
+
+<fieldset>
+<legend>Nombre del concepto</legend>
 <input type="text" name="txt_concepto" id="txt_concepto" placeholder="Nombre del concepto" title="Nombre del concepto">
+</fieldset>
+
+<div>
+
+<fieldset>
+<input type="radio" name="opcion_concepto" id="rb_abono" value="Abono" onclick="abono()" checked> Abono
+<input type="radio" name="opcion_concepto" id="rb_cargo" value="Cargo" onclick="cargo()"> Cargo
+</fieldset>
+
+<fieldset>
+<legend>Valor</legend>
+<input type="text" name="txt_valor_concepto" id="txt_cantidad" placeholder="Valor" title="Valor del concepto">
+</fieldset>
+
+</div>
+
+
 <table>
     <tr>
-        <td><input type="radio" name="opcion_concepto" id="rb_abono" value="Abono" onclick="abono()" checked> Abono</td>
+        <td></td>
 
-        <td><input type="radio" name="opcion_concepto" id="rb_abono" value="Cargo" onclick="cargo()"> Cargo</td>
+        <td></td>
     </tr>
 
     <tr>
-        <td><input type="text" name="txt_valor_concepto" id="txt_cantidad" placeholder="Valor" title="Valor del concepto"></td>
+        <td></td>
 
         <td><input type="checkbox" id="ck_refe" name="ck_refe" disabled> Referencia</td>
     </tr>
@@ -40,10 +57,10 @@
     </tr>
 </table>
 
-</form>
+
 
 </div>
-
+</form>
 
 </div>
 

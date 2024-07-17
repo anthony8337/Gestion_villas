@@ -2,7 +2,7 @@
 
 <div id="grupo_villa" class="mod">
 
-<div class="centro">
+<div class="centro centro_emergentes_admin">
 
 <div class="c1">
 
@@ -16,41 +16,12 @@
 
 <div class="c2">
 
-<table>
-  
+<input type="hidden" id="id_grupo_villa" name="id_grupo_villa">
 
-<?php
-$campos = ['Grupo de villa',''];
-$nombre_id =['txt_grupo_villa','id_grupo_villa'];
-$tipo = ['text','text'];
-echo"<tr>";
-for ($i=0; $i < count($campos); $i++) {
-
-    if($i == 1)
-    {
-        echo"
-        <td class = 'interno'>
-        <fieldset>
-        <legend>$campos[$i]</legend>
-        <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]'>
-        </fieldset>
-        </td>
-        ";
-    }else
-    {
-       echo"
-        <td>
-        <fieldset>
-        <legend>$campos[$i]</legend>
-        <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]' placeholder='$campos[$i]' required title='Por favor, llenar este campo'>
-        </fieldset>
-        </td>
-        ";
-    }
-}
-echo"</tr>";
-?>
-</table>
+<fieldset>
+    <legend>Grupo de villa</legend>
+    <input type="text" name="txt_grupo_villa" id="txt_grupo_villa" title="Grupo de villa">
+</fieldset>
 
 </div>
 
@@ -60,7 +31,6 @@ echo"</tr>";
 <button id="crear_grupo" type="submit">Crear</button>
 <button id="modificar_grupo" type="submit">Modificar</button>
 <button id="eliminar_grupo" type="submit">Eliminar</button>
-
 
 </div>
 </form>

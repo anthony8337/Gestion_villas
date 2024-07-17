@@ -25,7 +25,7 @@ echo"
 </ul>
 </div>
 
-<div id="protector" onclick="minimizar()">
+
 
 </div>
 

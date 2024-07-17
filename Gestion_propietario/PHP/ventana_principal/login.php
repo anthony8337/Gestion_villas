@@ -10,92 +10,58 @@
 
 
 <div id="ingresar">
-
-
-    <table>
-
-    <tr>
-            <td>
-            <img src="Imagenes/logo_principal.png">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
+<img src="Imagenes/logo_principal.png">
                 <h2>Gestión de propietario</h2>
-            </td>
-        </tr>
 
-        
-        <tr>
-            <td>
-                
-                <input type="text" placeholder="Nombre de usuario" selected>
-            </td>
-        </tr>
+                <form id="entrar_sistema_login">
+                <input type="text" name="txt_usuario_l" id="txt_usuario_l" placeholder="Nombre de usuario" required>
 
-        <tr>
-            <td>
-                <input type="password" placeholder="Contraseña">
-            </td>
-        </tr>
+                <input type="password" name="txt_clave_l" id="txt_clave_l" placeholder="Contraseña" required>
 
-        <tr>
-            <td>
+                <button type="submit" >Entrar</button>
+                </form>
+
                 <label onclick="recuperar()">Recuperar usuario y contraseña</label>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <button onclick="redirigir()">Entrar</button>
-            </td>
-        </tr>
-    </table>
+               
 </div>
 
 <div id="recuperar">
 
-
-
-    <table>
-
-    <tr>
-            <td>
             <img src="Imagenes/logo_principal.png">
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <h2>Gestión de propietario</h2>
-            </td>
-        </tr>
-
-        
-        <tr>
-            <td>
                 
-                <input type="text" placeholder="Ingresar numero de whatsaap o correo" selected>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
+                <input type="text" placeholder="Ingresar numero de whatsapp o correo">
+                <button onclick="">Obtener contraseña</button>
                 <label onclick="regresar()">Regresar</label>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <button onclick="redirigir()">Obtener contraseña</button>
-            </td>
-        </tr>
-    </table>
+                
 </div>
 
 </div>
 
+<div id="respuesta_login"></div>
 
 
+<script>
+
+$(document).ready(function(){
+    $('#entrar_sistema_login').submit(function(e){
+        e.preventDefault();
+
+        var form =$('#entrar_sistema_login').serialize();
+    $.ajax({
+    type: 'POST',
+    url : 'PHP/ventana_principal/principales/interno/sql/entrar_sistema.php',
+    data: form,
+    success: function(response){
+        $('#respuesta_login').html(response);
+
+    }
+});
+        
+
+    });
+});
+
+</script>
 
 </body>

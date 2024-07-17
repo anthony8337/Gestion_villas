@@ -42,7 +42,6 @@
     <script src="JS/agregar/ajax_tabla_multi.js"></script>
     <script src="JS/agregar/selec_cuenta_multipago.js"></script>
     <script src="JS/agregar/selec_cuenta_concepto.js"></script>
-    <script src="JS/buscar/subs/buscar_moneda.js"></script>
     <script src="JS/archivo/selec_donar.js"></script>
     <script src="JS/archivo/selec_dar_villa.js"></script>
     <script src="JS/archivo/selec_recibir.js"></script>
@@ -50,5 +49,6 @@
     <script src="JS/archivo/selec_villa_adi.js"></script>
     <script src="JS/agregar/suma_pagar.js"></script>
     <script src="JS/agregar/recargar_tm.js"></script>
+    <script src="JS/agregar/ejecutar_pago.js"></script>
 </head>
 <body>

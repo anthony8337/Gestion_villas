@@ -36,12 +36,11 @@ margin: 0px;
 {
 display: flex;
 align-items: center;
-justify-content: left;
-padding: 0px;
+justify-content: center;
 
-height: 60px;
+
+height: 80px;
 flex-direction: column;
-padding-left: 25%;
 }
 
 
@@ -52,29 +51,27 @@ padding-left: 25%;
 
 #encojer_menu
 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: fixed;
     top: 5px;
     left: 95px;
-    background-color: #778aff;
-    width: 30px;
+    padding: 0px;
+
     height: 30px;
-    border-radius: 50%;
+    width: 30px;
 }
 
-#encojer_menu img
-{
-    margin-top: 2.4px;
-    margin-left: 2.4px;
-    width: 80%;
-    height: auto;
-}
+
 
 li
 {
 padding-top: 10px;
 }
 
-li:hover,#encojer_menu:hover, #cuerpo_pagina div div ul li:hover
+li:hover, #cuerpo_pagina div div ul li:hover
 {
     cursor: pointer;
     background: #586ef1;

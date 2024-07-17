@@ -4,11 +4,7 @@
 
 <h2>Bienvenido Usuario</h2>
 
-<div id="confi_usuarios">
-
-<div onclick="redirigir_login()" class="retorno" title="Salir">
-<img src="Imagenes/box-arrow-in-left.svg">
-</div>
+<div class="menu_ho">
 
 <ul>
 <?php
@@ -25,9 +21,6 @@
     ?>
 </ul>
 
-<div onclick="redirigir_sistema()" class="entrada" title="Entrar a gestión">
-    <img src="Imagenes/box-arrow-in-right.svg">
-</div>
 
 </div>
 

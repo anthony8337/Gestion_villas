@@ -8,8 +8,6 @@
     overflow: auto;
 }
 
-
-
 .c1
 {
     background-color: #b4b4b4;
@@ -88,9 +86,14 @@ border: 1px solid gray;
     height: calc(100% - 225px);
 }
 
+.principal_tabla_2
+{
+    height: calc(100% - 40px);
+}
+
 .tabla_multi_cuentas
 {
-    height: 200px;
+    height: 170px;
     margin-top: 10px;
 }
 
@@ -140,34 +143,41 @@ background-color: #e5e5e5;
 
 .c2,.c3,.c4,.c5,.c6
 {
-    padding: 10px 10px 0px 10px;
+    padding: 2px 10px 0px 10px;
 }
 
 textarea
 {
     width: 100%;
-    height: 100%;
+    height: 50px;
     resize: none;
 }
 
 input[type = "text"],input[type = "date"],input[type = "password"]
 {
-height: 30px;
+height: 25px;
 width: 100%;
 text-align: center;
+border-radius: 5px;
+border: 1px solid #b8b8b8;
+
 }
 
 select
 {
-    height: 35px;
+    height: 30px;
     width: 100%;
     text-align: center;
+    border-radius: 5px;
+    border: 1px solid #b8b8b8;
+    background-color: #ffffff;
+    padding: 0px;
 }
 
 button
 {
     width: 100%;
-    height: 35px;
+    height: 30px;
 }
 /*Especiales*/
 
@@ -304,8 +314,56 @@ width: 95%;
     width: 33%;
 }
 
-/*borrar*/
-#multi
+.agrupar_confi
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.agrupar_confi fieldset
+{
+    flex: 1 1 200px;
+    height: 300px;
+}
+
+.opciones_villa
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.opciones_villa input[type ="text"],.opciones_villa button
+{
+    flex: 1 1 50px;
+}
+/*Mini ventanas de admin*/
+.centro_emergentes_admin
+{
+    width: 400px;
+    height: 270px;
+}
+
+
+
+.centro_emergentes_admin .c3
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.centro_emergentes_admin .c3 button
+{
+    flex: 1 1 100px;
+}
+
+/*borrar despues*/
+
+#con_registro
 {
     display: flex;
 }

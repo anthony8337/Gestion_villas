@@ -21,6 +21,22 @@
     display: none;
 }
  
+.login #ingresar input[type = "text"], .login #ingresar input[type = "password"],.login #recuperar input[type = "text"]
+{   
+    height: 35px;
+    width: 95%;
+    margin-bottom: 20px;
+    border: 1px solid #b8b8b8;
+
+}
+
+.login #ingresar button, .login #recuperar button
+{
+    height: 35px;
+    width: 95%;
+    margin-bottom: 20px;
+}
+
 .login #ingresar, .login #recuperar
 {
     background-color: rgba(255, 255, 255, 0.8);
@@ -32,12 +48,15 @@
 
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
 
     filter: drop-shadow(5px 5px 10px rgba(143, 79, 19,0.8));
     border-radius: 10px;
 
     overflow: auto;
+    
 
 }
 
@@ -78,10 +97,7 @@ height: 50px;
 {
     width: 200px;
     height: 200px;
-    position:relative;
-    left: 80px;
-
-    display: flex;
+    margin: 0px;
 }
 
 .login #ingresar table, .login #recuperar table
@@ -109,7 +125,6 @@ width: calc(100% - 20px);
     display: flex;
     width: 500px;
     height: 500px;
-    filter: drop-shadow(5px 5px 10px rgba(143, 79, 19,0.8));
 }
 
 .login #ingresar, .login #recuperar
@@ -125,6 +140,9 @@ width: calc(100% - 20px);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    border-radius: 0px;
 }
 
 .login #recuperar

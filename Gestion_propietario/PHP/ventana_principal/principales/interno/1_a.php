@@ -21,7 +21,7 @@
         </tr>
     </table>
 
-    <div class="contenido_tabla" id="lista_usuarios">
+    <div class="principal_tabla_1 contenido_tabla" id="lista_usuarios">
         <?php
         include "PHP/ventana_principal/principales/tabla_usuarios.php";
         ?>

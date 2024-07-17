@@ -2,7 +2,7 @@
 
 <div id="modelo_villa" class="mod">
 
-<div class="centro">
+<div class="centro centro_emergentes_admin">
 
 <div class="c1">
 
@@ -15,41 +15,12 @@
 
 <div class="c2">
 
-<table>
-  
+<input type="hidden" name="id_modelo_villa" id="id_modelo_villa">
 
-<?php
-$campos = ['Grupo de villa',''];
-$nombre_id =['txt_modelo_villa','id_modelo_villa'];
-$tipo = ['text','text'];
-echo"<tr>";
-for ($i=0; $i < count($campos); $i++) {
-
-    if($i == 1)
-    {
-        echo"
-        <td class = 'interno'>
-        <fieldset>
-        <legend>$campos[$i]</legend>
-        <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]'>
-        </fieldset>
-        </td>
-        ";
-    }else
-    {
-       echo"
-        <td>
-        <fieldset>
-        <legend>$campos[$i]</legend>
-        <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]' placeholder='$campos[$i]' required title='Por favor, llenar este campo'>
-        </fieldset>
-        </td>
-        ";
-    }
-}
-echo"</tr>";
-?>
-</table>
+<fieldset>
+    <legend>Grupo de villa</legend>
+    <input type="text" id="txt_modelo_villa" name="txt_modelo_villa" title="Grupo de villa">
+</fieldset>
 
 </div>
 

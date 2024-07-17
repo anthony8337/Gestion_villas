@@ -4,6 +4,8 @@ function redirigir() {
   }
 
   function redirigir_sistema() {
+    var admin = "abierto";
+    sessionStorage.setItem("admin",admin)
     window.location.href = "principal.php";
   }
 
