@@ -22,50 +22,38 @@
 <input type="text" name="txt_concepto" id="txt_concepto" placeholder="Nombre del concepto" title="Nombre del concepto">
 </fieldset>
 
-<div>
-
-<fieldset>
-<input type="radio" name="opcion_concepto" id="rb_abono" value="Abono" onclick="abono()" checked> Abono
-<input type="radio" name="opcion_concepto" id="rb_cargo" value="Cargo" onclick="cargo()"> Cargo
-</fieldset>
-
 <fieldset>
 <legend>Valor</legend>
 <input type="text" name="txt_valor_concepto" id="txt_cantidad" placeholder="Valor" title="Valor del concepto">
 </fieldset>
 
+<div>
+<fieldset>
+    <legend>Aporte</legend>
+<label for="abono">
+<input type="radio" name="opcion_concepto" id="rb_abono" value="Abono" onclick="abono()" checked>Abono
+</label>
+<label for="cargo">
+<input type="radio" name="opcion_concepto" id="rb_cargo" value="Cargo" onclick="cargo()">Cargo
+</label>
+
+<label for="Referencia">
+<input type="checkbox" id="ck_refe" name="ck_refe" disabled> Referencia
+</label>
+</fieldset>
 </div>
 
-
-<table>
-    <tr>
-        <td></td>
-
-        <td></td>
-    </tr>
-
-    <tr>
-        <td></td>
-
-        <td><input type="checkbox" id="ck_refe" name="ck_refe" disabled> Referencia</td>
-    </tr>
-
-    <tr>
-       <td><button id="crear_concepto" type="submit">Crear</button></td>
-       <td><button id="modificar_concepto" type="submit">Editar</button></td>
-       <td><button id="eliminar_concepto"type="submit">Eliminar</button></td>
-    </tr>
-</table>
-
-
-
 </div>
+
+<div class="c3">
+    <button id="crear_concepto" name="crear_concepto" type="submit">Crear</button>
+    <button id="modificar_concepto" name="modificar_concepto" type="submit">Modificar</button>
+    <button id="eliminar_concepto" name="eliminar_concepto"type="submit">Eliminar</button>
+</div>
+
 </form>
-
 </div>
-
 </div>
-
 
 <script>
 
@@ -93,9 +81,18 @@ $(document).ready(function(){
 if (accion === 'crear') {
     url = 'PHP/ventana_principal/principales/interno/sql/accion_concepto/insertar_concepto.php';
 } else if (accion === 'modificar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+    url = 'PHP/ventana_principal/principales/interno/sql/accion_concepto/modificar_concepto.php';
 }   else if (accion === 'eliminar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+
+    var confirmar = window.confirm('¿Esta seguro de suspender este registro?');
+
+if (confirmar) {
+    url = 'PHP/ventana_principal/principales/interno/sql/accion_concepto/eliminar_concepto.php';
+}
+else
+{
+    url = '';
+}
 }     
         $.ajax({
             type: 'POST',

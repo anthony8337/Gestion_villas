@@ -11,7 +11,7 @@
 <th>Correo</th>
 </tr>
 
-<tbody>
+<tbody id="tbody_propietarios">
 
 <?php
 include "PHP/tablas/mostar_propietarios.php";

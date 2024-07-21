@@ -1,22 +1,9 @@
-<div class="c2">
+var confirmar = window.confirm('¿Esta seguro de suspender este registro?');
 
+if (confirmar) {
 
-    <button type="button" class="btn_re">Propietario</button>
-    <button type="button" class="btn_re">Limpiar</button>
-    
+}
+else
+{
 
-    <select name="ranco_factura" id="ranco_factura">
-        <option>Ultimo pago</option>
-        <option>Historial de pagos</option>
-        <option>Rango de pago</option>
-    </select>
-    
-    
-        <input type="date" name="desde_factura" id="desde_factura">
-    
-
-    
-        <input type="date" name="hasta_factura" id="hasta_factura">
-    
-
-</div>
+}

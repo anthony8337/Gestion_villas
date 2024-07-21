@@ -3,10 +3,28 @@
     background-color: #ffffff;
     border: 1px solid gray;
     border-radius: 5px;
-    width: 95%;
-    height: 95%;
+    width: 1100px;
     overflow: auto;
+    padding-bottom: 10px;
 }
+
+@media screen and (max-width:1100px)
+{
+    .centro
+    {
+        width: 95%;
+        height: 95%;
+    }
+}
+
+@media screen and (max-height:350px)
+{
+    .centro
+    {
+        height: 95%;
+    }
+}
+
 
 .c1
 {
@@ -33,6 +51,17 @@ width: 35px;
 height: 35px;
 }
 
+.c3
+{
+display: flex;
+justify-content: start;
+flex-wrap: wrap;
+}
+
+.c3 button
+{
+    max-width: 200px;
+}
 
 /*Bontes de las tablas*/
 
@@ -71,8 +100,6 @@ button img
 
 /*Aspecto de las tablas*/
 
-
-
 .contenido_tabla
 {
 background-color: white;
@@ -83,7 +110,7 @@ border: 1px solid gray;
 
 .principal_tabla_1
 {
-    height: calc(100% - 225px);
+    height: calc(100% - 210px);
 }
 
 .principal_tabla_2
@@ -153,7 +180,7 @@ textarea
     resize: none;
 }
 
-input[type = "text"],input[type = "date"],input[type = "password"]
+input[type = "text"],input[type = "date"],input[type = "password"],input[type = "email"]
 {
 height: 25px;
 width: 100%;
@@ -339,13 +366,49 @@ width: 95%;
 {
     flex: 1 1 50px;
 }
+
+/*centro de usuarios*/
+
+.usuarios_form
+{
+    width: 900px;
+    
+}
+
+ @media screen and (max-width:900px)
+ {
+    .usuarios_form
+{
+    width: 95%;
+}
+ }
+
+ @media screen and (max-height:600px)
+ {
+    .usuarios_form
+{
+    height: 95%;
+}
+ }
+
+
 /*Mini ventanas de admin*/
+
+
+
 .centro_emergentes_admin
 {
     width: 400px;
     height: 270px;
 }
 
+@media screen and (max-height:600px)
+{
+    .centro_emergentes_admin
+    {
+        height: 95%;
+    }
+}
 
 
 .centro_emergentes_admin .c3
@@ -353,7 +416,7 @@ width: 95%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .centro_emergentes_admin .c3 button
@@ -361,9 +424,78 @@ width: 95%;
     flex: 1 1 100px;
 }
 
-/*borrar despues*/
+.centro_emergentes_admin .c2 div
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-#con_registro
+.centro_emergentes_admin .c2 div fieldset
+{
+    flex: 1 1 100px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+    border: 1px solid #cecece;
+    padding: 4px;
+}
+
+.centro_emergentes_admin .c2 div fieldset input[type="text"]
+{
+width: 100%;
+}
+/*Activacion de usuarios*/
+
+.contenido_tabla_confi_usuarios
+{
+height: 57px;
+}
+
+.contenido_oculto td:nth-child(11), .contenido_oculto td:nth-child(12)
+{
+    display: none;
+}
+
+#usuarios_ingreso .c3
 {
     display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding-top: 10px;
 }
+
+#usuarios_ingreso .c3 button
+{
+flex: 1 1 100px;
+max-width: 200px;
+}
+
+.contenido_tabla_ultima_usuario table td:nth-child(10)
+{
+    width: 25px;
+}
+
+.busqueda_seccion
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.busqueda_seccion button,.busqueda_seccion input[type='text'] ,.busqueda_seccion select
+{
+flex: 1 1 100px;
+max-width: 200px;
+margin: 5px;
+}
+
+.busqueda_seccion input[type='text']
+{
+flex: 1 1 100px;
+max-width: 400px;
+}
+
+/*Panel de usuario*/
+

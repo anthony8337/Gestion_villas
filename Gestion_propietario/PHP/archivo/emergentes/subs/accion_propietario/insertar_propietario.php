@@ -78,9 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $sql3 = "UPDATE villas SET id_estado = '2' WHERE id_villa = '". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."'";
             $result3 = $conn->query($sql3);
-
-            echo "<li>" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "</li>";
-        }
+         }
 
     } else {
 
@@ -89,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 } else {
     echo"<script>
-    window.alert('no funciono :(');
+    window.alert('La accion no se ejecuto con exito');
     </script>";
 }
 

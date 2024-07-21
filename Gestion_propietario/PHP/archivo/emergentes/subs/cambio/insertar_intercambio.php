@@ -2,18 +2,6 @@
 
 <?php
 
-if (isset($_POST['id_rec_pro'])) {
-    $id_pro = $_POST['id_rec_pro'];
- } else {
-    $id_pro = 0;
- }
-
-
-echo"
-<script>
-    window.alert('Sigan viendo');
-</script>
-";
 
 
 $servername = "localhost"; 
@@ -30,7 +18,11 @@ else
 {
 }
 
-
+if (isset($_POST['id_rec_pro'])) {
+    $id_pro = $_POST['id_rec_pro'];
+ } else {
+    $id_pro = 0;
+ }
 
 $id = ['txtnombre_rec','txtrtn_rec','txtcorreo_rec','txt_fecha_rec','txttelefono_rec','Registro por intercambio'];
 

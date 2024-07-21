@@ -16,6 +16,7 @@
 <fieldset>
     <legend>Buscar villa</legend>
 <input type="text" placeholder="Buscar villa" name="txt_busca_villa_propietario" id="txt_busca_villa_propietario" class="buscador">
+<button type="button">Crear Villa</button>
 </fieldset>
 </div>
 

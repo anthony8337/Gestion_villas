@@ -25,9 +25,9 @@ else
 
 
 
-$sql = "SELECT usuarios.id_usuario, usuarios.nombre, usuarios.dni, usuarios.telefono, usuarios.correo, permisos.acceso, usuarios.clave, estado_usuario.estado, usuarios.usuario 
-FROM estado_usuario INNER JOIN usuarios ON estado_usuario.id_estado = usuarios.id_estado 
-INNER JOIN permisos ON usuarios.id_acceso = permisos.id_acceso WHERE estado = '$es_usuario'; ";
+$sql = "
+
+SELECT * FROM vista_usuario WHERE estado = '$es_usuario';";
 
 $result = $conn->query($sql);
 
@@ -47,7 +47,7 @@ if($result -> num_rows > 0)
     <th>Correo</th>
     <th>Acceso</th>
     <th>Contraseña</th>
-    <th colspan = 2>Estado</th>
+    <th>Estado</th>
     <th></th>
 </tr>
     ";
@@ -61,14 +61,15 @@ if($result -> num_rows > 0)
         <td>",$row["telefono"],"</td>
         <td>",$row["correo"],"</td>
         <td>",$row["acceso"],"</td>
-        <td>",$row["clave"],"</td>
-        <td>",$row["estado"],"</td>
-        ";
+        <td>",$row["clave"],"</td>";
+
+
+
 
         if ($row["estado"] == "Activo") {
             echo"
             <td>
-            <label class='verde'></label>
+            <label class='verde'></label> ",$row["estado"],"
             </td>
             ";
         }
@@ -76,7 +77,7 @@ if($result -> num_rows > 0)
         {
             echo"
             <td>
-            <label class='rojo'></label>
+            <label class='rojo'></label> ",$row["estado"],"
             </td>
             ";
         }
@@ -87,6 +88,8 @@ if($result -> num_rows > 0)
         <img src='Imagenes/pencil-fill.svg'>
         </button>
         </td>
+        <td>",$row["nom"],"</td>
+        <td>",$row["ape"],"</td>
         </tr>
         ";
     }

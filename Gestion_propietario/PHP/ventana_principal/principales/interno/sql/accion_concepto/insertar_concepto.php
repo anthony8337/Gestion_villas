@@ -48,7 +48,9 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>window.alert('Concepto registrado con exito');
+    echo"<script>
+    window.alert('Concepto registrado con exito');
+    ingreso_concepto_r_cerrar();
     </script>";
 }
 else

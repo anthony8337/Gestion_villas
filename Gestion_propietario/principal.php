@@ -1,8 +1,8 @@
-
-
 <?php
 include "PHP/raiz/entrada.php";
 ?>
+
+
 
 <script>
 var usuario;

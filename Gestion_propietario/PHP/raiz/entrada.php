@@ -50,5 +50,6 @@
     <script src="JS/agregar/suma_pagar.js"></script>
     <script src="JS/agregar/recargar_tm.js"></script>
     <script src="JS/agregar/ejecutar_pago.js"></script>
+    <script src="JS/actualizar_tablas.js"></script>
 </head>
 <body>

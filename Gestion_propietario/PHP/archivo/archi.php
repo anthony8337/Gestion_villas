@@ -3,7 +3,7 @@
 <ul>
 
 <?php
-    $titulos_archi = ['Nueva villa','Nuevo propietario','Intercambio de villa','Adicionar villa'];
+    $titulos_archi = ['Nueva villa','Nuevo propietario','Intercambiar villa','Adicionar villa'];
     $img_archi = ['house-add-fill(2).svg','person-fill(1).svg','arrow-left-right.svg','houses-fill.svg'];
     $accion = ['ingreso_vi()','ingreso()','v_cambio_abrir()','abrir_adicionar()'];
 

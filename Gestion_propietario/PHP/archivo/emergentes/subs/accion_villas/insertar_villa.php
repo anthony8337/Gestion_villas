@@ -51,8 +51,8 @@ $direccion = $_POST["txa_direccion"];
 $observacion = $_POST["txa_observa_villa"];
 
 
-$sql = "INSERT INTO villas(id_grupo, numero, cont_eeh, habitaciones, lote, id_modelo, id_condicion, id_estado, costo, direccion, observacion) 
-VALUES ('$id_g','$numero_villa','$eeh','$cuartos','$area','$id_m','1','1','0','$direccion','$observacion')";
+$sql = "INSERT INTO villas(id_grupo, numero, cont_eeh, habitaciones, lote, id_modelo, id_condicion, id_estado, direccion, observacion) 
+VALUES ('$id_g','$numero_villa','$eeh','$cuartos','$area','$id_m','1','1','$direccion','$observacion')";
 
 $result = $conn->query($sql);
 

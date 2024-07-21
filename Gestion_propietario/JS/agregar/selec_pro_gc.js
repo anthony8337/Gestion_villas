@@ -1,5 +1,5 @@
 
-  document.addEventListener("DOMContentLoaded", function() {
+  function selec_pro_cuenta(){
     var tabla = document.getElementById("tabla_pro_gc");
     var filas = tabla.getElementsByTagName("tr");
   
@@ -21,4 +21,4 @@
         cerrar_sele_pro_gp();
       });
     }
-  });
+}

@@ -1,27 +1,18 @@
-<table class="filtro_usuario">
-        <tr>
-            <td>
-            <button onclick="ingresar_usuario_in()" title="Agregar un nuevo usuario">Agregar nuevo</button>
-            </td>
 
-            <td>
-            <input id="txt_dato_usuario" type="text" placeholder="Buscar" title="Buscar información del usuario" class="buscador">
-            </td>
+<div class="busqueda_seccion">
+<button onclick="ingresar_usuario_in()" title="Agregar un nuevo usuario">Agregar nuevo</button>
+<input id="txt_dato_usuario" type="text" placeholder="Buscar" title="Buscar información del usuario" class="buscador">
 
-            <td>
-
-            <form id="form_filtro_usuario">
             <select id="selec_est_usuarios" name="selec_est_usuarios" title="Filtrar estado del usuario">
-        <option value="Activo">Activos</option>
-        <option value="Suspendido">Suspendidos</option>
-    </select>
-    </form>
-            </td>
+            <option value="Activo">Activos</option>
+            <option value="Suspendido">Suspendidos</option>
+            </select>  
+</div>
 
-        </tr>
-    </table>
 
-    <div class="principal_tabla_1 contenido_tabla" id="lista_usuarios">
+
+
+    <div class="principal_tabla_1 contenido_tabla contenido_oculto contenido_tabla_ultima_usuario" id="lista_usuarios">
         <?php
         include "PHP/ventana_principal/principales/tabla_usuarios.php";
         ?>

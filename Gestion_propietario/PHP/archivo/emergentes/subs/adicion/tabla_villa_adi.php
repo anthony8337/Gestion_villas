@@ -65,3 +65,5 @@ else
     echo"No se encuentran datos";
 }
 ?>
+
+<script>llamar_tb_villa_adi();</script>

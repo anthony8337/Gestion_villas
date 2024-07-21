@@ -1,3 +1,5 @@
+
+
 <?php
 
 $servername = "localhost"; 
@@ -36,6 +38,7 @@ if($result -> num_rows > 0)
 
     echo"
     <tr>
+    <th></th>
     <th>Impresión de reportes</th>
     <th>Edición de registros</th>
     <th>Eliminar registros</th>
@@ -43,11 +46,37 @@ if($result -> num_rows > 0)
     ";
 
     while ($row = $result->fetch_assoc()) {
+
+
+
+
+        if ($row["impresion_reportes"] == "si") {
+            $a = "<input type='checkbox' checked>";
+        }else {
+            $a = "<input type='checkbox'>";
+        }
+
+        if ($row["edicion"] == "si") {
+            $b = "<input type='checkbox' checked>";
+        }else {
+            $b = "<input type='checkbox'>";
+        }
+
+        if ($row["eliminar"] == "si") {
+            $c = "<input type='checkbox' checked>";
+        }else {
+            $c = "<input type='checkbox'>";
+        }
+
+        
+
+
         echo"
         <tr>
-        <td>",$row["impresion_reportes"],"</td>
-        <td>",$row["edicion"],"</td>
-        <td>",$row["eliminar"],"</td>
+        <td></td>
+        <td>",$a,"</td>
+        <td>",$b,"</td>
+        <td>",$c,"</td>
         <tr>
         ";
     }

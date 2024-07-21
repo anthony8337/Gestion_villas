@@ -44,7 +44,7 @@ if($result -> num_rows > 0)
         <td>",$row["valor"],"</td>
         <td>",$row["referencia"],"</td>
         <td>
-<button type='button' class='editar_usuario' onclick='modificar_concepto(),ingreso_concepto_r()'>
+<button type='button' class='editar_usuario' onclick='modificar_concepto(),ingreso_concepto_m_r()'>
 <img src='Imagenes/pencil-fill.svg'>
 </button>
 </td>

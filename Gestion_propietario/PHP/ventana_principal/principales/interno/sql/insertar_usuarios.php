@@ -14,7 +14,7 @@ else
 {
 }
 
-$nombre_id =['txt_usuario','txt_nombre','txt_dni','txt_tele','txt_correo','txt_clave','txt_tipo'];
+$nombre_id =['txt_usuario','txt_nombre','txt_dni','txt_tele','txt_correo','txt_clave','txt_tipo','txt_apellido'];
 
 $txt_usuario = $_POST[$nombre_id[0]];
 $txt_nombre = $_POST[$nombre_id[1]];
@@ -23,6 +23,7 @@ $txt_tele = $_POST[$nombre_id[3]];
 $txt_correo = $_POST[$nombre_id[4]];
 $txt_clave = $_POST[$nombre_id[5]];
 $txt_tipo = $_POST[$nombre_id[6]];
+$txt_apellido = $_POST[$nombre_id[7]];
 
 $valor;
 
@@ -42,8 +43,8 @@ else
 }
 
 
-$sql = "INSERT INTO usuarios( nombre, dni, telefono, correo, id_acceso, clave, id_estado, usuario) 
-VALUES ('$txt_nombre','$txt_dni','$txt_tele','$txt_correo','$valor','$txt_clave','1','$txt_usuario')";
+$sql = "INSERT INTO usuarios( nombre, apellido, dni, telefono, correo, id_acceso, clave, id_estado, usuario) 
+VALUES ('$txt_nombre','$txt_apellido','$txt_dni','$txt_tele','$txt_correo','$valor','$txt_clave','1','$txt_usuario')";
 
 
 $result = $conn->query($sql);

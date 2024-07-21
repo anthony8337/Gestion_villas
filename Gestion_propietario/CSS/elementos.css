@@ -49,7 +49,27 @@ h2
     height: 50px;
     width: 200px;
     padding: 0px;
+    flex-direction: column;
+    font-size: 10px;
 }
+
+
+@media screen and (min-width: 600px){
+
+    .menu_ho ul li
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 200px;
+    padding: 0px;
+    flex-direction: row;
+    font-size: 15px;
+}
+    
+}
+
 
 img
 {

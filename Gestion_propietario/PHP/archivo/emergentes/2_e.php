@@ -139,6 +139,8 @@ for ($i=0; $i < count($titulo); $i++) {
             data: $.param(formData),
             success: function(response){
                 $('#respuesta_villa').html(response);
+                actualizar_villas_propietario(); 
+                actualizar_villas_adicionar();
             }
         });
     });

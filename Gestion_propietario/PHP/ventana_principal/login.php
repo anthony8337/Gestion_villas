@@ -2,6 +2,17 @@
 
 <body class="login">
 
+<script>
+window.history.pushState({ noBackExits: true }, "");
+window.addEventListener("popstate", function(event) {
+    if (event.state && event.state.noBackExits) {
+        window.location.href = "index.php";
+        window.history.pushState({ noBackExits: true }, "");
+    }
+});
+</script>
+
+
 <div class="mapa">
 
 <div class="imagen">

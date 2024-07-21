@@ -53,3 +53,5 @@ else
     echo"No se encuentran datos";
 }
 ?>
+
+<script>selec_pro_cuenta();</script>

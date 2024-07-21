@@ -22,7 +22,7 @@
 
 <div class="c4 ">
 
-<div id="tabla_propietario_multi" class="contenido_tabla completar_vista_cuadro">
+<div id="tabla_concepto_multi" class="contenido_tabla completar_vista_cuadro">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_concepto_multi.php";
     ?>

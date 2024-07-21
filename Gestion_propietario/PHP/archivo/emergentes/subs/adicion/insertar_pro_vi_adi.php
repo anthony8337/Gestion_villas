@@ -38,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sql3 = "UPDATE villas SET id_estado = '2' WHERE id_villa = '". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."'";
             $result3 = $conn->query($sql3);
 
-            echo "<li>" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "</li>";
         }
         echo"<script>
         window.alert('Villa adicionada con exito');
@@ -46,12 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
     }
 
-    echo "<pre>";
-    print_r($clientes); // Muestra todos los datos del formulario
-    echo "</pre>";
+
 } else {
     echo"<script>
-    window.alert('no funciono :(');
+    window.alert('Los datos no se insertaron con exito');
     </script>";
 }
 

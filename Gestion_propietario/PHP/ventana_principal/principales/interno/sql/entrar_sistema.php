@@ -16,7 +16,7 @@ else
 $nombre= $_POST["txt_usuario_l"];
 $clave= $_POST["txt_clave_l"];
 
-$sql = "SELECT id_usuario, nombre, dni, telefono, correo, acceso, clave, estado, usuario FROM vista_usuario WHERE usuario = '$nombre'";
+$sql = "SELECT * FROM vista_usuario WHERE usuario = '$nombre'";
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
@@ -27,8 +27,11 @@ if($result -> num_rows > 0)
         $valor = $row["usuario"];
         $clave1 = $row["clave"];
         $acceso = $row["acceso"];
+        $estado = $row["estado"];
 
-        if ($valor == $nombre && $clave1 == $clave)
+        if ($estado == "Activo") {
+        
+            if ($valor == $nombre && $clave1 == $clave)
         {
             if ($acceso == "Administrador")
             {
@@ -59,8 +62,15 @@ if($result -> num_rows > 0)
             </script>
             ";
         }
-
-
+    }
+    else
+    {
+        echo"
+        <script>
+        window.alert('Usuario y contraseña no coinciden, por favor verifica si son correctos');
+        </script>
+        ";
+    }
 }
 }
 else

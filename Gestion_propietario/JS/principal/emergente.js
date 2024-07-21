@@ -3,7 +3,7 @@ function ingresar_usuario_in()
     document.getElementById('usuarios_ingreso').style.display = 'flex';
     document.getElementById('crear_usuario').style.display ='block';
     document.getElementById('modificar_usuario').style.display ='none';
-    document.getElementById('estado_usuario').style.display ='none';
+    document.getElementById('borrar_usuario').style.display ='none';
 }
 
 function cerrar_usuario_in()
@@ -16,7 +16,7 @@ function ingresar_usuario_edi()
     document.getElementById('usuarios_ingreso').style.display = 'flex';
     document.getElementById('crear_usuario').style.display ='none';
     document.getElementById('modificar_usuario').style.display ='block';
-    document.getElementById('estado_usuario').style.display ='block';
+    document.getElementById('borrar_usuario').style.display ='block';
 }
 
 function abrir_grupo_villa()

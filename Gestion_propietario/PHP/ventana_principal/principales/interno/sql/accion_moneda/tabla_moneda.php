@@ -43,7 +43,7 @@ if($result -> num_rows > 0)
         <td>",$row["simbolo"],"</td>
         <td>",$row["valor"],"</td>
          <td>
-<button type='button' class='editar_usuario' onclick='modificar_moneda(),ingreso_moneda_r()'>
+<button type='button' class='editar_usuario' onclick='modificar_moneda(),ingreso_moneda_mod_r()'>
 <img src='Imagenes/pencil-fill.svg'>
 </button>
 </td>

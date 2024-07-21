@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+function llamar_tb_villa_pro(){
+
     const originalTable = document.getElementById('tabla_villa_pro').getElementsByTagName('tbody')[0];
     const destinationTable = document.getElementById('tabla_villa_pro_selec').getElementsByTagName('tbody')[0];
 
@@ -24,5 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
             cerrar_selecciona_villa_propi();
         }
     });
-    
-});
+}

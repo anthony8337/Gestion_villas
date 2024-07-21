@@ -1,8 +1,6 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/ventana_principal/mod_usu.css'>
-
 <div id="usuarios_ingreso" class="mod">
 
-<div class="centro">
+<div class="centro usuarios_form">
 
 <div class="c1">
 
@@ -15,102 +13,44 @@
 
 <div class="c2">
 
-<table>
-    <tr>
+<input type="hidden" name="txt_id" id="txt_id">
 
 <?php
 
-$campos = ['Usuario','Nombre Completo','DNI','Teléfono','Correo','Contraseña','Tipo de usuario','Estado',''];
-$nombre_id =['txt_usuario','txt_nombre','txt_dni','txt_tele','txt_correo','txt_clave','txt_tipo','txt_estado','txt_id'];
-$tipo = ['text','text','text','text','text','password','text','text','text'];
+$campos = ['Nombre','Apellido','DNI','Teléfono','Correo','Usuario','Contraseña','Tipo de usuario'];
+$nombre_id =['txt_nombre','txt_apellido','txt_dni','txt_tele','txt_correo','txt_usuario','txt_clave','txt_tipo'];
+$tipo = ['text','text','text','text','email','text','password','text'];
 
+for ($i=0; $i < count($campos); $i++) 
+{ 
 
-
-
-    echo"<tr>";
-
-for ($i=0; $i < count($campos) - 5; $i++) {
-    
+    if($i == count($campos)-1)
+    {
         echo"
         <td>
         <fieldset>
         <legend>$campos[$i]</legend>
-        <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]' placeholder='$campos[$i]' required title='Por favor, llenar este campo'>
-        </fieldset>
-        </td>
-        ";
-    }
-
-echo"</tr>";
-
-echo"<tr>";
-
-for ($i=4; $i < count($campos); $i++) { 
-
-    if($i == count($campos)-1)
-    {
-    echo"
-    <td>
-    <fieldset class='interno'>
-    <legend>$campos[$i]</legend>
-    <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]' placeholder='$campos[$i]'>
-    </fieldset>
-    </td>
-    ";
-    }else if($i == count($campos)-2)
-    {
-        echo"
-        <td>
-        <fieldset id='estado_usuario'>
-        <legend>$campos[$i]</legend>
         <select id='$nombre_id[$i]' name='$nombre_id[$i]'>",
-        include "PHP/ventana_principal/principales/interno/sql/estado_usuario.php"
+        include "PHP/ventana_principal/principales/interno/sql/tipo_usuario.php"
         ,"
         </select>
         </fieldset>
         </td>
         ";
-
-
-        
     }
     else
-
-    if($i == count($campos)-3)
     {
-    echo"
-    <td>
-    <fieldset>
-    <legend>$campos[$i]</legend>
-    <select id='$nombre_id[$i]' name='$nombre_id[$i]'>",
-    include "PHP/ventana_principal/principales/interno/sql/tipo_usuario.php"
-    ,"
-    </select>
-    </fieldset>
-    </td>
-    ";
-    }else{
-
-    echo"
-    <td>
-    <fieldset>
-    <legend>$campos[$i]</legend>
-    <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]' placeholder='$campos[$i]'>
-    </fieldset>
-    </td>
-    ";
+        echo"
+        <fieldset>
+        <legend>$campos[$i]</legend>
+        <input id='$nombre_id[$i]' name='$nombre_id[$i]' type='$tipo[$i]' title='$campos[$i]' placeholder='$campos[$i]' required title='Por favor, llenar este campo'>
+        </fieldset>
+        ";    
     }
+
+
 }
-echo"</tr>";
-    
-
-
-
 ?>
-
-
-</tr>
-</table>
 
 </div>
 
@@ -119,7 +59,7 @@ echo"</tr>";
 
 <button id="crear_usuario" type="submit">Crear</button>
 <button id="modificar_usuario" type="submit">Modificar</button>
-
+<button id="borrar_usuario" type="submit">Suspender</button>
 
 </div>
 </form>
@@ -143,15 +83,31 @@ $(document).ready(function(){
         accion = 'modificar';
     });
 
+    $('#borrar_usuario').click(function() {
+        accion = 'borrar';
+    });
+
     $('#formulario_usuario').submit(function(e){
         e.preventDefault();
 
         let url = '';
 
 if (accion === 'crear') {
+
     url = 'PHP/ventana_principal/principales/interno/sql/insertar_usuarios.php';
 } else if (accion === 'modificar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_usuarios.php';
+ url = 'PHP/ventana_principal/principales/interno/sql/modificar_usuarios.php';
+} else if (accion === 'borrar'){
+    var decidir = confirm("¿Deseas eliminar este registro?");
+    if(decidir)
+    {
+        url = 'PHP/ventana_principal/principales/interno/sql/eliminar_usuarios.php';
+    }
+    else
+    {
+        url = '';
+    }
+
 }       
         $.ajax({
             type: 'POST',

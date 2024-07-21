@@ -32,17 +32,9 @@ for ($i=0; $i < count($m_d); $i++) {
 </div>
 
 <div class="c3">
-<?php
-
-$m_d= ['txt_m_1','txt_m_2','txt_m_3'];
-$m_p= ['Nombre de moneda','Simbolo de moneda','Valor a lempira'];
-
-for ($i=0; $i < count($m_d); $i++) { 
-    echo"
-    <button id='agre_moneda' name='agre_moneda' type='submit' >Agregar</button>
-    ";
-}
-?>
+<button id='agre_moneda' name='agre_moneda' type='submit' >Agregar</button>
+<button id='modi_moneda' name='modi_moneda' type='submit' >Modificar</button>
+<button id='eli_moneda' name='eli_moneda' type='submit' >Eliminar</button>
 </div>
 
 </form>
@@ -64,11 +56,11 @@ $(document).ready(function(){
         accion = 'crear';
     });
 
-    $('#modificar_concepto').click(function() {
+    $('#modi_moneda').click(function() {
         accion = 'modificar';
     });
 
-    $('#eliminar_concepto').click(function() {
+    $('#eli_moneda').click(function() {
         accion = 'eliminar';
     });
 
@@ -80,9 +72,21 @@ $(document).ready(function(){
 if (accion === 'crear') {
     url = 'PHP/ventana_principal/principales/interno/sql/accion_moneda/insertar_moneda.php';
 } else if (accion === 'modificar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+    url = 'PHP/ventana_principal/principales/interno/sql/accion_moneda/modificar_moneda.php';
 }   else if (accion === 'eliminar') {
-    url = 'PHP/ventana_principal/principales/interno/sql/modificar_conceptos.php';
+
+    
+
+var confirmar = window.confirm('¿Esta seguro de suspender este registro?');
+
+if (confirmar) {
+    url = 'PHP/ventana_principal/principales/interno/sql/accion_moneda/eliminar_moneda.php';   
+}
+else
+{
+    url = '';
+}
+    
 }     
         $.ajax({
             type: 'POST',

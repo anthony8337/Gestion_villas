@@ -10,7 +10,7 @@
     for ($i=0; $i < count($titulos_agre); $i++) {
         echo"
         <li onclick='$abrir[$i]' title='$titulos_agre[$i]'><img src='Imagenes/$img_agre[$i]'>
-        <label class='titulos_grandes'>$titulos_agre[$i]</label></li>
+        <span class='titulos_grandes'>$titulos_agre[$i]</span></li>
         ";
     }
     ?>

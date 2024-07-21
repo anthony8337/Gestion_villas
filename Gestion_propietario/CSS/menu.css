@@ -37,12 +37,9 @@ margin: 0px;
 display: flex;
 align-items: center;
 justify-content: center;
-
-
 height: 80px;
 flex-direction: column;
 }
-
 
 #menu_lateral ul #li_0
 {

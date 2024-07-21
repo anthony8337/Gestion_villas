@@ -75,7 +75,6 @@ for ($i=0; $i < count($pal); $i++) {
 <div class = "c3">
     <button type="submit" id="agregar_propietario">Agregar</button>
     <button type="button">Limpiar</button>
-    <button type="button">Cancelar</button>
 </div>
 
 
@@ -112,6 +111,9 @@ for ($i=0; $i < count($pal); $i++) {
                 data: $.param(formData),
                 success: function(response){
                     $('#respuesta_propietario').html(response);
+                    actualizar_propietarios();
+                    actualizar_propietarios_cuenta();
+                    actualizar_propietarios_multipago();
                 }
             });
         });

@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+
+function llamar_tb_villa_adi() {
+
     const originalTable = document.getElementById('tabla_villa_pro_adicionar').getElementsByTagName('tbody')[0];
     const destinationTable = document.getElementById('tabla_villa_adi').getElementsByTagName('tbody')[0];
 
@@ -24,5 +26,4 @@ document.addEventListener('DOMContentLoaded', () => {
             cerrar_pro_adicionar_tabla();
         }
     });
-    
-});
+}
