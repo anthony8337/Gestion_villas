@@ -12,11 +12,9 @@
 
 <form id="Formulario_villa">
 <div class="c2">
-
-
 <?php
 
-$titulo = ['Número de villa','Contador de EEH','Habitaciones','Area de construcción','Modelo de villa'];
+$titulo = ['Número de villa','Contador de EEH','Habitaciones','Area de construcción (metros)','Modelo de villa'];
 $nombre_id=['txt_cod_villa','txt_eeh_villa','txt_cuarto_vi','txt_construc_vi','sel_villa'];
 $tipo = ['text','text','text','text','text'];
 
@@ -71,7 +69,7 @@ for ($i=0; $i < count($titulo); $i++) {
 <fieldset class="carac_opcion">
     <legend>Características</legend>
     <button type='button' onclick='agregarDato_cara()'>Agregar</button>
-    <div class="contenido_tabla contenido_tabla_ultima">
+    <div class="contenido_tabla contenido_tabla_ultima contenido_tabla_carac">
     <table id='carac_vi' class='ta_ca_cont'>
     <tbody>
         

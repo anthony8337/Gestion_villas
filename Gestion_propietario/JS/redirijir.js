@@ -11,9 +11,8 @@ function redirigir() {
     window.location.href = "regirigr_p_admin.php";
   }
 
-  function redirigir_login() {
-
-    var admin = "";
-    sessionStorage.setItem('admin',admin);
+  function redirigir_login() 
+  {
+    sessionStorage.clear();
     window.location.href = "index.php";
   }

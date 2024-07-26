@@ -12,7 +12,7 @@
 
 
 
-    <div class="principal_tabla_1 contenido_tabla contenido_oculto contenido_tabla_ultima_usuario" id="lista_usuarios">
+    <div class="principal_tabla_1 contenido_tabla contenido_oculto contenido_tabla_ultima_usuario usuarios_acciones" id="lista_usuarios">
         <?php
         include "PHP/ventana_principal/principales/tabla_usuarios.php";
         ?>

@@ -30,17 +30,19 @@ $sql2= "UPDATE cuentas SET pagado='Pagado' WHERE id_cuenta ='$id_cuenta';";
 
 $result = $conn->query($sql);
 
-if ($result == true) {
-        echo"<script>window.alert('Cuenta pagada con exito');
-        </script>";
-}
-
 $result2 = $conn->query($sql2);
 
-if ($result2 == true) {
+if ($result == true && $result2 == true) {
         echo"<script>window.alert('Cuenta pagada con exito');
         </script>";
 }
+else
+{
+        echo"<script>window.alert('Ha ocurrido un error');
+        </script>";
+}
+
+
 
 
 ?>

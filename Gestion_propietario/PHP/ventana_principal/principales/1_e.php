@@ -49,9 +49,25 @@ for ($i=0; $i < count($campos); $i++)
     }
 
 
-}
-?>
+}?>
 
+<fieldset id="fl_permisos">
+    <legend>Permisos de acceso</legend>
+    <fieldset>
+        <legend>Impresión de reportes</legend>
+        <input type="checkbox" name="pe_reporte" id="pe_reporte" value="1" checked>
+    </fieldset>
+
+    <fieldset>
+        <legend>Edición de registros</legend>
+        <input type="checkbox" name="pe_registro" id="pe_registro" value="1" checked>
+    </fieldset>
+
+    <fieldset>
+        <legend>Eliminar registros</legend>
+        <input type="checkbox" name="pe_eliminar" id="pe_eliminar" value="1" checked>
+    </fieldset>
+</fieldset>
 </div>
 
 
@@ -116,7 +132,7 @@ if (accion === 'crear') {
             success: function(response){
                 $('#lista_usuarios').html(response);
 
-                $.ajax({
+               $.ajax({
             type: 'GET',
             url: 'PHP/ventana_principal/principales/tabla_usuarios.php',
             data: $(this).serialize(),

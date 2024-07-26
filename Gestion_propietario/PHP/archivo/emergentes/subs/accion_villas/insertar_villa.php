@@ -1,3 +1,6 @@
+
+
+
 <?php
 
 $servername = "localhost"; 
@@ -13,6 +16,35 @@ if ($conn->connect_error) {
 else
 {
 }
+
+$v_existente;
+$unir_codigo = $_POST["cb_grupo"]."-".$_POST["txt_cod_villa"];
+
+$sql0 = "SELECT * FROM cod_villa WHERE villa = '$unir_codigo' LIMIT 1";
+$result0 = $conn->query($sql0);
+if($result0 -> num_rows > 0)
+{
+       while ($row = $result0->fetch_assoc()) {
+
+        $v_existente = $row["villa"];
+}
+}
+else
+{
+    $v_existente = "";
+}
+
+if($v_existente == $unir_codigo)
+{
+    echo"
+    <script>
+    window.alert('Ya existe una villa con este número: ",$v_existente,"');
+    </script>
+    "; 
+}else{
+
+
+
 
 $id_grupo = $_POST["cb_grupo"];
 
@@ -58,9 +90,10 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>window.alert('Villa registrada con exito');
+    echo"
+    <script>
+    confi_villa();
     </script>";
-
 
 }
 else
@@ -105,5 +138,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
 
 }
-
+}
 ?>
+
+<script>
+
+    function confirmar_cv() {
+
+
+
+        var confi_villa_1 = window.confirm("Villa registrada con exito \n¿Deseas crear uno nuevo?");
+
+        if (confi_villa_1) {
+        
+        }
+        else
+        {
+            confirmar_vp();
+        }
+    }
+
+    function confirmar_vp() 
+    {
+        var confi_villa_2 = window.confirm("¿Deseas crear un nuevo propietario?");
+
+    if (confi_villa_2) {
+
+    ingreso();
+    cerrar_ingreso_vi();
+    }
+    else
+    {
+    cerrar_ingreso_vi();
+    }
+    }
+
+</script>

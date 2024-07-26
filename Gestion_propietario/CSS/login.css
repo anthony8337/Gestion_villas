@@ -24,16 +24,21 @@
 .login #ingresar input[type = "text"], .login #ingresar input[type = "password"],.login #recuperar input[type = "text"]
 {   
     height: 35px;
-    width: 95%;
+    width: 100%;
     margin-bottom: 20px;
     border: 1px solid #b8b8b8;
 
 }
 
+.login form
+{
+    width: 95%;
+}
+
 .login #ingresar button, .login #recuperar button
 {
     height: 35px;
-    width: 95%;
+    width: calc(100% + 5px);
     margin-bottom: 20px;
 }
 

@@ -1,4 +1,13 @@
 //propietario ingreso
+
+function contactos() {
+    document.getElementById('agre_contatos').style.display = 'flex';
+}
+
+function cerrar_contactos() {
+    document.getElementById('agre_contatos').style.display = 'none';
+}
+
 function cerrar_ingreso()
 {
 
@@ -32,6 +41,12 @@ function cerrar_ingreso_vi()
 function ingreso_vi()
 {
     document.getElementById('vi').style.display = 'flex';
+}
+
+function ingreso_vi_propi()
+{
+    document.getElementById('vi').style.display = 'flex';
+    document.getElementById('vi').style.zIndex = '10';
 }
 
 //Moneda ingeso
@@ -122,4 +137,16 @@ function abrir_pro_adicionar_tabla()
 function cerrar_pro_adicionar_tabla()
 {
     document.getElementById('selec_villa_adi').style.display = 'none';
+}
+
+//confirma villas
+
+function confi_villa()
+{
+    document.getElementById('confirma_villa_pro').style.display = 'flex';
+}
+
+function cerrar_confi_villa()
+{
+    document.getElementById('confirma_villa_pro').style.display = 'none';
 }

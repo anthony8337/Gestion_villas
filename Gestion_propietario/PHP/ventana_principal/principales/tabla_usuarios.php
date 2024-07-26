@@ -25,9 +25,7 @@ else
 
 
 
-$sql = "
-
-SELECT * FROM vista_usuario WHERE estado = '$es_usuario';";
+$sql = "SELECT * FROM vista_usuario WHERE estado = '$es_usuario';";
 
 $result = $conn->query($sql);
 
@@ -49,7 +47,7 @@ if($result -> num_rows > 0)
     <th>Contraseña</th>
     <th>Estado</th>
     <th></th>
-</tr>
+    </tr>
     ";
 
     while ($row = $result->fetch_assoc()) {
@@ -90,6 +88,9 @@ if($result -> num_rows > 0)
         </td>
         <td>",$row["nom"],"</td>
         <td>",$row["ape"],"</td>
+        <td>",$row["imprimir_reportes"],"</td>
+        <td>",$row["modificar_reportes"],"</td>
+        <td>",$row["eliminar_reportes"],"</td>
         </tr>
         ";
     }

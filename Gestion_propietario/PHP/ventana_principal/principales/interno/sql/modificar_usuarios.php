@@ -46,8 +46,34 @@ dni='$txt_dni',telefono='$txt_tele',correo='$txt_correo',
 id_acceso='$valor',clave='$txt_clave',usuario='$txt_usuario' WHERE id_usuario='$txt_id'
 ";
 
+$result = $conn->query($sql);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["pe_reporte"])) {
+        $pe_reporte = "si";
+    } else {
+        $pe_reporte = "no";
+    }
+
+    if (isset($_POST["pe_registro"])) {
+        $pe_registro = "si";
+    } else {
+        $pe_registro = "no";
+    }
+
+    if (isset($_POST["pe_eliminar"])) {
+        $pe_eliminar = "si";
+    } else {
+        $pe_eliminar = "no";
+    }
+}
+
+
+$sql = "UPDATE acceso_usuario SET imprimir_reportes='$pe_reporte',modificar_reportes='$pe_registro'
+,eliminar_reportes='$pe_eliminar' WHERE id_usuario ='$txt_id'";
 
 $result = $conn->query($sql);
+
 
 if($result == true)
 {
@@ -58,7 +84,7 @@ if($result == true)
 }
 else
 {
-    echo"No se encuentran datos";
+
 }
 
 ?>

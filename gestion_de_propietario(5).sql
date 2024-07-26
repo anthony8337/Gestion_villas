@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 21-07-2024 a las 07:34:37
+-- Tiempo de generación: 26-07-2024 a las 19:14:25
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -24,6 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `acceso_usuario`
+--
+
+CREATE TABLE `acceso_usuario` (
+  `id_acceso_usuario` int NOT NULL,
+  `id_usuario` int NOT NULL,
+  `imprimir_reportes` varchar(2) NOT NULL,
+  `modificar_reportes` varchar(2) NOT NULL,
+  `eliminar_reportes` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `acceso_usuario`
+--
+
+INSERT INTO `acceso_usuario` (`id_acceso_usuario`, `id_usuario`, `imprimir_reportes`, `modificar_reportes`, `eliminar_reportes`) VALUES
+(1, 6, 'no', 'si', 'no'),
+(2, 7, 'no', 'no', 'no'),
+(3, 2, 'no', 'si', 'si');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `caracteristicas`
 --
 
@@ -32,6 +55,16 @@ CREATE TABLE `caracteristicas` (
   `id_villa` int DEFAULT NULL,
   `caracteristica` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `cod_villa`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `cod_villa` (
+`villa` varchar(101)
+);
 
 -- --------------------------------------------------------
 
@@ -93,6 +126,14 @@ CREATE TABLE `cuentas` (
   `pagado` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `codigo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `cuentas`
+--
+
+INSERT INTO `cuentas` (`id_cuenta`, `id_unir`, `id_concepto`, `costo`, `abono`, `desde`, `hasta`, `pagado`, `codigo`) VALUES
+(1, 19, 1, '160', '0', '2024-07-22', '2024-09-22', 'Pagado', '1000000'),
+(2, 19, 1, '160', '0', '2024-07-24', '2024-07-24', 'Pagado', '1000001');
 
 -- --------------------------------------------------------
 
@@ -311,6 +352,15 @@ CREATE TABLE `forma_de_pago` (
   `id_estado` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `forma_de_pago`
+--
+
+INSERT INTO `forma_de_pago` (`id_pago`, `pago`, `id_estado`) VALUES
+(1, 'Efectivo', 1),
+(2, 'Cheque', 1),
+(3, 'Tarjeta', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -393,6 +443,14 @@ CREATE TABLE `multi_pago` (
   `id_concepto` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `multi_pago`
+--
+
+INSERT INTO `multi_pago` (`id_multi`, `codigo_pago`, `id_unir`, `id_cuenta`, `fecha_pago`, `total_pago`, `cantidad_recibida`, `cantidad_devuelta`, `id_estado`, `id_pago`, `id_concepto`) VALUES
+(4, '2000000', 19, 1, '2024-07-24', 160, 200, 40, 1, 1, 2),
+(5, '2000001', 19, 2, '2024-07-25', 160, 200, 40, 1, 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -401,19 +459,16 @@ CREATE TABLE `multi_pago` (
 
 CREATE TABLE `permisos` (
   `id_acceso` int NOT NULL,
-  `acceso` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `impresion_reportes` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `edicion` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `eliminar` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
+  `acceso` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
 --
 
-INSERT INTO `permisos` (`id_acceso`, `acceso`, `impresion_reportes`, `edicion`, `eliminar`) VALUES
-(1, 'Administrador', 'si', 'si', 'si'),
-(2, 'USUARIO', 'si', 'si', 'si');
+INSERT INTO `permisos` (`id_acceso`, `acceso`) VALUES
+(1, 'Administrador'),
+(2, 'Usuario');
 
 -- --------------------------------------------------------
 
@@ -459,7 +514,17 @@ INSERT INTO `propietarios` (`id_propietario`, `nombre`, `dni`, `correo`, `fecha`
 (5, 'PEPITO', '44', 'KFMVKFM', '2024-07-21', 1, '\r\n            ', '9485'),
 (6, 'PACO', '44', 'KFMVKFM', '2024-07-21', 1, '\r\n            ', '9485'),
 (7, 'CARNE', '123', 'MMDKMC', '2024-07-21', 1, '\r\n            ', '98'),
-(8, 'LOLA', '123', 'MMDKMC', '2024-07-21', 1, '\r\n            ', '98');
+(8, 'LOLA', '123', 'MMDKMC', '2024-07-21', 1, '\r\n            ', '98'),
+(9, 'HECTOR HERNANDEZ', '010119990', 'KDMKMDKCKD', '2024-07-22', 1, 'hola mundo', '626262'),
+(10, 'HECTOR HERNANDEZ', '010119990', 'KDMKMDKCKD', '2024-07-22', 1, 'hola mundo', '626262'),
+(11, 'PRUEBA', '0101500095222', 'CESAR', '2024-07-22', 1, 'mckdmkd\r\n            ', '95855555'),
+(12, 'HH', '00000000', 'HHH', '2024-07-22', 1, 'mckdmkd\r\n            ', '77'),
+(13, 'HH', '00000000', 'HHH', '2024-07-22', 1, 'mckdmkd\r\n            ', '77'),
+(14, 'MVKMFKV', 'MVKMFKVF', 'MVKFMVKF', '2024-07-22', 1, '\r\n            ', 'VMKFMKVF'),
+(15, 'MVKMFKV', 'MVKMFKVF', 'MVKFMVKF', '2024-07-22', 1, '\r\n            ', 'VMKFMKVF'),
+(16, '', '', '', '2024-07-23', 1, '\r\n            ', ''),
+(17, 'MM', 'MM', 'MM', '2024-07-23', 1, '\r\n            ', 'MM'),
+(18, 'MM', 'MM', 'MM', '2024-07-23', 1, '\r\n            ', 'MM');
 
 -- --------------------------------------------------------
 
@@ -478,15 +543,20 @@ CREATE TABLE `propietarios_villas` (
 --
 
 INSERT INTO `propietarios_villas` (`id_unir`, `id_propietario`, `id_villa`) VALUES
-(1, 2, 4),
-(2, 2, 5),
-(3, 3, 6),
-(4, 2, 7),
-(5, 4, 9),
-(6, 5, 14),
-(7, 6, 8),
-(8, 7, 12),
-(9, 8, 11);
+(10, 9, 55),
+(11, 9, 56),
+(12, 10, 57),
+(13, 11, 71),
+(14, 12, 47),
+(15, 13, 47),
+(16, 11, 58),
+(17, 11, 59),
+(18, 11, 61),
+(19, 11, 51),
+(20, 11, 64),
+(21, 15, 60),
+(22, 17, 62),
+(23, 18, 63);
 
 -- --------------------------------------------------------
 
@@ -505,19 +575,6 @@ CREATE TABLE `propietario_principal` (
 ,`telefono` varchar(50)
 ,`villa` varchar(101)
 );
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `telefono_propietario`
---
-
-CREATE TABLE `telefono_propietario` (
-  `id_numero` int NOT NULL,
-  `id_propietaio` int DEFAULT NULL,
-  `numero` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -543,7 +600,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `dni`, `telefono`, `correo`, `id_acceso`, `clave`, `id_estado`, `usuario`) VALUES
-(2, 'ANTHONY', 'OLIVA', '010119993209', '94856466', 'anthonyoliva70@gmail.com', 1, '123456', 1, 'ANTHONY');
+(2, 'ANTHONY', 'OLIVA', '010119993209', '94856466', 'anthonyoliva70@gmail.com', 1, '123456', 1, 'ANTHONY'),
+(3, 'NESTOR', 'OLIVA', '01010000000', '94856463', 'nestor@gmail.com', 2, '123456', 1, 'NESTOR'),
+(4, 'ELDER', 'OLIVA', '01012222222', '94856463', 'njjvnfjvjf@nvfvfn', 2, '123456', 1, 'ELDER'),
+(6, 'ANDREA', 'MURILLO', '0101196801005', '96723864', 'xiomarandrea@gmail.com', 2, '123456', 1, 'XIOMARA'),
+(7, 'ANDRE', 'MURILLO', '0101196801005', '96723864', 'xiomarandrea@gmail.com', 2, '1234567', 1, 'XIOMARA');
 
 -- --------------------------------------------------------
 
@@ -570,17 +631,46 @@ CREATE TABLE `villas` (
 --
 
 INSERT INTO `villas` (`id_villa`, `id_grupo`, `numero`, `cont_eeh`, `habitaciones`, `lote`, `id_modelo`, `id_condicion`, `id_estado`, `direccion`, `observacion`) VALUES
-(4, 1, '1', '', '', '', 1, 1, 2, '', ''),
-(5, 1, '2', '', '', '', 1, 1, 2, '', ''),
-(6, 1, '3', '', '', '', 1, 1, 2, '', ''),
-(7, 1, '3', '', '', '', 1, 1, 2, '', ''),
-(8, 1, '8', '', '', '', 1, 1, 2, '', ''),
-(9, 1, '10', '', '', '', 1, 1, 2, '', ''),
-(10, 2, '1', '', '', '', 1, 1, 1, '', ''),
-(11, 2, '2', '', '', '', 1, 1, 2, '', ''),
-(12, 2, '10', '', '', '', 1, 1, 2, '', ''),
-(13, 2, '11', '', '', '', 1, 1, 1, '', ''),
-(14, 3, '11', '', '', '', 1, 1, 2, '', '');
+(33, 1, '1', '123456789', '5', '250', 1, 1, 1, 'Roma, Palma Real', ''),
+(34, 1, '2', '123456789', '5', '250', 1, 1, 1, 'Roma, Palma Real', ''),
+(35, 1, '3', '123456789', '5', '250', 1, 1, 1, 'Roma, Palma Real', ''),
+(36, 1, '4', '123456789', '5', '250', 1, 1, 1, 'Roma, Palma Real', ''),
+(37, 1, '5', '123456789', '5', '250', 1, 1, 1, 'Roma, Palma Real', ''),
+(38, 1, '6', '123456', '7', '250', 2, 1, 1, '', ''),
+(39, 1, '7', '123456', '7', '250', 2, 1, 1, '', ''),
+(40, 1, '8', '123456', '7', '250', 2, 1, 1, '', ''),
+(41, 1, '11', '', '', '', 1, 1, 1, '', ''),
+(42, 1, '12', '', '', '', 1, 1, 1, '', ''),
+(43, 1, '13', '', '', '', 1, 1, 1, '', ''),
+(44, 1, '14', '', '', '', 1, 1, 1, '', ''),
+(45, 1, '17', '1234567899', '5', '255.05', 1, 1, 1, '', ''),
+(46, 1, '18', '1234567899', '5', '255.05', 1, 1, 1, '', ''),
+(47, 1, '70', '123456789', '5', '200.1', 1, 1, 2, '', ''),
+(48, 1, '71', '123456789', '5', '200.1', 1, 1, 1, '', ''),
+(49, 1, '78', '123456789', '5', '10.5', 1, 1, 1, '', ''),
+(50, 1, '79', '123456789', '5', '10.5', 1, 1, 1, '', ''),
+(51, 2, '1', '123456789', '5', '200.1', 1, 1, 2, '', ''),
+(52, 2, '2', '', '', '', 1, 1, 1, '', ''),
+(53, 2, '3', '', '', '', 1, 1, 1, '', ''),
+(54, 2, '4', '', '', '', 1, 1, 1, '', ''),
+(55, 3, '1', '123456789', '5', '200.1', 1, 1, 2, '', ''),
+(56, 3, '2', '', '', '', 1, 1, 2, '', ''),
+(57, 3, '3', '123456789', '5', '200.1', 1, 1, 2, '', ''),
+(58, 3, '12', '', '', '', 1, 1, 2, '', ''),
+(59, 3, '13', '', '', '', 1, 1, 2, '', ''),
+(60, 3, '14', '', '', '', 1, 1, 2, '', ''),
+(61, 3, '20', '', '', '', 1, 1, 2, '', ''),
+(62, 3, '21', '', '', '', 1, 1, 2, '', ''),
+(63, 3, '22', '', '', '', 1, 1, 2, '', ''),
+(64, 3, '23', '', '', '', 1, 1, 2, '', ''),
+(65, 1, '99', '', '', '', 1, 1, 1, '', ''),
+(66, 1, '200', '', '', '', 1, 1, 1, '', ''),
+(67, 1, '201', '', '', '', 1, 1, 1, '', ''),
+(68, 1, '202', '', '', '', 1, 1, 1, '', ''),
+(69, 1, '203', '', '', '', 1, 1, 1, '', ''),
+(70, 1, '204', '', '', '1.50', 1, 1, 1, '', ''),
+(71, 3, '40', '123456789', '2', '250.10', 2, 1, 2, 'roma', 'prueba'),
+(72, 1, '', '', '', '', 1, 1, 1, '', '');
 
 -- --------------------------------------------------------
 
@@ -611,13 +701,25 @@ CREATE TABLE `vista_usuario` (
 ,`clave` varchar(50)
 ,`correo` varchar(50)
 ,`dni` varchar(50)
+,`eliminar_reportes` varchar(2)
 ,`estado` varchar(50)
 ,`id_usuario` int
+,`imprimir_reportes` varchar(2)
+,`modificar_reportes` varchar(2)
 ,`nom` varchar(50)
 ,`nombre` varchar(101)
 ,`telefono` varchar(50)
 ,`usuario` varchar(50)
 );
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `cod_villa`
+--
+DROP TABLE IF EXISTS `cod_villa`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cod_villa`  AS SELECT concat(`grupo_villa`.`grupo`,'-',`villas`.`numero`) AS `villa` FROM (`villas` join `grupo_villa` on((`villas`.`id_grupo` = `grupo_villa`.`id_grupo`))) ;
 
 -- --------------------------------------------------------
 
@@ -671,11 +773,18 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vista_usuario`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_usuario`  AS SELECT `usuarios`.`id_usuario` AS `id_usuario`, concat(`usuarios`.`nombre`,' ',`usuarios`.`apellido`) AS `nombre`, `usuarios`.`dni` AS `dni`, `usuarios`.`telefono` AS `telefono`, `usuarios`.`correo` AS `correo`, `permisos`.`acceso` AS `acceso`, `usuarios`.`clave` AS `clave`, `estado_usuario`.`estado` AS `estado`, `usuarios`.`usuario` AS `usuario`, `usuarios`.`apellido` AS `ape`, `usuarios`.`nombre` AS `nom` FROM ((`estado_usuario` join `usuarios` on((`estado_usuario`.`id_estado` = `usuarios`.`id_estado`))) join `permisos` on((`usuarios`.`id_acceso` = `permisos`.`id_acceso`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_usuario`  AS SELECT `usuarios`.`id_usuario` AS `id_usuario`, `usuarios`.`usuario` AS `usuario`, concat(`usuarios`.`nombre`,' ',`usuarios`.`apellido`) AS `nombre`, `usuarios`.`dni` AS `dni`, `usuarios`.`telefono` AS `telefono`, `usuarios`.`correo` AS `correo`, `permisos`.`acceso` AS `acceso`, `usuarios`.`clave` AS `clave`, `estado_usuario`.`estado` AS `estado`, `usuarios`.`nombre` AS `nom`, `usuarios`.`apellido` AS `ape`, `acceso_usuario`.`imprimir_reportes` AS `imprimir_reportes`, `acceso_usuario`.`modificar_reportes` AS `modificar_reportes`, `acceso_usuario`.`eliminar_reportes` AS `eliminar_reportes` FROM (((`acceso_usuario` join `usuarios` on((`acceso_usuario`.`id_usuario` = `usuarios`.`id_usuario`))) join `permisos` on((`usuarios`.`id_acceso` = `permisos`.`id_acceso`))) join `estado_usuario` on((`usuarios`.`id_estado` = `estado_usuario`.`id_estado`))) ;
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `acceso_usuario`
+--
+ALTER TABLE `acceso_usuario`
+  ADD PRIMARY KEY (`id_acceso_usuario`),
+  ADD KEY `FK_usuario_acceso` (`id_usuario`);
 
 --
 -- Indices de la tabla `caracteristicas`
@@ -820,13 +929,6 @@ ALTER TABLE `propietarios_villas`
   ADD KEY `FK_propietarios_villas_villas` (`id_villa`);
 
 --
--- Indices de la tabla `telefono_propietario`
---
-ALTER TABLE `telefono_propietario`
-  ADD PRIMARY KEY (`id_numero`),
-  ADD KEY `FK_telefono_propietario_propietarios` (`id_propietaio`);
-
---
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -847,6 +949,12 @@ ALTER TABLE `villas`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `acceso_usuario`
+--
+ALTER TABLE `acceso_usuario`
+  MODIFY `id_acceso_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `caracteristicas`
@@ -870,7 +978,7 @@ ALTER TABLE `condicion_villas`
 -- AUTO_INCREMENT de la tabla `cuentas`
 --
 ALTER TABLE `cuentas`
-  MODIFY `id_cuenta` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cuenta` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `estado_concepto`
@@ -930,7 +1038,7 @@ ALTER TABLE `estado_villa`
 -- AUTO_INCREMENT de la tabla `forma_de_pago`
 --
 ALTER TABLE `forma_de_pago`
-  MODIFY `id_pago` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pago` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `grupo_villa`
@@ -954,7 +1062,7 @@ ALTER TABLE `moneda`
 -- AUTO_INCREMENT de la tabla `multi_pago`
 --
 ALTER TABLE `multi_pago`
-  MODIFY `id_multi` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_multi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
@@ -966,35 +1074,35 @@ ALTER TABLE `permisos`
 -- AUTO_INCREMENT de la tabla `propietarios`
 --
 ALTER TABLE `propietarios`
-  MODIFY `id_propietario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_propietario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `propietarios_villas`
 --
 ALTER TABLE `propietarios_villas`
-  MODIFY `id_unir` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT de la tabla `telefono_propietario`
---
-ALTER TABLE `telefono_propietario`
-  MODIFY `id_numero` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_unir` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `villas`
 --
 ALTER TABLE `villas`
-  MODIFY `id_villa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_villa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `acceso_usuario`
+--
+ALTER TABLE `acceso_usuario`
+  ADD CONSTRAINT `FK_usuario_acceso` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Filtros para la tabla `caracteristicas`
@@ -1061,12 +1169,6 @@ ALTER TABLE `propietarios`
 ALTER TABLE `propietarios_villas`
   ADD CONSTRAINT `propietarios_villas$FK_propietarios_villas_propietarios` FOREIGN KEY (`id_propietario`) REFERENCES `propietarios` (`id_propietario`),
   ADD CONSTRAINT `propietarios_villas$FK_propietarios_villas_villas` FOREIGN KEY (`id_villa`) REFERENCES `villas` (`id_villa`);
-
---
--- Filtros para la tabla `telefono_propietario`
---
-ALTER TABLE `telefono_propietario`
-  ADD CONSTRAINT `telefono_propietario$FK_telefono_propietario_propietarios` FOREIGN KEY (`id_propietaio`) REFERENCES `propietarios` (`id_propietario`);
 
 --
 -- Filtros para la tabla `usuarios`

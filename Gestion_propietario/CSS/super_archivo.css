@@ -8,23 +8,21 @@
     padding-bottom: 10px;
 }
 
-@media screen and (max-width:1100px)
-{
+@media screen and (max-width: 1100px) {
+
     .centro
-    {
-        width: 95%;
-        height: 95%;
-    }
+{
+    width: 95%;
+}
+    
 }
 
-@media screen and (max-height:350px)
-{
-    .centro
-    {
-        height: 95%;
-    }
-}
 
+.centro_emergente
+{
+    width: 800px;
+    height: 500px;
+}
 
 .c1
 {
@@ -108,6 +106,17 @@ height: 100px;
 border: 1px solid gray;
 }
 
+.contenido_tabla_carac
+{
+    height: calc(100% - 40px);
+    margin-top: 10px;
+}
+
+.contenido_tabla_ac_contac
+{
+    height: calc(100% - 10px);
+}
+
 .principal_tabla_1
 {
     height: calc(100% - 210px);
@@ -155,6 +164,13 @@ background-color: #e5e5e5;
 {
     width: 25px;
 }
+
+.contenido_tabla_ac_contac table td:nth-child(4),.contenido_tabla_ac_contac table td:nth-child(5)
+{
+    width: 25px;
+}
+
+
 
 .contenido_tabla table td:first-child,.contenido_tabla table th:first-child
 {
@@ -252,7 +268,7 @@ button
 
 .carac_opcion
 {
-    height: 166px;
+    height: 174px;
 }
 
 .c2 .cambio_villa
@@ -371,25 +387,8 @@ width: 95%;
 
 .usuarios_form
 {
-    width: 900px;
     
 }
-
- @media screen and (max-width:900px)
- {
-    .usuarios_form
-{
-    width: 95%;
-}
- }
-
- @media screen and (max-height:600px)
- {
-    .usuarios_form
-{
-    height: 95%;
-}
- }
 
 
 /*Mini ventanas de admin*/
@@ -453,7 +452,8 @@ width: 100%;
 height: 57px;
 }
 
-.contenido_oculto td:nth-child(11), .contenido_oculto td:nth-child(12)
+.contenido_oculto td:nth-child(11), .contenido_oculto td:nth-child(12),.contenido_oculto td:nth-child(13)
+,.contenido_oculto td:nth-child(14),.contenido_oculto td:nth-child(15)
 {
     display: none;
 }
@@ -497,5 +497,78 @@ flex: 1 1 100px;
 max-width: 400px;
 }
 
-/*Panel de usuario*/
+/*extra*/
+
+.cuadros_fieldset
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cuadros_fieldset input[type="text"], .cuadros_fieldset button
+{
+    flex: 1 1 100px;
+    max-width: 200px;
+    margin: 5px;
+} 
+
+.panel_confirmaciones
+{
+    width: 400px;
+    height: 100px;
+}
+
+.panel_confirmaciones .c2
+{
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.panel_confirmaciones .c3
+{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.panel_confirmaciones .c3 button
+{
+flex: 1 1 100px;
+}
+
+.btn_agregados_form
+{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.btn_agregados_form button
+{
+flex: 1 1 100px;
+max-width: 200px;
+margin: 10px;
+}
+
+#fl_permisos
+{
+    flex: 1 1 500px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 1px solid #cecece;
+}
+
+#fl_permisos fieldset
+{
+    flex: 1 1 100px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #cecece;
+}
 

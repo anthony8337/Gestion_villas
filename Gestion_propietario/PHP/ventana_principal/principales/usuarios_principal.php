@@ -10,7 +10,7 @@
 <ul>
 <?php
     $a = ['Usuario','Actividad','Reportes','Gestión','Salir'];
-    $b = ['cua_1()','cua_2()','','redirigir_sistema_admin()','redirigir_login()'];
+    $b = ['cua_1()','cua_2()','','redirigir_sistema_admin()','redirigir_login() '];
     $c = ['Imagenes/perfil.png','Imagenes/configuracion.png','Imagenes/clipboard2-data.svg','Imagenes/journal-text.svg','Imagenes/box-arrow-left.svg'];
     
     for($i = 0; $i < count($a); $i++)

@@ -1,14 +1,5 @@
 <div class="q_2">
 
-<fieldset>
-<legend>Configuración de usuarios</legend>
-<div class="contenido_tabla contenido_tabla_confi_usuarios" id="opciones_usuarios">
-    <?php
-    include "PHP/ventana_principal/principales/interno/sql/pantalla_2/tabla_tipo_usuarios.php";
-    ?>
-</div>
-</fieldset>
-
 <div class="agrupar_confi">
 
 <fieldset>

@@ -36,3 +36,13 @@ include "PHP/archivo/emergentes/subs/4_a.php";
 <?php
 include "PHP/archivo/emergentes/subs/5_a.php";
 ?>
+
+<?php
+include "PHP/archivo/emergentes/subs/6_a.php";
+?>
+
+<!--Confirmaciones-->
+
+<?php
+include "PHP/archivo/emergentes/subs/confirmar_villa.php";
+?>

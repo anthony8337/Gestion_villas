@@ -1,7 +1,7 @@
 
 <div id="pro" class="mod">
 
-<div class="centro">
+<div class="centro pro_centro">
 
 <div class="c1">
 <h2>Ingresar nuevo propietario</h2>
@@ -10,15 +10,15 @@
 
 <form id="Formulario_pro">
 
-
 <div class="c2">
 <?php
 
-$pal = ['Nombre completo', 'Numero de identidad','Correo electrónico','Fecha de ingreso','Teléfono'];
-$id = ['txtnombre','txtid','txtcorreo','txtfecha_i','txttelefono'];
-$tipo = ['text','text','text','date','text'];
+$pal = ['Nombre completo', 'Numero de identidad','Correo electrónico','Teléfono','Fecha de ingreso'];
+$id = ['txtnombre','txtid','txtcorreo','txttelefono','txtfecha_i'];
+$tipo = ['text','text','text','text','date','text'];
 
 for ($i=0; $i < count($pal); $i++) {
+
         echo"
         <fieldset>
         <legend>$pal[$i]</legend>
@@ -33,10 +33,11 @@ for ($i=0; $i < count($pal); $i++) {
 
 <div class="c4">
 
+<div class="btn_agregados_form">
+<button type="button" onclick="contactos()">Agregar contactos</button>
+<button type="button" onclick="selecciona_villa_propi()">Agregar villa</button>
+</div>
 
-<fieldset>
-    
-    <button type="button" onclick="selecciona_villa_propi()">Agregar una villa</button>
     <fieldset>
     <legend>Datos de villa</legend>
     <div class="contenido_tabla contenido_tabla_ultima">
@@ -57,7 +58,6 @@ for ($i=0; $i < count($pal); $i++) {
         </table>
         </div>
         </fieldset>
-</fieldset>
 
 <fieldset class="observaciones">
     <legend>
@@ -114,6 +114,8 @@ for ($i=0; $i < count($pal); $i++) {
                     actualizar_propietarios();
                     actualizar_propietarios_cuenta();
                     actualizar_propietarios_multipago();
+                    actualizar_villas_propietario(); 
+                    actualizar_villas_adicionar();
                 }
             });
         });
