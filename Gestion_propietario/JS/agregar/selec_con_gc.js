@@ -75,3 +75,29 @@ function suma_un_mes()
     dateInput.value = fecha.toISOString().split('T')[0];
 
 }
+
+function suma_un_mes_escribir() 
+{
+  
+    // Obtener el valor del input de fecha
+
+    let monthInput = document.getElementById('txt_numero_meses');
+    let mesesASumar = parseInt(monthInput.value);
+
+    let dateInput = document.getElementById('txt_fecha_gc_hasta');
+    let fecha = new Date(dateInput.value);
+
+    // Verificar si la fecha es válida
+    if (isNaN(fecha)) {
+        alert('Por favor, selecciona una fecha válida.');
+        return;
+    }
+
+    // Sumar un mes a la fecha
+    fecha.setMonth(fecha.getMonth() + mesesASumar);
+
+    // Actualizar el valor del input de fecha
+    dateInput.value = fecha.toISOString().split('T')[0];
+
+    calcular_fecha();
+}

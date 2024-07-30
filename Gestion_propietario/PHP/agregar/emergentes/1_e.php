@@ -129,10 +129,10 @@
         <input type="date" name="txt_fecha_gc_desde" id="txt_fecha_gc_desde" onchange='calcular_fecha()'>
 
         <span>Hasta:</span>
-        <input type="date" name="txt_fecha_gc_hasta" id="txt_fecha_gc_hasta" onchange='calcular_fecha()'>
+        <input type="date" name="txt_fecha_gc_hasta" id="txt_fecha_gc_hasta"  onchange='calcular_fecha()'>
 
         <span>Cantidad de meses:</span>
-        <input type="text" name="txt_numero_meses" id="txt_numero_meses" onchange='calcular_fecha()'>
+        <input type="text" name="txt_numero_meses" id="txt_numero_meses"  oninput ='suma_un_mes_escribir()'>
     </fieldset>
 </fieldset>
 
