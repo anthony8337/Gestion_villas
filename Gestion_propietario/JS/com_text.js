@@ -16,7 +16,7 @@ function validaciones()
   var camposTexto = document.querySelectorAll('input[type="text"]');
   camposTexto.forEach(function(input) {
     input.addEventListener('input', function() {
-      this.value = this.value.toUpperCase().replace(/[^A-Z 0-9 - .]/g, '');
+      this.value = this.value.toUpperCase().replace(/[^A-Z 0-9 - - .]/g, '');
     });
   });
 }

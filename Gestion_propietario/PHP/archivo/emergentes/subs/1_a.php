@@ -13,7 +13,7 @@
 <div class="c2">
 <fieldset>
     <legend>Buscar propietario</legend>
-<input type="text" name="busca_pro_do" id="busca_pro_do" placeholder="Buscar propietario" class="buscador">
+<input type="text" name="busca_pro_do" id="busca_pro_do" placeholder="Buscar propietario" class="buscador" oninput="bus_pro_donante()">
 </fieldset>
 </div>
 

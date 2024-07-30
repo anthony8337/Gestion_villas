@@ -14,7 +14,7 @@
 <div class="c2">
 <fieldset>
     <legend>Buscar villa</legend>
-<input type="text" placeholder="Buscar villa" name="txt_busca_adicional_propietario" id="txt_busca_adicional_propietario" class="buscador">
+<input type="text" placeholder="Buscar villa" name="txt_busca_villa_adi" id="txt_busca_villa_adi" class="buscador" oninput="bus_vi_adicionar()">
 </fieldset>
 </div>
 

@@ -13,7 +13,7 @@
 
 <div class="c2">
 
-<input type="text" name="busca_con_gc" id="busca_con_gc" placeholder="Buscar propietario" class="buscador">
+<input type="text" name="busca_con_gc" id="busca_con_gc" placeholder="Buscar propietario" class="buscador" oninput="bus_gc_concepto()">
 
 </div>
 

@@ -17,7 +17,8 @@ else
 }
 
 
-$sql = "SELECT * FROM concepto WHERE id_estado = '1' and tipo = 'Abono'";
+$sql = "SELECT * FROM `pripietario_cuenta_vista` WHERE id_estado = '1' 
+ORDER BY SUBSTRING_INDEX(villa, '-', 1), CAST(SUBSTRING_INDEX(villa, '-', -1) AS UNSIGNED); ";
 
 $result = $conn->query($sql);
 
@@ -26,7 +27,7 @@ if($result -> num_rows > 0)
 
     while ($row = $result->fetch_assoc()) {
         echo"
-        <option value='",$row["concepto"],"'>",$row["concepto"],"</option>
+        <option value='",$row["villa"],"'>",$row["villa"],"</option>
         ";
     }
 

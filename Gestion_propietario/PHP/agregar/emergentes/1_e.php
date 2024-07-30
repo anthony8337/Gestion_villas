@@ -44,7 +44,7 @@
     <fieldset>
         <legend>Desde</legend>
 
-        <select>
+        <select id="desde_propi" name="desde_propi">
         <?php
         include 'PHP/agregar/emergentes/subs/accion_generar/desde_pro.php';
         ?>
@@ -55,7 +55,7 @@
 
     <fieldset>
         <legend>Hasta</legend>
-        <select>
+        <select id="hasta_propi" name="hasta_propi">
         <?php
         include 'PHP/agregar/emergentes/subs/accion_generar/desde_pro.php';
         ?>
@@ -121,26 +121,26 @@
 
 <fieldset>
     <legend>Periodo</legend>
-    <?php
-    $nombre = ['Desde:','Hasta:'];
-    $id = ['txt_fecha_gc_desde','txt_fecha_gc_hasta'];
-    for ($i=0; $i < count($nombre); $i++) { 
-        echo"
-        
-        <fieldset>
-        <legend>$nombre[$i]</legend>
-        <input type='date' name='$id[$i]' id='$id[$i]'>
-        </fieldset>
-        ";
-    }
-    ?>
+
+    <fieldset>
+        <legend>Fechas</legend>
+
+        <span>Desde:</span>
+        <input type="date" name="txt_fecha_gc_desde" id="txt_fecha_gc_desde" onchange='calcular_fecha()'>
+
+        <span>Hasta:</span>
+        <input type="date" name="txt_fecha_gc_hasta" id="txt_fecha_gc_hasta" onchange='calcular_fecha()'>
+
+        <span>Cantidad de meses:</span>
+        <input type="text" name="txt_numero_meses" id="txt_numero_meses" onchange='calcular_fecha()'>
+    </fieldset>
 </fieldset>
 
 <fieldset>
     <legend>Valor</legend>
     
     <?php
-    $nombre = ['Costo de concepto:','Total:'];
+    $nombre = ['Costo de concepto:','Costo total:'];
     $id = ['txt_costo_gc','txt_total_gc'];
 
     for ($i=0; $i < count($nombre); $i++) { 
@@ -214,10 +214,6 @@ if (accion === 'crear') {
             data: $(this).serialize(),
             success: function(response){
                 $('#respuesta_cuenta').html(response);
-
-                var codigo_suma = document.getElementById('codigo_cuenta').value
-
-                document.getElementById('codigo_cuenta').value = +codigo_suma + 1;
                 
                 if(document.getElementById('principal_gc_mt').value == 'Multipago')
                 {
@@ -225,18 +221,15 @@ if (accion === 'crear') {
                     recargar_tabla_multi_gc();
                 }
 
-                /*
-                $.ajax({
-            type: 'GET',
-            url: 'PHP/archivo/emergentes/subs/accion_moneda/tabla_moneda.php',
-            data: $(this).serialize(),
-            success: function(response){
-                $('#interior_moneda').html(response);
-            }
-        });*/
             }
         });
 
     }); 
 });
+
+
+function actualizar_cod_cuenta(numero) {
+    document.getElementById('codigo_cuenta').value = numero + 1;
+}
+
 </script>

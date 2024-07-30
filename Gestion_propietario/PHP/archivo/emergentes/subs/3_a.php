@@ -15,7 +15,7 @@
 <div class="c2">
 <fieldset class="cuadros_fieldset">
     <legend>Buscar villa</legend>
-<input type="text" placeholder="Buscar villa" name="txt_busca_villa_propietario" id="txt_busca_villa_propietario" class="buscador">
+<input type="text" placeholder="Buscar villa" name="txt_bvp" id="txt_bvp" class="buscador" oninput="bus_villa_propi()">
 <button type="button" onclick="ingreso_vi_propi()">Crear Villa</button>
 </fieldset>
 </div>

@@ -51,5 +51,7 @@
     <script src="JS/agregar/recargar_tm.js"></script>
     <script src="JS/agregar/ejecutar_pago.js"></script>
     <script src="JS/actualizar_tablas.js"></script>
+    <script src="JS/buscar/subs/buscar_villa_propietario.js"></script>
+    <script src="JS/buscar/subs/buscar_donador.js"></script>
 </head>
 <body>

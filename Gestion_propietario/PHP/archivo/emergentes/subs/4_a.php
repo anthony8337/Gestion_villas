@@ -15,7 +15,7 @@
 <div class="c2">
 <fieldset>
     <legend>Buscar propietario</legend>
-<input type="text" name="busca_pro_adi" id="busca_pro_adi" placeholder="Buscar propietario">
+<input type="text" name="busca_pro_adi" id="busca_pro_adi" placeholder="Buscar propietario" oninput="bus_pro_adicionar()">
 </fieldset>
 </div>
 
