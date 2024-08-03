@@ -149,3 +149,50 @@ function cerrar_costo_con_multi()
 {
     document.getElementById('multi_cantidad_pago').style.display = "none"; 
 }
+
+////////////////////////////////Nuevas ventanas
+
+
+    
+function crear_cuenta()
+{
+    document.getElementById("div_cuenta").style.display = "flex";
+}
+
+function cerrar_crear_cuenta()
+{
+    document.getElementById("div_cuenta").style.display = "none";
+}
+
+function crear_multipago()
+{
+    document.getElementById("div_multipago").style.display = "flex";
+}
+
+function cerrar_crear_multipago()
+{
+    document.getElementById("div_multipago").style.display = "none";
+}
+
+function re_factura()
+{
+    document.getElementById("div_reimprime").style.display = "flex";
+}
+
+function cerrar_re_factura()
+{
+    document.getElementById("div_reimprime").style.display = "none";
+}
+
+//////////Confirmar ventanas
+
+
+function confir_cuentas()
+{
+    document.getElementById("confirma_cuenta").style.display = "flex";
+}
+
+function cerrar_confir_cuentas()
+{
+    document.getElementById("confirma_cuenta").style.display = "none";
+}

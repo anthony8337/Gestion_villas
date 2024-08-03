@@ -25,7 +25,7 @@ function agregarDato_contacto() {
   var telefono = document.getElementById("txt_tele_contacto").value;
 
   if (nombre !== null && telefono !== null) {
-      var tbody = document.querySelector("#tb_contactos tbody");
+      var tbody = document.querySelector("#tb_contactos tbody.borrar_t");
       var fila = tbody.insertRow();
 
       var celdaid = fila.insertCell(0);
@@ -47,9 +47,9 @@ function agregarDato_contacto() {
   }
 }
 
-function eliminarTodosDatos_cara() {
-  var tabla = document.getElementById("carac_vi");
-  while (tabla.rows.length > 1) {
-    tabla.deleteRow(1);
+function eliminarTodosDatos_contac() {
+  var tbody = document.querySelector("#tb_contactos tbody.borrar_t");
+  while (tbody.firstChild) {
+      tbody.removeChild(tbody.firstChild);
   }
 }

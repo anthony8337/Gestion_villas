@@ -46,3 +46,15 @@ include "PHP/archivo/emergentes/subs/6_a.php";
 <?php
 include "PHP/archivo/emergentes/subs/confirmar_villa.php";
 ?>
+
+<?php
+include "PHP/archivo/emergentes/subs/confirmar_propietario.php";
+?>
+
+<?php
+include "PHP/archivo/emergentes/subs/confirmar_cambio.php";
+?>
+
+<?php
+include "PHP/archivo/emergentes/subs/confirmar_adicion.php";
+?>

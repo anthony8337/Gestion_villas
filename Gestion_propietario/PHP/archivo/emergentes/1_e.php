@@ -5,7 +5,7 @@
 
 <div class="c1">
 <h2>Ingresar nuevo propietario</h2>
-<button onclick="cerrar_ingreso()" type="button">X</button>
+<button onclick="cerrar_ingreso(),limpiar_confirmar();" type="button">X</button>
 </div>
 
 <form id="Formulario_pro">
@@ -15,7 +15,7 @@
 
 $pal = ['Nombre completo', 'Numero de identidad','Correo electrónico','Teléfono','Fecha de ingreso'];
 $id = ['txtnombre','txtid','txtcorreo','txttelefono','txtfecha_i'];
-$tipo = ['text','text','text','text','date','text'];
+$tipo = ['text','text','email','text','date','text'];
 
 for ($i=0; $i < count($pal); $i++) {
 
@@ -52,7 +52,7 @@ for ($i=0; $i < count($pal); $i++) {
         <th>Condición</th>
                     </tr>
             </thead>
-                    <tbody>
+                    <tbody class="borrar_t">
 
                     </tbody>
         </table>
@@ -74,7 +74,7 @@ for ($i=0; $i < count($pal); $i++) {
 
 <div class = "c3">
     <button type="submit" id="agregar_propietario">Agregar</button>
-    <button type="button">Limpiar</button>
+    <button type="button" onclick="limpiar_opcion();">Limpiar</button>
 </div>
 
 

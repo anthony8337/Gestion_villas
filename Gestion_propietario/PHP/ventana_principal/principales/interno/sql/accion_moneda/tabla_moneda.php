@@ -30,7 +30,7 @@ if($result -> num_rows > 0)
     <tr>
     <th></th>
     <th>Moneda</th>
-    <th>Abreviado</th>
+    <th>Símbolo</th>
     <th>Cambio</th>
     <th></th>
     </tr>";

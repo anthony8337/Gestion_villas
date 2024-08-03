@@ -196,7 +196,7 @@ textarea
     resize: none;
 }
 
-input[type = "text"],input[type = "date"],input[type = "password"],input[type = "email"]
+input[type = "text"],input[type = "date"],input[type = "password"],input[type = "email"],input[type = "number"]
 {
 height: 25px;
 width: 100%;
@@ -284,32 +284,38 @@ button
 width: 95%;
 }
 
-#gene_cuenta .c4
+#div_cuenta .c4
 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-#gene_cuenta .c4 fieldset
+#div_cuenta .c4 fieldset
 {
     flex: 1 1 200px;
 }
 
-#multi .c2 button
+#div_multipago .c2
 {
-    flex: 1 1 200px;
+    flex: 1 1 50px;
+    max-width: 550px;
+}
+
+#div_multipago .c2 button
+{
+    flex: 1 1 50px;
     margin: 5px;
 }
 
-#multi .c4 fieldset
+#div_multipago .c4 fieldset
 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-#multi .c4 fieldset fieldset
+#div_multipago .c4 fieldset fieldset
 {
     flex: 1 1 200px;
 }
@@ -321,7 +327,7 @@ width: 95%;
     flex-wrap: wrap;
 }
 
-#dato_multi input[type="text"],#dato_multi input[type="date"]
+#dato_multi input[type="number"],#dato_multi input[type="date"]
 {
     flex: 1 1 50px;
 }
@@ -385,10 +391,6 @@ width: 95%;
 
 /*centro de usuarios*/
 
-.usuarios_form
-{
-    
-}
 
 
 /*Mini ventanas de admin*/

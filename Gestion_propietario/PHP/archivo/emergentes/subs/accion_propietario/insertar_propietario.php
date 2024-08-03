@@ -32,7 +32,9 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>window.alert('Propietario registrada con exito');
+    echo"<script>
+    confi_propietario();
+    limpiar_confirmar();
     </script>";
 
 

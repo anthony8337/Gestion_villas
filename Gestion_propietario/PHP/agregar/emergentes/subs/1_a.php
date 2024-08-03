@@ -12,13 +12,13 @@
 <div class="c2">
 <fieldset>
     <legend>Buscar propietario</legend>
-<input type="text" name="busca_pro_gc" id="busca_pro_gc" placeholder="Buscar propietario" class="buscador" oninput="bus_gc_propietario()">
+<input type="text" name="busca_pro_gc" id="busca_pro_gc" placeholder="Buscar propietario" class="buscador">
 </fieldset>
 </div>
 
 <div class="c4 ">
 
-<div id="tabla_propietario_gc" class="contenido_tabla completar_vista_cuadro">
+<div id="tabla_propietario_gc" class="contenido_tabla">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_propietarios.php";
     ?>
@@ -32,5 +32,3 @@
 </div>
 
 </div>
-
-

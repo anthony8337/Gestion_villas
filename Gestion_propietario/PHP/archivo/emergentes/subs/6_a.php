@@ -34,15 +34,18 @@
 <div class="contenido_tabla contenido_tabla_ac_contac" id="propi_contacto">
 
 <table id="tb_contactos">
+
+<thead>
 <tr>
     <th></th>
     <th>Nombre</th>
-    <th>teléfono</th>
+    <th>Teléfono</th>
     <th></th>
     <th></th>
 </tr>
+</thead>
 
-<tbody>
+<tbody class="borrar_t">
 
 </tbody>
 </table>
@@ -54,7 +57,5 @@
 
 </div>
 
-
-</div>
 
 </div>

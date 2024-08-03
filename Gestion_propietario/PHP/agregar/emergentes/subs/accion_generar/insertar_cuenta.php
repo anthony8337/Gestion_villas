@@ -60,7 +60,8 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>window.alert('Cuenta registrada con exito');
+    echo"<script>
+    confir_cuentas();
     actualizar_cod_cuenta($cod);
     </script>";
 }

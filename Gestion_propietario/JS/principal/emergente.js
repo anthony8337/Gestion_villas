@@ -60,3 +60,33 @@ function cerrar_modelos_villa()
 {
     document.getElementById('modelo_villa').style.display = 'none';
 }
+
+function cuerpo_villa() 
+{
+    document.getElementById('usu_villas').style.display = 'flex';
+}
+
+function cerrar_cuerpo_villa() 
+{
+    document.getElementById('usu_villas').style.display = 'none';
+}
+
+function cuerpo_concepto() 
+{
+    document.getElementById('usu_concepto').style.display = 'flex';
+}
+
+function cerrar_cuerpo_concepto() 
+{
+    document.getElementById('usu_concepto').style.display = 'none';
+}
+
+function cuerpo_reporte() 
+{
+    document.getElementById('usu_informe').style.display = 'flex';
+}
+
+function cerrar_cuerpo_reporte() 
+{
+    document.getElementById('usu_informe').style.display = 'none';
+}

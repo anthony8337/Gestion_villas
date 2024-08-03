@@ -1,12 +1,10 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/agregar/mod_g_cuenta.css'>
-
-<div id="gene_cuenta" class="mod">
+<div id="div_cuenta" class="mod">
 
 <div class="centro">
 
 <div class="c1">
 <h2 >Ingresar nueva cuenta</h2>
-<button onclick="cerrar_ingreso_g()" type="button">X</button>
+<button onclick="cerrar_crear_cuenta(),limpiar_confirmar()" type="button">X</button>
 </div>
 
 <form id="Formulario_cuenta">
@@ -31,7 +29,7 @@
         
         <fieldset title="Seleccionar aportación" id="cuenta_seleccionar">
         <legend>Código de cuenta</legend>
-        <input type="text" title="Código de cuenta" id="codigo_cuenta" value="<?php include "PHP/agregar/emergentes/subs/accion_generar/codigo_cuenta.php";?>" disabled>
+        <input type="number" readonly title="Código de cuenta" id="codigo_cuenta" value="<?php include "PHP/agregar/emergentes/subs/accion_generar/codigo_cuenta.php";?>">
         </fieldset>
         
 </div>

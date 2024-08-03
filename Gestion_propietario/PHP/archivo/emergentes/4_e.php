@@ -5,7 +5,7 @@
 
 <div class="c1">
 <h2 >Adicionar villa a propietario</h2>
-<button onclick="cerrar_adicionar()" type="button">X</button>
+<button onclick="cerrar_adicionar(),limpiar_confirmar()" type="button">X</button>
 </div>
 
 <form id="Formulario_adicionar">
@@ -45,10 +45,10 @@ for ($i=0; $i < count($pal); $i++) {
 
 <div class="c4">
 
+<div class="btn_agregados_form">
+<button type="button" onclick="abrir_pro_adicionar_tabla()">Agregar una villa</button>
+</div>
 
-<fieldset>
-    
-    <button type="button" onclick="abrir_pro_adicionar_tabla()">Agregar una villa</button>
     <fieldset>
     <legend>Datos de villa</legend>
     <div class="contenido_tabla contenido_tabla_ultima">
@@ -63,13 +63,12 @@ for ($i=0; $i < count($pal); $i++) {
         <th>Condición</th>
                     </tr>
             </thead>
-                    <tbody>
+                    <tbody class="borrar_t">
 
                     </tbody>
         </table>
         </div>
         </fieldset>
-</fieldset>
 
 <fieldset class="observaciones">
     <legend>
@@ -86,8 +85,7 @@ for ($i=0; $i < count($pal); $i++) {
 
 <div class = "c3">
     <button type="submit" id="adicionar_villa_btn">Agregar</button>
-    <button type="button">Limpiar</button>
-    <button type="button">Cancelar</button>
+    <button type="button" onclick="limpiar_opcion()">Limpiar</button>
 </div>
 
 
@@ -124,6 +122,11 @@ for ($i=0; $i < count($pal); $i++) {
                 data: $.param(formData),
                 success: function(response){
                     $('#respuesta_propietario_adi').html(response);
+                    actualizar_propietarios();
+                    actualizar_propietarios_cuenta();
+                    actualizar_propietarios_multipago();
+                    actualizar_villas_propietario(); 
+                    actualizar_villas_adicionar();
                 }
             });
         });

@@ -1,12 +1,10 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/agregar/mod_reimprimir.css'>
-
-<div id="reimpre" class="mod">
+<div id="div_reimprime" class="mod">
 
 <div class="centro">
 
 <div class="c1">
 <h2>Reimprimir factura</h2>
-<button onclick="cerrar_ingreso_reim()" type="button">X</button>
+<button onclick="cerrar_re_factura()" type="button">X</button>
 </div>
 
 <div class="c2">

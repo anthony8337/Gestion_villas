@@ -2,11 +2,13 @@
 
 function fechas()
 {
-      var today = new Date().toISOString().split('T')[0];
-      var dateInputs = document.querySelectorAll('input[type="date"]');
-      dateInputs.forEach(function(input) {
-          input.value = today;
-      });
+  var today = new Date();
+  today.setHours(0, 0, 0, 0); // Esto asegura que la hora sea la medianoche en la zona horaria local
+  var localDate = today.toISOString().split('T')[0];
+  var dateInputs = document.querySelectorAll('input[type="date"]');
+  dateInputs.forEach(function(input) {
+      input.value = localDate;
+  });
 }
 
 //validacion de campos

@@ -150,3 +150,39 @@ function cerrar_confi_villa()
 {
     document.getElementById('confirma_villa_pro').style.display = 'none';
 }
+
+//confirmar propietario
+
+function confi_propietario()
+{
+    document.getElementById('confirma_pro').style.display = 'flex';
+}
+
+function cerrar_confi_propietario()
+{
+    document.getElementById('confirma_pro').style.display = 'none';
+}
+
+//confirmar cambio
+
+function confi_cambio()
+{
+    document.getElementById('confirma_cambio').style.display = 'flex';
+}
+
+function cerrar_confi_cambio()
+{
+    document.getElementById('confirma_cambio').style.display = 'none';
+}
+
+//confirmar cambio
+
+function confi_adicion()
+{
+    document.getElementById('confirma_adicion').style.display = 'flex';
+}
+
+function cerrar_confi_adicion()
+{
+    document.getElementById('confirma_adicion').style.display = 'none';
+}

@@ -1,12 +1,9 @@
-<div id="multi" class="mod">
+<div id="div_multipago" class="mod">
 
 <div class="centro">
-
-
-
 <div class="c1">
 <h2>Pago múltiple</h2>
-<button onclick="cerrar_ingreso_mul()" type="button">X</button>
+<button onclick="cerrar_crear_multipago()" type="button">X</button>
 </div>
 
 <form id="formulario_datos_multi">
@@ -54,8 +51,8 @@
         ?>
 
 <fieldset id="dato_multi">
-        <legend>Codigo de pago</legend>
-        <input type="text" id="txt_cod_m" name="txt_cod_m" value="<?php include "PHP/agregar/emergentes/subs/accion_generar/codigo_factura_multi.php"; ?>">
+        <legend>Codígo de pago</legend>
+        <input type="number" id="txt_cod_m" name="txt_cod_m" value="<?php include "PHP/agregar/emergentes/subs/accion_generar/codigo_factura_multi.php"; ?>">
         <input type="date" id="txt_fecha_m" name="txt_fecha_m" >
     </fieldset>
 

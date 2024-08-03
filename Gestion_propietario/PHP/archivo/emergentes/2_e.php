@@ -6,7 +6,7 @@
 
 <div class="c1">
 <h2>Ingresar nueva villa</h2>
-<button onclick="cerrar_ingreso_vi()" type="button">X</button>
+<button onclick="cerrar_ingreso_vi(),limpiar_confirmar();" type="button">X</button>
 
 </div>
 
@@ -71,7 +71,7 @@ for ($i=0; $i < count($titulo); $i++) {
     <button type='button' onclick='agregarDato_cara()'>Agregar</button>
     <div class="contenido_tabla contenido_tabla_ultima contenido_tabla_carac">
     <table id='carac_vi' class='ta_ca_cont'>
-    <tbody>
+    <tbody class="borrar_t">
         
     </tbody>
     </table>
@@ -139,6 +139,7 @@ for ($i=0; $i < count($titulo); $i++) {
                 $('#respuesta_villa').html(response);
                 actualizar_villas_propietario(); 
                 actualizar_villas_adicionar();
+                eliminarTodosDatos_contac();
             }
         });
     });

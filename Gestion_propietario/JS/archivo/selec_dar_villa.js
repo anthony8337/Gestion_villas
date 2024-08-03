@@ -2,26 +2,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const originalTable = document.getElementById('tabla_donante_villa').getElementsByTagName('tbody')[0];
     const destinationTable = document.getElementById('tabla_destino_villa').getElementsByTagName('tbody')[0];
 
-    originalTable.addEventListener('click', (e) => {
-        let target = e.target;
-        while (target && target.nodeName !== 'TR') {
-            target = target.parentElement;
-        }
-        if (target && target.nodeName === 'TR') {
-            const newRow = target.cloneNode(true);
+    function addRowClickListener(table, destination) {
+        table.addEventListener('click', (e) => {
+            let target = e.target;
+            while (target && target.nodeName !== 'TR') {
+                target = target.parentElement;
+            }
+            if (target && target.nodeName === 'TR') {
+                const newRow = target.cloneNode(true);
 
-            // Añadir celda con botón de eliminación
-            const deleteCell = newRow.insertCell(-1);
-            deleteCell.innerHTML = '<button class="accion_tel" title="Eliminar fila"><img src="Imagenes/trash3-fill.svg"></button>';
+                destination.appendChild(newRow);
+                target.remove();
+            }
+        });
+    }
 
-            // Añadir event listener al botón de eliminación
-            deleteCell.querySelector('button').addEventListener('click', (event) => {
-                event.stopPropagation(); // Evitar que el evento se propague y dispare otros listeners
-                newRow.remove(); // Eliminar la fila
-            });
-
-            destinationTable.appendChild(newRow);
-        }
-    });
-    
+    addRowClickListener(originalTable, destinationTable);
+    addRowClickListener(destinationTable, originalTable);
 });
+
+function limpiar_tabla_donante() {
+    var tbody = document.querySelector("#tabla_donante_villa tbody.borrar_t");
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+  }
+
+  function limpiar_tabla_destino() {
+    var tbody = document.querySelector("#tabla_destino_villa tbody.borrar_t");
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+  }
+
+  function lim_tabla_donantes()
+  {
+    limpiar_tabla_donante();
+    limpiar_tabla_destino();
+  }

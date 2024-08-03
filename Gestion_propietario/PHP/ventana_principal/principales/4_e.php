@@ -17,7 +17,7 @@
 <?php
 
 $m_d= ['txt_m_1','txt_m_2','txt_m_3'];
-$m_p= ['Nombre de moneda','Simbolo de moneda','Valor a lempira'];
+$m_p= ['Nombre de moneda','Símbolo de moneda','Valor a lempira'];
 
 for ($i=0; $i < count($m_d); $i++) { 
     echo"

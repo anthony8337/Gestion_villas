@@ -4,7 +4,7 @@
 
 <div class="c1">
 <h2>Intercambio de propietario de villa</h2>
-<button onclick="v_cambio_cerrar()" type="button">X</button>
+<button onclick="limpiar_confirmar(),lim_tabla_donantes(),v_cambio_cerrar()" type="button">X</button>
 </div>
 
 <form id="Formulario_intercambio">
@@ -57,7 +57,7 @@ for ($i=0; $i < count($pal); $i++) {
         <th>Condición</th>
                     </tr>
             </thead>
-                    <tbody id="tb_villas_donador">
+                    <tbody class="borrar_t" id="tb_villas_donador">
 
                     </tbody>
         </table>
@@ -104,7 +104,7 @@ for ($i=0; $i < count($pal); $i++) {
 
 <div class="c4">
     <fieldset>
-    <div class="contenido_tabla contenido_tabla_ultima">
+    <div class="contenido_tabla">
         <table id="tabla_destino_villa">
             <thead>
         <tr>
@@ -116,7 +116,7 @@ for ($i=0; $i < count($pal); $i++) {
         <th>Condición</th>
                     </tr>
             </thead>
-                    <tbody>
+                    <tbody class="borrar_t">
 
                     </tbody>
         </table>
@@ -158,6 +158,11 @@ for ($i=0; $i < count($pal); $i++) {
                 data: $.param(formData),
                 success: function(response){
                     $('#respuesta_cambio').html(response);
+                    actualizar_propietarios();
+                    actualizar_propietarios_cuenta();
+                    actualizar_propietarios_multipago();
+                    actualizar_villas_propietario(); 
+                    actualizar_villas_adicionar();
                 }
             });
         });

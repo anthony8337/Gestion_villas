@@ -92,6 +92,7 @@ if($result == true)
 {
     echo"
     <script>
+    limpiar_confirmar();
     confi_villa();
     </script>";
 
