@@ -43,13 +43,21 @@ function limpiar_tabla_adicionar() {
     }
   }
 
+  function limpiar_tabla_contacto() {
+    var tbody = document.querySelector("#tb_contactos tbody.borrar_t");
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+  }
+
 function limpiar_confirmar()
 {
 limpieza_text();
 limpieza_hidden();
 limpieza_email();
 limpiar_tablas(); 
-limpiar_tabla_adicionar();   
+limpiar_tabla_adicionar();  
+limpiar_tabla_contacto(); 
 }
 
 function limpiar_opcion()
@@ -64,6 +72,7 @@ limpieza_hidden();
 limpieza_email();
 limpiar_tablas();  
 limpiar_tabla_adicionar();
+limpiar_tabla_contacto();
 }  
 
 }
