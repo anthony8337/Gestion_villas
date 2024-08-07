@@ -21,8 +21,13 @@ if($selec_can == "Unico")
 
 $id_pro = $_POST['id_propi_gc'];
 $id_con = $_POST['id_con_gc'];
-$costo = $_POST['txt_total_gc'];
-$abono = $_POST['txt_total_gc'];
+
+$co = $_POST['txt_total_gc'];
+$costo = substr($co,3);
+
+$abo = $_POST['txt_total_gc'];
+$abono = substr($abo,3);
+
 $desde = $_POST['txt_fecha_gc_desde'];
 $hasta = $_POST['txt_fecha_gc_hasta'];
 
@@ -89,8 +94,13 @@ if($result1->num_rows > 0) {
 
 $id_pro = $_POST['id_propi_gc'];
 $id_con = $_POST['id_con_gc'];
-$costo = $_POST['txt_total_gc'];
-$abono = $_POST['txt_total_gc'];
+
+$co = $_POST['txt_total_gc'];
+$costo = substr($co,3);
+
+$abo = $_POST['txt_total_gc'];
+$abono = substr($abo,3);
+
 $desde = $_POST['txt_fecha_gc_desde'];
 $hasta = $_POST['txt_fecha_gc_hasta'];
 
@@ -150,7 +160,8 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>window.alert('Cuenta registrada con exito');
+    echo"<script>
+    confir_cuentas();
     actualizar_cod_cuenta($cod);
     </script>";
 }

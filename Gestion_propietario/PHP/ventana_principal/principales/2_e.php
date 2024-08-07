@@ -8,7 +8,7 @@
 
 
 <h2>Ingresar nuevo grupo</h2>
-<button onclick="cerrar_grupo_villa()" type="button">X</button>
+<button onclick="cerrar_grupo_villa(),limpiar_confirmar()" type="button">X</button>
 
 </div>
 

@@ -45,15 +45,27 @@ for ($i=0; $i < count($titulo); $i++) {
             </select>
         </fieldset>
         ";
-    }else
+    }else if($i == 1)
     {
+        
+            echo"
+            <fieldset>
+                <legend>$titulo[$i]</legend>
+                <input type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]' maxlength='13'>
+            </fieldset>
+            ";
+    }
+    else    
+    {
+        
         echo"
         <fieldset>
             <legend>$titulo[$i]</legend>
             <input type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]'>
         </fieldset>
         ";
-    }
+}
+    
 
 
 }
@@ -146,4 +158,3 @@ for ($i=0; $i < count($titulo); $i++) {
 });
 
 </script>
-

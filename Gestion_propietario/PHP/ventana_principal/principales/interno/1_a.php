@@ -1,6 +1,6 @@
 
 <div class="busqueda_seccion">
-<button onclick="ingresar_usuario_in()" title="Agregar un nuevo usuario">Agregar nuevo</button>
+<button onclick="ingresar_usuario_in(),limpiar_confirmar()" title="Agregar un nuevo usuario">Agregar nuevo</button>
 <input id="txt_dato_usuario" type="text" placeholder="Buscar información del usuario" title="Buscar información del usuario" class="buscador">
 
             <select id="selec_est_usuarios" name="selec_est_usuarios" title="Filtrar estado del usuario">

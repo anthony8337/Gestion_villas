@@ -20,9 +20,15 @@ $id_pro_multi = $_POST['hd_id_propietario'];
 $cod_fac = $_POST['txt_cod_m'];
 $id_cuenta = $_POST['hd_id_cuenta'];
 $fecha_pago = $_POST['txt_fecha_m'];
-$total_pago = $_POST['total_multi'];
+
+$tp = $_POST['total_multi'];
+$total_pago = substr($tp,3);
+
 $cantidad_pago = $_POST['can_multi'];
-$devolver_pago = $_POST['devo_multi'];
+
+$dp = $_POST['devo_multi'];
+$devolver_pago = substr($dp,3);
+
 $concepto_pago = $_POST['hd_id_concepto'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -47,6 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo"
         <script>
         window.alert('Cuentas registradas con exito');
+        limpiar_confirmar();
+        recargar_tabla_multi();
         </script>
         ";
 

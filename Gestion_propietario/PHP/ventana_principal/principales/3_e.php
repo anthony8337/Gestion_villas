@@ -7,7 +7,7 @@
 <div class="c1">
 
 <h2>Ingresar nuevo modelo</h2>
-<button onclick="cerrar_modelos_villa()" type="button">X</button>
+<button onclick="cerrar_modelos_villa(),limpiar_confirmar()" type="button">X</button>
 
 </div>
 

@@ -24,5 +24,3 @@ function busca_modelo_v() {
     }
   }
 }
-
-document.getElementById("buscar_modelo_villa").addEventListener("keyup", busca_modelo_v);

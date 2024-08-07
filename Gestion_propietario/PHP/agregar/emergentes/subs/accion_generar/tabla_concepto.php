@@ -39,7 +39,7 @@ if($result -> num_rows > 0)
         <td>",$row["id_concepto"],"</td>
         <td>",$row["concepto"],"</td>
         <td>",$row["tipo"],"</td>
-        <td>",$row["valor"],"</td>
+        <td>$. ",$row["valor"],"</td>
         </tr>
         ";
     }

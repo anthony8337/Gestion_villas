@@ -11,11 +11,13 @@ function llamado_cuenta()
         var id = celdas[0].innerText;
         var costo = celdas[7].innerText;
 
+        var solo_numero = costo.replace('$. ','').trim();
+
         document.getElementById("hd_id_cuenta").value = id;
 
-        document.getElementById("total_multi").value = costo;
+        document.getElementById("total_multi").value ="$. " + solo_numero;
 
-        document.getElementById("txt_ct").value = costo;
+        document.getElementById("txt_ct").value = "$. " + solo_numero;
         
         costo_con_multi();
         sele_con_multi();

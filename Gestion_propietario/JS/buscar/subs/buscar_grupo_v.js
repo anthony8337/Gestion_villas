@@ -24,5 +24,3 @@ function buscar_grupo_v() {
     }
   }
 }
-
-document.getElementById("txt_buscar_grupo_villa").addEventListener("keyup", buscar_grupo_v);

@@ -5,7 +5,7 @@
 
 <div class="c1">
 <h2>Reportes</h2>
-<button onclick="cerrar_cuerpo_reporte()" type="button">X</button>
+<button onclick="cerrar_cuerpo_reporte(),limpiar_confirmar()" type="button">X</button>
 </div>
 
 <form id="Formulario_villa_usu">
@@ -15,7 +15,7 @@
 <legend>Monedas registradas</legend>
 <div class="opciones_villa">
 <button type="button" onclick="ingreso_moneda_r()">Agregar</button>
-<input type="text" id="txt_bus_moneda" name="txt_bus_moneda" placeholder="Buscar moneda" title="Buscar moneda" class="buscador">
+<input type="text" id="txt_bus_moneda" name="txt_bus_moneda" placeholder="Buscar moneda" title="Buscar moneda" class="buscador" oninput="bus_moneda_usar()">
 </div>
 
 

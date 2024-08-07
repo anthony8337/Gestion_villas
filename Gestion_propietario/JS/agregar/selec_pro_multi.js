@@ -1,15 +1,19 @@
 
 function tabla_multi_pro(){
 
+  
     var tabla = document.getElementById("tabla_pro_multi");
     var filas = tabla.getElementsByTagName("tr");
   
+    
+
     for (var i = 1; i < filas.length; i++) {
       var fila = filas[i];
       fila.addEventListener("click", function() {
         var celdas = this.getElementsByTagName("td");
 
-        
+        limpiar_confirmar();
+
         var nombre = celdas[2].innerText;
         var telefono = celdas[4].innerText;
         var villa = celdas[1].innerText;
@@ -20,6 +24,8 @@ function tabla_multi_pro(){
         document.getElementById('txt_mn').value = nombre;
         document.getElementById('txt_tl').value = telefono;
 
+        
+        recargar_tabla_multi();
         cerrar_sele_pro_multi();
 
       });

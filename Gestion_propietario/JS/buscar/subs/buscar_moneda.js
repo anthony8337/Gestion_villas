@@ -23,5 +23,3 @@ function bus_moneda_usar() {
     }
   }
 }
-
-document.getElementById("txt_bus_moneda").addEventListener("keyup", bus_moneda_usar);

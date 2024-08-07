@@ -7,7 +7,7 @@
 <div class="c1">
 
 <h2>Ingresar moneda</h2>
-<button onclick="ingreso_moneda_r_cerrar()" type="button">X</button>
+<button onclick="ingreso_moneda_r_cerrar(),limpiar_confirmar()" type="button">X</button>
 
 </div>
 

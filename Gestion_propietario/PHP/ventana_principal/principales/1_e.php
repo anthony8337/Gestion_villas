@@ -5,7 +5,7 @@
 <div class="c1">
 
 <h2>Ingresar nuevo usuario</h2>
-<button onclick="cerrar_usuario_in()" type="button">X</button>
+<button onclick="cerrar_usuario_in(),limpiar_confirmar()" type="button">X</button>
 
 </div>
 

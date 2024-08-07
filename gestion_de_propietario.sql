@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 03-08-2024 a las 04:40:09
+-- Tiempo de generación: 07-08-2024 a las 06:00:57
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -42,7 +42,9 @@ CREATE TABLE `acceso_usuario` (
 INSERT INTO `acceso_usuario` (`id_acceso_usuario`, `id_usuario`, `imprimir_reportes`, `modificar_reportes`, `eliminar_reportes`) VALUES
 (1, 6, 'no', 'si', 'no'),
 (2, 7, 'no', 'no', 'no'),
-(3, 2, 'si', 'si', 'si');
+(3, 2, 'si', 'si', 'si'),
+(4, 8, 'si', 'si', 'si'),
+(5, 9, 'no', 'si', 'no');
 
 -- --------------------------------------------------------
 
@@ -86,7 +88,7 @@ CREATE TABLE `concepto` (
 --
 
 INSERT INTO `concepto` (`id_concepto`, `concepto`, `tipo`, `valor`, `referencia`, `id_estado`) VALUES
-(1, 'MANTENIMIENTO', 'Abono', 160, 'No', 1),
+(1, 'MANTENIMIENTO', 'Abono', 500, 'No', 1),
 (2, 'PAGO MENSUAL', 'Cargo', 0, 'Si', 1),
 (3, 'AGUA', 'Abono', 160, 'No', 1),
 (4, 'LUZ', 'Abono', 160, 'No', 1),
@@ -115,6 +117,19 @@ INSERT INTO `condicion_villas` (`id_condicion`, `condicion`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `contactos_propietario`
+--
+
+CREATE TABLE `contactos_propietario` (
+  `id_contacto` int NOT NULL,
+  `id_propietario` int DEFAULT NULL,
+  `nombre` varchar(50) DEFAULT NULL,
+  `numero` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `cuentas`
 --
 
@@ -135,8 +150,8 @@ CREATE TABLE `cuentas` (
 --
 
 INSERT INTO `cuentas` (`id_cuenta`, `id_unir`, `id_concepto`, `costo`, `abono`, `desde`, `hasta`, `pagado`, `codigo`) VALUES
-(1, 19, 1, '160', '0', '2024-07-22', '2024-09-22', 'Pagado', '1000000'),
-(2, 19, 1, '160', '0', '2024-07-24', '2024-07-24', 'Pagado', '1000001'),
+(1, 19, 1, '160', '0', '2024-07-22', '2024-09-22', 'No pagado', '1000000'),
+(2, 19, 1, '160', '0', '2024-07-24', '2024-07-24', 'No pagado', '1000001'),
 (3, 15, 1, '0', '160', '2024-07-27', '2024-10-27', 'No pagado', '1000002'),
 (4, 15, 1, '0', '160', '2024-07-28', '2024-08-28', 'No pagado', '1000003'),
 (5, 15, 1, '0', '160', '2024-07-29', '2024-08-29', 'No pagado', '1000004'),
@@ -160,19 +175,57 @@ INSERT INTO `cuentas` (`id_cuenta`, `id_unir`, `id_concepto`, `costo`, `abono`, 
 (23, 19, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000018'),
 (24, 10, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000019'),
 (25, 10, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000020'),
-(26, 16, 1, '160', '0', '2024-07-30', '2024-07-30', 'Pagado', '1000021'),
+(26, 16, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000021'),
 (27, 16, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000022'),
 (28, 16, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000023'),
 (29, 15, 1, '480', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000024'),
 (30, 15, 1, '480', '0', '2024-07-30', '2031-09-30', 'No pagado', '1000025'),
 (31, 27, 3, '320', '0', '2024-08-02', '2024-10-02', 'Pagado', '1000026'),
-(32, 30, 3, '160', '0', '2024-08-02', '2024-09-02', 'Pagado', '1000027'),
-(33, 27, 1, '160', '0', '2024-08-03', '2024-08-03', 'Pagado', '1000028'),
-(34, 27, 1, '160', '0', '2024-08-03', '2024-08-03', 'Pagado', '1000029'),
-(35, 27, 1, '320', '0', '2024-08-02', '2024-10-02', 'Pagado', '1000030'),
-(36, 27, 1, '320', '0', '2024-08-02', '2024-08-02', 'Pagado', '1000031'),
-(37, 27, 3, '320', '0', '2024-08-02', '2024-10-02', 'Pagado', '1000032'),
-(38, 27, 1, '320', '0', '2024-08-02', '2024-10-02', 'Pagado', '1000033');
+(32, 30, 3, '160', '0', '2024-08-02', '2024-09-02', 'No pagado', '1000027'),
+(33, 27, 1, '160', '0', '2024-08-03', '2024-08-03', 'No pagado', '1000028'),
+(34, 27, 1, '160', '0', '2024-08-03', '2024-08-03', 'No pagado', '1000029'),
+(35, 27, 1, '320', '0', '2024-08-02', '2024-10-02', 'No pagado', '1000030'),
+(36, 27, 1, '320', '0', '2024-08-02', '2024-08-02', 'No pagado', '1000031'),
+(37, 27, 3, '320', '0', '2024-08-02', '2024-10-02', 'No pagado', '1000032'),
+(38, 27, 1, '320', '0', '2024-08-02', '2024-10-02', 'No pagado', '1000033'),
+(39, 19, 3, '320', '0', '2024-08-03', '2024-10-03', 'No pagado', '1000034'),
+(40, 25, 3, '320', '0', '2024-08-03', '2024-10-03', 'No pagado', '1000035'),
+(41, 26, 3, '320', '0', '2024-08-03', '2024-10-03', 'No pagado', '1000036'),
+(42, 28, 3, '320', '0', '2024-08-03', '2024-10-03', 'No pagado', '1000037'),
+(43, 19, 4, '480', '0', '2024-08-03', '2024-11-03', 'No pagado', '1000038'),
+(44, 25, 4, '480', '0', '2024-08-03', '2024-11-03', 'No pagado', '1000039'),
+(45, 26, 4, '480', '0', '2024-08-03', '2024-11-03', 'No pagado', '1000040'),
+(46, 28, 4, '480', '0', '2024-08-03', '2024-11-03', 'No pagado', '1000041'),
+(47, 27, 4, '160', '0', '2024-08-05', '2024-09-05', 'No pagado', '1000042'),
+(48, 27, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000043'),
+(49, 30, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000044'),
+(50, 29, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000045'),
+(51, 37, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000046'),
+(52, 15, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000047'),
+(53, 31, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000048'),
+(54, 32, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000049'),
+(55, 34, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000050'),
+(56, 14, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000051'),
+(57, 19, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000052'),
+(58, 25, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000053'),
+(59, 26, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000054'),
+(60, 28, 4, '320', '0', '2024-08-05', '2024-10-05', 'No pagado', '1000055'),
+(61, 27, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000056'),
+(62, 30, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000057'),
+(63, 29, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000058'),
+(64, 37, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000059'),
+(65, 15, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000060'),
+(66, 31, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000061'),
+(67, 32, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000062'),
+(68, 34, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000063'),
+(69, 14, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000064'),
+(70, 19, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000065'),
+(71, 25, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000066'),
+(72, 26, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000067'),
+(73, 28, 4, '640', '0', '2024-08-05', '2024-12-05', 'No pagado', '1000068'),
+(74, 27, 4, '320', '0', '2024-08-06', '2024-10-06', 'No pagado', '1000069'),
+(75, 30, 4, '320', '0', '2024-08-06', '2024-10-06', 'No pagado', '1000070'),
+(76, 29, 4, '320', '0', '2024-08-06', '2024-10-06', 'No pagado', '1000071');
 
 -- --------------------------------------------------------
 
@@ -497,7 +550,23 @@ INSERT INTO `multi_pago` (`id_multi`, `codigo_pago`, `id_unir`, `id_cuenta`, `fe
 (11, '2000005', 27, 35, '2024-08-02', 1440, 2000, 560, 1, 1, 2),
 (12, '2000005', 27, 36, '2024-08-02', 1440, 2000, 560, 1, 1, 2),
 (13, '2000005', 27, 37, '2024-08-02', 1440, 2000, 560, 1, 1, 2),
-(14, '2000005', 27, 38, '2024-08-02', 1440, 2000, 560, 1, 1, 2);
+(14, '2000005', 27, 38, '2024-08-02', 1440, 2000, 560, 1, 1, 2),
+(15, '2000006', 19, 43, '2024-08-03', 480, 500, 20, 1, 1, 2),
+(16, '2000007', 25, 44, '2024-08-03', 480, 500, 20, 1, 1, 2),
+(17, '2000008', 25, 40, '2024-08-03', 320, 500, 180, 1, 1, 2),
+(18, '2000009', 19, 23, '2024-08-03', 160, 200, 40, 1, 1, 2),
+(19, '2000010', 19, 20, '2024-08-03', 160, 200, 40, 1, 1, 2),
+(20, '2000010', 19, 7, '2024-08-03', 160, 200, 40, 1, 1, 2),
+(21, '2000010', 19, 10, '2024-08-03', 160, 200, 40, 1, 1, 2),
+(22, '2000010', 19, 14, '2024-08-03', 160, 200, 40, 1, 1, 2),
+(23, '2000010', 19, 17, '2024-08-03', 160, 200, 40, 1, 1, 2),
+(24, '2000010', 19, 39, '2024-08-03', 160, 200, 40, 1, 1, 2),
+(25, '2000011', 16, 27, '2024-08-05', 160, 200, 40, 1, 1, 2),
+(26, '2000012', 16, 28, '2024-08-05', 160, 200, 40, 1, 1, 2),
+(27, '2000013', 27, 47, '2024-08-06', 160, 200, 40, 1, 1, 2),
+(28, '2000014', 27, 48, '2024-08-06', 320, 500, 180, 1, 1, 2),
+(29, '2000015', 27, 61, '2024-08-06', 640, 800, 160, 1, 1, 2),
+(30, '2000016', 27, 31, '2024-08-06', 320, 500, 180, 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -596,7 +665,9 @@ INSERT INTO `propietarios` (`id_propietario`, `nombre`, `dni`, `correo`, `fecha`
 (39, '', '', '', '2024-08-02', 1, 'Registro por intercambio', ''),
 (40, '', '', '', '2024-08-02', 1, 'Registro por intercambio', ''),
 (41, '', '', '', '2024-08-02', 1, 'Registro por intercambio', ''),
-(42, '', '', '', '2024-08-02', 1, 'Registro por intercambio', '');
+(42, '', '', '', '2024-08-02', 1, 'Registro por intercambio', ''),
+(43, 'PACO', '0000', 'paco@gmail.com', '2024-08-02', 1, '\r\n            ', '94856463'),
+(44, 'PRUEBA', '2', 'prueba@gmail.com', '2024-08-05', 1, '\r\n            ', '94856463');
 
 -- --------------------------------------------------------
 
@@ -638,10 +709,12 @@ INSERT INTO `propietarios_villas` (`id_unir`, `id_propietario`, `id_villa`) VALU
 (30, 27, 34),
 (31, 28, 38),
 (32, 28, 39),
-(33, 1, 73),
+(33, 2, 73),
 (34, 1, 40),
 (35, 1, 74),
-(36, 1, 75);
+(36, 2, 75),
+(37, 43, 36),
+(38, 44, 77);
 
 -- --------------------------------------------------------
 
@@ -696,11 +769,13 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `dni`, `telefono`, `correo`, `id_acceso`, `clave`, `id_estado`, `usuario`) VALUES
-(2, 'ANTHONY', 'OLIVA', '010119993209', '94856466', 'anthonyoliva70@gmail.com', 1, '123456', 1, 'ANTHONY'),
+(2, 'ANTHONY', 'OLIVA', '010119993209', '94856466', 'anthonyoliva70@gmail.com', 1, '741852', 1, 'ANTHONY'),
 (3, 'NESTOR', 'OLIVA', '01010000000', '94856463', 'nestor@gmail.com', 2, '123456', 1, 'NESTOR'),
 (4, 'ELDER', 'OLIVA', '01012222222', '94856463', 'njjvnfjvjf@nvfvfn', 2, '123456', 1, 'ELDER'),
-(6, 'ANDREA', 'MURILLO', '0101196801005', '96723864', 'xiomarandrea@gmail.com', 2, '123456', 1, 'XIOMARA'),
-(7, 'ANDRE', 'MURILLO', '0101196801005', '96723864', 'xiomarandrea@gmail.com', 2, '1234567', 1, 'XIOMARA');
+(6, 'ANDREA', 'MURILLO', '0101196801005', '96723864', 'xiomarandrea@gmail.com', 2, '123456', 2, 'XIOMARA'),
+(7, 'ANDRE', 'MURILLO', '0101196801005', '96723864', 'xiomarandrea@gmail.com', 2, '1234567', 2, 'XIOMARA'),
+(8, 'TOMY', 'HALLEN', '0101196801005', '96723864', 'tomy@gg', 1, '123456', 2, 'TOMY'),
+(9, 'ANDREA', 'MURILLO', '0101196801005', '96723864', 'xiomarandrea@gmail.com', 1, '123456', 1, 'XIOMARA');
 
 -- --------------------------------------------------------
 
@@ -730,7 +805,7 @@ INSERT INTO `villas` (`id_villa`, `id_grupo`, `numero`, `cont_eeh`, `habitacione
 (33, 1, '1', '123456789', '5', '250', 1, 1, 2, 'Roma, Palma Real', ''),
 (34, 1, '2', '123456789', '5', '250', 1, 1, 2, 'Roma, Palma Real', ''),
 (35, 1, '3', '123456789', '5', '250', 1, 1, 2, 'Roma, Palma Real', ''),
-(36, 1, '4', '123456789', '5', '250', 1, 1, 1, 'Roma, Palma Real', ''),
+(36, 1, '4', '123456789', '5', '250', 1, 1, 2, 'Roma, Palma Real', ''),
 (37, 1, '5', '123456789', '5', '250', 1, 1, 1, 'Roma, Palma Real', ''),
 (38, 1, '6', '123456', '7', '250', 2, 1, 2, '', ''),
 (39, 1, '7', '123456', '7', '250', 2, 1, 2, '', ''),
@@ -770,7 +845,11 @@ INSERT INTO `villas` (`id_villa`, `id_grupo`, `numero`, `cont_eeh`, `habitacione
 (73, 4, '1', '123456789', '2', '150', 2, 1, 2, '', ''),
 (74, 4, '2', '123456789', '2', '150', 2, 1, 2, '', ''),
 (75, 4, '3', '123456789', '2', '150', 2, 1, 2, '', ''),
-(76, 4, '4', '123456789', '4', '500', 1, 1, 2, '', '');
+(76, 4, '4', '123456789', '4', '500', 1, 1, 2, '', ''),
+(77, 4, '12', '123456', '7', '150', 2, 1, 2, '', ''),
+(78, 4, '15', '777777777', '2', '600', 2, 1, 1, '', ''),
+(79, 1, '15', '5555555555555', '2', '250', 1, 1, 1, 'Roma, Palma Real', 'Tiene una fuga de gas'),
+(80, 1, '50', '5555555555555', '2', '250', 1, 1, 1, 'Roma, Juteapa', 'Mucha agua');
 
 -- --------------------------------------------------------
 
@@ -914,6 +993,13 @@ ALTER TABLE `concepto`
 --
 ALTER TABLE `condicion_villas`
   ADD PRIMARY KEY (`id_condicion`);
+
+--
+-- Indices de la tabla `contactos_propietario`
+--
+ALTER TABLE `contactos_propietario`
+  ADD PRIMARY KEY (`id_contacto`),
+  ADD KEY `FK_id_propietario` (`id_propietario`);
 
 --
 -- Indices de la tabla `cuentas`
@@ -1063,7 +1149,7 @@ ALTER TABLE `villas`
 -- AUTO_INCREMENT de la tabla `acceso_usuario`
 --
 ALTER TABLE `acceso_usuario`
-  MODIFY `id_acceso_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_acceso_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `caracteristicas`
@@ -1084,10 +1170,16 @@ ALTER TABLE `condicion_villas`
   MODIFY `id_condicion` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `contactos_propietario`
+--
+ALTER TABLE `contactos_propietario`
+  MODIFY `id_contacto` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `cuentas`
 --
 ALTER TABLE `cuentas`
-  MODIFY `id_cuenta` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_cuenta` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT de la tabla `estado_concepto`
@@ -1171,7 +1263,7 @@ ALTER TABLE `moneda`
 -- AUTO_INCREMENT de la tabla `multi_pago`
 --
 ALTER TABLE `multi_pago`
-  MODIFY `id_multi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_multi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
@@ -1183,25 +1275,25 @@ ALTER TABLE `permisos`
 -- AUTO_INCREMENT de la tabla `propietarios`
 --
 ALTER TABLE `propietarios`
-  MODIFY `id_propietario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_propietario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `propietarios_villas`
 --
 ALTER TABLE `propietarios_villas`
-  MODIFY `id_unir` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_unir` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `villas`
 --
 ALTER TABLE `villas`
-  MODIFY `id_villa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id_villa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- Restricciones para tablas volcadas
@@ -1224,6 +1316,12 @@ ALTER TABLE `caracteristicas`
 --
 ALTER TABLE `concepto`
   ADD CONSTRAINT `concepto$FK_concepto_estado_concepto` FOREIGN KEY (`id_estado`) REFERENCES `estado_concepto` (`id_estado`);
+
+--
+-- Filtros para la tabla `contactos_propietario`
+--
+ALTER TABLE `contactos_propietario`
+  ADD CONSTRAINT `FK_id_propietario` FOREIGN KEY (`id_propietario`) REFERENCES `propietarios_villas` (`id_unir`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Filtros para la tabla `cuentas`

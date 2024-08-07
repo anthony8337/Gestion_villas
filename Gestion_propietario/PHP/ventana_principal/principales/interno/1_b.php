@@ -5,7 +5,7 @@
 
 <div class="c1">
 <h2>Datos de villa</h2>
-<button onclick="cerrar_cuerpo_villa()" type="button">X</button>
+<button onclick="cerrar_cuerpo_villa(),limpiar_confirmar()" type="button">X</button>
 </div>
 
 <form id="Formulario_villa_usu">
@@ -16,7 +16,7 @@
 <legend>Grupos de villa</legend>
 <div class="opciones_villa">
 <button type="button" onclick="abrir_grupo_villa()">Agregar</button>
-<input type="text" name="txt_buscar_grupo_villa" id="txt_buscar_grupo_villa" placeholder="Buscar grupo de villa" title="Buscar grupo de villa" class="buscador">
+<input type="text" name="txt_buscar_grupo_villa" id="txt_buscar_grupo_villa" placeholder="Buscar grupo de villa" title="Buscar grupo de villa" class="buscador" oninput="buscar_grupo_v()">
 </div>
 
 <div class="contenido_tabla contenido_tabla_ultima principal_tabla_2" id="cont_grupo_villa">
@@ -30,7 +30,7 @@ include "PHP/ventana_principal/principales/interno/sql/pantalla_2/tabla_grupos_v
 <legend>Modelos de villa</legend>
 <div class="opciones_villa">
 <button type="button" onclick="abrir_modelos_villa()">Agregar</button>
-<input type="text" name="buscar_modelo_villa" id="buscar_modelo_villa" placeholder="Buscar modelo de villa" title="Buscar grupo de villa" class="buscador">
+<input type="text" name="buscar_modelo_villa" id="buscar_modelo_villa" placeholder="Buscar modelo de villa" title="Buscar grupo de villa" class="buscador" oninput="busca_modelo_v()">
 </div>
 
 <div class="contenido_tabla contenido_tabla_ultima principal_tabla_2" id="cont_modelo_villa">

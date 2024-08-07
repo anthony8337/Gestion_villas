@@ -3,7 +3,7 @@
 <div class="centro">
 <div class="c1">
 <h2>Pago múltiple</h2>
-<button onclick="cerrar_crear_multipago()" type="button">X</button>
+<button onclick="cerrar_crear_multipago(),limpiar_confirmar(),recargar_tabla_multi()" type="button">X</button>
 </div>
 
 <form id="formulario_datos_multi">
@@ -51,7 +51,7 @@
         ?>
 
 <fieldset id="dato_multi">
-        <legend>Codígo de pago</legend>
+        <legend>Código de pago</legend>
         <input type="number" id="txt_cod_m" name="txt_cod_m" value="<?php include "PHP/agregar/emergentes/subs/accion_generar/codigo_factura_multi.php"; ?>">
         <input type="date" id="txt_fecha_m" name="txt_fecha_m" >
     </fieldset>
@@ -76,9 +76,9 @@
 
 <div class="c4_acomodado_multi cuentas_multi_botones">
 
-<button type='button' onclick="sele_cuentas()">Seleccionar cuentas</button>
-
 <button type='button' onclick="recargar_tabla_multi()">Recargar cuentas</button>
+
+<button type='button' onclick="sele_cuentas()">Seleccionar cuentas</button>
 
 <button type="button" onclick="sele_con_multi()">Cambiar concepto</button>
 

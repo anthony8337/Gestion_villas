@@ -18,9 +18,9 @@ function limpieza_hidden()
     
 }
 
-function limpieza_email()
+function limpieza_textarea()
 {
-    var camposTexto = document.querySelectorAll('input[type="email"]');
+    var camposTexto = document.querySelectorAll('textarea');
 
     camposTexto.forEach(function(input){
         input.value='';
@@ -28,9 +28,42 @@ function limpieza_email()
     
 }
 
+function limpieza_email()
+{
+    var camposTexto = document.querySelectorAll('input[type="email"]');
+    camposTexto.forEach(function(input){
+        input.value='';
+    }); 
+}
+
+function limpieza_checkbox() 
+{
+    var camposTexto = document.querySelectorAll('input[type="checkbox"]');
+    camposTexto.forEach(function(input){
+        input.checked = true;
+    }); 
+}
+
+
+function limpieza_clave()
+{
+    var camposTexto = document.querySelectorAll('input[type="password"]');
+    camposTexto.forEach(function(input){
+        input.value='';
+    }); 
+}
+
 function limpiar_tablas()
 {
  const campo = document.querySelector('tbody.borrar_t');
+while (campo.firstChild) {
+    campo.removeChild(campo.firstChild);
+ }
+}
+
+function limpiar_tablas_carac()
+{
+ const campo = document.querySelector('#carac_vi tbody.borrar_t');
 while (campo.firstChild) {
     campo.removeChild(campo.firstChild);
  }
@@ -55,9 +88,13 @@ function limpiar_confirmar()
 limpieza_text();
 limpieza_hidden();
 limpieza_email();
+limpieza_clave();
 limpiar_tablas(); 
+limpieza_checkbox();
+limpieza_textarea();
 limpiar_tabla_adicionar();  
 limpiar_tabla_contacto(); 
+limpiar_tablas_carac();
 }
 
 function limpiar_opcion()
@@ -70,9 +107,13 @@ if(elegir)
 limpieza_text();
 limpieza_hidden();
 limpieza_email();
-limpiar_tablas();  
+limpieza_clave();
+limpiar_tablas(); 
+limpieza_checkbox(); 
+limpieza_textarea();
 limpiar_tabla_adicionar();
 limpiar_tabla_contacto();
+limpiar_tablas_carac();
 }  
 
 }

@@ -18,9 +18,16 @@ $id_pro_multi = $_POST['hd_id_propietario'];
 $cod_fac = $_POST['txt_cod_m'];
 $id_cuenta = $_POST['hd_id_cuenta'];
 $fecha_pago = $_POST['txt_fecha_m'];
-$total_pago = $_POST['total_multi'];
+
+$tp = $_POST['total_multi'];
+$total_pago = substr($tp,3);
+
 $cantidad_pago = $_POST['can_multi'];
-$devolver_pago = $_POST['devo_multi'];
+
+$dp = $_POST['devo_multi'];
+$devolver_pago = substr($dp,3);
+
+
 $concepto_pago = $_POST['hd_id_concepto'];
 
 $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto) 
@@ -33,7 +40,10 @@ $result = $conn->query($sql);
 $result2 = $conn->query($sql2);
 
 if ($result == true && $result2 == true) {
-        echo"<script>window.alert('Cuenta pagada con exito');
+        echo"<script>
+        window.alert('Cuenta pagada con exito');
+        limpiar_confirmar();
+        recargar_tabla_multi();
         </script>";
 }
 else

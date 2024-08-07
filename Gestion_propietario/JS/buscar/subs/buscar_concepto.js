@@ -24,5 +24,3 @@ function bus_con_usar() {
     }
   }
 }
-
-document.getElementById("bus_concepto").addEventListener("keyup", bus_con_usar);

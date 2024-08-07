@@ -46,7 +46,12 @@ function calcular_fecha() {
       }
       
       // Mostrar el resultado
-      document.getElementById("txt_total_gc").value = (diffMonths * document.getElementById("txt_costo_gc").value );
+
+      var v_c = document.getElementById("txt_costo_gc").value;
+
+      var valor = v_c.replace('$. ', '').trim();
+
+      document.getElementById("txt_total_gc").value = "$. " + (diffMonths * valor);
       document.getElementById('txt_numero_meses').value = diffMonths;
     } else {
       document.getElementById("txt_total_gc").value = "";
