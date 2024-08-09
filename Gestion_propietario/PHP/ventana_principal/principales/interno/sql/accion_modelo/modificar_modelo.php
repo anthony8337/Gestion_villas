@@ -29,7 +29,7 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>window.alert('Modelo modificado con exito');
+    echo"<script>window.alert('Modelo modificado con éxito');
     cerrar_modelos_villa();
     </script>";
 }

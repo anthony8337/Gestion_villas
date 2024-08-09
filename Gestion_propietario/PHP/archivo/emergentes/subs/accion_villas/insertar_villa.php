@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-        var confi_villa_1 = window.confirm("Villa registrada con exito \n¿Deseas crear uno nuevo?");
+        var confi_villa_1 = window.confirm("Villa registrada con éxito \n¿Deseas crear uno nuevo?");
 
         if (confi_villa_1) {
         

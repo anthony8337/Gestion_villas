@@ -29,7 +29,7 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>window.alert('Moneda registrada con exito');
+    echo"<script>window.alert('Moneda registrada con éxito');
     ingreso_moneda_r_cerrar();
     </script>";
 

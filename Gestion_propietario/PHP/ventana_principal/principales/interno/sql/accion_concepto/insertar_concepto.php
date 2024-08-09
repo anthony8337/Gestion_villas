@@ -49,7 +49,7 @@ $result = $conn->query($sql);
 if($result == true)
 {
     echo"<script>
-    window.alert('Concepto registrado con exito');
+    window.alert('Concepto registrado con éxito');
     ingreso_concepto_r_cerrar();
     </script>";
 }

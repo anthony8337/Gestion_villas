@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 } else {
     echo"<script>
-    window.alert('Los datos no se insertaron con exito');
+    window.alert('Los datos no se insertaron con éxito');
     </script>";
 }
 

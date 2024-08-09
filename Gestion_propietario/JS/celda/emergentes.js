@@ -74,7 +74,7 @@ function eliminar_propietario()
 
     if (decision) 
     {
-        window.alert('Registro eliminado con exito');
+        window.alert('Registro eliminado con éxito');
         document.getElementById('acc_cel').style.display = 'none';
     }else
     {}

@@ -87,7 +87,7 @@ $result2 = $conn->query($sql2);
 
 if ($result == true && $result2 == true) {
         echo"<script>
-        window.alert('Cuenta pagada con exito');
+        window.alert('Cuenta pagada con éxito');
         limpiar_confirmar();
         recargar_tabla_multi();
         </script>";

@@ -4,7 +4,7 @@
 
 <div class="c2">
 <span>
-Cambio ejecutado con exito.
+Cambio ejecutado con éxito.
 </span>
 
 <span>

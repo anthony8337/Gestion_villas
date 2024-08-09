@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 } else {
     echo"<script>
-    window.alert('La accion no se ejecuto con exito');
+    window.alert('La accion no se ejecuto con éxito');
     </script>";
 }
 
