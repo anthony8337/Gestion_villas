@@ -1,5 +1,4 @@
-function llamar_tb_villa_pro(){
-
+function llamar_tb_villa_pro() {
     const originalTable = document.getElementById('tabla_villa_pro').getElementsByTagName('tbody')[0];
     const destinationTable = document.getElementById('tabla_villa_pro_selec').getElementsByTagName('tbody')[0];
 
@@ -11,18 +10,35 @@ function llamar_tb_villa_pro(){
         if (target && target.nodeName === 'TR') {
             const newRow = target.cloneNode(true);
 
-            // Añadir celda con botón de eliminación
             const deleteCell = newRow.insertCell(-1);
             deleteCell.innerHTML = '<button class="accion_tel" title="Eliminar fila"><img src="Imagenes/trash3-fill.svg"></button>';
 
-            // Añadir event listener al botón de eliminación
             deleteCell.querySelector('button').addEventListener('click', (event) => {
-                event.stopPropagation(); // Evitar que el evento se propague y dispare otros listeners
-                newRow.remove(); // Eliminar la fila
+                event.stopPropagation();
+
+                target.remove();
+                newRow.deleteCell(-1);
+                originalTable.appendChild(newRow);
             });
 
             destinationTable.appendChild(newRow);
+            target.remove(); 
             cerrar_selecciona_villa_propi();
+        }
+    });
+
+    destinationTable.addEventListener('click', (e) => {
+        if (e.target && e.target.matches('button.accion_tel img')) {
+            let target = e.target;
+            while (target && target.nodeName !== 'TR') {
+                target = target.parentElement;
+            }
+            if (target && target.nodeName === 'TR') {
+                const newRow = target.cloneNode(true);
+                newRow.deleteCell(-1); 
+                originalTable.appendChild(newRow);
+                target.remove(); 
+            }
         }
     });
 }

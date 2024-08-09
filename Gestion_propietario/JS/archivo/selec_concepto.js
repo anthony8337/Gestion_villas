@@ -12,9 +12,11 @@ function modificar_concepto(){
       var tipo = celdas[2].innerText;
       var valor = celdas[3].innerText;
 
+      var canti_valor = valor.replace('$. ','').trim();
+
       document.getElementById("id_concepto").value = id;
       document.getElementById("txt_concepto").value = concepto;
-      document.getElementById("txt_cantidad").value = valor;
+      document.getElementById("txt_cantidad").value = canti_valor;
       if (tipo == "Abono") {
         document.getElementById("rb_abono").checked = "true";
         abono_editar();

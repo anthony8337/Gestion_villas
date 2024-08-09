@@ -455,7 +455,7 @@ height: 57px;
 }
 
 .contenido_oculto td:nth-child(11), .contenido_oculto td:nth-child(12),.contenido_oculto td:nth-child(13)
-,.contenido_oculto td:nth-child(14),.contenido_oculto td:nth-child(15)
+,.contenido_oculto td:nth-child(14),.contenido_oculto td:nth-child(15),.contenido_oculto td:nth-child(8),.contenido_oculto th:nth-child(8)
 {
     display: none;
 }
@@ -573,4 +573,8 @@ margin: 10px;
     padding: 10px;
     border: 1px solid #cecece;
 }
-
+/*Borrar*/
+#multi_cantidad_pago
+{
+    display: flex;
+}

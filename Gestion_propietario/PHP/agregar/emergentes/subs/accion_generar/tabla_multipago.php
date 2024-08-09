@@ -29,15 +29,15 @@ if (isset($_POST['hd_id_cuenta'])) {
 
 if ($id_pro_multi == "" && $id_multi == "") 
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado' AND id_unir = '$id_pro_multi';";
+    $sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente') AND id_unir = '$id_pro_multi';";
 }
 else if ($id_pro_multi != "" && $id_multi == "") 
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado' AND id_unir = '$id_pro_multi';";
+    $sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente') AND id_unir = '$id_pro_multi';";
 }
 else if ($id_pro_multi != "" && $id_multi != "") 
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE pagado = 'no pagado' AND id_unir = '$id_pro_multi' AND id_cuenta = '$id_multi';";
+    $sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente') AND id_unir = '$id_pro_multi' AND id_cuenta = '$id_multi';";
 }
 
 
@@ -58,6 +58,8 @@ if($result -> num_rows > 0)
     <th>Fecha Aplicada</th>
     <th>Fecha Vencimiento</th>
     <th>Saldo</th>
+    <th>Estado</th>
+    <th></th>
     </tr>
     ";
 
@@ -74,8 +76,24 @@ if($result -> num_rows > 0)
         <td>",$row["desde"],"</td>
         <td>",$row["hasta"],"</td>
         <td>$. ",$row["costo"],"</td>
-        </tr>
+        <td>",$row["pagado"],"</td>
         ";
+
+        if($row["pagado"] == "Pendiente")
+        {
+            echo"
+            <td><label class='amarillo' title='Pendiente en completar el pago'></label></td>
+            </tr>
+            ";
+        }
+        else
+        {
+            echo"
+            <td></td>
+            </tr>
+            ";
+        }
+
     }
     echo"</tbody>";
     echo"</table>";
@@ -96,6 +114,7 @@ else
     <th>Fecha Aplicada</th>
     <th>Fecha Vencimiento</th>
     <th>Saldo</th>
+    <th>Estado</th>
     </tr>
     ";
     echo"</table>";

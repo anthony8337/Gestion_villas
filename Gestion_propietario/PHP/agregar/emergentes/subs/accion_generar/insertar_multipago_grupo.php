@@ -31,6 +31,18 @@ $devolver_pago = substr($dp,3);
 
 $concepto_pago = $_POST['hd_id_concepto'];
 
+$ajusta = $total_pago - $cantidad_pago;
+
+if($ajusta > 0)
+{
+echo"<script>
+    window.alert('No se puede completar este pago, la cantidad recibida no es suficiente.');
+    </script>";
+}
+else
+{
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $tabla_cuenta_multi = json_decode($_POST['tabla_cuenta_multi'], true); // Datos de la tabla
@@ -45,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES ('$cod_fac','$id_pro_multi','" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago');";
             $result = $conn->query($sql);
 
-            $sql2= "UPDATE cuentas SET pagado='Pagado' WHERE id_cuenta ='" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "';";
+            $sql2= "UPDATE cuentas SET pagado='Pagado', costo='0' WHERE id_cuenta ='" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "';";
             $result2 = $conn->query($sql2);
 
         }
@@ -65,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 } else {
 
+}
 }
 ?>
 

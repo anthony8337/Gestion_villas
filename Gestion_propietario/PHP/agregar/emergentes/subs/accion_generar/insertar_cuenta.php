@@ -1,6 +1,6 @@
 <?php
 
-$servername = "localhost"; 
+$servername = "localhost";
 $username = "root";
 $password = "";
 $database = "gestion_de_propietario";

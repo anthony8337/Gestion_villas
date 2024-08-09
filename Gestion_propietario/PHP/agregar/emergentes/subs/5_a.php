@@ -14,19 +14,52 @@
 
 
 <?php
-    $nombre_efectivo=["Cantidad total a pagar","Cantidad recibida a cobrar","Cantidad a devolver"];
-    $id_efectivo=["txt_ct","txt_rc","txt_dv"];
-    $activacion = ["disabled","","disabled"];
+    $nombre_efectivo=["Cantidad total a pagar","Tipo de pago","Cantidad recibida a cobrar","Cantidad a devolver"];
+    $id_efectivo=["txt_ct","txt_forma_p","txt_rc","txt_dv"];
+    $activacion = ["disabled","","","disabled"];
 
 
     for($i = 0; $i < count($nombre_efectivo); $i++)
     {
-    echo"
-    <fieldset>
-    <legend>$nombre_efectivo[$i]</legend>
-    <input type='text' oninput='sumarInputs_previo()' name='$id_efectivo[$i]' id='$id_efectivo[$i]' $activacion[$i]>
-    </fieldset>
-    ";
+
+        if($i == 1)
+        {
+            echo"
+            <fieldset>
+<legend>$nombre_efectivo[$i]</legend>
+<select name='sl_forma_pago' id='sl_forma_pago'>
+    <option value='Efectivo'>Efectivo</option>
+    <option value='Referencia'>Referencia</option>
+</select>
+</fieldset>
+
+<fieldset>
+<legend>Forma de pago</legend>
+<select name='sl_tipo_r' id='sl_tipo_r'>
+    <option value='Deposito'>Deposito</option>
+    <option value='Tarjeta de crédito'>Tarjeta de crédito</option>
+    <option value='Tarjeta de débito'>Tarjeta de débito</option>
+    <option value='Cheque'>Cheque</option>
+</select>
+</fieldset>
+
+<fieldset>
+<legend>Número de referencia</legend>
+<input type='text' name='txt_referencia' id='txt_referencia'>
+</fieldset>
+            ";
+        }
+        else
+        {
+            echo"
+            <fieldset>
+            <legend>$nombre_efectivo[$i]</legend>
+            <input type='text' oninput='sumarInputs_previo()' name='$id_efectivo[$i]' id='$id_efectivo[$i]' $activacion[$i]>
+            </fieldset>
+            ";
+        }
+
+ 
     }
     ?>
 
@@ -38,3 +71,5 @@
 </div>
 
 </div>
+
+

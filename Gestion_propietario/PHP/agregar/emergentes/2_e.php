@@ -63,7 +63,7 @@
 <div class="c4">
 <span>Concepto de pago: </span> <span name="con_pago_multi" id="con_pago_multi"></span>
 <br>
-<div id="respuesta_cuenta_multi" class="contenido_tabla tabla_multi_cuentas">
+<div id="respuesta_cuenta_multi" class="contenido_tabla tabla_multi_cuentas contenido_tabla_ultima">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php";
     ?>

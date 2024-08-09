@@ -15,7 +15,7 @@
 
 <fieldset>
     <legend>Buscar propietario</legend>
-<input type="text" name="busca_con_multi" id="busca_con_multi" placeholder="Buscar propietario" class="buscador" oninput="bus_con_multi()">
+<input type="text" name="busca_con_multi" id="busca_con_multi" placeholder="Buscar por datos del propietario" class="buscador" oninput="bus_con_multi()">
 </fieldset>
 
 </div>

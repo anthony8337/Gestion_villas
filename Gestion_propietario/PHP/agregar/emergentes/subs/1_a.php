@@ -12,7 +12,7 @@
 <div class="c2">
 <fieldset>
     <legend>Buscar propietario</legend>
-<input type="text" name="busca_pro_gc" id="busca_pro_gc" placeholder="Buscar propietario" class="buscador">
+<input type="text" name="busca_pro_gc" id="busca_pro_gc" placeholder="Buscar por datos del propietario" class="buscador" oninput="bus_gc_propietario()">
 </fieldset>
 </div>
 
