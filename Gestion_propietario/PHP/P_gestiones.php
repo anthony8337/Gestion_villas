@@ -2,10 +2,10 @@
 <img src="Imagenes/logo_principal.png" id="logo">
 <ul>
 <?php
-$nombre_botones = ['Archivo','Agregar','Reportes','Salir'];
-$imagenes_botones = ['Imagenes/folder-fill.svg','Imagenes/journal-text.svg','Imagenes\clipboard2-data.svg','Imagenes/box-arrow-left.svg'];
-$titulos = ['Nueva información','Pago de propietario','Reportes de movimientos','Salir'];
-$acciones = ['precionar_b0()','precionar_b1()','precionar_b2()','redirigir_login()'];
+$nombre_botones = ['Archivo','Agregar','Reportes','Principal','Salir'];
+$imagenes_botones = ['Imagenes/folder-fill.svg','Imagenes/journal-text.svg','Imagenes/clipboard2-data.svg','Imagenes/person-fill(1).svg','Imagenes/box-arrow-left.svg'];
+$titulos = ['Nueva información','Pago de propietario','Reportes de movimientos','Retornar a la plantilla administrador','Salir'];
+$acciones = ['precionar_b0()','precionar_b1()','precionar_b2()','redirigir_principal()','redirigir_login()'];
 
 for ($i=0; $i < count($nombre_botones); $i++) { 
 

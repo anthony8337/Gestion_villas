@@ -53,5 +53,6 @@
     <script src="JS/actualizar_tablas.js"></script>
     <script src="JS/buscar/subs/buscar_villa_propietario.js"></script>
     <script src="JS/buscar/subs/buscar_donador.js"></script>
+    <script src="JS/agregar/forma_pago.js"></script>
 </head>
 <body>

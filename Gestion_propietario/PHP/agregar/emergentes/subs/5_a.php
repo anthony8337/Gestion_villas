@@ -11,29 +11,20 @@
 
 <div class="c2">
 
+<fieldset>
+    <legend>Cantidad total a pagar</legend>
+    <input type="text" name="txt_ct" id="txt_ct" oninput='sumarInputs_previo()' readonly>
+</fieldset>
 
-
-<?php
-    $nombre_efectivo=["Cantidad total a pagar","Tipo de pago","Cantidad recibida a cobrar","Cantidad a devolver"];
-    $id_efectivo=["txt_ct","txt_forma_p","txt_rc","txt_dv"];
-    $activacion = ["disabled","","","disabled"];
-
-
-    for($i = 0; $i < count($nombre_efectivo); $i++)
-    {
-
-        if($i == 1)
-        {
-            echo"
-            <fieldset>
-<legend>$nombre_efectivo[$i]</legend>
-<select name='sl_forma_pago' id='sl_forma_pago'>
+<fieldset>
+<legend>Tipo de pago</legend>
+<select name='sl_forma_pago' id='sl_forma_pago' oninput='tipo_pago()'>
     <option value='Efectivo'>Efectivo</option>
     <option value='Referencia'>Referencia</option>
 </select>
 </fieldset>
 
-<fieldset>
+<fieldset id="fl_tipo_pago">
 <legend>Forma de pago</legend>
 <select name='sl_tipo_r' id='sl_tipo_r'>
     <option value='Deposito'>Deposito</option>
@@ -43,27 +34,23 @@
 </select>
 </fieldset>
 
-<fieldset>
+<fieldset id="fl_n_referencia">
 <legend>Número de referencia</legend>
 <input type='text' name='txt_referencia' id='txt_referencia'>
 </fieldset>
-            ";
-        }
-        else
-        {
-            echo"
-            <fieldset>
-            <legend>$nombre_efectivo[$i]</legend>
-            <input type='text' oninput='sumarInputs_previo()' name='$id_efectivo[$i]' id='$id_efectivo[$i]' $activacion[$i]>
-            </fieldset>
-            ";
-        }
 
- 
-    }
-    ?>
+<fieldset id="fl_recibido">
+    <legend>Cantidad recibida a cobrar</legend>
+    <input type='text' name='txt_rc' id='txt_rc' oninput='sumarInputs_previo()'>
+</fieldset>
 
-<button type="button" onclick="paso_valor()">Confirmar cantidad</button>
+<fieldset id="fl_devolver">
+    <legend>Cantidad a devolver</legend>
+    <input type='text' name='txt_dv' id='txt_dv' oninput='sumarInputs_previo()' readonly>
+</fieldset>
+
+
+<button type="button" onclick="identificar_tipo_valor()">Confirmar cantidad</button>
 
 </div>
 
@@ -71,5 +58,10 @@
 </div>
 
 </div>
+
+<script>
+    tipo_pago();
+</script>
+
 
 

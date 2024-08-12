@@ -90,3 +90,13 @@ function cerrar_cuerpo_reporte()
 {
     document.getElementById('usu_informe').style.display = 'none';
 }
+
+function cuerpo_usuario() 
+{
+    document.getElementById('usu_usuario').style.display = 'flex';
+}
+
+function cerrar_cuerpo_usuario() 
+{
+    document.getElementById('usu_usuario').style.display = 'none';
+}

@@ -4,7 +4,7 @@
 <tr class="cabezal">
 <th></th>
 <th>Villa</th>
-<th>Cont. EEH</th>
+<th>Número de medidor</th>
 <th>Propietario</th>
 <th>DNI</th>
 <th>Teléfono</th>

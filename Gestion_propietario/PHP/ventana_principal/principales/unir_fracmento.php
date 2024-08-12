@@ -11,6 +11,10 @@ include "PHP/ventana_principal/principales/interno/3_b.php";
 ?>
 
 <?php
+include "PHP/ventana_principal/principales/interno/4_b.php";
+?>
+
+<?php
 include "PHP/ventana_principal/principales/1_e.php";
 ?>
 

@@ -84,21 +84,35 @@
 
 </div>
 
+
+
 <div class="c4_acomodado_multi">
+
+<input type="hidden" name="hd_tipo_pago" id="hd_tipo_pago">
 
     <fieldset>
     <legend>Total a pagar</legend>
-    <input type="text" name="total_multi" id="total_multi" >
+    <input type="text" name="total_multi" id="total_multi" readonly>
     </fieldset>
 
-    <fieldset>
+    <fieldset id="fl_mp_a1" class="cortar_multi">
+    <legend>Forma de pago</legend>
+    <input type="text" name="txt_forma_pp" id="txt_forma_pp" readonly>
+    </fieldset>
+
+    <fieldset id="fl_mp_a2" class="cortar_multi">
+    <legend>Número de referencia</legend>
+    <input type="text" name="txt_nu_referencia" id="txt_nu_referencia" readonly>
+    </fieldset>
+
+    <fieldset id="fl_mp_b1">
     <legend>Cantidad recibida</legend>
     <input type="text" name="can_multi" id="can_multi" oninput="sumarInputs()">
     </fieldset>
 
-    <fieldset>
+    <fieldset id="fl_mp_b2">
     <legend>Cantidad a devolver</legend>
-    <input type="text" name="devo_multi" id="devo_multi" >
+    <input type="text" name="devo_multi" id="devo_multi" readonly>
     </fieldset>
 
 </div>

@@ -89,7 +89,7 @@ if($result -> num_rows > 0)
         else
         {
             echo"
-            <td></td>
+            <td><label class='rojo' title='La cuenta aun no a sido pagada'></label></td>
             </tr>
             ";
         }

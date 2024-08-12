@@ -27,11 +27,33 @@ $cantidad_pago = $_POST['can_multi'];
 $dp = $_POST['devo_multi'];
 $devolver_pago = substr($dp,3);
 
-
 $concepto_pago = $_POST['hd_id_concepto'];
+///////////// referencias
+$tipo_pago = $_POST['hd_tipo_pago'];
+$forma_pago = $_POST['txt_forma_pp'];
+$referencia = $_POST['txt_nu_referencia'];
 
-$sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto) 
-VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago');";
+
+if($tipo_pago == "Efectivo")
+{
+        $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto) 
+        VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago');";
+
+        $sql5= "INSERT INTO forma_pago(id_cuenta, tipo_pago, forma_pago, n_referencia) 
+        VALUES ('$id_cuenta','$tipo_pago','Físico','Ninguna')";
+        $result5 = $conn -> query($sql5);
+}
+else if($tipo_pago == "Referencia")
+{
+        $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto) 
+        VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago',0,0,1,1,'$concepto_pago');";
+
+
+        $sql5= "INSERT INTO forma_pago(id_cuenta, tipo_pago, forma_pago, n_referencia) 
+        VALUES ('$id_cuenta','$tipo_pago','$forma_pago','$referencia')";
+        $result5 = $conn -> query($sql5);
+}
+
 
 
 $sql_selecciona = "SELECT * FROM cuentas WHERE id_cuenta ='$id_cuenta'";
@@ -48,14 +70,23 @@ if($result_select -> num_rows > 0)
 if($cargo_s != 0)
 {
 
-$para_cargo = $cargo_s - $cantidad_pago;
+if ($tipo_pago == "Efectivo") {
+
+        $para_cargo = $cargo_s - $cantidad_pago;
+
+}else if($tipo_pago == "Referencia")
+{
+        $para_cargo = 0;
+}
+
+
 
 if($para_cargo <= 0)
 {
         $total_cargo = 0;
         $sql2 = "UPDATE cuentas SET pagado='Pagado', costo='$total_cargo' WHERE id_cuenta ='$id_cuenta';";
 }
-else
+else if($para_cargo != 0)
 {
         $total_cargo = $cargo_s - $cantidad_pago;
         $sql2 = "UPDATE cuentas SET pagado='Pendiente', costo='$total_cargo' WHERE id_cuenta ='$id_cuenta';";
@@ -64,8 +95,14 @@ else
 } else if($abono_s != 0)
 
 {
-        $para_abono = $abono_s - $cantidad_pago;
+        if ($tipo_pago == "Efectivo") {
         
+                $para_abono = $abono_s - $cantidad_pago;
+        
+        }else if($tipo_pago == "Referencia")
+        {
+                $para_abono = 0;
+        }
 
 if($para_abono <= 0)
 {
@@ -81,16 +118,33 @@ else
 
 }
 
+
+
 $result = $conn->query($sql);
 
 $result2 = $conn->query($sql2);
 
 if ($result == true && $result2 == true) {
-        echo"<script>
-        window.alert('Cuenta pagada con éxito');
-        limpiar_confirmar();
-        recargar_tabla_multi();
-        </script>";
+
+
+        if($para_cargo <= 0)
+        {
+                echo"<script>
+                window.alert('Cuenta pagada con éxito.');
+                limpiar_confirmar();
+                recargar_tabla_multi();
+                </script>";  
+        }
+        else
+        {
+                echo"<script>
+                window.alert('Cuenta pagada de forma parcial.');
+                limpiar_confirmar();
+                recargar_tabla_multi();
+                </script>";
+        }
+
+
 }
 else
 {

@@ -57,7 +57,7 @@ for ($i=0; $i < count($pal); $i++) {
         <tr>
         <th></th>
         <th>Villa</th>
-        <th>Cont. EEH</th>
+        <th>Número de medidor</th>
         <th>Habitaciones</th>
         <th>Modelo</th>
         <th>Condición</th>

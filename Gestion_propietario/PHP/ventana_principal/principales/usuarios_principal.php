@@ -10,7 +10,7 @@
 <ul>
 <?php
     $a = ['Usuario','Datos de villas','Datos de conceptos','Reportes','Gestión','Salir'];
-    $b = ['cua_1()','cuerpo_villa()','cuerpo_concepto()','cuerpo_reporte()','redirigir_sistema_admin()','redirigir_login() '];
+    $b = ['cuerpo_usuario() ','cuerpo_villa()','cuerpo_concepto()','cuerpo_reporte()','redirigir_sistema_admin()','redirigir_login() '];
     $c = ['Imagenes/person-fill(1).svg','Imagenes/houses-fill.svg','Imagenes/list-ul.svg','Imagenes/clipboard2-data.svg','Imagenes/journal-text.svg','Imagenes/box-arrow-left.svg'];
     
     for($i = 0; $i < count($a); $i++)

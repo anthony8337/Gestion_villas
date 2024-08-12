@@ -16,3 +16,8 @@ function redirigir() {
     sessionStorage.clear();
     window.location.href = "index.php";
   }
+
+  function redirigir_principal() 
+  {
+    window.location.href = "usuario.php";
+  }

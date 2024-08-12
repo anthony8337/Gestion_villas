@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 09-08-2024 a las 17:01:03
+-- Tiempo de generación: 12-08-2024 a las 06:09:48
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -45,7 +45,9 @@ INSERT INTO `acceso_usuario` (`id_acceso_usuario`, `id_usuario`, `imprimir_repor
 (3, 2, 'si', 'si', 'si'),
 (4, 8, 'si', 'si', 'si'),
 (5, 9, 'no', 'si', 'no'),
-(6, 10, 'si', 'si', 'si');
+(6, 10, 'si', 'si', 'si'),
+(7, 11, 'si', 'si', 'si'),
+(8, 12, 'si', 'si', 'si');
 
 -- --------------------------------------------------------
 
@@ -94,7 +96,8 @@ INSERT INTO `concepto` (`id_concepto`, `concepto`, `tipo`, `valor`, `referencia`
 (3, 'AGUA', 'Abono', 160, 'No', 1),
 (4, 'LUZ', 'Abono', 160, 'No', 1),
 (5, 'FACTURA', 'Cargo', 0, 'Si', 1),
-(6, 'GAS', 'Abono', 200, 'No', 1);
+(6, 'GAS', 'Abono', 200, 'No', 1),
+(7, 'INTERNET', 'Abono', 70, 'No', 1);
 
 -- --------------------------------------------------------
 
@@ -177,8 +180,8 @@ INSERT INTO `cuentas` (`id_cuenta`, `id_unir`, `id_concepto`, `costo`, `abono`, 
 (23, 19, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000018'),
 (24, 10, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000019'),
 (25, 10, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000020'),
-(26, 16, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000021'),
-(27, 16, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000022'),
+(26, 16, 1, '0', '0', '2024-07-30', '2024-07-30', 'Pagado', '1000021'),
+(27, 16, 1, '0', '0', '2024-07-30', '2024-07-30', 'Pagado', '1000022'),
 (28, 16, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000023'),
 (29, 15, 1, '480', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000024'),
 (30, 15, 1, '480', '0', '2024-07-30', '2031-09-30', 'No pagado', '1000025'),
@@ -229,8 +232,8 @@ INSERT INTO `cuentas` (`id_cuenta`, `id_unir`, `id_concepto`, `costo`, `abono`, 
 (75, 30, 4, '320', '0', '2024-08-06', '2024-10-06', 'No pagado', '1000070'),
 (76, 29, 4, '0', '0', '2024-08-06', '2024-10-06', 'Pagado', '1000071'),
 (77, 16, 6, '0', '0', '2024-08-09', '2024-09-09', 'Pagado', '1000072'),
-(78, 16, 4, '160', '0', '2024-08-09', '2024-09-09', 'No pagado', '1000073'),
-(79, 16, 3, '160', '0', '2024-08-09', '2024-09-09', 'No pagado', '1000074'),
+(78, 16, 4, '0', '0', '2024-08-09', '2024-09-09', 'Pagado', '1000073'),
+(79, 16, 3, '0', '0', '2024-08-09', '2024-09-09', 'Pagado', '1000074'),
 (80, 16, 1, '250', '0', '2024-08-09', '2024-09-09', 'No pagado', '1000075');
 
 -- --------------------------------------------------------
@@ -462,6 +465,32 @@ INSERT INTO `forma_de_pago` (`id_pago`, `pago`, `id_estado`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `forma_pago`
+--
+
+CREATE TABLE `forma_pago` (
+  `id_forma` int NOT NULL,
+  `id_cuenta` int NOT NULL,
+  `tipo_pago` varchar(50) NOT NULL,
+  `forma_pago` varchar(50) NOT NULL,
+  `n_referencia` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `forma_pago`
+--
+
+INSERT INTO `forma_pago` (`id_forma`, `id_cuenta`, `tipo_pago`, `forma_pago`, `n_referencia`) VALUES
+(1, 78, 'Efectivo', 'Físico', 'Ninguna'),
+(2, 78, 'Referencia', 'Deposito', '956030201050'),
+(3, 78, 'Referencia', 'Deposito', '909060302010'),
+(4, 27, 'Referencia', 'Deposito', '906030303010'),
+(5, 78, 'Referencia', 'Tarjeta de crédito', '82222222222222'),
+(6, 79, 'Referencia', 'Tarjeta de débito', '888888888888888');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `grupo_villa`
 --
 
@@ -599,7 +628,15 @@ INSERT INTO `multi_pago` (`id_multi`, `codigo_pago`, `id_unir`, `id_cuenta`, `fe
 (54, '2000031', 29, 50, '2024-08-09', 320, 200, -120, 1, 1, 2),
 (55, '2000031', 29, 50, '2024-08-09', 120, 120, 0, 1, 1, 2),
 (56, '2000031', 29, 63, '2024-08-09', 640, 640, 0, 1, 1, 2),
-(57, '2000032', 16, 77, '2024-08-09', 200, 250, 50, 1, 1, 2);
+(57, '2000032', 16, 77, '2024-08-09', 200, 250, 50, 1, 1, 2),
+(58, '2000033', 16, 26, '2024-08-09', 160, 100, -60, 1, 1, 2),
+(59, '2000033', 16, 26, '2024-08-09', 60, 100, 40, 1, 1, 2),
+(60, '2000034', 16, 27, '2024-08-09', 160, 100, -60, 1, 1, 2),
+(61, '2000035', 16, 27, '2024-08-09', 60, 30, -30, 1, 1, 2),
+(62, '2000036', 16, 78, '2024-08-11', 160, 80, -80, 1, 1, 2),
+(63, '2000037', 16, 27, '2024-08-11', 30, 0, 0, 1, 1, 2),
+(64, '2000037', 16, 78, '2024-08-11', 80, 0, 0, 1, 1, 2),
+(65, '2000037', 16, 79, '2024-08-11', 160, 0, 0, 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -809,7 +846,9 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `dni`, `telefono`, `
 (7, 'ANDRE', 'MURILLO', '0101196801005', '96723864', 'xiomarandrea@gmail.com', 2, '1234567', 2, 'XIOMARA'),
 (8, 'TOMY', 'HALLEN', '0101196801005', '96723864', 'tomy@gg', 1, '123456', 2, 'TOMY'),
 (9, 'ANDREA', 'MURILLO', '0101196801005', '96723864', 'xiomarandrea@gmail.com', 1, '123456', 1, 'XIOMARA'),
-(10, 'ASHANTY', 'GONZALES', '0101200405646', '84651233', 'acha.gon@gmail.com', 2, '963852', 1, 'ASHANTY');
+(10, 'ASHANTY', 'GONZALES', '0101200405646', '84651233', 'acha.gon@gmail.com', 2, '963852', 1, 'ASHANTY'),
+(11, 'MKVF', 'KFMVKFM', '5515151', '845545151', 'kdm@mkbmgk', 2, 'ooo', 1, 'VMKFKVFK'),
+(12, 'KCMDKCMDK', 'DMKMDKCMKD', 'DKMKDMVKFMK', 'KDMVKMKVFMKV', 'vmkvmkkf@v', 1, 'cmdkmckdmckd', 1, 'MKCDMKCMDK');
 
 -- --------------------------------------------------------
 
@@ -883,7 +922,9 @@ INSERT INTO `villas` (`id_villa`, `id_grupo`, `numero`, `cont_eeh`, `habitacione
 (77, 4, '12', '123456', '7', '150', 2, 1, 2, '', ''),
 (78, 4, '15', '777777777', '2', '600', 2, 1, 1, '', ''),
 (79, 1, '15', '5555555555555', '2', '250', 1, 1, 1, 'Roma, Palma Real', 'Tiene una fuga de gas'),
-(80, 1, '50', '5555555555555', '2', '250', 1, 1, 1, 'Roma, Juteapa', 'Mucha agua');
+(80, 1, '50', '5555555555555', '2', '250', 1, 1, 1, 'Roma, Juteapa', 'Mucha agua'),
+(81, 1, '88', '', '', '', 1, 1, 1, '', ''),
+(82, 1, '89', '', '', '', 1, 1, 1, '', '');
 
 -- --------------------------------------------------------
 
@@ -1105,6 +1146,13 @@ ALTER TABLE `forma_de_pago`
   ADD KEY `FK_forma_de_pago_estado_pago` (`id_estado`);
 
 --
+-- Indices de la tabla `forma_pago`
+--
+ALTER TABLE `forma_pago`
+  ADD PRIMARY KEY (`id_forma`),
+  ADD KEY `FK_id_cuenta` (`id_cuenta`);
+
+--
 -- Indices de la tabla `grupo_villa`
 --
 ALTER TABLE `grupo_villa`
@@ -1183,7 +1231,7 @@ ALTER TABLE `villas`
 -- AUTO_INCREMENT de la tabla `acceso_usuario`
 --
 ALTER TABLE `acceso_usuario`
-  MODIFY `id_acceso_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_acceso_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `caracteristicas`
@@ -1195,7 +1243,7 @@ ALTER TABLE `caracteristicas`
 -- AUTO_INCREMENT de la tabla `concepto`
 --
 ALTER TABLE `concepto`
-  MODIFY `id_concepto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_concepto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `condicion_villas`
@@ -1276,6 +1324,12 @@ ALTER TABLE `forma_de_pago`
   MODIFY `id_pago` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `forma_pago`
+--
+ALTER TABLE `forma_pago`
+  MODIFY `id_forma` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de la tabla `grupo_villa`
 --
 ALTER TABLE `grupo_villa`
@@ -1297,7 +1351,7 @@ ALTER TABLE `moneda`
 -- AUTO_INCREMENT de la tabla `multi_pago`
 --
 ALTER TABLE `multi_pago`
-  MODIFY `id_multi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_multi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
@@ -1321,13 +1375,13 @@ ALTER TABLE `propietarios_villas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `villas`
 --
 ALTER TABLE `villas`
-  MODIFY `id_villa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id_villa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- Restricciones para tablas volcadas
@@ -1369,6 +1423,12 @@ ALTER TABLE `cuentas`
 --
 ALTER TABLE `forma_de_pago`
   ADD CONSTRAINT `FK_forma_de_pago_estado_pago` FOREIGN KEY (`id_estado`) REFERENCES `estado_pago` (`id_estado`);
+
+--
+-- Filtros para la tabla `forma_pago`
+--
+ALTER TABLE `forma_pago`
+  ADD CONSTRAINT `FK_id_cuenta` FOREIGN KEY (`id_cuenta`) REFERENCES `cuentas` (`id_cuenta`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Filtros para la tabla `grupo_villa`
