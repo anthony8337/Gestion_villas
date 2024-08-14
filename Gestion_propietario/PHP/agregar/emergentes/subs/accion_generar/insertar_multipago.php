@@ -39,8 +39,7 @@ if($tipo_pago == "Efectivo")
         $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto) 
         VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago');";
 
-        $sql5= "INSERT INTO forma_pago(id_cuenta, tipo_pago, forma_pago, n_referencia) 
-        VALUES ('$id_cuenta','$tipo_pago','Físico','Ninguna')";
+        $sql5= "INSERT INTO forma_pago(id_cuenta, tipo_pago, forma_pago, n_referencia) VALUES ('$id_cuenta','$tipo_pago','Físico','Ninguna')";
         $result5 = $conn -> query($sql5);
 }
 else if($tipo_pago == "Referencia")
@@ -67,9 +66,6 @@ if($result_select -> num_rows > 0)
         }
 }
 
-if($cargo_s != 0)
-{
-
 if ($tipo_pago == "Efectivo") {
 
         $para_cargo = $cargo_s - $cantidad_pago;
@@ -80,44 +76,27 @@ if ($tipo_pago == "Efectivo") {
 }
 
 
+if($cantidad_pago >= $cargo_s)
+{
+$abono_real = $abono_s + $cargo_s;
+}
+else 
+{
+$abono_real = $abono_s + $cantidad_pago;        
+}
+
+
 
 if($para_cargo <= 0)
 {
         $total_cargo = 0;
-        $sql2 = "UPDATE cuentas SET pagado='Pagado', costo='$total_cargo' WHERE id_cuenta ='$id_cuenta';";
+        $sql2 = "UPDATE cuentas SET pagado='Pagado',abono='$abono_real', costo='$total_cargo' WHERE id_cuenta ='$id_cuenta';";
 }
 else if($para_cargo != 0)
 {
         $total_cargo = $cargo_s - $cantidad_pago;
-        $sql2 = "UPDATE cuentas SET pagado='Pendiente', costo='$total_cargo' WHERE id_cuenta ='$id_cuenta';";
+        $sql2 = "UPDATE cuentas SET pagado='Pendiente',abono='$abono_real', costo='$total_cargo' WHERE id_cuenta ='$id_cuenta';";
 }
-
-} else if($abono_s != 0)
-
-{
-        if ($tipo_pago == "Efectivo") {
-        
-                $para_abono = $abono_s - $cantidad_pago;
-        
-        }else if($tipo_pago == "Referencia")
-        {
-                $para_abono = 0;
-        }
-
-if($para_abono <= 0)
-{
-        $total_abono = 0;
-        $sql2 = "UPDATE cuentas SET pagado='Pagado', abono='$total_abono' WHERE id_cuenta ='$id_cuenta';";
-
-}
-else
-{
-        $total_abono = $abono_s - $cantidad_pago;
-        $sql2 = "UPDATE cuentas SET pagado='Pagado', abono='$total_abono' WHERE id_cuenta ='$id_cuenta';";
-}
-
-}
-
 
 
 $result = $conn->query($sql);

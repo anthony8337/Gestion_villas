@@ -140,13 +140,14 @@
     <?php
     $nombre = ['Costo de concepto:','Costo total:'];
     $id = ['txt_costo_gc','txt_total_gc'];
+    $calcu_cuerpo = ['oninput="calcular_fecha()"',''];
 
     for ($i=0; $i < count($nombre); $i++) { 
         echo"
         
         <fieldset>
         <legend>$nombre[$i]</legend>
-        <input type='text' name='$id[$i]' id='$id[$i]'>
+        <input type='text' name='$id[$i]' id='$id[$i]' $calcu_cuerpo[$i]>
         </fieldset>
         ";
     }

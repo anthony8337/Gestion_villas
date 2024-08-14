@@ -54,5 +54,6 @@
     <script src="JS/buscar/subs/buscar_villa_propietario.js"></script>
     <script src="JS/buscar/subs/buscar_donador.js"></script>
     <script src="JS/agregar/forma_pago.js"></script>
+    <script src="JS/reloj.js"></script>
 </head>
 <body>

@@ -11,10 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
         var tipo = celdas[2].innerText;
         var valor = celdas[3].innerText;
 
+        var toma = valor.replace('$. ', '').trim();
+
         document.getElementById("id_con_gc").value = id;
         document.getElementById("txt_des_concep").value = concepto;
         document.getElementById("txt_tipo_concep").value = tipo;
-        document.getElementById("txt_costo_gc").value = valor;
+        document.getElementById("txt_costo_gc").value = toma;
 
         suma_un_mes();
 
@@ -26,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-  
 function calcular_fecha() {
   var date1 = document.getElementById("txt_fecha_gc_desde").value;
   var date2 = document.getElementById("txt_fecha_gc_hasta").value;
@@ -51,7 +52,16 @@ function calcular_fecha() {
 
       var valor = v_c.replace('$. ', '').trim();
 
-      document.getElementById("txt_total_gc").value = "$. " + (diffMonths * valor);
+      if((diffMonths * valor) == 0)
+        {
+          document.getElementById("txt_total_gc").value = "$. " + valor;
+        }
+        else
+        {
+          document.getElementById("txt_total_gc").value = "$. " + (diffMonths * valor);
+        }
+
+      
       document.getElementById('txt_numero_meses').value = diffMonths;
     } else {
       document.getElementById("txt_total_gc").value = "";
@@ -74,7 +84,7 @@ function suma_un_mes()
     }
 
     // Sumar un mes a la fecha
-    fecha.setMonth(fecha.getMonth() + 1);
+    fecha.setMonth(fecha.getMonth());
 
     // Actualizar el valor del input de fecha
     dateInput.value = fecha.toISOString().split('T')[0];
