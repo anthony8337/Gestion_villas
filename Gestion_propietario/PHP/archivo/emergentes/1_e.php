@@ -16,13 +16,14 @@
 $pal = ['Nombre completo', 'Numero de identidad','Correo electrónico','Teléfono','Fecha de ingreso'];
 $id = ['txtnombre','txtid','txtcorreo','txttelefono','txtfecha_i'];
 $tipo = ['text','text','email','text','date','text'];
+$clases = ['','solo_numero','','solo_numero',''];
 
 for ($i=0; $i < count($pal); $i++) {
 
         echo"
         <fieldset>
         <legend>$pal[$i]</legend>
-        <input type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]'>
+        <input class='$clases[$i]' type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]'>
         </fieldset>
         ";
 }

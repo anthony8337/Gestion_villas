@@ -1,12 +1,12 @@
 //generar cuenta ingreso
 function cerrar_ingreso_celda()
 {
-    document.getElementById('acc_cel').style.display = 'none';
+    document.getElementById('div_atajo').style.display = 'none';
 }
 
 function ingresocelda()
 {
-    document.getElementById('acc_cel').style.display = 'flex';
+    document.getElementById('div_atajo').style.display = 'flex';
 }
 
 //////////////////////////Modificar 

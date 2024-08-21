@@ -22,7 +22,17 @@ $fecha_pago = $_POST['txt_fecha_m'];
 $tp = $_POST['total_multi'];
 $total_pago = substr($tp,3);
 
-$cantidad_pago = $_POST['can_multi'];
+
+ 
+if ($_POST['can_multi'] == "")
+{
+        $cantidad_pago = 0;
+}
+else
+{
+        $cantidad_pago = $_POST['can_multi'];
+}
+
 
 $dp = $_POST['devo_multi'];
 $devolver_pago = substr($dp,3);

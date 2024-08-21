@@ -19,7 +19,6 @@ function llamado_cuenta()
 
         document.getElementById("txt_ct").value = "$. " + solo_numero;
         
-        costo_con_multi();
         sele_con_multi();
         
       });

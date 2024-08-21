@@ -1,4 +1,4 @@
-<div id="div_cuenta" class="mod">
+<div id="div_atajo" class="mod">
 
 <div class="centro">
 

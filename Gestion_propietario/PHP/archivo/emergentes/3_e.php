@@ -33,7 +33,7 @@ for ($i=0; $i < count($pal); $i++) {
         echo"
         <fieldset>
         <legend>$pal[$i]</legend>
-        <input type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]'>
+        <input type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]' readonly required>
         </fieldset>
         ";
     }
@@ -41,6 +41,7 @@ for ($i=0; $i < count($pal); $i++) {
 
 ?>
 </fieldset>
+
 </div>
 
 <div class="c4">
@@ -92,7 +93,7 @@ for ($i=0; $i < count($pal); $i++) {
         echo"
         <fieldset>
         <legend>$pal[$i]</legend>
-        <input type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]'>
+        <input type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]' readonly required>
         </fieldset>
         ";
     }

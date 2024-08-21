@@ -177,7 +177,11 @@ background-color: #e5e5e5;
     display: none;
 }
 
-
+.contenido_tabla table tbody tr:hover,.contenido_tabla table tr:hover:nth-child(even) td
+{
+    background-color: #c5e4e4;
+    cursor: pointer;
+}
 
 /*Elementos*/
 
@@ -638,4 +642,41 @@ margin: 10px;
 
     height: 30px;
     width: 100%;
+}
+
+#div_atajo h2
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#div_atajo .c5
+{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#div_atajo .c5 button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90px;
+    height: 90px;
+}
+
+.no_ver
+{
+    visibility: hidden;
+}
+
+.sin_borde
+{
+    border: none;
 }

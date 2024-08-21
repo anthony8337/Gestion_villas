@@ -22,3 +22,5 @@ include "PHP/tablas/mostar_propietarios.php";
 </table>
 
 </div>
+
+<script>selec_propi_prin();</script>

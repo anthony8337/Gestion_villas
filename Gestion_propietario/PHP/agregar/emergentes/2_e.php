@@ -13,7 +13,7 @@
     <?php
     $nombre=["Propietario","G. Cuenta","Limpiar","Ejecutar Pago"];
     $id=["btn_propi_multi","btn_cuenta_multi","btn_limpiar_multi","btn_pago_multi"];
-    $accion=["sele_pro_multi()","ingreso_g_multi()","",""];
+    $accion=["sele_pro_multi()","ingreso_g_multi()","limpiar_confirmar(),recargar_tabla_multi()",""];
     $tipo=["button","button","button","submit"];
 
     for($i = 0; $i < count($nombre); $i++)
@@ -44,7 +44,7 @@
         echo"
             <fieldset>
             <legend>$nombre_dato[$i]</legend>
-            <input type='text' name='$id_datos[$i]' id='$id_datos[$i]' >
+            <input type='text' name='$id_datos[$i]' id='$id_datos[$i]' readonly>
             </fieldset>
         ";
     }
@@ -52,7 +52,7 @@
 
 <fieldset id="dato_multi">
         <legend>Código de pago</legend>
-        <input type="number" id="txt_cod_m" name="txt_cod_m" value="<?php include "PHP/agregar/emergentes/subs/accion_generar/codigo_factura_multi.php"; ?>">
+        <input type="number" id="txt_cod_m" name="txt_cod_m" readonly value="<?php include "PHP/agregar/emergentes/subs/accion_generar/codigo_factura_multi.php"; ?>">
         <input type="date" id="txt_fecha_m" name="txt_fecha_m" >
     </fieldset>
 

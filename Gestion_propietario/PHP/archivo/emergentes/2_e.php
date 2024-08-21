@@ -30,7 +30,7 @@ for ($i=0; $i < count($titulo); $i++) {
             include "PHP/archivo/emergentes/subs/accion_villas/grupo_villa.php"
             ,"
             </select>
-            <input  type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]'>
+            <input  type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]' class='solo_numero'>
         </fieldset>
         ";
     }else if ($i == count($titulo)-1) 
@@ -45,23 +45,12 @@ for ($i=0; $i < count($titulo); $i++) {
             </select>
         </fieldset>
         ";
-    }else if($i == 1)
-    {
-        
-            echo"
-            <fieldset>
-                <legend>$titulo[$i]</legend>
-                <input type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]' minlength='5' required>
-            </fieldset>
-            ";
-    }
-    else    
-    {
+    }else{
         
         echo"
         <fieldset>
             <legend>$titulo[$i]</legend>
-            <input type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]'>
+            <input type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]' class='solo_numero'>
         </fieldset>
         ";
 }

@@ -55,5 +55,7 @@
     <script src="JS/buscar/subs/buscar_donador.js"></script>
     <script src="JS/agregar/forma_pago.js"></script>
     <script src="JS/reloj.js"></script>
+    <script src="JS/celda/selec_propietario.js" ></script>
+    <script src="JS/agregar/selec_bus_reimprecion.js"></script>
 </head>
 <body>

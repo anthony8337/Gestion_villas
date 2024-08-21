@@ -6,14 +6,15 @@ $nombre_botones = ['Archivo','Agregar','Reportes','Principal','Salir'];
 $imagenes_botones = ['Imagenes/folder-fill.svg','Imagenes/journal-text.svg','Imagenes/clipboard2-data.svg','Imagenes/person-fill(1).svg','Imagenes/box-arrow-left.svg'];
 $titulos = ['Nueva información','Pago de propietario','Reportes de movimientos','Retornar a la plantilla administrador','Salir'];
 $acciones = ['precionar_b0()','precionar_b1()','precionar_b2()','redirigir_principal()','redirigir_login()'];
+$id_menu = ['li_0','li_1','li_2','li_3','li_4'];
 
 for ($i=0; $i < count($nombre_botones); $i++) { 
 
 
 echo"
-<li id='li_$i' onclick='$acciones[$i]' title='$titulos[$i]'>
+<li id='$id_menu[$i]' onclick='$acciones[$i]' title='$titulos[$i]'>
 
-<img src='$imagenes_botones[$i]' id='icono'>
+<img src='$imagenes_botones[$i]' class='icono'>
 <span id='m_la_$i' >$nombre_botones[$i]</span>
 
 </li>
@@ -72,3 +73,4 @@ include "PHP/reportes/unir_emergentes.php";
 <?php
 include "PHP/celda/unir_emergentes.php";
 ?>
+
