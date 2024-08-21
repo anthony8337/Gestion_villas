@@ -18,7 +18,7 @@ function validaciones_numeros()
   var camposTexto = document.querySelectorAll('.solo_numero');
   camposTexto.forEach(function(input) {
     input.addEventListener('input', function() {
-      this.value = this.value.toUpperCase().replace(/[^0-9]/g, '');
+      this.value = this.value.toUpperCase().replace(/[^0-9 - .]/g, '');
     });
   });
 }
