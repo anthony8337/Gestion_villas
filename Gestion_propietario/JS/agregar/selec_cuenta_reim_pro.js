@@ -24,6 +24,7 @@ function tabla_cuentas_reimpri(){
         document.getElementById('txt_tipa_reim').value = tipo;
         actualizar_forma_pago(codigo);
         cerrar_cuenta_propi_reim();
+        
 
       });
     }

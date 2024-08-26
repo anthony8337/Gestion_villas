@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 12-08-2024 a las 06:09:48
+-- Tiempo de generación: 26-08-2024 a las 05:48:20
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -97,7 +97,9 @@ INSERT INTO `concepto` (`id_concepto`, `concepto`, `tipo`, `valor`, `referencia`
 (4, 'LUZ', 'Abono', 160, 'No', 1),
 (5, 'FACTURA', 'Cargo', 0, 'Si', 1),
 (6, 'GAS', 'Abono', 200, 'No', 1),
-(7, 'INTERNET', 'Abono', 70, 'No', 1);
+(7, 'INTERNET', 'Abono', 70, 'No', 1),
+(8, 'MUEBLES', 'Abono', 90.05, 'No', 1),
+(9, 'REPARACION', 'Cargo', 0, 'Si', 1);
 
 -- --------------------------------------------------------
 
@@ -182,7 +184,7 @@ INSERT INTO `cuentas` (`id_cuenta`, `id_unir`, `id_concepto`, `costo`, `abono`, 
 (25, 10, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000020'),
 (26, 16, 1, '0', '0', '2024-07-30', '2024-07-30', 'Pagado', '1000021'),
 (27, 16, 1, '0', '0', '2024-07-30', '2024-07-30', 'Pagado', '1000022'),
-(28, 16, 1, '160', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000023'),
+(28, 16, 1, '0', '100', '2024-07-30', '2024-07-30', 'Pagado', '1000023'),
 (29, 15, 1, '480', '0', '2024-07-30', '2024-07-30', 'No pagado', '1000024'),
 (30, 15, 1, '480', '0', '2024-07-30', '2031-09-30', 'No pagado', '1000025'),
 (31, 27, 3, '320', '0', '2024-08-02', '2024-10-02', 'Pagado', '1000026'),
@@ -234,7 +236,34 @@ INSERT INTO `cuentas` (`id_cuenta`, `id_unir`, `id_concepto`, `costo`, `abono`, 
 (77, 16, 6, '0', '0', '2024-08-09', '2024-09-09', 'Pagado', '1000072'),
 (78, 16, 4, '0', '0', '2024-08-09', '2024-09-09', 'Pagado', '1000073'),
 (79, 16, 3, '0', '0', '2024-08-09', '2024-09-09', 'Pagado', '1000074'),
-(80, 16, 1, '250', '0', '2024-08-09', '2024-09-09', 'No pagado', '1000075');
+(80, 16, 1, '0', '0', '2024-08-09', '2024-09-09', 'Pagado', '1000075'),
+(81, 27, 3, '0', '0', '2024-08-12', '2024-10-12', 'Pagado', '1000076'),
+(82, 30, 3, '0', '320', '2024-08-12', '2024-10-12', 'Pagado', '1000077'),
+(83, 29, 3, '320', '0', '2024-08-12', '2024-10-12', 'No pagado', '1000078'),
+(84, 37, 3, '320', '0', '2024-08-12', '2024-10-12', 'No pagado', '1000079'),
+(85, 15, 3, '320', '0', '2024-08-12', '2024-10-12', 'No pagado', '1000080'),
+(86, 31, 3, '320', '0', '2024-08-12', '2024-10-12', 'No pagado', '1000081'),
+(87, 32, 3, '320', '0', '2024-08-12', '2024-10-12', 'No pagado', '1000082'),
+(88, 34, 3, '320', '0', '2024-08-12', '2024-10-12', 'No pagado', '1000083'),
+(89, 14, 3, '320', '0', '2024-08-12', '2024-10-12', 'No pagado', '1000084'),
+(90, 13, 6, '800', '0', '2024-08-12', '2024-12-12', 'No pagado', '1000085'),
+(91, 38, 3, '800', '0', '2024-08-12', '2025-01-12', 'No pagado', '1000086'),
+(92, 13, 1, '1500', '0', '2024-08-12', '2025-02-12', 'No pagado', '1000087'),
+(93, 13, 1, '1500', '0', '2024-08-12', '2025-02-12', 'No pagado', '1000088'),
+(94, 13, 1, '1500', '0', '2024-08-12', '2025-02-12', 'No pagado', '1000089'),
+(95, 13, 1, '1500', '0', '2024-08-12', '2025-02-12', 'No pagado', '1000090'),
+(96, 16, 1, '0', '0', '2024-08-12', '2024-09-12', 'Pagado', '1000091'),
+(97, 16, 1, '0', '250', '2024-07-30', '2024-08-30', 'Pagado', '1000092'),
+(98, 16, 1, '0', '300', '2024-07-30', '2024-08-30', 'Pagado', '1000093'),
+(99, 16, 1, '250', '0', '2024-07-30', '2024-08-30', 'No pagado', '1000094'),
+(100, 27, 1, '0', '250', '2024-08-13', '2024-08-13', 'Pagado', '1000095'),
+(101, 27, 3, '0', '260', '2024-08-13', '2024-08-13', 'Pagado', '1000096'),
+(102, 27, 4, '0', '1', '2024-08-13', '2024-09-13', 'Pagado', '1000097'),
+(103, 27, 4, '0', '200', '2024-08-13', '2024-08-13', 'Pagado', '1000098'),
+(104, 27, 4, '0', '500', '2024-08-13', '2024-08-13', 'Pagado', '1000099'),
+(105, 27, 8, '90.05', '0', '2024-08-14', '2024-08-14', 'No pagado', '1000100'),
+(106, 27, 3, '320', '0', '2024-08-17', '2024-10-17', 'No pagado', '1000101'),
+(107, 39, 8, '0', '180.05', '2024-08-21', '2024-09-21', 'Pagado', '1000102');
 
 -- --------------------------------------------------------
 
@@ -243,14 +272,14 @@ INSERT INTO `cuentas` (`id_cuenta`, `id_unir`, `id_concepto`, `costo`, `abono`, 
 -- (Véase abajo para la vista actual)
 --
 CREATE TABLE `cuenta_vista` (
-`id_cuenta` int
+`abono` varchar(50)
 ,`codigo` varchar(50)
-,`id_unir` int
 ,`concepto` varchar(50)
 ,`costo` varchar(50)
-,`abono` varchar(50)
 ,`desde` date
 ,`hasta` date
+,`id_cuenta` int
+,`id_unir` int
 ,`pagado` varchar(50)
 );
 
@@ -261,13 +290,13 @@ CREATE TABLE `cuenta_vista` (
 -- (Véase abajo para la vista actual)
 --
 CREATE TABLE `donar_recibir_villa` (
-`id_propietario` int
-,`id_villa` int
-,`villa` varchar(101)
+`condicion` varchar(50)
 ,`cont_eeh` varchar(50)
 ,`habitaciones` varchar(50)
-,`condicion` varchar(50)
+,`id_propietario` int
+,`id_villa` int
 ,`modelo` varchar(50)
+,`villa` varchar(101)
 );
 
 -- --------------------------------------------------------
@@ -438,8 +467,32 @@ CREATE TABLE `estado_villa` (
 --
 
 INSERT INTO `estado_villa` (`id_estado`, `estado`) VALUES
-(1, 'activo'),
-(2, 'desactivado');
+(1, 'Disponible'),
+(2, 'Habitado'),
+(3, 'No disponible');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `factura_completa_reimprimir`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `factura_completa_reimprimir` (
+`abono` varchar(50)
+,`cantidad_devuelta` float
+,`cantidad_recibida` float
+,`codigo` varchar(50)
+,`codigo_pago` varchar(50)
+,`concepto` varchar(50)
+,`desde` date
+,`fecha_pago` date
+,`forma_pago` varchar(50)
+,`hasta` date
+,`id_unir` int
+,`n_referencia` varchar(50)
+,`tipo_pago` varchar(50)
+,`total_pago` float
+);
 
 -- --------------------------------------------------------
 
@@ -486,7 +539,38 @@ INSERT INTO `forma_pago` (`id_forma`, `id_cuenta`, `tipo_pago`, `forma_pago`, `n
 (3, 78, 'Referencia', 'Deposito', '909060302010'),
 (4, 27, 'Referencia', 'Deposito', '906030303010'),
 (5, 78, 'Referencia', 'Tarjeta de crédito', '82222222222222'),
-(6, 79, 'Referencia', 'Tarjeta de débito', '888888888888888');
+(6, 79, 'Referencia', 'Tarjeta de débito', '888888888888888'),
+(7, 81, 'Efectivo', 'Físico', 'Ninguna'),
+(8, 81, 'Referencia', 'Tarjeta de débito', '8888888888888888888'),
+(9, 80, 'Efectivo', 'Físico', 'Ninguna'),
+(10, 96, 'Efectivo', 'Físico', 'Ninguna'),
+(11, 99, 'Efectivo', 'Físico', 'Ninguna'),
+(12, 99, 'Efectivo', 'Físico', 'Ninguna'),
+(13, 28, 'Efectivo', 'Físico', 'Ninguna'),
+(14, 28, 'Efectivo', 'Físico', 'Ninguna'),
+(15, 28, 'Efectivo', 'Físico', 'Ninguna'),
+(16, 98, 'Efectivo', 'Físico', 'Ninguna'),
+(17, 98, 'Efectivo', 'Físico', 'Ninguna'),
+(18, 98, 'Efectivo', 'Físico', 'Ninguna'),
+(19, 97, 'Efectivo', 'Físico', 'Ninguna'),
+(20, 97, 'Efectivo', 'Físico', 'Ninguna'),
+(21, 101, 'Efectivo', 'Físico', 'Ninguna'),
+(22, 100, 'Efectivo', 'Físico', 'Ninguna'),
+(23, 102, 'Efectivo', 'Físico', 'Ninguna'),
+(24, 102, 'Referencia', 'Deposito', '7444444444444444444444'),
+(25, 102, 'Referencia', 'Tarjeta de crédito', '7444444444444444444444'),
+(26, 102, 'Referencia', 'Tarjeta de crédito', '7444444444444444444444'),
+(27, 102, 'Referencia', 'Tarjeta de crédito', '7444444444444444444444'),
+(28, 102, 'Referencia', 'Tarjeta de crédito', '7444444444444444444444'),
+(29, 102, 'Referencia', 'Tarjeta de crédito', '7444444444444444444444'),
+(30, 102, 'Efectivo', 'Físico', 'Ninguna'),
+(31, 103, 'Efectivo', 'Físico', 'Ninguna'),
+(32, 103, 'Referencia', 'Tarjeta de crédito', '7777777777777'),
+(33, 104, 'Efectivo', 'Físico', 'Ninguna'),
+(34, 104, 'Referencia', 'Deposito', '888888888888888888888'),
+(35, 107, 'Efectivo', 'Físico', 'Ninguna'),
+(36, 107, 'Referencia', 'Deposito', '8000000000000'),
+(37, 82, 'Efectivo', 'Físico', 'Ninguna');
 
 -- --------------------------------------------------------
 
@@ -508,7 +592,8 @@ INSERT INTO `grupo_villa` (`id_grupo`, `grupo`, `id_estado`) VALUES
 (1, 'A', 1),
 (2, 'B', 1),
 (3, 'C', 1),
-(4, 'D', 1);
+(4, 'D', 1),
+(5, 'Z', 1);
 
 -- --------------------------------------------------------
 
@@ -528,7 +613,8 @@ CREATE TABLE `modelo_villa` (
 
 INSERT INTO `modelo_villa` (`id_modelo`, `modelo`, `id_estado`) VALUES
 (1, 'VILLA CAREY', 1),
-(2, 'VILLA ARRECIFE', 1);
+(2, 'VILLA ARRECIFE', 1),
+(3, 'VILLA ESTRELLA', 1);
 
 -- --------------------------------------------------------
 
@@ -549,7 +635,8 @@ CREATE TABLE `moneda` (
 --
 
 INSERT INTO `moneda` (`id_moneda`, `nombre`, `simbolo`, `valor`, `id_estado`) VALUES
-(1, 'LEMPIRA', 'L.', 24, 1);
+(1, 'LEMPIRA', 'L.', 24, 1),
+(2, 'EURO', 'E', 28, 1);
 
 -- --------------------------------------------------------
 
@@ -636,7 +723,30 @@ INSERT INTO `multi_pago` (`id_multi`, `codigo_pago`, `id_unir`, `id_cuenta`, `fe
 (62, '2000036', 16, 78, '2024-08-11', 160, 80, -80, 1, 1, 2),
 (63, '2000037', 16, 27, '2024-08-11', 30, 0, 0, 1, 1, 2),
 (64, '2000037', 16, 78, '2024-08-11', 80, 0, 0, 1, 1, 2),
-(65, '2000037', 16, 79, '2024-08-11', 160, 0, 0, 1, 1, 2);
+(65, '2000037', 16, 79, '2024-08-11', 160, 0, 0, 1, 1, 2),
+(66, '2000038', 27, 81, '2024-08-12', 320, 200, -120, 1, 1, 2),
+(67, '2000038', 27, 81, '2024-08-12', 120, 0, 0, 1, 1, 2),
+(68, '2000038', 16, 80, '2024-08-12', 250, 500, 250, 1, 1, 2),
+(69, '2000038', 16, 96, '2024-08-12', 0, 800, 800, 1, 1, 2),
+(70, '2000039', 16, 28, '2024-08-13', 160, 80, -80, 1, 1, 2),
+(71, '2000039', 16, 28, '2024-08-13', 80, 30, -50, 1, 1, 2),
+(72, '2000039', 16, 28, '2024-08-13', 50, 100, 50, 1, 1, 2),
+(73, '2000040', 16, 98, '2024-08-13', 250, 100, -150, 1, 1, 2),
+(74, '2000040', 16, 98, '2024-08-13', 150, 100, -50, 1, 1, 2),
+(75, '2000040', 16, 98, '2024-08-13', 50, 100, 50, 1, 1, 2),
+(76, '2000040', 16, 97, '2024-08-13', 250, 100, -150, 1, 1, 2),
+(77, '2000040', 16, 97, '2024-08-13', 150, 200, 50, 1, 1, 2),
+(78, '2000041', 27, 101, '2024-08-13', 0, 0, 0, 1, 1, 2),
+(79, '2000042', 27, 100, '2024-08-19', 250, 500, 250, 1, 1, 2),
+(80, '2000042', 27, 102, '2024-08-19', 1, 0.5, -0.5, 1, 1, 2),
+(81, '2000042', 27, 102, '2024-08-19', 0.5, 0.5, 0, 1, 1, 2),
+(82, '2000043', 27, 103, '2024-08-19', 900, 200, -700, 1, 1, 2),
+(83, '2000043', 27, 103, '2024-08-19', 700, 0, 0, 1, 1, 2),
+(84, '2000044', 27, 104, '2024-08-21', 900, 500, -400, 1, 1, 2),
+(85, '2000044', 27, 104, '2024-08-21', 400, 0, 0, 1, 1, 2),
+(86, '2000045', 39, 107, '2024-08-21', 190.05, 180.05, -10, 1, 1, 9),
+(87, '2000045', 39, 107, '2024-08-21', 10, 0, 0, 1, 1, 9),
+(88, '2000046', 30, 82, '2024-08-25', 320, 320, 0, 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -664,12 +774,12 @@ INSERT INTO `permisos` (`id_acceso`, `acceso`) VALUES
 -- (Véase abajo para la vista actual)
 --
 CREATE TABLE `pripietario_cuenta_vista` (
-`id_unir` int
-,`villa` varchar(101)
-,`nombre` varchar(50)
-,`dni` varchar(50)
-,`telefono` varchar(50)
+`dni` varchar(50)
 ,`id_estado` int
+,`id_unir` int
+,`nombre` varchar(50)
+,`telefono` varchar(50)
+,`villa` varchar(101)
 );
 
 -- --------------------------------------------------------
@@ -737,7 +847,13 @@ INSERT INTO `propietarios` (`id_propietario`, `nombre`, `dni`, `correo`, `fecha`
 (41, '', '', '', '2024-08-02', 1, 'Registro por intercambio', ''),
 (42, '', '', '', '2024-08-02', 1, 'Registro por intercambio', ''),
 (43, 'PACO', '0000', 'paco@gmail.com', '2024-08-02', 1, '\r\n            ', '94856463'),
-(44, 'PRUEBA', '2', 'prueba@gmail.com', '2024-08-05', 1, '\r\n            ', '94856463');
+(44, 'PRUEBA', '2', 'prueba@gmail.com', '2024-08-05', 1, '\r\n            ', '94856463'),
+(45, '', '', '', '2024-08-15', 1, 'Registro por intercambio', ''),
+(46, '', '', '', '2024-08-15', 1, 'Registro por intercambio', ''),
+(47, '', '', '', '2024-08-15', 1, 'Registro por intercambio', ''),
+(48, 'PABLO ESCOBAR', '0101199903209', 'pablo@gmail.com', '2024-08-21', 1, '', '94856463'),
+(49, 'TKM', '11111', 'j@gmail.com', '2024-08-25', 1, '', '91811076'),
+(50, 'JJ', '1151555', 'kk@gmail.com', '2024-08-25', 1, '', '858585555');
 
 -- --------------------------------------------------------
 
@@ -780,11 +896,14 @@ INSERT INTO `propietarios_villas` (`id_unir`, `id_propietario`, `id_villa`) VALU
 (31, 28, 38),
 (32, 28, 39),
 (33, 2, 73),
-(34, 1, 40),
+(34, 2, 40),
 (35, 1, 74),
 (36, 2, 75),
 (37, 43, 36),
-(38, 44, 77);
+(38, 44, 77),
+(39, 48, 84),
+(40, 49, 78),
+(41, 50, 37);
 
 -- --------------------------------------------------------
 
@@ -793,15 +912,15 @@ INSERT INTO `propietarios_villas` (`id_unir`, `id_propietario`, `id_villa`) VALU
 -- (Véase abajo para la vista actual)
 --
 CREATE TABLE `propietario_principal` (
-`id_unir` int
-,`id_propietario` int
-,`id_villa` int
-,`villa` varchar(101)
-,`cont_eeh` varchar(50)
-,`nombre` varchar(50)
-,`dni` varchar(50)
-,`telefono` varchar(50)
+`cont_eeh` varchar(50)
 ,`correo` varchar(50)
+,`dni` varchar(50)
+,`id_propietario` int
+,`id_unir` int
+,`id_villa` int
+,`nombre` varchar(50)
+,`telefono` varchar(50)
+,`villa` varchar(101)
 );
 
 -- --------------------------------------------------------
@@ -813,6 +932,20 @@ CREATE TABLE `propietario_principal` (
 CREATE TABLE `tomar_desde_hasta` (
 `id_unir` int
 ,`villa` varchar(101)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `ultimas_villas`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `ultimas_villas` (
+`codigo` varchar(101)
+,`condicion` varchar(50)
+,`estado` varchar(50)
+,`id_villa` int
+,`modelo` varchar(50)
 );
 
 -- --------------------------------------------------------
@@ -847,8 +980,21 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `dni`, `telefono`, `
 (8, 'TOMY', 'HALLEN', '0101196801005', '96723864', 'tomy@gg', 1, '123456', 2, 'TOMY'),
 (9, 'ANDREA', 'MURILLO', '0101196801005', '96723864', 'xiomarandrea@gmail.com', 1, '123456', 1, 'XIOMARA'),
 (10, 'ASHANTY', 'GONZALES', '0101200405646', '84651233', 'acha.gon@gmail.com', 2, '963852', 1, 'ASHANTY'),
-(11, 'MKVF', 'KFMVKFM', '5515151', '845545151', 'kdm@mkbmgk', 2, 'ooo', 1, 'VMKFKVFK'),
+(11, 'NESTOR', 'OLIVA', '0101199903209', '94856463', 'nestor@gmail.com', 2, '123456789', 1, 'NESTOR'),
 (12, 'KCMDKCMDK', 'DMKMDKCMKD', 'DKMKDMVKFMK', 'KDMVKMKVFMKV', 'vmkvmkkf@v', 1, 'cmdkmckdmckd', 1, 'MKCDMKCMDK');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `ver_cuentas_pagadas`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `ver_cuentas_pagadas` (
+`codigo_pago` varchar(50)
+,`concepto` varchar(50)
+,`fecha_pago` date
+,`id_unir` int
+);
 
 -- --------------------------------------------------------
 
@@ -879,7 +1025,7 @@ INSERT INTO `villas` (`id_villa`, `id_grupo`, `numero`, `cont_eeh`, `habitacione
 (34, 1, '2', '123456789', '5', '250', 1, 1, 2, 'Roma, Palma Real', ''),
 (35, 1, '3', '123456789', '5', '250', 1, 1, 2, 'Roma, Palma Real', ''),
 (36, 1, '4', '123456789', '5', '250', 1, 1, 2, 'Roma, Palma Real', ''),
-(37, 1, '5', '123456789', '5', '250', 1, 1, 1, 'Roma, Palma Real', ''),
+(37, 1, '5', '123456789', '5', '250', 1, 1, 2, 'Roma, Palma Real', ''),
 (38, 1, '6', '123456', '7', '250', 2, 1, 2, '', ''),
 (39, 1, '7', '123456', '7', '250', 2, 1, 2, '', ''),
 (40, 1, '8', '123456', '7', '250', 2, 1, 2, '', ''),
@@ -920,11 +1066,13 @@ INSERT INTO `villas` (`id_villa`, `id_grupo`, `numero`, `cont_eeh`, `habitacione
 (75, 4, '3', '123456789', '2', '150', 2, 1, 2, '', ''),
 (76, 4, '4', '123456789', '4', '500', 1, 1, 2, '', ''),
 (77, 4, '12', '123456', '7', '150', 2, 1, 2, '', ''),
-(78, 4, '15', '777777777', '2', '600', 2, 1, 1, '', ''),
+(78, 4, '15', '777777777', '2', '600', 2, 1, 2, '', ''),
 (79, 1, '15', '5555555555555', '2', '250', 1, 1, 1, 'Roma, Palma Real', 'Tiene una fuga de gas'),
 (80, 1, '50', '5555555555555', '2', '250', 1, 1, 1, 'Roma, Juteapa', 'Mucha agua'),
 (81, 1, '88', '', '', '', 1, 1, 1, '', ''),
-(82, 1, '89', '', '', '', 1, 1, 1, '', '');
+(82, 1, '89', '', '', '', 1, 1, 1, '', ''),
+(83, 1, '74', '', '', '', 1, 1, 1, '', ''),
+(84, 5, '1', '123456789', '3', '300.50', 3, 1, 2, '', '');
 
 -- --------------------------------------------------------
 
@@ -933,14 +1081,14 @@ INSERT INTO `villas` (`id_villa`, `id_grupo`, `numero`, `cont_eeh`, `habitacione
 -- (Véase abajo para la vista actual)
 --
 CREATE TABLE `villa_completo` (
-`id_villa` int
-,`villas` varchar(101)
+`condicion` varchar(50)
 ,`cont_eeh` varchar(50)
 ,`habitaciones` varchar(50)
+,`id_estado` int
+,`id_villa` int
 ,`lote` varchar(50)
 ,`modelo` varchar(50)
-,`condicion` varchar(50)
-,`id_estado` int
+,`villas` varchar(101)
 );
 
 -- --------------------------------------------------------
@@ -950,20 +1098,20 @@ CREATE TABLE `villa_completo` (
 -- (Véase abajo para la vista actual)
 --
 CREATE TABLE `vista_usuario` (
-`id_usuario` int
-,`usuario` varchar(50)
-,`nombre` varchar(101)
-,`dni` varchar(50)
-,`telefono` varchar(50)
-,`correo` varchar(50)
-,`acceso` varchar(50)
-,`clave` varchar(50)
-,`estado` varchar(50)
-,`nom` varchar(50)
+`acceso` varchar(50)
 ,`ape` varchar(50)
+,`clave` varchar(50)
+,`correo` varchar(50)
+,`dni` varchar(50)
+,`eliminar_reportes` varchar(2)
+,`estado` varchar(50)
+,`id_usuario` int
 ,`imprimir_reportes` varchar(2)
 ,`modificar_reportes` varchar(2)
-,`eliminar_reportes` varchar(2)
+,`nom` varchar(50)
+,`nombre` varchar(101)
+,`telefono` varchar(50)
+,`usuario` varchar(50)
 );
 
 -- --------------------------------------------------------
@@ -996,6 +1144,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- Estructura para la vista `factura_completa_reimprimir`
+--
+DROP TABLE IF EXISTS `factura_completa_reimprimir`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `factura_completa_reimprimir`  AS SELECT `multi_pago`.`codigo_pago` AS `codigo_pago`, `multi_pago`.`id_unir` AS `id_unir`, `concepto`.`concepto` AS `concepto`, `cuentas`.`codigo` AS `codigo`, `cuentas`.`abono` AS `abono`, `cuentas`.`desde` AS `desde`, `cuentas`.`hasta` AS `hasta`, `forma_pago`.`tipo_pago` AS `tipo_pago`, `forma_pago`.`forma_pago` AS `forma_pago`, `forma_pago`.`n_referencia` AS `n_referencia`, `multi_pago`.`fecha_pago` AS `fecha_pago`, `multi_pago`.`total_pago` AS `total_pago`, `multi_pago`.`cantidad_recibida` AS `cantidad_recibida`, `multi_pago`.`cantidad_devuelta` AS `cantidad_devuelta` FROM (((`cuentas` join `forma_pago` on((`cuentas`.`id_cuenta` = `forma_pago`.`id_cuenta`))) join `multi_pago` on((`cuentas`.`id_cuenta` = `multi_pago`.`id_cuenta`))) join `concepto` on((`cuentas`.`id_concepto` = `concepto`.`id_concepto`))) ;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura para la vista `pripietario_cuenta_vista`
 --
 DROP TABLE IF EXISTS `pripietario_cuenta_vista`;
@@ -1019,6 +1176,24 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `tomar_desde_hasta`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tomar_desde_hasta`  AS SELECT `pripietario_cuenta_vista`.`id_unir` AS `id_unir`, `pripietario_cuenta_vista`.`villa` AS `villa` FROM `pripietario_cuenta_vista` ORDER BY substring_index(`pripietario_cuenta_vista`.`villa`,'-',1) ASC, cast(substring_index(`pripietario_cuenta_vista`.`villa`,'-',-(1)) as unsigned) ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `ultimas_villas`
+--
+DROP TABLE IF EXISTS `ultimas_villas`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ultimas_villas`  AS SELECT `villas`.`id_villa` AS `id_villa`, concat(`grupo_villa`.`grupo`,'-',`villas`.`numero`) AS `codigo`, `modelo_villa`.`modelo` AS `modelo`, `condicion_villas`.`condicion` AS `condicion`, `estado_villa`.`estado` AS `estado` FROM ((((`villas` join `estado_villa` on((`villas`.`id_estado` = `estado_villa`.`id_estado`))) join `grupo_villa` on((`villas`.`id_grupo` = `grupo_villa`.`id_grupo`))) join `condicion_villas` on((`villas`.`id_condicion` = `condicion_villas`.`id_condicion`))) join `modelo_villa` on((`villas`.`id_modelo` = `modelo_villa`.`id_modelo`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `ver_cuentas_pagadas`
+--
+DROP TABLE IF EXISTS `ver_cuentas_pagadas`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ver_cuentas_pagadas`  AS SELECT `multi_pago`.`codigo_pago` AS `codigo_pago`, `concepto`.`concepto` AS `concepto`, `multi_pago`.`fecha_pago` AS `fecha_pago`, `multi_pago`.`id_unir` AS `id_unir` FROM ((`concepto` join `cuentas` on((`concepto`.`id_concepto` = `cuentas`.`id_concepto`))) join `multi_pago` on((`cuentas`.`id_cuenta` = `multi_pago`.`id_cuenta`))) ;
 
 -- --------------------------------------------------------
 
@@ -1243,7 +1418,7 @@ ALTER TABLE `caracteristicas`
 -- AUTO_INCREMENT de la tabla `concepto`
 --
 ALTER TABLE `concepto`
-  MODIFY `id_concepto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_concepto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `condicion_villas`
@@ -1261,7 +1436,7 @@ ALTER TABLE `contactos_propietario`
 -- AUTO_INCREMENT de la tabla `cuentas`
 --
 ALTER TABLE `cuentas`
-  MODIFY `id_cuenta` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id_cuenta` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT de la tabla `estado_concepto`
@@ -1315,7 +1490,7 @@ ALTER TABLE `estado_usuario`
 -- AUTO_INCREMENT de la tabla `estado_villa`
 --
 ALTER TABLE `estado_villa`
-  MODIFY `id_estado` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_estado` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `forma_de_pago`
@@ -1327,31 +1502,31 @@ ALTER TABLE `forma_de_pago`
 -- AUTO_INCREMENT de la tabla `forma_pago`
 --
 ALTER TABLE `forma_pago`
-  MODIFY `id_forma` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_forma` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `grupo_villa`
 --
 ALTER TABLE `grupo_villa`
-  MODIFY `id_grupo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_grupo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `modelo_villa`
 --
 ALTER TABLE `modelo_villa`
-  MODIFY `id_modelo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_modelo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `moneda`
 --
 ALTER TABLE `moneda`
-  MODIFY `id_moneda` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_moneda` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `multi_pago`
 --
 ALTER TABLE `multi_pago`
-  MODIFY `id_multi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id_multi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
@@ -1363,13 +1538,13 @@ ALTER TABLE `permisos`
 -- AUTO_INCREMENT de la tabla `propietarios`
 --
 ALTER TABLE `propietarios`
-  MODIFY `id_propietario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_propietario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `propietarios_villas`
 --
 ALTER TABLE `propietarios_villas`
-  MODIFY `id_unir` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_unir` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -1381,7 +1556,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `villas`
 --
 ALTER TABLE `villas`
-  MODIFY `id_villa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id_villa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- Restricciones para tablas volcadas

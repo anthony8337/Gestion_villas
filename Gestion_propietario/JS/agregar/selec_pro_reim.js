@@ -25,6 +25,7 @@ function tabla_pro_reim_accion(){
         actualizar_tabla_cuentas_pagadas();
         cerra_propi_reim();
         cuenta_propi_reim();
+        
 
       });
     }

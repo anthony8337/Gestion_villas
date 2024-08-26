@@ -66,7 +66,7 @@
 
 <div class="c4">
 <div class="contenido_tabla">
-    <table class="contenido" id="tb_cuentas_reim">
+    <table id="tb_cuentas_reim">
         <tr>
         <th></th>
             <th>Documento</th>
@@ -85,6 +85,12 @@
 
 <div class="c3">
 <button type="button" id="btn_imp">Reimprimir factura</button>
+
+<fieldset>
+<legend>Abono Total</legend>
+<input type="text" name="txt_total_abono" id="txt_total_abono" readonly>
+</fieldset>
+
 </div>
 
 </div>

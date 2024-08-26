@@ -34,8 +34,10 @@ if($result -> num_rows > 0)
         <td>",$row["codigo"],"</td>
         <td>",$row["desde"],"</td>
         <td>",$row["hasta"],"</td>
-        <td>",$row["abono"],"</td>
+        <td>$. ",$row["abono"],"</td>
         </tr>";
     }
 }
 ?>
+
+<script>suma_abonos();</script>
