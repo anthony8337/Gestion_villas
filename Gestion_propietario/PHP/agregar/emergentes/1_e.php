@@ -210,7 +210,7 @@ if (accion === 'crear') {
 }     
 
             
-var decidir_aporte = confirm("Creara una nueva cuenta por cobrar \n¿Esta seguro que decea continuar?");
+var decidir_aporte = confirm("Creara una nueva cuenta por cobrar \n¿Esta seguro que desea continuar?");
 if (decidir_aporte) {        
         $.ajax({
             type: 'POST',

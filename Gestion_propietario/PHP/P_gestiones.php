@@ -2,11 +2,11 @@
 <img src="Imagenes/logo_principal.png" id="logo">
 <ul>
 <?php
-$nombre_botones = ['Archivo','Agregar','Reportes','Principal','Salir'];
-$imagenes_botones = ['Imagenes/folder-fill.svg','Imagenes/journal-text.svg','Imagenes/clipboard2-data.svg','Imagenes/person-fill(1).svg','Imagenes/box-arrow-left.svg'];
-$titulos = ['Nueva información','Pago de propietario','Reportes de movimientos','Retornar a la plantilla administrador','Salir'];
-$acciones = ['precionar_b0()','precionar_b1()','precionar_b2()','redirigir_principal()','redirigir_login()'];
-$id_menu = ['li_0','li_1','li_2','li_3','li_4'];
+$nombre_botones = ['Inicio','Archivo','Agregar','Reportes','Salir'];
+$imagenes_botones = ['Imagenes/house-door-fill.svg','Imagenes/folder.svg','Imagenes/journal-text.svg','Imagenes/clipboard2-data.svg','Imagenes/box-arrow-left.svg'];
+$titulos = ['Retornar a la plantilla administrador','Nueva información','Pago de propietario','Reportes de movimientos','Salir'];
+$acciones = ['redirigir_principal()','precionar_b0()','precionar_b1()','precionar_b2()','redirigir_login()'];
+$id_menu = ['li_3','li_0','li_1','li_2','li_4'];
 
 for ($i=0; $i < count($nombre_botones); $i++) { 
 

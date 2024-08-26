@@ -196,3 +196,27 @@ function cerrar_confir_cuentas()
 {
     document.getElementById("confirma_cuenta").style.display = "none";
 }
+
+////////////Ventanas de reimprimir
+
+function propi_reim()
+{
+    document.getElementById('reim_propietario').style.display = "flex"; 
+}
+
+function cerra_propi_reim()
+{
+    document.getElementById('reim_propietario').style.display = "none"; 
+}
+
+///// Seleccionar cuenta
+
+function cuenta_propi_reim()
+{
+    document.getElementById('toma_cuenta_reim').style.display = "flex"; 
+}
+
+function cerrar_cuenta_propi_reim()
+{
+    document.getElementById('toma_cuenta_reim').style.display = "none"; 
+}

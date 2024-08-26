@@ -57,5 +57,7 @@
     <script src="JS/reloj.js"></script>
     <script src="JS/celda/selec_propietario.js" ></script>
     <script src="JS/agregar/selec_bus_reimprecion.js"></script>
+    <script src="JS/agregar/selec_pro_reim.js"></script>
+    <script src="JS/agregar/selec_cuenta_reim_pro.js"></script>
 </head>
 <body>

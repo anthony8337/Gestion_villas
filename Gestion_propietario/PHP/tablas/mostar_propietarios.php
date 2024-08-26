@@ -14,7 +14,6 @@ else
 {
 }
 
-
 $sql = "SELECT * FROM propietario_principal";
 
 $result = $conn->query($sql);

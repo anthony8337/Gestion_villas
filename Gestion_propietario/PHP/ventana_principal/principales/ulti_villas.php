@@ -28,7 +28,7 @@ if($result -> num_rows > 0)
     echo"
     <tr>
     <th></th>
-    <th>Codígo</th>
+    <th>código</th>
     <th>Modelo</th>
     <th>Condición</th>
     <th>Estado</th>

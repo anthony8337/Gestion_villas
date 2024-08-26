@@ -57,3 +57,36 @@ function actualizar_propietarios_multipago()
         }
     });   
 }
+
+function actualizar_tabla_cuentas_pagadas() 
+{
+
+    var codi_recibo = document.getElementById('hd_id_reim').value;
+
+    $.ajax({
+        type: 'GET',
+        url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_cuentas_pagadas.php',
+        data: {
+            pripi_id_reim: codi_recibo,
+        },
+        success: function(response){
+            $('#mostrar_cuentas_pagadas').html(response);
+        }
+    });   
+}
+
+function actualizar_forma_pago(a_codigo) 
+{
+    var codi_recibo = a_codigo;
+
+    $.ajax({
+        type: 'GET',
+        url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_detalles_fac.php',
+        data: {
+            cod_cuenta_recibo: codi_recibo,
+        },
+        success: function(response){
+            $('#respuesta_cuentas_pagadas').html(response);
+        }
+    });   
+}

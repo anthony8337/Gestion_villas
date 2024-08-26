@@ -16,7 +16,7 @@
     <fieldset>
         <legend>Indicar fecha de pago</legend>
         <select name="ranco_factura" id="ranco_factura">
-        <option>Ultimo pago</option>
+        <option>Último pago</option>
         <option>Identificar fecha</option>
         <option>Historial de pagos</option>
     </select>

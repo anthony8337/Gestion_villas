@@ -1,51 +1,46 @@
+Gadget
+
+<fieldset class="ajustar_t_div">
+    <legend>Ultimas villas registradas</legend>
+
+    <div class="contenido_tabla" id="ulti_villa">
+        <?php
+        include "PHP/ventana_principal/principales/ulti_villas.php";
+        ?>
+    </div> 
+
+</fieldset>
 
 
-<div id="confi_usuarios">
+<fieldset class="ajustar_t_div">
 
-<div onclick="redirigir_login()" class="retorno" title="Salir">
-<img src="Imagenes/box-arrow-in-left.svg">
-</div>
+    <div id="reloj_gatget"></div>
 
-<ul>
+    <div id="fecha_gatget"></div>
+
+</fieldset>
+
+<fieldset class="ajustar_t_div">
+
+<div class="clock">
+
 <?php
-    $a = ['Usuario','Actividad'];
-    $b = ['cu_2()','cu_3()'];
-    $c = ['Imagenes/perfil.png','Imagenes/configuracion.png'];
-    
-    for($i = 0; $i < count($a); $i++)
-    {
-        echo"
-        <li onclick='$b[$i]'><img src='$c[$i]'> $a[$i]</li>
-        ";
+
+$numero = ['3','4','5','6','7','8','9','10','11','12','1','2'];
+
+for ($i=0; $i < 12; $i++) { 
+    echo"<div class='number' style='--i: $i;''>$numero[$i]</div>";
+
+    for ($j=0; $j < 60; $j++) { 
+        echo"<div class='puntos' style='--j: $j;''>.</div>";
     }
-    ?>
-</ul>
+}
+?>
+        
+        <div class="hand hour" id="hour"></div>
+        <div class="hand minute" id="minute"></div>
+        <div class="hand second" id="second"></div>
+        <div class="center-dot"></div>
+    </div>
 
-<div onclick="redirigir_sistema()" class="entrada" title="Entrar a gestión">
-    <img src="Imagenes/box-arrow-in-right.svg">
-</div>
-
-</div>
-
-
-
-
-        <table class="filtro_usuario">
-        <tr>
-            <td>
-            <button onclick="ingresar_usuario_in()">Agregar nuevo</button>
-            </td>
-
-            <td>
-            <input type="text" placeholder="Buscar usuario">
-            </td>
-
-            <td>
-            <select title="Estado">
-        <option>Activos</option>
-        <option>Suspendidos</option>
-        <option>Todo</option>
-    </select>
-            </td>
-        </tr>
-    </table>
+</fieldset>

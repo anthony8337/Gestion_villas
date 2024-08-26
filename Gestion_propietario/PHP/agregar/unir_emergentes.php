@@ -32,6 +32,14 @@ include "PHP/agregar/emergentes/subs/5_a.php";
 include "PHP/agregar/emergentes/subs/4_a.php";
 ?>
 
+<?php
+include "PHP/agregar/emergentes/subs/6_a.php";
+?>
+
+<?php
+include "PHP/agregar/emergentes/subs/7_a.php";
+?>
+
 <!--confrimaciones-->
 
 <?php

@@ -15,7 +15,7 @@ Propietario registrada con éxito.
 <div class="c3">
 <button type="button" onclick="cerrar_ingreso(),cerrar_confi_propietario()" title="Confirma el registro">Aceptar</button>
 <button type="button" onclick="cerrar_confi_propietario()" title="Continuar registrando mas propietarios">Continuar</button>
-<button type="button" onclick="cerrar_ingreso(), cerrar_confi_propietario(), ingreso_g()" title="Crear nueva cuenta de pago">Crear cuenta</button>
+<button type="button" onclick="cerrar_ingreso(), cerrar_confi_propietario(), crear_cuenta()" title="Crear nueva cuenta de pago">Crear cuenta</button>
 </div>
 
 

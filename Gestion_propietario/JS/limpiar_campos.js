@@ -83,6 +83,13 @@ function limpiar_tabla_adicionar() {
     }
   }
 
+  function limpiar_tabla_cuentas_reim() {
+    var tbody = document.querySelector("#tb_cuentas_reim tbody.borrar_t");
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+  }
+
 function limpiar_confirmar()
 {
 limpieza_text();
@@ -95,6 +102,7 @@ limpieza_textarea();
 limpiar_tabla_adicionar();  
 limpiar_tabla_contacto(); 
 limpiar_tablas_carac();
+limpiar_tabla_cuentas_reim();
 }
 
 function limpiar_opcion()
