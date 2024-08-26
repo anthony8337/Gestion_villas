@@ -113,3 +113,32 @@ height: 200px;
 
 }
 
+.confi_base_datos
+{
+    display: flex;
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+}
+
+.confi_base_datos img
+{
+    width: 30px;
+    height: 30px;
+}
+
+.btn_bd_st
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 80px;
+    margin-top: 25px;
+}

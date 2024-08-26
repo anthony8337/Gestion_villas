@@ -56,3 +56,13 @@ function ingreso_pro_villa_cerrar()
 {
     document.getElementById('v_pro').style.display = 'none';
 }
+
+function bd_confi()
+{
+    document.getElementById('base_datos_form').style.display = 'flex';
+}
+
+function cerrar_bd_confi()
+{
+    document.getElementById('base_datos_form').style.display = 'none';
+}

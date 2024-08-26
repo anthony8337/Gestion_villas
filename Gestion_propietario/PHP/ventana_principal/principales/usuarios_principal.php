@@ -1,9 +1,13 @@
 <link rel='stylesheet' type='text/css' media='screen' href='CSS/pan_confi.css'>
 
+<div class="confi_base_datos" title="Configuración de la base de datos" onclick="bd_confi()">
+    <img src="Imagenes/gear-fill.svg">
+</div>
 
 <h1>Gestión de propietario</h1>
 
 <h2>Bienvenido Usuario</h2>
+
 
 <div class="menu_ho">
 

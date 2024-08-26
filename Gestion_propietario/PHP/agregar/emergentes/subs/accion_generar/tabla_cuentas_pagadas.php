@@ -20,7 +20,7 @@ else
 $id_propi = $_GET["pripi_id_reim"];
 
 
-$sql = "SELECT * FROM factura_completa_reimprimir WHERE  id_unir ='$id_propi';";
+$sql = "SELECT * FROM factura_completa_reimprimir WHERE id_unir ='$id_propi' ORDER BY factura_completa_reimprimir.fecha_pago DESC ";
 
 
 $result = $conn->query($sql);

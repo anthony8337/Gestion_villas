@@ -9,11 +9,17 @@
 <button onclick="cerrar_re_factura(),limpiar_confirmar()" type="button">X</button>
 </div>
 
-<div class="c2">
-    <fieldset>
-        <legend class="no_ver">boton</legend>
+<div class="c2 boton_fieldset_reimprime">
+<fieldset>
         <button type="button" onclick="propi_reim()">Seleccionar propietario</button>
-    </fieldset>
+</fieldset>
+
+<fieldset>
+        <button type="button" onclick="cuenta_propi_reim()">Seleccionar cuenta</button>
+</fieldset>
+</div>
+
+<div class="c2">
 
     <fieldset>
         <legend>Código de villa</legend>
@@ -36,9 +42,7 @@
 
 
 <fieldset class="c2 sin_borde">
-    <legend>Detalles de factura</legend>
-
-    <fieldset>
+<fieldset>
     <legend>Código de pago</legend>
     <input type="text" id="txt_cod_reim" name="txt_cod_reim" readonly>
 </fieldset>
@@ -83,14 +87,17 @@
     </div>
 </div>
 
-<div class="c3">
-<button type="button" id="btn_imp">Reimprimir factura</button>
+<div class="c3 columna_reimprime">
 
-<fieldset>
+<div>
+<fieldset class="elemento">
 <legend>Abono Total</legend>
 <input type="text" name="txt_total_abono" id="txt_total_abono" readonly>
 </fieldset>
 
+<button class="elemento" type="button" id="btn_imp">Reimprimir factura</button>
+
+</div>
 </div>
 
 </div>

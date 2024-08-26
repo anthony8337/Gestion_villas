@@ -90,3 +90,15 @@ function actualizar_forma_pago(a_codigo)
         }
     });   
 }
+
+function exportar_base() 
+{
+    $.ajax({
+        type: 'GET',
+        url: 'PHP/ventana_principal/principales/respaldar_base.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#respuesta_bd').html(response);
+        }
+    });   
+}
