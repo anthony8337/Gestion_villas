@@ -45,12 +45,13 @@ for ($i=0; $i < count($pal); $i++) {
 
 <div class="c4">
 
-<div class="btn_agregados_form">
-<button type="button" onclick="abrir_pro_adicionar_tabla()">Agregar una villa</button>
-</div>
+
 
     <fieldset>
     <legend>Datos de villa</legend>
+    <div class="btn_agregados_form">
+<button type="button" onclick="abrir_pro_adicionar_tabla()">Agregar una villa</button>
+</div>
     <div class="contenido_tabla contenido_tabla_ultima">
         <table id="tabla_villa_adi">
             <thead>

@@ -2,7 +2,7 @@
 
 <div id="vi" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_grandes">
 
 <div class="c1">
 <h2>Ingresar nueva villa</h2>

@@ -1,7 +1,7 @@
 
 <div id="usu_villas" class="mod">
 
-<div class="centro pro_centro">
+<div class="centro pro_centro ventanas_medianas">
 
 <div class="c1">
 <h2>Datos de villa</h2>
@@ -19,7 +19,7 @@
 <input type="text" name="txt_buscar_grupo_villa" id="txt_buscar_grupo_villa" placeholder="Buscar grupo de villa" title="Buscar grupo de villa" class="buscador" oninput="buscar_grupo_v()">
 </div>
 
-<div class="contenido_tabla contenido_tabla_ultima principal_tabla_2" id="cont_grupo_villa">
+<div class="contenido_tabla contenido_tabla_ultima principal_tabla_2 tam_limite" id="cont_grupo_villa">
 <?php
 include "PHP/ventana_principal/principales/interno/sql/pantalla_2/tabla_grupos_villas.php";
 ?>
@@ -33,7 +33,7 @@ include "PHP/ventana_principal/principales/interno/sql/pantalla_2/tabla_grupos_v
 <input type="text" name="buscar_modelo_villa" id="buscar_modelo_villa" placeholder="Buscar modelo de villa" title="Buscar grupo de villa" class="buscador" oninput="busca_modelo_v()">
 </div>
 
-<div class="contenido_tabla contenido_tabla_ultima principal_tabla_2" id="cont_modelo_villa">
+<div class="contenido_tabla contenido_tabla_ultima principal_tabla_2 tam_limite" id="cont_modelo_villa">
     <?php
     include "PHP/ventana_principal/principales/interno/sql/pantalla_2/tabla_modelo_villas.php";
     ?>

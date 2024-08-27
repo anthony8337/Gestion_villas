@@ -2,7 +2,7 @@
 
 <div id="grupo_villa" class="mod">
 
-<div class="centro centro_emergentes_admin">
+<div class="centro centro_emergentes_admin ventanas_pequeñas">
 
 <div class="c1">
 

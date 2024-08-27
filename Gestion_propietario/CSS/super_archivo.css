@@ -511,14 +511,14 @@ max-width: 400px;
 .cuadros_fieldset
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
-.cuadros_fieldset input[type="text"], .cuadros_fieldset button
+.cuadros_fieldset fieldset, .cuadros_fieldset button
 {
     flex: 1 1 100px;
-    max-width: 200px;
+    max-width: 300px;
     margin: 5px;
 } 
 
@@ -806,4 +806,30 @@ display: none;
     flex: 1 1 200px;
     max-width: 400px;
     margin: 5px;
+}
+
+.tam_limite
+{
+    height: 200px;
+}
+
+.ventanas_pequeñas
+{
+    width: 400px;
+    height: 160px;
+}
+
+.ventanas_medianas
+{
+width: 1000px;
+}
+
+.ventanas_grandes
+{
+    width: 1100px;
+}
+
+.ventanas_muy_grandes
+{
+
 }

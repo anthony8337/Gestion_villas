@@ -1,6 +1,6 @@
 <div id="usuarios_ingreso" class="mod">
 
-<div class="centro usuarios_form">
+<div class="centro usuarios_form ventanas_medianas">
 
 <div class="c1">
 

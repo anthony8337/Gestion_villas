@@ -1,7 +1,7 @@
 
 <div id="usu_concepto" class="mod">
 
-<div class="centro pro_centro">
+<div class="centro pro_centro ventanas_medianas">
 
 <div class="c1">
 <h2>Datos de conceptos</h2>
@@ -20,7 +20,7 @@
 </div>
 
 
-<div class="contenido_tabla contenido_tabla_ultima principal_tabla_2" id="tabla_concepto">
+<div class="contenido_tabla contenido_tabla_ultima principal_tabla_2 tam_limite" id="tabla_concepto">
 <?php 
 include "PHP/ventana_principal/principales/interno/sql/accion_concepto/tabla_concepto.php";
 ?>
