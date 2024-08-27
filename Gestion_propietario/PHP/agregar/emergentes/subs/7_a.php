@@ -15,18 +15,8 @@
 
 <div class="c2">
     <fieldset>
-    <legend>Buscador de factura por código</legend>
-    <input type="text" placeholder="Buscar factura por código">
-    </fieldset>
-
-    <fieldset>
-    <legend>Buscador de factura por servicio</legend>
-    <input type="text" placeholder="Buscar factura por servicio">
-    </fieldset>
-
-    <fieldset>
-    <legend>Buscador de factura por fecha</legend>
-    <input type="text" placeholder="Buscar factura por fecha">
+    <legend>Buscar por datos de factura</legend>
+    <input type="text" placeholder="Buscar factura por código" id="buscar_facturas_cuentas" oninput="bus_con_usar()">
     </fieldset>
 </div>
 

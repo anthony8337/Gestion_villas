@@ -1,51 +1,50 @@
 <?php
-// Configuración de conexión
-$host = 'localhost'; // Cambia esto si es necesario
-$user = 'root'; // Cambia esto si es necesario
-$pass = ''; // Cambia esto si es necesario
-$dbname = 'gestion_de_propietario'; // Cambia esto por tu nombre de base de datos
+$servername = "localhost"; 
+$username = "root";
+$password = "";
+$database = "gestion_de_propietario";
 
-// Conectar a la base de datos
-$conn = new mysqli($host, $user, $pass, $dbname);
+$conn = new mysqli($servername, $username, $password, $database);
 
-// Verificar conexión
 if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+    die("Error de conexión: " . $conn->connect_error);
+} 
+else
+{}
 
-// Consultar tablas
-$tables = [];
-$result = $conn->query("SHOW TABLES");
-while ($row = $result->fetch_row()) {
-    $tables[] = $row[0];
-}
+$backup = '';
 
-$output = '';
+$tables = $conn->query("SHOW TABLES");
+while ($table = $tables->fetch_row()) {
+    $tableName = $table[0];
+    $createTable = $conn->query("SHOW CREATE TABLE $tableName")->fetch_row();
+    $backup .= "\n\n" . $createTable[1] . ";\n\n";
+    $result = $conn->query("SELECT * FROM $tableName");
+    $numColumns = $result->field_count;
 
-// Generar el SQL para cada tabla
-foreach ($tables as $table) {
-    $output .= "DROP TABLE IF EXISTS `$table`;\n";
-
-    // Obtener la estructura de la tabla
-    $result = $conn->query("SHOW CREATE TABLE `$table`");
-    $row = $result->fetch_row();
-    $output .= $row[1] . ";\n\n";
-
-    // Obtener los datos de la tabla
-    $result = $conn->query("SELECT * FROM `$table`");
-    while ($row = $result->fetch_assoc()) {
-        $output .= "INSERT INTO `$table` (`" . implode("`, `", array_keys($row)) . "`) VALUES ('" . implode("', '", array_map([$conn, 'real_escape_string'], array_values($row))) . "');\n";
+    while ($row = $result->fetch_row()) {
+        $backup .= "INSERT INTO $tableName VALUES(";
+        for ($i = 0; $i < $numColumns; $i++) {
+            $row[$i] = $row[$i] ? addslashes($row[$i]) : 'NULL';
+            $backup .= '"' . $row[$i] . '"';
+            if ($i < ($numColumns - 1)) {
+                $backup .= ', ';
+            }
+        }
+        $backup .= ");\n";
     }
-    $output .= "\n";
+    $backup .= "\n\n";
 }
 
-// Cerrar conexión
-$conn->close();
+$backupFile = 'backup_' . date('Y-m-d_H-i-s') . '.sql';
+$fileHandle = fopen($backupFile, 'w+');
 
-// Crear un archivo .sql y descargarlo
-header('Content-Type: application/octet-stream');
-header('Content-Disposition: attachment; filename="backup.sql"');
-header('Content-Length: ' . strlen($output));
-echo $output;
-exit;
+if (fwrite($fileHandle, $backup)) {
+    echo "Backup guardado como $backupFile";
+} else {
+    echo "Error al guardar el backup.";
+}
+
+fclose($fileHandle);
+$conn->close();
 ?>

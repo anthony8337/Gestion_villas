@@ -1,6 +1,6 @@
 <div class="ajus_gadget">
 
-<fieldset class="ajustar_t_div">
+<fieldset class="ajustar_t_div sin_borde">
 
 <div class="clock">
 
@@ -26,6 +26,17 @@ for ($i=0; $i < 12; $i++) {
     <div id="hora_gatget">a</div>  
 
 <div id="dia_gatget">b</div>
+
+</fieldset>
+
+<fieldset class="ajustar_t_div">
+    <legend>Ultimas villas registradas</legend>
+
+    <div class="contenido_tabla" id="ulti_villa">
+        <?php
+        include "PHP/ventana_principal/principales/ulti_villas.php";
+        ?>
+    </div> 
 
 </fieldset>
 
