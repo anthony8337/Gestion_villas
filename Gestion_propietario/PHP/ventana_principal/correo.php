@@ -1,7 +1,42 @@
 <?php
-$to = "anthony.oliva80@unitec.edu"; // Dirección de correo del destinatario
+
+$servername = "localhost"; 
+$username = "root";
+$password = "";
+$database = "gestion_de_propietario";
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+} 
+else
+{
+}
+
+$correo = $_POST["txt_email_recupera"];
+
+$sql = "SELECT * FROM usuarios WHERE correo = '$correo'";
+
+$result = $conn->query($sql);
+
+if ($result -> num_rows > 0) 
+{
+    while ($row = $result->fetch_assoc()) 
+    {
+        $to = $row["correo"]; // Dirección de correo del destinatario
+
+        $m1 = $row["nombre"];
+        $m1_2 = $row["apellido"];
+        $m2 = $row["usuario"];
+        $m3 = $row["clave"];
+
+        $message = "Hola $m1 $m1_2, es un placer saludarlo, aqui le puestro los datos solicitados: \nUsuario: $m2 \nContreseña: $m3"; // Cuerpo del mensaje
+
+    }
+}
+
 $subject = "Asunto del correo"; // Asunto del correo
-$message = "Hey, marcos, MARCOOOOOOOOOOOS, mirame, soy un email marcos, soy tony-emaiiiiiiiil >:D"; // Cuerpo del mensaje
 
 // Encabezados opcionales (como el remitente)
 $headers = "From: Anthony Oliva Google";

@@ -21,7 +21,7 @@
     display: none;
 }
  
-.login #ingresar input[type = "text"], .login #ingresar input[type = "password"],.login #recuperar input[type = "text"]
+.login #ingresar input[type = "text"], .login #ingresar input[type = "password"],.login #recuperar input[type = "email"]
 {   
     height: 35px;
     width: 100%;

@@ -30,8 +30,8 @@
             <img src="Imagenes/logo_principal.png">
                 <h2>Gestión de propietario</h2>
                 <form id="recupera_cuenta">
-                <input type="text" placeholder="Ingresar correo electronico">
-                <button type="button" onclick="correo_recuperar()">Obtener contraseña</button>
+                <input type="email" id="txt_email_recupera" name="txt_email_recupera" placeholder="Ingresar correo electronico">
+                <button type="submit">Obtener contraseña</button>
                 </form>
                 <label onclick="regresar()">Regresar</label>
                 
@@ -52,6 +52,29 @@ $(document).ready(function(){
     $.ajax({
     type: 'POST',
     url : 'PHP/ventana_principal/principales/interno/sql/entrar_sistema.php',
+    data: form,
+    success: function(response){
+        $('#respuesta_login').html(response);
+
+    }
+});
+        
+
+    });
+});
+
+</script>
+
+<script>
+
+$(document).ready(function(){
+    $('#recupera_cuenta').submit(function(e){
+        e.preventDefault();
+
+        var form =$('#recupera_cuenta').serialize();
+    $.ajax({
+    type: 'POST',
+    url : 'PHP/ventana_principal/correo.php',
     data: form,
     success: function(response){
         $('#respuesta_login').html(response);

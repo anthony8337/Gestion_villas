@@ -106,7 +106,7 @@ function exportar_base()
 function correo_recuperar() 
 {
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: 'PHP/ventana_principal/correo.php',
         data: $(this).serialize(),
         success: function(response){
