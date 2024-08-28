@@ -31,7 +31,7 @@
                 <h2>Gestión de propietario</h2>
                 <form id="recupera_cuenta">
                 <input type="text" placeholder="Ingresar correo electronico">
-                <button onclick="">Obtener contraseña</button>
+                <button type="button" onclick="correo_recuperar()">Obtener contraseña</button>
                 </form>
                 <label onclick="regresar()">Regresar</label>
                 

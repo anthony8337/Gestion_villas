@@ -2,7 +2,7 @@
 
 <div id="agre_contatos" class="mod">
 
-<div class="centro centro_emergente">
+<div class="centro  ventanas_medianas">
 
 <div class="c1">
 <h2>Agregar contactos</h2>
@@ -31,7 +31,7 @@
 <div class="c4">
 
 
-<div class="contenido_tabla contenido_tabla_ac_contac" id="propi_contacto">
+<div class="contenido_tabla contenido_tabla_ac_contac tam_limite" id="propi_contacto">
 
 <table id="tb_contactos">
 
@@ -40,7 +40,6 @@
     <th></th>
     <th>Nombre</th>
     <th>Teléfono</th>
-    <th></th>
     <th></th>
 </tr>
 </thead>

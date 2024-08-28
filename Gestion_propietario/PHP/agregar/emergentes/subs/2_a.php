@@ -1,6 +1,6 @@
 <div id="gc_concepto" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 
@@ -19,7 +19,7 @@
 
 <div class="c4 ">
 
-<div id="tabla_concepto_gc" class="contenido_tabla completar_vista_cuadro">
+<div id="tabla_concepto_gc" class="contenido_tabla completar_vista_cuadro tam_limite">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_concepto.php";
     ?>

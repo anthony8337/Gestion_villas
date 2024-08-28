@@ -3,7 +3,7 @@
 
 <div id="selec_villa_adi" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 <h2>Seleccionar villa</h2>
@@ -21,7 +21,7 @@
 <div class="c4">
 
 
-    <div class="contenido_tabla" id="villa_propi_selec_adi">
+    <div class="contenido_tabla tam_limite" id="villa_propi_selec_adi">
         <?php
         include "PHP/archivo/emergentes/subs/adicion/tabla_villa_adi.php";
         ?>

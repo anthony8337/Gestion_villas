@@ -1,6 +1,6 @@
 <div id="multi_propietario" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 
@@ -20,9 +20,9 @@
 
 </div>
 
-<div class="c4 ">
+<div class="c4">
 
-<div id="tabla_propietario_multi" class="contenido_tabla">
+<div id="tabla_propietario_multi" class="contenido_tabla tam_limite">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_propietarios_multi.php";
     ?>

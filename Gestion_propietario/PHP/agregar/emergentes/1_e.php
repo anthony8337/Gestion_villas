@@ -148,7 +148,7 @@
         
         <fieldset>
         <legend>$nombre[$i]</legend>
-        <input type='text' name='$id[$i]' id='$id[$i]' $calcu_cuerpo[$i] $leible[$i]>
+        <input class='solo_numero' type='text' name='$id[$i]' id='$id[$i]' $calcu_cuerpo[$i] $leible[$i]>
         </fieldset>
         ";
     }

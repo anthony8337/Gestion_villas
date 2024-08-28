@@ -1,6 +1,6 @@
 <div id="pro_rec" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
     
@@ -21,7 +21,7 @@
 
 <div class="c4 ">
 
-<div class="contenido_tabla" id="tabla_propietario_rec">
+<div class="contenido_tabla tam_limite" id="tabla_propietario_rec">
     <?php
     include "PHP/archivo/emergentes/subs/donante/tabla_pro_rec.php";
     ?>

@@ -1,6 +1,6 @@
 <div id="pro_adi" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 
@@ -20,7 +20,7 @@
 </div>
 
 <div class="c4 ">
-<div class="contenido_tabla" id="tabla_propietario_adi">
+<div class="contenido_tabla tam_limite" id="tabla_propietario_adi">
     <?php
     include "PHP/archivo/emergentes/subs/adicion/tabla_pro_adi.php";
     ?>

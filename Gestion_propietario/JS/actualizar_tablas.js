@@ -102,3 +102,15 @@ function exportar_base()
         }
     });   
 }
+
+function correo_recuperar() 
+{
+    $.ajax({
+        type: 'GET',
+        url: 'PHP/ventana_principal/correo.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#respuesta_login').html(response);
+        }
+    });   
+}

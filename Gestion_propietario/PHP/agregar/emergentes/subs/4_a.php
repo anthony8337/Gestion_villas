@@ -1,6 +1,6 @@
 <div id="multi_concepto" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_pequeñas_largo">
 
 <div class="c1">
 
@@ -22,7 +22,7 @@
 
 <div class="c4 ">
 
-<div id="tabla_concepto_multi" class="contenido_tabla completar_vista_cuadro">
+<div id="tabla_concepto_multi" class="contenido_tabla completar_vista_cuadro tam_limite">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_concepto_multi.php";
     ?>

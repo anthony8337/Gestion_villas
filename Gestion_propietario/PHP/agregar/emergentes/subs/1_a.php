@@ -1,6 +1,6 @@
 <div id="gc_propietario" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 <h2 >Seleccionar propietario</h2>
@@ -18,7 +18,7 @@
 
 <div class="c4 ">
 
-<div id="tabla_propietario_gc" class="contenido_tabla">
+<div id="tabla_propietario_gc" class="contenido_tabla tam_limite">
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_propietarios.php";
     ?>

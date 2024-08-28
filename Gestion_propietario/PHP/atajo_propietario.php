@@ -117,6 +117,7 @@
     ?>
 </fieldset>
 
+
 <fieldset>
     <legend>Periodo</legend>
 
@@ -136,23 +137,16 @@
 
 <fieldset>
     <legend>Valor</legend>
-    
-    <?php
-    $nombre = ['Costo de concepto:','Costo total:'];
-    $id = ['txt_costo_gc','txt_total_gc'];
-    $calcu_cuerpo = ['oninput="calcular_fecha()"',''];
-    $leible = ['','readonly'];
 
-    for ($i=0; $i < count($nombre); $i++) { 
-        echo"
-        
-        <fieldset>
-        <legend>$nombre[$i]</legend>
-        <input type='text' name='$id[$i]' id='$id[$i]' $calcu_cuerpo[$i] $leible[$i]>
+    <fieldset>
+        <legend>Costo de concepto:</legend>
+        <input type='text' name='txt_costo_gc' id='txt_costo_gc' oninput="validaciones_numeros(), calcular_fecha()">
         </fieldset>
-        ";
-    }
-    ?>
+
+        <fieldset>
+        <legend>Costo total:</legend>
+        <input type='text' name='txt_total_gc' id='txt_total_gc' readonly>
+        </fieldset>
     
 </fieldset>
 

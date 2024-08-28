@@ -1,6 +1,6 @@
 <div id="pro_donar" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 <h2 id="titulo_pro_do">Seleccionar propietario</h2>
@@ -19,7 +19,7 @@
 
 <div class="c4 ">
 
-<div class="contenido_tabla" id="tabla_propietario_do">
+<div class="contenido_tabla tam_limite" id="tabla_propietario_do">
     <?php
     include "PHP/archivo/emergentes/subs/donante/tabla_pro_do.php";
     ?>

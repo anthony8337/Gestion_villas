@@ -519,7 +519,6 @@ max-width: 400px;
 {
     flex: 1 1 100px;
     max-width: 300px;
-    margin: 5px;
 } 
 
 .panel_confirmaciones
@@ -817,6 +816,11 @@ display: none;
 {
     width: 400px;
     height: 160px;
+}
+
+.ventanas_pequeñas_largo
+{
+    width: 400px;
 }
 
 .ventanas_medianas
