@@ -1,9 +1,13 @@
-var confirmar = window.confirm('¿Esta seguro de suspender este registro?');
-
-if (confirmar) {
-
-}
-else
+function correo_recuperar() 
 {
-
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/ventana_principal/correo.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#respuesta_login').html(response);
+        }
+    });   
 }
+
+window.location.href = 'usuario.php';

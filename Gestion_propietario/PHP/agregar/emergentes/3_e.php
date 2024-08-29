@@ -95,7 +95,7 @@
 <input type="text" name="txt_total_abono" id="txt_total_abono" readonly>
 </fieldset>
 
-<button class="elemento" type="button" id="btn_imp">Reimprimir factura</button>
+<button class="elemento" type="button" id="btn_imp" onclick="abrirPestaña()">Reimprimir factura</button>
 
 </div>
 </div>
@@ -104,3 +104,9 @@
 </div>
 
 <script>ultimo_reim();</script>
+
+<script>
+        function abrirPestaña() {
+            window.open('1_reimprimir.php', '_blank');
+        }
+</script>

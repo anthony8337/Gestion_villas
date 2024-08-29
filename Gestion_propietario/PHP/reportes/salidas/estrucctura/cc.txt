@@ -1,0 +1,85 @@
+
+
+
+
+<div class="encabezado">
+    
+
+<div>
+    <h4>VILLAS PALMA REAL</h4>
+    <span>Correo: villa@grupopalmareal.com</span>
+    <span>Tel. 2407-0000</span>
+</div>
+
+<div>
+<h4>RECIBO</h4>
+</div>
+
+<img src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Imagenes/logo_principal.png" alt="Imagen">
+
+
+
+
+</div>
+
+<div class="separador"></div>
+
+<div class="encabezado g2">
+
+<div>
+<label>Recibo número: 200054</label>
+</div>
+
+<div>
+<label>RECIBÍ DE: ANTHONY CLEMENTE OLIVA MURILLO</label>
+</div>
+
+<div>
+<label>VILLA: A-5</label>
+</div>
+
+<div>
+<label>Fecha: 12 de agosto del 1999</label>
+</div>
+</div>
+
+<div class="separador"></div>
+
+<div class="tabla_recibo">
+
+<table>
+    <tr>
+        <th>Por concepto de:</th>
+        <th>Fecha aplicada</th>
+        <th>Fecha vencimiento</th>
+        <th>Costo</th>
+    </tr>
+
+    <tbody>
+        <tr>
+        <td>cc</td>
+        <td></td>
+            <td></td>
+            <td>100</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+</div>
+
+<div class="separador"></div>
+
+<div class="encabezado g2">
+
+<div>
+<label>QUINIENTOS DOLARES</label>
+</div>
+
+
+<div>
+<label>Total de abono: <label>500</label></label>
+
+</div>
+</div>
+

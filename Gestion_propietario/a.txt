@@ -1,9 +1,0 @@
-CREATE VIEW villa_completo
-AS
-SELECT        villas.id_villa, CONCAT(grupo_villa.grupo,'-',villas.numero) AS villas, villas.cont_eeh, villas.habitaciones, villas.lote, modelo_villa.modelo, condicion_villas.condicion, 
-                         villas.id_estado
-FROM            villas INNER JOIN
-                         grupo_villa ON villas.id_grupo = grupo_villa.id_grupo INNER JOIN
-                         modelo_villa ON villas.id_modelo = modelo_villa.id_modelo INNER JOIN
-                         condicion_villas ON villas.id_condicion = condicion_villas.id_condicion
-

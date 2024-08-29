@@ -837,3 +837,121 @@ width: 1000px;
 {
 
 }
+
+/** Estilo del pdf**/
+
+.cuerpo_pdf
+{
+font-family: Arial, Helvetica, sans-serif;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+
+}
+
+.encabezado table
+{
+    width: 100%;
+}
+
+.encabezado table td
+{
+    text-align: center;
+    width: 33%;
+    padding: 0px;
+    height: 50px;
+}
+
+.encabezado table td h4
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.encabezado table td:nth-child(1)
+{
+    text-align: left;
+    font-size: 12px;
+}
+
+.encabezado table td:nth-child(3)
+{
+    text-align: right;
+}
+
+
+.encabezado .tam_repo_tabla td
+{
+    font-size: 12px;
+    width: 25%;
+    text-align: center;
+}
+
+.tam_largo
+{
+    width: 50%;
+}
+
+.encabezado div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado div span
+{
+    font-size: 12px;
+}
+
+.encabezado img
+{
+width: 100px;
+height: 100px;
+}
+
+.separador
+{
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.g2
+{
+    height: 50px;
+}
+
+.separador2
+{
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.tabla_recibo
+{
+    height: 100%;
+    width: calc(100% - 200px);
+    min-height: 200px;
+}
+
+.tabla_recibo table
+{
+    width: 100%;
+}
+
+.tabla_recibo table th:nth-child(1)
+{
+    text-align: left;
+}
+
+.tabla_recibo table td:nth-child(4)
+{
+    text-align: center;
+}
+
+.tabla_recibo table td
+{
+    height: 35px;
+}
