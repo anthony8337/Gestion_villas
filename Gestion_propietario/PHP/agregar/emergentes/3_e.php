@@ -95,18 +95,42 @@
 <input type="text" name="txt_total_abono" id="txt_total_abono" readonly>
 </fieldset>
 
-<button class="elemento" type="button" id="btn_imp" onclick="abrirPestaña()">Reimprimir factura</button>
+<button class="elemento" type="button" id="btn_imp" onclick="abrirNuevaPagina()">Reimprimir factura</button>
 
 </div>
 </div>
 
 </div>
 </div>
+
+<div id="respuesta_reimprimir"></div>
 
 <script>ultimo_reim();</script>
 
 <script>
-        function abrirPestaña() {
-            window.open('1_reimprimir.php', '_blank');
-        }
+    function abrirNuevaPagina() {
+    // IDs de los inputs que quieres enviar
+    var inputIDs = ['txt_cod_reim','txt_nombre_reim','txt_villa_reim','txt_fecha_pago_reim','txt_tipa_reim','txt_for_reim'];
+    
+    // Crea un formulario
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "1_reimprimir.php";
+    form.target = "_blank"; // Abre en nueva ventana
+
+    // Añade inputs ocultos para cada valor
+    inputIDs.forEach(function(id) {
+        var inputValue = document.getElementById(id).value;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = id;
+        input.value = inputValue;
+        form.appendChild(input);
+    });
+
+    // Envía el formulario
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+}
 </script>

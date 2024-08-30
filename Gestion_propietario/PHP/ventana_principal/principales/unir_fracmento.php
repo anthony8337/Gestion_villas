@@ -37,3 +37,7 @@ include "PHP/ventana_principal/principales/5_e.php";
 <?php
 include "PHP/ventana_principal/principales/6_e.php";
 ?>
+
+<?php
+include "PHP/ventana_principal/principales/7_e.php";
+?>

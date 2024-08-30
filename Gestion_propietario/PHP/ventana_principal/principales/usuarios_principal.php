@@ -1,6 +1,6 @@
 <link rel='stylesheet' type='text/css' media='screen' href='CSS/pan_confi.css'>
 
-<div class="confi_base_datos" title="Configuración de la base de datos" onclick="bd_confi()">
+<div class="confi_base_datos" title="Configuración de la base de datos" onclick="login_bd_confi()">
     <img src="Imagenes/gear-fill.svg">
 </div>
 
@@ -45,3 +45,4 @@ include 'PHP/ventana_principal/principales/unir_fracmento.php';
 
 
 <script src="JS/principal/ven_usuario.js"></script>
+

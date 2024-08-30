@@ -39,7 +39,7 @@
 </div>
 
 <div>
-<label>Fecha: 12 de agosto del 1999</label>
+
 </div>
 </div>
 

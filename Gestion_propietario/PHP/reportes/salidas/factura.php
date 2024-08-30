@@ -15,6 +15,7 @@ ob_clean();
     <title>Document</title>
 </head>
 <body>
+
     <?php
     // Asegurarse de usar rutas absolutas para los includes
     include $_SERVER['DOCUMENT_ROOT'] . "/PHP/reportes/salidas/estrucctura/formato_factura.php";

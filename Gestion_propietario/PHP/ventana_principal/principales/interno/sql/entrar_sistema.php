@@ -38,7 +38,13 @@ if($result -> num_rows > 0)
                 echo"
                 <script>
                 var admin = 'abierto';
+                var usuario_n = '".$valor."'
+                var clave = '".$clave1."'
+
                 sessionStorage.setItem('admin',admin);
+                sessionStorage.setItem('usuario_n',usuario_n);
+                sessionStorage.setItem('clave',clave);
+
                 window.location.href = 'usuario.php';
                 </script>
                 ";

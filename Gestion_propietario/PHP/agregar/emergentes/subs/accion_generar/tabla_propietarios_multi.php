@@ -56,8 +56,7 @@ else
 ?>
 
 <script>
-    
-    tabla_multi_pro();
+     tabla_multi_pro();
 </script>
 
 <script>

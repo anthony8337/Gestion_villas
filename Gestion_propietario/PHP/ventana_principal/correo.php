@@ -31,7 +31,7 @@ if ($result -> num_rows > 0)
         $m2 = $row["usuario"];
         $m3 = $row["clave"];
 
-        $message = "Hola $m1 $m1_2, es un placer saludarlo, aqui le puestro los datos solicitados: \nUsuario: $m2 \nContreseña: $m3"; // Cuerpo del mensaje
+        $message = "Hola $m1 $m1_2, es un placer saludarlo, aqui le muestro los datos solicitados para acceder: \nUsuario: $m2 \nContreseña: $m3 \nSaludos cordiales"; // Cuerpo del mensaje
 
     }
 }

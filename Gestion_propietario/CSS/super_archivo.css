@@ -607,7 +607,7 @@ margin: 10px;
 .ajustar_t_div
 {
     width: 365px;
-    height: 326px;
+    height: 337px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -886,6 +886,15 @@ flex-direction: column;
     font-size: 12px;
     width: 25%;
     text-align: center;
+    padding: 0px;
+    height: 25px;
+}
+
+.encabezado .tam_repo_tabla th
+{
+    font-size: 12px;
+    width: 25%;
+    text-align: center;
 }
 
 .tam_largo
@@ -955,3 +964,4 @@ height: 100px;
 {
     height: 35px;
 }
+

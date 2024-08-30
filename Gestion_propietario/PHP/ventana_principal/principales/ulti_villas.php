@@ -28,6 +28,11 @@ if($result -> num_rows > 0)
     echo"
     <tr>
     <th></th>
+    <th colspan='4'>Ultimas villas registradas</th>
+    </tr>
+
+    <tr>
+    <th></th>
     <th>código</th>
     <th>Modelo</th>
     <th>Condición</th>

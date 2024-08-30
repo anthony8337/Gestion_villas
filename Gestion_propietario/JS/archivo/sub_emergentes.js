@@ -66,3 +66,13 @@ function cerrar_bd_confi()
 {
     document.getElementById('base_datos_form').style.display = 'none';
 }
+
+function login_bd_confi()
+{
+    document.getElementById('login_base_datos_form').style.display = 'flex';
+}
+
+function cerrar_login_bd_confi()
+{
+    document.getElementById('login_base_datos_form').style.display = 'none';
+}

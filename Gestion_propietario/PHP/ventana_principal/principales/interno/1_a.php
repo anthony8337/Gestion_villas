@@ -29,8 +29,7 @@ for ($i=0; $i < 12; $i++) {
 
 </fieldset>
 
-<fieldset class="ajustar_t_div">
-    <legend>Ultimas villas registradas</legend>
+<fieldset class="ajustar_t_div sin_borde">
 
     <div class="contenido_tabla" id="ulti_villa">
         <?php

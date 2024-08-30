@@ -34,6 +34,9 @@ if($result -> num_rows > 0)
    </tr>";
 
     while ($row = $result->fetch_assoc()) {
+
+        $concepto = $row["id_concepto"];
+
         echo"
         <tr>
         <td>",$row["id_concepto"],"</td>
@@ -43,6 +46,8 @@ if($result -> num_rows > 0)
         </tr>
         ";
     }
+
+    
 
     echo"
     </table>

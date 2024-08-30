@@ -114,3 +114,19 @@ function correo_recuperar()
         }
     });   
 }
+
+function reimprimir_factura_pdf() 
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/salidas/estructura/php_reportes/factura_php.php', // Asegúrate de que la ruta sea correcta
+        data: $(this).serialize(), // Cambia $(this) por el ID o clase del formulario que quieres serializar
+        success: function(response){
+            $('#respuesta_reimprimir').html(response); // Muestra la respuesta en el div correspondiente
+            window.open('1_reimprimir.php', '_blank'); // Abre la nueva página en una pestaña
+        },
+        error: function(textStatus, errorThrown) {
+            console.log("Error en la petición: " + textStatus, errorThrown); // Maneja cualquier error
+        }
+    });   
+}

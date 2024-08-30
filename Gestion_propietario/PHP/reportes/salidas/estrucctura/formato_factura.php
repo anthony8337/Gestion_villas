@@ -1,3 +1,7 @@
+<?php
+include "PHP/reportes/salidas/estrucctura/php_reportes/factura_php.php";
+?>
+
 <div class="cuerpo_pdf">
 
 <div class="encabezado">
@@ -28,19 +32,19 @@
 <table class="tam_repo_tabla">
     <tr>
 <td>
-<label>Recibo número: 2000048</label>
+<label>Recibo número: <?php echo htmlspecialchars($codigo_factura); ?></label>
 </td>
 
 <td>
-<label>RECIBÍ DE: ANTHONY CLEMENTE OLIVA MURILLO</label>
+<label>RECIBÍ DE: <?php echo htmlspecialchars($nombre_factura); ?></label>
 </td>
 
 <td>
-<label>VILLA: A-5</label>
+<label>VILLA: <?php echo htmlspecialchars($cod_villa_factura); ?></label>
 </td>
 
 <td>
-<label>Fecha: 12 de agosto del 1999</label>
+<label>Fecha: <?php echo htmlspecialchars($fecha_factura); ?></label>
 </td>
 
     </tr>
@@ -59,44 +63,38 @@
 
 </tr>
 
-<tr>
-<td>
-<label>Mantenimiento</label>
-</td>
+<tbody>
+    <?php 
+    include "PHP/reportes/salidas/estrucctura/php_reportes/tabla_factura.php";
+    ?>
+</tbody>
 
-<td>
-<label>10/08/2024</label>
-</td>
-
-<td>
-<label>10/08/2024</label>
-</td>
-
-<td>
-<label>500</label>
-</td>
-
-    </tr>
 </table>
 <div class="separador"></div>
 </div>
 
 <div class="encabezado">
 <table class="tam_repo_tabla">
-
 <tr>
-<th class="tam_largo">numero a letra</th>
+<th></th>
+<th></th>
 <th>Abono Total:</th>
-<th>500</th>
+<th><?php echo "$. ".htmlspecialchars($cuerpo_suma); ?></th>
 </tr>
 
-
-<tr>
-
-</tr>
 
 </table>
 <div class="separador"></div>
+</div>
+
+<div class="encabezado">
+<table class="tam_repo_tabla">
+<tr>
+    <td>Observación: Pago realizado en <?php echo htmlspecialchars($txt_tipa_reim);?> por <?php echo htmlspecialchars($txt_for_reim); ?>.</td>
+</tr>
+
+
+</table>
 </div>
 
 
