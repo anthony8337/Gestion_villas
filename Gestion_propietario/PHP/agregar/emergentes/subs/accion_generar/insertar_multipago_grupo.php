@@ -65,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo"
         <script>
         window.alert('Cuentas registradas con éxito');
-        limpiar_confirmar();
         recargar_tabla_multi();
+        codigo_multi_acutalizar();
         </script>
         ";
 

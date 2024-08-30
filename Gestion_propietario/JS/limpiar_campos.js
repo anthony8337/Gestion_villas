@@ -1,3 +1,12 @@
+function limpiar_span()
+{
+    var camposTexto = document.querySelectorAll('.dato');
+
+    camposTexto.forEach(function(input){
+        input.textContent='';
+    });
+}
+
 function limpieza_text()
 {
     var camposTexto = document.querySelectorAll('input[type="text"]');
@@ -103,6 +112,7 @@ limpiar_tabla_adicionar();
 limpiar_tabla_contacto(); 
 limpiar_tablas_carac();
 limpiar_tabla_cuentas_reim();
+limpiar_span();
 }
 
 function limpiar_opcion()

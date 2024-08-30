@@ -120,16 +120,16 @@ if ($result == true && $result2 == true) {
         {
                 echo"<script>
                 window.alert('Cuenta pagada con éxito.');
-                limpiar_confirmar();
                 recargar_tabla_multi();
+                codigo_multi_acutalizar();
                 </script>";  
         }
         else
         {
                 echo"<script>
                 window.alert('Cuenta pagada de forma parcial.');
-                limpiar_confirmar();
                 recargar_tabla_multi();
+                codigo_multi_acutalizar();
                 </script>";
         }
 

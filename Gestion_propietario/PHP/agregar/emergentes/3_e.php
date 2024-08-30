@@ -21,11 +21,12 @@
 
 <div class="c2">
 
-    <fieldset>
-        <legend>Código de villa</legend>
-        <input type="hidden" id="hd_id_reim" name="hd_id_reim">
-        <input type="text" id="txt_villa_reim" name="txt_villa_reim" readonly>
-    </fieldset>
+<fieldset>
+    <legend>Código de pago</legend>
+    <input type="text" id="txt_cod_reim" name="txt_cod_reim" readonly>
+</fieldset>
+
+
 
     <fieldset>
         <legend>Propietario</legend>
@@ -33,8 +34,9 @@
     </fieldset>
 
     <fieldset>
-        <legend>Fecha</legend>
-        <input type="date" readonly>
+        <legend>Código de villa</legend>
+        <input type="hidden" id="hd_id_reim" name="hd_id_reim">
+        <input type="text" id="txt_villa_reim" name="txt_villa_reim" readonly>
     </fieldset>
 
     
@@ -42,10 +44,7 @@
 
 
 <fieldset class="c2 sin_borde">
-<fieldset>
-    <legend>Código de pago</legend>
-    <input type="text" id="txt_cod_reim" name="txt_cod_reim" readonly>
-</fieldset>
+
 
 <fieldset>
     <legend>Tipo de pago</legend>

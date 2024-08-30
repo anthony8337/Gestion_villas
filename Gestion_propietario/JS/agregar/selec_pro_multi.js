@@ -21,6 +21,7 @@ function tabla_multi_pro(){
 
         document.getElementById('hd_id_propietario').value = id;
         document.getElementById('sp_codigo_multi').textContent = villa;
+        document.getElementById('codigo_villa_multi').value = villa;
         document.getElementById('txt_mn').value = nombre;
         document.getElementById('txt_tl').value = telefono;
 

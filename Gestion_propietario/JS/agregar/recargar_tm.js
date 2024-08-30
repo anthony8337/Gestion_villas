@@ -53,6 +53,7 @@ function recargar_tabla_multi_gc() {
     var telefono = document.getElementById('telefono_gc_mt').value;
 
     document.getElementById('sp_codigo_multi').textContent = villa;
+    document.getElementById('codigo_villa_multi').value = villa;
     document.getElementById('txt_mn').value = pro;
     document.getElementById('txt_tl').value = telefono;
     document.getElementById('hd_id_propietario').value = id_gc_pro;

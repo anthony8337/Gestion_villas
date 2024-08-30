@@ -13,13 +13,13 @@
 
         <fieldset>
         <legend>Rango de propietario</legend>
-        <select name="sl_pro_gc" id="sl_pro_gc">
-            <option value="Unico" onclick="cambio()">Unico</option>
-            <option value="Rango" onclick="cambio()">Rango</option>
+        <select name="sl_pro_gc" id="sl_pro_gc" oninput="cambio()">
+            <option value="Unico">Unico</option>
+            <option value="Rango">Rango</option>
         </select>
         </fieldset>
     
-        <fieldset title="Seleccionar aportación" id="cuenta_seleccionar">
+        <fieldset title="Seleccionar aportación" id="aporte_cuenta_seleccionar">
         <legend>Aportación</legend>
         <select name="sl_aportacion_gc" id="sl_aportacion_gc">
             <option value="Monto" >Monto</option>
@@ -27,7 +27,7 @@
         </select>
         </fieldset>
         
-        <fieldset title="Seleccionar aportación" id="cuenta_seleccionar">
+        <fieldset title="Seleccionar aportación" id="cod_cuenta_seleccionar">
         <legend>Código de cuenta</legend>
         <input type="number" readonly title="Código de cuenta" id="codigo_cuenta" value="<?php include "PHP/agregar/emergentes/subs/accion_generar/codigo_cuenta.php";?>">
         </fieldset>

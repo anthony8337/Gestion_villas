@@ -31,6 +31,7 @@
 
     <fieldset>
         <legend>Código: <span id="sp_codigo_multi" name="sp_codigo_multi"></span></legend>
+        <input type="hidden" id="codigo_villa_multi" name="codigo_villa_multi">
         <input type="hidden" name="hd_id_propietario" id="hd_id_propietario">
         <input type="hidden" name="hd_id_cuenta" id="hd_id_cuenta">
         <input type="hidden" name="hd_id_concepto" id="hd_id_concepto">
@@ -145,9 +146,11 @@ $(document).ready(function(){
     data: form,
     success: function(response){
         $('#respuesta_multi').html(response);
-
     }
+
 });
+
+abrirNuevaPagina_miltipago();
     }
     else
     {
@@ -173,9 +176,41 @@ $(document).ready(function(){
             $('#respuesta_multi').html(response);
         }
     });
+    abrirNuevaPagina_miltipago();
     }
 
     });
 });
 
+</script>
+
+<script>
+    function abrirNuevaPagina_miltipago() {
+    
+    // IDs de los inputs que quieres enviar
+    var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m'];
+    
+    // Crea un formulario
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "2_multipago.php";
+    form.target = "_blank"; // Abre en nueva ventana
+
+    // Añade inputs ocultos para cada valor
+    inputIDs.forEach(function(id) {
+        var inputValue = document.getElementById(id).value;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = id;
+        input.value = inputValue;
+        form.appendChild(input);
+    });
+
+    // Envía el formulario
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    limpiar_confirmar();
+}
 </script>
