@@ -44,23 +44,16 @@ $forma_pago = $_POST['txt_forma_pp'];
 $referencia = $_POST['txt_nu_referencia'];
 
 
+
 if($tipo_pago == "Efectivo")
 {
-        $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto) 
-        VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago');";
-
-        $sql5= "INSERT INTO forma_pago(id_cuenta, tipo_pago, forma_pago, n_referencia) VALUES ('$id_cuenta','$tipo_pago','Físico','Ninguna')";
-        $result5 = $conn -> query($sql5);
+        $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto, tipo_pago, forma_pago, n_referencia) 
+        VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago','$tipo_pago','Físico','Ninguna');";
 }
 else if($tipo_pago == "Referencia")
 {
-        $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto) 
-        VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago',0,0,1,1,'$concepto_pago');";
-
-
-        $sql5= "INSERT INTO forma_pago(id_cuenta, tipo_pago, forma_pago, n_referencia) 
-        VALUES ('$id_cuenta','$tipo_pago','$forma_pago','$referencia')";
-        $result5 = $conn -> query($sql5);
+        $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto, tipo_pago, forma_pago, n_referencia) 
+        VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago',0,0,1,1,'$concepto_pago','$tipo_pago','$forma_pago','$referencia');";
 }
 
 

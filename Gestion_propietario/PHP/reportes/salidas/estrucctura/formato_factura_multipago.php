@@ -91,7 +91,7 @@ include "PHP/reportes/salidas/estrucctura/php_factura_multi/tabla_factura_multi.
 <div class="encabezado">
 <table class="tam_repo_tabla">
 <tr>
-    <td>Observación: Pago realizado en "" por "".</td>
+    <td>Observación: Pago realizado en <?php echo htmlspecialchars($tipo_pago_multi); ?> por <?php echo htmlspecialchars($forma_pago_multi); ?>.</td>
 </tr>
 
 

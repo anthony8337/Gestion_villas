@@ -16,7 +16,7 @@ else
 
 $cod_factura;
 
-// Ejecutar la consulta para obtener el último código
+// Ejecutar la consulta para obtener el último Código
 $sql1 = "SELECT * FROM multi_pago ORDER BY id_multi DESC LIMIT 1;";
 $result1 = $conn->query($sql1);
 

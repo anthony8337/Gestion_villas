@@ -60,5 +60,7 @@
     <script src="JS/agregar/selec_pro_reim.js"></script>
     <script src="JS/agregar/selec_cuenta_reim_pro.js"></script>
     <script src="JS/buscar/subs/buscar_cuentas_pagadas.js"></script>
+    <script src="JS/buscar/subs/buscar_pro_estado.js"></script>
+    <script src="JS/reportes/cambio_fecha.js"></script>
 </head>
 <body>

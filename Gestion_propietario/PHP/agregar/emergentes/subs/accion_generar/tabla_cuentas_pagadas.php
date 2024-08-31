@@ -21,8 +21,11 @@ $id_propi = $_GET["pripi_id_reim"];
 
 
 
-$sql = "SELECT codigo_pago, MAX(id_unir) AS id_unir, MAX(concepto) AS concepto, MAX(fecha_pago) AS fecha_pago, MAX(tipo_pago) AS tipo_pago, MAX(forma_pago) AS forma_pago, MAX(n_referencia) AS n_referencia FROM factura_completa_reimprimir 
-WHERE id_unir = '$id_propi' GROUP BY codigo_pago ORDER BY fecha_pago DESC;";
+$sql = "SELECT codigo_pago, MAX(id_unir) AS id_unir, MAX(concepto) AS concepto, 
+MAX(fecha_pago) AS fecha_pago, MAX(tipo_pago) AS tipo_pago, MAX(forma_pago) AS forma_pago, 
+MAX(n_referencia) AS n_referencia, MAX(tipo_pago) AS tipo_pago, MAX(forma_pago) AS forma_pago,
+ MAX(n_referencia) AS n_referencia 
+ FROM factura_completa_reimprimir WHERE id_unir = '$id_propi' GROUP BY codigo_pago ORDER BY fecha_pago DESC;";
 
 
 $result = $conn->query($sql);

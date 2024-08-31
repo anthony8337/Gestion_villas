@@ -965,3 +965,7 @@ height: 100px;
     height: 35px;
 }
 
+.c2_estado_cuenta fieldset
+{
+max-width: 400px;
+}

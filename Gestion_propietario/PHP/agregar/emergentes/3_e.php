@@ -73,7 +73,7 @@
         <tr>
         <th></th>
             <th>Documento</th>
-            <th>código</th>
+            <th>Código</th>
             <th>Fecha aplicada</th>
             <th>Fecha vencimiento</th>
             <th>Abono</th>
@@ -131,5 +131,8 @@
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
+
+    limpiar_confirmar();
+    
 }
 </script>

@@ -33,7 +33,7 @@ if($result -> num_rows > 0)
 
     <tr>
     <th></th>
-    <th>código</th>
+    <th>Código</th>
     <th>Modelo</th>
     <th>Condición</th>
     <th>Estado</th>

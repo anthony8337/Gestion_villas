@@ -33,6 +33,11 @@ $concepto_pago = $_POST['hd_id_concepto'];
 
 $ajusta = $total_pago - $cantidad_pago;
 
+///////////// referencias
+$tipo_pago = $_POST['hd_tipo_pago'];
+$forma_pago = $_POST['txt_forma_pp'];
+$referencia = $_POST['txt_nu_referencia'];
+
 if($ajusta > 0)
 {
 echo"<script>
@@ -52,10 +57,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         foreach ($tabla_cuenta_multi as $fila) {
 
+    if($tipo_pago == "Efectivo")
+    {
+    $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto,tipo_pago, forma_pago, n_referencia) 
+    VALUES ('$cod_fac','$id_pro_multi','" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago','$tipo_pago','Físico','Ninguna');";
+    $result = $conn->query($sql);
+    }
+    else if($tipo_pago == "Referencia")
+    {
+    $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto,tipo_pago, forma_pago, n_referencia) 
+    VALUES ('$cod_fac','$id_pro_multi','" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago','$tipo_pago','$forma_pago','$referencia');";
+    $result = $conn->query($sql);
+    }
 
-            $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto) 
-            VALUES ('$cod_fac','$id_pro_multi','" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago');";
-            $result = $conn->query($sql);
+
 
             $sql2= "UPDATE cuentas SET pagado='Pagado', costo='0' WHERE id_cuenta ='" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "';";
             $result2 = $conn->query($sql2);

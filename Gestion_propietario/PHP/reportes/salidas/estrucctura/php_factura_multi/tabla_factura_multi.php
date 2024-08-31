@@ -35,6 +35,12 @@ if($result -> num_rows > 0)
 
     while ($row = $result->fetch_assoc()) {
 
+        $tipo_pago_multi = $row["tipo_pago"];
+        $forma_pago_multi = $row["forma_pago"];
+        $referencia_pago_multi = $row["n_referencia"];
+
+        $suma_abono_factura_multi += $row["abono"];
+
         $decimal_factura = number_format($row["abono"],2);
 
         echo"
@@ -44,8 +50,8 @@ if($result -> num_rows > 0)
         <td>",$row["hasta"],"</td>
         <td>$. ",$decimal_factura,"</td>
         </tr>";
-
-        $suma_abono_factura_multi += $decimal_factura;
+        
+        
 
         $cuerpo_suma_multi = number_format($suma_abono_factura_multi,2);
     }

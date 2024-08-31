@@ -121,3 +121,23 @@ function codigo_multi_acutalizar()
 
     document.getElementById("txt_cod_m").value = parseInt(codigo) + 1;
 }
+
+function tabla_estado_cuenta()
+{
+    var id_pro_sc = document.getElementById("id_pro_sc").value;
+    var decidir = document.getElementById("ranco_factura").value;
+    var desde = document.getElementById("desde_estado").value;
+    var hasta = document.getElementById("hasta_estado").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/tabla_estado_cuenta.php',
+        data: 
+        {
+            id_pro_sc: id_pro_sc, decidir:decidir, desde:desde, hasta:hasta,
+        },
+        success: function(response){
+            $('#tb_estados').html(response);
+        }
+    });   
+}

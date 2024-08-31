@@ -16,7 +16,7 @@
 <div class="c2">
     <fieldset>
     <legend>Buscar por datos de factura</legend>
-    <input type="text" placeholder="Buscar factura por código" id="buscar_facturas_cuentas" oninput="bus_con_usar()">
+    <input type="text" placeholder="Buscar factura por Código" id="buscar_facturas_cuentas" oninput="bus_con_usar()">
     </fieldset>
 </div>
 

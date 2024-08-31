@@ -16,7 +16,7 @@ else
 
 $cod_ver;
 
-// Ejecutar la consulta para obtener el último código
+// Ejecutar la consulta para obtener el último Código
 $sql1 = "SELECT * FROM cuentas ORDER BY id_cuenta DESC LIMIT 1;";
 $result1 = $conn->query($sql1);
 

@@ -220,3 +220,13 @@ function cerrar_cuenta_propi_reim()
 {
     document.getElementById('toma_cuenta_reim').style.display = "none"; 
 }
+
+function selec_pro_estado()
+{
+    document.getElementById('rp_propietario').style.display = "flex";
+}
+
+function cerrar_selec_pro_estado()
+{
+    document.getElementById('rp_propietario').style.display = "none"; 
+}
