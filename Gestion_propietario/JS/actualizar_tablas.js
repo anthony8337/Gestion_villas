@@ -184,6 +184,8 @@ function actualizar_selectores_villa()
             $('#hasta_repo_saldo').html(response);
             $('#desde_propi').html(response);
             $('#hasta_propi').html(response);
+            $('#desde_reportes_villas').html(response);
+            $('#hasta_reportes_villas').html(response);
         }
     });
 }
@@ -194,7 +196,12 @@ function ultimo_select() {
 
     var select2 = document.getElementById('hasta_propi');
     select2.value = select2.options[select2.options.length - 1].value;    
+
+    var select3 = document.getElementById('hasta_reportes_villas');
+    select3.value = select3.options[select3.options.length - 1].value;  
 }
+
+
 
 function actualizar_tabla_saldos()
 {
@@ -259,4 +266,49 @@ function total_pago()
         }
     });
 
+}
+
+function actualizar_select_estado_villa()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/selector_estado_villa.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#estado_villa').html(response);
+        }
+    });
+}
+
+function actualizar_select_modelo_villa()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/selector_modelo_villa.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#modelo_villa').html(response);
+        }
+    });
+}
+
+function actualizar_tabla_villa()
+{
+
+    var desde_reportes_villas = document.getElementById("desde_reportes_villas").value;
+    var hasta_reportes_villas = document.getElementById("hasta_reportes_villas").value;
+    var estado_villa = document.getElementById("estado_villa").value;
+    var modelo_villa = document.getElementById("modelo_villa").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/tabla_villas.php',
+        data: {
+            desde_reportes_villas:desde_reportes_villas, hasta_reportes_villas:hasta_reportes_villas,
+            estado_villa,modelo_villa,
+        },
+        success: function(response){
+            $('#tb_villas').html(response);
+        }
+    });
 }

@@ -7,6 +7,10 @@ function cerrar_ingreso_lv()
 function ingreso_lis_villa()
 {
     document.getElementById('lis_villa').style.display = 'flex';
+    actualizar_selectores_villa();
+    actualizar_select_estado_villa();
+    actualizar_select_modelo_villa();
+    actualizar_tabla_villa();
 }
 
 //generar pro

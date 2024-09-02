@@ -110,7 +110,5 @@
     form.submit();
     document.body.removeChild(form);
 
-    
-    
 }
 </script>
