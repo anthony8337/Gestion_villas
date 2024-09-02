@@ -1,85 +1,39 @@
-
-
-
-
-<div class="encabezado">
-    
-
-<div>
-    <h4>VILLAS PALMA REAL</h4>
-    <span>Correo: villa@grupopalmareal.com</span>
-    <span>Tel. 2407-0000</span>
-</div>
-
-<div>
-<h4>RECIBO</h4>
-</div>
-
-<img src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Imagenes/logo_principal.png" alt="Imagen">
-
-
-
-
-</div>
-
-<div class="separador"></div>
-
-<div class="encabezado g2">
-
-<div>
-<label>Recibo número: 200054</label>
-</div>
-
-<div>
-<label>RECIBÍ DE: ANTHONY CLEMENTE OLIVA MURILLO</label>
-</div>
-
-<div>
-<label>VILLA: A-5</label>
-</div>
-
-<div>
-
-</div>
-</div>
-
-<div class="separador"></div>
-
-<div class="tabla_recibo">
-
-<table>
-    <tr>
-        <th>Por concepto de:</th>
-        <th>Fecha aplicada</th>
-        <th>Fecha vencimiento</th>
-        <th>Costo</th>
-    </tr>
-
-    <tbody>
-        <tr>
-        <td>cc</td>
-        <td></td>
-            <td></td>
-            <td>100</td>
-        </tr>
-        
-    </tbody>
-</table>
-
-</div>
-
-<div class="separador"></div>
-
-<div class="encabezado g2">
-
-<div>
-<label>QUINIENTOS DOLARES</label>
-</div>
-
-
-<div>
-<label>Total de abono: <label>500</label></label>
-
-</div>
-</div>
-
+SELECT
+    gestion_de_propietario.villas.id_villa AS id_villa,
+    CONCAT(
+        gestion_de_propietario.grupo_villa.grupo,
+        '-',
+        gestion_de_propietario.villas.numero
+    ) AS villas,
+    gestion_de_propietario.villas.cont_eeh AS cont_eeh,
+    gestion_de_propietario.villas.habitaciones AS habitaciones,
+    gestion_de_propietario.villas.lote AS lote,
+    gestion_de_propietario.modelo_villa.modelo AS modelo,
+    gestion_de_propietario.condicion_villas.condicion AS condicion,
+    gestion_de_propietario.villas.id_estado AS id_estado
+FROM
+    (
+        (
+            (
+                gestion_de_propietario.villas
+            JOIN gestion_de_propietario.grupo_villa ON
+                (
+                    (
+                        gestion_de_propietario.villas.id_grupo = gestion_de_propietario.grupo_villa.id_grupo
+                    )
+                )
+            )
+        JOIN gestion_de_propietario.modelo_villa ON
+            (
+                (
+                    gestion_de_propietario.villas.id_modelo = gestion_de_propietario.modelo_villa.id_modelo
+                )
+            )
+        )
+    JOIN gestion_de_propietario.condicion_villas ON
+        (
+            (
+                gestion_de_propietario.villas.id_condicion = gestion_de_propietario.condicion_villas.id_condicion
+            )
+        )
+    )
