@@ -13,6 +13,8 @@
 
 <div class="c2">
 
+<input style="display: none;" type="date" id="fecha_saldo" name="fecha_saldo">
+
     <fieldset>
         <legend>Desde</legend>
         <select id="desde_repo_saldo" oninput="actualizar_tabla_saldos()">
@@ -72,7 +74,7 @@
     <input type="text" name="txt_st_cobrar" id="txt_st_cobrar" readonly>
 </fieldset>
 
-<button type="button">Imprimir</button>
+<button type="button" onclick="abrirNuevaPagina_saldo()">Imprimir</button>
 
 </fieldset>
 </div>
@@ -81,3 +83,34 @@
 </div>
 
 </div>
+
+<script>
+    function abrirNuevaPagina_saldo() {
+    // IDs de los inputs que quieres enviar
+    var inputIDs = ['fecha_saldo','concep_saldo','hasta_repo_saldo','desde_repo_saldo','fecha_saldo_actual'];
+    
+    // Crea un formulario
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "4_saldos.php";
+    form.target = "_blank"; // Abre en nueva ventana
+
+    // Añade inputs ocultos para cada valor
+    inputIDs.forEach(function(id) {
+        var inputValue = document.getElementById(id).value;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = id;
+        input.value = inputValue;
+        form.appendChild(input);
+    });
+
+    // Envía el formulario
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    
+    
+}
+</script>

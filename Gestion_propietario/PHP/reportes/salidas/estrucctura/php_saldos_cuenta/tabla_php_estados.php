@@ -47,6 +47,8 @@ $result = $conn->query($sql);
 if($result -> num_rows > 0)
 {
     $total = 0;
+    $total_creedito = 0;
+    $total_abono = 0;
 
     while ($row = $result->fetch_assoc()) {
 
@@ -54,7 +56,6 @@ if($result -> num_rows > 0)
         {
             echo"
             <tr>
-            <td></td>
             <td>",$row["villa"],"</td>
             <td>",$row["nombre"],"</td>
             <td>$. ",number_format($row["saldo_total"],2),"</td>
@@ -66,7 +67,6 @@ if($result -> num_rows > 0)
         {
             echo"
             <tr>
-            <td></td>
             <td>",$row["villa"],"</td>
             <td>",$row["nombre"],"</td>
             <td>$. 0.00</td>
@@ -75,17 +75,65 @@ if($result -> num_rows > 0)
             ";
         }
 
+        if(number_format($row["saldo_total"],2) < 0)
+        {
+            $total_creedito += $row["saldo_total"];
+        }
+        else
+        {
+            $total_abono += $row["saldo_total"];
+        }
+
+
 
     }
+
+    $t_total_creedito = "$. ". number_format($total_creedito,2);
+
+    $t_total_abono = "$. ".number_format($total_abono,2);
+
+    
 
 }
 else
 {
     echo"No se encuentran datos";
 }
-?>
 
-<script>
-total_credito();
-total_pago();
-</script>
+
+$sql2 = "SELECT 
+    COUNT(*) AS total_registros
+FROM 
+    (
+        SELECT 
+            cuenta_vista.concepto AS concepto,
+            cuenta_vista.villa AS villa,
+            cuenta_vista.nombre AS nombre,
+            SUM(cuenta_vista.costo) AS costo_total,
+            SUM(cuenta_vista.abono) AS abono_total,
+            SUM((cuenta_vista.costo - cuenta_vista.abono)) AS saldo_total
+        FROM 
+            cuenta_vista
+        WHERE 
+            cuenta_vista.desde BETWEEN '2024-01-01' AND '$fecha_saldo_actual' AND
+            cuenta_vista.concepto = '$concep_saldo' AND 
+            cuenta_vista.villa BETWEEN '$desde_repo_saldo' AND '$hasta_repo_saldo'
+        GROUP BY 
+            cuenta_vista.concepto,
+            cuenta_vista.villa,
+            cuenta_vista.nombre
+    ) AS subquery;
+";
+
+$result2 = $conn->query($sql2);
+
+if($result2 -> num_rows > 0)
+{
+    while ($row = $result2->fetch_assoc()) 
+    {
+        $contar_registros = $row["total_registros"];
+    }
+}
+
+
+?>
