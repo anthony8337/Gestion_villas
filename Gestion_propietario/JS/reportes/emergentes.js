@@ -18,6 +18,9 @@ function cerrar_ingreso_lp()
 function ingreso_lis_pro()
 {
     document.getElementById('lis_pro').style.display = 'flex';
+    
+    actualizar_selectores_villa();
+    actualizar_select_reporte();
 }
 
 //generar pro saldo

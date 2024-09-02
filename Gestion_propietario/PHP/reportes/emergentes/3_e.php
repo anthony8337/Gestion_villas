@@ -6,7 +6,7 @@
 
 <div class="c1">
 <h2>Estados de cuenta de propietario</h2>
-<button onclick="cerrar_ingreso_lp_sal()" type="button">X</button>
+<button onclick="cerrar_ingreso_lp_sal(),limpiar_confirmar()" type="button">X</button>
 </div>
 
 <form id="form_estados">
@@ -31,8 +31,8 @@
 </fieldset>
     
 <fieldset>
-        <legend>Teléfono</legend>
-        <input type="text" name="txt_tele_estados" id="txt_tele_estados" readonly>
+        <legend>Fecha</legend>
+        <input type="date" name="fecha_estado_hoy" id="fecha_estado_hoy" readonly>
 </fieldset>
 
 </div>
@@ -40,8 +40,14 @@
 <div class="c2 c2_estado_cuenta">
 
 <fieldset>
+        <legend>Seleccionar cuota</legend>
+        <select name="rango_cuota" id="rango_cuota" oninput="tabla_estado_cuenta()">
+        </select>
+</fieldset>
+
+<fieldset>
         <legend>Indicar fecha de pago</legend>
-        <select name="ranco_factura" id="ranco_factura" oninput="ocultar_fecha()">
+        <select name="ranco_factura" id="ranco_factura" oninput="ocultar_fecha(),tabla_estado_cuenta()">
         <option value="Historial completo">Historial completo</option>
         <option value="Periodo de fecha">Periodo de fecha</option>
     </select>
@@ -72,7 +78,7 @@
         <th>Total</th>
         </tr>
 
-        <tbody id="tb_estados">
+        <tbody id="tb_estados" class="borrar_t">
 
         </tbody>
 
@@ -81,18 +87,12 @@
 </div>
 
 <div class="c3">
-<button type="button">Imprimir</button>
+<button type="button" onclick="abrirNuevaPagina_estado()">Imprimir</button>
 </div>
 
 </form>
 
 <div id="respuesta_estados"></div>
-
-
-
-
-
-
 
 </div>
 
@@ -101,3 +101,35 @@
 <label style="display: none;" id="lb_cel_re"></label>
 
 <script>ocultar_fecha();</script>
+
+<script>
+    function abrirNuevaPagina_estado() {
+    // IDs de los inputs que quieres enviar
+    var inputIDs = ['rango_cuota','ranco_factura','desde_estado','hasta_estado','fecha_estado_hoy'
+        ,'txt_cod_estados' ,'txt_propi_estados','id_pro_sc'];
+    
+    // Crea un formulario
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "3_estado_cuenta.php";
+    form.target = "_blank"; // Abre en nueva ventana
+
+    // Añade inputs ocultos para cada valor
+    inputIDs.forEach(function(id) {
+        var inputValue = document.getElementById(id).value;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = id;
+        input.value = inputValue;
+        form.appendChild(input);
+    });
+
+    // Envía el formulario
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    limpiar_confirmar();
+    
+}
+</script>

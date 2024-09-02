@@ -11,109 +11,70 @@
 
 </div>
 
-<div class="c4">
+<div class="c2">
 
-<fieldset>
-    <legend>Estado</legend>
-    
-    <table>
-        <tr>
-            <td colspan="2">
-                <select>
-                    <option>Aplica cuenta</option>
-                    <option>Suspendido</option>
-                    <option>Todas las opciones</option>
-                </select>
-            </td>
-        </tr>
-    </table>
+    <fieldset>
+        <legend>Desde</legend>
+        <select id="desde_repo_saldo" oninput="actualizar_tabla_saldos()">
+        </select>
     </fieldset>
 
-<fieldset class="grupo">
-    <legend>Grupo</legend>
+    <fieldset>
+        <legend>Hasta</legend>
+        <select id="hasta_repo_saldo" oninput="actualizar_tabla_saldos()">
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Fecha del saldo</legend>
+        <input type="date" name="fecha_saldo_actual" id="fecha_saldo_actual" oninput="actualizar_tabla_saldos()">
+    </fieldset>
+
+    <fieldset>
+        <legend>Seleccionar concepto del saldo</legend>
+        <select name="concep_saldo" id="concep_saldo" oninput="actualizar_tabla_saldos(),total_credito_saldo()">
+    </select>
+
     
-    <table>
-        <tr>
-            <td>
-            Desde
-            <select class="grupo_cod">
-            <?php
-            $letras = ['A','B','C','D','E','F','G','H','I','J','K'
-            ,'L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-            for ($i=0; $i < count($letras); $i++) { 
 
-                 for ($j=1; $j <= 12; $j++) { 
-                    echo"
-                    <option>$letras[$i]-$j</option>
-                    ";
-                 }
-                }
-                ?>
-            </select>
-            </td>
-            <td>
-            Hasta 
-            <select class="grupo_cod">
-                
-            <?php
-
-            $letras = ['A','B','C','D','E','F','G','H','I','J','K'
-            ,'L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-            for ($i=0; $i < count($letras); $i++) { 
-
-                 for ($j=1; $j <= 12; $j++) { 
-                    echo"
-                    <option>$letras[$i]-$j</option>
-                    ";
-                 }
-                }
-                ?>
-            </select>
-            </td>
-        </tr>
-
-    </table>
 </fieldset>
-
-<fieldset class="modelo">
-    <legend>Periodo de saldo</legend>
-    
-    <table>
-        <tr>
-            <td>
-            <select>
-                <option>
-                    Mes actual
-                </option>
-                <option>
-                    Todo el año
-                </option>
-                <option>
-                    Rango de tiempo
-                </option>
-            </select>
-            </td>
-
-            <td>
-                Desde
-            <input type="date">
-            </td>
-
-            <td>
-                Hasta
-            <input type="date">
-            </td>
-        </tr>
-    </table>
-</fieldset>
-
 
 </div>
+<div class="c4">
+<div class="contenido_tabla">
+    <table id="td_saldos_cuerpo" class="contenido">
+        <tr>
+        <th></th>
+        <th>Clave</th>
+        <th>Nombre</th>
+        <th>Al crédito</th>
+        <th>Por cobrar</th>
+        </tr>
 
-<div class="c3">
+        <tbody id="tb_saldos">
+        </tbody>
+
+    </table>
+    </div>
+</div>
+
+<div class="c3 total_extra">
+
+<fieldset>
+
+<fieldset>
+    <legend>Saldo total del crédito</legend>
+    <input type="text" name="txt_st_credito" id="txt_st_credito" readonly>
+</fieldset>
+
+<fieldset>
+    <legend>Saldo total por cobrar</legend>
+    <input type="text" name="txt_st_cobrar" id="txt_st_cobrar" readonly>
+</fieldset>
+
 <button type="button">Imprimir</button>
-<button type="button">Exportar PDF</button>
-<button type="button">Exportar Ecxel</button>
+
+</fieldset>
 </div>
 
 

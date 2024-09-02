@@ -24,6 +24,7 @@
 }
 
 function selec_pro_estado_cuenta(){
+
   var tabla = document.getElementById("tabla_propi_estado_cuenta");
   var filas = tabla.getElementsByTagName("tr");
 
@@ -35,15 +36,13 @@ function selec_pro_estado_cuenta(){
       var id = celdas[0].innerText;
       var nombre = celdas[1].innerText;
       var villa = celdas[2].innerText;
-      var telefono = celdas[4].innerText;
 
       document.getElementById('id_pro_sc').value = id;
       document.getElementById('txt_propi_estados').value = nombre;
-      document.getElementById('txt_cod_estados').value = villa;
-      document.getElementById('txt_tele_estados').value = telefono;
+      document.getElementById('txt_cod_estados').value = villa;      
 
       cerrar_selec_pro_estado();
-      tabla_estado_cuenta();
+      seleccionar_conceptos_cuenta();
     });
   }
 }

@@ -53,6 +53,11 @@ function limpieza_checkbox()
     }); 
 }
 
+function limpieza_select_estado() 
+{
+    var selectElement = document.querySelector('#rango_cuota');
+    selectElement.innerHTML = '';
+}
 
 function limpieza_clave()
 {
@@ -99,6 +104,13 @@ function limpiar_tabla_adicionar() {
     }
   }
 
+  function limpiar_tabla_estado() {
+    var tbody = document.querySelector("#td_estados_cuerpo tbody.borrar_t");
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+  }
+
 function limpiar_confirmar()
 {
 limpieza_text();
@@ -112,7 +124,9 @@ limpiar_tabla_adicionar();
 limpiar_tabla_contacto(); 
 limpiar_tablas_carac();
 limpiar_tabla_cuentas_reim();
+limpiar_tabla_estado();
 limpiar_span();
+limpieza_select_estado();
 }
 
 function limpiar_opcion()
@@ -122,16 +136,20 @@ var elegir = confirm("¿Esta seguro de limpiar los datos agregados?");
 
 if(elegir)
 {
-limpieza_text();
-limpieza_hidden();
-limpieza_email();
-limpieza_clave();
-limpiar_tablas(); 
-limpieza_checkbox(); 
-limpieza_textarea();
-limpiar_tabla_adicionar();
-limpiar_tabla_contacto();
-limpiar_tablas_carac();
+    limpieza_text();
+    limpieza_hidden();
+    limpieza_email();
+    limpieza_clave();
+    limpiar_tablas(); 
+    limpieza_checkbox();
+    limpieza_textarea();
+    limpiar_tabla_adicionar();  
+    limpiar_tabla_contacto(); 
+    limpiar_tablas_carac();
+    limpiar_tabla_cuentas_reim();
+    limpiar_tabla_estado();
+    limpiar_span();
+    limpieza_select_estado();
 }  
 
 }

@@ -122,22 +122,141 @@ function codigo_multi_acutalizar()
     document.getElementById("txt_cod_m").value = parseInt(codigo) + 1;
 }
 
-function tabla_estado_cuenta()
-{
+function tabla_estado_cuenta(){
+
     var id_pro_sc = document.getElementById("id_pro_sc").value;
     var decidir = document.getElementById("ranco_factura").value;
     var desde = document.getElementById("desde_estado").value;
     var hasta = document.getElementById("hasta_estado").value;
+    var selector = document.getElementById("rango_cuota").value;
+
 
     $.ajax({
         type: 'POST',
         url: 'PHP/reportes/emergentes/subs/sql/tabla_estado_cuenta.php',
         data: 
         {
-            id_pro_sc: id_pro_sc, decidir:decidir, desde:desde, hasta:hasta,
+            id_pro_sc: id_pro_sc, decidir:decidir, desde:desde, hasta:hasta,selector:selector,
         },
         success: function(response){
             $('#tb_estados').html(response);
         }
     });   
+}
+
+function seleccionar_conceptos_cuenta()
+{
+    var id_pro_sc = document.getElementById("id_pro_sc").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/selector_detalles_pago.php',
+        data: 
+        {
+            id_pro_sc: id_pro_sc,
+        },
+        success: function(response){
+            $('#rango_cuota').html(response);
+        }
+    });
+}
+
+function actualizar_select_reporte()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/selector_concepto_cuenta.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#concep_saldo').html(response);
+        }
+    });
+}
+
+function actualizar_selectores_villa()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/agregar/emergentes/subs/accion_generar/desde_pro.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#desde_repo_saldo').html(response);
+            $('#hasta_repo_saldo').html(response);
+            $('#desde_propi').html(response);
+            $('#hasta_propi').html(response);
+        }
+    });
+}
+
+function ultimo_select() {
+    var select1 = document.getElementById('hasta_repo_saldo');
+    select1.value = select1.options[select1.options.length - 1].value;
+
+    var select2 = document.getElementById('hasta_propi');
+    select2.value = select2.options[select2.options.length - 1].value;    
+}
+
+function actualizar_tabla_saldos()
+{
+    var concep_saldo = document.getElementById('concep_saldo').value;
+    var hasta_repo_saldo = document.getElementById('hasta_repo_saldo').value;
+    var desde_repo_saldo = document.getElementById('desde_repo_saldo').value;
+    var fecha_saldo_actual = document.getElementById('fecha_saldo_actual').value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/tabla_saldos.php',
+        data:
+        {
+            concep_saldo:concep_saldo, hasta_repo_saldo:hasta_repo_saldo,
+            desde_repo_saldo:desde_repo_saldo,fecha_saldo_actual:fecha_saldo_actual,
+        },
+        success: function(response){
+            $('#tb_saldos').html(response);
+        }
+    });
+}
+
+function total_credito()
+{
+    var concep_saldo = document.getElementById('concep_saldo').value;
+    var hasta_repo_saldo = document.getElementById('hasta_repo_saldo').value;
+    var desde_repo_saldo = document.getElementById('desde_repo_saldo').value;
+    var fecha_saldo_actual = document.getElementById('fecha_saldo_actual').value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/tabla_total_credito.php',
+        data:
+        {
+            concep_saldo:concep_saldo, hasta_repo_saldo:hasta_repo_saldo,
+            desde_repo_saldo:desde_repo_saldo,fecha_saldo_actual:fecha_saldo_actual,
+        },
+        success: function(response){
+            document.getElementById('txt_st_credito').value = response;
+        }
+    });
+
+}
+
+function total_pago()
+{
+    var concep_saldo = document.getElementById('concep_saldo').value;
+    var hasta_repo_saldo = document.getElementById('hasta_repo_saldo').value;
+    var desde_repo_saldo = document.getElementById('desde_repo_saldo').value;
+    var fecha_saldo_actual = document.getElementById('fecha_saldo_actual').value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/tabla_total_pagar.php',
+        data:
+        {
+            concep_saldo:concep_saldo, hasta_repo_saldo:hasta_repo_saldo,
+            desde_repo_saldo:desde_repo_saldo,fecha_saldo_actual:fecha_saldo_actual,
+        },
+        success: function(response){
+            document.getElementById('txt_st_cobrar').value = response;
+        }
+    });
+
 }

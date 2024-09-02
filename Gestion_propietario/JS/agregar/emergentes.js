@@ -157,6 +157,7 @@ function cerrar_costo_con_multi()
 function crear_cuenta()
 {
     document.getElementById("div_cuenta").style.display = "flex";
+    actualizar_selectores_villa();
 }
 
 function cerrar_crear_cuenta()

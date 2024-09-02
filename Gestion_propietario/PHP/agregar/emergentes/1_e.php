@@ -43,9 +43,6 @@
         <legend>Desde</legend>
 
         <select id="desde_propi" name="desde_propi">
-        <?php
-        include 'PHP/agregar/emergentes/subs/accion_generar/desde_pro.php';
-        ?>
         </select>
 
 
@@ -54,9 +51,6 @@
     <fieldset>
         <legend>Hasta</legend>
         <select id="hasta_propi" name="hasta_propi">
-        <?php
-        include 'PHP/agregar/emergentes/subs/accion_generar/desde_pro.php';
-        ?>
         </select>
     </fieldset>
 

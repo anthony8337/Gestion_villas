@@ -1,5 +1,3 @@
-<script src="JS/archivo/selec_concepto.js"></script>
-
 <?php
 
 $servername = "localhost"; 
@@ -16,21 +14,21 @@ else
 {
 }
 
+$id_pro_sc = $_POST["id_pro_sc"];
 
-$sql = "SELECT * FROM `pripietario_cuenta_vista` WHERE id_estado = '1' 
-ORDER BY SUBSTRING_INDEX(villa, '-', 1), CAST(SUBSTRING_INDEX(villa, '-', -1) AS UNSIGNED); ";
+$sql = "SELECT concepto, id_unir FROM factura_completa_reimprimir WHERE id_unir = '$id_pro_sc' GROUP BY concepto, id_unir  
+ORDER BY factura_completa_reimprimir.id_unir ASC;";
 
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
-
     while ($row = $result->fetch_assoc()) {
+
         echo"
-        <option value='",$row["villa"],"'>",$row["villa"],"</option>
+        <option value='",$row["concepto"],"'>",$row["concepto"],"</option>
         ";
     }
-
 
 }
 else
@@ -39,4 +37,4 @@ else
 }
 ?>
 
-<script>ultimo_select();</script>
+<script>tabla_estado_cuenta();</script>

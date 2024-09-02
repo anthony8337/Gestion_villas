@@ -875,6 +875,18 @@ flex-direction: column;
     font-size: 12px;
 }
 
+.ajuste_centro table td:nth-child(2)
+{
+    text-align: center;
+    font-size: 12px;
+}
+
+.ajuste_centro table td:nth-child(3)
+{
+    text-align: right;
+    font-size: 12px;
+}
+
 .encabezado table td:nth-child(3)
 {
     text-align: right;
@@ -967,5 +979,36 @@ height: 100px;
 
 .c2_estado_cuenta fieldset
 {
-max-width: 400px;
+}
+
+#lis_pro .c2 fieldset
+{
+display: flex;
+}
+
+.total_extra
+{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.total_extra fieldset
+{
+    max-width: 415px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.total_extra fieldset fieldset
+{
+    flex: 1 1 100px;
+}
+
+.total_extra fieldset button
+{
+    flex: 1 1 200px;
+    max-width: 500px;
 }
