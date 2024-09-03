@@ -11,10 +11,11 @@ function recargar_tabla_multi() {
         success: function(response){
             $('#respuesta_cuenta_multi').html(response);
 
-            suma_saldo();
+            
         }
     });
 
+    suma_saldo();
 
 }
 
@@ -29,8 +30,8 @@ function sele_cuentas()
     else
     {
 
-    var confirmar = confirm('Se tomarán todas las cuentas pendientes. \n¿Esta seguro que desea continuar?');
-
+    var confirmar = confirm('Se tomarán todas las cuentas pendientes.¿Esta seguro que desea continuar?');
+ 
     if(confirmar == true)
     {
         recargar_tabla_multi();
@@ -58,17 +59,4 @@ function recargar_tabla_multi_gc() {
     document.getElementById('txt_tl').value = telefono;
     document.getElementById('hd_id_propietario').value = id_gc_pro;
 
-
-    var form =$('#formulario_datos_multi').serialize();
-    $.ajax({
-        type: 'POST',
-        url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php',
-        data: form,
-        success: function(response){
-            $('#respuesta_cuenta_multi').html(response);
-
-            suma_saldo();
-
-        }
-    });
 }

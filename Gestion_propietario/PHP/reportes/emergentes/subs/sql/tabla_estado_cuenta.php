@@ -46,7 +46,7 @@ if($result -> num_rows > 0)
         <tr>
         <td></td>
         <td>",$row["desde"],"</td>
-        <td>",$row["concepto_pago"],"</td>
+        <td>",$row["abono_con"],"</td>
         <td>",$row["codigo"],"</td>
         <td>$. ",$row["costo"],"</td>
         <td>$. ",$row["abono"],"</td>

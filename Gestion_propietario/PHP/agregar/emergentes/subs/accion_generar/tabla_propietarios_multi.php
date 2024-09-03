@@ -58,24 +58,3 @@ else
 <script>
      tabla_multi_pro();
 </script>
-
-<script>
-$(document).ready(function(){
-$('.fila_tabla').click(function(e){
-        e.preventDefault();
-
-        var form =$('#formulario_datos_multi').serialize();
-        
-        $.ajax({
-            type: 'POST',
-            url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php',
-            data: form,
-            success: function(response){
-                $('#respuesta_cuenta_multi').html(response);
-
-                suma_saldo();
-            }
-        });
-    }); 
-});
-</script>

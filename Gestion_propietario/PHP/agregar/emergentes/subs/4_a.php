@@ -14,8 +14,8 @@
 <div class="c2">
 
 <fieldset>
-    <legend>Buscar propietario</legend>
-<input type="text" name="busca_con_multi" id="busca_con_multi" placeholder="Buscar por datos del propietario" class="buscador" oninput="bus_con_multi()">
+    <legend>Buscar concepto de pago</legend>
+<input type="text" name="busca_con_multi" id="busca_con_multi" placeholder="Buscar concepto de pago" class="buscador" oninput="bus_con_multi()">
 </fieldset>
 
 </div>
@@ -23,9 +23,19 @@
 <div class="c4 ">
 
 <div id="tabla_concepto_multi" class="contenido_tabla completar_vista_cuadro tam_limite">
+
+<table id="tabla_concepto_ml">
+    <tr>
+    <th></th>
+        <th>Conceptos</th>
+    </tr>
+
+    <tbody>
     <?php
     include "PHP/agregar/emergentes/subs/accion_generar/tabla_concepto_multi.php";
     ?>
+    </tbody>
+</table>
 </div>
 
 </div>
@@ -36,5 +46,3 @@
 </div>
 
 </div>
-
-

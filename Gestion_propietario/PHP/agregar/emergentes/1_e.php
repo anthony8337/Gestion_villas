@@ -1,3 +1,5 @@
+
+
 <div id="div_cuenta" class="mod">
 
 <div class="centro">
@@ -60,7 +62,7 @@
     <legend>Propietario</legend>
 
     
-        <button type="button" title="Ingresar propietario" onclick="sele_pro_gp()">Seleccionar</button>
+        <button type="button" title="Ingresar propietario" onclick="sele_pro_gp(),actualizar_concepto_abono()">Seleccionar</button>
     
     <input type="hidden" id="id_propi_gc" name="id_propi_gc">
 
@@ -90,7 +92,7 @@
 </fieldset>
 
 <fieldset>
-    <legend>Concepto</legend>
+    <legend>Concepto de Pago</legend>
     
         <button type="button" title="Ingresar concepto a pagar" onclick="sele_concep_gp()">Seleccionar</button>
        
@@ -110,6 +112,8 @@
 
     ?>
 </fieldset>
+
+
 
 <fieldset>
     <legend>Periodo</legend>
@@ -131,6 +135,14 @@
 <fieldset>
     <legend>Valor</legend>
     
+    <fieldset title="Concepto de cuenta" id="concep_cuenta">
+        <legend>Concepto de cuenta</legend>
+        <input type="hidden" id="id_concepto_abono" name="id_concepto_abono">
+        <select title="Concepto de ceunta que realizara el pago" id="txt_concep_cuenta" oninput="actualizar_concepto_abono()">
+            <?php include "PHP/agregar/emergentes/subs/accion_generar/select_concepto_multi_abono.php";?>
+        </select>
+        </fieldset>
+
     <?php
     $nombre = ['Costo de concepto:','Costo total:'];
     $id = ['txt_costo_gc','txt_total_gc'];

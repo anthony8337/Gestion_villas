@@ -44,7 +44,7 @@ if($result -> num_rows > 0)
         echo"
         <tr>
         <td>",$row["desde"],"</td>
-        <td>",$row["concepto_pago"],"</td>
+        <td>",$row["abono_con"],"</td>
         <td>",$row["codigo"],"</td>
         <td>$. ",number_format($row["costo"],2),"</td>
         <td>$. ",number_format($row["abono"],2),"</td>

@@ -312,3 +312,31 @@ function actualizar_tabla_villa()
         }
     });
 }
+
+function actualizar_concepto_abono()
+{
+    var txt_concep_cuenta = document.getElementById("txt_concep_cuenta").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/agregar/emergentes/subs/accion_generar/select_concepto_completar.php',
+        data: {
+            txt_concep_cuenta:txt_concep_cuenta,
+        },
+        success: function(response){
+            $('#respuesta_cuenta').html(response);
+        }
+    });
+}
+
+function conceptos_cuenta_abono()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'HP/agregar/emergentes/subs/accion_generar/select_concepto_multi_abono.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#txt_concep_cuenta').html(response);
+        }
+    });
+}

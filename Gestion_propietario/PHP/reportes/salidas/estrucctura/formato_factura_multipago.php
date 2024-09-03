@@ -50,13 +50,19 @@ include "PHP/reportes/salidas/estrucctura/php_factura_multi/factura_php_multi.ph
     </tr>
 </table>
 <div class="separador"></div>
+<table class="tam_repo_tabla">
+
+<tr>
+    <th>Concepto de pago: <?php echo htmlspecialchars($concepto_2); ?></th>
+</tr>
+</table>
 </div>
 
 <div class="encabezado">
 <table class="tam_repo_tabla">
 
 <tr>
-    <th>Por concepto de:</th>
+    <th>Descripción</th>
     <th>Fecha aplicada</th>
     <th>Fecha vencimiento</th>
     <th>Abono</th>
@@ -64,9 +70,7 @@ include "PHP/reportes/salidas/estrucctura/php_factura_multi/factura_php_multi.ph
 </tr>
 
 <tbody>
-<?php
-include "PHP/reportes/salidas/estrucctura/php_factura_multi/tabla_factura_multi.php"
-?>
+    <?php include "PHP/reportes/salidas/estrucctura/php_factura_multi/tabla_factura_multi.php";?>
 </tbody>
 
 </table>

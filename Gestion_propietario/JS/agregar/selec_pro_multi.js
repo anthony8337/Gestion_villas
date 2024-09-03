@@ -25,9 +25,14 @@ function tabla_multi_pro(){
         document.getElementById('txt_mn').value = nombre;
         document.getElementById('txt_tl').value = telefono;
 
-        
-        recargar_tabla_multi();
+        sele_con_multi();
         cerrar_sele_pro_multi();
+
+
+        /*
+        recargar_tabla_multi();
+        
+        */
 
       });
     }

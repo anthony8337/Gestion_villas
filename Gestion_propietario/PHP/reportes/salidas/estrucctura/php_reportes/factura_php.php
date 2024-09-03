@@ -17,4 +17,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $txt_tipa_reim = "";
     $txt_for_reim = "";
 }
+
+
+$servername ="localhost"; 
+$username = "root";
+$password = "";
+$database = "gestion_de_propietario";
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+} 
+else
+{
+}
+
+$sql = "SELECT * FROM factura_completa_reimprimir WHERE codigo_pago ='$codigo_factura';";
+$result = $conn->query($sql);
+
+$suma_abono_factura_multi = 0;
+
+if($result -> num_rows > 0)
+{
+    while ($row = $result->fetch_assoc())
+    {
+        $concepto_2 = $row["concepto"];
+    }
+}
 ?>

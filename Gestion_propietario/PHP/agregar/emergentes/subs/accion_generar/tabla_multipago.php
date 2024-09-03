@@ -15,6 +15,7 @@ else
 {
 }
 
+
 if (isset($_POST['hd_id_propietario'])) {
     $id_pro_multi = $_POST['hd_id_propietario'];
 } else {
@@ -27,13 +28,21 @@ if (isset($_POST['hd_id_cuenta'])) {
     $id_multi = "";
 }
 
+
+
+if (isset($_POST['hd_concepto_pago'])) {
+    $hd_concepto_pago = $_POST['hd_concepto_pago'];
+} else {
+    $hd_concepto_pago = "";
+}
+
 if ($id_pro_multi == "" && $id_multi == "") 
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente') AND id_unir = '$id_pro_multi';";
+    $sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente') AND concepto ='$hd_concepto_pago' AND id_unir = '$id_pro_multi';";
 }
 else if ($id_pro_multi != "" && $id_multi == "") 
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente') AND id_unir = '$id_pro_multi';";
+    $sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente') AND concepto ='$hd_concepto_pago' AND id_unir = '$id_pro_multi';";
 }
 else if ($id_pro_multi != "" && $id_multi != "") 
 {
@@ -67,9 +76,9 @@ if($result -> num_rows > 0)
 
     while ($row = $result->fetch_assoc()) {
         echo"
-        <tr class='fila_tabla_multi'>
+        <tr>
         <td>",$row["id_cuenta"],"</td>
-        <td>",$row["concepto"],"</td>
+        <td>",$row["concepto_2"],"</td>
         <td>",$row["codigo"],"</td>
         <td>$. ",$row["costo"],"</td>
         <td>$. ",$row["abono"],"</td>
@@ -123,25 +132,6 @@ else
 
 <script>
     llamado_cuenta();
+    suma_saldo();
 </script>
 
-
-<script>
-$(document).ready(function(){
-$('.fila_tabla_multi').click(function(e){
-        e.preventDefault();
-
-        var form =$('#formulario_datos_multi').serialize();
-        
-        $.ajax({
-            type: 'POST',
-            url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_multipago.php',
-            data: form,
-            success: function(response){
-                $('#respuesta_cuenta_multi').html(response);
-
-            }
-        });
-    }); 
-});
-</script>

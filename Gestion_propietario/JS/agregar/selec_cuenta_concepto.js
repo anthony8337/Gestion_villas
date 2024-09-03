@@ -11,10 +11,13 @@ function llamado_concepto_multi()
         var concepto = celdas[1].innerText;
 
         document.getElementById('con_pago_multi').textContent= concepto;
+        document.getElementById('hd_concepto_pago').value= concepto;
         document.getElementById('hd_id_concepto').value= id;
+
         cerrar_sele_con_multi();
 
-        costo_con_multi();
+        recargar_tabla_multi();
+        
 
       });
     }

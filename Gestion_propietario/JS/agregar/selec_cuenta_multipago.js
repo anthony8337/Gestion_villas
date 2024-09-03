@@ -19,7 +19,7 @@ function llamado_cuenta()
 
         document.getElementById("txt_ct").value = "$. " + solo_numero;
         
-        sele_con_multi();
+        costo_con_multi();
         
       });
     }

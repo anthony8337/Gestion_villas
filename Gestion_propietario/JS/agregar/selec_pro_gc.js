@@ -17,7 +17,8 @@
         document.getElementById('txt_villa_gc').value = nombre;
         document.getElementById('txt_propietario_gc').value = villa;
         document.getElementById('telefono_gc_mt').value = telefono;
-
+        
+        actualizar_concepto_abono();
         cerrar_sele_pro_gp();
       });
     }

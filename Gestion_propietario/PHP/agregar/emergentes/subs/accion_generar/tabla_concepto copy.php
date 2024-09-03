@@ -17,7 +17,7 @@ else
 }
 
 
-$sql = "SELECT * FROM concepto WHERE id_estado = '1' and tipo = 'Cargo'";
+$sql = "SELECT * FROM concepto WHERE id_estado = '1' and tipo = 'Abono'";
 
 $result = $conn->query($sql);
 
@@ -30,6 +30,7 @@ if($result -> num_rows > 0)
     <th></th>
       <th>Descripción</th>
       <th>Tipo</th>
+      <th>Valor</th>
    </tr>";
 
     while ($row = $result->fetch_assoc()) {
@@ -41,6 +42,7 @@ if($result -> num_rows > 0)
         <td>",$row["id_concepto"],"</td>
         <td>",$row["concepto"],"</td>
         <td>",$row["tipo"],"</td>
+        <td>$. ",$row["valor"],"</td>
         </tr>
         ";
     }
