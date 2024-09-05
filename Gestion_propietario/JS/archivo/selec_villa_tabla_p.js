@@ -1,5 +1,6 @@
 function seleccionar_villa_tabla(){
 
+
   var tabla = document.getElementById("td_villas_completo");
   var filas = tabla.getElementsByTagName("tr");
 
@@ -29,7 +30,8 @@ function seleccionar_villa_tabla(){
       document.getElementById('txa_direccion').value = direccion;
       document.getElementById('txa_observa_villa').value = observacion;
 
-      ingreso_vi();
+      ingreso_vi_2();
+      cerrar_villa_lista();
     });
   }
 }

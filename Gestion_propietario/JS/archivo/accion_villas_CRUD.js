@@ -49,9 +49,14 @@ formData.push({ name: 'tabla_caracteristica', value: JSON.stringify(data) });
     });
 }
 
-
 function actualizar_villa_1()
 {
+
+    var alerta = confirm("Está a punto de alterar un registro. ¿Está seguro de que desea continuar?");
+
+
+    if (alerta) {    
+    
     let table = $('#carac_vi');
 let data = [];
 
@@ -103,51 +108,22 @@ formData.push({ name: 'tabla_caracteristica', value: JSON.stringify(data) });
 
     });
 }
+}
 
-function eliminar_propi()
+function eliminar_propi_1()
 {
     var alerta = confirm("Está a punto de eliminar un registro. ¿Está seguro de que desea continuar?");
 
 if (alerta) {
+    var id_villa_super = document.getElementById("id_villa_super").value;
     
-    // Obtener los datos de la primera y sexta columna de la tabla
-let table = $('#tabla_villa_pro_selec');
-let data = [];
-
-table.find('tbody tr').each(function() {
-    let firstCellText = $(this).find('td').eq(0).text();
-    let sextaCellText = $(this).find('td').eq(6).text();
-    let id_unir_vamos = $(this).find('td').eq(7).text();
-    
-    // Añadir ambos valores como un objeto al array
-    data.push({
-        firstCellText: firstCellText,
-        sextaCellText: sextaCellText,
-        id_unir_vamos:id_unir_vamos
-    });
-});
-
-// Añadir los datos de la tabla al formulario
-let formData = $(this).serializeArray();
-formData.push({ name: 'tabla_villa', value: JSON.stringify(data) });
-                
-                var id_propi_1 = document.getElementById("id_propi_1").value;
-                var txtnombre = document.getElementById("txtnombre").value;
-                var txtid = document.getElementById("txtid").value;
-                var txtcorreo = document.getElementById("txtcorreo").value;
-                var txtfecha_i = document.getElementById("txtfecha_i").value;
-                var txttelefono = document.getElementById("txttelefono").value;
-                var obs_propietario = document.getElementById("obs_propietario").value;
-                var id_unir = document.getElementById("id_unir_pro1").value;
 
                 $.ajax({
                     type: 'POST',
-                    url: 'PHP/archivo/emergentes/subs/accion_propietario/eliminar_propietario.php',
+                    url: 'PHP/archivo/emergentes/subs/accion_villas/eliminar_villas.php',
                     data: 
-                    {  id_unir:id_unir,id_propi_1:id_propi_1,
-                        txtnombre:txtnombre,txtid:txtid,txtcorreo:txtcorreo,
-                        txtfecha_i,txttelefono,obs_propietario,
-                        tabla_villa:JSON.stringify(data),
+                    {  
+                        id_villa_super:id_villa_super,
                     },
                     success: function(response){
                         $('#respuesta_propietario').html(response);

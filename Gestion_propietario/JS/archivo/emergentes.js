@@ -50,7 +50,32 @@ function cerrar_ingreso_vi()
 function ingreso_vi()
 {
     document.getElementById('vi').style.display = 'flex';
+    document.getElementById('titulo_villa').textContent = 'Ingresar nueva villa';
+
+    document.getElementById('btn_eli_villa').style.display = 'none';
+    document.getElementById('btn_modi_villa').style.display = 'none';
+    document.getElementById('btn_limpiar_villa').style.display = 'block';
+    document.getElementById('btn_agregar_villa').style.display = 'block';
+
     actualizar_caracteristicas();
+}
+
+function ingreso_vi_2()
+{
+    var mensaje = confirm("Entrara a la edición del registro de villas \n ¿Desea contínuar?") 
+
+    if (mensaje) {
+        
+    document.getElementById('vi').style.display = 'flex';
+    document.getElementById('titulo_villa').textContent = 'Modifícar villa';
+
+    document.getElementById('btn_eli_villa').style.display = 'block';
+    document.getElementById('btn_modi_villa').style.display = 'block';
+    document.getElementById('btn_limpiar_villa').style.display = 'none';
+    document.getElementById('btn_agregar_villa').style.display = 'none';
+
+    actualizar_caracteristicas();
+}
 }
 
 function ingreso_vi_propi()
@@ -227,3 +252,12 @@ function cerrar_villa_lista()
     document.getElementById('vi_mostrar').style.display = 'none';
 }
 
+function ingreso_vi_alterar()
+{
+    document.getElementById('titulo_villa').value = 'Edítar villa';
+    actualizar_caracteristicas();
+    document.getElementById('btn_eli_villa').style.display = 'block';
+    document.getElementById('btn_modi_villa').style.display = 'block';
+    document.getElementById('btn_limpiar_villa').style.display = 'none';
+    document.getElementById('btn_agregar_villa').style.display = 'none';
+}

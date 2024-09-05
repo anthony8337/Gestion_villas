@@ -4,7 +4,7 @@
 <div class="centro ventanas_grandes">
 
 <div class="c1">
-<h2>Ingresar nueva villa</h2>
+<h2 id="titulo_villa">Ingresar nueva villa</h2>
 <button onclick="cerrar_ingreso_vi(),limpiar_confirmar();" type="button">X</button>
 
 </div>
@@ -104,13 +104,13 @@ for ($i=0; $i < count($titulo); $i++) {
 
 <div class="c3">
 
-<button type="button" onclick="actualizar_villa_1()">Eliminar</button>
+<button id="btn_eli_villa" type="button" onclick="eliminar_propi_1()">Eliminar</button>
 
-<button type="button" onclick="actualizar_villa_1()">Modificar</button>
+<button id="btn_modi_villa" type="button" onclick="actualizar_villa_1()">Modificar</button>
 
-<button type="button" onclick="limpiar_opcion();">Limpiar</button>
+<button id="btn_limpiar_villa" type="button" onclick="limpiar_opcion();">Limpiar</button>
 
-<button type="button" onclick="insertar_villa_1()">Agregar</button>
+<button id="btn_agregar_villa" type="button" onclick="insertar_villa_1()">Agregar</button>
 
 
 </div>
