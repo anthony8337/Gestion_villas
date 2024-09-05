@@ -89,3 +89,21 @@ function cerrar_celda_propietario_destalles()
 {
 document.getElementById("div_atajo_propi").style.display = "none";
 }
+
+////////////////cuentas a pagar
+
+function cuentas_pagar()
+{
+document.getElementById("div_cuentas_pagar").style.display = "flex";
+
+document.getElementById("txt_villa_cu").value = document.getElementById("prin_pro_villa").value;
+
+document.getElementById("txt_pro_cu").value = document.getElementById("prin_pro_pro").value;
+
+
+}
+
+function cerrar_cuentas_pagar()
+{
+document.getElementById("div_cuentas_pagar").style.display = "none";
+}

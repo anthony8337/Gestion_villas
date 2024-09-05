@@ -1,7 +1,10 @@
+function bus_cu_pendiente() {
 
-function bus_con_usar() {
-  var textoBusqueda = document.getElementById('bus_concepto').value.toLowerCase();
-  var tabla = document.getElementById('tabla_concepto');
+
+
+
+  var textoBusqueda = document.getElementById('bus_cuenta_creada').value.toLowerCase();
+  var tabla = document.getElementById('tabla_cuentas_creadas');
   var filas = tabla.getElementsByTagName('tr');
   for (var i = 1; i < filas.length; i++) {
     var celdas = filas[i].getElementsByTagName('td');
@@ -12,11 +15,10 @@ function bus_con_usar() {
       var contenidoCelda = celdas[j].textContent.toLowerCase();
       if (contenidoCelda.includes(textoBusqueda)) {
         coincidencia = true;
-        break; // Si hay una coincidencia, no necesitamos seguir buscando en esta fila
+        break; 
       }
     }
     
-    // Mostramos u ocultamos la fila según si encontramos alguna coincidencia en alguna de sus celdas
     if (coincidencia) {
       filas[i].style.display = '';
     } else {

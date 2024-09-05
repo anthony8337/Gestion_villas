@@ -405,3 +405,20 @@ function actualizar_caracteristicas()
         }
     });   
 }
+
+function actualizar_cuentas_debe() 
+{
+
+    var nn_id = document.getElementById("nn_id").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/celda/emergentes/sql/tabla_cuentas.php',
+        data: {
+            nn_id:nn_id,
+        },
+        success: function(response){
+            $('#tabla_cuentas_pagar').html(response);
+        }
+    });   
+}

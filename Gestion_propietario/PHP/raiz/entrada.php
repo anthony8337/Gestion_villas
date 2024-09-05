@@ -66,5 +66,7 @@
     <script src="JS/buscar/buscar_vi.js"></script>
     <script src="JS/archivo/accion_villas_CRUD.js"></script>
     <script src="JS/archivo/selec_villa_tabla_p.js"></script>
+    <script src="JS/buscar/subs/buscar_cuentas_sinP.js"></script>
+    <script src="JS/celda/selec_cuenta.js"></script>
 </head>
 <body>

@@ -35,10 +35,11 @@
 
 
 <?php
-$objetivo = ['Pago multiple','Generar cuenta','Reimprimir factura','Editar propietario'];
-$icono = ['cash-coin.svg','journal-check.svg','receipt-cutoff.svg','person-fill(1).svg'];
+$objetivo = ['Pago multiple','Generar cuenta','Cuentas a pagar','Reimprimir factura','Editar propietario'];
+$icono = ['cash-coin.svg','journal-check.svg','cash-stack.svg','receipt-cutoff.svg','person-fill(1).svg'];
 $abrir = ['crear_multipago(),datos_a_multipago(),sele_con_multi(),actualizar_tabla_conce_multi()',
 'crear_cuenta(),datos_a_generar_cuenta()',
+'cuentas_pagar(),actualizar_cuentas_debe()',  
 're_factura(),datos_a_generar_reimprecion(),cuenta_propi_reim()',
 'ingreso_actu(),modificar_propietario(),actualizar_tabla_villa_pro()'];
 for ($i=0; $i < count($objetivo); $i++) { 

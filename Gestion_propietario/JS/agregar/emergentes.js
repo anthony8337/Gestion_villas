@@ -152,12 +152,35 @@ function cerrar_costo_con_multi()
 
 ////////////////////////////////Nuevas ventanas
 
+function modi_cuenta()
+{
+    document.getElementById("div_cuenta").style.display = "flex";
+    actualizar_selectores_villa();
+
+    document.getElementById("titulo_cuenta").textContent = "Modificar cuenta por cobrar";
+    document.getElementById("rango_propi").style.display = "none";
+    document.getElementById("agregar_cuenta").style.display = "none";
+    document.getElementById("eliminar_cuenta").style.display = "block";
+    document.getElementById("modificar_cuenta").style.display = "block";
+    document.getElementById("pro_btn_c").style.display = "none";
+    document.getElementById("con_btn_c").style.display = "none";
+
+}
 
     
 function crear_cuenta()
 {
     document.getElementById("div_cuenta").style.display = "flex";
     actualizar_selectores_villa();
+
+    document.getElementById("titulo_cuenta").textContent = "Ingresar nueva cuenta por cobrar";
+    document.getElementById("rango_propi").style.display = "block";
+    document.getElementById("agregar_cuenta").style.display = "block";
+    document.getElementById("eliminar_cuenta").style.display = "none";
+    document.getElementById("modificar_cuenta").style.display = "none";
+    document.getElementById("pro_btn_c").style.display = "block";
+    document.getElementById("con_btn_c").style.display = "block";
+
 }
 
 function cerrar_crear_cuenta()

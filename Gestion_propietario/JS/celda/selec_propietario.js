@@ -56,3 +56,21 @@ function modificar_propietario()
   document.getElementById('obs_propietario').value = obser;
 
 }
+
+function suma_abonos_saldos() {
+    
+    
+  var tabla = document.getElementById('tabla_cuentas_creadas');
+  var suma = 0;
+
+
+  for (var i = 1; i < tabla.rows.length; i++) {
+      var celda = tabla.rows[i].cells[8].innerText;
+      var solo_numero = celda.replace('$. ','').trim();
+      suma += parseFloat(solo_numero);
+  }
+
+
+  document.getElementById('txt_total_saldo').value = "$. "+suma.toFixed(2);
+
+}
