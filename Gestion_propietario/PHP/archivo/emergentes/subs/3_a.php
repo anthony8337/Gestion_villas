@@ -12,13 +12,13 @@
 
 </div>
 
-<div class="c2 cuadros_fieldset">
+<div class="c2">
 <fieldset>
     <legend>Buscar villa</legend>
 <input type="text" placeholder="Buscar villa" name="txt_bvp" id="txt_bvp" class="buscador" oninput="bus_villa_propi()">
 </fieldset>
 
-<fieldset>
+<fieldset class="limite_tamaño">
     <legend class="no_ver">Buscar villa</legend>
     <button type="button" onclick="ingreso_vi_propi()">Crear Villa</button>
 </fieldset>

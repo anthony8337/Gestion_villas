@@ -62,5 +62,9 @@
     <script src="JS/buscar/subs/buscar_cuentas_pagadas.js"></script>
     <script src="JS/buscar/subs/buscar_pro_estado.js"></script>
     <script src="JS/reportes/cambio_fecha.js"></script>
+    <script src="JS/archivo/accion_propi_CRUD.js"></script>
+    <script src="JS/buscar/buscar_vi.js"></script>
+    <script src="JS/archivo/accion_villas_CRUD.js"></script>
+    <script src="JS/archivo/selec_villa_tabla_p.js"></script>
 </head>
 <body>

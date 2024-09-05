@@ -231,3 +231,46 @@ function cerrar_selec_pro_estado()
 {
     document.getElementById('rp_propietario').style.display = "none"; 
 }
+
+
+/////////////////////Botones de los atajos
+
+function datos_a_multipago()
+{
+    var id_unir = document.getElementById("nn_id").value;
+    var villa = document.getElementById("nn_villa").value;
+    var propi = document.getElementById("nn_propi").value;
+    var telefono = document.getElementById("nn_telefono").value;
+
+    document.getElementById("hd_id_propietario").value = id_unir;
+    document.getElementById("txt_mn").value = propi;
+    document.getElementById("txt_tl").value = telefono;
+    document.getElementById("sp_codigo_multi").textContent = villa;
+    
+
+}
+
+function datos_a_generar_cuenta()
+{
+    var id_unir = document.getElementById("nn_id").value;
+    var villa = document.getElementById("nn_villa").value;
+    var propi = document.getElementById("nn_propi").value;
+
+    document.getElementById("id_propi_gc").value = id_unir;
+    document.getElementById("txt_villa_gc").value = villa;
+    document.getElementById("txt_propietario_gc").value = propi ;
+}
+
+function datos_a_generar_reimprecion()
+{
+    var id_unir = document.getElementById("nn_id").value;
+    var villa = document.getElementById("nn_villa").value;
+    var propi = document.getElementById("nn_propi").value;
+
+    document.getElementById("hd_id_reim").value = id_unir;
+    document.getElementById("txt_villa_reim").value = villa;
+    document.getElementById("txt_nombre_reim").value = propi;
+
+    actualizar_tabla_cuentas_pagadas();
+
+}

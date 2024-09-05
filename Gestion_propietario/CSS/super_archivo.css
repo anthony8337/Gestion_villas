@@ -1012,3 +1012,13 @@ display: flex;
     flex: 1 1 200px;
     max-width: 500px;
 }
+
+.oculto
+{
+    display: none;
+}
+
+.limite_tamaño
+{
+max-width: 200px;
+}

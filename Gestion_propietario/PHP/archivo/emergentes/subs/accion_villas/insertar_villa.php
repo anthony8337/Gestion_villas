@@ -17,6 +17,34 @@ else
 {
 }
 
+$txt_cod_villa=$_POST["txt_cod_villa"];
+$txt_eeh_villa=$_POST["txt_eeh_villa"];
+$txt_cuarto_vi=$_POST["txt_cuarto_vi"];
+$txt_construc_vi=$_POST["txt_construc_vi"];
+$sel_villa=$_POST["sel_villa"];
+$txa_direccion=$_POST["txa_direccion"];
+$txa_observa_villa=$_POST["txa_observa_villa"];
+
+$sql = "INSERT INTO villas( id_grupo, numero, cont_eeh, habitaciones, lote, id_condicion, id_estado, direccion, observacion, modelo) 
+VALUES ('5','$txt_cod_villa','$txt_eeh_villa','$txt_cuarto_vi','$txt_construc_vi','$sel_villa','$txa_direccion','$txa_direccion','$txa_observa_villa','$sel_villa')";
+$result = $conn ->query($sql);
+
+if ($result -> num_rows > 0) 
+{
+    echo"<script>
+    window.alert('lo lograste, me guarde')
+    </script>";
+}
+else
+{
+    echo"<script>
+    window.alert('no se pudo')
+    </script>";
+}
+
+?>
+<?php
+/*
 $v_existente;
 $unir_codigo = $_POST["cb_grupo"]."-".$_POST["txt_cod_villa"];
 
@@ -175,3 +203,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 </script>
+/*
+?>

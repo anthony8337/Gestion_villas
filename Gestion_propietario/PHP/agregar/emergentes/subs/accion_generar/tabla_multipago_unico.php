@@ -29,12 +29,12 @@ if (isset($_POST['hd_id_cuenta'])) {
 }
 
 if (isset($_POST['hd_concepto_pago'])) {
-    $hd_concepto_pago = $_POST['hd_concepto_pago'];
+    $hd_id_cuenta = $_POST['hd_id_cuenta'];
 } else {
-    $hd_concepto_pago = "";
+    $hd_id_cuenta = "";
 }
 
-$sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente') AND concepto ='$hd_concepto_pago' AND id_unir = '$id_pro_multi';";
+$sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente') AND id_cuenta = '$hd_id_cuenta'";
 
 $result = $conn->query($sql);
 

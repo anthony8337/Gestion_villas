@@ -340,3 +340,68 @@ function conceptos_cuenta_abono()
         }
     });
 }
+
+function actualizar_tabla_conce_multi()
+{
+    var id_multi_hd_id_propietario = document.getElementById("hd_id_propietario").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_concepto_multi.php',
+        data: {
+            id_multi_hd_id_propietario:id_multi_hd_id_propietario,
+        },
+        success: function(response){
+            $('#tabla_concepto_multi').html(response);
+        }
+    });
+}
+
+function actualizar_tabla_villa_pro()
+{
+    var id_propi_1 = document.getElementById("id_propi_1").value;
+
+    
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/archivo/emergentes/subs/accion_propietario/edita_tabla_propietario_villa.php',
+        data: {
+            id_propi_1:id_propi_1,
+        },
+        success: function(response){
+            $('#div_tabla_villas_pro').html(response);
+
+            
+
+        }
+    });
+}
+
+function tabla_villas_ver() 
+{
+    $.ajax({
+        type: 'GET',
+        url: 'PHP/archivo/emergentes/subs/accion_villas/tabla_villa.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#tabla_ver_villas').html(response);
+        }
+    });   
+}
+
+function actualizar_caracteristicas() 
+{
+
+    var id_villa_super = document.getElementById("id_villa_super").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/archivo/emergentes/subs/accion_villas/tabla_caracteristicas.php',
+        data: {
+            id_villa_super:id_villa_super,
+        },
+        success: function(response){
+            $('#carac_villa_partes').html(response);
+        }
+    });   
+}

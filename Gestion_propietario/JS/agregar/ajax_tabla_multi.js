@@ -23,7 +23,7 @@ function suma_abonos() {
 
 
     for (var i = 1; i < tabla.rows.length; i++) {
-        var celda = tabla.rows[i].cells[5].innerText;
+        var celda = tabla.rows[i].cells[6].innerText;
         var solo_numero = celda.replace('$. ','').trim();
         suma += parseFloat(solo_numero);
     }

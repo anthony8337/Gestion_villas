@@ -85,8 +85,8 @@ for ($i=0; $i < count($pal); $i++) {
 </div>
 
 <div class = "c3">
-    <button type="submit" id="adicionar_villa_btn">Agregar</button>
-    <button type="button" onclick="limpiar_opcion()">Limpiar</button>
+<button type="button" onclick="limpiar_opcion()">Limpiar</button>
+<button type="submit" id="adicionar_villa_btn">Agregar</button>
 </div>
 
 

@@ -18,6 +18,15 @@ function cerrar_ingreso()
 function ingreso()
 {
     document.getElementById('pro').style.display = 'flex';
+    document.getElementById('tl_titulo').textContent = 'Ingresar nuevo propietario';
+    document.getElementById('btn_agre_villa_pro').style.display = 'block';
+
+    document.getElementById('limpiar_propietario').style.display = 'block';
+    document.getElementById('agregar_propietario').style.display = 'block';
+    document.getElementById('eliminar_propietario').style.display = 'none';    
+    document.getElementById('modificar_propietario').style.display = 'none';
+
+
 }
 
 
@@ -41,6 +50,7 @@ function cerrar_ingreso_vi()
 function ingreso_vi()
 {
     document.getElementById('vi').style.display = 'flex';
+    actualizar_caracteristicas();
 }
 
 function ingreso_vi_propi()
@@ -144,6 +154,7 @@ function cerrar_pro_adicionar_tabla()
 function confi_villa()
 {
     document.getElementById('confirma_villa_pro').style.display = 'flex';
+    document.getElementById('confirma_villa_pro').style.zIndex = '13'
 }
 
 function cerrar_confi_villa()
@@ -186,3 +197,33 @@ function cerrar_confi_adicion()
 {
     document.getElementById('confirma_adicion').style.display = 'none';
 }
+
+
+//////Actualizar
+
+function ingreso_actu()
+{
+    document.getElementById('pro').style.display = 'flex';
+    
+    document.getElementById('tl_titulo').textContent = 'Modificar propietario';
+
+    document.getElementById('btn_agre_villa_pro').style.display = 'none';
+
+    document.getElementById('limpiar_propietario').style.display = 'none';
+    document.getElementById('agregar_propietario').style.display = 'none';
+    document.getElementById('eliminar_propietario').style.display = 'block';    
+    document.getElementById('modificar_propietario').style.display = 'block';
+
+}
+
+function villa_lista()
+{
+    document.getElementById('vi_mostrar').style.display = 'flex';
+    tabla_villas_ver();
+}
+
+function cerrar_villa_lista()
+{
+    document.getElementById('vi_mostrar').style.display = 'none';
+}
+

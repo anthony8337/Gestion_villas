@@ -24,18 +24,7 @@
 
 <div id="tabla_concepto_multi" class="contenido_tabla completar_vista_cuadro tam_limite">
 
-<table id="tabla_concepto_ml">
-    <tr>
-    <th></th>
-        <th>Conceptos</th>
-    </tr>
 
-    <tbody>
-    <?php
-    include "PHP/agregar/emergentes/subs/accion_generar/tabla_concepto_multi.php";
-    ?>
-    </tbody>
-</table>
 </div>
 
 </div>

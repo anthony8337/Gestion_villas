@@ -73,6 +73,7 @@
         <tr>
         <th></th>
             <th>Documento</th>
+            <th>Descripción</th>
             <th>Código</th>
             <th>Fecha aplicada</th>
             <th>Fecha vencimiento</th>

@@ -11,10 +11,10 @@
 <div class="c2">
 
     <?php
-    $nombre=["Propietario","G. Cuenta","Limpiar","Ejecutar Pago"];
-    $id=["btn_propi_multi","btn_cuenta_multi","btn_limpiar_multi","btn_pago_multi"];
-    $accion=["sele_pro_multi()","ingreso_g_multi()","limpiar_confirmar(),recargar_tabla_multi(),limpiar_confirmar()",""];
-    $tipo=["button","button","button","submit"];
+    $nombre=["Propietario","Limpiar","Ejecutar Pago"];
+    $id=["btn_propi_multi","btn_limpiar_multi","btn_pago_multi"];
+    $accion=["sele_pro_multi()","limpiar_confirmar(),recargar_tabla_multi(),limpiar_confirmar()",""];
+    $tipo=["button","button","submit"];
 
     for($i = 0; $i < count($nombre); $i++)
     {
@@ -82,7 +82,7 @@
 
 <button type='button' onclick="sele_cuentas()">Seleccionar cuentas</button>
 
-<button type="button" onclick="sele_con_multi()">Cambiar concepto</button>
+<button type="button" onclick="sele_con_multi(),actualizar_tabla_conce_multi()">Cambiar concepto</button>
 
 </div>
 

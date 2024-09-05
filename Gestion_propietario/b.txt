@@ -1,13 +1,37 @@
-function correo_recuperar() 
-{
-    $.ajax({
-        type: 'POST',
-        url: 'PHP/ventana_principal/correo.php',
-        data: $(this).serialize(),
-        success: function(response){
-            $('#respuesta_login').html(response);
-        }
-    });   
-}
-
-window.location.href = 'usuario.php';
+SELECT
+    gestion_de_propietario.propietarios_villas.id_unir AS id_unir,
+    gestion_de_propietario.propietarios_villas.id_propietario AS id_propietario,
+    gestion_de_propietario.propietarios_villas.id_villa AS id_villa,
+    gestion_de_propietario.grupo_villa.grupo AS grupo, 
+        gestion_de_propietario.villas.numero AS numero,
+    gestion_de_propietario.villas.cont_eeh AS cont_eeh,
+    gestion_de_propietario.propietarios.nombre AS nombre,
+    gestion_de_propietario.propietarios.dni AS dni,
+    gestion_de_propietario.propietarios.telefono AS telefono,
+    gestion_de_propietario.propietarios.correo AS correo
+FROM
+    (
+        (
+            (
+                gestion_de_propietario.propietarios_villas
+            JOIN gestion_de_propietario.propietarios ON
+                (
+                    (
+                        gestion_de_propietario.propietarios_villas.id_propietario = gestion_de_propietario.propietarios.id_propietario
+                    )
+                )
+            )
+        JOIN gestion_de_propietario.villas ON
+            (
+                (
+                    gestion_de_propietario.propietarios_villas.id_villa = gestion_de_propietario.villas.id_villa
+                )
+            )
+        )
+    JOIN gestion_de_propietario.grupo_villa ON
+        (
+            (
+                gestion_de_propietario.villas.id_grupo = gestion_de_propietario.grupo_villa.id_grupo
+            )
+        )
+    )

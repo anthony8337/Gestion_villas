@@ -22,22 +22,24 @@ $txtcorreo = $_POST[$id[2]];
 $txtfecha = $_POST[$id[3]];
 $txttelefono = $_POST[$id[4]];
 $obs_propietario = $_POST[$id[5]];
+$id_pro = $_POST["id_propi_1"];
 
 
 
-$sql = "INSERT INTO propietarios(nombre, dni, correo, fecha, id_estado,observacion,telefono) 
-VALUES ('$txtnombre','$txtid','$txtcorreo','$txtfecha','1','$obs_propietario','$txttelefono')";
+$sql = "UPDATE propietarios SET nombre='$txtnombre',dni='$txtid',
+correo='$txtcorreo', observacion='$obs_propietario',
+telefono='$txttelefono' WHERE id_propietario = '$id_pro'";
 
 $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>
-    confi_propietario();
+    echo"
+    <script>
+    window.alert('Registro modificado con éxito');
     limpiar_confirmar();
+    cerrar_ingreso();
     </script>";
-
-
 }
 else
 {
@@ -65,7 +67,12 @@ if($result1 -> num_rows > 0)
 
 ///////////////////////////////////////////////////////////////////////
 
+$id_unir = $_POST['id_unir'];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    
+
     // Obtener los datos del formulario
     $clientes = $_POST; // Todos los datos del formulario
     $tabla_villa = json_decode($_POST['tabla_villa'], true); // Datos de la tabla
@@ -73,14 +80,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificar que los datos se hayan recibido correctamente
     if ($tabla_villa && is_array($tabla_villa)) {
         foreach ($tabla_villa as $fila) {
-            $id_villa = htmlspecialchars($fila, ENT_QUOTES, 'UTF-8');
-            if (!empty($id_villa)) { // Verifica que el id_villa no esté vacío
-                
-                $sql2 = "INSERT INTO propietarios_villas(id_propietario, id_villa) VALUES ('$id_propietario', '$id_villa')";
-                $result2 = $conn->query($sql2);
 
-                $sql3 = "UPDATE villas SET id_estado = '2' WHERE id_villa = '$id_villa'";
+            $id_villa = htmlspecialchars($fila['firstCellText'], ENT_QUOTES, 'UTF-8');
+            $id_estado = htmlspecialchars($fila['sextaCellText'], ENT_QUOTES, 'UTF-8');
+            $id_unir = htmlspecialchars($fila['id_unir_vamos'], ENT_QUOTES, 'UTF-8');
+            
+
+            if (!empty($id_villa) && !empty($id_estado)) { // Verifica que el id_villa no esté vacío
+
+                if($id_estado == 'Disponible')
+                {
+                $sql3 = "UPDATE villas SET id_estado = '1' WHERE id_villa = '$id_villa'";
                 $result3 = $conn->query($sql3);
+
+                $sql4 = "UPDATE propietarios_villas SET id_villa = NULL WHERE id_unir = '$id_unir'";
+                $result4 = $conn->query($sql4);
+
+                }
             }
         }
     }
@@ -92,3 +108,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 ?>
+

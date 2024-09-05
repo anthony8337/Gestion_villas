@@ -14,9 +14,21 @@ function recargar_tabla_multi() {
             
         }
     });
+}
 
-    suma_saldo();
+function recargar_tabla_multi_1_cuenta() {
 
+    var form =$('#formulario_datos_multi').serialize();
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_multipago_unico.php',
+        data: form,
+        success: function(response){
+            $('#respuesta_cuenta_multi').html(response);
+
+            
+        }
+    });
 }
 
 ////////////////////////////selecionar cuenta existente

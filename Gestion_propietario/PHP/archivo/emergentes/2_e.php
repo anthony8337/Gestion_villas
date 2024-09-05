@@ -1,5 +1,4 @@
 
-
 <div id="vi" class="mod">
 
 <div class="centro ventanas_grandes">
@@ -12,6 +11,9 @@
 
 <form id="Formulario_villa">
 <div class="c2">
+
+<input type="hidden" id="id_villa_super" name="id_villa_super">
+
 <?php
 
 $titulo = ['Número de villa','Número de medidor','Habitaciones','Area de construcción (metros)','Modelo de villa'];
@@ -70,10 +72,9 @@ for ($i=0; $i < count($titulo); $i++) {
 <fieldset class="carac_opcion">
     <legend>Características</legend>
     <button type='button' onclick='agregarDato_cara()'>Agregar</button>
-    <div class="contenido_tabla contenido_tabla_ultima contenido_tabla_carac">
+    <div id="carac_villa_partes" class="contenido_tabla contenido_tabla_ultima contenido_tabla_carac">
     <table id='carac_vi' class='ta_ca_cont'>
-    <tbody class="borrar_t">
-        
+    <tbody class='borrar_t'>
     </tbody>
     </table>
     </div>
@@ -96,21 +97,29 @@ for ($i=0; $i < count($titulo); $i++) {
 
 </div>
 
+
+
+<div id="respuesta_villa_prin"></div>
+</form>
+
 <div class="c3">
 
+<button type="button" onclick="actualizar_villa_1()">Eliminar</button>
+
+<button type="button" onclick="actualizar_villa_1()">Modificar</button>
+
+<button type="button" onclick="limpiar_opcion();">Limpiar</button>
+
+<button type="button" onclick="insertar_villa_1()">Agregar</button>
 
 
-<button id="agregar_villa" type="submit">Agregar</button>
+</div>
 </div>
 
-<div id="respuesta_villa"></div>
-</form>
-</div>
-
 </div>
 
 
-
+<!--
 <script>
  $(document).ready(function(){
     $('#Formulario_villa').submit(function(e){
@@ -146,3 +155,4 @@ for ($i=0; $i < count($titulo); $i++) {
 });
 
 </script>
+-->

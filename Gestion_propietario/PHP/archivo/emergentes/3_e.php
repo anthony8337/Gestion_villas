@@ -126,6 +126,7 @@ for ($i=0; $i < count($pal); $i++) {
 </div>
 
 <div class="c3">
+<button type="button" onclick="limpiar_opcion();">Limpiar</button>
 <button id="btn_cambio" type="submit">Cambio</button>
 </div>
 

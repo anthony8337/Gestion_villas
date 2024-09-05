@@ -20,6 +20,8 @@ function llamado_cuenta()
         document.getElementById("txt_ct").value = "$. " + solo_numero;
         
         costo_con_multi();
+
+        recargar_tabla_multi_1_cuenta();
         
       });
     }

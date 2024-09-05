@@ -26,13 +26,9 @@ function tabla_multi_pro(){
         document.getElementById('txt_tl').value = telefono;
 
         sele_con_multi();
+        actualizar_tabla_conce_multi();
         cerrar_sele_pro_multi();
 
-
-        /*
-        recargar_tabla_multi();
-        
-        */
 
       });
     }

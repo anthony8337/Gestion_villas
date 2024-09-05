@@ -1,46 +1,37 @@
-Gadget
-
-<fieldset class="ajustar_t_div">
-    <legend>Ultimas villas registradas</legend>
-
-    <div class="contenido_tabla" id="ulti_villa">
-        <?php
-        include "PHP/ventana_principal/principales/ulti_villas.php";
-        ?>
-    </div> 
-
-</fieldset>
-
-
-<fieldset class="ajustar_t_div">
-
-    <div id="reloj_gatget"></div>
-
-    <div id="fecha_gatget"></div>
-
-</fieldset>
-
-<fieldset class="ajustar_t_div">
-
-<div class="clock">
-
-<?php
-
-$numero = ['3','4','5','6','7','8','9','10','11','12','1','2'];
-
-for ($i=0; $i < 12; $i++) { 
-    echo"<div class='number' style='--i: $i;''>$numero[$i]</div>";
-
-    for ($j=0; $j < 60; $j++) { 
-        echo"<div class='puntos' style='--j: $j;''>.</div>";
-    }
-}
-?>
-        
-        <div class="hand hour" id="hour"></div>
-        <div class="hand minute" id="minute"></div>
-        <div class="hand second" id="second"></div>
-        <div class="center-dot"></div>
-    </div>
-
-</fieldset>
+SELECT
+    gestion_de_propietario.villas.id_villa AS id_villa,
+        gestion_de_propietario.grupo_villa.grupo,
+        gestion_de_propietario.villas.numero,
+    gestion_de_propietario.villas.cont_eeh AS cont_eeh,
+    gestion_de_propietario.villas.habitaciones AS habitaciones,
+    gestion_de_propietario.villas.lote AS lote,
+    gestion_de_propietario.condicion_villas.condicion AS condicion,
+    gestion_de_propietario.villas.id_estado AS id_estado,
+    gestion_de_propietario.estado_villa.estado AS estado,
+    gestion_de_propietario.villas.modelo AS modelo
+FROM
+    (
+        (
+            (
+                gestion_de_propietario.villas
+            JOIN gestion_de_propietario.grupo_villa ON
+                (
+                    (
+                        gestion_de_propietario.villas.id_grupo = gestion_de_propietario.grupo_villa.id_grupo
+                    )
+                )
+            )
+        JOIN gestion_de_propietario.condicion_villas ON
+            (
+                (
+                    gestion_de_propietario.villas.id_condicion = gestion_de_propietario.condicion_villas.id_condicion
+                )
+            )
+        )
+    JOIN gestion_de_propietario.estado_villa ON
+        (
+            (
+                gestion_de_propietario.villas.id_estado = gestion_de_propietario.estado_villa.id_estado
+            )
+        )
+    )

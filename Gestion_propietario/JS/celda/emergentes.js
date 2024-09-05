@@ -79,3 +79,13 @@ function eliminar_propietario()
     }else
     {}
 }
+//Propietaros vista previa
+function celda_propietario_destalles()
+{
+document.getElementById("div_atajo_propi").style.display = "flex";
+}
+
+function cerrar_celda_propietario_destalles()
+{
+document.getElementById("div_atajo_propi").style.display = "none";
+}

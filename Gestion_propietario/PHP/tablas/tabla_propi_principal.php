@@ -23,4 +23,3 @@ include "PHP/tablas/mostar_propietarios.php";
 
 </div>
 
-<script>selec_propi_prin();</script>

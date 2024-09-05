@@ -1,7 +1,7 @@
 
-function buscar() {
-  var textoBusqueda = document.getElementById('Busca_vi_prin').value.toLowerCase();
-  var tabla = document.getElementById('tab_vi');
+function buscar_villas_tabla() {
+  var textoBusqueda = document.getElementById('txt_busca_villa_r').value.toLowerCase();
+  var tabla = document.getElementById('td_villas_completo');
   var filas = tabla.getElementsByTagName('tr');
   for (var i = 1; i < filas.length; i++) {
     var celdas = filas[i].getElementsByTagName('td');
@@ -24,5 +24,3 @@ function buscar() {
     }
   }
 }
-
-document.getElementById("Busca_vi_prin").addEventListener("keyup", buscar);

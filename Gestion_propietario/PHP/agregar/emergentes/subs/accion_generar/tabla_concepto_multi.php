@@ -1,7 +1,6 @@
 <script src="JS/archivo/selec_concepto.js"></script>
 
 <?php
-
 $servername = "localhost"; 
 $username = "root";
 $password = "";
@@ -16,13 +15,23 @@ else
 {
 }
 
-$sql = "SELECT * FROM concepto WHERE id_estado = '1' and tipo = 'Abono'";
+$id_multi_hd_id_propietario = $_POST["id_multi_hd_id_propietario"];
+
+$sql = "SELECT concepto,id_unir,MAX(id_concepto) AS id_concepto
+FROM cuenta_vista  WHERE id_unir = '$id_multi_hd_id_propietario' GROUP BY concepto,id_unir";
 
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
-    
+
+    echo"<table id='tabla_concepto_ml'>
+    <tr>
+        <th></th>
+        <th>Conceptos</th>
+    </tr>";
+
+    echo"<tbody>";
     while ($row = $result->fetch_assoc()) {
         echo"
         <tr>
@@ -31,6 +40,9 @@ if($result -> num_rows > 0)
         </tr>
         ";
     }
+    echo"</tbody>";
+
+    echo"</table>";
 
 }
 else
@@ -39,4 +51,6 @@ else
 }
 ?>
 
-<script>llamado_concepto_multi();</script>
+<script>
+llamado_concepto_multi();
+</script>

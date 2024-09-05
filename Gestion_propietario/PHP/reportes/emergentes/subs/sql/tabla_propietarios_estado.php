@@ -15,7 +15,9 @@ else
 }
 
 
-$sql = "SELECT * FROM pripietario_cuenta_vista WHERE id_estado = '1'";;
+$sql = "SELECT * FROM pripietario_cuenta_vista WHERE id_estado = '1' ORDER BY 
+    SUBSTRING_INDEX(villa, '-', 1),
+    CAST(SUBSTRING_INDEX(villa, '-', -1) AS UNSIGNED); ";;
 
 $result = $conn->query($sql);
 
