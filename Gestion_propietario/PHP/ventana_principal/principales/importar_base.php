@@ -22,21 +22,26 @@ $queries = file_get_contents($archivo_sql);
 // Divide el archivo SQL en múltiples consultas
 $sql_array = explode(';', $queries);
 
+// Variable para controlar si todas las consultas se ejecutaron correctamente
+$errores = false;
+
 // Ejecuta cada consulta
 foreach ($sql_array as $query) {
     $query = trim($query);
     if (!empty($query)) {
-        if ($conexion->query($query) === TRUE) {
-            echo "<script>
-                window.alert('Consulta ejecutada correctamente');
-                </script>";
-        } else {
+        if ($conexion->query($query) !== TRUE) {
+            // Si hay un error, se marca como falso
+            $errores = true;
             echo "Error al ejecutar la consulta: " . $conexion->error . "<br>";
         }
     }
 }
 
-// Cierra la conexión
-$conexion->close();
-?>
+// Mostrar el mensaje al final si no hubo errores
+if (!$errores) {
+    echo "<script>
+            window.alert('Todas las consultas se ejecutaron correctamente');
+          </script>";
+}
 
+?>
