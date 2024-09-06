@@ -107,3 +107,10 @@ function cerrar_cuentas_pagar()
 {
 document.getElementById("div_cuentas_pagar").style.display = "none";
 }
+
+
+function cerrar_menu() 
+{
+   /* document.getElementById("menu_desple").style.display = "none";*/
+}
+

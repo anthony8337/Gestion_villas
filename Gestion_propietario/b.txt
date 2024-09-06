@@ -1,37 +1,22 @@
-SELECT
-    gestion_de_propietario.propietarios_villas.id_unir AS id_unir,
-    gestion_de_propietario.propietarios_villas.id_propietario AS id_propietario,
-    gestion_de_propietario.propietarios_villas.id_villa AS id_villa,
-    gestion_de_propietario.grupo_villa.grupo AS grupo, 
-        gestion_de_propietario.villas.numero AS numero,
-    gestion_de_propietario.villas.cont_eeh AS cont_eeh,
-    gestion_de_propietario.propietarios.nombre AS nombre,
-    gestion_de_propietario.propietarios.dni AS dni,
-    gestion_de_propietario.propietarios.telefono AS telefono,
-    gestion_de_propietario.propietarios.correo AS correo
-FROM
-    (
-        (
-            (
-                gestion_de_propietario.propietarios_villas
-            JOIN gestion_de_propietario.propietarios ON
-                (
-                    (
-                        gestion_de_propietario.propietarios_villas.id_propietario = gestion_de_propietario.propietarios.id_propietario
-                    )
-                )
-            )
-        JOIN gestion_de_propietario.villas ON
-            (
-                (
-                    gestion_de_propietario.propietarios_villas.id_villa = gestion_de_propietario.villas.id_villa
-                )
-            )
-        )
-    JOIN gestion_de_propietario.grupo_villa ON
-        (
-            (
-                gestion_de_propietario.villas.id_grupo = gestion_de_propietario.grupo_villa.id_grupo
-            )
-        )
-    )
+if (modificar == "si") 
+        {
+            document.getElementById('modificar_propietario').style.display = 'block';
+
+        }
+        else
+        {
+            document.getElementById('modificar_propietario').style.display = 'block';
+            document.getElementById('modificar_propietario').disabled = true;
+            document.getElementById('modificar_propietario').title = "Esta opción no esta disponible.";
+        }
+
+    if (eliminar == "si") 
+        {
+            document.getElementById('eliminar_propietario').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('eliminar_propietario').style.display = 'block';
+            document.getElementById('eliminar_propietario').disabled = true;
+            document.getElementById('eliminar_propietario').title = "Esta opción no esta disponible.";
+        }   

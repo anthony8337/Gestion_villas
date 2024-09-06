@@ -65,7 +65,7 @@ function suma_abonos_saldos() {
 
 
   for (var i = 1; i < tabla.rows.length; i++) {
-      var celda = tabla.rows[i].cells[8].innerText;
+      var celda = tabla.rows[i].cells[9].innerText;
       var solo_numero = celda.replace('$. ','').trim();
       suma += parseFloat(solo_numero);
   }

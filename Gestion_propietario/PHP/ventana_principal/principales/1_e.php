@@ -4,7 +4,7 @@
 
 <div class="c1">
 
-<h2>Ingresar nuevo usuario</h2>
+<h2 id="usu_titulo">Ingresar nuevo usuario</h2>
 <button onclick="cerrar_usuario_in(),limpiar_confirmar()" type="button">X</button>
 
 </div>
@@ -14,6 +14,8 @@
 <div class="c2">
 
 <input type="hidden" name="txt_id" id="txt_id">
+
+<input type="hidden" name="txt_estado_usu" id="txt_estado_usu">
 
 <?php
 
@@ -76,6 +78,7 @@ for ($i=0; $i < count($campos); $i++)
 <button id="crear_usuario" type="submit">Crear</button>
 <button id="modificar_usuario" type="submit">Modificar</button>
 <button id="borrar_usuario" type="submit">Suspender</button>
+<button id="activar_usuario" type="submit">Activar</button>
 
 </div>
 </form>
@@ -103,6 +106,10 @@ $(document).ready(function(){
         accion = 'borrar';
     });
 
+    $('#activar_usuario').click(function() {
+        accion = 'activar';
+    });
+
     $('#formulario_usuario').submit(function(e){
         e.preventDefault();
 
@@ -110,14 +117,46 @@ $(document).ready(function(){
 
 if (accion === 'crear') {
 
-    url = 'PHP/ventana_principal/principales/interno/sql/insertar_usuarios.php';
+    var decidir = confirm("¿Deseas registrar este registro?");
+    if(decidir)
+    {
+        url = 'PHP/ventana_principal/principales/interno/sql/insertar_usuarios.php';
+    }
+    else
+    {
+        url = '';
+    }
+
+   
 } else if (accion === 'modificar') {
- url = 'PHP/ventana_principal/principales/interno/sql/modificar_usuarios.php';
+
+    var decidir = confirm("¿Deseas modificar este registro?");
+    if(decidir)
+    {
+        url = 'PHP/ventana_principal/principales/interno/sql/modificar_usuarios.php';
+    }
+    else
+    {
+        url = '';
+    }
+    
+
 } else if (accion === 'borrar'){
     var decidir = confirm("¿Deseas eliminar este registro?");
     if(decidir)
     {
         url = 'PHP/ventana_principal/principales/interno/sql/eliminar_usuarios.php';
+    }
+    else
+    {
+        url = '';
+    }
+
+} else if (accion === 'activar'){
+    var decidir = confirm("¿Deseas reactivar este registro?");
+    if(decidir)
+    {
+        url = 'PHP/ventana_principal/principales/interno/sql/acitvar_usuarios.php';
     }
     else
     {

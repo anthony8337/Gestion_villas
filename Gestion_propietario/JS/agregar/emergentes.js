@@ -161,9 +161,31 @@ function modi_cuenta()
     document.getElementById("rango_propi").style.display = "none";
     document.getElementById("agregar_cuenta").style.display = "none";
     document.getElementById("eliminar_cuenta").style.display = "block";
-    document.getElementById("modificar_cuenta").style.display = "block";
     document.getElementById("pro_btn_c").style.display = "none";
     document.getElementById("con_btn_c").style.display = "none";
+
+    if (modificar == "si") 
+        {
+            document.getElementById('modificar_cuenta').style.display = 'block';
+
+        }
+        else
+        {
+            document.getElementById('modificar_cuenta').style.display = 'block';
+            document.getElementById('modificar_cuenta').disabled = true;
+            document.getElementById('modificar_cuenta').title = "Esta opción no esta disponible.";
+        }
+
+    if (eliminar == "si") 
+        {
+            document.getElementById('eliminar_cuenta').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('eliminar_cuenta').style.display = 'block';
+            document.getElementById('eliminar_cuenta').disabled = true;
+            document.getElementById('eliminar_cuenta').title = "Esta opción no esta disponible.";
+        }   
 
 }
 

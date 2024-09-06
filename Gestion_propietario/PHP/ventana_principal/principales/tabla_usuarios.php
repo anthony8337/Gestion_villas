@@ -82,7 +82,7 @@ if($result -> num_rows > 0)
 
         echo"
         <td>
-        <button type='button' class='editar_usuario' onclick='modificar_usuario(),ingresar_usuario_edi()'>
+        <button type='button' class='editar_usuario' onclick='modificar_usuario()'>
         <img src='Imagenes/pencil-fill.svg'>
         </button>
         </td>
@@ -91,6 +91,7 @@ if($result -> num_rows > 0)
         <td>",$row["imprimir_reportes"],"</td>
         <td>",$row["modificar_reportes"],"</td>
         <td>",$row["eliminar_reportes"],"</td>
+        <td class='oculto'>",$row["estado"],"</td>
         </tr>
         ";
     }

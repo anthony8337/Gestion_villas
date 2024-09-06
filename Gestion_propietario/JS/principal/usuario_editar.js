@@ -18,6 +18,8 @@ function modificar_usuario(){
       var r1  = celdas[12].innerText;
       var r2  = celdas[13].innerText;
       var r3  = celdas[14].innerText;
+      
+      var estado  = celdas[15].innerText;
 
       document.getElementById("txt_id").value = id;
       document.getElementById("txt_usuario").value = usuario;
@@ -28,6 +30,9 @@ function modificar_usuario(){
       document.getElementById("txt_correo").value = correo;
       document.getElementById("txt_clave").value = clave;
       document.getElementById("txt_tipo").value = acceso;
+
+      document.getElementById("txt_estado_usu").value = estado;
+
 
       if(r1 == "si")
       {
@@ -56,8 +61,11 @@ function modificar_usuario(){
             document.getElementById('pe_eliminar').checked = false;
           }
 
+          ingresar_usuario_edi();
     });
   }
+
+
 }
 
 function modificar_grupo(){

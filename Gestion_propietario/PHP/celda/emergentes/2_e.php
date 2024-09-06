@@ -4,7 +4,7 @@
 
 <div class="c1">
 <h2>Cuentas a pagar</h2>
-<button onclick="cerrar_cuentas_pagar()" type="button">X</button>
+<button onclick="cerrar_cuentas_pagar(),limpiar_confirmar()" type="button">X</button>
 
 </div>
 

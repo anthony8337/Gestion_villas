@@ -1,12 +1,12 @@
 <link rel='stylesheet' type='text/css' media='screen' href='CSS/ventana_principal/mod_usu.css'>
 
-<div id="modelo_villa" class="mod">
+<div id="modelo_villa_ventana" class="mod">
 
 <div class="centro centro_emergentes_admin ventanas_pequeñas">
 
 <div class="c1">
 
-<h2>Ingresar nuevo modelo</h2>
+<h2 id="titulo_modelo">Ingresar nuevo modelo</h2>
 <button onclick="cerrar_modelos_villa(),limpiar_confirmar()" type="button">X</button>
 
 </div>

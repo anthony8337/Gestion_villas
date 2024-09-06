@@ -6,7 +6,7 @@
 <div class="centro centro_emergentes_admin">
 
 <div class="c1">
-<h2>Ingresar concepto</h2>
+<h2 id="titulo_concepto">Ingresar concepto</h2>
 <button onclick="ingreso_concepto_r_cerrar(),limpiar_confirmar()" type="button">X</button>
 
 </div>

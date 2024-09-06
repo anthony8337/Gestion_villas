@@ -62,21 +62,41 @@ function ingreso_vi()
 
 function ingreso_vi_2()
 {
-    var mensaje = confirm("Entrara a la edición del registro de villas \n ¿Desea contínuar?") 
 
-    if (mensaje) {
         
     document.getElementById('vi').style.display = 'flex';
     document.getElementById('titulo_villa').textContent = 'Modifícar villa';
-
-    document.getElementById('btn_eli_villa').style.display = 'block';
-    document.getElementById('btn_modi_villa').style.display = 'block';
     document.getElementById('btn_limpiar_villa').style.display = 'none';
     document.getElementById('btn_agregar_villa').style.display = 'none';
 
+
+    if (modificar == "si") 
+        {
+            document.getElementById('btn_modi_villa').style.display = 'block';
+
+        }
+        else
+        {
+            document.getElementById('btn_modi_villa').style.display = 'block';
+            document.getElementById('btn_modi_villa').disabled = true;
+            document.getElementById('btn_modi_villa').title = "Esta opción no esta disponible.";
+        }
+
+    if (eliminar == "si") 
+        {
+            document.getElementById('btn_eli_villa').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('btn_eli_villa').style.display = 'block';
+            document.getElementById('btn_eli_villa').disabled = true;
+            document.getElementById('btn_eli_villa').title = "Esta opción no esta disponible.";
+        }   
+
+
     actualizar_caracteristicas();
 }
-}
+
 
 function ingreso_vi_propi()
 {
@@ -235,9 +255,31 @@ function ingreso_actu()
     document.getElementById('btn_agre_villa_pro').style.display = 'none';
 
     document.getElementById('limpiar_propietario').style.display = 'none';
-    document.getElementById('agregar_propietario').style.display = 'none';
-    document.getElementById('eliminar_propietario').style.display = 'block';    
-    document.getElementById('modificar_propietario').style.display = 'block';
+    document.getElementById('agregar_propietario').style.display = 'none';   
+   
+    if (modificar == "si") 
+        {
+            document.getElementById('modificar_propietario').style.display = 'block';
+
+        }
+        else
+        {
+            document.getElementById('modificar_propietario').style.display = 'block';
+            document.getElementById('modificar_propietario').disabled = true;
+            document.getElementById('modificar_propietario').title = "Esta opción no esta disponible.";
+        }
+
+    if (eliminar == "si") 
+        {
+            document.getElementById('eliminar_propietario').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('eliminar_propietario').style.display = 'block';
+            document.getElementById('eliminar_propietario').disabled = true;
+            document.getElementById('eliminar_propietario').title = "Esta opción no esta disponible.";
+        }    
+   
 
 }
 

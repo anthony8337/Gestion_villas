@@ -1,30 +1,33 @@
 
 <div id="usu_informe" class="mod">
 
-<div class="centro pro_centro">
+<div class="centro pro_centro ventanas_pequeñas_largo">
 
 <div class="c1">
 <h2>Reportes</h2>
 <button onclick="cerrar_cuerpo_reporte(),limpiar_confirmar()" type="button">X</button>
 </div>
 
-<form id="Formulario_villa_usu">
+<form id="Formulario_reportes_usu">
 
-<div class="c2">
-<fieldset>
-<legend>Monedas registradas</legend>
-<div class="opciones_villa">
-<button type="button" onclick="ingreso_moneda_r()">Agregar</button>
-<input type="text" id="txt_bus_moneda" name="txt_bus_moneda" placeholder="Buscar moneda" title="Buscar moneda" class="buscador" oninput="bus_moneda_usar()">
-</div>
+<div class="c2 usu_contenido">
+
+<button type="button" onclick="ingreso_lis_pro_sal(),cerrar_cuerpo_reporte()">
+    <img src="Imagenes/person-lines-fill(1).svg" >
+    <span>Estados de cuentas</span>
+</button>
+
+<button type="button" onclick="ingreso_lis_villa(),cerrar_cuerpo_reporte()">
+    <img src="Imagenes/card-text.svg" >
+    <span>Reporte de villas</span>
+</button>
+
+<button type="button" onclick="ingreso_lis_pro(),cerrar_cuerpo_reporte()">
+    <img src="Imagenes/cash-coin.svg" >
+    <span>Reporte de saldos</span>
+</button>
 
 
-<div class="contenido_tabla contenido_tabla_ultima principal_tabla_2" id= "interior_moneda">
-<?php 
-include "PHP/ventana_principal/principales/interno/sql/accion_moneda/tabla_moneda.php";
-?>
-</div>
-</fieldset>
 
 </div>
 

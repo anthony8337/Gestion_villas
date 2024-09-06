@@ -25,6 +25,7 @@ function ingreso_moneda_r_cerrar()
 
 function ingreso_concepto_r()
 {
+    document.getElementById('titulo_concepto').textContent = 'Insertar concepto';
     document.getElementById('con_registro').style.display = 'flex';
     document.getElementById('crear_concepto').style.display = 'block';
     document.getElementById('modificar_concepto').style.display = 'none';
@@ -33,6 +34,7 @@ function ingreso_concepto_r()
 
 function ingreso_concepto_m_r()
 {
+    document.getElementById('titulo_concepto').textContent = 'Modificar concepto';
     document.getElementById('con_registro').style.display = 'flex';
     document.getElementById('crear_concepto').style.display = 'none';
     document.getElementById('modificar_concepto').style.display = 'block';

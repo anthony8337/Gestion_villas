@@ -28,6 +28,12 @@ if($result -> num_rows > 0)
         $clave1 = $row["clave"];
         $acceso = $row["acceso"];
         $estado = $row["estado"];
+        /*Acceso de los usuarios*/
+        $reportes_im = $row["imprimir_reportes"];
+        $modi_im = $row["modificar_reportes"];
+        $eliminar_im = $row["eliminar_reportes"];
+
+
 
         if ($estado == "Activo") {
         
@@ -40,10 +46,18 @@ if($result -> num_rows > 0)
                 var admin = 'abierto';
                 var usuario_n = '".$valor."'
                 var clave = '".$clave1."'
+                var reporte = '".$reportes_im."';
+                var modificar = '".$modi_im."';
+                var eliminar = '".$eliminar_im."';
+                
 
                 sessionStorage.setItem('admin',admin);
                 sessionStorage.setItem('usuario_n',usuario_n);
                 sessionStorage.setItem('clave',clave);
+                sessionStorage.setItem('reporte',reporte);
+                sessionStorage.setItem('modificar',modificar);
+                sessionStorage.setItem('eliminar',eliminar);
+                
 
                 window.location.href = 'usuario.php';
                 </script>
@@ -54,7 +68,17 @@ if($result -> num_rows > 0)
                 echo"
                 <script>
                 var usuario = 'abierto';
+                var usuario_n = '".$clave."';
+                var reporte = '".$reportes_im."';
+                var modificar = '".$modi_im."';
+                var eliminar = '".$eliminar_im."';
+
                 sessionStorage.setItem('usuario',usuario);
+                sessionStorage.setItem('reporte',reporte);
+                sessionStorage.setItem('modificar',modificar);
+                sessionStorage.setItem('eliminar',eliminar);
+                
+
                 window.location.href = 'principal.php';
                 </script>
                 ";

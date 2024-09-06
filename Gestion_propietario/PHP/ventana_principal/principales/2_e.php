@@ -7,7 +7,7 @@
 <div class="c1">
 
 
-<h2>Ingresar nuevo grupo</h2>
+<h2 id="titulo_grupo_villa">Ingresar nuevo grupo</h2>
 <button onclick="cerrar_grupo_villa(),limpiar_confirmar()" type="button">X</button>
 
 </div>
