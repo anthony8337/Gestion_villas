@@ -60,23 +60,25 @@ try {
     }
 
     // Exportar los datos de las tablas
-    foreach ($tables as $table) {
-        $rows = $pdo->query("SELECT * FROM `$table`")->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $row) {
-            $columns = array_keys($row);
-            $values = array_map(function($value) use ($pdo) {
-                return $pdo->quote($value); // Escapar los valores adecuadamente
-            }, array_values($row));
+// Exportar los datos de las tablas
+foreach ($tables as $table) {
+    $rows = $pdo->query("SELECT * FROM `$table`")->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rows as $row) {
+        $columns = array_keys($row);
+        $values = array_map(function($value) use ($pdo) {
+            return $value === null ? 'NULL' : $pdo->quote($value); // Manejar null
+        }, array_values($row));
 
-            // Formatear columnas y valores para la sentencia INSERT
-            $columnsList = "`" . implode("`, `", $columns) . "`";
-            $valuesList = implode(", ", $values);
+        // Formatear columnas y valores para la sentencia INSERT
+        $columnsList = "`" . implode("`, `", $columns) . "`";
+        $valuesList = implode(", ", $values);
 
-            // Crear la sentencia INSERT
-            $sql .= "INSERT INTO `$table` ($columnsList) VALUES ($valuesList);\n";
-        }
-        $sql .= "\n";
+        // Crear la sentencia INSERT
+        $sql .= "INSERT INTO `$table` ($columnsList) VALUES ($valuesList);\n";
     }
+    $sql .= "\n";
+}
+
 
     // Reactivar las restricciones de clave foránea
     $sql .= "SET FOREIGN_KEY_CHECKS=1;\n";
@@ -84,17 +86,24 @@ try {
     // Guardar la exportación en un archivo .sql
    
         // Especificar la ruta donde se guardará el archivo
-        $directory = 'backups';  // Cambia esto a la ruta deseada
+        $directory = 'C:\Backups_gestion_propietario';  // Cambia esto a la ruta deseada
         if (!is_dir($directory)) {
             mkdir($directory, 0777, true); // Crea el directorio si no existe
         }
-        $filename = $directory . '/backup_' . $dbname . '_' . date('Ymd_His') . '.sql';
+        $filename = $directory . '/backup_' . $dbname . '.sql';
 
     file_put_contents($filename, $sql);
 
-    echo "Exportación completada con éxito. Archivo generado: $filename";
+    echo 
+    "
+    <script>
+    window.alert('Exportación completada con éxito al servidor.');
+    </script>
+    ";
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 ?>
+
+

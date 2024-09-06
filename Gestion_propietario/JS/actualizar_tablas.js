@@ -103,6 +103,18 @@ function exportar_base()
     });   
 }
 
+function importar_base() 
+{
+    $.ajax({
+        type: 'GET',
+        url: 'PHP/ventana_principal/principales/importar_base.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#respuesta_bd').html(response);
+        }
+    });   
+}
+
 function correo_recuperar() 
 {
     $.ajax({
