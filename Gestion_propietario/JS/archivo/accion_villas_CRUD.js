@@ -1,5 +1,31 @@
+function vacio_insertar_villa() 
+{
+
+    var form = document.getElementById("Formulario_villa");
+
+    if (form.checkValidity()) {
+        
+        var a = confirm("Creara una nueva villa. \n¿Desea continuar con la operación?");
+
+        if (a) {
+
+        }
+    }
+
+}
+
+
+
 function insertar_villa_1()
 {
+
+    var form = document.getElementById("Formulario_villa");
+
+    if (form.checkValidity()) {
+        
+        var a = confirm("Creara una nueva villa. \n¿Desea continuar con la operación?");
+
+        if (a) {
     let table = $('#carac_vi');
 let data = [];
 
@@ -49,11 +75,19 @@ formData.push({ name: 'tabla_caracteristica', value: JSON.stringify(data) });
     });
 }
 
+}else
+{
+    form.reportValidity();
+}
+}
+
 function actualizar_villa_1()
 {
+    var form = document.getElementById("Formulario_villa");
 
-    var alerta = confirm("Está a punto de alterar un registro. ¿Está seguro de que desea continuar?");
-
+    if (form.checkValidity()) {
+        
+        var alerta = confirm("Está a punto de alterar un registro. ¿Está seguro de que desea continuar?");
 
     if (alerta) {    
     
@@ -107,6 +141,11 @@ formData.push({ name: 'tabla_caracteristica', value: JSON.stringify(data) });
         }
 
     });
+}
+}
+else
+{
+    form.reportValidity();
 }
 }
 

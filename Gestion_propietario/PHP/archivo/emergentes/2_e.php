@@ -16,7 +16,7 @@
 
 <?php
 
-$titulo = ['Número de villa','Número de medidor','Habitaciones','Area de construcción (metros)','Modelo de villa'];
+$titulo = ['Número de villa','Número de medidor','Habitaciones','Area de construcción','Modelo de villa'];
 $nombre_id=['txt_cod_villa','txt_eeh_villa','txt_cuarto_vi','txt_construc_vi','sel_villa'];
 $tipo = ['text','text','text','text','text'];
 
@@ -32,7 +32,7 @@ for ($i=0; $i < count($titulo); $i++) {
             include "PHP/archivo/emergentes/subs/accion_villas/grupo_villa.php"
             ,"
             </select>
-            <input  type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]' class='solo_numero'>
+            <input class='campos_villa' type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]' class='solo_numero' required>
         </fieldset>
         ";
     }else if ($i == count($titulo)-1) 
@@ -52,7 +52,7 @@ for ($i=0; $i < count($titulo); $i++) {
         echo"
         <fieldset>
             <legend>$titulo[$i]</legend>
-            <input type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]' class='solo_numero'>
+            <input type='$tipo[$i]' name='$nombre_id[$i]' id='$nombre_id[$i]' placeholder='$titulo[$i]' title='$titulo[$i]' class='solo_numero' required>
         </fieldset>
         ";
 }
@@ -117,42 +117,3 @@ for ($i=0; $i < count($titulo); $i++) {
 </div>
 
 </div>
-
-
-<!--
-<script>
- $(document).ready(function(){
-    $('#Formulario_villa').submit(function(e){
-        e.preventDefault();
-
-        // Obtener los datos de la primera columna de la tabla
-        let table = $('#carac_vi');
-        let data = [];
-
-        table.find('tbody tr').each(function() {
-            let firstCellText = $(this).find('td').eq(0).text().trim(); // Trim elimina espacios en blanco
-            if (firstCellText) { // Solo agrega si no está vacío
-                data.push(firstCellText);
-            }
-        });
-
-        // Añadir los datos de la tabla al formulario
-        let formData = $(this).serializeArray();
-        formData.push({ name: 'tabla_villa_carac', value: JSON.stringify(data) });
-
-        $.ajax({
-            type: 'POST',
-            url : 'PHP/archivo/emergentes/subs/accion_villas/insertar_villa.php',
-            data: $.param(formData),
-            success: function(response){
-                $('#respuesta_villa').html(response);
-                actualizar_villas_propietario(); 
-                actualizar_villas_adicionar();
-                eliminarTodosDatos_contac();
-            }
-        });
-    });
-});
-
-</script>
--->

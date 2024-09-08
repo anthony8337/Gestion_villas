@@ -97,6 +97,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $result4 = $conn->query($sql4);
 
                 }
+                else if($id_estado == 'Agregar')
+                {
+                    $sql2 = "INSERT INTO propietarios_villas(id_propietario, id_villa) VALUES ('$id_pro', '$id_villa')";
+                    $result2 = $conn->query($sql2);
+    
+                    $sql3 = "UPDATE villas SET id_estado = '2' WHERE id_villa = '$id_villa'";
+                    $result3 = $conn->query($sql3);
+                }
             }
         }
     }

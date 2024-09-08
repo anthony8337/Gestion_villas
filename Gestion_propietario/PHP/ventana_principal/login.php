@@ -14,9 +14,9 @@
                 <h2>Gestión de propietario</h2>
 
                 <form id="entrar_sistema_login">
-                <input type="text" name="txt_usuario_l" id="txt_usuario_l" placeholder="Nombre de usuario" required>
+                <input type="text" name="txt_nom_usuario" id="txt_nom_usuario" placeholder="Nombre de usuario" required>
 
-                <input type="password" name="txt_clave_l" id="txt_clave_l" placeholder="Contraseña" required>
+                <input type="password" name="txt_cla_usuario" id="txt_cla_usuario" placeholder="Contraseña" required>
 
                 <button type="submit" >Entrar</button>
                 </form>
@@ -48,7 +48,7 @@ $(document).ready(function(){
     $('#entrar_sistema_login').submit(function(e){
         e.preventDefault();
 
-        var form =$('#entrar_sistema_login').serialize();
+    var form =$('#entrar_sistema_login').serialize();
     $.ajax({
     type: 'POST',
     url : 'PHP/ventana_principal/principales/interno/sql/entrar_sistema.php',

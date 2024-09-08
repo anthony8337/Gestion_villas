@@ -3,15 +3,14 @@ include "PHP/raiz/entrada.php";
 ?>
 
 
-
 <script>
-var usuario;
-var reporte,modificar,eliminar;
+var usuario,acceso,reporte,modificar,eliminar;
 
+acceso = sessionStorage.getItem("acceso");
 usuario = sessionStorage.getItem("usuario");
-reporte = sessionStorage.getItem("reporte");
-modificar =sessionStorage.getItem("modificar");
-eliminar =sessionStorage.getItem("eliminar");
+reporte = sessionStorage.getItem("reportes_im");
+modificar =sessionStorage.getItem("modi_im");
+eliminar =sessionStorage.getItem("eliminar_im");
 
 
 if(usuario == null)
@@ -25,7 +24,7 @@ include "PHP/P_gestiones.php";
 ?>
 
 <script>
-if(usuario != null)
+if(acceso == "Usuario")
 {
     document.getElementById('li_3').style.display = "none";
 }

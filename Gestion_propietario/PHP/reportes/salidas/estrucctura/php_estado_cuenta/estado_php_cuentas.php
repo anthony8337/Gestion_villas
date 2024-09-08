@@ -1,6 +1,4 @@
 <?php
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rango_cuota = $_POST['rango_cuota'];
     $ranco_factura = $_POST['ranco_factura'];
@@ -10,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $txt_cod_estados = $_POST['txt_cod_estados'];
     $txt_propi_estados = $_POST['txt_propi_estados'];
     $id_pro_sc = $_POST['id_pro_sc'];
+    $todo_cuota = $_POST['todo_cuota'];
 }else
 {
     $rango_cuota = "";
@@ -20,6 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $txt_cod_estados = "";
     $txt_propi_estados = "";
     $id_pro_sc = "";
+    $todo_cuota = "";
+}
+
+if($todo_cuota == "Historial completo")
+{
+$titulo_este = "TODOS LOS CONCEPTOS";
+}else
+{
+$titulo_este = $ranco_factura;
 }
 
 if($ranco_factura == "Historial completo")

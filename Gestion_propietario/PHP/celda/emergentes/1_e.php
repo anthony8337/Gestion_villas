@@ -21,12 +21,12 @@
 
 <fieldset>
     <legend>Villa</legend>
-    <input type="text" name="prin_pro_villa" id="prin_pro_villa">
+    <input type="text" name="prin_pro_villa" id="prin_pro_villa" readonly>
 </fieldset>
 
 <fieldset>
     <legend>Propietario</legend>
-    <input type="text" name="prin_pro_pro" id="prin_pro_pro">
+    <input type="text" name="prin_pro_pro" id="prin_pro_pro" readonly>
 </fieldset>
 
 </div>
@@ -34,19 +34,32 @@
 <div class="c5">
 
 
-<?php
-$objetivo = ['Pago multiple','Generar cuenta','Cuentas a pagar','Reimprimir factura','Editar propietario'];
-$icono = ['cash-coin.svg','journal-check.svg','cash-stack.svg','receipt-cutoff.svg','person-fill(1).svg'];
-$abrir = ['crear_multipago(),datos_a_multipago(),sele_con_multi(),actualizar_tabla_conce_multi()',
-'crear_cuenta(),datos_a_generar_cuenta()',
-'cuentas_pagar(),actualizar_cuentas_debe()',  
-'re_factura(),datos_a_generar_reimprecion(),cuenta_propi_reim()',
-'ingreso_actu(),modificar_propietario(),actualizar_tabla_villa_pro()'];
-for ($i=0; $i < count($objetivo); $i++) { 
+<div onclick="atajo_multipago()">
+<img src="Imagenes/cash-coin.svg">
+<span>Pago multiple</span>
+</div>
 
-    echo"<button type='button' onclick='$abrir[$i],cerrar_ingreso_celda()'><img src='Imagenes/$icono[$i]'><span>$objetivo[$i]</span></button>";
-}
-?>
+<div onclick="atajo_cuenta()">
+<img src="Imagenes/journal-check.svg">
+<span>Generar cuenta</span>
+</div>
+
+<div onclick="atajo_cuenta_pagar()">
+<img src="Imagenes/cash-stack.svg">
+<span>Cuentas a pagar</span>
+</div>
+
+<div onclick="atajo_cuenta_pagar()">
+<img src="Imagenes/receipt-cutoff.svg">
+<span>Reimprimir facturas</span>
+</div>
+
+<div onclick="atajo_propietario()">
+<img src="Imagenes/person-fill(1).svg">
+<span>Edítar propietario</span>
+</div>
+</button>
+
 
 
 </div>

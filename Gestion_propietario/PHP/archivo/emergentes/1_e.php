@@ -5,7 +5,7 @@
 
 <div class="c1">
 <h2 id="tl_titulo">Ingresar nuevo propietario</h2>
-<button onclick="cerrar_ingreso(),limpiar_confirmar();" type="button">X</button>
+<button onclick="cerrar_ingreso(),limpiar_confirmar(),actualizar_tabla_villa_pro()" type="button">X</button>
 </div>
 
 <form id="Formulario_pro">
@@ -28,7 +28,7 @@ for ($i=0; $i < count($pal); $i++) {
         echo"
         <fieldset class='$ocultar[$i]'>
         <legend>$pal[$i]</legend>
-        <input class='$clases[$i]' type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]'>
+        <input class='$clases[$i]' type='$tipo[$i]' id = '$id[$i]' name = '$id[$i]' placeholder='$pal[$i]' title='$pal[$i]' required>
         </fieldset>
         ";
 }
@@ -39,6 +39,12 @@ for ($i=0; $i < count($pal); $i++) {
     <button type="button" onclick="contactos()">Agregar contactos</button>
 </fieldset>
 
+
+<fieldset>
+    <legend style="visibility: hidden;">ff</legend>
+    <button id="btn_agre_villa_pro" type="button" onclick="selecciona_villa_propi(),actualizar_villas_propietario()">Agregar villa</button>
+
+</fieldset>
 </div>
 
 
@@ -46,15 +52,15 @@ for ($i=0; $i < count($pal); $i++) {
 
 <div class="btn_agregados_form">
 
-<button id="btn_agre_villa_pro" type="button" onclick="selecciona_villa_propi()">Agregar villa</button>
 </div>
 
     <fieldset>
     <legend>Datos de villa</legend>
 
     <div id="div_tabla_villas_pro" class="contenido_tabla contenido_tabla_ultima">
+
+    <input type="hidden" name="pro_villa_cont" id="pro_villa_cont" value="0">
         <table id="tabla_villa_pro_selec">
-            
         <tr>
         <th></th>
         <th>Villa</th>

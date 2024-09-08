@@ -15,8 +15,8 @@ include "PHP/reportes/salidas/estrucctura/php_estado_cuenta/estado_php_cuentas.p
 
 <td>
 <h4>PALMA REAL HOTEL Y VILLAS</h4>
-<span>Estado de cuenta</span><br>
-<span>Cuota de <?php echo htmlspecialchars($rango_cuota); ?></span>
+<span>ESTADO DE CUENTA</span><br>
+<span>CUOTA DE <?php echo htmlspecialchars($titulo_este); ?></span>
 </td>
 
 <td>
@@ -51,9 +51,10 @@ include "PHP/reportes/salidas/estrucctura/php_estado_cuenta/estado_php_cuentas.p
 <table class="tam_repo_tabla">
 
 <tr>
-        <th>Fecha aplicada</th>
+<th>Fecha aplicada</th>
+        <th>Código</th>
         <th>Concepto</th>
-        <th>Documento</th>
+        <th>Descripción</th>
         <th>Cargo</th>
         <th>Abono</th>
         <th>Total</th>

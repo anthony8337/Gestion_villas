@@ -33,13 +33,21 @@
 <span class='titulos_grandes'>Reportes</span>
 
             <div id="menu_desple" class="dropdown-content">
-            <span onclick="ingreso_lis_pro_sal(),cerrar_menu() "><img src="Imagenes/person-lines-fill(1).svg" >Estados de cuentas</span>
-            <span onclick="ingreso_lis_villa(),cerrar_menu() "><img src="Imagenes/card-text.svg" >Reporte de villas</span>
-            <span onclick="ingreso_lis_pro(),cerrar_menu() "><img src="Imagenes/cash-coin.svg">Reporte de saldos</span>
+            <span onclick="ingreso_lis_pro_sal(),cerrar_menu() ">
+                <img src="Imagenes/person-lines-fill(1).svg" >
+                Estados de cuentas</span>
+                
+            <span onclick="ingreso_lis_villa(),cerrar_menu() ">
+                <img src="Imagenes/card-text.svg" >
+                Reporte de villas</span>
+                
+            <span onclick="ingreso_lis_pro(),cerrar_menu() ">
+                <img src="Imagenes/cash-coin.svg">
+                Reporte de saldos</span>
             </div>
 </li>
 
-<li tittle='Gestión' onclick='redirigir_sistema_admin()'>
+<li tittle='Gestión' onclick='redirigir_sistema()'>
 <img src='Imagenes/journal-text.svg'>
 <span class='titulos_grandes'>Gestión</span>
 </li>

@@ -151,13 +151,14 @@
     $id = ['txt_costo_gc','txt_total_gc'];
     $calcu_cuerpo = ['oninput="calcular_fecha()"',''];
     $leible = ['','readonly'];
+    $pal = ['placeholder="Selecciona un concepto"',''];
 
     for ($i=0; $i < count($nombre); $i++) { 
         echo"
         
         <fieldset>
         <legend>$nombre[$i]</legend>
-        <input class='solo_numero' type='text' name='$id[$i]' id='$id[$i]' $calcu_cuerpo[$i] $leible[$i]>
+        <input class='solo_numero' type='text' name='$id[$i]' id='$id[$i]' $calcu_cuerpo[$i] $leible[$i] $pal[$i]> 
         </fieldset>
         ";
     }
@@ -179,6 +180,8 @@
         </tr>
     </table>
 </div>
+
+
 
 
 <div id="respuesta_cuenta"></div>

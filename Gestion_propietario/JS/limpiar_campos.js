@@ -111,6 +111,14 @@ function limpiar_tabla_adicionar() {
     }
   }
 
+  function limpiar_tablas_villa()
+{
+    const campo = document.querySelector('#tabla_villa_pro_selec tbody.borrar_t');
+while (campo.firstChild) {
+    campo.removeChild(campo.firstChild);
+ }
+}
+
 function limpiar_confirmar()
 {
 limpieza_text();
@@ -127,6 +135,7 @@ limpiar_tabla_cuentas_reim();
 limpiar_tabla_estado();
 limpiar_span();
 limpieza_select_estado();
+limpiar_tablas_villa();
 }
 
 function limpiar_opcion()
@@ -150,6 +159,7 @@ if(elegir)
     limpiar_tabla_estado();
     limpiar_span();
     limpieza_select_estado();
+    limpiar_tablas_villa();
 }  
 
 }

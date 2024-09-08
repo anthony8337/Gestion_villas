@@ -39,7 +39,7 @@
 
 <script>
  $(document).ready(function(){
-    $('#Formulario_villa').submit(function(e){
+    $('#Formulario_villa_registro').submit(function(e){
         e.preventDefault();
 
         // Obtener los datos de la primera columna de la tabla

@@ -53,7 +53,9 @@ if($result -> num_rows > 0)
         <td>",$row["condicion"],"</td>
         <td class= 'oculto'>",$row["estado"],"</td>
         <td class= 'oculto'>",$row["id_unir"],"</td>
-        <td><button class='accion_tel' title='Click para eliminar la villa del propietario'><img src='Imagenes/trash3-fill.svg' onclick='eliminarFila(this)'></button></td>
+        <td><button onclick='eliminarFila(this)' type='button' class='accion_tel' 
+        title='Quitar villa'>
+        <img src='Imagenes/trash3-fill.svg'></button></td>
         </tr>
         
         ";
@@ -91,9 +93,15 @@ else
 
 <script>
 function eliminarFila(boton) {
+
+var a = confirm("¿Esta seguro de descartar este registro?");
+
+if(a){
+
     var fila = boton.closest('tr'); 
     fila.style.display = 'none';
     var celda = fila.getElementsByTagName('td')[6];
     celda.innerHTML = 'Disponible';
+}
 }
 </script>

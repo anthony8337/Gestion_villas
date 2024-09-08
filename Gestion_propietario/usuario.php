@@ -3,20 +3,22 @@ include "PHP/raiz/entrada.php";
 ?>
 
 <script>
-var admin;
-admin = sessionStorage.getItem("admin");
+var usuario;
+var clave;
+usuario = sessionStorage.getItem("usuario");
+clave = sessionStorage.getItem("clave");
 
-if(admin == null)
+if(usuario == null)
 {
     window.location.href = "index.php";
 }
 
 </script>
 
+
 <?php
 include "PHP/ventana_principal/principales/usuarios_principal.php";
 ?>
-
 <script>
     setTimeout(function () {
     window.history.forward();

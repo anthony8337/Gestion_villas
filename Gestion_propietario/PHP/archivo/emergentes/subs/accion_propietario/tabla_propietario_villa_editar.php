@@ -15,7 +15,7 @@ else
 }
 
 
-$sql = "SELECT * FROM villa_completo WHERE id_estado = '1'";
+$sql = "SELECT * FROM villa_completo";
 
 $result = $conn->query($sql);
 

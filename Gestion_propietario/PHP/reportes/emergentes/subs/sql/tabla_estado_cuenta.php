@@ -19,17 +19,30 @@ $desde = $_POST["desde"];
 $hasta = $_POST["hasta"];
 $fecha_rumbo = $_POST["decidir"];
 $selector = $_POST["selector"];
+$todo_cuota = $_POST["todo_cuota"];
 
-if($fecha_rumbo == "Historial completo")
+
+
+if ($todo_cuota == "Historial completo" && $fecha_rumbo == "Historial completo") 
 {
-    $sql = "SELECT * FROM factura_completa_reimprimir WHERE id_unir = '$id_pro_val' AND concepto = '$selector';";
+    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_val'";
+
 }
-else
+else if ($todo_cuota != "Historial completo" && $fecha_rumbo == "Historial completo") 
 {
-    $sql = "SELECT * FROM factura_completa_reimprimir WHERE id_unir = '$id_pro_val' AND concepto = '$selector' and desde BETWEEN '$desde' AND '$hasta'; ";
+    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_val' AND concepto = '$selector';";
+
 }
+else if ($todo_cuota == "Historial completo" && $fecha_rumbo != "Historial completo") 
+{
 
+    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_val' AND desde BETWEEN '$desde' AND '$hasta';";
+}
+else if ($todo_cuota != "Historial completo" && $fecha_rumbo != "Historial completo") 
+{
 
+    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_val' AND concepto = '$selector' AND desde BETWEEN '$desde' AND '$hasta';";
+}
 
 
 $result = $conn->query($sql);
@@ -46,11 +59,12 @@ if($result -> num_rows > 0)
         <tr>
         <td></td>
         <td>",$row["desde"],"</td>
-        <td>",$row["abono_con"],"</td>
         <td>",$row["codigo"],"</td>
-        <td>$. ",$row["costo"],"</td>
-        <td>$. ",$row["abono"],"</td>
-        <td>$. ",$total,"</td>
+        <td>",$row["concepto"],"</td>
+        <td>",$row["concepto_2"],"</td>
+        <td>$. ",number_format($row["costo"],2),"</td>
+        <td>$. ",number_format($row["abono"],2),"</td>
+        <td>$. ",number_format($total,2),"</td>
         </tr>
         ";
     }

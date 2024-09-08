@@ -92,7 +92,7 @@ if($result_rango->num_rows > 0)
             $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2) VALUES
          ('$id_unir','$id_concepto_abono','$costo','0','$desde','$hasta','No pagado','$cod','$id_con')";
         }
-        else if($elegir_abono == "Abono")
+        else if($elegir_abono == "Abonar")
         {
             $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2)  VALUES
          ('$id_unir','$id_concepto_abono','0','$abono','$desde','$hasta','No pagado','$cod','$id_con')";

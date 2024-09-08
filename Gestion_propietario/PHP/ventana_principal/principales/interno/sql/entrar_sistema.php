@@ -13,105 +13,89 @@ else
 {
 }
 
-$nombre= $_POST["txt_usuario_l"];
-$clave= $_POST["txt_clave_l"];
+$nombre= $_POST["txt_nom_usuario"];
+$contra= $_POST["txt_cla_usuario"];
 
 $sql = "SELECT * FROM vista_usuario WHERE usuario = '$nombre'";
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
-    
-    while ($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) 
+    {
 
-        $valor = $row["usuario"];
-        $clave1 = $row["clave"];
+        $usuario = $row["usuario"];
+        $clave = $row["clave"];
         $acceso = $row["acceso"];
         $estado = $row["estado"];
+
         /*Acceso de los usuarios*/
         $reportes_im = $row["imprimir_reportes"];
         $modi_im = $row["modificar_reportes"];
         $eliminar_im = $row["eliminar_reportes"];
 
-
-
-        if ($estado == "Activo") {
-        
-            if ($valor == $nombre && $clave1 == $clave)
+        if ($estado == "Activo") 
         {
-            if ($acceso == "Administrador")
+
+            if ($nombre == $usuario && $contra == $clave) 
             {
                 echo"
                 <script>
-                var admin = 'abierto';
-                var usuario_n = '".$valor."'
-                var clave = '".$clave1."'
-                var reporte = '".$reportes_im."';
-                var modificar = '".$modi_im."';
-                var eliminar = '".$eliminar_im."';
-                
+var usuario = '".$usuario."';
+var clave = '".$clave."';
+var acceso = '".$acceso."';
+var reportes_im = '".$reportes_im."';
+var modi_im = '".$modi_im."';
+var eliminar_im = '".$eliminar_im."';
 
-                sessionStorage.setItem('admin',admin);
-                sessionStorage.setItem('usuario_n',usuario_n);
-                sessionStorage.setItem('clave',clave);
-                sessionStorage.setItem('reporte',reporte);
-                sessionStorage.setItem('modificar',modificar);
-                sessionStorage.setItem('eliminar',eliminar);
-                
+sessionStorage.setItem('usuario',usuario);
+sessionStorage.setItem('clave',clave);
+sessionStorage.setItem('acceso',acceso);
+sessionStorage.setItem('reportes_im',reportes_im);
+sessionStorage.setItem('modi_im',modi_im);
+sessionStorage.setItem('eliminar_im',eliminar_im);
+</script>
+                ";
 
+                if ($acceso == "Usuario") 
+                {
+                    echo"
+                    <script>
+                    window.alert('".$reportes_im."');
+                    window.location.href = 'principal.php';
+                    </script>
+                        ";
+                }else {
+                echo"
+                <script>
                 window.location.href = 'usuario.php';
                 </script>
-                ";
+                    ";
+                }
+
+
             }
-            else if ($acceso == "Usuario")
+            else
             {
-                echo"
-                <script>
-                var usuario = 'abierto';
-                var usuario_n = '".$clave."';
-                var reporte = '".$reportes_im."';
-                var modificar = '".$modi_im."';
-                var eliminar = '".$eliminar_im."';
-
-                sessionStorage.setItem('usuario',usuario);
-                sessionStorage.setItem('reporte',reporte);
-                sessionStorage.setItem('modificar',modificar);
-                sessionStorage.setItem('eliminar',eliminar);
-                
-
-                window.location.href = 'principal.php';
+                echo
+                "<script>
+                window.alert('Por favor, verifica si el usuario y contraseña son correctos.');
                 </script>
                 ";
             }
+
         }
         else
         {
-            echo"
-            <script>
-            window.alert('Usuario y contraseña no coinciden, por favor verifica si son correctos');
+            echo
+            "<script>
+            window.alert('Por favor, verifica si el usuario y contraseña son correctos.');
             </script>
             ";
-        }
-    }
-    else
-    {
-        echo"
-        <script>
-        window.alert('Usuario y contraseña no coinciden, por favor verifica si son correctos');
-        </script>
-        ";
+        }    
+    
     }
 }
-}
-else
-{
-    echo"
-    <script>
-    window.alert('Usuario y contraseña no coinciden, por favor verifica si son correctos');
-    </script>
-    ";
-}
-
-
 ?>
+
 

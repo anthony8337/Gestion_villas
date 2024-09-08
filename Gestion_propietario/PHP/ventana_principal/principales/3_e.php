@@ -18,7 +18,7 @@
 <input type="hidden" name="id_modelo_villa" id="id_modelo_villa">
 
 <fieldset>
-    <legend>Grupo de villa</legend>
+    <legend>Modelo de villa</legend>
     <input type="text" id="txt_modelo_villa" name="txt_modelo_villa" title="Grupo de villa">
 </fieldset>
 

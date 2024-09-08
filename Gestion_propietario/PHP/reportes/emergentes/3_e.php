@@ -40,7 +40,15 @@
 <div class="c2 c2_estado_cuenta">
 
 <fieldset>
-        <legend>Seleccionar cuota</legend>
+        <legend>Indicar concepto</legend>
+        <select name="todo_cuota" id="todo_cuota" oninput="ocultar_concep(),seleccionar_conceptos_cuenta(),tabla_estado_cuenta()">
+            <option value="Historial completo">Historial completo</option>
+            <option value="Concepto específico">Concepto específico</option>
+        </select>
+</fieldset>
+
+<fieldset id="indi_concepto">
+        <legend>Seleccionar concepto</legend>
         <select name="rango_cuota" id="rango_cuota" oninput="tabla_estado_cuenta()">
         </select>
 </fieldset>
@@ -71,8 +79,9 @@
         <tr>
         <th></th>
         <th>Fecha aplicada</th>
+        <th>Código</th>
         <th>Concepto</th>
-        <th>Documento</th>
+        <th>Descripción</th>
         <th>Cargo</th>
         <th>Abono</th>
         <th>Total</th>
@@ -100,13 +109,16 @@
 
 <label style="display: none;" id="lb_cel_re"></label>
 
-<script>ocultar_fecha();</script>
+<script>
+ocultar_fecha();
+ocultar_concep();
+</script>
 
 <script>
     function abrirNuevaPagina_estado() {
     // IDs de los inputs que quieres enviar
     var inputIDs = ['rango_cuota','ranco_factura','desde_estado','hasta_estado','fecha_estado_hoy'
-        ,'txt_cod_estados' ,'txt_propi_estados','id_pro_sc'];
+        ,'txt_cod_estados' ,'txt_propi_estados','id_pro_sc','todo_cuota'];
     
     // Crea un formulario
     var form = document.createElement("form");

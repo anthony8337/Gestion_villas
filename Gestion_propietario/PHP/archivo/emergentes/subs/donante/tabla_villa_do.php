@@ -35,7 +35,7 @@ if($result -> num_rows > 0)
         echo"
         <tr>
         <td>",$row["id_villa"],"</td>
-        <td>",$row["villa"],"</td>
+        <td>",$row["villas"],"</td>
         <td>",$row["cont_eeh"],"</td>
         <td>",$row["habitaciones"],"</td>
         <td>",$row["modelo"],"</td>

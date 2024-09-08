@@ -1,3 +1,12 @@
+var a=0;
+
+function resta_a()
+{
+    a--;
+
+    document.getElementById("pro_villa_cont").value = a;
+}
+
 function llamar_tb_villa_pro() {
     const originalTable = document.getElementById('tabla_villa_pro').getElementsByTagName('tbody')[0];
     const destinationTable = document.getElementById('tabla_villa_pro_selec').getElementsByTagName('tbody')[0];
@@ -11,7 +20,7 @@ function llamar_tb_villa_pro() {
             const newRow = target.cloneNode(true);
 
             const deleteCell = newRow.insertCell(-1);
-            deleteCell.innerHTML = '<button class="accion_tel" title="Eliminar fila"><img src="Imagenes/trash3-fill.svg"></button>';
+            deleteCell.innerHTML = '<button onclick="resta_a()" class="accion_tel" title="Eliminar fila"><img src="Imagenes/trash3-fill.svg"></button>';
 
             deleteCell.querySelector('button').addEventListener('click', (event) => {
                 event.stopPropagation();
@@ -24,6 +33,12 @@ function llamar_tb_villa_pro() {
             destinationTable.appendChild(newRow);
             target.remove(); 
             cerrar_selecciona_villa_propi();
+
+            
+
+            a++;
+
+            document.getElementById("pro_villa_cont").value = a;
         }
     });
 
@@ -37,8 +52,15 @@ function llamar_tb_villa_pro() {
                 const newRow = target.cloneNode(true);
                 newRow.deleteCell(-1); 
                 originalTable.appendChild(newRow);
-                target.remove(); 
+                target.remove();
+                
+
+                
+
             }
         }
     });
+
+
+    
 }

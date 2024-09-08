@@ -41,7 +41,7 @@
 
 <fieldset id="fl_recibido">
     <legend>Cantidad recibida a cobrar</legend>
-    <input type='text' class="solo_numero" name='txt_rc' id='txt_rc' oninput='sumarInputs_previo()'>
+    <input type='text' class="solo_numero" name='txt_rc' id='txt_rc' placeholder="Cantidad recibida" oninput='sumarInputs_previo()'>
 </fieldset>
 
 <fieldset id="fl_devolver">

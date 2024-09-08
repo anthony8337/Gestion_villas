@@ -18,13 +18,13 @@ else
 
 if($ranco_factura == "Historial completo")
 {
-    $sql = "SELECT * FROM factura_completa_reimprimir WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota';";
-    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM factura_completa_reimprimir WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota'; ";
+    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota';";
+    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM cuenta_vista WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota'; ";
 }
 else
 {
-    $sql = "SELECT * FROM factura_completa_reimprimir WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and desde BETWEEN '$desde' AND '$hasta'; ";
-    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM factura_completa_reimprimir 
+    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and desde BETWEEN '$desde' AND '$hasta'; ";
+    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM cuenta_vista 
     WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and desde BETWEEN '$desde' AND '$hasta';";
 
 }
@@ -43,9 +43,12 @@ if($result -> num_rows > 0)
 
         echo"
         <tr>
+        
         <td>",$row["desde"],"</td>
-        <td>",$row["abono_con"],"</td>
         <td>",$row["codigo"],"</td>
+        <td>",$row["concepto"],"</td>
+        <td>",$row["concepto_2"],"</td>
+        
         <td>$. ",number_format($row["costo"],2),"</td>
         <td>$. ",number_format($row["abono"],2),"</td>
         <td>$. ",$t_total,"</td>

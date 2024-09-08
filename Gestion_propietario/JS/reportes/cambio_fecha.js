@@ -13,3 +13,17 @@ function ocultar_fecha()
     }
     
 }
+
+function ocultar_concep() 
+{
+    var concep = document.getElementById("todo_cuota").value;
+
+    if (concep == "Historial completo") {
+
+        document.getElementById("indi_concepto").style.display = "none";
+
+    }else if (concep == "Concepto específico") {
+
+        document.getElementById("indi_concepto").style.display = "block";
+    }
+}

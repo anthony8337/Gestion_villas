@@ -16,8 +16,8 @@ else
 
 $id_pro_sc = $_POST["id_pro_sc"];
 
-$sql = "SELECT concepto, id_unir FROM factura_completa_reimprimir WHERE id_unir = '$id_pro_sc' GROUP BY concepto, id_unir  
-ORDER BY factura_completa_reimprimir.id_unir ASC;";
+$sql = "SELECT concepto, id_unir FROM cuenta_vista WHERE id_unir = '$id_pro_sc' GROUP BY concepto, id_unir  
+ORDER BY id_unir ASC;";
 
 $result = $conn->query($sql);
 

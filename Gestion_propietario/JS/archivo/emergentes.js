@@ -19,7 +19,6 @@ function ingreso()
 {
     document.getElementById('pro').style.display = 'flex';
     document.getElementById('tl_titulo').textContent = 'Ingresar nuevo propietario';
-    document.getElementById('btn_agre_villa_pro').style.display = 'block';
 
     document.getElementById('limpiar_propietario').style.display = 'block';
     document.getElementById('agregar_propietario').style.display = 'block';
@@ -252,7 +251,6 @@ function ingreso_actu()
     
     document.getElementById('tl_titulo').textContent = 'Modificar propietario';
 
-    document.getElementById('btn_agre_villa_pro').style.display = 'none';
 
     document.getElementById('limpiar_propietario').style.display = 'none';
     document.getElementById('agregar_propietario').style.display = 'none';   

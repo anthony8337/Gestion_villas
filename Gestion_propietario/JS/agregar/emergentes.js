@@ -143,6 +143,8 @@ function cerrar_sele_con_multi()
 function costo_con_multi()
 {
     document.getElementById('multi_cantidad_pago').style.display = "flex";
+    document.getElementById('txt_rc').focus();
+    
 }
 
 function cerrar_costo_con_multi()
@@ -270,6 +272,8 @@ function cerrar_cuenta_propi_reim()
 function selec_pro_estado()
 {
     document.getElementById('rp_propietario').style.display = "flex";
+    document.getElementById('rp_propietario').style.zIndex = "100";
+
 }
 
 function cerrar_selec_pro_estado()

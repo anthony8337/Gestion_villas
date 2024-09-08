@@ -11,7 +11,7 @@ function agregarDato_cara() {
       celdacaracteristica.innerHTML = caracteristica;
 
       var celdaeli = fila.insertCell(2);
-      celdaeli.innerHTML = '<button class="accion_tel"  title="Eliminar característica"><img src="Imagenes/trash3-fill.svg"></button>';
+      celdaeli.innerHTML = '<button type="button" class="accion_tel"  title="Eliminar característica"><img src="Imagenes/trash3-fill.svg"></button>';
 
       celdaeli.querySelector('button').onclick = function() {
           var filaPadre = this.parentNode.parentNode;

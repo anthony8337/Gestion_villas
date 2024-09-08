@@ -665,14 +665,24 @@ margin: 10px;
     flex-wrap: wrap;
 }
 
-#div_atajo .c5 button
+#div_atajo .c5 div
 {
+    background-color: rgb(236, 235, 235);
+    border: 1px solid #afafaf;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
     width: 90px;
     height: 90px;
+}
+
+#div_atajo .c5 div:hover
+{
+    background-color: rgb(211, 211, 211);
+    cursor: pointer;
 }
 
 .no_ver

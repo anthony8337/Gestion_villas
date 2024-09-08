@@ -1,49 +1,102 @@
+        $valor = $row["usuario"];
+        $clave1 = $row["clave"];
+        $acceso = $row["acceso"];
+        $estado = $row["estado"];
+        /*Acceso de los usuarios*/
+        $reportes_im = $row["imprimir_reportes"];
+        $modi_im = $row["modificar_reportes"];
+        $eliminar_im = $row["eliminar_reportes"];
 
-SELECT
-    `gestion_de_propietario`.`villas`.`id_villa` AS `id_villa`,
-    CONCAT(
-        `gestion_de_propietario`.`grupo_villa`.`grupo`,
-        '-',
-        `gestion_de_propietario`.`villas`.`numero`
-    ) AS `villas`,
-    `gestion_de_propietario`.`villas`.`cont_eeh` AS `cont_eeh`,
-    `gestion_de_propietario`.`villas`.`habitaciones` AS `habitaciones`,
-    `gestion_de_propietario`.`villas`.`lote` AS `lote`,
-    `gestion_de_propietario`.`modelo_villa`.`modelo` AS `modelo`,
-    `gestion_de_propietario`.`condicion_villas`.`condicion` AS `condicion`,
-    `gestion_de_propietario`.`villas`.`id_estado` AS `id_estado`,
-    `gestion_de_propietario`.`estado_villa`.`estado` AS `estado`
-FROM
-    (
-        (
-            (
-                (
-                    `gestion_de_propietario`.`villas`
-                JOIN `gestion_de_propietario`.`grupo_villa` ON
-                    (
-                        (
-                            `gestion_de_propietario`.`villas`.`id_grupo` = `gestion_de_propietario`.`grupo_villa`.`id_grupo`
-                        )
-                    )
-                )
-            JOIN `gestion_de_propietario`.`modelo_villa` ON
-                (
-                    (
-                        `gestion_de_propietario`.`villas`.`id_modelo` = `gestion_de_propietario`.`modelo_villa`.`id_modelo`
-                    )
-                )
-            )
-        JOIN `gestion_de_propietario`.`condicion_villas` ON
-            (
-                (
-                    `gestion_de_propietario`.`villas`.`id_condicion` = `gestion_de_propietario`.`condicion_villas`.`id_condicion`
-                )
-            )
-        )
-    JOIN `gestion_de_propietario`.`estado_villa` ON
-        (
-            (
-                `gestion_de_propietario`.`villas`.`id_estado` = `gestion_de_propietario`.`estado_villa`.`id_estado`
-            )
-        )
-    )
+
+
+               $valor = $row["usuario"];
+        $clave1 = $row["clave"];
+        $acceso = $row["acceso"];
+        $estado = $row["estado"];
+        /*Acceso de los usuarios*/
+        $reportes_im = $row["imprimir_reportes"];
+        $modi_im = $row["modificar_reportes"];
+        $eliminar_im = $row["eliminar_reportes"];
+
+
+
+        if ($estado == "Activo") {
+        
+            if ($valor == $nombre && $clave1 == $clave)
+        {
+            
+
+            if ($acceso == "Administrador")
+            {
+                echo"
+                <script>
+                var admin = 'abierto';
+                var usuario_n = '".$valor."'
+                var clave = '".$clave1."'
+                var reporte = '".$reportes_im."';
+                var modificar = '".$modi_im."';
+                var eliminar = '".$eliminar_im."';
+                
+
+                sessionStorage.setItem('admin',admin);
+                sessionStorage.setItem('usuario_n',usuario_n);
+                sessionStorage.setItem('clave',clave);
+                sessionStorage.setItem('reporte',reporte);
+                sessionStorage.setItem('modificar',modificar);
+                sessionStorage.setItem('eliminar',eliminar);
+                
+
+                window.location.href = 'usuario.php';
+                </script>
+                ";
+            }
+            else if ($acceso == "Usuario")
+            {
+                echo"
+                <script>
+                var usuario = 'abierto';
+                var usuario_n = '".$clave."';
+                var reporte = '".$reportes_im."';
+                var modificar = '".$modi_im."';
+                var eliminar = '".$eliminar_im."';
+
+                sessionStorage.setItem('usuario',usuario);
+                sessionStorage.setItem('reporte',reporte);
+                sessionStorage.setItem('modificar',modificar);
+                sessionStorage.setItem('eliminar',eliminar);
+                
+
+                window.location.href = 'principal.php';
+                </script>
+                ";
+            }
+        }
+        else
+        {
+            echo"
+            <script>
+            window.alert('Usuario y contraseña no coinciden, por favor verifica si son correctos');
+            </script>
+            ";
+        }
+    }
+    else
+    {
+        echo"
+        <script>
+        window.alert('Usuario y contraseña no coinciden, por favor verifica si son correctos');
+        </script>
+        ";
+    }
+}
+}
+else
+{
+    echo"
+    <script>
+    window.alert('Usuario y contraseña no coinciden, por favor verifica si son correctos');
+    </script>
+    ";
+}
+
+

@@ -2,11 +2,17 @@
 include "PHP/raiz/entrada.php";
 ?>
 
-
-
 <script>
 var admin;
 admin = sessionStorage.getItem("admin");
+
+
+reporte = sessionStorage.getItem("reporte");
+modificar =sessionStorage.getItem("modificar");
+eliminar =sessionStorage.getItem("eliminar");
+
+
+
 if(admin == null)
 {
     window.location.href = "index.php";

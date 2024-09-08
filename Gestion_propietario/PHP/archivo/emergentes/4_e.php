@@ -104,6 +104,9 @@ for ($i=0; $i < count($pal); $i++) {
         $('#Formulario_adicionar').submit(function(e){
             e.preventDefault();
 
+            var confir = confirm("Se realizara una adición de villa \n¿Esta seguro que desea continuar?");
+
+            if (confir) {
             // Obtener los datos de la primera columna de la tabla
             let table = $('#tabla_villa_adi');
             let data = [];
@@ -130,6 +133,7 @@ for ($i=0; $i < count($pal); $i++) {
                     actualizar_villas_adicionar();
                 }
             });
+        }
         });
     });
 

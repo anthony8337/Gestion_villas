@@ -141,6 +141,10 @@ for ($i=0; $i < count($pal); $i++) {
         $('#Formulario_intercambio').submit(function(e){
             e.preventDefault();
 
+            var confir = confirm("Se realizara un intercambio de villa \n¿Desea continuar con la ejecución?");
+
+
+            if (confir) {
             // Obtener los datos de la primera columna de la tabla
             let table = $('#tabla_destino_villa');
             let data = [];
@@ -167,7 +171,9 @@ for ($i=0; $i < count($pal); $i++) {
                     actualizar_villas_adicionar();
                 }
             });
+        }
         });
+    
     });
 
 </script>

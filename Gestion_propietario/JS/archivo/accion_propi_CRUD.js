@@ -1,5 +1,19 @@
+
+
 function insertar_propi()
 {
+    var form = document.getElementById("Formulario_pro");
+
+    var villas = parseInt(document.getElementById("pro_villa_cont").value,10);
+
+    if (form.checkValidity()) {
+
+        if(villas > 0)
+            {
+        var alerta = confirm("Creara un nuevo registro. \n¿Está seguro de que desea continuar?");
+
+    if (alerta) { 
+
                 // Obtener los datos de la primera columna de la tabla
                 let table = $('#tabla_villa_pro_selec');
                 let data = [];
@@ -34,12 +48,25 @@ function insertar_propi()
                         actualizar_propietarios();
                         actualizar_propietarios_cuenta();
                         actualizar_propietarios_multipago();
-                        actualizar_villas_propietario(); 
                         actualizar_villas_adicionar();
+                        actualizar_villas_propietario(); 
+                        actualizar_tabla_villa_pro();
 
                         
                     }
                 });
+            }
+        }
+        else
+        {
+            window.alert("Por favor, selecciona las villas solicitadas");
+        }
+        }
+        else
+        {
+            form.reportValidity();
+        }
+
 }
 
 function actualizar_propi()

@@ -52,7 +52,6 @@ function sele_cuentas()
         document.getElementById("total_multi").value = document.getElementById("txt_sal").value;
 
         costo_con_multi();
-        sele_con_multi();
     }
 }
 }

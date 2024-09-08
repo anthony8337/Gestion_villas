@@ -10,6 +10,18 @@ function actualizar_villas_propietario()
     });   
 }
 
+function actualizar_villas_propietario_modificar() 
+{
+    $.ajax({
+        type: 'GET',
+        url: 'PHP/archivo/emergentes/subs/accion_propietario/tabla_propietario_villa_editar.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#villa_propi_selec').html(response);
+        }
+    });   
+}
+
 function actualizar_villas_adicionar() 
 {
     $.ajax({
@@ -141,6 +153,7 @@ function tabla_estado_cuenta(){
     var desde = document.getElementById("desde_estado").value;
     var hasta = document.getElementById("hasta_estado").value;
     var selector = document.getElementById("rango_cuota").value;
+    var todo_cuota = document.getElementById("todo_cuota").value;
 
 
     $.ajax({
@@ -149,6 +162,7 @@ function tabla_estado_cuenta(){
         data: 
         {
             id_pro_sc: id_pro_sc, decidir:decidir, desde:desde, hasta:hasta,selector:selector,
+            todo_cuota:todo_cuota,
         },
         success: function(response){
             $('#tb_estados').html(response);

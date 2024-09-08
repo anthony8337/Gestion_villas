@@ -68,5 +68,6 @@
     <script src="JS/archivo/selec_villa_tabla_p.js"></script>
     <script src="JS/buscar/subs/buscar_cuentas_sinP.js"></script>
     <script src="JS/celda/selec_cuenta.js"></script>
+    <script src="JS/acciones_atajo.js"></script>
 </head>
 <body>

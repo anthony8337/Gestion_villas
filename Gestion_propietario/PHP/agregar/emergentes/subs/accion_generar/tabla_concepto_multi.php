@@ -17,8 +17,8 @@ else
 
 $id_multi_hd_id_propietario = $_POST["id_multi_hd_id_propietario"];
 
-$sql = "SELECT concepto,id_unir,MAX(id_concepto) AS id_concepto
-FROM cuenta_vista  WHERE id_unir = '$id_multi_hd_id_propietario' GROUP BY concepto,id_unir";
+$sql = "SELECT concepto,id_unir,pagado,MAX(id_concepto) AS id_concepto FROM cuenta_vista WHERE id_unir = '$id_multi_hd_id_propietario' 
+AND (pagado = 'No pagado' OR pagado = 'Pendiente' ) GROUP BY concepto,id_unir,pagado; ";
 
 $result = $conn->query($sql);
 
