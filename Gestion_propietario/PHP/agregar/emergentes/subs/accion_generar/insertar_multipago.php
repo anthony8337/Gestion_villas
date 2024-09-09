@@ -113,16 +113,20 @@ if ($result == true && $result2 == true) {
         {
                 echo"<script>
                 window.alert('Cuenta pagada con éxito.');
+                abrirNuevaPagina_miltipago();
                 recargar_tabla_multi();
                 codigo_multi_acutalizar();
+                cerrar_crear_multipago();
                 </script>";  
         }
         else
         {
                 echo"<script>
                 window.alert('Cuenta pagada de forma parcial.');
+                abrirNuevaPagina_miltipago();
                 recargar_tabla_multi();
                 codigo_multi_acutalizar();
+                cerrar_crear_multipago();
                 </script>";
         }
 

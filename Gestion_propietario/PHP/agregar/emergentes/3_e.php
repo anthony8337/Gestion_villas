@@ -17,6 +17,10 @@
 <fieldset>
         <button type="button" onclick="cuenta_propi_reim()">Seleccionar cuenta</button>
 </fieldset>
+
+<fieldset>
+        <button type="button" onclick="limpiar_confirmar()">Limpiar campos</button>
+</fieldset>
 </div>
 
 <div class="c2">
@@ -95,7 +99,7 @@
 <input type="text" name="txt_total_abono" id="txt_total_abono" readonly>
 </fieldset>
 
-<button class="elemento" type="button" id="btn_imp" onclick="abrirNuevaPagina()">Reimprimir factura</button>
+<button class="elemento" type="button" id="btn_imp" onclick="reim_factu_accion()">Reimprimir factura</button>
 
 </div>
 </div>
@@ -108,6 +112,29 @@
 <script>ultimo_reim();</script>
 
 <script>
+
+    function reim_factu_accion()
+    {
+        var a = document.getElementById("hd_id_reim").value;
+        var b = document.getElementById("txt_cod_reim").value;
+
+        if (a == "" || b == "")
+        {
+            window.alert("Por favor, complete los campos.");
+        }
+        else
+        {
+            var a_2 = confirm("¿Desea ver el recibo a reimprimir?");
+
+            if (a_2) 
+            {
+                abrirNuevaPagina(); 
+                cerrar_re_factura();
+            }
+        }
+        
+    }
+
     function abrirNuevaPagina() {
     // IDs de los inputs que quieres enviar
     var inputIDs = ['txt_cod_reim','txt_nombre_reim','txt_villa_reim','txt_fecha_pago_reim','txt_tipa_reim','txt_for_reim'];

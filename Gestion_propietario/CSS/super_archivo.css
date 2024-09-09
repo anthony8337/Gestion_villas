@@ -52,7 +52,7 @@ height: 35px;
 .c3
 {
 display: flex;
-justify-content: start;
+justify-content: end;
 flex-wrap: wrap;
 }
 
@@ -1100,4 +1100,11 @@ max-width: 200px;
 /* Mostramos el menú al pasar el cursor por encima */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.c3 fieldset
+{
+    border: none;
+    padding: 0px;
+    min-width: 200px;
 }

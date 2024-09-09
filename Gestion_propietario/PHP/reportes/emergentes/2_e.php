@@ -13,7 +13,7 @@
 
 <div class="c2">
 
-<input style="display: none;" type="date" id="fecha_saldo" name="fecha_saldo">
+    <input style="display: none;" type="date" id="fecha_saldo" name="fecha_saldo">
 
     <fieldset>
         <legend>Desde</legend>
@@ -33,13 +33,18 @@
     </fieldset>
 
     <fieldset>
+        <legend>Seleccionar metodo de concepto</legend>
+        <select name="concep_metodo" id="concep_metodo" oninput="id_meto(),actualizar_tabla_saldos(),total_credito_saldo()">
+            <option value="Concepto completo">Concepto completo</option>
+            <option value="Concepto especifico">Concepto especifico</option>
+        </select>
+    </fieldset>
+
+    <fieldset id="ff_concepto">
         <legend>Seleccionar concepto del saldo</legend>
-        <select name="concep_saldo" id="concep_saldo" oninput="actualizar_tabla_saldos(),total_credito_saldo()">
-    </select>
+        <select name="concep_saldo" id="concep_saldo" oninput="actualizar_tabla_saldos(),total_credito_saldo()"></select>
+    </fieldset>
 
-    
-
-</fieldset>
 
 </div>
 <div class="c4">
@@ -74,7 +79,7 @@
     <input type="text" name="txt_st_cobrar" id="txt_st_cobrar" readonly>
 </fieldset>
 
-<button type="button" onclick="abrirNuevaPagina_saldo()">Imprimir</button>
+<button type="button" onclick="imprimir_saldos()">Imprimir</button>
 
 </fieldset>
 </div>
@@ -83,6 +88,27 @@
 </div>
 
 </div>
+
+<script>
+
+actualizar_tabla_saldos();
+
+id_meto();
+
+function imprimir_saldos() 
+{
+ 
+var a = confirm("¿Deseas imprimir el reporte de los saldos?");
+if (a) 
+{
+    abrirNuevaPagina_saldo();
+}
+
+
+}
+
+</script>
+
 
 <script>
     function abrirNuevaPagina_saldo() {

@@ -42,7 +42,7 @@ for ($i=0; $i < count($pal); $i++) {
 
 <fieldset>
     <legend style="visibility: hidden;">ff</legend>
-    <button id="btn_agre_villa_pro" type="button" onclick="selecciona_villa_propi(),actualizar_villas_propietario()">Agregar villa</button>
+    <button id="btn_agre_villa_pro" type="button" onclick="selecciona_villa_propi()">Agregar villa</button>
 
 </fieldset>
 </div>

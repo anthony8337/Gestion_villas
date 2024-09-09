@@ -49,7 +49,7 @@
 <span>Cuentas a pagar</span>
 </div>
 
-<div onclick="atajo_cuenta_pagar()">
+<div onclick="atajo_reimprimir()">
 <img src="Imagenes/receipt-cutoff.svg">
 <span>Reimprimir facturas</span>
 </div>

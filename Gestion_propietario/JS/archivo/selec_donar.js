@@ -20,6 +20,7 @@ function pro_donan() {
         document.getElementById("txtrtn_do").value = rtn;
         document.getElementById("txtcorreo_do").value = correo;
         document.getElementById("txttelefono_do").value = telefono;
+        document.getElementById("id_manda_pro").value = id;
 
         $.ajax({
           url: 'PHP/archivo/emergentes/subs/donante/tabla_villa_do.php', // Reemplaza con la ruta de tu archivo PHP

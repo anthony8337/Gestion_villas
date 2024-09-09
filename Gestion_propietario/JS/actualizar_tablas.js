@@ -166,9 +166,41 @@ function tabla_estado_cuenta(){
         },
         success: function(response){
             $('#tb_estados').html(response);
+            tabla_total_estados();
         }
     });   
 }
+
+function tabla_total_estados()
+{
+
+    var id_pro_sc = document.getElementById("id_pro_sc").value;
+    var decidir = document.getElementById("ranco_factura").value;
+    var desde = document.getElementById("desde_estado").value;
+    var hasta = document.getElementById("hasta_estado").value;
+    var selector = document.getElementById("rango_cuota").value;
+    var todo_cuota = document.getElementById("todo_cuota").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/tabla_estado_cuenta_total.php',
+        data:
+        {
+            id_pro_sc: id_pro_sc, decidir:decidir, desde:desde, hasta:hasta,selector:selector,
+            todo_cuota:todo_cuota,
+        },
+        success: function(response){
+
+            document.getElementById("txt_resutado_estado").value = response;
+        }
+    });   
+}
+
+function actualizar_total_estado(campo)
+{
+    document.getElementById('txt_resutado_estado').value = campo;
+}
+
 
 function seleccionar_conceptos_cuenta()
 {
@@ -183,6 +215,7 @@ function seleccionar_conceptos_cuenta()
         },
         success: function(response){
             $('#rango_cuota').html(response);
+            
         }
     });
 }
@@ -235,6 +268,8 @@ function actualizar_tabla_saldos()
     var hasta_repo_saldo = document.getElementById('hasta_repo_saldo').value;
     var desde_repo_saldo = document.getElementById('desde_repo_saldo').value;
     var fecha_saldo_actual = document.getElementById('fecha_saldo_actual').value;
+    var concep_metodo = document.getElementById('concep_metodo').value;
+     
 
     $.ajax({
         type: 'POST',
@@ -243,6 +278,7 @@ function actualizar_tabla_saldos()
         {
             concep_saldo:concep_saldo, hasta_repo_saldo:hasta_repo_saldo,
             desde_repo_saldo:desde_repo_saldo,fecha_saldo_actual:fecha_saldo_actual,
+            concep_metodo:concep_metodo,
         },
         success: function(response){
             $('#tb_saldos').html(response);
@@ -256,13 +292,14 @@ function total_credito()
     var hasta_repo_saldo = document.getElementById('hasta_repo_saldo').value;
     var desde_repo_saldo = document.getElementById('desde_repo_saldo').value;
     var fecha_saldo_actual = document.getElementById('fecha_saldo_actual').value;
-
+    var concep_metodo = document.getElementById('concep_metodo').value;
+     
     $.ajax({
         type: 'POST',
         url: 'PHP/reportes/emergentes/subs/sql/tabla_total_credito.php',
         data:
         {
-            concep_saldo:concep_saldo, hasta_repo_saldo:hasta_repo_saldo,
+            concep_metodo:concep_metodo,concep_saldo:concep_saldo, hasta_repo_saldo:hasta_repo_saldo,
             desde_repo_saldo:desde_repo_saldo,fecha_saldo_actual:fecha_saldo_actual,
         },
         success: function(response){
@@ -278,13 +315,15 @@ function total_pago()
     var hasta_repo_saldo = document.getElementById('hasta_repo_saldo').value;
     var desde_repo_saldo = document.getElementById('desde_repo_saldo').value;
     var fecha_saldo_actual = document.getElementById('fecha_saldo_actual').value;
+    var concep_metodo = document.getElementById('concep_metodo').value;
+    
 
     $.ajax({
         type: 'POST',
         url: 'PHP/reportes/emergentes/subs/sql/tabla_total_pagar.php',
         data:
         {
-            concep_saldo:concep_saldo, hasta_repo_saldo:hasta_repo_saldo,
+            concep_metodo:concep_metodo,concep_saldo:concep_saldo, hasta_repo_saldo:hasta_repo_saldo,
             desde_repo_saldo:desde_repo_saldo,fecha_saldo_actual:fecha_saldo_actual,
         },
         success: function(response){
@@ -447,4 +486,30 @@ function actualizar_cuentas_debe()
             $('#tabla_cuentas_pagar').html(response);
         }
     });   
+}
+
+function id_meto()
+{
+    var a = document.getElementById("concep_metodo").value;
+
+    if(a == "Concepto completo")
+    {
+        document.getElementById("ff_concepto").style.display = "none";
+    }
+    else
+    {
+        document.getElementById("ff_concepto").style.display = "block";
+    }
+}
+
+function actualizar_pro_adi()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/archivo/emergentes/subs/adicion/tabla_pro_adi.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#tabla_propietario_adi').html(response);
+        }
+    });
 }

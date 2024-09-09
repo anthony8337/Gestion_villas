@@ -71,7 +71,8 @@ for ($i=0; $i < count($pal); $i++) {
 <fieldset class="cambio_villa">
     <legend>Destino de villa</legend>
 
-<input type="hidden" name="id_rec_pro" id="id_rec_pro">
+<input type="hidden" name="id_manda_pro" id="id_manda_pro">
+   <input type="hidden"name="id_rec_pro" id="id_rec_pro">
 <input type="date" name="txt_fecha_rec" id="txt_fecha_rec" class="interno">
 
 <?php
@@ -141,6 +142,15 @@ for ($i=0; $i < count($pal); $i++) {
         $('#Formulario_intercambio').submit(function(e){
             e.preventDefault();
 
+            var a = document.getElementById('id_manda_pro').value;
+            var b = document.getElementById('id_rec_pro').value;
+            
+            if (a == "" || b == "") 
+            {
+                window.alert('Por favor, complete todos los campos');
+            }else{
+            
+
             var confir = confirm("Se realizara un intercambio de villa \n¿Desea continuar con la ejecución?");
 
 
@@ -172,6 +182,7 @@ for ($i=0; $i < count($pal); $i++) {
                 }
             });
         }
+    }
         });
     
     });

@@ -96,7 +96,18 @@
 </div>
 
 <div class="c3">
-<button type="button" onclick="abrirNuevaPagina_estado()">Imprimir</button>
+
+<fieldset>
+
+<fieldset>
+    <legend>Estado Total</legend>
+<input type="text" name="txt_resutado_estado" id="txt_resutado_estado" readonly>
+</fieldset>
+<br>
+<button type="button" onclick="decidir_estado_cuenta()">Imprimir</button>
+
+</fieldset>
+
 </div>
 
 </form>
@@ -115,6 +126,25 @@ ocultar_concep();
 </script>
 
 <script>
+    function decidir_estado_cuenta()
+    {
+
+        var b = document.getElementById("id_pro_sc").value;
+
+        if(b == "")
+        {
+            window.alert("Por favor, seleccione un propietario.");
+        }
+        else
+        {
+            var a = confirm("¿Esta seguro de imprimir el estado de cuenta?");
+        if(a)
+        {
+            abrirNuevaPagina_estado();
+        }
+    }
+    }
+
     function abrirNuevaPagina_estado() {
     // IDs de los inputs que quieres enviar
     var inputIDs = ['rango_cuota','ranco_factura','desde_estado','hasta_estado','fecha_estado_hoy'

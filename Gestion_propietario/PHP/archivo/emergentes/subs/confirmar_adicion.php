@@ -4,7 +4,7 @@
 
 <div class="c2">
 <span>
-Villa(s) adicionada(s) con éxito.
+Villa adicionada con éxito.
 </span>
 
 <span>

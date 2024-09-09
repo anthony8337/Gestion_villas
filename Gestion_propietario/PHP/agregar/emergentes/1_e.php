@@ -215,6 +215,26 @@ $(document).ready(function(){
         let url = '';
 
         var decidir_aporte ;
+        var a = document.getElementById("sl_pro_gc").value;
+    var b = document.getElementById("id_con_gc").value;
+    var c = document.getElementById("id_propi_gc").value;
+    var d = document.getElementById("txt_costo_gc").value;
+    
+    if (a == "Rango")
+    {
+        c = "rango";
+    }
+    else if(a == "Unico")
+    {
+        c = document.getElementById("id_propi_gc").value;
+    }
+
+    if (b == "" || c == "" || d == "") 
+    {
+     window.alert("Por favor, complete todos los campos.");   
+    }
+    else
+    {  
 
 if (accion === 'crear') {
     url = 'PHP/agregar/emergentes/subs/accion_generar/insertar_cuenta.php';
@@ -229,7 +249,7 @@ if (accion === 'crear') {
     url = 'PHP/agregar/emergentes/subs/accion_generar/eliminar_cuenta.php';
 }     
 
-            
+          
 if (decidir_aporte) {        
         $.ajax({
             type: 'POST',
@@ -247,6 +267,7 @@ if (decidir_aporte) {
             }
         });
     }
+}
 
     }); 
 });

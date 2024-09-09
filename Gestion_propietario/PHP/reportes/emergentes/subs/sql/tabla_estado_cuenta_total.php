@@ -51,25 +51,12 @@ if($result -> num_rows > 0)
 {
     $total = 0;
 
-    while ($row = $result->fetch_assoc()) {
-
+    while ($row = $result->fetch_assoc()) 
+    {
         $total = $row["costo"] - $row["abono"] + $total;
-
-        echo"
-        <tr>
-        <td></td>
-        <td>",$row["desde"],"</td>
-        <td>",$row["codigo"],"</td>
-        <td>",$row["concepto"],"</td>
-        <td>",$row["concepto_2"],"</td>
-        <td>$. ",number_format($row["costo"],2),"</td>
-        <td>$. ",number_format($row["abono"],2),"</td>
-        <td>$. ",number_format($total,2),"</td>
-        </tr>
-        ";
-        
-        
     }
+
+    echo"$. ".number_format($total,2)."";
 
 
 }

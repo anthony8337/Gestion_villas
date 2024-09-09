@@ -44,6 +44,7 @@ function selec_pro_estado_cuenta(){
 
       cerrar_selec_pro_estado();
       seleccionar_conceptos_cuenta();
+      
     });
   }
 }

@@ -33,11 +33,7 @@ function llamar_tb_villa_pro() {
             destinationTable.appendChild(newRow);
             target.remove(); 
             cerrar_selecciona_villa_propi();
-
-            
-
             a++;
-
             document.getElementById("pro_villa_cont").value = a;
         }
     });

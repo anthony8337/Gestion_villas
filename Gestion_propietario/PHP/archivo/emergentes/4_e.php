@@ -15,6 +15,7 @@
 
 <input type="hidden" name="id_pro_adi" id="id_pro_adi">
 
+
 <?php
 
 $pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electrónico','Teléfono'];
@@ -53,6 +54,7 @@ for ($i=0; $i < count($pal); $i++) {
 <button type="button" onclick="abrir_pro_adicionar_tabla()">Agregar una villa</button>
 </div>
     <div class="contenido_tabla contenido_tabla_ultima">
+    <input type="hidden" name="sum_select_adi" id="sum_select_adi" value="0">
         <table id="tabla_villa_adi">
             <thead>
         <tr>
@@ -104,6 +106,16 @@ for ($i=0; $i < count($pal); $i++) {
         $('#Formulario_adicionar').submit(function(e){
             e.preventDefault();
 
+            var a = document.getElementById("id_pro_adi").value;
+
+            var villa = parseInt(document.getElementById("sum_select_adi").value,10);
+
+            if(a == "" || villa <= 0)
+            {
+                window.alert("Por favor, completa los campos pendientes");
+            }
+            else
+            {
             var confir = confirm("Se realizara una adición de villa \n¿Esta seguro que desea continuar?");
 
             if (confir) {
@@ -134,6 +146,7 @@ for ($i=0; $i < count($pal); $i++) {
                 }
             });
         }
+    }
         });
     });
 

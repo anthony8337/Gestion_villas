@@ -61,11 +61,25 @@
 </div>
 
 <div class="c3">
-<button type="button" onclick="abrirNuevaPagina_villas()">Imprimir</button>
+<button type="button" onclick="imprime_villas()">Imprimir</button>
 </div>
 
 </div>
 </div>
+
+
+<script>
+
+function imprime_villas()
+{
+    var a = confirm("¿Desea imprimir el registro de villas?");
+    if (a)
+    {
+        abrirNuevaPagina_villas();
+    }
+}
+
+</script>
 
 <script>
     function abrirNuevaPagina_villas() {

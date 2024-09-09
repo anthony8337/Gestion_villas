@@ -55,7 +55,7 @@
 <fieldset id="dato_multi">
         <legend>Código de pago</legend>
         <input type="number" id="txt_cod_m" name="txt_cod_m" readonly value="<?php include "PHP/agregar/emergentes/subs/accion_generar/codigo_factura_multi.php"; ?>">
-        <input type="date" id="txt_fecha_m" name="txt_fecha_m" >
+        <input type="date" id="txt_fecha_m" name="txt_fecha_m" readonly>
     </fieldset>
 
 
@@ -94,27 +94,27 @@
 
     <fieldset>
     <legend>Total a pagar</legend>
-    <input type="text" name="total_multi" id="total_multi" readonly>
+    <input type="text" name="total_multi" id="total_multi" placeholder="Total a pagar" readonly>
     </fieldset>
 
     <fieldset id="fl_mp_a1" class="cortar_multi">
     <legend>Forma de pago</legend>
-    <input type="text" name="txt_forma_pp" id="txt_forma_pp" readonly>
+    <input type="text" name="txt_forma_pp" id="txt_forma_pp" placeholder="Forma de pago" readonly>
     </fieldset>
 
     <fieldset id="fl_mp_a2" class="cortar_multi">
     <legend>Número de referencia</legend>
-    <input type="text" name="txt_nu_referencia" id="txt_nu_referencia" readonly>
+    <input type="text" name="txt_nu_referencia" id="txt_nu_referencia" placeholder="Número de referencia" readonly>
     </fieldset>
 
     <fieldset id="fl_mp_b1">
     <legend>Cantidad recibida</legend>
-    <input type="text" name="can_multi" id="can_multi" oninput="sumarInputs()">
+    <input type="text" name="can_multi" id="can_multi" oninput="sumarInputs()" placeholder="Cantidad recibida">
     </fieldset>
 
     <fieldset id="fl_mp_b2">
     <legend>Cantidad a devolver</legend>
-    <input type="text" name="devo_multi" id="devo_multi" readonly>
+    <input type="text" name="devo_multi" id="devo_multi" placeholder="Cantidad a devulver" readonly>
     </fieldset>
 
 </div>
@@ -134,6 +134,19 @@
 $(document).ready(function(){
     $('#formulario_datos_multi').submit(function(e){
         e.preventDefault();
+
+       var a1 = document.getElementById("codigo_villa_multi").value;
+       var a2 = document.getElementById("hd_id_propietario" ).value;
+       var a3 = document.getElementById("hd_id_cuenta" ).value;
+       var a4 = document.getElementById("hd_id_concepto" ).value;
+       var a5 = document.getElementById("hd_concepto_pago" ).value;
+
+       if( a1 == "" || a2 == "" || a3 == "" || a4 == "" || a5 == "")
+       {
+        window.alert("Por favor, complete todos los campos.");
+       }
+       else
+       {
         
         var id_cuenta = document.getElementById('hd_id_cuenta').value;
 
@@ -151,7 +164,7 @@ $(document).ready(function(){
 
 });
 
-abrirNuevaPagina_miltipago();
+
     }
     else
     {
@@ -177,9 +190,9 @@ abrirNuevaPagina_miltipago();
             $('#respuesta_multi').html(response);
         }
     });
-    abrirNuevaPagina_miltipago();
+    
     }
-
+       }
     });
 });
 
