@@ -19,12 +19,12 @@
 
 <fieldset>
 <legend>Nombre del concepto</legend>
-<input type="text" name="txt_concepto" id="txt_concepto" placeholder="Nombre del concepto" title="Nombre del concepto">
+<input type="text"  name="txt_concepto" id="txt_concepto" placeholder="Nombre del concepto" title="Nombre del concepto" required>
 </fieldset>
 
 <fieldset>
 <legend>Valor</legend>
-<input type="text" name="txt_valor_concepto" id="txt_cantidad" placeholder="Valor" title="Valor del concepto">
+<input type="text"  name="txt_valor_concepto" id="txt_cantidad" placeholder="Valor" title="Valor del concepto" required>
 </fieldset>
 
 <div>

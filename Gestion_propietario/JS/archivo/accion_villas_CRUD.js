@@ -71,6 +71,7 @@ formData.push({ name: 'tabla_caracteristica', value: JSON.stringify(data) });
         success: function(response){
             $('#respuesta_villa_prin').html(response);
             actualizar_villas_propietario(); 
+            actualizar_villas_adicionar();
         }
 
     });

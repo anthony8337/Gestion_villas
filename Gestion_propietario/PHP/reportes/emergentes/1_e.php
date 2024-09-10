@@ -2,7 +2,7 @@
 
 <div id="lis_villa" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 <h2>Reporte de villas</h2>
@@ -41,7 +41,7 @@
 </div>
 
 <div class="c4">
-<div class="contenido_tabla">
+<div class="contenido_tabla tam_limite">
     <table id="td_villas_cuerpo" class="contenido">
         <tr>
         <th></th>

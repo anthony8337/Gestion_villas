@@ -16,11 +16,34 @@ else
 {
 }
 
+
+$sql0 = "SELECT * FROM cambio ORDER BY cuenta DESC LIMIT 1";
+$result0 = $conn ->query($sql0);
+
+if($result0 -> num_rows > 0)
+{
+
+    while ($row = $result0->fetch_assoc()) 
+    {
+        $cuenta = $row["cuenta"] + 1;
+    }
+}
+else
+{
+    $cuenta = "30000";
+}
+
+
+
+
 if (isset($_POST['id_rec_pro'])) {
     $id_pro = $_POST['id_rec_pro'];
  } else {
     $id_pro = 0;
  }
+
+
+$id_manda_pro = $_POST["id_manda_pro"];
 
 $id = ['txtnombre_rec','txtrtn_rec','txtcorreo_rec','txt_fecha_rec','txttelefono_rec','Registro por intercambio'];
 
@@ -88,6 +111,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $sql3="UPDATE propietarios_villas SET id_propietario='$id_pro' WHERE id_villa='". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."'";
             $result3 = $conn->query($sql3);
+
+            $sql4="INSERT INTO cambio(cuenta, id_donante, id_recibie, id_villa, descripcion, fecha) 
+            VALUES ('$cuenta','$id_manda_pro','$id_pro','". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."','Realizo un traslado de la villa','".date("Y-m-d")."')";
+            $result4 = $conn->query($sql4);
         }
 
         }

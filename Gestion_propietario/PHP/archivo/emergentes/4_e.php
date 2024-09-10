@@ -1,7 +1,7 @@
 
 <div id="adicionar_villas" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_muy_grandes">
 
 <div class="c1">
 <h2 >Adicionar villa a propietario</h2>

@@ -301,3 +301,26 @@ function ingreso_vi_alterar()
     document.getElementById('btn_limpiar_villa').style.display = 'none';
     document.getElementById('btn_agregar_villa').style.display = 'none';
 }
+
+function ver_descrip_cambio()
+{
+    document.getElementById('descripcion_cambio').style.display = 'flex';
+    actializar_descripcion();
+}
+
+function cerrar_ver_descrip_cambio()
+{
+    document.getElementById('descripcion_cambio').style.display = 'none';
+}
+//////////////
+
+function ver_descrip_adicion()
+{
+    document.getElementById('descripcion_adicion').style.display = 'flex';
+    actializar_descripcion_adicion();
+}
+
+function cerrar_ver_descrip_adicion()
+{
+    document.getElementById('descripcion_adicion').style.display = 'none';
+}

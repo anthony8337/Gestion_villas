@@ -25,7 +25,6 @@
 {   
     height: 35px;
     width: 100%;
-    margin-bottom: 20px;
     border: 1px solid #b8b8b8;
 
 }
@@ -38,7 +37,7 @@
 .login #ingresar button, .login #recuperar button
 {
     height: 35px;
-    width: calc(100% + 5px);
+    width: 200px;
     margin-bottom: 20px;
 }
 
@@ -46,7 +45,7 @@
 {
     background-color: rgba(255, 255, 255, 0.8);
     width: 400px;
-    height: 500px;
+    height: 550px;
 
     position:absolute;
     top: 25px;
@@ -65,8 +64,27 @@
 
 }
 
+.login #recuperar 
+{
+    display: none;
+}
 
-.login #recuperar
+.login #recuperar #recupera_cuenta
+{
+    display: none;
+}
+
+.login #recuperar #cambiar_contra
+{
+    display: none;
+}
+
+.login #recuperar #comprobar_cambio
+{
+    display: none;
+}
+
+.login #recuperar #confir_contra
 {
     display: none;
 }
@@ -88,6 +106,7 @@ height: 50px;
 .login label
 {
     border-bottom: 1px solid black;
+    margin-bottom: 10px;
     
 }
 
@@ -162,4 +181,23 @@ width: calc(100% - 20px);
     align-items: center;
 }
 
+}
+
+.login fieldset
+{
+    border: none;
+}
+
+.login form
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.login form fieldset
+{
+    width: 300px;
 }

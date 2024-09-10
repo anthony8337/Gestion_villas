@@ -15,7 +15,7 @@ Cambio ejecutado con éxito.
 <div class="c3">
 <button type="button" onclick="v_cambio_cerrar(), cerrar_confi_cambio()" title="Confirma el registro">Aceptar</button>
 <button type="button" onclick="cerrar_confi_cambio()" title="Continuar creando más villas">Continuar</button>
-<button type="button" onclick="v_cambio_cerrar(), cerrar_confi_cambio()" title="Crear nuevo propietario para la villa">Ver Descripción</button>
+<button type="button" onclick="ver_descrip_cambio(), cerrar_confi_cambio(),v_cambio_cerrar()" title="Visualizar descripción del cambio realizado.">Ver Descripción</button>
 </div>
 
 

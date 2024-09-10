@@ -16,6 +16,7 @@ function atajo_cuenta() {
 function atajo_cuenta_pagar() {
     cuentas_pagar();
     actualizar_cuentas_debe();
+    actualizar_cuentas_debe_total();
     cerrar_ingreso_celda();
 }
 

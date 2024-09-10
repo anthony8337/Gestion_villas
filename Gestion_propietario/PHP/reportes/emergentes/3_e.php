@@ -2,7 +2,7 @@
 
 <div id="lis_pro_sal" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_grandes">
 
 <div class="c1">
 <h2>Estados de cuenta de propietario</h2>
@@ -74,7 +74,7 @@
 </div>
 
 <div class="c4">
-<div class="contenido_tabla">
+<div class="contenido_tabla tam_limite">
     <table id="td_estados_cuerpo" class="contenido">
         <tr>
         <th></th>

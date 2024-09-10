@@ -23,7 +23,7 @@ for ($i=0; $i < count($m_d); $i++) {
     echo"
     <fieldset>
     <legend>$m_p[$i]</legend>
-    <input type='text' id='$m_d[$i]' name='$m_d[$i]' placeholder='$m_p[$i]' title='$m_p[$i]'>
+    <input type='text' id='$m_d[$i]' name='$m_d[$i]' placeholder='$m_p[$i]' title='$m_p[$i]' required>
     </fieldset>
     ";
 }

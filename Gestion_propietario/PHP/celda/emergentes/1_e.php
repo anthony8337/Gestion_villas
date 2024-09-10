@@ -1,6 +1,6 @@
 <div id="div_atajo" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_pequeñas_largo_2">
 
 <div class="c1">
 <h2>Atajo de acción</h2>
@@ -36,7 +36,7 @@
 
 <div onclick="atajo_multipago()">
 <img src="Imagenes/cash-coin.svg">
-<span>Pago multiple</span>
+<span>Pago múltiple</span>
 </div>
 
 <div onclick="atajo_cuenta()">

@@ -2,7 +2,7 @@
 
 <div id="div_cuenta" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_grandes">
 
 <div class="c1">
 <h2 id="titulo_cuenta">Ingresar nueva cuenta por cobrar</h2>
@@ -145,6 +145,8 @@
             <?php include "PHP/agregar/emergentes/subs/accion_generar/select_concepto_multi_abono.php";?>
         </select>
         </fieldset>
+
+        <input type="hidden" id="valor_paso" name="valor_paso">
 
     <?php
     $nombre = ['Costo de concepto:','Costo total:'];

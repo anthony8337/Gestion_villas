@@ -44,10 +44,10 @@ if($result -> num_rows > 0)
         $total = $row["costo"] - $row["abono"];
 
         echo"
-        <tr class='fila_tabla'>
+        <tr class='fila_tabla' title='Click para ver detalles o modificar.'>
         <td>",$row["id_cuenta"],"</td>
-        <td>",$row["codigo"],"</td>
         <td>",$row["desde"],"</td>
+        <td>",$row["codigo"],"</td>
         <td>",$row["concepto"],"</td>
         <td>",$row["concepto_2"],"</td>
         <td>",$row["desde"],"</td>
@@ -73,6 +73,5 @@ else
 ?>
 
 <script>
-suma_abonos_saldos();
 selec_villa();
 </script>

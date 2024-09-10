@@ -46,7 +46,7 @@ function acceso()
     var txt_usuarios = document.getElementById("txt_ususario_db").value;
     var txt_clave = document.getElementById("txt_clave_db").value;
 
-    usuario = sessionStorage.getItem("usuario_n");
+    usuario = sessionStorage.getItem("usuario");
     clave = sessionStorage.getItem("clave");
 
     if (txt_usuarios == usuario && txt_clave == clave) 

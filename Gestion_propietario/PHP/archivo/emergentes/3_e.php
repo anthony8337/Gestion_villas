@@ -1,6 +1,6 @@
 <div id="cambio_villa" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_muy_grandes">
 
 <div class="c1">
 <h2>Intercambio de propietario de villa</h2>
@@ -13,12 +13,13 @@
 <fieldset class="cambio_villa">
     <legend>Donante de villa</legend>
 
-
 <?php
 
 $pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electrónico','Teléfono'];
 $id = ['','txtnombre_do','txtrtn_do','txtcorreo_do','txttelefono_do'];
 $tipo = ['button','text','text','text','text'];
+
+
 
 for ($i=0; $i < count($pal); $i++) {
 

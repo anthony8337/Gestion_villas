@@ -1,6 +1,6 @@
 <div id="div_multipago" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_muy_grandes">
 <div class="c1">
 <h2>Pago múltiple</h2>
 <button onclick="cerrar_crear_multipago(),limpiar_confirmar(),recargar_tabla_multi()" type="button">X</button>

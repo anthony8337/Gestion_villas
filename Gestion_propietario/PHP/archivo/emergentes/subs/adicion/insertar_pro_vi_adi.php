@@ -14,7 +14,21 @@ else
 {
 }
 
+$sql0 = "SELECT * FROM adicion ORDER BY cuenta DESC LIMIT 1";
+$result0 = $conn ->query($sql0);
 
+if($result0 -> num_rows > 0)
+{
+
+    while ($row = $result0->fetch_assoc()) 
+    {
+        $cuenta = $row["cuenta"] + 1;
+    }
+}
+else
+{
+    $cuenta = "40000";
+}
 
 $id_propietario = $_POST["id_pro_adi"];
 
@@ -37,6 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $sql3 = "UPDATE villas SET id_estado = '2' WHERE id_villa = '". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."'";
             $result3 = $conn->query($sql3);
+
+            $sql4 = "INSERT INTO adicion(id_propi, cuenta, id_villa, descripcion, fecha) 
+            VALUES ('$id_propietario','$cuenta','". htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') ."','Adicion de villas','".date("Y-m-d")."')";
+            $result4 = $conn->query($sql4);
 
         }
         echo"<script>

@@ -488,6 +488,23 @@ function actualizar_cuentas_debe()
     });   
 }
 
+function actualizar_cuentas_debe_total() 
+{
+
+    var nn_id = document.getElementById("nn_id").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/celda/emergentes/sql/tabla_cuentas_total.php',
+        data: {
+            nn_id:nn_id,
+        },
+        success: function(response){
+            document.getElementById("txt_total_saldo").value = response;
+        }
+    });   
+}
+
 function id_meto()
 {
     var a = document.getElementById("concep_metodo").value;
@@ -510,6 +527,31 @@ function actualizar_pro_adi()
         data: $(this).serialize(),
         success: function(response){
             $('#tabla_propietario_adi').html(response);
+        }
+    });
+}
+
+
+function actializar_descripcion()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/archivo/emergentes/subs/cambio/descripcion_cambio.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#tabla_detalle_cambio').html(response);
+        }
+    });
+}
+
+function actializar_descripcion_adicion()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/archivo/emergentes/subs/adicion/descripcion_adicion.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#tabla_detalle_adicion').html(response);
         }
     });
 }

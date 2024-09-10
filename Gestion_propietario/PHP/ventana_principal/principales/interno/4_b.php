@@ -1,6 +1,6 @@
 <div id="usu_usuario" class="mod">
 
-<div class="centro pro_centro">
+<div class="centro pro_centro ventanas_medianas">
 
 <div class="c1">
 <h2>Usuarios</h2>
@@ -19,7 +19,7 @@
             </select>  
 </div>
 
-    <div class="contenido_tabla contenido_oculto contenido_tabla_ultima_usuario ajus_tabla_usuario" id="lista_usuarios">
+    <div class="contenido_tabla contenido_oculto contenido_tabla_ultima_usuario ajus_tabla_usuario tam_limite" id="lista_usuarios">
         <?php
         include "PHP/ventana_principal/principales/tabla_usuarios.php";
         ?>

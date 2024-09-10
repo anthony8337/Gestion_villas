@@ -47,6 +47,14 @@ include "PHP/archivo/emergentes/subs/5_a.php";
 include "PHP/archivo/emergentes/subs/6_a.php";
 ?>
 
+<?php
+include "PHP/archivo/emergentes/subs/7_a.php";
+?>
+
+<?php
+include "PHP/archivo/emergentes/subs/8_a.php";
+?>
+
 <!--Confirmaciones-->
 
 <?php

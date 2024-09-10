@@ -2,7 +2,7 @@
 
 <div id="div_reimprime" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_grandes">
 
 <div class="c1">
 <h2>Reimprimir factura</h2>

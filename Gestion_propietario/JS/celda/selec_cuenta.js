@@ -23,7 +23,8 @@ function selec_villa()
         document.getElementById('txt_fecha_gc_hasta').value= hasta;
 
         var costo = celdas[9].innerText;
-        document.getElementById('txt_costo_gc').value= costo.replace('$. ','').trim();
+        var sin_punto = costo.replace(',','').trim();
+        document.getElementById('valor_paso').value= sin_punto.replace('$. ','').trim();
 
         var con_con = celdas[10].innerText;
         document.getElementById('id_concepto_abono').value= con_con;
@@ -42,11 +43,43 @@ function selec_villa()
 
         document.getElementById('txt_tipo_concep').value= "Abono";
       
-
+        calcular_paso_fecha();
         calcular_fecha();
         modi_cuenta();
         cerrar_cuentas_pagar();
 
       });
     }
+}
+
+function calcular_paso_fecha() {
+  var date1 = document.getElementById("txt_fecha_gc_desde").value;
+  var date2 = document.getElementById("txt_fecha_gc_hasta").value;
+  
+  // Verificar si se han proporcionado ambas fechas
+  if (date1 && date2) {
+      var date1Obj = new Date(date1);
+      var date2Obj = new Date(date2);
+      
+      // Calcular la diferencia en meses
+      var diffMonths = (date2Obj.getFullYear() - date1Obj.getFullYear()) * 12;
+      diffMonths += date2Obj.getMonth() - date1Obj.getMonth();
+      
+      // Manejar el caso en el que las fechas pueden estar en diferentes años
+      if (date1Obj > date2Obj) {
+          diffMonths *= -1;
+      }
+      
+      // Mostrar el resultado
+
+      var v_c = document.getElementById("valor_paso").value;
+      
+      document.getElementById("txt_costo_gc").value = (v_c / diffMonths);
+
+
+      
+      document.getElementById('txt_numero_meses').value = diffMonths;
+    } else {
+      document.getElementById("txt_total_gc").value = "";
+  }
 }

@@ -1,6 +1,6 @@
 <div id="div_cuentas_pagar" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 <h2>Cuentas a pagar</h2>
@@ -26,7 +26,7 @@
 </fieldset>
 
 <fieldset class="limite_tamaño">
-    <legend>Saldo Total</legend>
+    <legend>Saldo total a pagar</legend>
     <input type="text" name="txt_total_saldo" id="txt_total_saldo" readonly>
 </fieldset>
 

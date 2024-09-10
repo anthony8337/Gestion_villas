@@ -45,7 +45,9 @@ $headers = "From: Anthony Oliva Google";
 if(mail($to, $subject, $message, $headers)) {
     echo "
     <script>
-    window.alert('Correo enviado exitosamente.');
+    window.alert('Correo enviado exitosamente, por favor, revisar el buzón o en correo no deseado.');
+    regresar();
+    limpiar_confirmar();
     </script>";
 } else {
     echo "
@@ -55,4 +57,3 @@ if(mail($to, $subject, $message, $headers)) {
     ";
 }
 ?>
-

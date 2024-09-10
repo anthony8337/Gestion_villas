@@ -2,7 +2,7 @@
 
 <div id="lis_pro" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_muy_grandes">
 
 <div class="c1">
 
@@ -48,7 +48,7 @@
 
 </div>
 <div class="c4">
-<div class="contenido_tabla">
+<div class="contenido_tabla tam_limite">
     <table id="td_saldos_cuerpo" class="contenido">
         <tr>
         <th></th>

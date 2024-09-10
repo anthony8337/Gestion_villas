@@ -20,7 +20,7 @@
 
 <fieldset>
     <legend>Grupo de villa</legend>
-    <input type="text" name="txt_grupo_villa" id="txt_grupo_villa" title="Grupo de villa">
+    <input type="text" name="txt_grupo_villa" id="txt_grupo_villa" title="Grupo de villa" required>
 </fieldset>
 
 </div>
