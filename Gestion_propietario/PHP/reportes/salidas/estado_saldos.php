@@ -46,9 +46,13 @@ $options = $dompdf->getOptions();
 $options->set(array('isRemoteEnabled' => true)); // Habilitar carga remota de archivos
 $dompdf->setOptions($options);
 
+$canvas = $dompdf->getCanvas();
+$canvas->page_text(55, 740, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0));
+
+
 $dompdf->loadHtml($html);
 $dompdf->setPaper('letter');
 
 $dompdf->render();
-$dompdf->stream("factura.pdf", array("Attachment" => false));
+$dompdf->stream("Estado_de_saldo.pdf", array("Attachment" => false));
 ?>

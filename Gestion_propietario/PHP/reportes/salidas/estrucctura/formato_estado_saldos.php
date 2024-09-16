@@ -4,24 +4,47 @@ include "PHP/reportes/salidas/estrucctura/php_saldos_cuenta/estado_php_cuentas.p
 
 <div class="cuerpo_pdf">
 
-<div class="encabezado ajuste_centro">
+<header class="encabezado ajuste_centro">
 <table>
     <tr>
-<td>
-<h4>PALMA REAL HOTEL Y VILLAS</h4>
-<span>Saldo de clientes al <?php echo htmlspecialchars($fecha_saldo_actual); ?></span></span>
+
+    <td>
+<h4>VILLAS HOTEL PALMA REAL</h4>    
+<span>Correo: villa@grupopalmareal.com</span>
+<br>
+<span>Tel. 2407-0000</span>
+    
 </td>
 
 <td>
 <h4>CONCEPTO DE SALDO</h4>
-<span><?php echo htmlspecialchars($concep_saldo); ?></span></span>
+<span><?php echo htmlspecialchars($concep_saldo); ?></span><br>
+<span>Saldo de clientes al <?php echo htmlspecialchars($fecha_saldo_actual); ?></span></span>
 </td>
 
+<td>
+<img src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Imagenes/logo_principal.png" alt="Imagen">
+</td>
+
+
+    </tr>
+</table>
+<div class="separador"></div>
+</header>
+
+<div class="encabezado">
+
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
 <td>
 <span>Fecha: <?php echo htmlspecialchars($fecha_hoy); ?></span>
 </td>
     </tr>
 </table>
+
 <div class="separador"></div>
 </div>
 
@@ -65,7 +88,10 @@ include "PHP/reportes/salidas/estrucctura/php_saldos_cuenta/tabla_php_estados.ph
 
 
 
-
+<footer>
+<div class="separador"></div>
+<div class="page-number"></div>
+</footer>
 
 
 </div>

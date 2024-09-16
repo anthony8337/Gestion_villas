@@ -1,39 +1,19 @@
-SELECT
-    gestion_de_propietario.villas.id_villa AS id_villa,
-    CONCAT(
-        gestion_de_propietario.grupo_villa.grupo,
-        '-',
-        gestion_de_propietario.villas.numero
-    ) AS villas,
-    gestion_de_propietario.villas.cont_eeh AS cont_eeh,
-    gestion_de_propietario.villas.habitaciones AS habitaciones,
-    gestion_de_propietario.villas.lote AS lote,
-    gestion_de_propietario.modelo_villa.modelo AS modelo,
-    gestion_de_propietario.condicion_villas.condicion AS condicion,
-    gestion_de_propietario.villas.id_estado AS id_estado
-FROM
-    (
-        (
-            (
-                gestion_de_propietario.villas
-            JOIN gestion_de_propietario.grupo_villa ON
-                (
-                    (
-                        gestion_de_propietario.villas.id_grupo = gestion_de_propietario.grupo_villa.id_grupo
-                    )
-                )
-            )
-        JOIN gestion_de_propietario.modelo_villa ON
-            (
-                (
-                    gestion_de_propietario.villas.id_modelo = gestion_de_propietario.modelo_villa.id_modelo
-                )
-            )
-        )
-    JOIN gestion_de_propietario.condicion_villas ON
-        (
-            (
-                gestion_de_propietario.villas.id_condicion = gestion_de_propietario.condicion_villas.id_condicion
-            )
-        )
-    )
+<table>
+    <tr>
+<td>
+<span><?php echo htmlspecialchars($ranco_factura); ?></span>
+<br>
+<span><?php echo htmlspecialchars($desde_hasta); ?></span>
+</td>
+
+<td>
+<h4>PALMA REAL HOTEL Y VILLAS</h4>
+<span>ESTADO DE CUENTA</span><br>
+<span>CUOTA DE <?php echo htmlspecialchars($titulo_este); ?></span>
+</td>
+
+<td>
+<span>Fecha: <?php echo htmlspecialchars($fecha_estado_hoy);?></span>
+</td>
+    </tr>
+</table>

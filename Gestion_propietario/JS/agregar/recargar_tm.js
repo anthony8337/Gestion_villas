@@ -42,12 +42,13 @@ function sele_cuentas()
     else
     {
 
-    var confirmar = confirm('Se tomarán todas las cuentas pendientes.¿Esta seguro que desea continuar?');
+    var confirmar = confirm('Se tomarán todas las cuentas pendientes.\n¿Esta seguro que desea continuar?');
  
     if(confirmar == true)
     {
         recargar_tabla_multi();
-
+        
+        document.getElementById("hd_grupo").value = 1;
         document.getElementById("txt_ct").value = document.getElementById("txt_sal").value;
         document.getElementById("total_multi").value = document.getElementById("txt_sal").value;
 

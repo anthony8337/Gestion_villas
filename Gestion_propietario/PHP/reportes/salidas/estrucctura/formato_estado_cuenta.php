@@ -4,28 +4,31 @@ include "PHP/reportes/salidas/estrucctura/php_estado_cuenta/estado_php_cuentas.p
 
 <div class="cuerpo_pdf">
 
-<div class="encabezado ajuste_centro">
+<header class="encabezado ajuste_centro">
 <table>
     <tr>
+
 <td>
-<span><?php echo htmlspecialchars($ranco_factura); ?></span>
+<h4>VILLAS HOTEL PALMA REAL</h4>    
+<span>Correo: villa@grupopalmareal.com</span>
 <br>
-<span><?php echo htmlspecialchars($desde_hasta); ?></span>
+<span>Tel. 2407-0000</span>
+    
 </td>
 
 <td>
-<h4>PALMA REAL HOTEL Y VILLAS</h4>
-<span>ESTADO DE CUENTA</span><br>
+<h4>ESTADO DE CUENTA</h4>
+<span><?php echo htmlspecialchars($desde_hasta); ?></span>
 <span>CUOTA DE <?php echo htmlspecialchars($titulo_este); ?></span>
 </td>
 
 <td>
-<span>Fecha: <?php echo htmlspecialchars($fecha_estado_hoy);?></span>
+<img src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Imagenes/logo_principal.png" alt="Imagen">
 </td>
     </tr>
 </table>
 <div class="separador"></div>
-</div>
+</header>
 
 <div class="encabezado">
 <table class="tam_repo_tabla">
@@ -39,7 +42,7 @@ include "PHP/reportes/salidas/estrucctura/php_estado_cuenta/estado_php_cuentas.p
 </td>
 
 <td>
-<label>Saldo inicial: $. 0.00</label>
+<span>Fecha: <?php echo htmlspecialchars($fecha_estado_hoy);?></span>
 </td>
 
     </tr>
@@ -90,6 +93,9 @@ include "PHP/reportes/salidas/estrucctura/php_estado_cuenta/tabla_php_estados.ph
 
 
 
-
+<footer>
+<div class="separador"></div>
+<div class="page-number"></div>
+</footer>
 
 </div>

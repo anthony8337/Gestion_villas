@@ -876,7 +876,7 @@ flex-direction: column;
     text-align: center;
     width: 33%;
     padding: 0px;
-    height: 50px;
+    height: 25px;
 }
 
 .encabezado table td h4
@@ -1108,4 +1108,51 @@ max-width: 200px;
 #login_base_datos_form .c2 fieldset
 {
 margin-bottom: 20.5px;
+}
+
+header
+{
+    margin-top: 0px;
+    width: 100%;
+}
+
+footer
+{
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+}
+
+@page {
+
+    margin: 20mm;
+    font-size: 12px;
+}
+
+.page-number:before {
+    content: "Página " counter(page) " de {PAGE_COUNT}";
+}
+
+.cuerpo_recibo
+{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.cuerpo_recibo table td:nth-child(1)
+{
+    font-size: 12px;
+    width: 150px;
+    text-align: left;
+    padding: 0px;
+    height: 25px;
+}
+
+.cuerpo_recibo table td:nth-child(2)
+{
+    font-size: 12px;
+    text-align: left;
+    padding: 0px;
+    height: 25px;
+    font-weight: bold;
 }

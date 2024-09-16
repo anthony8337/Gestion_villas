@@ -2,9 +2,11 @@
 include "PHP/reportes/salidas/estrucctura/php_factura_multi/factura_php_multi.php";
 ?>
 
-<div class="cuerpo_pdf">
+<?php include "PHP/reportes/salidas/estrucctura/php_factura_multi/tabla_factura_multi.php";?>
 
-<div class="encabezado">
+<div class="cuerpo_pdf">
+ 
+<header class="encabezado">
 <table>
     <tr>
 <td>
@@ -26,7 +28,7 @@ include "PHP/reportes/salidas/estrucctura/php_factura_multi/factura_php_multi.ph
     </tr>
 </table>
 <div class="separador"></div>
-</div>
+</header>
 
 <div class="encabezado">
 <table class="tam_repo_tabla">
@@ -36,11 +38,9 @@ include "PHP/reportes/salidas/estrucctura/php_factura_multi/factura_php_multi.ph
 </td>
 
 <td>
-<label>RECIBÍ DE: <?php echo htmlspecialchars($pripietario_factura); ?></label>
 </td>
 
 <td>
-<label>VILLA: <?php echo htmlspecialchars($villa_factura); ?></label>
 </td>
 
 <td>
@@ -58,29 +58,57 @@ include "PHP/reportes/salidas/estrucctura/php_factura_multi/factura_php_multi.ph
 </table>
 </div>
 
-<div class="encabezado">
-<table class="tam_repo_tabla">
+<div class="encabezado cuerpo_recibo">
+<table >
 
 <tr>
-    <th>Descripción</th>
-    <th>Fecha aplicada</th>
-    <th>Fecha vencimiento</th>
-    <th>Abono</th>
+<td>
+<label>RECIBÍ DE: </label>
+</td>
 
+<td>
+<?php echo htmlspecialchars($pripietario_factura); ?>
+</td>
 </tr>
 
-<tbody>
-    <?php include "PHP/reportes/salidas/estrucctura/php_factura_multi/tabla_factura_multi.php";?>
-</tbody>
+<tr>
+<td>
+<label>CON VILLA: </label>
+</td>
+<td>
+<?php echo htmlspecialchars($villa_factura); ?>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>LA CANTIDAD DE: </label>
+</td>
+<td>
+<?php echo htmlspecialchars($cuerpo_suma_letra); ?>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>CON DESCRIPCIÓN DE: </label>
+</td>
+<td>
+<?php echo htmlspecialchars($descripcion_pago); ?>
+</td>
+</tr>
 
 </table>
-<div class="separador"></div>
 </div>
 
 <div class="encabezado">
 <table class="tam_repo_tabla">
 <tr>
-<th></th>
+<th>
+<span>
+<?php echo htmlspecialchars($cofir_pago); ?>
+</span>
+</th>
 <th></th>
 <th></th>
 <th>Abono Total: $. <?php echo htmlspecialchars($cuerpo_suma_multi); ?></th>
@@ -103,6 +131,9 @@ include "PHP/reportes/salidas/estrucctura/php_factura_multi/factura_php_multi.ph
 </div>
 
 
-
+<footer>
+<div class="separador"></div>
+<div class="page-number"></div>
+</footer>
 
 </div>

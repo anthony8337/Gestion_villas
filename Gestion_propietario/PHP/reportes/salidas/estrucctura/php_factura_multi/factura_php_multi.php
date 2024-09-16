@@ -5,6 +5,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pripietario_factura = $_POST['txt_mn'];
     $villa_factura = $_POST['codigo_villa_multi'];
     $fecha_factura = $_POST['txt_fecha_m'];
+    $hd_grupo = $_POST['hd_grupo'];
+    $total_multi = $_POST['total_multi'];
+    $devo_multi = $_POST['devo_multi'];
+
+   
     
 }else
 {
@@ -12,7 +17,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pripietario_factura = "";
     $villa_factura = "";
     $fecha_factura = "";
+    $hd_grupo = "";
+    $total_multi = "";
+    $devo_multi = "";
 }
+
+
+$valor_sobrante = floatval(str_replace('$. ', '', $devo_multi));
+
+if($devo_multi < 0)
+{
+    $cofir_pago = "Pago parcial realizado";
+}
+else
+{
+    $cofir_pago = "Pago completo realizdo";
+}
+
+
+
+
+
 
 $servername ="localhost"; 
 $username = "root";

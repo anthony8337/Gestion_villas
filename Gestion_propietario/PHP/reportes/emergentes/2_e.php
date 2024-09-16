@@ -6,7 +6,7 @@
 
 <div class="c1">
 
-<h2>Reporte de saldos</h2>
+<h2>Reporte de saldos actual</h2>
 <button onclick="cerrar_ingreso_lp()" type="button">X</button>
 
 </div>
@@ -28,7 +28,7 @@
     </fieldset>
 
     <fieldset>
-        <legend>Fecha del saldo</legend>
+        <legend>Fecha del ultimo saldo</legend>
         <input type="date" name="fecha_saldo_actual" id="fecha_saldo_actual" oninput="actualizar_tabla_saldos()">
     </fieldset>
 
@@ -113,7 +113,8 @@ if (a)
 <script>
     function abrirNuevaPagina_saldo() {
     // IDs de los inputs que quieres enviar
-    var inputIDs = ['fecha_saldo','concep_saldo','hasta_repo_saldo','desde_repo_saldo','fecha_saldo_actual'];
+    var inputIDs = ['fecha_saldo','concep_saldo','hasta_repo_saldo',
+    'desde_repo_saldo','fecha_saldo_actual','concep_metodo'];
     
     // Crea un formulario
     var form = document.createElement("form");

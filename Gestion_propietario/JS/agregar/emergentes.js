@@ -295,6 +295,7 @@ function datos_a_multipago()
     document.getElementById("txt_mn").value = propi;
     document.getElementById("txt_tl").value = telefono;
     document.getElementById("sp_codigo_multi").textContent = villa;
+    document.getElementById("codigo_villa_multi").value = villa;
     
 
 }

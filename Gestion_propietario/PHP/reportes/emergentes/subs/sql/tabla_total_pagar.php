@@ -37,7 +37,12 @@ FROM
 WHERE 
     cuenta_vista.desde BETWEEN '2024-01-01' AND '$fecha_saldo_actual' AND
     cuenta_vista.concepto = '$concep_saldo' AND 
-    cuenta_vista.villa BETWEEN '$desde_repo_saldo' AND '$hasta_repo_saldo'
+       (
+        SUBSTRING_INDEX(cuenta_vista.villa, '-', 1) = SUBSTRING_INDEX('$desde_repo_saldo', '-', 1)
+        AND CAST(SUBSTRING_INDEX(cuenta_vista.villa, '-', -1) AS UNSIGNED) BETWEEN 
+            CAST(SUBSTRING_INDEX('$desde_repo_saldo', '-', -1) AS UNSIGNED)
+            AND CAST(SUBSTRING_INDEX('$hasta_repo_saldo', '-', -1) AS UNSIGNED)
+    )
 GROUP BY 
     cuenta_vista.concepto,
     cuenta_vista.villa,
@@ -58,7 +63,13 @@ FROM
     cuenta_vista
 WHERE 
     cuenta_vista.desde BETWEEN '2024-01-01' AND '$fecha_saldo_actual' AND 
-    cuenta_vista.villa BETWEEN '$desde_repo_saldo' AND '$hasta_repo_saldo'
+    
+        (
+        SUBSTRING_INDEX(cuenta_vista.villa, '-', 1) = SUBSTRING_INDEX('$desde_repo_saldo', '-', 1)
+        AND CAST(SUBSTRING_INDEX(cuenta_vista.villa, '-', -1) AS UNSIGNED) BETWEEN 
+            CAST(SUBSTRING_INDEX('$desde_repo_saldo', '-', -1) AS UNSIGNED)
+            AND CAST(SUBSTRING_INDEX('$hasta_repo_saldo', '-', -1) AS UNSIGNED)
+    )
 GROUP BY 
     cuenta_vista.villa,
     cuenta_vista.nombre

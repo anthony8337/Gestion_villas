@@ -53,13 +53,13 @@ if($result1->num_rows > 0) {
 
 if($elegir_abono == "Monto")
 {
-    $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2) VALUES
- ('$id_pro','$id_concepto_abono','$costo','0','$desde','$hasta','No pagado','$cod','$id_con')";
+    $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado) VALUES
+ ('$id_pro','$id_concepto_abono','$costo','0','$desde','$hasta','No pagado','$cod','$id_con','falta')";
 }
 else if($elegir_abono == "Abonar")
 {
-    $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2)  VALUES
- ('$id_pro','$id_concepto_abono','0','$abono','$desde','$hasta','No pagado','$cod','$id_con')";
+    $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
+ ('$id_pro','$id_concepto_abono','0','$abono','$desde','$hasta','No pagado','$cod','$id_con','falta')";
 }
 
 if($selec_can == "Unico")
@@ -70,8 +70,12 @@ else if($selec_can == "Rango")
 {
 
 $sql_rango = "SELECT * 
-FROM propietario_principal 
-WHERE villa BETWEEN '$desde_propi' AND '$hasta_propi'
+FROM propietario_principal
+WHERE 
+    SUBSTRING_INDEX(villa, '-', 1) = SUBSTRING_INDEX('$desde_propi', '-', 1)
+    AND CAST(SUBSTRING_INDEX(villa, '-', -1) AS UNSIGNED) BETWEEN 
+        CAST(SUBSTRING_INDEX('$desde_propi', '-', -1) AS UNSIGNED)
+        AND CAST(SUBSTRING_INDEX('$hasta_propi', '-', -1) AS UNSIGNED)
 ORDER BY 
     SUBSTRING_INDEX(villa, '-', 1),
     CAST(SUBSTRING_INDEX(villa, '-', -1) AS UNSIGNED);
@@ -89,13 +93,13 @@ if($result_rango->num_rows > 0)
         
         if($elegir_abono == "Monto")
         {
-            $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2) VALUES
-         ('$id_unir','$id_concepto_abono','$costo','0','$desde','$hasta','No pagado','$cod','$id_con')";
+            $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado) VALUES
+         ('$id_unir','$id_concepto_abono','$costo','0','$desde','$hasta','No pagado','$cod','$id_con','falta')";
         }
         else if($elegir_abono == "Abonar")
         {
-            $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2)  VALUES
-         ('$id_unir','$id_concepto_abono','0','$abono','$desde','$hasta','No pagado','$cod','$id_con')";
+            $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
+         ('$id_unir','$id_concepto_abono','0','$abono','$desde','$hasta','No pagado','$cod','$id_con','falta')";
         }      
         $result = $conn->query($sql);
 

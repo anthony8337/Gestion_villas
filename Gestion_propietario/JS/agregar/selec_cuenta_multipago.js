@@ -18,6 +18,9 @@ function llamado_cuenta()
         document.getElementById("total_multi").value ="$. " + solo_numero;
 
         document.getElementById("txt_ct").value = "$. " + solo_numero;
+
+        document.getElementById("hd_grupo").value ="";
+
         
         costo_con_multi();
 

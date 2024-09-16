@@ -93,7 +93,7 @@ $abono_real = $abono_s + $cantidad_pago;
 if($para_cargo <= 0)
 {
         $total_cargo = 0;
-        $sql2 = "UPDATE cuentas SET pagado='Pagado',abono='$abono_real', costo='$total_cargo' WHERE id_cuenta ='$id_cuenta';";
+        $sql2 = "UPDATE cuentas SET pagado='Pagado',abono='$abono_real', costo='$total_cargo', con_pagado='completo' WHERE id_cuenta ='$id_cuenta';";
 }
 else if($para_cargo != 0)
 {
@@ -118,6 +118,8 @@ if ($result == true && $result2 == true) {
                 codigo_multi_acutalizar();
                 cerrar_crear_multipago();
                 </script>";  
+
+
         }
         else
         {
@@ -137,8 +139,12 @@ else
         echo"<script>window.alert('Ha ocurrido un error');
         </script>";
 }
-
-
-
-
 ?>
+
+
+<script>
+        function pago_ajustado(a) 
+        {
+              
+        }
+</script>

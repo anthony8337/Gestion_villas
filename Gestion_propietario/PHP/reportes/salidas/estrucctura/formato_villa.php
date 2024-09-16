@@ -4,25 +4,32 @@ include "PHP/reportes/salidas/estrucctura/php_villas/estado_php_cuentas.php";
 
 <div class="cuerpo_pdf">
 
-<div class="encabezado ajuste_centro">
+<header class="encabezado ajuste_centro">
+    
 <table>
     <tr>
 
-<td>
-<h4>PALMA REAL HOTEL Y VILLAS</h4>
+    <td>
+<h4>VILLAS HOTEL PALMA REAL</h4>    
+<span>Correo: villa@grupopalmareal.com</span>
+<br>
+<span>Tel. 2407-0000</span>
+    
 </td>
 
 <td>
 <h4>LISTA DE VILLAS</h4>
 </td>
 
+
 <td>
-<span>Fecha: <?php echo htmlspecialchars($dt_villas);?></span>
+<img src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Imagenes/logo_principal.png" alt="Imagen">
 </td>
+
     </tr>
 </table>
 <div class="separador"></div>
-</div>
+</header>
 
 <div class="encabezado">
 <table class="tam_repo_tabla">
@@ -38,6 +45,10 @@ include "PHP/reportes/salidas/estrucctura/php_villas/estado_php_cuentas.php";
 
 <td>
 <label>Modelo: <?php echo htmlspecialchars($modelo_villa);?></label>
+</td>
+
+<td>
+<span>Fecha: <?php echo htmlspecialchars($dt_villas);?></span>
 </td>
 
 
@@ -69,5 +80,10 @@ include "PHP/reportes/salidas/estrucctura/php_villas/tabla_php_estados.php";
 </table>
 <div class="separador"></div>
 </div>
+
+<footer>
+<div class="separador"></div>
+<div class="page-number"></div>
+</footer>
 
 </div>

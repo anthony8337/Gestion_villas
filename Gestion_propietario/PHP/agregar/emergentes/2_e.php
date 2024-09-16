@@ -36,6 +36,7 @@
         <input type="hidden" name="hd_id_cuenta" id="hd_id_cuenta">
         <input type="hidden" name="hd_id_concepto" id="hd_id_concepto">
         <input type="hidden" name="hd_concepto_pago" id="hd_concepto_pago">
+        <input type="hidden" name="hd_grupo" id="hd_grupo">
         
 
         <?php
@@ -132,6 +133,7 @@
 <script>
 
 $(document).ready(function(){
+    
     $('#formulario_datos_multi').submit(function(e){
         e.preventDefault();
 
@@ -140,6 +142,10 @@ $(document).ready(function(){
        var a3 = document.getElementById("hd_id_cuenta" ).value;
        var a4 = document.getElementById("hd_id_concepto" ).value;
        var a5 = document.getElementById("hd_concepto_pago" ).value;
+       var a6 = document.getElementById("hd_grupo" ).value;
+
+       if(a6 == "")
+       {
 
        if( a1 == "" || a2 == "" || a3 == "" || a4 == "" || a5 == "")
        {
@@ -147,7 +153,12 @@ $(document).ready(function(){
        }
        else
        {
-        
+
+        var a = confirm("¿Esta seguro de continuar el pago?");
+
+        if (a) 
+        {
+
         var id_cuenta = document.getElementById('hd_id_cuenta').value;
 
     if(id_cuenta != "")
@@ -193,6 +204,69 @@ $(document).ready(function(){
     
     }
        }
+
+
+    }
+}
+    else
+    {
+        var a = confirm("¿Esta seguro de continuar el pago?");
+
+        if (a) {
+            
+        
+
+        
+        
+        var id_cuenta = document.getElementById('hd_id_cuenta').value;
+
+    if(id_cuenta != "")
+    {
+
+    var form =$('#formulario_datos_multi').serialize();
+    $.ajax({
+    type: 'POST',
+    url : 'PHP/agregar/emergentes/subs/accion_generar/insertar_multipago.php',
+    data: form,
+    success: function(response){
+        $('#respuesta_multi').html(response);
+    }
+
+});
+
+
+    }
+    else
+    {
+        let table = $('#multi_tabla_cuentas');
+        let data = [];
+
+        table.find('tbody tr').each(function() {
+            let firstCellText = $(this).find('td').eq(0).text().trim(); // Trim elimina espacios en blanco
+            if (firstCellText) { // Solo agrega si no está vacío
+                data.push(firstCellText);
+            }
+        });
+
+        // Añadir los datos de la tabla al formulario
+        let formData = $(this).serializeArray();
+        formData.push({ name: 'tabla_cuenta_multi', value: JSON.stringify(data) });
+    
+    $.ajax({
+        type: 'POST',
+        url : 'PHP/agregar/emergentes/subs/accion_generar/insertar_multipago_grupo.php',
+        data: $.param(formData),
+        success: function(response){
+            $('#respuesta_multi').html(response);
+        }
+    });
+    
+    }
+       
+
+    }
+}
+
     });
 });
 
@@ -202,7 +276,7 @@ $(document).ready(function(){
     function abrirNuevaPagina_miltipago() {
     
     // IDs de los inputs que quieres enviar
-    var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m'];
+    var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m','hd_grupo','total_multi','devo_multi'];
     
     // Crea un formulario
     var form = document.createElement("form");

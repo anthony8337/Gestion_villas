@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-            $sql2= "UPDATE cuentas SET pagado='Pagado', costo='0' WHERE id_cuenta ='" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "';";
+            $sql2= "UPDATE cuentas SET con_pagado='completo', pagado='Pagado', costo='0' WHERE id_cuenta ='" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "';";
             $result2 = $conn->query($sql2);
 
         }
@@ -80,8 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo"
         <script>
         window.alert('Cuentas registradas con éxito');
+        abrirNuevaPagina_miltipago();
         recargar_tabla_multi();
         codigo_multi_acutalizar();
+        cerrar_crear_multipago();
         </script>
         ";
 

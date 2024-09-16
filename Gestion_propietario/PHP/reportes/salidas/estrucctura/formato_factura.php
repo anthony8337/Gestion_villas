@@ -4,7 +4,7 @@ include "PHP/reportes/salidas/estrucctura/php_reportes/factura_php.php";
 
 <div class="cuerpo_pdf">
 
-<div class="encabezado">
+<header class="encabezado">
 <table>
     <tr>
 <td>
@@ -17,7 +17,7 @@ include "PHP/reportes/salidas/estrucctura/php_reportes/factura_php.php";
 </td>
 
 <td>
-<h4>RECIBO</h4>
+<h4>RECIBO REIMPRESO</h4>
 </td>
 
 <td>
@@ -26,7 +26,7 @@ include "PHP/reportes/salidas/estrucctura/php_reportes/factura_php.php";
     </tr>
 </table>
 <div class="separador"></div>
-</div>
+</header>
 
 <div class="encabezado">
 <table class="tam_repo_tabla">
@@ -104,6 +104,9 @@ include "PHP/reportes/salidas/estrucctura/php_reportes/factura_php.php";
 </div>
 
 
-
+<footer>
+<div class="separador"></div>
+<div class="page-number"></div>
+</footer>
 
 </div>

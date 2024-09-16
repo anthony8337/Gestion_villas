@@ -27,7 +27,7 @@ if($todo_cuota == "Historial completo")
 $titulo_este = "TODOS LOS CONCEPTOS";
 }else
 {
-$titulo_este = $ranco_factura;
+$titulo_este = $rango_cuota;
 }
 
 if($ranco_factura == "Historial completo")

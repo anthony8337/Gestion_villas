@@ -16,17 +16,27 @@ else
 
 
 
-if($ranco_factura == "Historial completo")
+if($ranco_factura == "Historial completo" && $todo_cuota == "Historial completo")
+{
+    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_sc'";
+    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM cuenta_vista WHERE id_unir = '$id_pro_sc'; ";
+}
+else if($ranco_factura == "Historial completo" && $todo_cuota != "Historial completo")
 {
     $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota';";
     $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM cuenta_vista WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota'; ";
 }
-else
+else if($ranco_factura != "Historial completo" && $todo_cuota == "Historial completo")
+{
+    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_sc' and desde BETWEEN '$desde' AND '$hasta'; ";
+    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM cuenta_vista 
+    WHERE id_unir = '$id_pro_sc' and desde BETWEEN '$desde' AND '$hasta';";
+}
+else if($ranco_factura != "Historial completo" && $todo_cuota != "Historial completo")
 {
     $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and desde BETWEEN '$desde' AND '$hasta'; ";
     $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM cuenta_vista 
     WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and desde BETWEEN '$desde' AND '$hasta';";
-
 }
 $result = $conn->query($sql);
 
