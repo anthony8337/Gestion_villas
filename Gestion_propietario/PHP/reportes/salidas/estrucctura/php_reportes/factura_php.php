@@ -7,6 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fecha_factura = $_POST['txt_fecha_pago_reim'];
     $txt_tipa_reim = $_POST['txt_tipa_reim'];
     $txt_for_reim = $_POST['txt_for_reim'];
+    $hh_contar_cuentas = $_POST['hh_contar_cuentas'];
+    $txt_total_abono = $_POST['txt_total_abono'];
     
 }else
 {
@@ -16,7 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fecha_factura = "";
     $txt_tipa_reim = "";
     $txt_for_reim = "";
+    $hh_contar_cuentas = "";
+    $txt_total_abono = "";
 }
+
+
+
 
 
 $servername ="localhost"; 
@@ -46,3 +53,4 @@ if($result -> num_rows > 0)
     }
 }
 ?>
+

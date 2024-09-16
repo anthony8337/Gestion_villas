@@ -31,7 +31,7 @@ if($devo_multi < 0)
 }
 else
 {
-    $cofir_pago = "Pago completo realizdo";
+    $cofir_pago = "Pago completo realizado";
 }
 
 

@@ -26,7 +26,11 @@ $result = $conn->query($sql);
 if($result -> num_rows > 0)
 {
 
+    $i = 0;
     while ($row = $result->fetch_assoc()) {
+
+        $i +=1;
+        
         echo"
         <tr>
         <td>",$row["id_unir"],"</td>
@@ -36,9 +40,16 @@ if($result -> num_rows > 0)
         <td>",$row["desde"],"</td>
         <td>",$row["hasta"],"</td>
         <td>$. ",$row["abono"],"</td>
-        </tr>";
+        </tr>
+        <script>
+        document.getElementById('hh_contar_cuentas').value = '$i';
+        </script>
+        ";
     }
+
 }
 ?>
+
+
 
 <script>suma_abonos();</script>

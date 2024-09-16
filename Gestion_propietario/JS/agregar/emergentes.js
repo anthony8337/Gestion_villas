@@ -250,6 +250,7 @@ function cerrar_confir_cuentas()
 function propi_reim()
 {
     document.getElementById('reim_propietario').style.display = "flex"; 
+    actualizar_propietarios_multipago();
 }
 
 function cerra_propi_reim()

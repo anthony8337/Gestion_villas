@@ -2,6 +2,10 @@
 include "PHP/reportes/salidas/estrucctura/php_reportes/factura_php.php";
 ?>
 
+<?php 
+include "PHP/reportes/salidas/estrucctura/php_reportes/tabla_factura.php";
+?>
+
 <div class="cuerpo_pdf">
 
 <header class="encabezado">
@@ -36,11 +40,9 @@ include "PHP/reportes/salidas/estrucctura/php_reportes/factura_php.php";
 </td>
 
 <td>
-<label>RECIBÍ DE: <?php echo htmlspecialchars($nombre_factura); ?></label>
 </td>
 
 <td>
-<label>VILLA: <?php echo htmlspecialchars($cod_villa_factura); ?></label>
 </td>
 
 <td>
@@ -58,34 +60,49 @@ include "PHP/reportes/salidas/estrucctura/php_reportes/factura_php.php";
 </table>
 </div>
 
-<div class="encabezado">
-<table class="tam_repo_tabla">
+<div class="encabezado cuerpo_recibo">
+<table>
 
 <tr>
-<th>Descripción</th>
-    <th>Fecha aplicada</th>
-    <th>Fecha vencimiento</th>
-    <th>Abono</th>
-
+<td>
+<label>RECIBÍ DE: </label>
+</td>
+<td>
+<?php echo htmlspecialchars($nombre_factura); ?>
+</td>
 </tr>
 
-<tbody>
-    <?php 
-    include "PHP/reportes/salidas/estrucctura/php_reportes/tabla_factura.php";
-    ?>
-</tbody>
+<tr>
+<td>
+<label>CON VILLA: </label>
+</td>
+<td><?php echo htmlspecialchars($cod_villa_factura); ?></td>
+</tr>
+
+<tr>
+<td>
+<label>LA CANTIDAD DE: </label>
+</td>
+<td><?php echo htmlspecialchars($nuemro_letra); ?></td>
+</tr>
+
+<tr>
+<td>
+<label>CON DESCRIPCIÓN DE: </label>
+</td>
+<td><?php echo htmlspecialchars($cofir_pago); ?></td>
+</tr>
 
 </table>
-<div class="separador"></div>
 </div>
 
 <div class="encabezado">
 <table class="tam_repo_tabla">
 <tr>
+<th><?php echo htmlspecialchars($completado); ?></th>
 <th></th>
 <th></th>
-<th>Abono Total:</th>
-<th><?php echo "$. ".htmlspecialchars($cuerpo_suma); ?></th>
+<th>Abono Total: <?php echo "$. ".htmlspecialchars($cuerpo_suma); ?></th>
 </tr>
 
 

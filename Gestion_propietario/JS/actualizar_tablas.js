@@ -58,7 +58,7 @@ function actualizar_propietarios_cuenta()
     });   
 }
 
-function actualizar_propietarios_multipago() 
+function actualizar_propietarios_multipago()  
 {
     $.ajax({
         type: 'GET',

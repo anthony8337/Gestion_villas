@@ -70,10 +70,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $conn->query($sql);
     }
 
+            $sql_tomar = "SELECT * FROM cuentas WHERE id_cuenta ='" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "'";
+            $result_tomar = $conn->query($sql_tomar);
+            if($result_tomar -> num_rows > 0)
+            {
+                $row = $result_tomar->fetch_assoc();
 
-
-            $sql2= "UPDATE cuentas SET con_pagado='completo', pagado='Pagado', costo='0' WHERE id_cuenta ='" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "';";
+            $sql2= "UPDATE cuentas SET con_pagado='completo', pagado='Pagado',abono='".$row["costo"]."', costo='0' WHERE id_cuenta ='" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "';";
             $result2 = $conn->query($sql2);
+            }
 
         }
 

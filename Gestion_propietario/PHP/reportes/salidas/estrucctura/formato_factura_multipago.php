@@ -2,7 +2,9 @@
 include "PHP/reportes/salidas/estrucctura/php_factura_multi/factura_php_multi.php";
 ?>
 
-<?php include "PHP/reportes/salidas/estrucctura/php_factura_multi/tabla_factura_multi.php";?>
+<?php 
+include "PHP/reportes/salidas/estrucctura/php_factura_multi/tabla_factura_multi.php";
+?>
 
 <div class="cuerpo_pdf">
  

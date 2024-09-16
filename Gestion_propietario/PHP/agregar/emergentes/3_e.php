@@ -72,6 +72,9 @@
 </fieldset>
 
 <div class="c4">
+
+<input type="hidden" name="hh_contar_cuentas" id="hh_contar_cuentas">
+
 <div class="contenido_tabla">
     <table id="tb_cuentas_reim">
         <tr>
@@ -137,7 +140,8 @@
 
     function abrirNuevaPagina() {
     // IDs de los inputs que quieres enviar
-    var inputIDs = ['txt_cod_reim','txt_nombre_reim','txt_villa_reim','txt_fecha_pago_reim','txt_tipa_reim','txt_for_reim'];
+    var inputIDs = ['txt_cod_reim','txt_nombre_reim','txt_villa_reim','txt_fecha_pago_reim',
+    'txt_tipa_reim','txt_for_reim','hh_contar_cuentas','txt_total_abono'];
     
     // Crea un formulario
     var form = document.createElement("form");
