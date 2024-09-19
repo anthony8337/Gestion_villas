@@ -27,6 +27,20 @@ $txt_apellido = $_POST[$nombre_id[7]];
 
 $valor;
 
+
+$sql_existe = "SELECT * FROM usuarios WHERE 
+(telefono = '$txt_tele' OR correo = '$txt_correo' OR usuario = '$txt_usuario' OR dni = '$txt_dni')";
+$result_existe = $conn->query($sql_existe);
+
+if ($result_existe -> num_rows > 0) {
+    echo"
+    <script>
+    window.alert('Ya existe un usuario con los mismos datos');
+    </script>
+    ";
+}else{
+
+
 $sql = "SELECT * FROM permisos WHERE acceso = '$txt_tipo'; ";
 $result = $conn->query($sql);
 
@@ -98,6 +112,7 @@ if($result == true)
 {
     echo"<script>window.alert('Usuario registrado con éxito');
     cerrar_usuario_in();
+    limpiar_confirmar();
     buscar_estado();
     </script>";
 }
@@ -106,4 +121,6 @@ else
     echo"No se encuentran datos";
 }
 
+}
 ?>
+

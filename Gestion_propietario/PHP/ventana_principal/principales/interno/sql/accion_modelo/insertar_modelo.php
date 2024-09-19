@@ -18,6 +18,17 @@ $nombre_id =['txt_modelo_villa','id_modelo_villa'];
 
 $txt_modelo = $_POST[$nombre_id[0]];
 
+$sql_existe = "SELECT * FROM modelo_villa WHERE modelo='$txt_modelo' AND id_estado = '1';";
+$result_existe = $conn->query($sql_existe);
+
+if ($result_existe -> num_rows > 0) {
+    echo"
+    <script>
+    window.alert('Ya existe un usuario con los mismos datos');
+    </script>
+    ";
+}else{
+
 
 $sql = "INSERT INTO modelo_villa(modelo, id_estado) VALUES 
 ('$txt_modelo','1')";
@@ -34,6 +45,7 @@ if($result == true)
 else
 {
     echo"No se encuentran datos";
+}
 }
 
 ?>

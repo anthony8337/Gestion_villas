@@ -1,7 +1,7 @@
 
 <div id="adicionar_villas" class="mod">
 
-<div class="centro ventanas_grandes">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 <h2 >Adicionar villa a propietario</h2>
@@ -18,6 +18,11 @@
         <fieldset>
         <legend style="visibility: hidden;">Seleccionar</legend>
         <button type='button' onclick='abrir_pro_adicionar()'>Seleccionar propietario</button>
+        </fieldset>
+
+        <fieldset>
+        <legend style="visibility: hidden;">Teléfono</legend>
+        <button type="button" onclick="abrir_pro_adicionar_tabla()">Agregar una villa</button>
         </fieldset>
 
         <fieldset>
@@ -40,10 +45,7 @@
         <input type='text' id = 'txttelefono_adi' name = 'txttelefono_adi' placeholder='Teléfono' title='Teléfono' readonly required>
         </fieldset>
 
-        <fieldset>
-        <legend style="visibility: hidden;">Teléfono</legend>
-        <button type="button" onclick="abrir_pro_adicionar_tabla()">Agregar una villa</button>
-        </fieldset>
+
 
 </div>
 

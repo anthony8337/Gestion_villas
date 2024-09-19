@@ -619,6 +619,7 @@ margin: 10px;
     justify-content: space-around;
     flex-wrap: wrap;
     position: fixed;
+    overflow: auto;
     width: calc(100% - 16px);
     height: calc(100% - 180px);
 
@@ -819,6 +820,7 @@ display: none;
     display: flex;
     align-items: center;
     justify-content: end;
+    
 }
 
 .columna_reimprime div
@@ -891,6 +893,24 @@ min-height: 250px;
     }
 }
 
+@media screen and (max-width: 700px) 
+{
+    #div_reimprime .ventanas_medianas
+    {
+        height: 95%;
+    }
+
+    #div_reimprime .boton_fieldset_reimprime fieldset
+    {
+        flex: 1 1 200px;
+        max-width: 100%;
+    }
+
+    
+}
+
+
+
 
 /*-----------------*/
 
@@ -900,6 +920,60 @@ min-height: 250px;
     width: 1200px;
     min-height: 350px;
 }
+
+/*Ventanas usuarios grande*/
+
+/*General*/
+
+@media screen and (max-height: 400px) 
+{
+    .ventanas_grandes
+    {
+        height: 95%;
+    }
+}
+
+@media screen and (max-width: 1200px) 
+{
+    .ventanas_grandes
+    {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 600px) 
+{
+    #cambio_villa .ventanas_grandes
+    {
+        height: 95%;
+    }
+}
+
+@media screen and (max-width: 600px) 
+{
+    #div_cuenta .ventanas_grandes
+    {
+        height: 95%;
+    }
+
+}
+
+@media screen and (max-width: 750px) 
+{
+    #lis_pro_sal .ventanas_grandes
+    {
+        height: 95%;
+    }
+
+    #lis_pro .ventanas_grandes
+    {
+        height: 95%;
+    }
+
+}
+
+
+/*-----------------*/
 
 
 

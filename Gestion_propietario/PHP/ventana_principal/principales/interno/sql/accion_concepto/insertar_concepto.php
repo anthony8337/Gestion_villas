@@ -19,6 +19,17 @@ $nombre_id =['txt_concepto','txt_valor_concepto'];
 $txt_nombre = $_POST[$nombre_id[0]];
 $txt_valor = $_POST[$nombre_id[1]];
 
+$sql_existe = "SELECT * FROM concepto WHERE concepto='$txt_nombre' AND id_estado = '1';";
+$result_existe = $conn->query($sql_existe);
+
+if ($result_existe -> num_rows > 0) {
+    echo"
+    <script>
+    window.alert('Ya existe un usuario con los mismos datos');
+    </script>
+    ";
+}else{
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -57,5 +68,5 @@ else
 {
     echo"No se encuentran datos";
 }
-
+}
 ?>
