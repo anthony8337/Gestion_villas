@@ -16,7 +16,7 @@ if ($concep_metodo == "Concepto completo")
 {
     $concep_saldo = $_POST["concep_saldo"];
 }
-
+$nombre_usuario = $_POST['nombre_usuario'];
 
 }else
 {
@@ -26,6 +26,7 @@ $hasta_repo_saldo = "";
 $desde_repo_saldo = "";
 $fecha_saldo_actual = "";
 $concep_metodo = "";
+$nombre_usuario = "";
 }
 
 

@@ -139,9 +139,10 @@
     }
 
     function abrirNuevaPagina() {
+        nombrar_usuario();
     // IDs de los inputs que quieres enviar
     var inputIDs = ['txt_cod_reim','txt_nombre_reim','txt_villa_reim','txt_fecha_pago_reim',
-    'txt_tipa_reim','txt_for_reim','hh_contar_cuentas','txt_total_abono'];
+    'txt_tipa_reim','txt_for_reim','hh_contar_cuentas','txt_total_abono','nombre_usuario'];
     
     // Crea un formulario
     var form = document.createElement("form");

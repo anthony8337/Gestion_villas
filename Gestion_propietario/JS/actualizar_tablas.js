@@ -249,6 +249,20 @@ function actualizar_selectores_villa()
     });
 }
 
+function actualizar_selectores_villa_reporte()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/agregar/emergentes/subs/accion_generar/desde_pro_reporte.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#desde_reportes_villas').html(response);
+            $('#hasta_reportes_villas').html(response);
+        }
+    });
+    
+}
+
 function ultimo_select() {
     var select1 = document.getElementById('hasta_repo_saldo');
     select1.value = select1.options[select1.options.length - 1].value;

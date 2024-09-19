@@ -30,6 +30,31 @@ if (isset($_POST["tex_selec2"])) {
 }
 
 
+$sql_grupo = "SELECT * FROM grupo_villa WHERE grupo = '$tex_selec2'";
+$result_grupo = $conn->query($sql_grupo);
+
+if ($result_grupo->num_rows > 0)
+{
+    $row = $result_grupo->fetch_assoc();
+
+    $id_grupo = $row["id_grupo"];
+}
+
+$sql_exite = "SELECT * FROM villas WHERE id_grupo = '$id_grupo' AND numero = '$txt_cod_villa' OR cont_eeh ='$txt_eeh_villa'; ";
+$result_existe = $conn->query($sql_exite);
+
+if ($result_existe -> num_rows > 0) 
+{
+    echo
+    "
+    <script>
+    window.alert('Ya exite un registro con estos valores.');
+    </script>
+    ";
+}
+else
+{
+
 $sql1 = "SELECT * FROM grupo_villa WHERE grupo = '$tex_selec2'";
 $result1 = $conn->query($sql1);
 
@@ -83,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     limpiar_confirmar();
     </script>";
 }
-
+}
 
 
 

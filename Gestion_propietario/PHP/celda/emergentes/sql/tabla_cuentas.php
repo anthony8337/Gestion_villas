@@ -27,34 +27,34 @@ if($result -> num_rows > 0)
     <table id='tabla_cuentas_creadas'>
     <tr>
     <th></th>
-    <th>Fecha aplicada</th>
+    <th class = 'oculto' >Fecha aplicada</th>
       <th>Código de cuenta</th>
       <th>Concepto</th>
       <th>Descripción</th>
       <th>fecha aplicada</th>
       <th>fecha vencimiento</th>
-      <th>Cargo</th>
+      <th>Costo</th>
       <th>Abono</th>
-      <th>Total</th>
+      <th>Pendiente</th>
       
    </tr>";
 
     while ($row = $result->fetch_assoc()) {
 
-        $total = $row["costo"] - $row["abono"];
+        $total = $row["costo"] + $row["abono"];
 
         echo"
         <tr class='fila_tabla' title='Click para ver detalles o modificar.'>
         <td>",$row["id_cuenta"],"</td>
-        <td>",$row["desde"],"</td>
+        <td class = 'oculto'>",$row["desde"],"</td>
         <td>",$row["codigo"],"</td>
         <td>",$row["concepto"],"</td>
         <td>",$row["concepto_2"],"</td>
         <td>",$row["desde"],"</td>
         <td>",$row["hasta"],"</td>
-        <td>$. ",number_format($row["costo"],2),"</td>
-        <td>$. ",number_format($row["abono"],2),"</td>
         <td>$. ",number_format($total,2),"</td>
+        <td>$. ",number_format($row["abono"],2),"</td>
+        <td>$. ",number_format($row["costo"],2),"</td>
         <td class = 'oculto'>",$row["id_concepto"],"</td>
         <td class = 'oculto'>",$row["con_descrip"],"</td>
         <td class = 'oculto'>",$row["id_unir"],"</td>

@@ -12,7 +12,7 @@ function tipo_pago()
 }else if (tipo_p == "Referencia") {
     document.getElementById('fl_tipo_pago').style.display = 'block';
     document.getElementById('fl_n_referencia').style.display = 'block';
-    document.getElementById('fl_recibido').style.display = 'none';
+    document.getElementById('fl_recibido').style.display = 'block';
     document.getElementById('fl_devolver').style.display = 'none';
     act_referencia();
 }
@@ -29,7 +29,7 @@ function act_efectivo()
 
 function act_referencia() 
 {
-    document.getElementById('fl_mp_b1').style.display = 'none';
+    document.getElementById('fl_mp_b1').style.display = 'block';
     document.getElementById('fl_mp_b2').style.display = 'none';
     document.getElementById('fl_mp_a1').style.display = 'block';
     document.getElementById('fl_mp_a2').style.display = 'block';

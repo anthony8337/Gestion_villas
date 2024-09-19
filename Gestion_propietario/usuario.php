@@ -13,6 +13,17 @@ if(usuario == null)
     window.location.href = "index.php";
 }
 
+
+</script>
+
+<input type="hidden" name="nombre_usuario" id="nombre_usuario">
+
+
+<script>
+    function nombrar_usuario()
+    {
+        document.getElementById('nombre_usuario').value = sessionStorage.getItem("usuario");
+    }
 </script>
 
 

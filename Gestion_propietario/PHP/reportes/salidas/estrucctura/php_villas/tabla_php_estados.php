@@ -32,6 +32,20 @@ AND
      AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) <= CAST(SUBSTRING_INDEX('$hasta_reportes_villas', '-', -1) AS UNSIGNED)))
 ORDER BY SUBSTRING_INDEX(villas, '-', 1), 
 CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED);";
+
+$sql2 = "SELECT COUNT(*) AS cantidad_registro FROM villa_completo WHERE 
+(SUBSTRING_INDEX(villas, '-', 1) > SUBSTRING_INDEX('$desde_reportes_villas', '-', 1) 
+ OR (SUBSTRING_INDEX(villas, '-', 1) = SUBSTRING_INDEX('$desde_reportes_villas', '-', 1)
+     AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) >= CAST(SUBSTRING_INDEX('$desde_reportes_villas', '-', -1) AS UNSIGNED)))
+AND 
+(SUBSTRING_INDEX(villas, '-', 1) < SUBSTRING_INDEX('$hasta_reportes_villas', '-', 1) 
+ OR (SUBSTRING_INDEX(villas, '-', 1) = SUBSTRING_INDEX('$hasta_reportes_villas', '-', 1)
+     AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) <= CAST(SUBSTRING_INDEX('$hasta_reportes_villas', '-', -1) AS UNSIGNED)))
+ORDER BY SUBSTRING_INDEX(villas, '-', 1), 
+CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED);";
+
+
+
 }else if($estado_villa != "Todo" && $modelo_villa != "Todo"){
     $sql = "SELECT * FROM villa_completo WHERE modelo = '$modelo_villa' AND modelo = '$modelo_villa' AND estado = '$estado_villa' AND
 (SUBSTRING_INDEX(villas, '-', 1) > SUBSTRING_INDEX('$desde_reportes_villas', '-', 1) 
@@ -43,6 +57,18 @@ AND
      AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) <= CAST(SUBSTRING_INDEX('$hasta_reportes_villas', '-', -1) AS UNSIGNED)))
 ORDER BY SUBSTRING_INDEX(villas, '-', 1), 
 CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED);";
+
+$sql2 = "SELECT COUNT(*) AS cantidad_registro FROM villa_completo WHERE modelo = '$modelo_villa' AND modelo = '$modelo_villa' AND estado = '$estado_villa' AND
+(SUBSTRING_INDEX(villas, '-', 1) > SUBSTRING_INDEX('$desde_reportes_villas', '-', 1) 
+ OR (SUBSTRING_INDEX(villas, '-', 1) = SUBSTRING_INDEX('$desde_reportes_villas', '-', 1)
+     AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) >= CAST(SUBSTRING_INDEX('$desde_reportes_villas', '-', -1) AS UNSIGNED)))
+AND 
+(SUBSTRING_INDEX(villas, '-', 1) < SUBSTRING_INDEX('$hasta_reportes_villas', '-', 1) 
+ OR (SUBSTRING_INDEX(villas, '-', 1) = SUBSTRING_INDEX('$hasta_reportes_villas', '-', 1)
+     AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) <= CAST(SUBSTRING_INDEX('$hasta_reportes_villas', '-', -1) AS UNSIGNED)))
+ORDER BY SUBSTRING_INDEX(villas, '-', 1), 
+CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED);";
+
 }else if($estado_villa == "Todo" && $modelo_villa != "Todo"){
     $sql = "SELECT * FROM villa_completo WHERE modelo = '$modelo_villa' AND
 (SUBSTRING_INDEX(villas, '-', 1) > SUBSTRING_INDEX('$desde_reportes_villas', '-', 1) 
@@ -54,7 +80,21 @@ AND
      AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) <= CAST(SUBSTRING_INDEX('$hasta_reportes_villas', '-', -1) AS UNSIGNED)))
 ORDER BY SUBSTRING_INDEX(villas, '-', 1), 
 CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED);";
+
+$sql2 = "SELECT COUNT(*) AS cantidad_registro FROM villa_completo WHERE modelo = '$modelo_villa' AND
+(SUBSTRING_INDEX(villas, '-', 1) > SUBSTRING_INDEX('$desde_reportes_villas', '-', 1) 
+ OR (SUBSTRING_INDEX(villas, '-', 1) = SUBSTRING_INDEX('$desde_reportes_villas', '-', 1)
+     AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) >= CAST(SUBSTRING_INDEX('$desde_reportes_villas', '-', -1) AS UNSIGNED)))
+AND 
+(SUBSTRING_INDEX(villas, '-', 1) < SUBSTRING_INDEX('$hasta_reportes_villas', '-', 1) 
+ OR (SUBSTRING_INDEX(villas, '-', 1) = SUBSTRING_INDEX('$hasta_reportes_villas', '-', 1)
+     AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) <= CAST(SUBSTRING_INDEX('$hasta_reportes_villas', '-', -1) AS UNSIGNED)))
+ORDER BY SUBSTRING_INDEX(villas, '-', 1), 
+CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED);";
+
+
 }else if($estado_villa != "Todo" && $modelo_villa == "Todo"){
+
     $sql = "SELECT * FROM villa_completo WHERE estado = '$estado_villa' AND
 (SUBSTRING_INDEX(villas, '-', 1) > SUBSTRING_INDEX('$desde_reportes_villas', '-', 1) 
  OR (SUBSTRING_INDEX(villas, '-', 1) = SUBSTRING_INDEX('$desde_reportes_villas', '-', 1)
@@ -65,6 +105,18 @@ AND
      AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) <= CAST(SUBSTRING_INDEX('$hasta_reportes_villas', '-', -1) AS UNSIGNED)))
 ORDER BY SUBSTRING_INDEX(villas, '-', 1), 
 CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED);";
+
+$sql2 = "SELECT COUNT(*) AS cantidad_registro FROM villa_completo WHERE estado = '$estado_villa' AND
+(SUBSTRING_INDEX(villas, '-', 1) > SUBSTRING_INDEX('$desde_reportes_villas', '-', 1) 
+ OR (SUBSTRING_INDEX(villas, '-', 1) = SUBSTRING_INDEX('$desde_reportes_villas', '-', 1)
+     AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) >= CAST(SUBSTRING_INDEX('$desde_reportes_villas', '-', -1) AS UNSIGNED)))
+AND 
+(SUBSTRING_INDEX(villas, '-', 1) < SUBSTRING_INDEX('$hasta_reportes_villas', '-', 1) 
+ OR (SUBSTRING_INDEX(villas, '-', 1) = SUBSTRING_INDEX('$hasta_reportes_villas', '-', 1)
+     AND CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) <= CAST(SUBSTRING_INDEX('$hasta_reportes_villas', '-', -1) AS UNSIGNED)))
+ORDER BY SUBSTRING_INDEX(villas, '-', 1), 
+CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED);";
+
 }
 
 
@@ -74,9 +126,7 @@ $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
-
     while ($row = $result->fetch_assoc()) {
-
         echo"
         <tr>
         <td>",$row["villas"],"</td>
@@ -94,4 +144,20 @@ else
 {
     echo"No se encuentran datos";
 }
+
+$result2 = $conn->query($sql2);
+
+if($result2 -> num_rows > 0)
+{
+    while ($row = $result2->fetch_assoc()) {
+
+        $cantiddes = $row["cantidad_registro"];
+    }
+
+}
+else
+{
+    echo"No se encuentran datos";
+}
+
 ?>

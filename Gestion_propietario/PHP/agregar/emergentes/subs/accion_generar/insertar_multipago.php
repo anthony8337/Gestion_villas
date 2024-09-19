@@ -53,7 +53,7 @@ if($tipo_pago == "Efectivo")
 else if($tipo_pago == "Referencia")
 {
         $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto, tipo_pago, forma_pago, n_referencia) 
-        VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago',0,0,1,1,'$concepto_pago','$tipo_pago','$forma_pago','$referencia');";
+        VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago','$cantidad_pago',0,1,1,'$concepto_pago','$tipo_pago','$forma_pago','$referencia');";
 }
 
 
@@ -75,7 +75,7 @@ if ($tipo_pago == "Efectivo") {
 
 }else if($tipo_pago == "Referencia")
 {
-        $para_cargo = 0;
+        $para_cargo = $cargo_s - $cantidad_pago;
 }
 
 

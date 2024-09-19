@@ -1,3 +1,5 @@
+<script src="JS/archivo/selec_concepto.js"></script>
+
 <?php
 
 $servername = "localhost"; 
@@ -14,21 +16,21 @@ else
 {
 }
 
-$nn_id = $_POST["nn_id"];
 
-$sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$nn_id' AND( pagado = 'Pendiente' OR pagado = 'No pagado' );";
+$sql = "SELECT * FROM villa_completo ORDER BY
+ SUBSTRING_INDEX(villas, '-', 1), CAST(SUBSTRING_INDEX(villas, '-', -1) AS UNSIGNED) ASC;";
 
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
-    $total = 0;
-    while ($row = $result->fetch_assoc()) {
 
-        $total = $row["costo"] + $total;
+    while ($row = $result->fetch_assoc()) {
+        echo"
+        <option value='",$row["villas"],"'>",$row["villas"],"</option>
+        ";
     }
 
-    echo"$.".number_format($total,2)."";
 
 }
 else
@@ -36,3 +38,5 @@ else
     echo"No se encuentran datos";
 }
 ?>
+
+<script>ultimo_select();</script>

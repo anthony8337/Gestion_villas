@@ -53,6 +53,10 @@ for ($i=0; $i < count($campos); $i++)
 
 }?>
 
+
+</div>
+
+<div class="c2">
 <fieldset id="fl_permisos">
     <legend>Permisos de acceso</legend>
     <fieldset>

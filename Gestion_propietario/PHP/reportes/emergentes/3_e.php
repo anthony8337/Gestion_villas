@@ -22,12 +22,13 @@
 
 <fieldset>
         <legend>Código</legend>
-        <input type="text" name="txt_cod_estados" id="txt_cod_estados" readonly>
+        <input type="text" name="txt_propi_estados" id="txt_propi_estados" readonly>
 </fieldset>
 
 <fieldset>
         <legend>Propietario</legend>
-        <input type="text" name="txt_propi_estados" id="txt_propi_estados" readonly>
+        <input type="text" name="txt_cod_estados" id="txt_cod_estados" readonly>
+        
 </fieldset>
     
 <fieldset>
@@ -146,9 +147,10 @@ ocultar_concep();
     }
 
     function abrirNuevaPagina_estado() {
+        nombrar_usuario();
     // IDs de los inputs que quieres enviar
     var inputIDs = ['rango_cuota','ranco_factura','desde_estado','hasta_estado','fecha_estado_hoy'
-        ,'txt_cod_estados' ,'txt_propi_estados','id_pro_sc','todo_cuota'];
+        ,'txt_cod_estados' ,'txt_propi_estados','id_pro_sc','todo_cuota','nombre_usuario'];
     
     // Crea un formulario
     var form = document.createElement("form");
@@ -172,6 +174,7 @@ ocultar_concep();
     document.body.removeChild(form);
 
     limpiar_confirmar();
+    cerrar_ingreso_lp_sal();
     
 }
 </script>

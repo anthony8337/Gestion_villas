@@ -83,8 +83,10 @@ function imprime_villas()
 
 <script>
     function abrirNuevaPagina_villas() {
+    nombrar_usuario();
     // IDs de los inputs que quieres enviar
-    var inputIDs = ['dt_villas','desde_reportes_villas','hasta_reportes_villas','estado_villa','modelo_villa'];
+    var inputIDs = ['dt_villas','desde_reportes_villas','hasta_reportes_villas',
+    'estado_villa','modelo_villa','nombre_usuario'];
     
     // Crea un formulario
     var form = document.createElement("form");
@@ -106,6 +108,8 @@ function imprime_villas()
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
+
+    cerrar_ingreso_lv();
 
 }
 </script>

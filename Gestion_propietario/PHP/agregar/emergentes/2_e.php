@@ -98,6 +98,11 @@
     <input type="text" name="total_multi" id="total_multi" placeholder="Total a pagar" readonly>
     </fieldset>
 
+    <fieldset id="fl_mp_b1">
+    <legend>Cantidad recibida</legend>
+    <input type="text" name="can_multi" id="can_multi" oninput="sumarInputs()" placeholder="Cantidad recibida">
+    </fieldset>
+
     <fieldset id="fl_mp_a1" class="cortar_multi">
     <legend>Forma de pago</legend>
     <input type="text" name="txt_forma_pp" id="txt_forma_pp" placeholder="Forma de pago" readonly>
@@ -106,11 +111,6 @@
     <fieldset id="fl_mp_a2" class="cortar_multi">
     <legend>Número de referencia</legend>
     <input type="text" name="txt_nu_referencia" id="txt_nu_referencia" placeholder="Número de referencia" readonly>
-    </fieldset>
-
-    <fieldset id="fl_mp_b1">
-    <legend>Cantidad recibida</legend>
-    <input type="text" name="can_multi" id="can_multi" oninput="sumarInputs()" placeholder="Cantidad recibida">
     </fieldset>
 
     <fieldset id="fl_mp_b2">
@@ -213,10 +213,6 @@ $(document).ready(function(){
         var a = confirm("¿Esta seguro de continuar el pago?");
 
         if (a) {
-            
-        
-
-        
         
         var id_cuenta = document.getElementById('hd_id_cuenta').value;
 
@@ -274,9 +270,9 @@ $(document).ready(function(){
 
 <script>
     function abrirNuevaPagina_miltipago() {
-    
+    nombrar_usuario();
     // IDs de los inputs que quieres enviar
-    var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m','hd_grupo','total_multi','devo_multi'];
+    var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m','hd_grupo','total_multi','devo_multi','nombre_usuario'];
     
     // Crea un formulario
     var form = document.createElement("form");

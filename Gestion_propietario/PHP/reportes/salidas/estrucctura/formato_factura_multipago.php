@@ -17,6 +17,8 @@ include "PHP/reportes/salidas/estrucctura/php_factura_multi/tabla_factura_multi.
     <span>Correo: villa@grupopalmareal.com</span>
     <br>
     <span>Tel. 2407-0000</span>
+    <br>
+
     
 </td>
 
@@ -136,6 +138,7 @@ include "PHP/reportes/salidas/estrucctura/php_factura_multi/tabla_factura_multi.
 <footer>
 <div class="separador"></div>
 <div class="page-number"></div>
+<span class="nom_usu">Usuario: <?php echo htmlspecialchars($nombre_usuario);?></span>
 </footer>
 
 </div>

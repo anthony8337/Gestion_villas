@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hd_grupo = $_POST['hd_grupo'];
     $total_multi = $_POST['total_multi'];
     $devo_multi = $_POST['devo_multi'];
+    $nombre_usuario = $_POST['nombre_usuario'];
 
    
     
@@ -20,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hd_grupo = "";
     $total_multi = "";
     $devo_multi = "";
+    $nombre_usuario = "";
 }
 
 

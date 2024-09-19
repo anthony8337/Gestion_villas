@@ -9,7 +9,7 @@ function ingreso_lis_villa()
     document.getElementById('lis_villa').style.display = 'flex';
     document.getElementById('lis_villa').style.zIndex = '2';
 
-    actualizar_selectores_villa();
+    actualizar_selectores_villa_reporte();
     actualizar_select_estado_villa();
     actualizar_select_modelo_villa();
     actualizar_tabla_villa();

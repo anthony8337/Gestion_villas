@@ -1,6 +1,6 @@
 <div id="cambio_villa" class="mod">
 
-<div class="centro ventanas_muy_grandes">
+<div class="centro ventanas_grandes">
 
 <div class="c1">
 <h2>Intercambio de propietario de villa</h2>

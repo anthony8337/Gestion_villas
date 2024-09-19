@@ -19,6 +19,18 @@ if(usuario == null)
 }
 </script>
 
+
+<input type="hidden" name="nombre_usuario" id="nombre_usuario">
+
+
+<script>
+    function nombrar_usuario()
+    {
+        document.getElementById('nombre_usuario').value = sessionStorage.getItem("usuario");
+    }
+</script>
+
+
 <?php
 include "PHP/P_gestiones.php";
 ?>

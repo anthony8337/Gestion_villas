@@ -7,6 +7,7 @@ $hasta_reportes_villas = $_POST["hasta_reportes_villas"];
 $estado_villa = $_POST["estado_villa"];
 $modelo_villa = $_POST["modelo_villa"];
 $dt_villas = $_POST["dt_villas"];
+$nombre_usuario = $_POST["nombre_usuario"];
 }
 else
 {
@@ -15,6 +16,7 @@ else
     $estado_villa = "";
     $modelo_villa = "";
     $dt_villas = "";
+    $nombre_usuario = "";
 }
 
 ?>

@@ -2,7 +2,7 @@
 
 <div id="lis_pro" class="mod">
 
-<div class="centro ventanas_muy_grandes">
+<div class="centro ventanas_grandes">
 
 <div class="c1">
 
@@ -112,9 +112,10 @@ if (a)
 
 <script>
     function abrirNuevaPagina_saldo() {
+    nombrar_usuario();
     // IDs de los inputs que quieres enviar
     var inputIDs = ['fecha_saldo','concep_saldo','hasta_repo_saldo',
-    'desde_repo_saldo','fecha_saldo_actual','concep_metodo'];
+    'desde_repo_saldo','fecha_saldo_actual','concep_metodo','nombre_usuario'];
     
     // Crea un formulario
     var form = document.createElement("form");
@@ -136,6 +137,8 @@ if (a)
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
+
+    cerrar_ingreso_lp();
 
 }
 </script>

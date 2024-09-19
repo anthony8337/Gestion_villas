@@ -6,7 +6,7 @@ function sumarInputs() {
 
     const sum1 = (parseFloat(input2) || 0) - (parseFloat(n1) || 0);
 
-    document.getElementById('devo_multi').value = "$. "+ sum1;
+    document.getElementById('devo_multi').value = "$. "+ sum1.toFixed(2);
 }
 
 function sumarInputs_previo() {
@@ -17,7 +17,7 @@ function sumarInputs_previo() {
 
     const sum2 = (parseFloat(input4) || 0) - (parseFloat(n1) || 0);
 
-    document.getElementById('txt_dv').value = "$. "+sum2;
+    document.getElementById('txt_dv').value = "$. "+ sum2.toFixed(2);
 }
 
 /*Vamos paso de datos, decidir*/
@@ -58,6 +58,10 @@ function paso_valor() {
 }
 
 function paso_valor_referencia() {
+
+    const input4 = document.getElementById('txt_rc').value;
+
+    document.getElementById('can_multi').value = input4;
 
     document.getElementById('txt_forma_pp').value = document.getElementById('sl_tipo_r').value;
     document.getElementById('txt_nu_referencia').value = document.getElementById('txt_referencia').value; 

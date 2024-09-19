@@ -25,6 +25,7 @@ $obs_propietario = $_POST[$id[5]];
 
 
 
+
 $sql = "INSERT INTO propietarios(nombre, dni, correo, fecha, id_estado,observacion,telefono) 
 VALUES ('$txtnombre','$txtid','$txtcorreo','$txtfecha','1','$obs_propietario','$txttelefono')";
 

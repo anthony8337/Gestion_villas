@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $txt_propi_estados = $_POST['txt_propi_estados'];
     $id_pro_sc = $_POST['id_pro_sc'];
     $todo_cuota = $_POST['todo_cuota'];
+    $nombre_usuario = $_POST['nombre_usuario'];
 }else
 {
     $rango_cuota = "";
@@ -20,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $txt_propi_estados = "";
     $id_pro_sc = "";
     $todo_cuota = "";
+    $nombre_usuario = "";
 }
 
 if($todo_cuota == "Historial completo")

@@ -1,6 +1,6 @@
 <div id="vi_mostrar" class="mod">
 
-<div class="centro ventanas_grandes">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 <h2>Villas registradas</h2>

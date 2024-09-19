@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $txt_for_reim = $_POST['txt_for_reim'];
     $hh_contar_cuentas = $_POST['hh_contar_cuentas'];
     $txt_total_abono = $_POST['txt_total_abono'];
+    $nombre_usuario = $_POST['nombre_usuario'];
     
 }else
 {
@@ -20,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $txt_for_reim = "";
     $hh_contar_cuentas = "";
     $txt_total_abono = "";
+    $nombre_usuario = "";
 }
 
 

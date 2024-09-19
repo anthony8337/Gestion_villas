@@ -24,6 +24,11 @@
 </select>
 </fieldset>
 
+<fieldset id="fl_recibido">
+    <legend>Cantidad recibida a cobrar</legend>
+    <input type='text' class="solo_numero" name='txt_rc' id='txt_rc' placeholder="Cantidad recibida" oninput='sumarInputs_previo()'>
+</fieldset>
+
 <fieldset id="fl_tipo_pago">
 <legend>Forma de pago</legend>
 <select name='sl_tipo_r' id='sl_tipo_r'>
@@ -36,13 +41,10 @@
 
 <fieldset id="fl_n_referencia">
 <legend>Número de referencia</legend>
-<input type='text' name='txt_referencia' id='txt_referencia'>
+<input type='text' name='txt_referencia' id='txt_referencia' placeholder="Número de referencia">
 </fieldset>
 
-<fieldset id="fl_recibido">
-    <legend>Cantidad recibida a cobrar</legend>
-    <input type='text' class="solo_numero" name='txt_rc' id='txt_rc' placeholder="Cantidad recibida" oninput='sumarInputs_previo()'>
-</fieldset>
+
 
 <fieldset id="fl_devolver">
     <legend>Cantidad a devolver</legend>

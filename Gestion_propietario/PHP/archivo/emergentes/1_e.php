@@ -1,7 +1,7 @@
 
 <div id="pro" class="mod">
 
-<div class="centro pro_centro ventanas_muy_grandes">
+<div class="centro pro_centro ventanas_medianas">
 
 <div class="c1">
 <h2 id="tl_titulo">Ingresar nuevo propietario</h2>
