@@ -96,6 +96,12 @@ if($result -> num_rows > 0)
             <td>$. 0.00</td>
             </tr>
             ";
+
+            echo"
+            <script>
+            document.getElementById('registro_saldo').value = '1';
+            </script>
+            ";
         }
         else
         {
@@ -108,6 +114,12 @@ if($result -> num_rows > 0)
             <td>$. ",number_format($row["saldo_total"],2),"</td>
             </tr>
             ";
+
+            echo"
+            <script>
+            document.getElementById('registro_saldo').value = '1';
+            </script>
+            ";
         }
 
 
@@ -117,6 +129,11 @@ if($result -> num_rows > 0)
 else
 {
     echo"No se encuentran datos";
+    echo"
+    <script>
+    document.getElementById('registro_saldo').value = '0';
+    </script>
+    ";
 }
 ?>
 

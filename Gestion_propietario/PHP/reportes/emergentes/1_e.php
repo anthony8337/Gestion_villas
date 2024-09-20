@@ -10,6 +10,7 @@
 </div>
 
 <div class="c2">
+<input type="hidden" name="existe_villas" id="existe_villas">
 
 <input style="display: none;" type="date" name="dt_villas" id="dt_villas">
 
@@ -72,10 +73,20 @@
 
 function imprime_villas()
 {
+
+    var b = document.getElementById('existe_villas').value;
+    
+    if (b == 0 || b == "") 
+    {
+    window.alert("No se ha seleccionado ningun registro.");    
+    }
+    else
+    {
     var a = confirm("¿Desea imprimir el registro de villas?");
     if (a)
     {
         abrirNuevaPagina_villas();
+    }
     }
 }
 

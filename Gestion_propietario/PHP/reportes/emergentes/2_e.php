@@ -13,6 +13,8 @@
 
 <div class="c2">
 
+    <input type="hidden" name="registro_saldo" id="registro_saldo">
+
     <input style="display: none;" type="date" id="fecha_saldo" name="fecha_saldo">
 
     <fieldset>
@@ -97,11 +99,20 @@ id_meto();
 
 function imprimir_saldos() 
 {
+
+    var b = document.getElementById('registro_saldo').value;
+    
+    if (b == 0 || b == "") 
+    {
+    window.alert("No se ha seleccionado ningun registro.");    
+    }
+    else{
  
 var a = confirm("¿Deseas imprimir el reporte de los saldos?");
 if (a) 
 {
     abrirNuevaPagina_saldo();
+}
 }
 
 

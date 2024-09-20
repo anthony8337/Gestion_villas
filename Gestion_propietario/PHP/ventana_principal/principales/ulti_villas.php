@@ -54,15 +54,42 @@ if($result -> num_rows > 0)
 
     echo"
     </table>
+
+
+    <script>
+    document.getElementById('existe_villas').value = '1';
+    </script>
     ";
 }
 else
 {
-    echo"No se encuentran datos";
+    echo"
+    <table id='tabla_ulti_villa'>
+    ";
+    echo"
+    <tr>
+    <th></th>
+    <th colspan='4'>Ultimas villas registradas</th>
+    </tr>
+
+    <tr>
+    <th></th>
+    <th>Código</th>
+    <th>Modelo</th>
+    <th>Condición</th>
+    <th>Estado</th>
+    </tr>
+    ";
+    echo"
+    </table>
+No se encunentran datos.
+    <script>
+    document.getElementById('existe_villas').value = '0';
+    </script>
+    ";
 }
 ?>
 </form>
 
 
 <script src="JS/principal/usuario_editar.js"></script>
-
