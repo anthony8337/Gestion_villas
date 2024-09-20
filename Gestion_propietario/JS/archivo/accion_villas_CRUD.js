@@ -173,6 +173,8 @@ if (alerta) {
                         actualizar_propietarios_multipago();
                         actualizar_villas_propietario(); 
                         actualizar_villas_adicionar();
+                        cerrar_ingreso_vi();
+                        limpiar_confirmar();
 
                         
                     }

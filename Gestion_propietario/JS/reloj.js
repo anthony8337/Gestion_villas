@@ -1,6 +1,7 @@
 function relojes()
 {
     ejecutar_reloj_3();
+    ultimas_villas();
 }
 
 
@@ -93,3 +94,4 @@ function ejecutar_reloj_3()
 setInterval(relojes,1000);
 
 relojes();
+

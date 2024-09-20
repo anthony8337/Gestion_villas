@@ -5,7 +5,7 @@
 
 <div class="c1">
 <h2 id="titulo_villa">Ingresar nueva villa</h2>
-<button onclick="cerrar_ingreso_vi(),limpiar_confirmar();" type="button">X</button>
+<button onclick="cerrar_ingreso_vi(),limpiar_confirmar()" type="button">X</button>
 
 </div>
 

@@ -61,7 +61,6 @@ sessionStorage.setItem('eliminar_im',eliminar_im);
                 {
                     echo"
                     <script>
-                    window.alert('".$reportes_im."');
                     window.location.href = 'principal.php';
                     </script>
                         ";

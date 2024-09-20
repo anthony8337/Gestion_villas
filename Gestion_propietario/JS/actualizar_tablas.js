@@ -1,3 +1,15 @@
+function ultimas_villas() 
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/ventana_principal/principales/ulti_villas.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#ulti_villa').html(response);
+        }
+    });   
+}
+
 function actualizar_villas_propietario() 
 {
     $.ajax({
