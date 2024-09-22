@@ -25,7 +25,7 @@ $result_existe = $conn->query($sql_existe);
 if ($result_existe -> num_rows > 0) {
     echo"
     <script>
-    window.alert('Ya existe un usuario con los mismos datos');
+    window.alert('Ya existe un concepto con los mismos datos');
     </script>
     ";
 }else{

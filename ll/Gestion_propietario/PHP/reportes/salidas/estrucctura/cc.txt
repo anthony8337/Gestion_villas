@@ -1,0 +1,19 @@
+<table>
+    <tr>
+<td>
+<span><?php echo htmlspecialchars($ranco_factura); ?></span>
+<br>
+<span><?php echo htmlspecialchars($desde_hasta); ?></span>
+</td>
+
+<td>
+<h4>PALMA REAL HOTEL Y VILLAS</h4>
+<span>ESTADO DE CUENTA</span><br>
+<span>CUOTA DE <?php echo htmlspecialchars($titulo_este); ?></span>
+</td>
+
+<td>
+<span>Fecha: <?php echo htmlspecialchars($fecha_estado_hoy);?></span>
+</td>
+    </tr>
+</table>

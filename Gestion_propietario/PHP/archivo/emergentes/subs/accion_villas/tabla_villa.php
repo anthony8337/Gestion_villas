@@ -39,7 +39,28 @@ if ($result -> num_rows > 0) {
         <td>",$row["habitaciones"],"</td>
         <td>",$row["lote"],"</td>
         <td>",$row["modelo"],"</td>
-        <td>",$row["estado"],"</td>
+        ";
+
+
+        if($row["estado"] == "1")
+        {
+            echo"
+            <td>Disponible</td>
+            ";
+        }else if($row["estado"] == "2") {
+            echo"
+            <td>Habitado</td>
+            ";
+        }else if($row["estado"] == "3") 
+        {
+            echo"
+            <td>No disponible</td>
+            ";
+        }
+
+
+
+        echo"
         <td class = 'oculto'>",$row["direccion"],"</td>
         <td class = 'oculto'>",$row["observacion"],"</td>
         <tr>

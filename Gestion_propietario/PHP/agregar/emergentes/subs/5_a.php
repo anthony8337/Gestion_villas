@@ -1,6 +1,6 @@
 <div id="multi_cantidad_pago" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 

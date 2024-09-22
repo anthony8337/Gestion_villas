@@ -201,3 +201,18 @@ width: calc(100% - 20px);
 {
     width: 300px;
 }
+
+#formulario_usuario
+{
+    width: 100%;
+}
+
+#formulario_usuario .c2
+{
+    width: 98%;
+}
+
+#formulario_usuario .c3
+{
+    width: 98%;
+}

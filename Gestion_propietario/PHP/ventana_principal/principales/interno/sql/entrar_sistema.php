@@ -16,7 +16,7 @@ else
 $nombre= $_POST["txt_nom_usuario"];
 $contra= $_POST["txt_cla_usuario"];
 
-$sql = "SELECT * FROM vista_usuario WHERE usuario = '$nombre'";
+$sql = "SELECT *, AES_DECRYPT(clave, 'clave_usuario') AS clave FROM vista_usuario WHERE usuario = '$nombre'";
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
@@ -34,7 +34,7 @@ if($result -> num_rows > 0)
         $modi_im = $row["modificar_reportes"];
         $eliminar_im = $row["eliminar_reportes"];
 
-        if ($estado == "Activo") 
+        if ($estado == "1") 
         {
 
             if ($nombre == $usuario && $contra == $clave) 

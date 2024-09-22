@@ -14,8 +14,8 @@
 <input id="txt_dato_usuario" type="text" placeholder="Buscar información del usuario" title="Buscar información del usuario" class="buscador">
 
             <select id="selec_est_usuarios" name="selec_est_usuarios" title="Filtrar estado del usuario">
-            <option value="Activo">Activos</option>
-            <option value="Suspendido">Suspendidos</option>
+            <option value="1">Activos</option>
+            <option value="2">Suspendidos</option>
             </select>  
 </div>
 

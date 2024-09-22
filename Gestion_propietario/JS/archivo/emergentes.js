@@ -198,7 +198,7 @@ function cerrar_pro_adicionar_tabla()
 function confi_villa()
 {
     document.getElementById('confirma_villa_pro').style.display = 'flex';
-    document.getElementById('confirma_villa_pro').style.zIndex = '13'
+    document.getElementById('confirma_villa_pro').style.zIndex = '13';
 }
 
 function cerrar_confi_villa()

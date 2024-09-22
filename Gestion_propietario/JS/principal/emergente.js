@@ -1,3 +1,19 @@
+function ingresar_usuario_inicio()
+{
+    document.getElementById('usu_titulo').textContent = "Ingresar nuevo usuario";
+    document.getElementById('usuarios_ingreso').style.display = 'flex';
+    document.getElementById('crear_usuario').style.display ='block';
+    document.getElementById('modificar_usuario').style.display ='none';
+    document.getElementById('borrar_usuario').style.display ='none';
+    document.getElementById('activar_usuario').style.display ='none';
+    document.getElementById('fl_permisos').readOnly = true;
+    document.getElementById('txt_tipo').readOnly = true;
+
+}
+
+
+
+
 function ingresar_usuario_in()
 {
     document.getElementById('usu_titulo').textContent = "Ingresar nuevo usuario";
@@ -19,12 +35,12 @@ function ingresar_usuario_edi()
 
     var gg = document.getElementById("txt_estado_usu").value;
 
-    if(gg == "Activo")
+    if(gg == "1")
     {
         document.getElementById("borrar_usuario").style.display = "block";
         document.getElementById("activar_usuario").style.display = "none";
     }
-    else if(gg == "Suspendido")
+    else if(gg == "2")
     {
         document.getElementById("borrar_usuario").style.display = "none";
         document.getElementById("activar_usuario").style.display = "block";

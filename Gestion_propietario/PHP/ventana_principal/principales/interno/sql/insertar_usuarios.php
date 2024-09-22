@@ -58,7 +58,7 @@ else
 
 
 $sql = "INSERT INTO usuarios( nombre, apellido, dni, telefono, correo, id_acceso, clave, id_estado, usuario) 
-VALUES ('$txt_nombre','$txt_apellido','$txt_dni','$txt_tele','$txt_correo','$valor','$txt_clave','1','$txt_usuario')";
+VALUES ('$txt_nombre','$txt_apellido','$txt_dni','$txt_tele','$txt_correo','$valor', AES_ENCRYPT('$txt_clave', 'clave_usuario'),'1','$txt_usuario')";
 $result = $conn->query($sql);
 
 

@@ -1,0 +1,22 @@
+if (modificar == "si") 
+        {
+            document.getElementById('modificar_propietario').style.display = 'block';
+
+        }
+        else
+        {
+            document.getElementById('modificar_propietario').style.display = 'block';
+            document.getElementById('modificar_propietario').disabled = true;
+            document.getElementById('modificar_propietario').title = "Esta opción no esta disponible.";
+        }
+
+    if (eliminar == "si") 
+        {
+            document.getElementById('eliminar_propietario').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('eliminar_propietario').style.display = 'block';
+            document.getElementById('eliminar_propietario').disabled = true;
+            document.getElementById('eliminar_propietario').title = "Esta opción no esta disponible.";
+        }   

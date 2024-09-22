@@ -1,0 +1,203 @@
+.login
+{
+    background: linear-gradient(to right, #ffaa49, #ffcea8);
+}
+
+.login .imagen
+{
+    width: calc(100% - 400px);
+    height: 100%;
+
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .imagen img
+{
+    display: none;
+}
+ 
+.login #ingresar input[type = "text"], .login #ingresar input[type = "password"],.login #recuperar input[type = "email"]
+{   
+    height: 35px;
+    width: 100%;
+    border: 1px solid #b8b8b8;
+
+}
+
+.login form
+{
+    width: 95%;
+}
+
+.login #ingresar button, .login #recuperar button
+{
+    height: 35px;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.login #ingresar, .login #recuperar
+{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 400px;
+    height: 550px;
+
+    position:absolute;
+    top: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    filter: drop-shadow(5px 5px 10px rgba(143, 79, 19,0.8));
+    border-radius: 10px;
+
+    overflow: auto;
+    
+
+}
+
+.login #recuperar 
+{
+    display: none;
+}
+
+.login #recuperar #recupera_cuenta
+{
+    display: none;
+}
+
+.login #recuperar #cambiar_contra
+{
+    display: none;
+}
+
+.login #recuperar #comprobar_cambio
+{
+    display: none;
+}
+
+.login #recuperar #confir_contra
+{
+    display: none;
+}
+
+.login #ingresar td, .login #recuperar td
+{
+text-align: center;
+height: 50px;
+}
+
+.login label:hover
+{
+    cursor: pointer;
+    color: blueviolet;
+    border-bottom: 1px solid blueviolet;
+    
+}
+
+.login label
+{
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    
+}
+
+.login .mapa
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login #ingresar img, .login #recuperar img
+{
+    width: 200px;
+    height: 200px;
+    margin: 0px;
+}
+
+.login #ingresar table, .login #recuperar table
+{
+width: calc(100% - 20px);
+}
+
+.login #ingresar table td, .login #recuperar table td
+{
+    text-align: center;
+}
+
+
+@media screen and (min-width: 900px) and (min-height: 500px){
+    .login #ingresar img, .login #recuperar img
+{
+    width: 200px;
+    height: 200px;
+    display: none;
+}
+
+
+    .login .imagen img
+{
+    display: flex;
+    width: 500px;
+    height: 500px;
+}
+
+.login #ingresar, .login #recuperar
+{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 400px;
+    height: 100%;
+
+    position:absolute;
+    top: 0px;
+    right: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 0px;
+}
+
+.login #recuperar
+{
+    display: none;
+}
+
+.login .mapa
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+}
+
+.login fieldset
+{
+    border: none;
+}
+
+.login form
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.login form fieldset
+{
+    width: 300px;
+}

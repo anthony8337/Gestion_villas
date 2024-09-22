@@ -41,15 +41,41 @@ if($result -> num_rows > 0)
     ";
 
     while ($row = $result->fetch_assoc()) {
-        echo"
-        <tr>
-        <td></td>
-        <td>",$row["codigo"],"</td>
-        <td>",$row["modelo"],"</td>
-        <td>",$row["condicion"],"</td>
-        <td>",$row["estado"],"</td>
-        </tr>
-        ";
+
+
+        if($row["estado"] == "1")
+        {
+            echo"
+            <tr>
+            <td></td>
+            <td>",$row["codigo"],"</td>
+            <td>",$row["modelo"],"</td>
+            <td>",$row["condicion"],"</td>
+            <td>Disponible</td>
+            </tr>
+            ";
+        }else if($row["estado"] == "2") {
+            echo"
+            <tr>
+            <td></td>
+            <td>",$row["codigo"],"</td>
+            <td>",$row["modelo"],"</td>
+            <td>",$row["condicion"],"</td>
+            <td>Habitado</td>
+            </tr>
+            ";
+        }else if($row["estado"] == "3") {
+            echo"
+            <tr>
+            <td></td>
+            <td>",$row["codigo"],"</td>
+            <td>",$row["modelo"],"</td>
+            <td>",$row["condicion"],"</td>
+            <td>No disponible</td>
+            </tr>
+            ";
+        }
+
     }
 
     echo"

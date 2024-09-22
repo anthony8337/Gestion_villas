@@ -104,13 +104,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     echo"<script>
-    confi_villa();
     limpiar_confirmar();
+    confi_villa();
     </script>";
 }
 }
 
-
-
 ?>
-

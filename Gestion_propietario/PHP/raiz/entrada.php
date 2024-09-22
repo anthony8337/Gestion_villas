@@ -10,6 +10,7 @@
     
 
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/menu.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/elementos.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/pagina.css'>

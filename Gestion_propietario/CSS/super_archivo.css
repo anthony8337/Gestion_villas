@@ -870,6 +870,14 @@ display: none;
 width: 1000px;
 min-height: 250px;
 }
+
+
+#multi_cantidad_pago .ventanas_medianas
+{
+    width: 500px;
+    min-height: 150px;   
+}
+
 /*Ventanas usuarios mediano*/
 
 /*General*/
@@ -1311,4 +1319,21 @@ footer
     position: relative;
     top: 20px;
 
+}
+
+
+
+#bienvenida_primer_uso .centro
+{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+flex-direction: column;
+width: 600px;
+}
+
+#bienvenida_primer_uso button
+{
+    width: 200px;
 }

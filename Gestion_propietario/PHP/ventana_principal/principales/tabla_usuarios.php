@@ -20,12 +20,13 @@ if (isset($_POST["selec_est_usuarios"])) {
 }
 else
 {
-    $es_usuario = "Activo";
+    $es_usuario = "1";
 }
 
 
 
-$sql = "SELECT * FROM vista_usuario WHERE estado = '$es_usuario';";
+$sql = "SELECT *, AES_DECRYPT(clave, 'clave_usuario') AS clave FROM vista_usuario 
+WHERE estado = '$es_usuario';";
 
 $result = $conn->query($sql);
 
@@ -64,10 +65,10 @@ if($result -> num_rows > 0)
 
 
 
-        if ($row["estado"] == "Activo") {
+        if ($row["estado"] == "1") {
             echo"
             <td>
-            <label class='verde'></label> ",$row["estado"],"
+            <label class='verde'></label> Activo
             </td>
             ";
         }
@@ -75,7 +76,7 @@ if($result -> num_rows > 0)
         {
             echo"
             <td>
-            <label class='rojo'></label> ",$row["estado"],"
+            <label class='rojo'></label> Suspendido
             </td>
             ";
         }

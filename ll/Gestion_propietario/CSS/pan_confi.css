@@ -1,0 +1,144 @@
+#confi_usuarios
+{
+    background-color: #778aff;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#confi_usuarios .retorno
+{
+    display: flex;
+    position: absolute;
+    left: 20px;
+}
+
+#confi_usuarios .entrada
+{
+    display: flex;
+    position: absolute;
+    right: 20px;
+}
+
+#confi_usuarios ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#confi_usuarios ul li
+{
+    
+    height: 50px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+
+
+
+
+
+.q_1
+{
+    margin-top: 10px;
+}
+
+
+#ac_2
+{
+    display: none;
+}
+
+
+
+#ac_2 .usuarios
+{
+ width: 385px;
+ height: 200px;
+}
+
+@media screen and (min-width: 500px)
+{
+    #ac_2 .usuarios
+{
+    width: 100%;
+    height: 120px;
+}
+}
+
+
+
+.filtro_usuario
+{
+    width: auto;
+}
+
+.filtro_usuario td
+{
+    text-align: center;
+}
+
+.filtro_usuario td:nth-child(1),.filtro_usuario td:nth-child(3)
+{
+    width: 150px
+}
+
+@media screen and (min-width: 900px) {
+
+    .filtro_usuario
+{
+    width: 50%;
+}
+}
+
+.q_2
+{
+    margin-top: 10px;
+}
+
+.opciones_confi_usuario
+{
+
+background-color: white;
+overflow: auto;
+height: 200px;
+
+}
+
+.confi_base_datos
+{
+    display: flex;
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+}
+
+.confi_base_datos img
+{
+    width: 30px;
+    height: 30px;
+}
+
+.btn_bd_st
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 80px;
+    margin-top: 25px;
+}

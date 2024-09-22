@@ -93,6 +93,8 @@ if (accion === 'crear') {
             data: $(this).serialize(),
             success: function(response){
                 $('#cont_modelo_villa').html(response);
+                limpiar_confirmar();
+
             }
         });
             }

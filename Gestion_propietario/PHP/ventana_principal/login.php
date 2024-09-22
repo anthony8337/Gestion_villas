@@ -51,8 +51,10 @@
                 <legend>Ingresar correo electronico</legend>
                 <input required type="email" id="txt_email_cambiar" name="txt_email_cambiar" placeholder="Ingresar correo electronico">
                 </fieldset>
-                <button type="submit">Obtener clave temporal</button>
-                
+
+
+                <button id="boton_clave_temporal" type="submit">Obtener clave temporal</button>
+            
                 </form>
 
                 <form id="comprobar_cambio">
@@ -60,6 +62,11 @@
                 <legend>Ingresar código de verificación</legend>
                 <input required type="text" maxlength="6" id="txt_comprobante" name="txt_comprobante" placeholder="Ingresar código temporal">
                 </fieldset>
+
+                
+                <span id="reloj_temporal"></span>
+                
+
                 <button type="button" onclick="para_cambio()">Verificar</button>
                 
                 </form>
@@ -99,6 +106,29 @@
 
 
 <script>
+
+function espera_vencimiento(segundos) {
+    // Mostrar el tiempo restante en la consola
+    let intervalo = setInterval(function() {
+
+        document.getElementById('reloj_temporal').textContent = `Tiempo restante: ${segundos} segundos`;
+
+        segundos--;
+
+        // Cuando llega a 0, detiene el intervalo
+        if (segundos < 0) {
+            clearInterval(intervalo);
+
+            window.alert('Se ha acabado el tiempo de espera.');
+            regresar();
+            limpiar_confirmar();
+
+        }
+    }, 1000); // Ejecuta la función cada 1 segundo (1000 ms)
+}
+
+
+
 
 $(document).ready(function(){
     $('#entrar_sistema_login').submit(function(e){
@@ -151,6 +181,9 @@ $(document).ready(function(){
     $('#cambiar_contra').submit(function(e){
         e.preventDefault();
 
+        document.getElementById('boton_clave_temporal').disabled = true;
+        document.getElementById('boton_clave_temporal').textContent = 'Espera...';
+
         var form =$('#cambiar_contra').serialize();
     $.ajax({
     type: 'POST',
@@ -158,7 +191,9 @@ $(document).ready(function(){
     data: form,
     success: function(response){
         $('#respuesta_login').html(response);
-
+        document.getElementById('boton_clave_temporal').disabled = false;
+        document.getElementById('boton_clave_temporal').textContent = 'Obtener clave temporal';
+        espera_vencimiento(30);
     }
 });
         
@@ -213,4 +248,12 @@ $(document).ready(function(){
 
 </script>
 
+
+
 </body>
+
+<?php
+include "PHP/ventana_principal/Bienvenida.php";
+
+include "PHP/ventana_principal/principales/1_e.php";
+?>

@@ -93,6 +93,7 @@ if (accion === 'crear') {
             data: $(this).serialize(),
             success: function(response){
                 $('#cont_grupo_villa').html(response);
+                limpiar_confirmar();
             }
         });
             }
