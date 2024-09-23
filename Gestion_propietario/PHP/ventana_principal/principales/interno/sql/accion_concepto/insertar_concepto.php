@@ -53,8 +53,6 @@ else
 
 $sql = "INSERT INTO concepto(concepto, tipo, valor, referencia, id_estado) 
 VALUES ('$txt_nombre','$tipo_seleccionado','$txt_valor','$referencia','1')";
-
-
 $result = $conn->query($sql);
 
 if($result == true)

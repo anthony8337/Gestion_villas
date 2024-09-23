@@ -59,7 +59,7 @@ for ($i=0; $i < count($pal); $i++) {
 
     <div id="div_tabla_villas_pro" class="contenido_tabla contenido_tabla_ultima">
 
-    <input type="hidden" name="pro_villa_cont" id="pro_villa_cont" value="0">
+    <input type="hidden" name="pro_villa_cont" id="pro_villa_cont" value= "0">
         <table id="tabla_villa_pro_selec">
         <tr>
         <th></th>

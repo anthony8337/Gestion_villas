@@ -1,4 +1,9 @@
 <?php
+
+error_reporting(0); // Desactiva todos los reportes de errores
+ini_set('display_errors', 0); // Evita mostrar errores en la salida
+
+
 $letras = range('A', 'Z');
 $letra_aleatoria = $letras[array_rand($letras)];
 
@@ -97,6 +102,7 @@ if(mail($to, $subject, $message, $headers)) {
     document.getElementById('id_usu_login').value = '$m2';
     document.getElementById('contra_antigua').value = '$m3';
     cambiar_comprobante();
+    espera_vencimiento(30);
     </script>";
 } else {
     echo "
@@ -106,3 +112,4 @@ if(mail($to, $subject, $message, $headers)) {
     ";
 }
 ?>
+

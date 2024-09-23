@@ -1,3 +1,27 @@
+function actualizar_tabla_recibe() 
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/archivo/emergentes/subs/donante/tabla_pro_rec.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#tabla_propietario_rec').html(response);
+        }
+    });   
+}
+
+function actualizar_tabla_donar() 
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/archivo/emergentes/subs/donante/tabla_pro_do.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#tabla_propietario_do').html(response);
+        }
+    });   
+}
+
 function ultimas_villas() 
 {
     $.ajax({
@@ -270,6 +294,7 @@ function actualizar_selectores_villa_reporte()
         success: function(response){
             $('#desde_reportes_villas').html(response);
             $('#hasta_reportes_villas').html(response);
+            ultima_villa_repor();
         }
     });
     
@@ -282,6 +307,11 @@ function ultimo_select() {
     var select2 = document.getElementById('hasta_propi');
     select2.value = select2.options[select2.options.length - 1].value;    
 
+
+}
+
+function ultima_villa_repor()
+{
     var select3 = document.getElementById('hasta_reportes_villas');
     select3.value = select3.options[select3.options.length - 1].value;  
 }
@@ -379,6 +409,9 @@ function actualizar_select_modelo_villa()
         data: $(this).serialize(),
         success: function(response){
             $('#modelo_villa').html(response);
+            ultimo_select();
+            actualizar_tabla_villa();
+            
         }
     });
 }

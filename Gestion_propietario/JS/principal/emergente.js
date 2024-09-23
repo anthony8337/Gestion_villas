@@ -6,8 +6,6 @@ function ingresar_usuario_inicio()
     document.getElementById('modificar_usuario').style.display ='none';
     document.getElementById('borrar_usuario').style.display ='none';
     document.getElementById('activar_usuario').style.display ='none';
-    document.getElementById('fl_permisos').readOnly = true;
-    document.getElementById('txt_tipo').readOnly = true;
 
 }
 

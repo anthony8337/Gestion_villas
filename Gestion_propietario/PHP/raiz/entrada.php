@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <link rel="icon" type="image/png" sizes="32x32" href="Imagenes/logo empresa.png">
-    <title>Gestión de propietario</title>
+    <title>Gestión del propietario</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
@@ -72,3 +72,4 @@
     <script src="JS/acciones_atajo.js"></script>
 </head>
 <body>
+

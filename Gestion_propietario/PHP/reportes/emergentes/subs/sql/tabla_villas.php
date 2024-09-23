@@ -84,10 +84,22 @@ if($result -> num_rows > 0)
         <td>",$row["cont_eeh"],"</td>
         <td>",$row["habitaciones"],"</td>
         <td>",$row["lote"],"</td>
-        <td>",$row["modelo"],"</td>
-        <td>",$row["estado"],"</td>
-        </tr>
-        ";
+        <td>",$row["modelo"],"</td>";
+        if($row["estado"] == '1')
+        {
+            echo"
+            <td>Disponible</td>
+            </tr>
+            ";
+        }
+        else 
+        {
+            echo"
+            <td>Habitado</td>
+            </tr>
+            ";
+        }
+
     }
 
 }

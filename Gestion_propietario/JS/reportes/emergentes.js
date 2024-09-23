@@ -12,7 +12,8 @@ function ingreso_lis_villa()
     actualizar_selectores_villa_reporte();
     actualizar_select_estado_villa();
     actualizar_select_modelo_villa();
-    actualizar_tabla_villa();
+
+    
 }
 
 //generar pro

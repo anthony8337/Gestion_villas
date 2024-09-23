@@ -16,7 +16,7 @@
 
 <?php
 
-$titulo = ['Número de villa','Número de medidor','Habitaciones','Area de construcción','Modelo de villa'];
+$titulo = ['Número de villa','Número de medidor','Habitaciones','Área de construcción','Modelo de villa'];
 $nombre_id=['txt_cod_villa','txt_eeh_villa','txt_cuarto_vi','txt_construc_vi','sel_villa'];
 $tipo = ['text','text','text','text','text'];
 

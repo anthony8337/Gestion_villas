@@ -95,6 +95,14 @@ sessionStorage.setItem('eliminar_im',eliminar_im);
     
     }
 }
+else
+{
+    echo
+    "<script>
+    window.alert('Por favor, verifica si el usuario y contraseña son correctos.');
+    </script>
+    ";
+}
 ?>
 
 

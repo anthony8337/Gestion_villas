@@ -22,9 +22,7 @@
 <div class="c4 ">
 
 <div class="contenido_tabla tam_limite" id="tabla_propietario_rec">
-    <?php
-    include "PHP/archivo/emergentes/subs/donante/tabla_pro_rec.php";
-    ?>
+
 </div>
 
 </div>

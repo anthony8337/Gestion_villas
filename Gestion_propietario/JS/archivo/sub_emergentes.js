@@ -30,6 +30,7 @@ function ingreso_concepto_r()
     document.getElementById('crear_concepto').style.display = 'block';
     document.getElementById('modificar_concepto').style.display = 'none';
     document.getElementById('eliminar_concepto').style.display = 'none';
+    limpiar_confirmar();
 }
 
 function ingreso_concepto_m_r()

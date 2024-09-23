@@ -11,7 +11,7 @@
 
 <div id="ingresar">
 <img src="Imagenes/logo_principal.png">
-                <h2>Gestión de propietario</h2>
+                <h2>Gestión del propietario</h2>
 
                 <form id="entrar_sistema_login">
                     <fieldset>
@@ -36,20 +36,19 @@
 <div id="recuperar">
 
             <img src="Imagenes/logo_principal.png">
-                <h2>Gestión de propietario</h2>
+                <h2>Gestión del propietario</h2>
                 <form id="recupera_cuenta">
                 <fieldset>
-                    <legend>Ingresar correo electronico</legend>
-                    <input required type="email" id="txt_email_recupera" name="txt_email_recupera" placeholder="Ingresar correo electronico">
+                    <legend>Ingresar correo electrónico</legend>
+                    <input required type="email" id="txt_email_recupera" name="txt_email_recupera" placeholder="Ingresar correo electrónico">
                 </fieldset>
-                
-                <button type="submit">Obtener contraseña</button>
+                <button id="boton_recuperar" type="submit">Obtener contraseña</button>
                 </form>
 
                 <form id="cambiar_contra">
                 <fieldset>
-                <legend>Ingresar correo electronico</legend>
-                <input required type="email" id="txt_email_cambiar" name="txt_email_cambiar" placeholder="Ingresar correo electronico">
+                <legend>Ingresar correo electrónico</legend>
+                <input required type="email" id="txt_email_cambiar" name="txt_email_cambiar" placeholder="Ingresar correo electrónico">
                 </fieldset>
 
 
@@ -107,9 +106,11 @@
 
 <script>
 
+let intervalo;
+
 function espera_vencimiento(segundos) {
     // Mostrar el tiempo restante en la consola
-    let intervalo = setInterval(function() {
+    intervalo = setInterval(function() {
 
         document.getElementById('reloj_temporal').textContent = `Tiempo restante: ${segundos} segundos`;
 
@@ -125,6 +126,11 @@ function espera_vencimiento(segundos) {
 
         }
     }, 1000); // Ejecuta la función cada 1 segundo (1000 ms)
+}
+
+function detener_vencimiento() {
+    clearInterval(intervalo); // Detenemos el intervalo
+    document.getElementById('reloj_temporal').textContent = "";
 }
 
 
@@ -157,6 +163,11 @@ $(document).ready(function(){
     $('#recupera_cuenta').submit(function(e){
         e.preventDefault();
 
+        
+
+        document.getElementById('boton_recuperar').disabled = true;
+        document.getElementById('txt_email_recupera').readOnly = true;
+        document.getElementById('boton_recuperar').textContent = 'Espera...';
 
         var form =$('#recupera_cuenta').serialize();
     $.ajax({
@@ -165,6 +176,10 @@ $(document).ready(function(){
     data: form,
     success: function(response){
         $('#respuesta_login').html(response);
+
+        document.getElementById('boton_recuperar').disabled = false;
+        document.getElementById('txt_email_recupera').readOnly = false;
+        document.getElementById('boton_recuperar').textContent = 'Obtener contraseña';
 
     }
 });
@@ -180,7 +195,8 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('#cambiar_contra').submit(function(e){
         e.preventDefault();
-
+        
+        document.getElementById('txt_email_cambiar').readOnly = true;
         document.getElementById('boton_clave_temporal').disabled = true;
         document.getElementById('boton_clave_temporal').textContent = 'Espera...';
 
@@ -191,9 +207,10 @@ $(document).ready(function(){
     data: form,
     success: function(response){
         $('#respuesta_login').html(response);
+        document.getElementById('txt_email_cambiar').readOnly = false;
         document.getElementById('boton_clave_temporal').disabled = false;
         document.getElementById('boton_clave_temporal').textContent = 'Obtener clave temporal';
-        espera_vencimiento(30);
+        
     }
 });
         
@@ -214,11 +231,13 @@ function para_cambio()
 if (a == b) 
 {
     cambiar_confirmar();    
+    detener_vencimiento();
 }else
 {
     window.alert('Contraseña temporal no valida');
     regresar();
     limpiar_confirmar();
+    detener_vencimiento();
 }
 
 }

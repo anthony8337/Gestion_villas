@@ -15,7 +15,7 @@
 
 <?php
 
-$pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electrónico','Teléfono'];
+$pal = ['Seleccionar','Nombre completo', 'Número de identidad','Correo electrónico','Teléfono'];
 $id = ['','txtnombre_do','txtrtn_do','txtcorreo_do','txttelefono_do'];
 $tipo = ['button','text','text','text','text'];
 
@@ -78,7 +78,7 @@ for ($i=0; $i < count($pal); $i++) {
 
 <?php
 
-$pal = ['Seleccionar','Nombre completo', 'Numero de identidad','Correo electrónico','Teléfono'];
+$pal = ['Seleccionar','Nombre completo', 'Número de identidad','Correo electrónico','Teléfono'];
 $id = ['','txtnombre_rec','txtrtn_rec','txtcorreo_rec','txttelefono_rec'];
 $tipo = ['button','text','text','text','text'];
 

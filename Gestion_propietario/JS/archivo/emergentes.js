@@ -101,6 +101,10 @@ function ingreso_vi_propi()
 {
     document.getElementById('vi').style.display = 'flex';
     document.getElementById('vi').style.zIndex = '10';
+    document.getElementById('btn_eli_villa').style.display = 'none';
+    document.getElementById('btn_modi_villa').style.display = 'none';
+    document.getElementById('btn_limpiar_villa').style.display = 'block';
+    document.getElementById('btn_agregar_villa').style.display = 'block';
 }
 
 //Moneda ingeso
@@ -141,6 +145,7 @@ function v_cambio_cerrar()
 function abrir_pro_donar()
 {
     document.getElementById('pro_donar').style.display = 'flex';
+    actualizar_tabla_donar();
 }
 
 function cerrar_pro_donar()
@@ -153,6 +158,7 @@ function cerrar_pro_donar()
 function abrir_pro_recibir()
 {
     document.getElementById('pro_rec').style.display = 'flex';
+    actualizar_tabla_recibe();
 }
 
 function cerrar_pro_recibir()

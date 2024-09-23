@@ -39,9 +39,22 @@ if($result -> num_rows > 0)
         <td>",$row["cont_eeh"],"</td>
         <td>",$row["habitaciones"],"</td>
         <td>",$row["modelo"],"</td>
-        <td>",$row["condicion"],"</td>
-        </tr>
         ";
+        if ($row["condicion"] == 1) {
+            echo"
+            <td>Buen estado</td>
+            </tr>
+            ";
+        }
+        else
+        {
+            echo"
+            <td>Mantenimiento</td>
+            </tr>
+            ";
+        }
+
+
     }
 
 }

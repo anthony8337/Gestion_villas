@@ -4,7 +4,7 @@
     <img src="Imagenes/gear-fill.svg">
 </div>
 
-<h1>Gestión de propietario</h1>
+<h1>Gestión del propietario</h1>
 
 <h2>Bienvenido Usuario</h2>
 

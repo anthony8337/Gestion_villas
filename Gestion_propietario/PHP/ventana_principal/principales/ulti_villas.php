@@ -50,41 +50,54 @@ if($result -> num_rows > 0)
             <td></td>
             <td>",$row["codigo"],"</td>
             <td>",$row["modelo"],"</td>
-            <td>",$row["condicion"],"</td>
+            ";
+
+            if($row["condicion"] == '1')
+            {
+            echo"
+            <td>Buen estado</td>
             <td>Disponible</td>
             </tr>
             ";
+            }
+            else
+            {
+            echo"
+            <td>Mantenimiento</td>
+            <td>Disponible</td>
+            </tr>
+            ";
+            }
+
         }else if($row["estado"] == "2") {
             echo"
             <tr>
             <td></td>
             <td>",$row["codigo"],"</td>
-            <td>",$row["modelo"],"</td>
-            <td>",$row["condicion"],"</td>
+            <td>",$row["modelo"],"</td>";
+
+            if($row["condicion"] == '1')
+            {
+            echo"
+            <td>Buen estado</td>
             <td>Habitado</td>
             </tr>
             ";
-        }else if($row["estado"] == "3") {
+            }
+            else
+            {
             echo"
-            <tr>
-            <td></td>
-            <td>",$row["codigo"],"</td>
-            <td>",$row["modelo"],"</td>
-            <td>",$row["condicion"],"</td>
-            <td>No disponible</td>
+            <td>Mantenimiento</td>
+            <td>Habitado</td>
             </tr>
             ";
+            }
         }
 
     }
 
     echo"
     </table>
-
-
-    <script>
-    document.getElementById('existe_villas').value = '1';
-    </script>
     ";
 }
 else
@@ -109,9 +122,6 @@ else
     echo"
     </table>
 No se encunentran datos.
-    <script>
-    document.getElementById('existe_villas').value = '0';
-    </script>
     ";
 }
 ?>

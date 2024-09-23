@@ -41,24 +41,9 @@ if ($result_existe -> num_rows > 0) {
 }else{
 
 
-$sql = "SELECT * FROM permisos WHERE acceso = '$txt_tipo'; ";
-$result = $conn->query($sql);
-
-if($result -> num_rows > 0)
-{
-    
-    while ($row = $result->fetch_assoc()) {
-        $valor = $row["id_acceso"];
-}
-}
-else
-{
-    echo"No se encuentran datos";
-}
-
 
 $sql = "INSERT INTO usuarios( nombre, apellido, dni, telefono, correo, id_acceso, clave, id_estado, usuario) 
-VALUES ('$txt_nombre','$txt_apellido','$txt_dni','$txt_tele','$txt_correo','$valor', AES_ENCRYPT('$txt_clave', 'clave_usuario'),'1','$txt_usuario')";
+VALUES ('$txt_nombre','$txt_apellido','$txt_dni','$txt_tele','$txt_correo','$txt_tipo', AES_ENCRYPT('$txt_clave', 'clave_usuario'),'1','$txt_usuario')";
 $result = $conn->query($sql);
 
 

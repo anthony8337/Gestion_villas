@@ -1,5 +1,9 @@
 <?php
 
+error_reporting(0); // Desactiva todos los reportes de errores
+ini_set('display_errors', 0); // Evita mostrar errores en la salida
+
+
 $servername = "localhost"; 
 $username = "root";
 $password = "";
@@ -16,7 +20,7 @@ else
 
 $correo = $_POST["txt_email_recupera"];
 
-$sql = "SELECT * FROM usuarios WHERE correo = '$correo'";
+$sql = "SELECT *, AES_DECRYPT(clave, 'clave_usuario') AS clave FROM usuarios WHERE correo = '$correo'";
 
 $result = $conn->query($sql);
 

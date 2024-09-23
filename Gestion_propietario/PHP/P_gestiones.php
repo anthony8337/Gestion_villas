@@ -42,7 +42,7 @@ echo"
 
 
 
-<h1>Gestión de Propietario</h1>
+<h1>Gestión del propietario</h1>
 <h2 id="nombre_car">Archivo</h2>
 
 <?php

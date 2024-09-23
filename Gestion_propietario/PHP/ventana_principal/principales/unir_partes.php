@@ -1,7 +1,7 @@
 
 
 <div>
-<h1>Gestión de propietarios</h1>
+<h1>Gestión del propietarios</h1>
 
 <h2>Bienvenido Admin</h2>
 </div>

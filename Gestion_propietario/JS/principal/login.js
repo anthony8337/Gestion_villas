@@ -17,6 +17,7 @@ function regresar()
     document.getElementById('comprobar_cambio').style.display = 'none';
     document.getElementById('confir_contra').style.display = 'none';
     limpiar_confirmar();
+    detener_vencimiento();
 }
 
 function cambiar_contraseña()

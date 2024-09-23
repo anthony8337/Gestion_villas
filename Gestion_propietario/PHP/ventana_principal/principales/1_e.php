@@ -32,9 +32,9 @@ for ($i=0; $i < count($campos); $i++)
         <td>
         <fieldset>
         <legend>$campos[$i]</legend>
-        <select id='$nombre_id[$i]' name='$nombre_id[$i]'>",
-        include "PHP/ventana_principal/principales/interno/sql/tipo_usuario.php"
-        ,"
+        <select id='$nombre_id[$i]' name='$nombre_id[$i]'>
+        <option value='1'>Administrador</option>
+        <option value='2'>Usuario</option>
         </select>
         </fieldset>
         </td>
@@ -52,6 +52,7 @@ for ($i=0; $i < count($campos); $i++)
 
 
 }?>
+
 
 
 </div>

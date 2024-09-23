@@ -48,8 +48,23 @@ if($result -> num_rows > 0)
         <td>",$row["villas"],"</td>
         <td>",$row["cont_eeh"],"</td>
         <td>",$row["modelo"],"</td>
-        <td>",$row["habitaciones"],"</td>
-        <td>",$row["condicion"],"</td>
+        <td>",$row["habitaciones"],"</td>";
+
+        if ($row["condicion"] == 1) 
+        {
+            echo"
+            <td>Disponible</td>
+            ";
+        }
+        else
+        {
+            echo"
+            <td>Habitado</td>
+            ";
+        }
+
+
+        echo"
         <td class='oculto'>Agregar</td>
         </tr>
         
