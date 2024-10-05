@@ -28,7 +28,7 @@ if($result -> num_rows > 0)
     echo"
     <tr>
     <th></th>
-    <th colspan='4'>Ultimas villas registradas</th>
+    <th colspan='4'>Últimas villas registradas</th>
     </tr>
 
     <tr>
@@ -108,7 +108,7 @@ else
     echo"
     <tr>
     <th></th>
-    <th colspan='4'>Ultimas villas registradas</th>
+    <th colspan='4'>Últimas villas registradas</th>
     </tr>
 
     <tr>
@@ -121,7 +121,7 @@ else
     ";
     echo"
     </table>
-No se encunentran datos.
+No se encuentran datos.
     ";
 }
 ?>

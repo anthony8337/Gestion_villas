@@ -38,7 +38,7 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>window.alert('Grupo registrado con éxito');
+    echo"<script>window.alert('Modelo registrado con éxito');
     cerrar_modelos_villa();
     </script>";
 }

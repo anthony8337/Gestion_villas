@@ -1,3 +1,27 @@
+function actualizar_propi_reimprimir() 
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_propietario_reimprimir.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#tabla_propietario_reimprimir').html(response);
+        }
+    });   
+}
+
+function actualizar_propi_cuentas() 
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/emergentes/subs/sql/tabla_propietarios_estado.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#tabla_propietario_estado').html(response);
+        }
+    });   
+}
+
 function actualizar_tabla_recibe() 
 {
     $.ajax({

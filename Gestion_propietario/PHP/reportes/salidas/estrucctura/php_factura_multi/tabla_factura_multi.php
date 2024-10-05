@@ -112,15 +112,15 @@ if($result -> num_rows > 0)
     $valor_ingresado = number_format($suma_abono_factura_multi,2);
 
 
-    if($valor_ingresado > $valor_tomado)
+    if($valor_ingresado < $valor_tomado)
     {
-        $cuerpo_suma_multi =  number_format($valor_tomado,2);
-        $cuerpo_suma_letra =  convertirMonedaALetras(number_format($valor_tomado,2));
+        $cuerpo_suma_multi =  number_format(str_replace(',', '', $valor_ingresado),2);
+        $cuerpo_suma_letra =  convertirMonedaALetras(number_format(str_replace(',', '', $valor_ingresado),2));
     }
     else
     {
-        $cuerpo_suma_multi =  number_format($valor_ingresado,2);
-        $cuerpo_suma_letra =  convertirMonedaALetras(number_format($valor_ingresado,2));
+        $cuerpo_suma_multi =  number_format($valor_tomado,2);
+        $cuerpo_suma_letra =  convertirMonedaALetras(number_format($valor_tomado,2));
     }
     
     

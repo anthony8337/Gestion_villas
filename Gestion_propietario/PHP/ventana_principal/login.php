@@ -95,7 +95,7 @@
                 <button type="submit">Confirmar cambio</button>
                 </form>
 
-                <label onclick="regresar()">Regresar</label>
+                <label onclick="detener_vencimiento(),regresar()">Regresar</label>
                 
 </div>
 
@@ -210,6 +210,11 @@ $(document).ready(function(){
         document.getElementById('txt_email_cambiar').readOnly = false;
         document.getElementById('boton_clave_temporal').disabled = false;
         document.getElementById('boton_clave_temporal').textContent = 'Obtener clave temporal';
+
+
+    
+
+
         
     }
 });

@@ -251,6 +251,8 @@ function propi_reim()
 {
     document.getElementById('reim_propietario').style.display = "flex"; 
     actualizar_propietarios_multipago();
+    actualizar_propi_reimprimir();
+    
 }
 
 function cerra_propi_reim()
@@ -274,6 +276,7 @@ function selec_pro_estado()
 {
     document.getElementById('rp_propietario').style.display = "flex";
     document.getElementById('rp_propietario').style.zIndex = "100";
+    actualizar_propi_cuentas();
 
 }
 

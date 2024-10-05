@@ -70,7 +70,7 @@ else
 
 $correo = $_POST["txt_email_cambiar"];
 
-$sql = "SELECT * FROM usuarios WHERE correo = '$correo'";
+$sql = "SELECT *,AES_DECRYPT(clave, 'clave_usuario') AS clave FROM usuarios WHERE correo = '$correo'";
 
 $result = $conn->query($sql);
 
@@ -94,16 +94,22 @@ $subject = "Contraseña temporal"; // Asunto del correo
 $headers = "From: Anthony Oliva Google";
 
 // Enviar el correo
-if(mail($to, $subject, $message, $headers)) {
+if(mail($to, $subject, $message, $headers)) 
+{
     echo "
     <script>
     window.alert('Contraseña temporal enviada correctamente, por favor, revisar el buzón o en correo no deseado.');
+    cambiar_comprobante();
+
     document.getElementById('v_cla_tem').value = '$combinacion';
     document.getElementById('id_usu_login').value = '$m2';
     document.getElementById('contra_antigua').value = '$m3';
-    cambiar_comprobante();
+
     espera_vencimiento(30);
-    </script>";
+    </script>
+    ";
+
+
 } else {
     echo "
     <script>

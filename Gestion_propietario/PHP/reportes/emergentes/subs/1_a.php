@@ -19,9 +19,7 @@
 <div class="c4">
 
 <div id="tabla_propietario_estado" class="contenido_tabla tam_limite">
-    <?php
-    include "PHP/reportes/emergentes/subs/sql/tabla_propietarios_estado.php";
-    ?>
+
 </div>
 
 </div>

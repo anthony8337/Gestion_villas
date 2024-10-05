@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(0); // Desactiva todos los reportes de errores
+ini_set('display_errors', 0); // Evita mostrar errores en la salida
+
 $servername = "localhost"; 
 $username = "root";
 $password = "";

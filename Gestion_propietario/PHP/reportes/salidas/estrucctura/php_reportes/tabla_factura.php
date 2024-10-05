@@ -27,8 +27,18 @@ function convertirNumeroALetras($numero) {
 
     if ($numero >= 1000) {
         if ($numero == 1000) {
+            $unidades = [
+                '', '', 'DOS', 'TRES', 'CUATRO', 'CINCO', 'SEIS', 'SIETE', 'OCHO', 'NUEVE',
+                'DIEZ', 'ONCE', 'DOCE', 'TRECE', 'CATORCE', 'QUINCE', 'DIECISÉIS', 'DIECISIETE', 
+                'DIECIOCHO', 'DIECINUEVE', 'VEINTE'
+            ];
             $convertir .= 'MIL ';
         } else {
+            $unidades = [
+                '', '', 'DOS', 'TRES', 'CUATRO', 'CINCO', 'SEIS', 'SIETE', 'OCHO', 'NUEVE',
+                'DIEZ', 'ONCE', 'DOCE', 'TRECE', 'CATORCE', 'QUINCE', 'DIECISÉIS', 'DIECISIETE', 
+                'DIECIOCHO', 'DIECINUEVE', 'VEINTE'
+            ];
             $convertir .= $unidades[intval($numero / 1000)] . ' MIL ';
         }
         $numero %= 1000;
@@ -100,7 +110,11 @@ if($result -> num_rows > 0)
 
     $decimal = number_format($row["abono"],2);
 
+    if (is_numeric($decimal)) {
         $suma_abono_factura += $decimal;
+    } else {
+        $suma_abono_factura += 0; 
+    }
 
         $descripcion = $row["abono_con"];
 

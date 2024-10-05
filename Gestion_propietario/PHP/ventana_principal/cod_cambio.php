@@ -23,7 +23,7 @@ $txt_contra_nueva = $_POST["txt_contra_nueva"];
 $txt_contra_nueva_anterior = $_POST["txt_contra_nueva_anterior"];
 $txt_contra_anterior = $_POST["txt_contra_anterior"];
 
-$sql = "SELECT *, , AES_DECRYPT(clave, 'clave_usuario') AS clave  FROM usuarios WHERE id_usuario = '$id_usu_login';";
+$sql = "SELECT *,AES_DECRYPT(clave, 'clave_usuario') AS clave  FROM usuarios WHERE id_usuario = '$id_usu_login';";
 $result = $conn->query($sql);
 
 if ($result -> num_rows > 0) 
