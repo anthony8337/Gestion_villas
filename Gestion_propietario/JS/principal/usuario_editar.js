@@ -29,7 +29,17 @@ function modificar_usuario(){
       document.getElementById("txt_tele").value = telefono;
       document.getElementById("txt_correo").value = correo;
       document.getElementById("txt_clave").value = clave;
-      document.getElementById("txt_tipo").value = acceso;
+
+      if(acceso == "Administrador")
+      {
+        document.getElementById("txt_tipo").value = '1';
+      }
+      else
+      {
+        document.getElementById("txt_tipo").value = '2';
+      }
+
+      
 
       document.getElementById("txt_estado_usu").value = estado;
 

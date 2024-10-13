@@ -40,10 +40,9 @@ else
     echo"No se encuentran datos";
 }
 
-$sql = "
-UPDATE usuarios SET nombre='$txt_nombre',apellido='$txt_apellido',
+$sql = "UPDATE usuarios SET nombre='$txt_nombre',apellido='$txt_apellido',
 dni='$txt_dni',telefono='$txt_tele',correo='$txt_correo',
-id_acceso='$valor',clave= AES_ENCRYPT('$txt_clave', 'clave_usuario'),usuario='$txt_usuario' WHERE id_usuario='$txt_id'
+id_acceso='$txt_tipo',clave= AES_ENCRYPT('$txt_clave', 'clave_usuario'),usuario='$txt_usuario' WHERE id_usuario='$txt_id'
 ";
 
 $result = $conn->query($sql);
