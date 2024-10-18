@@ -23,56 +23,56 @@ $fecha_saldo_actual = $_POST["fecha_saldo_actual"];
 if($concep_metodo == "Concepto especifico")
 {
 $sql = "SELECT 
-    cuenta_vista.concepto AS concepto,
-    cuenta_vista.villa AS villa,
-    cuenta_vista.nombre AS nombre,
-    SUM(cuenta_vista.costo) AS costo_total,
-    SUM(cuenta_vista.abono) AS abono_total,
-    SUM((cuenta_vista.costo - cuenta_vista.abono)) AS saldo_total
+    estado_cuenta.concepto AS concepto,
+    estado_cuenta.villa AS villa,
+    estado_cuenta.nombre AS nombre,
+    SUM(estado_cuenta.costo) AS costo_total,
+    SUM(estado_cuenta.abono) AS abono_total,
+    SUM((estado_cuenta.costo - estado_cuenta.abono)) AS saldo_total
 FROM 
-    cuenta_vista
+    estado_cuenta
 WHERE 
-    cuenta_vista.desde BETWEEN '2024-01-01' AND '$fecha_saldo_actual' AND
-    cuenta_vista.concepto = '$concep_saldo' AND 
+    estado_cuenta.fecha_aplicada BETWEEN '2024-01-01' AND '$fecha_saldo_actual' AND
+    estado_cuenta.concepto = '$concep_saldo' AND 
     (
-        SUBSTRING_INDEX(cuenta_vista.villa, '-', 1) = SUBSTRING_INDEX('$desde_repo_saldo', '-', 1)
-        AND CAST(SUBSTRING_INDEX(cuenta_vista.villa, '-', -1) AS UNSIGNED) BETWEEN 
+        SUBSTRING_INDEX(estado_cuenta.villa, '-', 1) = SUBSTRING_INDEX('$desde_repo_saldo', '-', 1)
+        AND CAST(SUBSTRING_INDEX(estado_cuenta.villa, '-', -1) AS UNSIGNED) BETWEEN 
             CAST(SUBSTRING_INDEX('$desde_repo_saldo', '-', -1) AS UNSIGNED)
             AND CAST(SUBSTRING_INDEX('$hasta_repo_saldo', '-', -1) AS UNSIGNED)
     )
 GROUP BY 
-    cuenta_vista.concepto,
-    cuenta_vista.villa,
-    cuenta_vista.nombre
+    estado_cuenta.concepto,
+    estado_cuenta.villa,
+    estado_cuenta.nombre
 ORDER BY 
-    SUBSTRING_INDEX(cuenta_vista.villa, '-', 1),
-    CAST(SUBSTRING_INDEX(cuenta_vista.villa, '-', -1) AS UNSIGNED) ASC;
+    SUBSTRING_INDEX(estado_cuenta.villa, '-', 1),
+    CAST(SUBSTRING_INDEX(estado_cuenta.villa, '-', -1) AS UNSIGNED) ASC;
 ";
 }
 else
 {
     $sql = "SELECT 
-    cuenta_vista.villa AS villa,
-    cuenta_vista.nombre AS nombre,
-    SUM(cuenta_vista.costo) AS costo_total,
-    SUM(cuenta_vista.abono) AS abono_total,
-    SUM((cuenta_vista.costo - cuenta_vista.abono)) AS saldo_total
+    estado_cuenta.villa AS villa,
+    estado_cuenta.nombre AS nombre,
+    SUM(estado_cuenta.costo) AS costo_total,
+    SUM(estado_cuenta.abono) AS abono_total,
+    SUM((estado_cuenta.costo - estado_cuenta.abono)) AS saldo_total
 FROM 
-    cuenta_vista
+    estado_cuenta
 WHERE 
-    cuenta_vista.desde BETWEEN '2024-01-01' AND '$fecha_saldo_actual' AND
+    estado_cuenta.fecha_aplicada BETWEEN '2024-01-01' AND '$fecha_saldo_actual' AND
         (
-        SUBSTRING_INDEX(cuenta_vista.villa, '-', 1) = SUBSTRING_INDEX('$desde_repo_saldo', '-', 1)
-        AND CAST(SUBSTRING_INDEX(cuenta_vista.villa, '-', -1) AS UNSIGNED) BETWEEN 
+        SUBSTRING_INDEX(estado_cuenta.villa, '-', 1) = SUBSTRING_INDEX('$desde_repo_saldo', '-', 1)
+        AND CAST(SUBSTRING_INDEX(estado_cuenta.villa, '-', -1) AS UNSIGNED) BETWEEN 
             CAST(SUBSTRING_INDEX('$desde_repo_saldo', '-', -1) AS UNSIGNED)
             AND CAST(SUBSTRING_INDEX('$hasta_repo_saldo', '-', -1) AS UNSIGNED)
     )
 GROUP BY 
-    cuenta_vista.villa,
-    cuenta_vista.nombre
+    estado_cuenta.villa,
+    estado_cuenta.nombre
 ORDER BY 
-    SUBSTRING_INDEX(cuenta_vista.villa, '-', 1),
-    CAST(SUBSTRING_INDEX(cuenta_vista.villa, '-', -1) AS UNSIGNED) ASC;";
+    SUBSTRING_INDEX(estado_cuenta.villa, '-', 1),
+    CAST(SUBSTRING_INDEX(estado_cuenta.villa, '-', -1) AS UNSIGNED) ASC;";
 
 }
 
@@ -141,27 +141,27 @@ $sql2 = "SELECT
 FROM 
     (
         SELECT 
-            cuenta_vista.concepto AS concepto,
-            cuenta_vista.villa AS villa,
-            cuenta_vista.nombre AS nombre,
-            SUM(cuenta_vista.costo) AS costo_total,
-            SUM(cuenta_vista.abono) AS abono_total,
-            SUM((cuenta_vista.costo - cuenta_vista.abono)) AS saldo_total
+            estado_cuenta.concepto AS concepto,
+            estado_cuenta.villa AS villa,
+            estado_cuenta.nombre AS nombre,
+            SUM(estado_cuenta.costo) AS costo_total,
+            SUM(estado_cuenta.abono) AS abono_total,
+            SUM((estado_cuenta.costo - estado_cuenta.abono)) AS saldo_total
         FROM 
-            cuenta_vista
+            estado_cuenta
         WHERE 
-            cuenta_vista.desde BETWEEN '2024-01-01' AND '$fecha_saldo_actual' AND
-            cuenta_vista.concepto = '$concep_saldo' AND 
+            estado_cuenta.fecha_aplicada BETWEEN '2024-01-01' AND '$fecha_saldo_actual' AND
+            estado_cuenta.concepto = '$concep_saldo' AND 
             (
-        SUBSTRING_INDEX(cuenta_vista.villa, '-', 1) = SUBSTRING_INDEX('$desde_repo_saldo', '-', 1)
-        AND CAST(SUBSTRING_INDEX(cuenta_vista.villa, '-', -1) AS UNSIGNED) BETWEEN 
+        SUBSTRING_INDEX(estado_cuenta.villa, '-', 1) = SUBSTRING_INDEX('$desde_repo_saldo', '-', 1)
+        AND CAST(SUBSTRING_INDEX(estado_cuenta.villa, '-', -1) AS UNSIGNED) BETWEEN 
             CAST(SUBSTRING_INDEX('$desde_repo_saldo', '-', -1) AS UNSIGNED)
             AND CAST(SUBSTRING_INDEX('$hasta_repo_saldo', '-', -1) AS UNSIGNED)
     )
         GROUP BY 
-            cuenta_vista.concepto,
-            cuenta_vista.villa,
-            cuenta_vista.nombre
+            estado_cuenta.concepto,
+            estado_cuenta.villa,
+            estado_cuenta.nombre
     ) AS subquery;
 ";
 

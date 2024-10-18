@@ -93,7 +93,7 @@
 
 <script>
 
-actualizar_tabla_saldos();
+
 
 id_meto();
 
@@ -117,6 +117,8 @@ if (a)
 
 
 }
+
+actualizar_tabla_saldos();
 
 </script>
 

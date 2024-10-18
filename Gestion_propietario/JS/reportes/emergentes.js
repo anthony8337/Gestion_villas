@@ -29,6 +29,7 @@ function ingreso_lis_pro()
     
     actualizar_selectores_villa();
     actualizar_select_reporte();
+    actualizar_tabla_saldos();
 }
 
 //generar pro saldo
