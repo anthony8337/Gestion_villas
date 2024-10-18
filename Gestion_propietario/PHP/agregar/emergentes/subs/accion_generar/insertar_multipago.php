@@ -49,11 +49,17 @@ if($tipo_pago == "Efectivo")
 {
         $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto, tipo_pago, forma_pago, n_referencia) 
         VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago','$tipo_pago','Físico','Ninguna');";
+
 }
 else if($tipo_pago == "Referencia")
 {
         $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto, tipo_pago, forma_pago, n_referencia) 
         VALUES ('$cod_fac','$id_pro_multi','$id_cuenta','$fecha_pago','$total_pago','$cantidad_pago',0,1,1,'$concepto_pago','$tipo_pago','$forma_pago','$referencia');";
+
+$sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
+ VALUES (0,'$cantidad_pago','$fecha_pago','$id_cuenta');";
+ $result_segundo = $conn->query($sql_segundo);
+
 }
 
 
@@ -82,10 +88,18 @@ if ($tipo_pago == "Efectivo") {
 if($cantidad_pago >= $cargo_s)
 {
 $abono_real = $abono_s + $cargo_s;
+
+$sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
+ VALUES (0,'$cargo_s','$fecha_pago','$id_cuenta');";
+$result_segundo = $conn->query($sql_segundo);
 }
 else 
 {
-$abono_real = $abono_s + $cantidad_pago;        
+$abono_real = $abono_s + $cantidad_pago;   
+
+$sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
+ VALUES (0,'$cantidad_pago','$fecha_pago','$id_cuenta');";
+$result_segundo = $conn->query($sql_segundo);
 }
 
 

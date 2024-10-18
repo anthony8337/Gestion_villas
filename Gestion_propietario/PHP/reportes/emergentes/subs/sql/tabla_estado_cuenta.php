@@ -25,23 +25,23 @@ $todo_cuota = $_POST["todo_cuota"];
 
 if ($todo_cuota == "Historial completo" && $fecha_rumbo == "Historial completo") 
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_val'";
+    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val'";
 
 }
 else if ($todo_cuota != "Historial completo" && $fecha_rumbo == "Historial completo") 
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_val' AND concepto = '$selector';";
+    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' AND concepto = '$selector';";
 
 }
 else if ($todo_cuota == "Historial completo" && $fecha_rumbo != "Historial completo") 
 {
 
-    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_val' AND desde BETWEEN '$desde' AND '$hasta';";
+    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' AND fecha_aplicada BETWEEN '$desde' AND '$hasta';";
 }
 else if ($todo_cuota != "Historial completo" && $fecha_rumbo != "Historial completo") 
 {
 
-    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_val' AND concepto = '$selector' AND desde BETWEEN '$desde' AND '$hasta';";
+    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' AND concepto = '$selector' AND fecha_aplicada BETWEEN '$desde' AND '$hasta';";
 }
 
 
@@ -58,7 +58,7 @@ if($result -> num_rows > 0)
         echo"
         <tr>
         <td></td>
-        <td>",$row["desde"],"</td>
+        <td>",$row["fecha_aplicada"],"</td>
         <td>",$row["codigo"],"</td>
         <td>",$row["concepto"],"</td>
         <td>",$row["concepto_2"],"</td>

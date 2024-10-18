@@ -272,7 +272,8 @@ $(document).ready(function(){
     function abrirNuevaPagina_miltipago() {
     nombrar_usuario();
     // IDs de los inputs que quieres enviar
-    var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m','hd_grupo','total_multi','devo_multi','nombre_usuario'];
+    var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m','hd_grupo',
+    'total_multi','devo_multi','nombre_usuario','can_multi'];
     
     // Crea un formulario
     var form = document.createElement("form");

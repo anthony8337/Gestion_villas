@@ -18,25 +18,25 @@ else
 
 if($ranco_factura == "Historial completo" && $todo_cuota == "Historial completo")
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_sc'";
-    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM cuenta_vista WHERE id_unir = '$id_pro_sc'; ";
+    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc'";
+    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM estado_cuenta WHERE id_unir = '$id_pro_sc'; ";
 }
 else if($ranco_factura == "Historial completo" && $todo_cuota != "Historial completo")
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota';";
-    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM cuenta_vista WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota'; ";
+    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota';";
+    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM estado_cuenta WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota'; ";
 }
 else if($ranco_factura != "Historial completo" && $todo_cuota == "Historial completo")
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_sc' and desde BETWEEN '$desde' AND '$hasta'; ";
-    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM cuenta_vista 
-    WHERE id_unir = '$id_pro_sc' and desde BETWEEN '$desde' AND '$hasta';";
+    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' and fecha_aplicada BETWEEN '$desde' AND '$hasta'; ";
+    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM estado_cuenta 
+    WHERE id_unir = '$id_pro_sc' and fecha_aplicada BETWEEN '$desde' AND '$hasta';";
 }
 else if($ranco_factura != "Historial completo" && $todo_cuota != "Historial completo")
 {
-    $sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and desde BETWEEN '$desde' AND '$hasta'; ";
-    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM cuenta_vista 
-    WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and desde BETWEEN '$desde' AND '$hasta';";
+    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and fecha_aplicada BETWEEN '$desde' AND '$hasta'; ";
+    $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM estado_cuenta 
+    WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and fecha_aplicada BETWEEN '$desde' AND '$hasta';";
 }
 $result = $conn->query($sql);
 
@@ -54,7 +54,7 @@ if($result -> num_rows > 0)
         echo"
         <tr>
         
-        <td>",$row["desde"],"</td>
+        <td>",$row["fecha_aplicada"],"</td>
         <td>",$row["codigo"],"</td>
         <td>",$row["concepto"],"</td>
         <td>",$row["concepto_2"],"</td>
