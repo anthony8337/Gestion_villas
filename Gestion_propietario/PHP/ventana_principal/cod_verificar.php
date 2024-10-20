@@ -83,7 +83,7 @@ if ($result -> num_rows > 0)
         $m2 = $row["id_usuario"];
         $m3 = $row["clave"];
 
-        $message = "Contraseña temporar recibida:\n$combinacion\nSaludos cordiales."; // Cuerpo del mensaje
+        $message = "Contraseña temporal recibida:\n$combinacion\nSaludos cordiales."; // Cuerpo del mensaje
 
     }
 }

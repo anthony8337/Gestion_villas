@@ -34,3 +34,11 @@ function atajo_propietario() {
     actualizar_tabla_villa_pro();
     cerrar_ingreso_celda();
 }
+
+function atajo_estado_cuenta() {
+    
+    ingreso_lis_pro_sal();
+    datos_estado_cuenta();
+    cerrar_ingreso_celda();
+
+}

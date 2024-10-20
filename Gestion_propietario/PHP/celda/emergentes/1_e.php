@@ -54,12 +54,15 @@
 <span>Reimprimir facturas</span>
 </div>
 
+<div onclick="atajo_estado_cuenta()">
+<img src="Imagenes/person-lines-fill(1).svg">
+<span>Estado de cuenta</span>
+</div>
+
 <div onclick="atajo_propietario()">
 <img src="Imagenes/person-fill(1).svg">
 <span>Edítar propietario</span>
 </div>
-</button>
-
 
 
 </div>

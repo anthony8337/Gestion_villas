@@ -27,9 +27,7 @@
                 <button type="submit" >Entrar</button>
                 </form>
 
-                <label onclick="recuperar()">¿Olvidaste tu contraseña?</label>
-
-                <label onclick="cambiar_contraseña()">Cambiar contraseña</label>
+                <label onclick="cambiar_contraseña()">¿Olvidaste tu contraseña?</label>
                
 </div>
 
@@ -65,8 +63,7 @@
                 
                 <span id="reloj_temporal"></span>
                 
-
-                <button type="button" onclick="para_cambio()">Verificar</button>
+                <button type="submit">Verificar</button>
                 
                 </form>
 
@@ -103,6 +100,19 @@
 
 <div id="respuesta_login"></div>
 
+
+<script>
+
+$(document).ready(function(){
+    $('#comprobar_cambio').submit(function(e){
+        e.preventDefault();
+    
+        para_cambio();
+    
+    });
+});
+
+</script>
 
 <script>
 
