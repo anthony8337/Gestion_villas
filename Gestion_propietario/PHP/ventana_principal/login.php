@@ -74,10 +74,7 @@
 <input type="hidden" id="id_usu_login" name="id_usu_login">
 <input type="hidden" id="contra_antigua" name="contra_antigua">
 
-                <fieldset>
-                    <legend>Contraseña anterior</legend>
-                <input required type="password" id="txt_contra_anterior" name="txt_contra_anterior" placeholder="Ingresar contraseña anterior">
-                </fieldset>
+
 
                 <fieldset>
                     <legend>Contraseña nueva</legend>
@@ -250,9 +247,10 @@ if (a == b)
 }else
 {
     window.alert('Contraseña temporal no valida');
+    detener_vencimiento();
     regresar();
     limpiar_confirmar();
-    detener_vencimiento();
+    
 }
 
 }

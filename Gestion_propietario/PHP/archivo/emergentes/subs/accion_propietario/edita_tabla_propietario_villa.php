@@ -33,7 +33,7 @@ if($result -> num_rows > 0)
         <th>Número de medidor</th>
         <th>Modelo</th>
         <th>Habitaciones</th>
-        <th>Condición</th>
+        <th></th>
                     </tr>
             
                     <tbody class='borrar_t'>";
@@ -50,7 +50,6 @@ if($result -> num_rows > 0)
         <td>",$row["cont_eeh"],"</td>
         <td>",$row["modelo"],"</td>
         <td>",$row["habitaciones"],"</td>
-        <td>",$row["condicion"],"</td>
         <td class= 'oculto'>",$row["estado"],"</td>
         <td class= 'oculto'>",$row["id_unir"],"</td>
         <td><button onclick='eliminarFila(this)' type='button' class='accion_tel' 

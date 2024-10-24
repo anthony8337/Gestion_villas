@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     echo"<script>
-    limpiar_confirmar();
+    actualizar_villas_propietario_ultimo();
     confi_villa();
     </script>";
 }

@@ -70,6 +70,18 @@ function actualizar_villas_propietario()
     });   
 }
 
+function actualizar_villas_propietario_ultimo() 
+{
+    $.ajax({
+        type: 'GET',
+        url: 'PHP/archivo/emergentes/subs/accion_propietario/tabla_propietario_villa_ultimo.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#villa_propi_selec').html(response);
+        }
+    });   
+}
+
 function actualizar_villas_propietario_modificar() 
 {
     $.ajax({

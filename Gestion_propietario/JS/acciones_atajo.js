@@ -29,9 +29,12 @@ function atajo_reimprimir() {
 
 function atajo_propietario() {
     
+    
+
     ingreso_actu();
     modificar_propietario();
     actualizar_tabla_villa_pro();
+    
     cerrar_ingreso_celda();
 }
 

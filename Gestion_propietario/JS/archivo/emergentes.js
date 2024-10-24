@@ -57,6 +57,7 @@ function ingreso_vi()
     document.getElementById('btn_agregar_villa').style.display = 'block';
 
     actualizar_caracteristicas();
+    limpiar_confirmar();
 }
 
 function ingreso_vi_2()
@@ -94,6 +95,7 @@ function ingreso_vi_2()
 
 
     actualizar_caracteristicas();
+    
 }
 
 
