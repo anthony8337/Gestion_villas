@@ -34,6 +34,16 @@ else
 }
 
 
+if ($_POST['hd_correo'] == "")
+{
+        $hd_correo = "";
+}
+else
+{
+        $hd_correo = $_POST['hd_correo'];
+}
+
+
 $dp = $_POST['devo_multi'];
 $devolver_pago = substr($dp,3);
 
@@ -125,9 +135,11 @@ if ($result == true && $result2 == true) {
 
         if($para_cargo <= 0)
         {
+
                 echo"<script>
+
                 window.alert('Cuenta pagada con éxito.');
-                abrirNuevaPagina_miltipago();
+                saber_correo();
                 recargar_tabla_multi();
                 codigo_multi_acutalizar();
                 cerrar_crear_multipago();
@@ -138,8 +150,9 @@ if ($result == true && $result2 == true) {
         else
         {
                 echo"<script>
+
                 window.alert('Cuenta pagada de forma parcial.');
-                abrirNuevaPagina_miltipago();
+                saber_correo();
                 recargar_tabla_multi();
                 codigo_multi_acutalizar();
                 cerrar_crear_multipago();
@@ -154,11 +167,3 @@ else
         </script>";
 }
 ?>
-
-
-<script>
-        function pago_ajustado(a) 
-        {
-              
-        }
-</script>

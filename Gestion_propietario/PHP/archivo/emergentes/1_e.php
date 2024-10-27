@@ -17,11 +17,11 @@
 
 <?php
 
-$pal = ['Nombre completo', 'Número de identidad','Correo electrónico','Teléfono','Fecha de ingreso'];
-$id = ['txtnombre','txtid','txtcorreo','txttelefono','txtfecha_i'];
-$tipo = ['text','text','email','text','date','text'];
-$clases = ['','solo_numero','','solo_numero',''];
-$ocultar = ['','','','','oculto'];
+$pal = ['Nombre completo', 'Número de identidad','Teléfono','Fecha de ingreso'];
+$id = ['txtnombre','txtid','txttelefono','txtfecha_i'];
+$tipo = ['text','text','text','date','text'];
+$clases = ['','solo_numero','solo_numero',''];
+$ocultar = ['','','','oculto'];
 
 for ($i=0; $i < count($pal); $i++) {
 
@@ -33,6 +33,11 @@ for ($i=0; $i < count($pal); $i++) {
         ";
 }
 ?>
+
+<fieldset>
+        <legend>Correo electrónico</legend>
+        <input type='email' id = 'txtcorreo' name = 'txtcorreo' placeholder='Correo electrónico' title='Correo electrónico'>
+        </fieldset>
 
 <fieldset class="oculto">
     <legend style="visibility: hidden;">ff</legend>

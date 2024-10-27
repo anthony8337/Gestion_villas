@@ -18,12 +18,14 @@ function tabla_multi_pro(){
         var telefono = celdas[4].innerText;
         var villa = celdas[1].innerText;
         var id = celdas[0].innerText;
+        var correo = celdas[5].innerText;
 
         document.getElementById('hd_id_propietario').value = id;
         document.getElementById('sp_codigo_multi').textContent = villa;
         document.getElementById('codigo_villa_multi').value = villa;
         document.getElementById('txt_mn').value = nombre;
         document.getElementById('txt_tl').value = telefono;
+        document.getElementById('hd_correo').value = correo;
 
         sele_con_multi();
         actualizar_tabla_conce_multi();

@@ -94,7 +94,7 @@ $result_segundo = $conn->query($sql_segundo);
         echo"
         <script>
         window.alert('Cuentas registradas con éxito');
-        abrirNuevaPagina_miltipago();
+        saber_correo();
         recargar_tabla_multi();
         codigo_multi_acutalizar();
         cerrar_crear_multipago();

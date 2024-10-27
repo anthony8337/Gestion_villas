@@ -294,12 +294,14 @@ function datos_a_multipago()
     var villa = document.getElementById("nn_villa").value;
     var propi = document.getElementById("nn_propi").value;
     var telefono = document.getElementById("nn_telefono").value;
+    var correo = document.getElementById("nn_correo").value;
 
     document.getElementById("hd_id_propietario").value = id_unir;
     document.getElementById("txt_mn").value = propi;
     document.getElementById("txt_tl").value = telefono;
     document.getElementById("sp_codigo_multi").textContent = villa;
     document.getElementById("codigo_villa_multi").value = villa;
+    document.getElementById("hd_correo").value = correo;
     
 
 }

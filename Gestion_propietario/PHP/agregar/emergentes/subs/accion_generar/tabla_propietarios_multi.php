@@ -32,6 +32,7 @@ if($result -> num_rows > 0)
       <th>Nombre</th>
       <th>DNI</th>
       <th>Teléfono</th>
+      <th>Correo</th>
       
    </tr>";
 
@@ -43,6 +44,7 @@ if($result -> num_rows > 0)
         <td>",$row["nombre"],"</td>
         <td>",$row["dni"],"</td>
         <td>",$row["telefono"],"</td>
+        <td>",$row["correo"],"</td>
         </tr>
         ";
     }

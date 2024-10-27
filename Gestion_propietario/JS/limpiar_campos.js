@@ -59,6 +59,12 @@ function limpieza_select_estado()
     selectElement.innerHTML = '';
 }
 
+function limpieza_solidos() 
+{
+document.getElementById('sp_codigo_multi').textContent = '';
+document.getElementById('con_pago_multi').textContent = '';
+}
+
 function limpieza_clave()
 {
     var camposTexto = document.querySelectorAll('input[type="password"]');
@@ -136,6 +142,7 @@ limpiar_tabla_estado();
 limpiar_span();
 limpieza_select_estado();
 limpiar_tablas_villa();
+limpieza_solidos();
 }
 
 function limpiar_opcion()
@@ -160,6 +167,7 @@ if(elegir)
     limpiar_span();
     limpieza_select_estado();
     limpiar_tablas_villa();
+    limpieza_solidos();
 }  
 
 }

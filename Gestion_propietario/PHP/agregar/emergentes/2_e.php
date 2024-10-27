@@ -30,18 +30,20 @@
 <div class="c4">
 
     <fieldset>
-        <legend>Código: <span id="sp_codigo_multi" name="sp_codigo_multi"></span></legend>
+        <legend>Villa: <span id="sp_codigo_multi" name="sp_codigo_multi"></span></legend>
         <input type="hidden" id="codigo_villa_multi" name="codigo_villa_multi">
         <input type="hidden" name="hd_id_propietario" id="hd_id_propietario">
         <input type="hidden" name="hd_id_cuenta" id="hd_id_cuenta">
         <input type="hidden" name="hd_id_concepto" id="hd_id_concepto">
         <input type="hidden" name="hd_concepto_pago" id="hd_concepto_pago">
         <input type="hidden" name="hd_grupo" id="hd_grupo">
+
+        
         
 
         <?php
-        $nombre_dato = ['Nombre','Teléfono','Saldo'];
-        $id_datos = ['txt_mn','txt_tl','txt_sal'];
+        $nombre_dato = ['Nombre','Teléfono','Correo','Saldo'];
+        $id_datos = ['txt_mn','txt_tl','hd_correo','txt_sal'];
 
         for ($i=0; $i < count($nombre_dato); $i++) { 
         echo"
@@ -142,7 +144,8 @@ $(document).ready(function(){
        var a3 = document.getElementById("hd_id_cuenta" ).value;
        var a4 = document.getElementById("hd_id_concepto" ).value;
        var a5 = document.getElementById("hd_concepto_pago" ).value;
-       var a6 = document.getElementById("hd_grupo" ).value;
+       var a6 = document.getElementById("hd_grupo").value;
+       
 
        if(a6 == "")
        {
@@ -213,7 +216,7 @@ $(document).ready(function(){
         var a = confirm("¿Esta seguro de continuar el pago?");
 
         if (a) {
-        
+
         var id_cuenta = document.getElementById('hd_id_cuenta').value;
 
     if(id_cuenta != "")
@@ -269,11 +272,37 @@ $(document).ready(function(){
 </script>
 
 <script>
+
+    function saber_correo()
+    {
+        var a7 = document.getElementById("hd_correo").value;
+
+        if(a7 != "")
+        {
+            var b = confirm("Este propietario posee correo electronico \n¿Desea enviar el recibo al correo electronico e imprimirlo?");
+            if (b) 
+            {
+                abrirNuevaPagina_miltipago_correo();
+            }
+            else
+            {
+                abrirNuevaPagina_miltipago();
+            }
+
+        }
+            else
+            {
+                abrirNuevaPagina_miltipago();
+            }
+    }
+
+
     function abrirNuevaPagina_miltipago() {
+    
     nombrar_usuario();
     // IDs de los inputs que quieres enviar
     var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m','hd_grupo',
-    'total_multi','devo_multi','nombre_usuario','can_multi'];
+    'total_multi','devo_multi','nombre_usuario','can_multi','hd_correo'];
     
     // Crea un formulario
     var form = document.createElement("form");
@@ -297,5 +326,35 @@ $(document).ready(function(){
     document.body.removeChild(form);
 
     limpiar_confirmar();
+}
+
+
+function abrirNuevaPagina_miltipago_correo() {
+    
+    nombrar_usuario();
+    // IDs de los inputs que quieres enviar
+    var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m','hd_grupo',
+    'total_multi','devo_multi','nombre_usuario','can_multi','hd_correo'];
+    
+    // Crea un formulario
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "6_multipago_correo.php";
+    form.target = "_blank"; // Abre en nueva ventana
+
+    // Añade inputs ocultos para cada valor
+    inputIDs.forEach(function(id) {
+        var inputValue = document.getElementById(id).value;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = id;
+        input.value = inputValue;
+        form.appendChild(input);
+    });
+
+    // Envía el formulario
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
 }
 </script>
