@@ -30,6 +30,12 @@
         <input type="text" name="txt_cod_estados" id="txt_cod_estados" readonly>
         
 </fieldset>
+
+<fieldset>
+        <legend>Correo</legend>
+        <input type="text" name="txt_correo_estados" id="txt_correo_estados" readonly>
+        
+</fieldset>
     
 <fieldset>
         <legend>Fecha</legend>
@@ -131,6 +137,7 @@ ocultar_concep();
     {
 
         var b = document.getElementById("id_pro_sc").value;
+        var c = document.getElementById("txt_correo_estados").value;
 
         if(b == "")
         {
@@ -138,11 +145,24 @@ ocultar_concep();
         }
         else
         {
+
+            if(c == "")
+            {
+
             var a = confirm("¿Esta seguro de imprimir el estado de cuenta?");
         if(a)
         {
             abrirNuevaPagina_estado();
         }
+    }else
+    {
+        var a = confirm("Este propietario posee correo electronico \n¿Desea enviar el recibo al correo electronico e imprimirlo?");
+
+        if(a)
+        {
+            abrirNuevaPagina_estado_correo();
+        }
+    }
     }
     }
 
@@ -150,12 +170,44 @@ ocultar_concep();
         nombrar_usuario();
     // IDs de los inputs que quieres enviar
     var inputIDs = ['rango_cuota','ranco_factura','desde_estado','hasta_estado','fecha_estado_hoy'
-        ,'txt_cod_estados' ,'txt_propi_estados','id_pro_sc','todo_cuota','nombre_usuario'];
+        ,'txt_cod_estados' ,'txt_propi_estados','id_pro_sc','todo_cuota','nombre_usuario','txt_correo_estados'];
     
     // Crea un formulario
     var form = document.createElement("form");
     form.method = "POST";
     form.action = "3_estado_cuenta.php";
+    form.target = "_blank"; // Abre en nueva ventana
+
+    // Añade inputs ocultos para cada valor
+    inputIDs.forEach(function(id) {
+        var inputValue = document.getElementById(id).value;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = id;
+        input.value = inputValue;
+        form.appendChild(input);
+    });
+
+    // Envía el formulario
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    limpiar_confirmar();
+    cerrar_ingreso_lp_sal();
+    
+}
+
+function abrirNuevaPagina_estado_correo() {
+        nombrar_usuario();
+    // IDs de los inputs que quieres enviar
+    var inputIDs = ['rango_cuota','ranco_factura','desde_estado','hasta_estado','fecha_estado_hoy'
+        ,'txt_cod_estados' ,'txt_propi_estados','id_pro_sc','todo_cuota','nombre_usuario','txt_correo_estados'];
+    
+    // Crea un formulario
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "8_estado_cuenta_correo.php";
     form.target = "_blank"; // Abre en nueva ventana
 
     // Añade inputs ocultos para cada valor

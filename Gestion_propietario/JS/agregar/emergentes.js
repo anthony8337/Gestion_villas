@@ -338,10 +338,12 @@ function datos_estado_cuenta()
     var id_unir = document.getElementById("nn_id").value;
     var villa = document.getElementById("nn_villa").value;
     var propi = document.getElementById("nn_propi").value;
+    var correo = document.getElementById("nn_correo").value;
 
     document.getElementById("id_pro_sc").value = id_unir;
     document.getElementById("txt_propi_estados").value = villa;
     document.getElementById("txt_cod_estados").value = propi;
+    document.getElementById("txt_correo_estados").value = correo;
 
     tabla_estado_cuenta();
 

@@ -1,5 +1,5 @@
 <?php
-ob_clean();
+ob_start(); // Inicia el buffer de salida
 ?>
 
 <!DOCTYPE html>
@@ -12,18 +12,29 @@ ob_clean();
     $cssFile = "http://" . $_SERVER['HTTP_HOST'] . "/CSS/super_archivo.css";
     ?>
     <link rel="stylesheet" type="text/css" href="<?php echo $cssFile; ?>">
-    
+    <title>Document</title>
+
+    <style>
+        @page {
+            margin: 20mm;
+            @top-right {
+                content: "Página " counter(page) " de " counter(pages);
+            }
+        }
+    </style>
 </head>
 <body>
-    <?php
+
+<?php
     // Asegurarse de usar rutas absolutas para los includes
     include $_SERVER['DOCUMENT_ROOT'] . "/PHP/reportes/salidas/estrucctura/formato_estado_cuenta.php";
     ?>
+
 </body>
 </html>
 
 <?php
-$html = ob_get_clean();
+$html = ob_get_clean(); // Obtiene el contenido del buffer de salida y limpia el buffer
 
 require_once "libreria/dompdf/autoload.inc.php";
 
@@ -37,6 +48,7 @@ $dompdf->setOptions($options);
 
 $canvas = $dompdf->getCanvas();
 $canvas->page_text(500, 740, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0));
+
 
 $dompdf->loadHtml($html);
 $dompdf->setPaper('letter');

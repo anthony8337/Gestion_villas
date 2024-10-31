@@ -37,10 +37,12 @@ function selec_pro_estado_cuenta(){
       var id = celdas[0].innerText;
       var nombre = celdas[1].innerText;
       var villa = celdas[2].innerText;
+      var correo = celdas[5].innerText;
 
       document.getElementById('id_pro_sc').value = id;
       document.getElementById('txt_propi_estados').value = nombre;
-      document.getElementById('txt_cod_estados').value = villa;      
+      document.getElementById('txt_cod_estados').value = villa; 
+      document.getElementById('txt_correo_estados').value = correo;      
 
       cerrar_selec_pro_estado();
       seleccionar_conceptos_cuenta();
