@@ -322,10 +322,12 @@ function datos_a_generar_reimprecion()
     var id_unir = document.getElementById("nn_id").value;
     var villa = document.getElementById("nn_villa").value;
     var propi = document.getElementById("nn_propi").value;
+    var correo = document.getElementById("nn_correo").value;
 
     document.getElementById("hd_id_reim").value = id_unir;
     document.getElementById("txt_villa_reim").value = villa;
     document.getElementById("txt_nombre_reim").value = propi;
+    document.getElementById("txt_correo_reim").value = correo;
 
     actualizar_tabla_cuentas_pagadas();
 

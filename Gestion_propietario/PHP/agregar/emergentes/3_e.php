@@ -30,7 +30,11 @@
     <input type="text" id="txt_cod_reim" name="txt_cod_reim" readonly>
 </fieldset>
 
-
+<fieldset>
+        <legend>Código de villa</legend>
+        <input type="hidden" id="hd_id_reim" name="hd_id_reim">
+        <input type="text" id="txt_villa_reim" name="txt_villa_reim" readonly>
+    </fieldset>
 
     <fieldset>
         <legend>Propietario</legend>
@@ -38,10 +42,11 @@
     </fieldset>
 
     <fieldset>
-        <legend>Código de villa</legend>
-        <input type="hidden" id="hd_id_reim" name="hd_id_reim">
-        <input type="text" id="txt_villa_reim" name="txt_villa_reim" readonly>
+        <legend>Correo</legend>
+        <input type="email" id="txt_correo_reim" name="txt_correo_reim" readonly>
     </fieldset>
+
+
 
     
 </div>
@@ -120,6 +125,7 @@
     {
         var a = document.getElementById("hd_id_reim").value;
         var b = document.getElementById("txt_cod_reim").value;
+        var c = document.getElementById("txt_correo_reim").value;
 
         if (a == "" || b == "")
         {
@@ -127,6 +133,9 @@
         }
         else
         {
+
+            if (c == "")
+            {
             var a_2 = confirm("¿Desea ver el recibo a reimprimir?");
 
             if (a_2) 
@@ -135,6 +144,17 @@
                 cerrar_re_factura();
             }
         }
+        else
+        {
+var a_3 = confirm("Este propietario posee correo electronico \n¿Desea enviar el recibo al correo electronico e imprimirlo?");
+
+if (a_3) 
+{
+    abrirNuevaPagina_correo_reim();
+    cerrar_re_factura();
+}
+        }
+    }
         
     }
 
@@ -142,12 +162,44 @@
         nombrar_usuario();
     // IDs de los inputs que quieres enviar
     var inputIDs = ['txt_cod_reim','txt_nombre_reim','txt_villa_reim','txt_fecha_pago_reim',
-    'txt_tipa_reim','txt_for_reim','hh_contar_cuentas','txt_total_abono','nombre_usuario'];
+    'txt_tipa_reim','txt_for_reim','hh_contar_cuentas','txt_total_abono','nombre_usuario','txt_correo_reim'];
     
     // Crea un formulario
     var form = document.createElement("form");
     form.method = "POST";
     form.action = "1_reimprimir.php";
+    form.target = "_blank"; // Abre en nueva ventana
+
+    // Añade inputs ocultos para cada valor
+    inputIDs.forEach(function(id) {
+        var inputValue = document.getElementById(id).value;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = id;
+        input.value = inputValue;
+        form.appendChild(input);
+    });
+
+    // Envía el formulario
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    limpiar_confirmar();
+    
+}
+
+
+function abrirNuevaPagina_correo_reim() {
+        nombrar_usuario();
+    // IDs de los inputs que quieres enviar
+    var inputIDs = ['txt_cod_reim','txt_nombre_reim','txt_villa_reim','txt_fecha_pago_reim',
+    'txt_tipa_reim','txt_for_reim','hh_contar_cuentas','txt_total_abono','nombre_usuario','txt_correo_reim'];
+    
+    // Crea un formulario
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "7_reimprimir_correo.php";
     form.target = "_blank"; // Abre en nueva ventana
 
     // Añade inputs ocultos para cada valor

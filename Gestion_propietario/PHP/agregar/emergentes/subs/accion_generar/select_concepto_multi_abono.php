@@ -22,7 +22,7 @@ $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
-    echo"<option value='--Selecciona un conepto--'>--Selecciona un conepto--</option>";   
+    echo"<option value='1'>--Selecciona un conepto--</option>";   
     while ($row = $result->fetch_assoc()) {
         echo"
         <option value='",$row["concepto"],"'>",$row["concepto"],"</option>

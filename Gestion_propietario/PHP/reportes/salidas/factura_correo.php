@@ -15,10 +15,11 @@ ob_start();
 </head>
 <body>
 
-    <?php
+<?php
     // Asegurarse de usar rutas absolutas para los includes
-    include $_SERVER['DOCUMENT_ROOT'] . "/PHP/reportes/salidas/estrucctura/formato_factura_multipago.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/PHP/reportes/salidas/estrucctura/formato_factura.php";
     ?>
+
 </body>
 </html>
 
@@ -48,14 +49,14 @@ $pdfOutput = $dompdf->output();
 // Mostrar el PDF en el navegador
 $dompdf->stream("Recibo.pdf", array("Attachment" => false));
 
-// Configuración para que el correo se envíe en segundo plano
-ignore_user_abort(true); // Continuar ejecutando el script si se cierra el navegador
-fastcgi_finish_request(); // Finalizar la respuesta al navegador
-
 // Configuración del correo
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $hd_correo = $_POST['hd_correo'];
-} else {
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    $hd_correo = $_POST['txt_correo_reim'];
+}
+else
+{
     $hd_correo = "";
 }
 
@@ -65,7 +66,7 @@ $message = "Estimado usuario,\n\nAdjunto encontrarás el recibo en formato PDF.\
 $boundary = md5(time()); // Para separar las partes del correo
 
 // Encabezados del correo
-$headers = "From: Anthony Oliva Google";
+$headers = "From: Anthony Oliva Google \r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
 
@@ -81,10 +82,9 @@ $body .= "Content-Disposition: attachment; filename=\"Recibo.pdf\"\r\n";
 $body .= "\r\n" . chunk_split(base64_encode($pdfOutput)) . "\r\n";
 $body .= "--$boundary--";
 
+
 // Enviar el correo
 mail($to, $subject, $body, $headers);
 
+
 ?>
-<script>
-    limpiar_confirmar();
-</script>

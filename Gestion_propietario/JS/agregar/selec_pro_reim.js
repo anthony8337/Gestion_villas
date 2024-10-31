@@ -13,6 +13,7 @@ function tabla_pro_reim_accion(){
 
         limpiar_confirmar();
 
+        var correo = celdas[5].innerText;
         var nombre = celdas[2].innerText;
         var villa = celdas[1].innerText;
         var id = celdas[0].innerText;
@@ -21,6 +22,7 @@ function tabla_pro_reim_accion(){
 
         document.getElementById('txt_villa_reim').value = villa;
         document.getElementById('txt_nombre_reim').value = nombre;
+        document.getElementById('txt_correo_reim').value = correo;
 
         actualizar_tabla_cuentas_pagadas();
         cerra_propi_reim();

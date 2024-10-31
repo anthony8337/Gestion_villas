@@ -141,7 +141,7 @@
     <fieldset title="Concepto de cuenta" id="concep_cuenta">
         <legend>Concepto de cuenta</legend>
         <input type="hidden" id="id_concepto_abono" name="id_concepto_abono">
-        <select title="Concepto de ceunta que realizara el pago" id="txt_concep_cuenta" oninput="actualizar_concepto_abono()">
+        <select title="Concepto de ceunta que realizara el pago" id="txt_concep_cuenta" name="txt_concep_cuenta" oninput="actualizar_concepto_abono()">
             <?php include "PHP/agregar/emergentes/subs/accion_generar/select_concepto_multi_abono.php";?>
         </select>
         </fieldset>
@@ -153,7 +153,7 @@
     $id = ['txt_costo_gc','txt_total_gc'];
     $calcu_cuerpo = ['oninput="calcular_fecha()"',''];
     $leible = ['','readonly'];
-    $pal = ['placeholder="Selecciona un concepto"',''];
+    $pal = ['placeholder="Valor del concepto"','placeholder="Costo total"'];
 
     for ($i=0; $i < count($nombre); $i++) { 
         echo"
@@ -259,6 +259,10 @@ if (decidir_aporte) {
             data: $(this).serialize(),
             success: function(response){
                 $('#respuesta_cuenta').html(response);
+
+                document.getElementById('txt_concep_cuenta').value = "1";
+                document.getElementById('txt_total_gc').value = "";
+                document.getElementById('txt_costo_gc').value = "";
                 
                 if(document.getElementById('principal_gc_mt').value == 'Multipago')
                 {
