@@ -106,7 +106,7 @@ function actualizar_villas_adicionar()
     });   
 }
 
-function actualizar_propietarios() 
+function actualizar_propietarios()
 {
     $.ajax({
         type: 'GET',
@@ -321,6 +321,21 @@ function actualizar_selectores_villa()
     });
 }
 
+function actualizar_selectores_villa_saldo()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/reportes/desde_pro_saldos.php',
+        data: $(this).serialize(),
+        success: function(response){
+            $('#desde_repo_saldo').html(response);
+            $('#hasta_repo_saldo').html(response);
+
+            actualizar_tabla_saldos();
+        }
+    });
+}
+
 function actualizar_selectores_villa_reporte()
 {
     $.ajax({
@@ -331,6 +346,7 @@ function actualizar_selectores_villa_reporte()
             $('#desde_reportes_villas').html(response);
             $('#hasta_reportes_villas').html(response);
             ultima_villa_repor();
+            actualizar_tabla_villa();
         }
     });
     

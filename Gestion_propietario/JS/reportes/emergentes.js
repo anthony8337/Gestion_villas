@@ -28,7 +28,7 @@ function ingreso_lis_pro()
     document.getElementById('lis_pro').style.display = 'flex';
     document.getElementById('lis_pro').style.zIndex = '2';
     
-    actualizar_selectores_villa();
+    actualizar_selectores_villa_saldo();
     actualizar_select_reporte();
     actualizar_tabla_saldos();
 }
