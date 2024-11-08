@@ -356,5 +356,7 @@ function abrirNuevaPagina_miltipago_correo() {
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
+
+    limpiar_confirmar();
 }
 </script>

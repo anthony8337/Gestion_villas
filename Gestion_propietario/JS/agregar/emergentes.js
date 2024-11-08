@@ -277,7 +277,17 @@ function selec_pro_estado()
     document.getElementById('rp_propietario').style.display = "flex";
     document.getElementById('rp_propietario').style.zIndex = "100";
     actualizar_propi_cuentas();
+}
 
+function selec_usuario()
+{
+    document.getElementById('rp_usuarios').style.display = "flex";
+    document.getElementById('rp_usuarios').style.zIndex = "110";
+}
+
+function cerrar_selec_usuario()
+{
+    document.getElementById('rp_usuarios').style.display = "none";
 }
 
 function cerrar_selec_pro_estado()

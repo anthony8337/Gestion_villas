@@ -1,5 +1,5 @@
 <?php
-ob_start();
+ob_start(); // Inicia el buffer de salida
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +23,10 @@ ob_start();
 </body>
 </html>
 
+
+
 <?php
-$html = ob_get_clean();
+$html = ob_get_clean(); // Obtiene el contenido del buffer de salida y limpia el buffer
 
 require_once "libreria/dompdf/autoload.inc.php";
 
@@ -36,14 +38,18 @@ $options = $dompdf->getOptions();
 $options->set(array('isRemoteEnabled' => true)); // Habilitar carga remota de archivos
 $dompdf->setOptions($options);
 
-$canvas = $dompdf->getCanvas();
-$canvas->page_text(500, 740, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0));
-
 $dompdf->loadHtml($html);
 $dompdf->setPaper('letter');
 $dompdf->render();
 
-// Guardar el PDF en una variable en lugar de mostrarlo
+// Agregar pie de página con el número de página
+$canvas = $dompdf->getCanvas();
+
+$canvas->page_text(40, 710, str_repeat("_", 95), null, 10, array(0, 0, 0));
+
+$canvas->page_text(500, 740, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0)); // Ajustar la posición y el formato según sea necesario
+
+// Guardar el PDF en una variable en lugar de mostrarlo directamente
 $pdfOutput = $dompdf->output();
 
 // Mostrar el PDF en el navegador
@@ -82,9 +88,7 @@ $body .= "Content-Disposition: attachment; filename=\"estado_de_cuenta.pdf\"\r\n
 $body .= "\r\n" . chunk_split(base64_encode($pdfOutput)) . "\r\n";
 $body .= "--$boundary--";
 
-
 // Enviar el correo
 mail($to, $subject, $body, $headers);
-
 
 ?>

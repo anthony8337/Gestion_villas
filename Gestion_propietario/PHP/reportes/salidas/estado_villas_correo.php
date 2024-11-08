@@ -1,5 +1,5 @@
 <?php
-ob_start();
+ob_start(); // Inicia el buffer de salida
 ?>
 
 <!DOCTYPE html>
@@ -15,15 +15,18 @@ ob_start();
 </head>
 <body>
 
-    <?php
+<?php
     // Asegurarse de usar rutas absolutas para los includes
-    include $_SERVER['DOCUMENT_ROOT'] . "/PHP/reportes/salidas/estrucctura/formato_factura_multipago.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/PHP/reportes/salidas/estrucctura/formato_villa.php";
     ?>
+
 </body>
 </html>
 
+
+
 <?php
-$html = ob_get_clean();
+$html = ob_get_clean(); // Obtiene el contenido del buffer de salida y limpia el buffer
 
 require_once "libreria/dompdf/autoload.inc.php";
 
@@ -35,28 +38,28 @@ $options = $dompdf->getOptions();
 $options->set(array('isRemoteEnabled' => true)); // Habilitar carga remota de archivos
 $dompdf->setOptions($options);
 
+$dompdf->loadHtml($html);
+$dompdf->setPaper('letter');
+$dompdf->render();
+
+// Agregar pie de página con el número de página
 $canvas = $dompdf->getCanvas();
 
 $canvas->page_text(40, 710, str_repeat("_", 95), null, 10, array(0, 0, 0));
 
 $canvas->page_text(500, 740, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0)); // Ajustar la posición y el formato según sea necesario
 
-
-$dompdf->loadHtml($html);
-$dompdf->setPaper('letter');
-$dompdf->render();
-
-// Guardar el PDF en una variable en lugar de mostrarlo
+// Guardar el PDF en una variable en lugar de mostrarlo directamente
 $pdfOutput = $dompdf->output();
 
 // Mostrar el PDF en el navegador
-$dompdf->stream("Recibo.pdf", array("Attachment" => false));
+$dompdf->stream("estado_de_cuenta.pdf", array("Attachment" => false));
 
 // Configuración del correo
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-    $hd_correo = $_POST['hd_correo'];
+    $hd_correo = $_POST['co_usuarios_villa'];
 }
 else
 {
@@ -64,8 +67,8 @@ else
 }
 
 $to = $hd_correo;
-$subject = "Recibo en PDF";
-$message = "Estimado usuario,\n\nAdjunto encontrarás el recibo en formato PDF.\n\nSaludos.";
+$subject = "Estado de cuenta en PDF";
+$message = "Estimado usuario,\n\nAdjunto encontrarás el Estado de cuenta en formato PDF.\n\nSaludos.";
 $boundary = md5(time()); // Para separar las partes del correo
 
 // Encabezados del correo
@@ -79,15 +82,13 @@ $body .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $body .= "Content-Transfer-Encoding: 7bit\r\n";
 $body .= "\r\n$message\r\n";
 $body .= "--$boundary\r\n";
-$body .= "Content-Type: application/pdf; name=\"Recibo.pdf\"\r\n";
+$body .= "Content-Type: application/pdf; name=\"estado_de_villa.pdf\"\r\n";
 $body .= "Content-Transfer-Encoding: base64\r\n";
-$body .= "Content-Disposition: attachment; filename=\"Recibo.pdf\"\r\n";
+$body .= "Content-Disposition: attachment; filename=\"estado_de_villa.pdf\"\r\n";
 $body .= "\r\n" . chunk_split(base64_encode($pdfOutput)) . "\r\n";
 $body .= "--$boundary--";
 
-
 // Enviar el correo
 mail($to, $subject, $body, $headers);
-
 
 ?>

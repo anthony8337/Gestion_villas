@@ -33,6 +33,7 @@ ob_start(); // Inicia el buffer de salida
 </body>
 </html>
 
+
 <?php
 $html = ob_get_clean(); // Obtiene el contenido del buffer de salida y limpia el buffer
 
@@ -46,12 +47,15 @@ $options = $dompdf->getOptions();
 $options->set(array('isRemoteEnabled' => true)); // Habilitar carga remota de archivos
 $dompdf->setOptions($options);
 
-$canvas = $dompdf->getCanvas();
-$canvas->page_text(500, 740, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0));
-
-
 $dompdf->loadHtml($html);
 $dompdf->setPaper('letter');
+
+$canvas = $dompdf->getCanvas();
+
+$canvas->page_text(40, 710, str_repeat("_", 95), null, 10, array(0, 0, 0));
+
+$canvas->page_text(500, 740, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0)); // Ajustar la posición y el formato según sea necesario
+
 
 $dompdf->render();
 $dompdf->stream("Estado_de_saldo.pdf", array("Attachment" => false));

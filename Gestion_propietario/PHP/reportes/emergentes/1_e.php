@@ -1,4 +1,4 @@
-<link rel='stylesheet' type='text/css' media='screen' href='CSS/reportes/mod_lis_villa.css'>
+
 
 <div id="lis_villa" class="mod">
 
@@ -62,16 +62,39 @@
 </div>
 
 <div class="c3">
+<button type="button" onclick="selec_usuario()">Enviar a usuario</button>
 <button type="button" onclick="imprime_villas()">Imprimir</button>
 </div>
 
 </div>
 </div>
 
+<input type="hidden" id="num_usuarios_villa" name="num_usuarios_villa">
 
+<input type="hidden" id="co_usuarios_villa" name="co_usuarios_villa">
 
 <script>
 
+function imprime_villas_correo()
+{
+
+    var b = document.getElementById('co_usuarios_villa').value;
+    
+    if (b == "") 
+    {
+    window.alert("No se ha seleccionado ningun registro.");    
+    }
+    else
+    {
+    var a = confirm("¿Desea enviar e imprimir el registro de villas?");
+    if (a)
+    {
+        
+
+        abrirNuevaPagina_villas_correo();
+    }
+    }
+}
 
 
 function imprime_villas()
@@ -95,6 +118,9 @@ function imprime_villas()
 
 </script>
 
+
+
+
 <script>
     function abrirNuevaPagina_villas() {
     nombrar_usuario();
@@ -106,6 +132,37 @@ function imprime_villas()
     var form = document.createElement("form");
     form.method = "POST";
     form.action = "5_villas.php";
+    form.target = "_blank"; // Abre en nueva ventana
+
+    // Añade inputs ocultos para cada valor
+    inputIDs.forEach(function(id) {
+        var inputValue = document.getElementById(id).value;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = id;
+        input.value = inputValue;
+        form.appendChild(input);
+    });
+
+    // Envía el formulario
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    cerrar_ingreso_lv();
+
+}
+
+function abrirNuevaPagina_villas_correo() {
+    nombrar_usuario();
+    // IDs de los inputs que quieres enviar
+    var inputIDs = ['dt_villas','desde_reportes_villas','hasta_reportes_villas',
+    'estado_villa','modelo_villa','nombre_usuario','num_usuarios_villa','co_usuarios_villa'];
+    
+    // Crea un formulario
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "9_villas_correo.php";
     form.target = "_blank"; // Abre en nueva ventana
 
     // Añade inputs ocultos para cada valor

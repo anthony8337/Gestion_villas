@@ -871,6 +871,10 @@ width: 1000px;
 min-height: 250px;
 }
 
+.ventanas_medianas_usuario
+{
+width: 800px;
+}
 
 #multi_cantidad_pago .ventanas_medianas
 {

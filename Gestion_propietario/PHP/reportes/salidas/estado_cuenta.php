@@ -17,9 +17,6 @@ ob_start(); // Inicia el buffer de salida
     <style>
         @page {
             margin: 20mm;
-            @top-right {
-                content: "Página " counter(page) " de " counter(pages);
-            }
         }
     </style>
 </head>
@@ -46,13 +43,17 @@ $options = $dompdf->getOptions();
 $options->set(array('isRemoteEnabled' => true)); // Habilitar carga remota de archivos
 $dompdf->setOptions($options);
 
-$canvas = $dompdf->getCanvas();
-$canvas->page_text(500, 740, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0));
-
-
 $dompdf->loadHtml($html);
 $dompdf->setPaper('letter');
-
 $dompdf->render();
+
+// Agregar el número de página en el formato "Página 1-2" en cada página
+$canvas = $dompdf->getCanvas();
+
+$canvas->page_text(40, 710, str_repeat("_", 95), null, 10, array(0, 0, 0));
+
+$canvas->page_text(500, 740, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0)); // Ajustar la posición y el formato según sea necesario
+
+
 $dompdf->stream("Estado_de_cuenta.pdf", array("Attachment" => false));
 ?>

@@ -97,7 +97,6 @@ include "PHP/reportes/salidas/estrucctura/php_villas/tabla_php_estados.php";
 </div>
 
 <footer>
-<div class="separador"></div>
 <div class="page-number"></div>
 <span class="nom_usu">Usuario: <?php echo htmlspecialchars($nombre_usuario);?></span>
 </footer>

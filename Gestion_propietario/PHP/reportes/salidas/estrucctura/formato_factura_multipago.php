@@ -136,7 +136,6 @@ include "PHP/reportes/salidas/estrucctura/php_factura_multi/tabla_factura_multi.
 
 
 <footer>
-<div class="separador"></div>
 <div class="page-number"></div>
 <span class="nom_usu">Usuario: <?php echo htmlspecialchars($nombre_usuario);?></span>
 </footer>
