@@ -2,6 +2,10 @@
 include "PHP/reportes/salidas/estrucctura/php_saldos_cuenta/estado_php_cuentas.php";
 ?>
 
+<?php
+include "PHP/reportes/salidas/estrucctura/php_saldos_cuenta/tabla_php_estados_contar.php";
+?>
+
 <div class="cuerpo_pdf">
 
 <header class="encabezado ajuste_centro">
@@ -18,7 +22,7 @@ include "PHP/reportes/salidas/estrucctura/php_saldos_cuenta/estado_php_cuentas.p
 
 <td>
 <h4>CONCEPTO DE SALDO</h4>
-<span><?php echo htmlspecialchars($concep_saldo); ?></span><br>
+<span><?php echo htmlspecialchars($a); ?></span><br>
 <span>Saldo de clientes al <?php echo htmlspecialchars($fecha_saldo_actual); ?></span></span>
 </td>
 
@@ -36,7 +40,7 @@ include "PHP/reportes/salidas/estrucctura/php_saldos_cuenta/estado_php_cuentas.p
 
 <table>
     <tr>
-        <td>Cantidad de registros: holi</td>
+        <td>Cantidad de registros: <?php echo htmlspecialchars($contar_registros_verdad)?></td>
         <td></td>
         <td></td>
 <td>

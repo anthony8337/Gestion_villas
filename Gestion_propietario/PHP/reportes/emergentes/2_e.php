@@ -51,7 +51,7 @@
 </div>
 <div class="c4">
 <div class="contenido_tabla tam_limite">
-    <table id="td_saldos_cuerpo" class="contenido">
+    <table id="td_saldos_cuerpo" class="contenido tabla_saldos_vista">
         <tr>
         <th></th>
         <th>Clave</th>
@@ -67,9 +67,10 @@
     </div>
 </div>
 
+
 <div class="c3 total_extra">
 
-<fieldset>
+<fieldset class="espacio">
 
 <fieldset>
     <legend>Saldo total del crédito</legend>
@@ -81,6 +82,8 @@
     <input type="text" name="txt_st_cobrar" id="txt_st_cobrar" readonly>
 </fieldset>
 
+
+<button type="button" onclick="selec_usuario(),var_saldos()">Enviar a usuario</button>
 <button type="button" onclick="imprimir_saldos()">Imprimir</button>
 
 </fieldset>
@@ -93,7 +96,14 @@
 
 <script>
 
+function var_saldos()
+{
+    document.getElementById('identifica_envio').value = "saldos";
+}
 
+</script>
+
+<script>
 
 id_meto();
 
@@ -122,6 +132,35 @@ actualizar_tabla_saldos();
 
 </script>
 
+
+<input type="hidden" name="co_usu_saldo" id="co_usu_saldo">
+
+<script>
+
+function imprime_saldo_correo()
+{
+
+    var b = document.getElementById('co_usuario_selec').value;
+
+    document.getElementById('co_usu_saldo').value = b;
+    
+    if (b == "") 
+    {
+    window.alert("No se ha seleccionado ningun registro.");    
+    }
+    else
+    {
+    var a = confirm("¿Desea enviar e imprimir el registro de saldos?");
+    if (a)
+    {
+        
+
+        abrirNuevaPagina_saldo_correo();
+    }
+    }
+}
+
+</script>
 
 <script>
     function abrirNuevaPagina_saldo() {
@@ -152,6 +191,40 @@ actualizar_tabla_saldos();
     document.body.removeChild(form);
 
     cerrar_ingreso_lp();
+
+}
+
+function abrirNuevaPagina_saldo_correo() {
+    nombrar_usuario();
+    // IDs de los inputs que quieres enviar
+    var inputIDs = ['fecha_saldo','concep_saldo','hasta_repo_saldo',
+    'desde_repo_saldo','fecha_saldo_actual','concep_metodo','nombre_usuario','co_usu_saldo'];
+    
+    // Crea un formulario
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "10_saldos_correo.php";
+    form.target = "_blank"; // Abre en nueva ventana
+
+    // Añade inputs ocultos para cada valor
+    inputIDs.forEach(function(id) {
+        var inputValue = document.getElementById(id).value;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = id;
+        input.value = inputValue;
+        form.appendChild(input);
+    });
+
+    // Envía el formulario
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    document.getElementById('sl_usuarios').value = '0';
+    cerrar_selec_usuario();
+    cerrar_ingreso_lp();
+    limpiar_confirmar();
 
 }
 </script>

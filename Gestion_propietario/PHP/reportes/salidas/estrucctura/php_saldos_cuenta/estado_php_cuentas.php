@@ -8,15 +8,17 @@ $hasta_repo_saldo = $_POST["hasta_repo_saldo"];
 $desde_repo_saldo = $_POST["desde_repo_saldo"];
 $fecha_saldo_actual = $_POST["fecha_saldo_actual"];
 $concep_metodo = $_POST["concep_metodo"];
+$concep_saldo = $_POST["concep_saldo"];
+$nombre_usuario = $_POST['nombre_usuario'];
 
-if ($concep_metodo == "Concepto completo")
-{
-    $concep_saldo = "Concepto completo";
+if ($concep_metodo == "Concepto completo") {
+    $a = "Concepto completo";
 }else
 {
-    $concep_saldo = $_POST["concep_saldo"];
+    $a = "$concep_saldo";
 }
-$nombre_usuario = $_POST['nombre_usuario'];
+
+
 
 }else
 {

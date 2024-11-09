@@ -1341,3 +1341,15 @@ width: 600px;
 {
     width: 200px;
 }
+
+.tabla_saldos_vista th, .tabla_saldos_vista td 
+{
+
+width: 25%;
+
+}
+
+.espacio fieldset
+{
+margin-bottom: 5px;
+}

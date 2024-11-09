@@ -2,9 +2,11 @@
 
 <div class="centro ventanas_medianas_usuario">
 
+<input type="hidden" id="identifica_envio" name="identifica_envio">
+
 <div class="c1">
 <h2 >Seleccionar usuario</h2>
-<button onclick="cerrar_selec_usuario(),limpiar_confirmar();" type="button">X</button>
+<button onclick="cerrar_selec_usuario(),limpiar_confirmar(),actualizar_tabla_saldos()" type="button">X</button>
 </div>
 
 <form id="Enviar_docu">
@@ -37,7 +39,7 @@
 
 <div class="c3">
 
-<button type="button" onclick="imprime_villas_correo()">Enviar por correo</button>
+<button type="button" onclick="decidir_documento()">Enviar por correo</button>
 <button type="button">Enviar por whatsaap</button>
 </div>
 </form>
@@ -47,6 +49,22 @@
 </div>
 
 <script>
+
+
+function decidir_documento()
+{
+
+    var identificar = document.getElementById("identifica_envio").value;
+
+    if(identificar == "saldos")
+    {
+        imprime_saldo_correo();
+    }
+    else if(identificar == "villas")
+    {
+        imprime_villas_correo();
+    }
+}
 
 function recargar_usuarios() {
 

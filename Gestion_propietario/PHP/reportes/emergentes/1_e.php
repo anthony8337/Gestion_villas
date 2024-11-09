@@ -62,7 +62,7 @@
 </div>
 
 <div class="c3">
-<button type="button" onclick="selec_usuario()">Enviar a usuario</button>
+<button type="button" onclick="selec_usuario(),var_villas()">Enviar a usuario</button>
 <button type="button" onclick="imprime_villas()">Imprimir</button>
 </div>
 
@@ -74,6 +74,11 @@
 <input type="hidden" id="co_usuarios_villa" name="co_usuarios_villa">
 
 <script>
+
+function var_villas()
+{
+    document.getElementById('identifica_envio').value = "villas";
+}
 
 function imprime_villas_correo()
 {
@@ -180,7 +185,10 @@ function abrirNuevaPagina_villas_correo() {
     form.submit();
     document.body.removeChild(form);
 
+    document.getElementById('sl_usuarios').value = '0';
     cerrar_ingreso_lv();
+    cerrar_selec_usuario();
+    limpiar_confirmar();
 
 }
 </script>
