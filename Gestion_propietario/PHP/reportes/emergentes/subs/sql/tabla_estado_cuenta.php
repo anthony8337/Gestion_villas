@@ -25,23 +25,23 @@ $todo_cuota = $_POST["todo_cuota"];
 
 if ($todo_cuota == "Historial completo" && $fecha_rumbo == "Historial completo") 
 {
-    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' ORDER BY codigo ASC, costo DESC, fecha_aplicada ASC";
+    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' ORDER BY fecha_aplicada ASC, codigo ASC, costo DESC";
 
 }
 else if ($todo_cuota != "Historial completo" && $fecha_rumbo == "Historial completo") 
 {
-    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' AND concepto = '$selector' ORDER BY codigo ASC, costo DESC, fecha_aplicada ASC";
+    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' AND concepto = '$selector' ORDER BY fecha_aplicada ASC, codigo ASC, costo DESC";
 
 }
 else if ($todo_cuota == "Historial completo" && $fecha_rumbo != "Historial completo") 
 {
 
-    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' AND fecha_aplicada BETWEEN '$desde' AND '$hasta' ORDER BY codigo ASC, costo DESC, fecha_aplicada ASC";
+    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' AND fecha_aplicada BETWEEN '$desde' AND '$hasta' ORDER BY fecha_aplicada ASC, codigo ASC, costo DESC";
 }
 else if ($todo_cuota != "Historial completo" && $fecha_rumbo != "Historial completo") 
 {
 
-    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' AND concepto = '$selector' AND fecha_aplicada BETWEEN '$desde' AND '$hasta' ORDER BY codigo ASC, costo DESC, fecha_aplicada ASC";
+    $sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$id_pro_val' AND concepto = '$selector' AND fecha_aplicada BETWEEN '$desde' AND '$hasta' ORDER BY fecha_aplicada ASC, codigo ASC, costo DESC";
 }
 
 

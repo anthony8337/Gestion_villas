@@ -18,23 +18,23 @@ else
 
 if($ranco_factura == "Historial completo" && $todo_cuota == "Historial completo")
 {
-    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' ORDER BY codigo ASC, costo DESC, fecha_aplicada ASC";
+    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' ORDER BY fecha_aplicada ASC, codigo ASC, costo DESC";
     $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM estado_cuenta WHERE id_unir = '$id_pro_sc'; ";
 }
 else if($ranco_factura == "Historial completo" && $todo_cuota != "Historial completo")
 {
-    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' ORDER BY codigo ASC, costo DESC, fecha_aplicada ASC;";
+    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' ORDER BY fecha_aplicada ASC, codigo ASC, costo DESC;";
     $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM estado_cuenta WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota'; ";
 }
 else if($ranco_factura != "Historial completo" && $todo_cuota == "Historial completo")
 {
-    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' and fecha_aplicada BETWEEN '$desde' AND '$hasta' ORDER BY codigo ASC, costo DESC, fecha_aplicada ASC; ";
+    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' and fecha_aplicada BETWEEN '$desde' AND '$hasta' ORDER BY fecha_aplicada ASC ,codigo ASC, costo DESC; ";
     $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM estado_cuenta 
     WHERE id_unir = '$id_pro_sc' and fecha_aplicada BETWEEN '$desde' AND '$hasta';";
 }
 else if($ranco_factura != "Historial completo" && $todo_cuota != "Historial completo")
 {
-    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and fecha_aplicada BETWEEN '$desde' AND '$hasta' ORDER BY codigo ASC, costo DESC, fecha_aplicada ASC; ";
+    $sql = "SELECT * FROM estado_cuenta WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and fecha_aplicada BETWEEN '$desde' AND '$hasta' ORDER BY fecha_aplicada ASC, codigo ASC, costo DESC; ";
     $sql2 = "SELECT COUNT(*) AS cantidad_registro FROM estado_cuenta 
     WHERE id_unir = '$id_pro_sc' AND concepto = '$rango_cuota' and fecha_aplicada BETWEEN '$desde' AND '$hasta';";
 }
