@@ -1084,6 +1084,24 @@ flex-direction: column;
     text-align: center;
 }
 
+/*vamos*/
+.encabezado .tam_repo_tabla_2 td
+{
+    font-size: 12px;
+    
+    text-align: center;
+    padding: 0px;
+    height: 25px;
+}
+
+.encabezado .tam_repo_tabla_2 th
+{
+    font-size: 12px;
+    
+    text-align: center;
+}
+/*aqui*/
+
 .tam_largo
 {
     width: 50%;

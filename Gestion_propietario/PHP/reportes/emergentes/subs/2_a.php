@@ -64,6 +64,10 @@ function decidir_documento()
     {
         imprime_villas_correo();
     }
+    else if(identificar == "estado_cuenta")
+    {
+        imprime_estado_correo();
+    }
 }
 
 function recargar_usuarios() {

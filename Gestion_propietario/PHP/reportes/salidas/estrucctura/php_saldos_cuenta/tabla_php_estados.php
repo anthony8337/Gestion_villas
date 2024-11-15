@@ -94,7 +94,9 @@ if($result -> num_rows > 0)
             <tr>
             <td>",$row["villa"],"</td>
             <td>",$row["nombre"],"</td>
+            <td></td>
             <td>$. ",number_format($row["saldo_total"],2),"</td>
+            <td></td>
             <td>$. 0.00</td>
             </tr>
             ";
@@ -105,7 +107,9 @@ if($result -> num_rows > 0)
             <tr>
             <td>",$row["villa"],"</td>
             <td>",$row["nombre"],"</td>
+            <td></td>
             <td>$. 0.00</td>
+            <td></td>
             <td>$. ",number_format($row["saldo_total"],2),"</td>
             </tr>
             ";
@@ -127,6 +131,32 @@ if($result -> num_rows > 0)
     $t_total_creedito = "$. ". number_format($total_creedito,2);
 
     $t_total_abono = "$. ".number_format($total_abono,2);
+
+    echo"
+    
+    <tr>
+    <td colspan='6'>
+    <div class='separador'></div>
+    </td>
+    </tr>
+
+    <tr>
+    <td></td>
+    <td></td>
+    <th style='font-size: 10px;'>Saldo total del crédito:</th>
+    <td>$t_total_creedito</td>
+    <th style='font-size: 10px;'>Saldo total por cobrar:</th>
+    <td>$t_total_abono</td>
+    </tr>
+
+    <tr>
+    <td colspan='6'>
+    <div class='separador'></div>
+    </td>
+    </tr>
+    ";
+
+
 
     
 
@@ -178,3 +208,4 @@ if($result2 -> num_rows > 0)
 
 
 ?>
+

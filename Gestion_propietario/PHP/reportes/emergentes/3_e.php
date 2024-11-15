@@ -105,15 +105,17 @@
 <div class="c3">
 
 <fieldset>
-
-<fieldset>
     <legend>Estado Total</legend>
 <input type="text" name="txt_resutado_estado" id="txt_resutado_estado" readonly>
 </fieldset>
-<br>
-<button type="button" onclick="decidir_estado_cuenta()">Imprimir</button>
 
-</fieldset>
+
+</div>
+
+<div class="c3">
+
+<button type="button" onclick="selec_usuario(),var_estado()">Enviar a usuario</button>
+<button type="button" onclick="decidir_estado_cuenta()">Imprimir</button>
 
 </div>
 
@@ -130,6 +132,46 @@
 <script>
 ocultar_fecha();
 ocultar_concep();
+</script>
+
+
+<input type="hidden" id="co_estado_cuenta" name="co_estado_cuenta">
+
+
+<script>
+
+function imprime_estado_correo()
+{
+    
+    var b = document.getElementById('co_usuario_selec').value;
+
+    document.getElementById('co_estado_cuenta').value = b;
+    
+    if (b == "") 
+    {
+    window.alert("No se ha seleccionado ningun registro.");    
+    }
+    else
+    {
+    var a = confirm("¿Desea enviar e imprimir el estado de cuenta?");
+    if (a)
+    {
+        
+
+        abrirNuevaPagina_estado_correo_usuario();
+    }
+    }
+}
+
+</script>
+
+<script>
+
+function var_estado()
+{
+    document.getElementById('identifica_envio').value = "estado_cuenta";
+}
+
 </script>
 
 <script>
@@ -225,6 +267,42 @@ function abrirNuevaPagina_estado_correo() {
     form.submit();
     document.body.removeChild(form);
 
+    limpiar_confirmar();
+    cerrar_ingreso_lp_sal();
+    
+}
+
+function abrirNuevaPagina_estado_correo_usuario() {
+        nombrar_usuario();
+    // IDs de los inputs que quieres enviar
+    var inputIDs = ['rango_cuota','ranco_factura','desde_estado','hasta_estado','fecha_estado_hoy'
+        ,'txt_cod_estados' ,'txt_propi_estados','id_pro_sc','todo_cuota','nombre_usuario','txt_correo_estados'
+        ,'co_estado_cuenta'];
+    
+    // Crea un formulario
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "11_estado_cuenta_correo_usuario.php";
+    form.target = "_blank"; // Abre en nueva ventana
+
+    // Añade inputs ocultos para cada valor
+    inputIDs.forEach(function(id) {
+        var inputValue = document.getElementById(id).value;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = id;
+        input.value = inputValue;
+        form.appendChild(input);
+    });
+
+    // Envía el formulario
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    document.getElementById('sl_usuarios').value = '0';
+    cerrar_selec_usuario();
+    cerrar_ingreso_lp();
     limpiar_confirmar();
     cerrar_ingreso_lp_sal();
     

@@ -288,6 +288,7 @@ function selec_usuario()
 function cerrar_selec_usuario()
 {
     document.getElementById('rp_usuarios').style.display = "none";
+    document.getElementById('sl_usuarios').value = '0';
 }
 
 function cerrar_selec_pro_estado()
