@@ -1343,7 +1343,10 @@ footer
 
 }
 
-
+/*#bienvenida_primer_uso
+{
+    display: flex;
+}*/
 
 #bienvenida_primer_uso .centro
 {
@@ -1353,6 +1356,9 @@ justify-content: center;
 flex-wrap: wrap;
 flex-direction: column;
 width: 600px;
+padding: 20px;
+
+font-family: 'Times New Roman', Times, serif;
 }
 
 #bienvenida_primer_uso button

@@ -40,7 +40,7 @@
 <div class="c3">
 
 <button type="button" onclick="decidir_documento()">Enviar por correo</button>
-<button type="button">Enviar por whatsaap</button>
+<!--<button type="button">Enviar por whatsaap</button>-->
 </div>
 </form>
 

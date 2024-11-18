@@ -13,7 +13,7 @@
 <div class="c2">
 <button class="btn_bd_st" type="button" onclick="exportar_base()">
     <img src="Imagenes/floppy2-fill.svg"> <span>Respaldo de la base de datos</span></button>
-<button class="btn_bd_st" type="button" onclick="importar_base()">
+<button class="btn_bd_st" type="button" onclick="importarBaseDeDatos()">
     <img src="Imagenes/upload.svg"> <span>Importar base de datos</span></button>
 
 

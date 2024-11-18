@@ -182,9 +182,20 @@ function exportar_base()
         url: 'PHP/ventana_principal/principales/respaldar_base.php',
         data: $(this).serialize(),
         success: function(response){
-            $('#respuesta_bd').html(response);
+            /*$('#respuesta_bd').html(response);*/
+            descargar();
         }
     });   
+}
+
+function descargar()
+{
+            const enlace = document.createElement('a');
+            enlace.href = 'PHP/ventana_principal/principales/respaldar_base.php'; // URL del archivo PHP
+            enlace.download = 'backup_gestion_de_propietario.sql'; // Nombre sugerido para el archivo
+            document.body.appendChild(enlace);
+            enlace.click();
+            document.body.removeChild(enlace);
 }
 
 function importar_base() 
@@ -198,6 +209,51 @@ function importar_base()
         }
     });   
 }
+
+function importarBaseDeDatos() {
+    // Crear un elemento input de tipo file dinámicamente
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.sql'; // Solo archivos .sql
+    input.style.display = 'none'; // Ocultar el input
+
+    // Agregar el input al DOM para que el usuario pueda seleccionar el archivo
+    document.body.appendChild(input);
+
+    // Cuando el archivo es seleccionado
+    input.addEventListener('change', function () {
+        const file = input.files[0];
+        if (!file) {
+            alert('Por favor, selecciona un archivo .sql');
+            return;
+        }
+
+        // Crear un objeto FormData para enviar el archivo
+        const formData = new FormData();
+        formData.append('sql-file', file);
+
+        // Enviar el archivo al servidor utilizando fetch
+        fetch('PHP/ventana_principal/principales/importar_base.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())  // Obtener la respuesta como texto
+        .then(data => {
+            alert('Importación completa.');  // Mostrar mensaje de éxito
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Hubo un error en la importación');
+        });
+
+        // Limpiar el DOM (eliminar el input)
+        document.body.removeChild(input);
+    });
+
+    // Simular el click para abrir el selector de archivos
+    input.click();
+}
+
 
 function correo_recuperar() 
 {

@@ -1,47 +1,48 @@
 <?php
-// Datos de la conexión a MySQL (sin seleccionar la base de datos aún)
-$host = 'localhost'; // o la dirección del servidor MySQL
-$usuario = 'root';
-$contraseña = '';
-$base_datos = 'gestion_de_propietario';
+// Configuración de la base de datos
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'gestion_de_propietario';
 
-// Conexión a MySQL
-$conexion = new mysqli($host, $usuario, $contraseña, $base_datos);
+// Conectar a la base de datos
+$mysqli = new mysqli($host, $user, $password, $database);
 
-// Verifica si la conexión tiene errores
-if ($conexion->connect_error) {
-    die('Error de conexión (' . $conexion->connect_errno . ') ' . $conexion->connect_error);
+// Comprobar la conexión
+if ($mysqli->connect_error) {
+    die("Error de conexión: " . $mysqli->connect_error);
 }
 
-// Ruta del archivo SQL
-$archivo_sql = 'C:\Backups_gestion_propietario\backup_gestion_de_propietario.sql'; 
+// Verificar si se ha subido un archivo
+if ($_FILES['sql-file']['error'] !== UPLOAD_ERR_OK) {
+    die("Error al subir el archivo: " . $_FILES['sql-file']['error']);
+}
 
-// Lee el contenido del archivo SQL
-$queries = file_get_contents($archivo_sql);
+// Obtener el contenido del archivo SQL
+$fileContent = file_get_contents($_FILES['sql-file']['tmp_name']);
 
-// Divide el archivo SQL en múltiples consultas
-$sql_array = explode(';', $queries);
+// Separar las consultas SQL por el delimitador de la base de datos (normalmente ";")
+$queries = explode(";", $fileContent);
 
-// Variable para controlar si todas las consultas se ejecutaron correctamente
-$errores = false;
+// Desactivar las comprobaciones de claves foráneas durante la importación
+$mysqli->query("SET FOREIGN_KEY_CHECKS = 0;");
 
-// Ejecuta cada consulta
-foreach ($sql_array as $query) {
-    $query = trim($query);
+// Ejecutar cada consulta SQL
+foreach ($queries as $query) {
+    $query = trim($query);  // Eliminar espacios en blanco al inicio y final de cada consulta
     if (!empty($query)) {
-        if ($conexion->query($query) !== TRUE) {
-            // Si hay un error, se marca como falso
-            $errores = true;
-            echo "Error al ejecutar la consulta: " . $conexion->error . "<br>";
+        if (!$mysqli->query($query)) {
+            echo "Error al ejecutar la consulta: " . $mysqli->error;
+            exit;
         }
     }
 }
 
-// Mostrar el mensaje al final si no hubo errores
-if (!$errores) {
-    echo "<script>
-            window.alert('Todas las consultas se ejecutaron correctamente');
-          </script>";
-}
+// Reactivar las comprobaciones de claves foráneas
+$mysqli->query("SET FOREIGN_KEY_CHECKS = 1;");
 
+echo "Base de datos importada con éxito";
+
+// Cerrar la conexión
+$mysqli->close();
 ?>
