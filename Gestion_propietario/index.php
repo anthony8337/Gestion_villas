@@ -22,6 +22,9 @@ window.onunload = function () {
 include "PHP/raiz/salida.php";
 ?>
 
+<script src="JS/principal/emergente.js"></script>
+<script src="JS/bienvenida.js"></script>
+<script src="JS/limpiar_campos.js"></script>
 
 <?php
 include "comprobar_existancia.php";

@@ -99,7 +99,7 @@ if($result == true)
     window.alert('Usuario registrado con éxito');
     cerrar_usuario_in();
     limpiar_confirmar();
-    buscar_estado();
+    cerrar_bienvinida();
     </script>";
 }
 else
@@ -109,3 +109,7 @@ else
 
 }
 ?>
+
+<script>
+    window.alert("pepito");
+</script>

@@ -91,7 +91,7 @@ for ($i=0; $i < count($campos); $i++)
 </div>
 </div>
 
-
+<input type="hidden" id="bienvenida_verdadero" id="bienvenida_verdadero" value="1">
 
 <script>
 
@@ -126,6 +126,8 @@ if (accion === 'crear') {
     if(decidir)
     {
         url = 'PHP/ventana_principal/principales/interno/sql/insertar_usuarios.php';
+
+        difi_bienvenida();
     }
     else
     {
@@ -175,6 +177,8 @@ if (accion === 'crear') {
             data: $(this).serialize(),
             success: function(response){
                 $('#lista_usuarios').html(response);
+
+                
 
                $.ajax({
             type: 'GET',

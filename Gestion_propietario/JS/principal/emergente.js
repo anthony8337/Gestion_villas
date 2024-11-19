@@ -135,3 +135,15 @@ function cerrar_cuerpo_usuario()
 {
     document.getElementById('usu_usuario').style.display = 'none';
 }
+
+var a_bienvenido;
+
+function difi_bienvenida()
+{
+
+    if(a_bienvenido == "bienvenido")
+    {
+    cerrar_usuario_in();
+    cerrar_bienvinida();
+    } 
+}
