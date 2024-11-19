@@ -95,7 +95,8 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>window.alert('Usuario registrado con éxito');
+    echo"<script>
+    window.alert('Usuario registrado con éxito');
     cerrar_usuario_in();
     limpiar_confirmar();
     buscar_estado();

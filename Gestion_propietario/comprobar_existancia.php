@@ -1,64 +1,62 @@
-<?php
-// Datos de la conexión a MySQL (sin seleccionar la base de datos aún)
-$host = 'localhost'; // o la dirección del servidor MySQL
-$usuario = 'root';
-$contraseña = '';
-$base_datos = 'gestion_de_propietario';
 
-// Conexión a MySQL sin seleccionar la base de datos
+<?php
+$host = 'localhost'; // Dirección del servidor MySQL
+$usuario = 'root';   // Usuario de MySQL
+$contraseña = '';    // Contraseña del usuario
+$base_datos = 'gestion_de_propietario'; // Nombre de la base de datos
+$archivo_sql = 'bd/backup_gestion_de_propietario.sql'; // Ruta al archivo SQL
+
+// Conexión al servidor MySQL
 $conexion = new mysqli($host, $usuario, $contraseña);
 
-// Verifica si la conexión tiene errores
+// Verifica si la conexión fue exitosa
 if ($conexion->connect_error) {
-    die('Error de conexión (' . $conexion->connect_errno . ') ' . $conexion->connect_error);
+    die("Error de conexión: " . $conexion->connect_error);
 }
 
-// Verifica si la base de datos existe
-$consulta_db = "SHOW DATABASES LIKE '$base_datos'";
-$resultado = $conexion->query($consulta_db);
+// Consulta para verificar si la base de datos existe
+$consulta = "SHOW DATABASES LIKE '$base_datos'";
+$resultado = $conexion->query($consulta);
 
-// Si la base de datos no existe, la crea
-if ($resultado->num_rows == 0) {
-    $crear_db = "CREATE DATABASE $base_datos";
-    if ($conexion->query($crear_db) === TRUE) {
-        echo "Base de datos '$base_datos' creada exitosamente.<br>";
-    } else {
-        die("Error al crear la base de datos: " . $conexion->error);
-    }
+if ($resultado->num_rows > 0) {
+    echo "La base de datos '$base_datos' existe.";
+} else {
+    echo "La base de datos '$base_datos' no existe.";
+
+    
+// Crear la base de datos si no existe
+$crear_bd = "CREATE DATABASE IF NOT EXISTS $base_datos";
+if (!$conexion->query($crear_bd)) {
+    die("Error al crear la base de datos: " . $conexion->error);
 }
 
-// Ahora seleccionamos la base de datos para continuar con la ejecución
+// Seleccionar la base de datos
 $conexion->select_db($base_datos);
 
-// Ruta del archivo SQL
-$archivo_sql = 'bd\base_gestion_de_propietario.sql'; 
+// Leer el contenido del archivo SQL
+$sql = file_get_contents($archivo_sql);
+if ($sql === false) {
+    die("Error al leer el archivo SQL: $archivo_sql");
+}
 
-// Lee el contenido del archivo SQL
-$queries = file_get_contents($archivo_sql);
+// Dividir consultas de forma más precisa
+$consultas = array_filter(explode(";\n", $sql)); // Separar consultas y eliminar vacías
 
-// Divide el archivo SQL en múltiples consultas
-$sql_array = explode(';', $queries);
-
-// Variable para controlar si todas las consultas se ejecutaron correctamente
-$errores = false;
-
-// Ejecuta cada consulta
-foreach ($sql_array as $query) {
-    $query = trim($query);
-    if (!empty($query)) {
-        if ($conexion->query($query) !== TRUE) {
-            // Si hay un error, se marca como falso
-            $errores = true;
+foreach ($consultas as $consulta) {
+    $consulta = trim($consulta); // Eliminar espacios adicionales
+    if (!empty($consulta)) { // Verificar que no esté vacía
+        if (!$conexion->query($consulta)) {
             echo "Error al ejecutar la consulta: " . $conexion->error . "<br>";
+            echo "Consulta fallida: <pre>$consulta</pre><br>";
+            die();
         }
     }
 }
 
-// Mostrar el mensaje al final si no hubo errores
-if (!$errores) {
-    echo "<script>
-            window.alert('Todas las consultas se ejecutaron correctamente');
-          </script>";
+echo "La base de datos se ha importado correctamente.";
+
 }
 
+// Cierra la conexión
+$conexion->close();
 ?>

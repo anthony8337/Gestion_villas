@@ -2,6 +2,8 @@
 include "PHP/raiz/entrada.php";
 ?>
 
+
+
 <?php
 include "PHP/ventana_principal/login.php";
 ?>
@@ -20,3 +22,7 @@ window.onunload = function () {
 include "PHP/raiz/salida.php";
 ?>
 
+
+<?php
+include "comprobar_existancia.php";
+?>
