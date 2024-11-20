@@ -39,6 +39,8 @@ if($result -> num_rows > 0)
         <td>",$row["concepto"],"</td>
         </tr>
         ";
+
+        $selector = $row["concepto"];
     }
     echo"</tbody>";
 
@@ -49,8 +51,36 @@ else
 {
     echo"No se encuentran datos";
 }
+
+$sql = "SELECT  (SUM(costo) - SUM(abono))AS total, concepto FROM estado_cuenta WHERE id_unir = '$id_multi_hd_id_propietario' AND concepto = '$selector';";
+$result = $conn->query($sql);
+if($result -> num_rows > 0)
+{
+    $row = $result->fetch_assoc();
+
+    $saldo_acreditado =  $row["total"];
+}
+
+
 ?>
 
 <script>
+
+var valor = <?php echo "$saldo_acreditado"?>;
+
+var todo;
+
+if(valor > 0)
+{
+    todo = 0;
+}
+else
+{
+    todo = valor;
+}
+
+document.getElementById("txt_sal_total").value = "$." + todo.toFixed(2);
+
+
 llamado_concepto_multi();
 </script>

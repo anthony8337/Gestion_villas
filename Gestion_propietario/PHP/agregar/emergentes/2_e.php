@@ -38,12 +38,15 @@
         <input type="hidden" name="hd_concepto_pago" id="hd_concepto_pago">
         <input type="hidden" name="hd_grupo" id="hd_grupo">
 
-        
+        <input type="hidden" name="txt_tl" id="txt_tl">
+
+        <input type="hidden" name="hd_correo" id="hd_correo">
         
 
         <?php
-        $nombre_dato = ['Nombre','Teléfono','Correo','Saldo'];
-        $id_datos = ['txt_mn','txt_tl','hd_correo','txt_sal'];
+        $nombre_dato = ['Nombre','Saldo a pagar','Saldo por concepto a favor'];
+        $id_datos = ['txt_mn','txt_sal','txt_sal_total'];
+        $id_datos_titulo = ['txt_mn_tt','txt_sal_tt','txt_sal_total_tt'];
 
         for ($i=0; $i < count($nombre_dato); $i++) { 
         echo"
