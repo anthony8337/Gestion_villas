@@ -74,7 +74,7 @@ function calcular_paso_fecha() {
 
       var v_c = document.getElementById("valor_paso").value;
       
-      document.getElementById("txt_costo_gc").value = (v_c / diffMonths);
+      document.getElementById("txt_costo_gc").value = v_c;
 
 
       

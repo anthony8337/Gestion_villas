@@ -14,9 +14,10 @@ else
 {
 }
 
-
-
 $txt_cuenta_modi = $_POST["txt_cuenta_modi"];
+
+$sql_2 = "DELETE FROM cuenta_estado WHERE id_cuenta = '$txt_cuenta_modi'";
+$result_2 = $conn->query($sql_2);
 
 $sql = "DELETE FROM cuentas WHERE id_cuenta = '$txt_cuenta_modi'";
 $result = $conn->query($sql);

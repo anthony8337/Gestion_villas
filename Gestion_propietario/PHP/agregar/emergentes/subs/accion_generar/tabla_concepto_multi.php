@@ -1,6 +1,10 @@
 <script src="JS/archivo/selec_concepto.js"></script>
 
 <?php
+
+error_reporting(0); // Desactiva todos los reportes de errores
+ini_set('display_errors', 0); // Evita mostrar errores en la salida
+
 $servername = "localhost"; 
 $username = "root";
 $password = "";
@@ -21,6 +25,7 @@ $sql = "SELECT concepto,id_unir,MAX(pagado),MAX(id_concepto) AS id_concepto FROM
 AND con_pagado = 'falta' GROUP BY concepto,id_unir,con_pagado; ";
 
 $result = $conn->query($sql);
+
 
 if($result -> num_rows > 0)
 {
@@ -52,6 +57,9 @@ else
     echo"No se encuentran datos";
 }
 
+
+
+
 $sql = "SELECT  (SUM(costo) - SUM(abono))AS total, concepto FROM estado_cuenta WHERE id_unir = '$id_multi_hd_id_propietario' AND concepto = '$selector';";
 $result = $conn->query($sql);
 if($result -> num_rows > 0)
@@ -60,7 +68,6 @@ if($result -> num_rows > 0)
 
     $saldo_acreditado =  $row["total"];
 }
-
 
 ?>
 

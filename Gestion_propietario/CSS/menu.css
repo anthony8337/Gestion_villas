@@ -5,7 +5,7 @@ top: 0;
 left: 0;
 height: 100%;
 width: 90px;
-background: #778aff;
+background: #bcc6ff;
 text-align: center;
 overflow: auto;
 }
@@ -71,7 +71,7 @@ padding-top: 10px;
 li:hover, #cuerpo_pagina div div ul li:hover
 {
     cursor: pointer;
-    background: #586ef1;
+    background: #98a7ff;
 }
 
 

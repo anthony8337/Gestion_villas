@@ -9,9 +9,9 @@
 <button onclick="cerrar_crear_cuenta(),limpiar_confirmar()" type="button">X</button>
 </div>
 
-<form id="Formulario_cuenta">
 
-<input type="hidden" name="txt_cuenta_modi" id="txt_cuenta_modi">
+
+<form id="Formulario_cuenta">
 
 <div class="c2">
 
@@ -168,6 +168,8 @@
     
 </fieldset>
 
+<input type="hidden" name="txt_cuenta_modi" id="txt_cuenta_modi">
+
 </div>
 
 <div class="c3">
@@ -252,7 +254,10 @@ if (accion === 'crear') {
 }     
 
           
-if (decidir_aporte) {        
+if (decidir_aporte) {   
+    
+
+
         $.ajax({
             type: 'POST',
             url: url,
