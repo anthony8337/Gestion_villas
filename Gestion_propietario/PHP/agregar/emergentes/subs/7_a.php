@@ -1,6 +1,6 @@
 <div id="toma_cuenta_reim" class="mod">
 
-<div class="centro">
+<div class="centro ventanas_medianas">
 
 <div class="c1">
 
@@ -11,7 +11,6 @@
 
 <form>
 
-<fieldset>
 
 <div class="c2">
     <fieldset>
@@ -23,7 +22,7 @@
 
 <div class="c4">
 <span>Facturas realizadas</span>
-<div class="contenido_tabla">
+<div class="contenido_tabla tam_limite">
     <table class="contenido contenido_oculto_reimprimir" id="tb_cuentas_pro">
         <tr>
         <th></th>

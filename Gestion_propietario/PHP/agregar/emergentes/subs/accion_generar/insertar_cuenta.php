@@ -66,7 +66,7 @@ VALUES ('$costo','0','$desde','$id_cuen_esta')";
 else if($elegir_abono == "Abonar")
 {
     $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
- ('$id_pro','$id_concepto_abono','0','$abono','$desde','$hasta','No pagado','$cod','$id_con','falta')";
+ ('$id_pro','$id_concepto_abono','0','$abono','$desde','$hasta','Pagado','$cod','$id_con','completo')";
 
 $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
 VALUES ('0','$abono','$desde','$id_cuen_esta')";

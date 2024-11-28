@@ -1,6 +1,6 @@
 <div id="gc_concepto" class="mod">
 
-<div class="centro ventanas_medianas">
+<div class="centro ventanas_medianas_2">
 
 <div class="c1">
 

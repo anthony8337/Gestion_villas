@@ -871,6 +871,17 @@ width: 1000px;
 min-height: 250px;
 }
 
+.ventanas_medianas_usuarios
+{
+width: 1000px;
+}
+
+.ventanas_medianas_2
+{
+width: 500px;
+min-height: 200px;
+}
+
 .ventanas_medianas_usuario
 {
 width: 800px;

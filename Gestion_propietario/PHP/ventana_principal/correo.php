@@ -43,7 +43,7 @@ if ($result -> num_rows > 0)
 $subject = "Asunto del correo"; // Asunto del correo
 
 // Encabezados opcionales (como el remitente)
-$headers = "From: Anthony Oliva Google";
+$headers = "From: acomdev123@gmail.com\r\n";
 
 // Enviar el correo
 if(mail($to, $subject, $message, $headers)) {

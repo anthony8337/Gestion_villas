@@ -18,6 +18,12 @@ window.onunload = function () {
 };
 </script>
 
+<script>
+document.getElementById("id_tipos_fiel").style.display = 'none';
+document.getElementById("fl_permisos").style.display = 'none';
+</script>
+
+
 <?php
 include "PHP/raiz/salida.php";
 ?>
@@ -29,3 +35,4 @@ include "PHP/raiz/salida.php";
 <?php
 include "comprobar_existancia.php";
 ?>
+

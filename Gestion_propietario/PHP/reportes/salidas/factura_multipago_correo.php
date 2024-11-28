@@ -69,7 +69,7 @@ $message = "Estimado usuario,\n\nAdjunto encontrarás el recibo en formato PDF.\
 $boundary = md5(time()); // Para separar las partes del correo
 
 // Encabezados del correo
-$headers = "From: Anthony Oliva Google \r\n";
+$headers = "From: acomdev123@gmail.com\r\n \r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
 

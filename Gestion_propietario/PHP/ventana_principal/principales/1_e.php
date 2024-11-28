@@ -1,6 +1,6 @@
 <div id="usuarios_ingreso" class="mod">
 
-<div class="centro usuarios_form ventanas_medianas">
+<div class="centro usuarios_form ventanas_medianas_usuarios">
 
 <div class="c1">
 
@@ -22,6 +22,7 @@
 $campos = ['Nombre','Apellido','DNI','Teléfono','Correo','Usuario','Contraseña','Tipo de usuario'];
 $nombre_id =['txt_nombre','txt_apellido','txt_dni','txt_tele','txt_correo','txt_usuario','txt_clave','txt_tipo'];
 $tipo = ['text','text','text','text','email','text','password','text'];
+$id_fiel = ['','','','','','','','id_tipos_fiel'];
 
 for ($i=0; $i < count($campos); $i++) 
 { 
@@ -30,7 +31,7 @@ for ($i=0; $i < count($campos); $i++)
     {
         echo"
         <td>
-        <fieldset>
+        <fieldset id='$id_fiel[$i]'>
         <legend>$campos[$i]</legend>
         <select id='$nombre_id[$i]' name='$nombre_id[$i]'>
         <option value='1'>Administrador</option>
