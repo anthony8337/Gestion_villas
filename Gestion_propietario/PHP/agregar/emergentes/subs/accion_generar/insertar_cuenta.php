@@ -40,7 +40,17 @@ $id_concepto_abono = $_POST['id_concepto_abono'];
 
 $cod;
 $id_cuen_esta;
+////////////////////////////////////////////////////////////////////
+$sql_100 = "SELECT  (SUM(costo) - SUM(abono))AS total, concepto FROM estado_cuenta WHERE id_unir = '$id_unir' AND concepto = '$id_concepto_abono';";
+$result_100 = $conn->query($sql_100);
 
+if ($result_100->num_rows > 0) 
+{
+    $row = $result_100->fetch_assoc();
+
+    $verificar = $row['total'];
+}
+////////////////////////////////////////////////////////////////////////
 $sql1 = "SELECT * FROM cuentas ORDER BY id_cuenta DESC LIMIT 1;";
 $result1 = $conn->query($sql1);
 if($result1->num_rows > 0) {
@@ -65,11 +75,25 @@ VALUES ('$costo','0','$desde','$id_cuen_esta')";
 }
 else if($elegir_abono == "Abonar")
 {
-    $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
- ('$id_pro','$id_concepto_abono','0','$abono','$desde','$hasta','Pagado','$cod','$id_con','completo')";
+
+if ($verificar > 0) {
+$sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
+ ('$id_pro','$id_concepto_abono','0','$abono','$desde','$hasta','Abono','$cod','$id_con','completo')";
 
 $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
 VALUES ('0','$abono','$desde','$id_cuen_esta')";
+
+$sql_3 = "INSERT INTO cuentas_abono(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
+ ('$id_pro','$id_concepto_abono','0','$abono','$desde','$hasta','Abono','$cod','$id_con','completo')";
+
+$result_3 = $conn -> query($sql_3);
+}else 
+{
+    echo"<script>
+    window.alert('Operación no completada, hay cuentas pendientes');
+    </script>";
+}
+
 }
 
 
@@ -115,14 +139,27 @@ if($result_rango->num_rows > 0)
     }
         else if($elegir_abono == "Abonar")
         {
+            if ($verificar > 0) {
             $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
-         ('$id_unir','$id_concepto_abono','0','$abono','$desde','$hasta','No pagado','$cod','$id_con','falta')";
+         ('$id_unir','$id_concepto_abono','0','$abono','$desde','$hasta','Abono','$cod','$id_con','completo')";
    
    $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
     VALUES ('0','$abono','$desde','$id_cuen_esta')";
-       
+
+$sql_3 = "INSERT INTO cuentas_abono(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
+         ('$id_unir','$id_concepto_abono','0','$abono','$desde','$hasta','Abono','$cod','$id_con','completo')";
+
+$result_3 = $conn -> query($sql_3);
     
-    }      
+    }
+    else
+    {
+        echo"<script>
+        window.alert('Operación no completada, hay cuentas pendientes');
+        </script>";
+    }
+}
+
         $result = $conn->query($sql);
         $result_segundo = $conn->query($sql_segundo);
 
@@ -141,7 +178,9 @@ if($result == true)
 }
 else
 {
-    echo"No se encuentran datos";
+    echo"<script>
+    window.alert('Operación no completada, hay cuentas pendientes');
+    </script>";
 }
 
 ?>

@@ -20,47 +20,9 @@ else
 }
 
 $id_multi_hd_id_propietario = $_POST["id_multi_hd_id_propietario"];
+$hd_concepto_pago = $_POST["hd_concepto_pago"];
 
-$sql = "SELECT concepto,id_unir,MAX(pagado),MAX(id_concepto) AS id_concepto FROM cuenta_vista WHERE id_unir = '$id_multi_hd_id_propietario' 
-AND con_pagado = 'falta' GROUP BY concepto, id_unir,con_pagado; ";
-
-$result = $conn->query($sql);
-
-
-if($result -> num_rows > 0)
-{
-
-    echo"<table id='tabla_concepto_ml'>
-    <tr>
-        <th></th>
-        <th>Conceptos</th>
-    </tr>";
-
-    echo"<tbody>";
-    while ($row = $result->fetch_assoc()) {
-        echo"
-        <tr>
-        <td>",$row["id_concepto"],"</td>
-        <td>",$row["concepto"],"</td>
-        </tr>
-        ";
-
-        $selector = $row["concepto"];
-    }
-    echo"</tbody>";
-
-    echo"</table>";
-
-}
-else
-{
-    echo"No se encuentran datos";
-}
-
-
-
-
-$sql = "SELECT  (SUM(costo) - SUM(abono))AS total, concepto FROM estado_cuenta WHERE id_unir = '$id_multi_hd_id_propietario' AND concepto = '$selector';";
+$sql = "SELECT  (SUM(costo) - SUM(abono))AS total, concepto FROM estado_cuenta WHERE id_unir = '$id_multi_hd_id_propietario' AND concepto = '$hd_concepto_pago';";
 $result = $conn->query($sql);
 if($result -> num_rows > 0)
 {

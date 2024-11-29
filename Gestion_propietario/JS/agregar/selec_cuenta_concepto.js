@@ -17,8 +17,11 @@ function llamado_concepto_multi()
         cerrar_sele_con_multi();
 
         recargar_tabla_multi();
+
+        actualizar_tabla_conce_multi_favor();
         
 
       });
     }
 }
+
