@@ -53,6 +53,7 @@ function ingreso_vi()
 
     document.getElementById('btn_eli_villa').style.display = 'none';
     document.getElementById('btn_modi_villa').style.display = 'none';
+    document.getElementById('btn_agregar_villa_propi').style.display = 'none';
     document.getElementById('btn_limpiar_villa').style.display = 'block';
     document.getElementById('btn_agregar_villa').style.display = 'block';
 
@@ -106,7 +107,8 @@ function ingreso_vi_propi()
     document.getElementById('btn_eli_villa').style.display = 'none';
     document.getElementById('btn_modi_villa').style.display = 'none';
     document.getElementById('btn_limpiar_villa').style.display = 'block';
-    document.getElementById('btn_agregar_villa').style.display = 'block';
+    document.getElementById('btn_agregar_villa').style.display = 'none';
+    document.getElementById('btn_agregar_villa_propi').style.display = 'block';
 }
 
 //Moneda ingeso

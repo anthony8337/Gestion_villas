@@ -14,7 +14,72 @@ function vacio_insertar_villa()
 
 }
 
+function insertar_villa_2()
+{
 
+    var form = document.getElementById("Formulario_villa");
+
+    if (form.checkValidity()) {
+        
+        var a = confirm("Creara una nueva villa. \n¿Desea continuar con la operación?");
+
+        if (a) {
+    let table = $('#carac_vi');
+let data = [];
+
+table.find('tbody tr').each(function() {
+    let firstCellText = $(this).find('td').eq(1).text();
+    
+    // Añadir ambos valores como un objeto al array
+    data.push({
+        celda_1: firstCellText,
+    });
+});
+
+// Añadir los datos de la tabla al formulario
+let formData = $(this).serializeArray();
+formData.push({ name: 'tabla_caracteristica', value: JSON.stringify(data) });
+
+    var txt_cod_villa = document.getElementById("txt_cod_villa").value;
+    var txt_eeh_villa = document.getElementById("txt_eeh_villa").value;
+    var txt_cuarto_vi = document.getElementById("txt_cuarto_vi").value;
+    var txt_construc_vi = document.getElementById("txt_construc_vi").value;
+    var txa_direccion = document.getElementById("txa_direccion").value;
+    var txa_observa_villa = document.getElementById("txa_observa_villa").value;
+    var selectElement = document.getElementById("cb_modelo");
+    var tex_selec = selectElement.options[selectElement.selectedIndex].text;
+    var selectElement2 = document.getElementById("cb_grupo");
+    var tex_selec2 = selectElement2.options[selectElement2.selectedIndex].text;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/archivo/emergentes/subs/accion_villas/agregar_villas_propi.php',
+        data:{ 
+
+            txt_cod_villa:txt_cod_villa,
+            txt_eeh_villa:txt_eeh_villa,
+            txt_cuarto_vi:txt_cuarto_vi,
+            txt_construc_vi:txt_construc_vi,
+            txa_direccion:txa_direccion,
+            txa_observa_villa:txa_observa_villa,
+            tex_selec:tex_selec,
+            tex_selec2:tex_selec2,
+            tabla_caracteristica:JSON.stringify(data),
+        },
+        success: function(response){
+            $('#respuesta_villa_prin').html(response);
+            actualizar_villas_propietario(); 
+            actualizar_villas_adicionar();
+        }
+
+    });
+}
+
+}else
+{
+    form.reportValidity();
+}
+}
 
 function insertar_villa_1()
 {

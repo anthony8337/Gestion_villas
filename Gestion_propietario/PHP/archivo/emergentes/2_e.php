@@ -112,6 +112,8 @@ for ($i=0; $i < count($titulo); $i++) {
 
 <button id="btn_agregar_villa" type="button" onclick="insertar_villa_1()">Agregar</button>
 
+<button id="btn_agregar_villa_propi" type="button" onclick="insertar_villa_2()">Agregar</button>
+
 
 </div>
 </div>

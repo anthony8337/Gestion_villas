@@ -38,10 +38,9 @@ $result = $conn->query($sql);
 
 if($result == true)
 {
-    echo"<script>
-
-    var ab = 'el pepe';
-
+    echo"<script>window.alert('Grupo registrado con éxito');
+    cerrar_grupo_villa();
+    limpiar_confirmar();
     </script>";
 }
 else
@@ -50,24 +49,3 @@ else
 }
 }
 ?>
-
-
-<script>
-
-if (ab != "") 
-{
-
-    var a = confirm('Grupo registrado con éxito \n¿Deseas continuar?');
-
-    if (a)
-    {}
-    else
-    {
-        cerrar_grupo_villa();
-        limpiar_confirmar();
-        a = "";
-    }
-
-}
-
-</script>
