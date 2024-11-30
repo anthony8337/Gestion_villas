@@ -41,6 +41,26 @@ $id_concepto_abono = $_POST['id_concepto_abono'];
 $cod;
 $id_cuen_esta;
 
+////////////////////////////////////////////////////////////////////
+
+$sql_100 = "SELECT  (SUM(costo) - SUM(abono))AS total, concepto FROM estado_cuenta WHERE id_unir = '$id_pro' AND id_concepto = '$id_concepto_abono';";
+$result_100 = $conn->query($sql_100);
+
+if ($result_100->num_rows > 0) 
+{
+    $row = $result_100->fetch_assoc();
+
+    $verificar = $row['total'];
+
+    echo"
+    <script>
+    window.alert('$verificar');
+    </script>
+    ";
+
+}
+////////////////////////////////////////////////////////////////////////
+
 $sql1 = "SELECT * FROM cuentas ORDER BY id_cuenta DESC LIMIT 1;";
 $result1 = $conn->query($sql1);
 if($result1->num_rows > 0) {
@@ -56,17 +76,28 @@ if($result1->num_rows > 0) {
 
 if($elegir_abono == "Monto")
 {
-    $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado) VALUES
- ('$id_pro','$id_concepto_abono','$costo','0','$desde','$hasta','No pagado','$cod','$id_con','falta')";
+    if ($verificar < 0) 
+    {
+        $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado) VALUES
+        ('$id_pro','$id_concepto_abono','$costo','0','$desde','$hasta','abonado','$cod','$id_con','falta')";
+       
+       $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
+       VALUES ('$costo','0','$desde','$id_cuen_esta')";
+    }else if($verificar >= 0)
+    {
+        $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado) VALUES
+        ('$id_pro','$id_concepto_abono','$costo','0','$desde','$hasta','No pagado','$cod','$id_con','falta')";
+       
+       $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
+       VALUES ('$costo','0','$desde','$id_cuen_esta')";
+    }
 
-$sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
-VALUES ('$costo','0','$desde','$id_cuen_esta')";
 
 }
 else if($elegir_abono == "Abonar")
 {
     $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
- ('$id_pro','$id_concepto_abono','0','$abono','$desde','$hasta','Pagado','$cod','$id_con','completo')";
+ ('$id_pro','$id_concepto_abono','0','$abono','$desde','$hasta','Favor','$cod','$id_con','completo')";
 
 $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
 VALUES ('0','$abono','$desde','$id_cuen_esta')";
@@ -105,18 +136,29 @@ if($result_rango->num_rows > 0)
         
         if($elegir_abono == "Monto")
         {
+            if ($verificar < 0) 
+            {
             $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado) VALUES
-         ('$id_unir','$id_concepto_abono','$costo','0','$desde','$hasta','No pagado','$cod','$id_con','falta')";
+         ('$id_unir','$id_concepto_abono','$costo','0','$desde','$hasta','abonado','$cod','$id_con','falta')";
         
         $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
         VALUES ('$costo','0','$desde','$id_cuen_esta')";
+            }
+            else if ($verificar >= 0) 
+            {
+                $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado) VALUES
+                ('$id_unir','$id_concepto_abono','$costo','0','$desde','$hasta','No pagado','$cod','$id_con','falta')";
+               
+               $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
+               VALUES ('$costo','0','$desde','$id_cuen_esta')";
+            }
         
 
     }
         else if($elegir_abono == "Abonar")
         {
             $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
-         ('$id_unir','$id_concepto_abono','0','$abono','$desde','$hasta','No pagado','$cod','$id_con','falta')";
+         ('$id_unir','$id_concepto_abono','0','$abono','$desde','$hasta','Favor','$cod','$id_con','completo')";
    
    $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
     VALUES ('0','$abono','$desde','$id_cuen_esta')";

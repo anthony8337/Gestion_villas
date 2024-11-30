@@ -34,7 +34,7 @@ if (isset($_POST['hd_concepto_pago'])) {
     $hd_id_cuenta = "";
 }
 
-$sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente') AND id_cuenta = '$hd_id_cuenta'";
+$sql = "SELECT * FROM cuenta_vista WHERE (pagado = 'no pagado' OR pagado = 'pendiente' OR pagado = 'abonado') AND id_cuenta = '$hd_id_cuenta'";
 
 $result = $conn->query($sql);
 

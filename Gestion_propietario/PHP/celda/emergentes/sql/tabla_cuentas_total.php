@@ -16,7 +16,7 @@ else
 
 $nn_id = $_POST["nn_id"];
 
-$sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$nn_id' AND( pagado = 'Pendiente' OR pagado = 'No pagado' );";
+$sql = "SELECT * FROM cuenta_vista WHERE id_unir = '$nn_id' AND( pagado = 'Pendiente' OR pagado = 'No pagado'  OR pagado = 'abonado' );";
 
 $result = $conn->query($sql);
 
