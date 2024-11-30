@@ -41,7 +41,7 @@ $id_concepto_abono = $_POST['id_concepto_abono'];
 $cod;
 $id_cuen_esta;
 
-////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////a
 
 $sql_100 = "SELECT  (SUM(costo) - SUM(abono))AS total, concepto FROM estado_cuenta WHERE id_unir = '$id_pro' AND id_concepto = '$id_concepto_abono';";
 $result_100 = $conn->query($sql_100);
@@ -59,7 +59,7 @@ if ($result_100->num_rows > 0)
     ";
 
 }
-////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////a
 
 $sql1 = "SELECT * FROM cuentas ORDER BY id_cuenta DESC LIMIT 1;";
 $result1 = $conn->query($sql1);
@@ -106,12 +106,31 @@ VALUES ('0','$abono','$desde','$id_cuen_esta')";
 
 if($selec_can == "Unico")
 {
+    if($elegir_abono == "Monto")
+    {
     $result = $conn->query($sql);
     $result_segundo = $conn->query($sql_segundo);
+    }
+    else if($elegir_abono == "Abonar")
+    {
+        if($verificar > 0)
+        {
+            echo"
+            <script>
+            window.alert('Operacion no realizada, debe pagar las cuentas pendientes del concepto.');
+            </script>
+            ";
+        }
+        else if($verificar <= 0)
+        {
+            $result = $conn->query($sql);
+            $result_segundo = $conn->query($sql_segundo);
+        }
+    }
 }
 else if($selec_can == "Rango")
 {
-
+    
 $sql_rango = "SELECT * 
 FROM propietario_principal
 WHERE 
@@ -133,6 +152,26 @@ if($result_rango->num_rows > 0)
     {
 
         $id_unir = $row["id_unir"];
+
+        ///////////////////////////////////////////////////////////////////b
+
+$sql_100 = "SELECT  (SUM(costo) - SUM(abono))AS total, concepto FROM estado_cuenta WHERE id_unir = '$id_unir' AND id_concepto = '$id_concepto_abono';";
+$result_100 = $conn->query($sql_100);
+
+if ($result_100->num_rows > 0) 
+{
+    $row = $result_100->fetch_assoc();
+
+    $verificar = $row['total'];
+
+    echo"
+    <script>
+    window.alert('$verificar');
+    </script>
+    ";
+
+}
+///////////////////////////////////////////////////////////////////////b
         
         if($elegir_abono == "Monto")
         {
@@ -143,6 +182,8 @@ if($result_rango->num_rows > 0)
         
         $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
         VALUES ('$costo','0','$desde','$id_cuen_esta')";
+
+
             }
             else if ($verificar >= 0) 
             {
@@ -154,9 +195,9 @@ if($result_rango->num_rows > 0)
             }
         
 
-    }
-        else if($elegir_abono == "Abonar")
+    }else if($elegir_abono == "Abonar")
         {
+            
             $sql = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2,con_pagado)  VALUES
          ('$id_unir','$id_concepto_abono','0','$abono','$desde','$hasta','Favor','$cod','$id_con','completo')";
    
@@ -165,11 +206,34 @@ if($result_rango->num_rows > 0)
        
     
     }      
+
+    if($elegir_abono == "Monto")
+    {
         $result = $conn->query($sql);
         $result_segundo = $conn->query($sql_segundo);
 
         $cod += 1;
         $id_cuen_esta += 1;
+    }
+    else if($elegir_abono == "Abonar")
+    {
+        if($verificar > 0)
+        {
+            echo"
+            <script>
+            window.alert('Operacion no realizada, $id_unir debe pagar las cuentas pendientes del concepto.');
+            </script>
+            ";
+        }
+        else if($verificar <= 0)
+        {
+            $result = $conn->query($sql);
+            $result_segundo = $conn->query($sql_segundo);
+    
+            $cod += 1;
+            $id_cuen_esta += 1;
+        }
+    }
     }
 }
 }
