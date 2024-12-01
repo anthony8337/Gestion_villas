@@ -240,10 +240,23 @@ if ($result_100->num_rows > 0)
 
 if($result == true)
 {
+
+if($verificar < 0 && $elegir_abono == "Monto")
+{
+    echo"<script>
+    window.alert('La cuenta fue registrada como abonado, por favor confirmar al pagar.');
+    confir_cuentas();
+    actualizar_cod_cuenta($cod);
+    </script>";
+}else
+{
     echo"<script>
     confir_cuentas();
     actualizar_cod_cuenta($cod);
     </script>";
+}
+    
+
 }
 else
 {
@@ -251,4 +264,3 @@ else
 }
 
 ?>
-
