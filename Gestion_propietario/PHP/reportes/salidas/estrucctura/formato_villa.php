@@ -62,12 +62,13 @@ include "PHP/reportes/salidas/estrucctura/php_villas/estado_php_cuentas.php";
 <table class="tam_repo_tabla">
 
 <tr>
-<th>Villas</th>
-        <th>Número de contador</th>
-        <th>Habitación</th>
-        <th>Tamaño de lote</th>
-        <th>Modelo</th>
-        <th>Estado</th>
+        <th style="width: 40px;">Villas</th>
+        <th style="width: 200px;">Propietario</th>
+        <th style="width: 110px;">No. Identidad</th>
+        <th>Correo electronico</th>
+        <th style="width: 100px;">Teléfono 1</th>
+        <th style="width: 100px;">Teléfono 2</th>
+        <th style="width: 100px;">Teléfono 3</th>
 </tr>
 
 <tbody>

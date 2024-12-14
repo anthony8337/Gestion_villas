@@ -13,12 +13,15 @@ function fechas()
 
 //validacion de campos
 
+
+
 function validaciones_numeros() 
 {
   var camposTexto = document.querySelectorAll('.solo_numero');
   camposTexto.forEach(function(input) {
     input.addEventListener('input', function() {
-      this.value = this.value.toUpperCase().replace(/[^0-9 - .]/g, '');
+      // Reemplazar cualquier letra (mayúscula o minúscula)
+      this.value = this.value.replace(/[a-zA-Z]/g, '');
     });
   });
 }
@@ -28,7 +31,7 @@ function validaciones()
   var camposTexto = document.querySelectorAll('input[type="text"]');
   camposTexto.forEach(function(input) {
     input.addEventListener('input', function() {
-      this.value = this.value.toUpperCase().replace(/[^A-Z 0-9 - - .]/g, '');
+      this.value = this.value.toUpperCase().replace(/[^A-Z 0-9 - - . +]/g, '');
     });
   });
 }

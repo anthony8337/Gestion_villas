@@ -119,7 +119,7 @@ function limpiar_tabla_adicionar() {
 
   function limpiar_tablas_villa()
 {
-    const campo = document.querySelector('#tabla_villa_pro_selec tbody.borrar_t');
+    const campo = document.querySelector('#pro_autorizados tbody.borrar_t');
 while (campo.firstChild) {
     campo.removeChild(campo.firstChild);
  }

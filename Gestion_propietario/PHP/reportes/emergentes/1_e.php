@@ -47,11 +47,13 @@
         <tr>
         <th></th>
         <th>Villas</th>
-        <th>Número de contador</th>
-        <th>Habitación</th>
-        <th>Tamaño de lote</th>
-        <th>Modelo</th>
-        <th>Estado</th>
+        <th>Propietario</th>
+        <th>No. Identidad</th>
+        <th>Correo electronico</th>
+        <th>Teléfono 1</th>
+        <th>Teléfono 2</th>
+        <th>Teléfono 3</th>
+
         </tr>
 
         <tbody id="tb_villas">

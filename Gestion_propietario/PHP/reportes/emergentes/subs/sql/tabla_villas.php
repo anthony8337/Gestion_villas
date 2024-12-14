@@ -81,24 +81,14 @@ if($result -> num_rows > 0)
         <tr>
         <td></td>
         <td>",$row["villas"],"</td>
-        <td>",$row["cont_eeh"],"</td>
-        <td>",$row["habitaciones"],"</td>
-        <td>",$row["lote"],"</td>
-        <td>",$row["modelo"],"</td>";
-        if($row["estado"] == '1')
-        {
-            echo"
-            <td>Disponible</td>
-            </tr>
-            ";
-        }
-        else 
-        {
-            echo"
-            <td>Habitado</td>
-            </tr>
-            ";
-        }
+        <td>",$row["nombre"],"</td>
+        <td>",$row["dni"],"</td>
+        <td>",$row["correo"],"</td>
+        <td>",$row["telefono"],"</td>
+        <td>",$row["telefono2"],"</td>
+        <td>",$row["telefono3"],"</td>
+        ";
+        
 
     }
 

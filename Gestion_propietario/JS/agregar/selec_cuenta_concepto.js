@@ -17,6 +17,8 @@ function llamado_concepto_multi()
         cerrar_sele_con_multi();
 
         recargar_tabla_multi();
+
+        saldo_a_favor_multipago();
         
 
       });

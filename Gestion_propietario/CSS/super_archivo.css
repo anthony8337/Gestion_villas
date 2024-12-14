@@ -114,6 +114,11 @@ border: 1px solid gray;
     height: calc(100% - 210px);
 }
 
+.principal_tabla_ultimos
+{
+    height: 430px;
+}
+
 .principal_tabla_2
 {
     height: calc(100% - 40px);
@@ -233,6 +238,26 @@ button
 {
     flex: 1 1 150px;
     min-width: 150px;
+    padding: 0px;
+    padding-left: 5px;
+    margin: 4px;
+    border: none;
+}
+
+.c2 .c2_villa
+{
+    flex: 1 1 300px;
+    min-width: 300px;
+    padding: 0px;
+    padding-left: 5px;
+    margin: 4px;
+    border: none;
+}
+
+.propi_c2 fieldset
+{
+    flex: 1 1 200px;
+    min-width: 200px;
     padding: 0px;
     padding-left: 5px;
     margin: 4px;
@@ -515,6 +540,7 @@ max-width: 200px;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -862,7 +888,7 @@ display: none;
 
 .ventanas_pequeñas_largo_2
 {
-    width: 650px;
+    width: 800px;
 }
 
 .ventanas_medianas
@@ -870,6 +896,14 @@ display: none;
 width: 1000px;
 min-height: 250px;
 }
+
+.ventanas_medianas_propi
+{
+width: 1300px;
+min-height: 250px;
+}
+
+
 
 .ventanas_medianas_usuarios
 {
@@ -1383,4 +1417,23 @@ width: 25%;
 .espacio fieldset
 {
 margin-bottom: 5px;
+}
+
+.a_gru_villa
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.a_gru_villa input[type = "text"], .a_gru_villa label, .a_gru_villa select
+{
+    flex: 1 1 50px;
+    max-width: 50px;
+}
+
+.borde_c2
+{
+    border: 1px solid rgb(204, 204, 204);
+    padding: 0px;
 }

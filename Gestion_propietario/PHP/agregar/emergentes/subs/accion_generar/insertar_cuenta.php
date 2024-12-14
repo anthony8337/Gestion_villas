@@ -52,11 +52,6 @@ if ($result_100->num_rows > 0)
 
     $verificar = $row['total'];
 
-    echo"
-    <script>
-    window.alert('$verificar');
-    </script>
-    ";
 
 }
 ////////////////////////////////////////////////////////////////////////a
@@ -164,11 +159,6 @@ if ($result_100->num_rows > 0)
 
     $verificar = $row['total'];
 
-    echo"
-    <script>
-    window.alert('$verificar');
-    </script>
-    ";
 
 }
 ///////////////////////////////////////////////////////////////////////b

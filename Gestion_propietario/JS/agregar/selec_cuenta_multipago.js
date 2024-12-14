@@ -10,6 +10,7 @@ function llamado_cuenta()
         
         var id = celdas[0].innerText;
         var costo = celdas[7].innerText;
+        var codigo = celdas[2].innerText;
 
         var solo_numero = costo.replace('$. ','').trim();
 
@@ -19,7 +20,11 @@ function llamado_cuenta()
 
         document.getElementById("txt_ct").value = "$. " + solo_numero;
 
-        document.getElementById("hd_grupo").value ="";
+        document.getElementById("hd_codigo_cuenta").value = codigo;
+
+        document.getElementById("hd_can_pago").value = solo_numero;
+
+
 
         
         costo_con_multi();

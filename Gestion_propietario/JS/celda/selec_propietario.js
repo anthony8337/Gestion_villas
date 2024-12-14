@@ -16,6 +16,9 @@
         var dni = celdas[4].innerText;
         var id_pro = celdas[7].innerText;
         var obser = celdas[8].innerText;
+        var tele_2 = celdas[9].innerText;
+        var tele_3 = celdas[10].innerText;
+        
 
         document.getElementById('nn_id').value = id_unir;
         document.getElementById('nn_telefono').value = tele;
@@ -29,8 +32,17 @@
 
         document.getElementById('prin_pro_villa').value =villa;
         document.getElementById('prin_pro_pro').value = pro;
+        document.getElementById('prin_pro_correo').value = correo;
+        document.getElementById('prin_pro_tele1').value = tele;
+        document.getElementById('prin_pro_tele2').value = tele_2;
+        document.getElementById('prin_pro_tele3').value = tele_3;
+        
 
         ingresocelda();
+
+        saldo_al_dia();
+
+        saldo_al_dia_tabla();
 
       });
     }
@@ -57,3 +69,42 @@ function modificar_propietario()
 
 }
 
+function saldo_al_dia(){
+
+  var nn_id = document.getElementById('nn_id').value;
+
+  $.ajax({
+    url: "PHP/celda/emergentes/sql/saldo_a_fecha.php",
+    type: "POST",
+    data:
+    {
+      nn_id:nn_id,
+    },
+    success: function(respuesta) {
+
+      document.getElementById('prin_pro_saldo').value = respuesta;
+
+        /*$("#prin_pro_saldo").html(respuesta);*/
+    }
+});
+  
+}
+
+function saldo_al_dia_tabla(){
+
+  var nn_id = document.getElementById('nn_id').value;
+
+  $.ajax({
+    url: "PHP/celda/emergentes/sql/ultimos_movi.php",
+    type: "POST",
+    data:
+    {
+      nn_id:nn_id,
+    },
+    success: function(respuesta) {
+
+      $("#tbody_ultimos_mov").html(respuesta);
+    }
+});
+  
+}

@@ -68,21 +68,18 @@ if($result -> num_rows > 0)
 else
 {
     echo"
-            <table id='tabla_villa_pro_selec'>
-            
-        <tr>
-        <th></th>
-        <th>Villa</th>
-        <th>Número de medidor</th>
-        <th>Modelo</th>
-        <th>Habitaciones</th>
-        <th>Condición</th>
-                    </tr>
-            
-                    <tbody class='borrar_t'>";
-                    echo"
-                    </tbody>
-                    </table>
+           <table id='pro_autorizados'>
+    <tr>
+    <th></th>
+    <th style='width: 33%;'>Nombre</th>
+    <th style='width: 33%;'>Número de teléfono</th>
+    <th style='width: 33%;'>Correo electronico</th>
+                </tr>
+        
+                <tbody class='borrar_t'>
+
+                </tbody>
+    </table>
                     ";
 
 }

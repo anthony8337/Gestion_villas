@@ -90,3 +90,45 @@ li:hover, #cuerpo_pagina div div ul li:hover
 {
     display: none;
 }
+
+.menu_visualizar
+{
+    position: relative;
+    left:0;
+    top: 0;
+    width: 200px;
+
+}
+
+.ulti_movi
+{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 590px;
+
+    background-color: #3745a0;
+
+    height: 500px;
+}
+
+#menu_lateral_2
+{
+position: relative;
+
+list-style: none;
+padding: 0px;
+margin: 0px;
+border-right: 1px solid rgb(230, 230, 230);
+}
+
+#menu_lateral_2 li
+{
+display: flex;
+align-items: center;
+justify-content: start;
+height: 50px;
+flex-direction: row;
+padding-left: 20px;
+border-top: 1px solid rgb(230, 230, 230);
+}

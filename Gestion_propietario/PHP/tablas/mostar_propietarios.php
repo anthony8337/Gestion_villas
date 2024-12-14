@@ -34,6 +34,9 @@ if($result -> num_rows > 0)
         <td>",$row["correo"],"</td>
         <td class='oculto'>",$row["id_propietario"],"</td>
         <td class='oculto'>",$row["observacion"],"</td>
+        <td class='oculto'>",$row["telefono2"],"</td>
+        <td class='oculto'>",$row["telefono3"],"</td>
+        
         </tr>
         ";
     }

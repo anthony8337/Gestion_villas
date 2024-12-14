@@ -14,18 +14,21 @@ else
 {
 }
 
+$nn_id = $_POST['nn_id'];
 
-$sql = "SELECT * FROM grupo_villa WHERE id_estado = '1'";
+$sql = "SELECT * FROM estado_cuenta  WHERE id_unir = '$nn_id'";
 
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0)
 {
-       while ($row = $result->fetch_assoc()) {
-        echo"
-        <option value='",$row["id_grupo"],"'>",$row["grupo"],"</option>
-        ";
+    $total = 0;
+    while ($row = $result->fetch_assoc()) {
+
+        $total = $row["costo"] - $row["abono"] + $total;
     }
+
+    echo"$.".number_format($total,2)."";
 
 }
 else

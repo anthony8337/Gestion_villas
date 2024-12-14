@@ -589,6 +589,7 @@ function actualizar_tabla_conce_multi()
     });
 }
 
+
 function actualizar_tabla_villa_pro()
 {
     var id_propi_1 = document.getElementById("id_propi_1").value;

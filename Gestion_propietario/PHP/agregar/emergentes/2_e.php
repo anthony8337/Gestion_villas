@@ -38,8 +38,12 @@
         <input type="hidden" name="hd_concepto_pago" id="hd_concepto_pago">
         <input type="hidden" name="hd_grupo" id="hd_grupo">
 
-        <input type="hidden" name="txt_tl" id="txt_tl">
+        <input type="hidden" name="hd_saldo_favor" id="hd_saldo_favor">
+        <input type="hidden" name="hd_codigo_cuenta" id="hd_codigo_cuenta">
+        <input type="hidden" name="hd_can_pago" id="hd_can_pago">
+        
 
+        <input type="hidden" name="txt_tl" id="txt_tl">
         <input type="hidden" name="hd_correo" id="hd_correo">
         
 
@@ -148,7 +152,21 @@ $(document).ready(function(){
        var a4 = document.getElementById("hd_id_concepto" ).value;
        var a5 = document.getElementById("hd_concepto_pago" ).value;
        var a6 = document.getElementById("hd_grupo").value;
+
+       //Logica de pago insuficiente
+       var a7 = document.getElementById("hd_saldo_favor").value;
+       var a8 = document.getElementById("can_multi").value;
+       var a9 = document.getElementById("hd_can_pago").value;
        
+       if(a7 < 0 && a8 != a9)
+       {
+        window.alert("El valor debe ser completo.");
+       }
+       else if(a7 < 0 &&  (-1 * a9) < a7)
+       {
+        window.alert("Saldo a favor insuficiente para pagar esta cuenta.");
+       }
+       else{
 
        if(a6 == "")
        {
@@ -269,7 +287,8 @@ $(document).ready(function(){
     }
 }
 
-    });
+    }
+});
 });
 
 </script>
@@ -305,7 +324,7 @@ $(document).ready(function(){
     nombrar_usuario();
     // IDs de los inputs que quieres enviar
     var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m','hd_grupo',
-    'total_multi','devo_multi','nombre_usuario','can_multi','hd_correo'];
+    'total_multi','devo_multi','nombre_usuario','can_multi','hd_correo','hd_saldo_favor','can_multi','hd_can_pago'];
     
     // Crea un formulario
     var form = document.createElement("form");
@@ -337,7 +356,7 @@ function abrirNuevaPagina_miltipago_correo() {
     nombrar_usuario();
     // IDs de los inputs que quieres enviar
     var inputIDs = ['txt_cod_m','txt_mn','codigo_villa_multi','txt_fecha_m','hd_grupo',
-    'total_multi','devo_multi','nombre_usuario','can_multi','hd_correo'];
+    'total_multi','devo_multi','nombre_usuario','can_multi','hd_correo','hd_saldo_favor','can_multi','hd_can_pago'];
     
     // Crea un formulario
     var form = document.createElement("form");

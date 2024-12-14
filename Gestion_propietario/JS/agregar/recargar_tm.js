@@ -10,8 +10,6 @@ function recargar_tabla_multi() {
         data: form,
         success: function(response){
             $('#respuesta_cuenta_multi').html(response);
-
-            
         }
     });
 }
@@ -27,6 +25,23 @@ function recargar_tabla_multi_1_cuenta() {
             $('#respuesta_cuenta_multi').html(response);
 
             
+        }
+    });
+}
+
+function saldo_a_favor_multipago()
+{
+    var id_multi_hd_id_propietario = document.getElementById("hd_id_propietario").value;
+    var hd_id_concepto = document.getElementById("hd_id_concepto").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'PHP/agregar/emergentes/subs/accion_generar/tabla_concepto_multi_favor.php',
+        data: {
+            id_multi_hd_id_propietario:id_multi_hd_id_propietario,hd_id_concepto:hd_id_concepto
+        },
+        success: function(response){
+            $('#tabla_concepto_multi').html(response);
         }
     });
 }

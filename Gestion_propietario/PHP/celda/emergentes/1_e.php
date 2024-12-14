@@ -3,10 +3,10 @@
 <div class="centro ventanas_pequeñas_largo_2">
 
 <div class="c1">
-<h2>Atajo de acción</h2>
+<h2>Visualizar propietario</h2>
 <button onclick="cerrar_ingreso_celda()" type="button">X</button>
-
 </div>
+<div>
 
 <div class="c2">
 
@@ -24,48 +24,128 @@
     <input type="text" name="prin_pro_villa" id="prin_pro_villa" readonly>
 </fieldset>
 
-<fieldset>
+<fieldset class="c2_villa">
     <legend>Propietario</legend>
     <input type="text" name="prin_pro_pro" id="prin_pro_pro" readonly>
 </fieldset>
 
+<fieldset>
+    <legend>Saldo a la fecha</legend>
+    <input type="text" name="prin_pro_saldo" id="prin_pro_saldo" readonly>
+</fieldset>
+
 </div>
 
-<div class="c5">
+<div class="c2">
+
+<fieldset>
+    <legend>Correo</legend>
+    <input type="text" name="prin_pro_correo" id="prin_pro_correo" readonly>
+</fieldset>
+
+<fieldset>
+    <legend>Telefono 1</legend>
+    <input type="text" name="prin_pro_tele1" id="prin_pro_tele1" readonly>
+</fieldset>
+
+<fieldset>
+    <legend>Telefono 2</legend>
+    <input type="text" name="prin_pro_tele2" id="prin_pro_tele2" readonly>
+</fieldset>
+
+<fieldset>
+    <legend>Telefono 3</legend>
+    <input type="text" name="prin_pro_tele3" id="prin_pro_tele3" readonly>
+</fieldset>
 
 
-<div onclick="atajo_multipago()">
+
+</div>
+</div>
+
+<div class="c2 borde_c2">
+
+<div class="menu_visualizar">
+
+<ul id="menu_lateral_2">
+
+<li onclick="atajo_multipago()">
 <img src="Imagenes/cash-coin.svg">
 <span>Pago múltiple</span>
-</div>
+</li>
 
-<div onclick="atajo_cuenta()">
+<li onclick="atajo_cuenta()">
 <img src="Imagenes/journal-check.svg">
 <span>Generar cuenta</span>
-</div>
+</li>
 
-<div onclick="atajo_cuenta_pagar()">
+<li onclick="atajo_cuenta_pagar()">
 <img src="Imagenes/cash-stack.svg">
 <span>Cuentas a pagar</span>
-</div>
+</li>
 
-<div onclick="atajo_reimprimir()">
+<li onclick="atajo_reimprimir()">
 <img src="Imagenes/receipt-cutoff.svg">
 <span>Reimprimir facturas</span>
-</div>
+</li>
 
-<div onclick="atajo_estado_cuenta()">
+<li onclick="atajo_estado_cuenta()">
 <img src="Imagenes/person-lines-fill(1).svg">
 <span>Estado de cuenta</span>
-</div>
+</li>
 
-<div onclick="atajo_propietario()">
+<li onclick="atajo_propietario()">
+<img src="Imagenes/person-fill(1).svg">
+<span>Personas autorizadas</span>
+</li>
+
+<li onclick="atajo_propietario()">
 <img src="Imagenes/person-fill(1).svg">
 <span>Edítar propietario</span>
+</li>
+    </ul>
+</div>
+
+<div class="ulti_movi principal_tabla_ultimos contenido_tabla">
+
+<table> 
+
+<tr>
+    <th colspan="7">Ultimos movimientos</th>
+    <th colspan="7">Ultimos movimientos</th>
+</tr>
+
+<tr>
+<th></th>
+<th>Fecha de pago</th>
+<th>Código</th>
+<th>concepto</th>
+<th>Descripción</th>
+<th>Cargo</th>
+<th>Abono</th>
+<th>Total</th>
+</tr>
+
+<tbody id="tbody_ultimos_mov">
+
+</tbody>
+
+</table>
+
 </div>
 
 
+
+<div>
+
 </div>
+
+
+
+
+</div>
+
+<div id="respuesta_atajo"></div>
 
 </div>
 

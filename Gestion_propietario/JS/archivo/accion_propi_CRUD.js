@@ -33,6 +33,9 @@ function insertar_propi()
                 var txtfecha_i = document.getElementById("txtfecha_i").value;
                 var txttelefono = document.getElementById("txttelefono").value;
                 var obs_propietario = document.getElementById("obs_propietario").value;
+                var txttelefono2 = document.getElementById("txttelefono2").value;
+                var txttelefono3 = document.getElementById("txttelefono3").value;
+
 
                 $.ajax({
                     type: 'POST',
