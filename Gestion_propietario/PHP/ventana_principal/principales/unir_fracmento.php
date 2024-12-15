@@ -15,6 +15,10 @@ include "PHP/ventana_principal/principales/interno/4_b.php";
 ?>
 
 <?php
+include "PHP/ventana_principal/principales/interno/5_b.php";
+?>
+
+<?php
 include "PHP/ventana_principal/principales/1_e.php";
 ?>
 
@@ -40,4 +44,8 @@ include "PHP/ventana_principal/principales/6_e.php";
 
 <?php
 include "PHP/ventana_principal/principales/7_e.php";
+?>
+
+<?php
+include "PHP/ventana_principal/principales/8_e.php";
 ?>

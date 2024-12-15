@@ -31,10 +31,10 @@
 <fieldset>
     <legend>Aporte</legend>
 <label for="abono">
-<input type="radio" name="opcion_concepto" id="rb_abono" value="Abono" onclick="abono()" checked>Abono
+<input type="radio" name="opcion_concepto" id="rb_abono" value="Abono" onclick="abono()" checked>Cargo
 </label>
 <label for="cargo">
-<input type="radio" name="opcion_concepto" id="rb_cargo" value="Cargo" onclick="cargo()">Cargo
+<input type="radio" name="opcion_concepto" id="rb_cargo" value="Cargo" onclick="cargo()">Abono
 </label>
 
 <label for="Referencia">

@@ -29,7 +29,7 @@ if($result -> num_rows > 0)
     <tr>
     <th></th>
       <th>Descripción</th>
-      <th>Tipo</th>
+      <th class='oculto'>Tipo</th>
    </tr>";
 
     while ($row = $result->fetch_assoc()) {
@@ -40,7 +40,7 @@ if($result -> num_rows > 0)
         <tr>
         <td>",$row["id_concepto"],"</td>
         <td>",$row["concepto"],"</td>
-        <td>",$row["tipo"],"</td>
+        <td class='oculto'>",$row["tipo"],"</td>
         </tr>
         ";
     }

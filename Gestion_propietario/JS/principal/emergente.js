@@ -147,3 +147,13 @@ function difi_bienvenida()
     cerrar_bienvinida();
     } 
 }
+
+function cuerpo_automatico() 
+{
+    document.getElementById('usu_automatico').style.display = 'flex';
+}
+
+function cerrar_cuerpo_automatico() 
+{
+    document.getElementById('usu_automatico').style.display = 'none';
+}

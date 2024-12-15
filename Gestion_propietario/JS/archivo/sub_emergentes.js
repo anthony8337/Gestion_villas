@@ -79,3 +79,13 @@ function cerrar_login_bd_confi()
 {
     document.getElementById('login_base_datos_form').style.display = 'none';
 }
+
+function conocepto_cargo()
+{
+    document.getElementById('elegir_concep_cargo').style.display = 'flex';
+}
+
+function conocepto_cargo_cerrar()
+{
+    document.getElementById('elegir_concep_cargo').style.display = 'none';
+}

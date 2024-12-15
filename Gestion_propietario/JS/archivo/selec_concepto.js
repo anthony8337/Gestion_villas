@@ -17,7 +17,7 @@ function modificar_concepto(){
       document.getElementById("id_concepto").value = id;
       document.getElementById("txt_concepto").value = concepto;
       document.getElementById("txt_cantidad").value = canti_valor;
-      if (tipo == "Abono") {
+      if (tipo == "Cargo") {
         document.getElementById("rb_abono").checked = "true";
         abono_editar();
       }

@@ -17,7 +17,7 @@ else
 }
 
 
-$sql = "SELECT * FROM concepto WHERE id_estado = '1'";
+$sql = "SELECT * FROM concepto WHERE id_estado = '1' and tipo='abono';";
 
 $result = $conn->query($sql);
 
@@ -25,40 +25,20 @@ if($result -> num_rows > 0)
 {
 
     echo"
-    <table id='tabla_concepto'>
-    <tr>
+    <table id='tabla_concepto_cargo'>
+<tr>
     <th></th>
-      <th>Descripción</th>
-      <th>Tipo</th>
-      <th>Valor</th>
-      <th>Referencia</th>
-      <th></th>
+      <th>Concepto</th>
+      <th>Costo</th>
    </tr>";
 
     while ($row = $result->fetch_assoc()) {
         echo"
         <tr>
         <td class='interno'>",$row["id_concepto"],"</td>
-        <td>",$row["concepto"],"</td>";
-
-        if ($row["tipo"] == "Cargo")
-        {
-            echo"<td>Abono</td>";
-        }
-        else
-        {
-            echo"<td>Cargo</td>";   
-        }
-        
-
-        echo"
+        <td>",$row["concepto"],"</td>
         <td>$. ", number_format($row["valor"],2),"</td>
-        <td>",$row["referencia"],"</td>
-        <td>
-<button type='button' class='editar_usuario' onclick='modificar_concepto(),ingreso_concepto_m_r()'>
-<img src='Imagenes/pencil-fill.svg'>
-</button>
-</td>
+        
         </tr>
         ";
     }

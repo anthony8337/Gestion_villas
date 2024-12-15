@@ -27,6 +27,12 @@
 <img src='Imagenes/list-ul.svg'>
 <span class='titulos_grandes'>Datos de conceptos</span>
 </li>
+
+<li tittle='Automatizar' onclick='cuerpo_automatico()'>
+<img src='Imagenes/menu-button-wide-fill.svg'>
+<span class='titulos_grandes'>Automatizar</span>
+</li>
+
 <!--onclick='cuerpo_reporte()'-->
 <li tittle='Reportes' class="dropdown" >
 <img src='Imagenes/clipboard2-data.svg'>
