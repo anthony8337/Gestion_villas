@@ -38,12 +38,11 @@ $txt_c_enee = $_POST['txt_c_enee'];
 $txtnh = $_POST['txtnh'];
 $txtbanio = $_POST['txtbanio'];
 $dt_fc = $_POST['dt_fc'];
-$txt_cu_man = $_POST['txt_cu_man'];
 
 
 
-$sql2 ="INSERT INTO villas(id_grupo, numero, cont_eeh, habitaciones, lote, id_condicion, id_estado, direccion, observacion, modelo, banios, fecha_contruc,mante_cuenta) 
-                    VALUES('$cb_grupo_villa','$txt_n_villa','$txt_c_enee','$txtnh','0','1','2',' ',' ','$cb_modelo','$txtbanio','$dt_fc','$txt_cu_man')";
+$sql2 ="INSERT INTO villas(id_grupo, numero, cont_eeh, habitaciones, lote, id_condicion, id_estado, direccion, observacion, modelo, banios, fecha_contruc) 
+                    VALUES('$cb_grupo_villa','$txt_n_villa','$txt_c_enee','$txtnh','0','1','2',' ',' ','$cb_modelo','$txtbanio','$dt_fc')";
 
 $result2 = $conn->query($sql2);
 
@@ -122,6 +121,33 @@ if (isset($_POST['pro_autorizados'])) {
     }
 }
 
+///////////////////////////////////////////////////
+$sql8 = "SELECT * FROM confi_concepto_vista";
+
+$result8 = $conn->query($sql8);
+
+if($result8 -> num_rows > 0)
+{
+
+    while($row = $result8->fetch_assoc())
+    {
+        $con1 = $row['id_concepto'];
+
+        $con2 = $row['id_concepto_2'];
+
+        $var = $row['valor'];
+
+        $df = $row['dia_generar'];
+
+        $sql9 = "INSERT INTO cuenta_automatica(id_unir, id_concepto, id_concepto_2, valor, fecha_generar, habilitar) 
+        VALUES ('$id_unir','$con1','$con2','$var','$df','si')";
+
+        $result9 = $conn->query($sql9);
+
+    }
+
+}
+
 if($result == true)
 {
     echo"<script>
@@ -178,4 +204,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     actualizar_pro_adi();
     actualizar_villas_adicionar();
 </script>
-

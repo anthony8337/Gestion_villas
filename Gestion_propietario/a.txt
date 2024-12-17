@@ -1,102 +1,57 @@
-        $valor = $row["usuario"];
-        $clave1 = $row["clave"];
-        $acceso = $row["acceso"];
-        $estado = $row["estado"];
-        /*Acceso de los usuarios*/
-        $reportes_im = $row["imprimir_reportes"];
-        $modi_im = $row["modificar_reportes"];
-        $eliminar_im = $row["eliminar_reportes"];
+CREATE EVENT generar_cuentas_automaticas
+ON SCHEDULE EVERY 1 DAY
+DO
+BEGIN
+  -- Declarar variables
+  DECLARE dia INT;
+  DECLARE fin INT DEFAULT FALSE;
 
+  -- Declarar un cursor para recorrer las filas de la tabla cuenta_automatica
+  DECLARE cursor_cuentas CURSOR FOR
+    SELECT id_ca, id_unir, id_concepto, id_concepto_2, valor, fecha_generar, habilitar
+    FROM cuenta_automatica
+    WHERE habilitar = 1;  -- Suponemos que solo se ejecutan las habilitadas
 
+  -- Declarar el manejador de fin de cursor
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = TRUE;
 
-               $valor = $row["usuario"];
-        $clave1 = $row["clave"];
-        $acceso = $row["acceso"];
-        $estado = $row["estado"];
-        /*Acceso de los usuarios*/
-        $reportes_im = $row["imprimir_reportes"];
-        $modi_im = $row["modificar_reportes"];
-        $eliminar_im = $row["eliminar_reportes"];
+  -- Obtener el valor de dia_generar desde la tabla confi_automatico
+  SELECT dia_generar INTO dia FROM confi_automatico LIMIT 1;
 
+  -- Verificar si el día actual es igual al valor de dia_generar
+  IF DAY(CURDATE()) = dia THEN
+    -- Abrir el cursor
+    OPEN cursor_cuentas;
 
+    -- Iniciar el ciclo para recorrer cada fila del cursor
+    leer_cuentas: LOOP
+      -- Variables para almacenar los valores de la fila actual del cursor
+      DECLARE id_ca INT;
+      DECLARE id_unir INT;
+      DECLARE id_concepto INT;
+      DECLARE id_concepto_2 INT;
+      DECLARE valor DECIMAL(10,2);
+      DECLARE fecha_generar DATE;
 
-        if ($estado == "Activo") {
-        
-            if ($valor == $nombre && $clave1 == $clave)
-        {
-            
+      -- Obtener los valores del cursor
+      FETCH cursor_cuentas INTO id_ca, id_unir, id_concepto, id_concepto_2, valor, fecha_generar, habilitar;
 
-            if ($acceso == "Administrador")
-            {
-                echo"
-                <script>
-                var admin = 'abierto';
-                var usuario_n = '".$valor."'
-                var clave = '".$clave1."'
-                var reporte = '".$reportes_im."';
-                var modificar = '".$modi_im."';
-                var eliminar = '".$eliminar_im."';
-                
+      -- Si ya no hay más filas, salir del ciclo
+      IF fin THEN
+        LEAVE leer_cuentas;
+      END IF;
 
-                sessionStorage.setItem('admin',admin);
-                sessionStorage.setItem('usuario_n',usuario_n);
-                sessionStorage.setItem('clave',clave);
-                sessionStorage.setItem('reporte',reporte);
-                sessionStorage.setItem('modificar',modificar);
-                sessionStorage.setItem('eliminar',eliminar);
-                
+      -- Lógica para insertar o realizar la operación, ajusta según tu esquema
 
-                window.location.href = 'usuario.php';
-                </script>
-                ";
-            }
-            else if ($acceso == "Usuario")
-            {
-                echo"
-                <script>
-                var usuario = 'abierto';
-                var usuario_n = '".$clave."';
-                var reporte = '".$reportes_im."';
-                var modificar = '".$modi_im."';
-                var eliminar = '".$eliminar_im."';
+      INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2, con_pagado) 
+      VALUES (id_unir,id_concepto,valor,'0','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]')
 
-                sessionStorage.setItem('usuario',usuario);
-                sessionStorage.setItem('reporte',reporte);
-                sessionStorage.setItem('modificar',modificar);
-                sessionStorage.setItem('eliminar',eliminar);
-                
+      INSERT INTO cuentas (id_unir, id_concepto, id_concepto_2, valor, fecha_creacion)
+      VALUES (, , id_concepto_2, valor, NOW());
 
-                window.location.href = 'principal.php';
-                </script>
-                ";
-            }
-        }
-        else
-        {
-            echo"
-            <script>
-            window.alert('Usuario y contraseña no coinciden, por favor verifica si son correctos');
-            </script>
-            ";
-        }
-    }
-    else
-    {
-        echo"
-        <script>
-        window.alert('Usuario y contraseña no coinciden, por favor verifica si son correctos');
-        </script>
-        ";
-    }
-}
-}
-else
-{
-    echo"
-    <script>
-    window.alert('Usuario y contraseña no coinciden, por favor verifica si son correctos');
-    </script>
-    ";
-}
+    END LOOP leer_cuentas;
 
-
+    -- Cerrar el cursor
+    CLOSE cursor_cuentas;
+  END IF;
+END;

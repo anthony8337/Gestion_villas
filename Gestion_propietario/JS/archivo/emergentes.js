@@ -334,3 +334,18 @@ function cerrar_ver_descrip_adicion()
 {
     document.getElementById('descripcion_adicion').style.display = 'none';
 }
+
+//////////////////////////////////////////
+
+function cuentas_auto_ver()
+{
+    document.getElementById('cuentas_auto_ver').style.display = 'flex';
+    document.getElementById('cuentas_auto_ver').style.zIndex = '99';
+    actualizar_tabla_de_auto();
+
+}
+
+function cerrar_cuentas_auto_ver()
+{
+    document.getElementById('cuentas_auto_ver').style.display = 'none';
+}

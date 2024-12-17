@@ -35,6 +35,13 @@ function limpiar_tabla_donante() {
     }
   }
 
+  function limpiar_tabla_automatico() {
+    var tbody = document.querySelector("#tabla_concepto_cargo_1 tbody.borrar_t");
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+  }
+
   function lim_tabla_donantes()
   {
     limpiar_tabla_donante();

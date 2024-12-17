@@ -50,3 +50,90 @@ function selec_pro_estado_cuenta(){
     });
   }
 }
+//////////////////////////
+function actualizar_automatico_js()
+{
+  $.ajax({
+    type: 'GET',
+    url: "PHP/ventana_principal/principales/interno/sql/accion_automatico/inicio_automatico.php",
+    data: $(this).serialize(),
+    success: function(response){
+        $('#tbody_concep_cargo').html(response);
+    }
+}); 
+}
+
+///////////////////
+
+
+function selec_concep_cuenta() {
+  const originalTable = document.getElementById('tabla_concepto_cargo_selec').getElementsByTagName('tbody')[0];
+  const destinationTable = document.getElementById('tabla_concepto_cargo_1').getElementsByTagName('tbody')[0];
+
+  originalTable.addEventListener('click', (e) => {
+      let target = e.target;
+      while (target && target.nodeName !== 'TR') {
+          target = target.parentElement;
+      }
+      if (target && target.nodeName === 'TR') {
+          const newRow = target.cloneNode(true);
+
+          const deleteCell = newRow.insertCell(-1);
+          deleteCell.innerHTML = '<button class="accion_tel" title="Eliminar fila"><img src="Imagenes/trash3-fill.svg"></button>';
+
+          deleteCell.querySelector('button').addEventListener('click', (event) => {
+              event.stopPropagation();
+
+              target.remove();
+              newRow.deleteCell(-1);
+              originalTable.appendChild(newRow);
+          });
+
+          destinationTable.appendChild(newRow);
+          target.remove(); 
+          conocepto_cargo_cerrar();
+
+
+      }
+  });
+
+  destinationTable.addEventListener('click', (e) => {
+      if (e.target && e.target.matches('button.accion_tel img')) {
+          let target = e.target;
+          while (target && target.nodeName !== 'TR') {
+              target = target.parentElement;
+          }
+          if (target && target.nodeName === 'TR') {
+              const newRow = target.cloneNode(true);
+              newRow.deleteCell(-1); 
+              originalTable.appendChild(newRow);
+              target.remove();
+              
+
+              
+
+          }
+      }
+  });
+
+
+  
+}
+
+//////////////////
+function actualizar_tabla_de_auto()
+{
+
+  var id_unir = document.getElementById('nn_id').value;
+
+  $.ajax({
+    type: 'POST',
+    url: "PHP/celda/emergentes/sql/tabla_cuentas_auto.php",
+    data:{ id_unir:id_unir,
+
+    },
+    success: function(response){
+        $('#tabla_concep_auto').html(response);
+    }
+}); 
+}

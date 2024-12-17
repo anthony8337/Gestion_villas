@@ -44,16 +44,15 @@ else
 }
 
 
-$sql = "UPDATE concepto SET concepto='$txt_nombre',tipo='$tipo_seleccionado',valor='$txt_valor',referencia='$referencia' WHERE id_concepto='$id_concepto'";
-$result = $conn->query($sql);
+$sql = "UPDATE concepto SET id_estado='2' WHERE id_concepto='$id_concepto'";
 
-$sql = "UPDATE cuenta_automatica SET valor='$txt_valor' where id_concepto_2 = '$id_concepto'";
+
 $result = $conn->query($sql);
 
 if($result == true)
 {
     echo"<script>
-    window.alert('Registro modificado con éxito');
+    window.alert('Registro suspendido con éxito');
     ingreso_concepto_r_cerrar();
     </script>";
 }

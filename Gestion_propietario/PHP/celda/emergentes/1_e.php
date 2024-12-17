@@ -94,9 +94,9 @@
 <span>Estado de cuenta</span>
 </li>
 
-<li onclick="atajo_propietario()">
-<img src="Imagenes/person-fill(1).svg">
-<span>Personas autorizadas</span>
+<li onclick="cuentas_auto_ver()">
+<img src="Imagenes/menu-button-wide-fill.svg">
+<span>Cuentas automaticas</span>
 </li>
 
 <li onclick="atajo_propietario()">

@@ -45,9 +45,8 @@ else
 
 
 $sql = "UPDATE concepto SET concepto='$txt_nombre',tipo='$tipo_seleccionado',valor='$txt_valor',referencia='$referencia' WHERE id_concepto='$id_concepto'";
-$result = $conn->query($sql);
 
-$sql = "UPDATE cuenta_automatica SET valor='$txt_valor' where id_concepto_2 = '$id_concepto'";
+
 $result = $conn->query($sql);
 
 if($result == true)

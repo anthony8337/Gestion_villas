@@ -151,9 +151,18 @@ function difi_bienvenida()
 function cuerpo_automatico() 
 {
     document.getElementById('usu_automatico').style.display = 'flex';
+    actualizar_automatico_js();
 }
 
 function cerrar_cuerpo_automatico() 
 {
+
+    var tbody = document.querySelector("#tabla_concepto_cargo_1 tbody.borrar_t");
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+
     document.getElementById('usu_automatico').style.display = 'none';
+
+
 }

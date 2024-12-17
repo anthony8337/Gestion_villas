@@ -18,7 +18,9 @@ include "PHP/archivo/emergentes/5_e.php";
 include "PHP/archivo/emergentes/4_e.php";
 ?>
 
-
+<?php
+include "PHP/archivo/emergentes/6_e.php";
+?>
 
 <!--Sub emergentes-->
 

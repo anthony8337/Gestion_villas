@@ -107,10 +107,7 @@
 <input type='date' id = 'dt_fc' name = 'dt_fc' placeholder='Fecha de construcción' title='Fecha de construcción'>
 </fieldset>
 
-<fieldset>
-<legend>Cuota de mantenimiento</legend>
-<input class="solo_numero" type='text' id = 'txt_cu_man' name = 'txt_cu_man' placeholder='Cuota de mantenimiento' title='Cuota de mantenimiento' required>
-</fieldset>
+
 
 </div>
 </fieldset>
