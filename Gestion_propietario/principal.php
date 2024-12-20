@@ -36,6 +36,9 @@ include "PHP/P_gestiones.php";
 ?>
 
 <script>
+
+document.getElementById("li_1").style.display = "none";
+
 if(acceso == "Usuario")
 {
     document.getElementById('li_3').style.display = "none";

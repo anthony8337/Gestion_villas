@@ -3,9 +3,9 @@
 <ul>
 
 <?php
-    $titulos_archi = ['Datos de villa','Nuevo propietario','Intercambiar villa','Adicionar villa'];
-    $img_archi = ['house-add-fill(2).svg','person-fill(1).svg','arrow-left-right.svg','houses-fill.svg'];
-    $accion = ['villa_lista()','ingreso()','v_cambio_abrir()','abrir_adicionar()'];
+    $titulos_archi = ['Nuevo propietario','Generar cuentas','Pago múltiple','reimpresión'];
+    $img_archi = ['person-fill(1).svg','journal-plus.svg','cash-coin.svg','receipt-cutoff.svg'];
+    $accion = ['ingreso()','crear_cuenta()','crear_multipago()','re_factura()'];
 
     for ($i=0; $i < count($titulos_archi); $i++) { 
 

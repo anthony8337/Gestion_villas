@@ -12,6 +12,8 @@
 
 <input type="hidden" id="id_propi_1" name="id_propi_1">
 <input type="hidden" id="id_unir_pro1" name="id_unir_pro1">
+<input type="hidden" id="id_villa_pro1" name="id_villa_pro1">
+
 
 <fieldset>
 <legend>Datos del propietario</legend>
@@ -77,7 +79,7 @@
 
         <fieldset>
             <legend>Modelo</legend>
-            <select id='cb_modelo' name='cb_modelo'>
+            <select id='cb_mo_propi' name='cb_mo_propi'>
          
             <?php
             include "PHP/archivo/emergentes/subs/accion_villas/grupo_modelo.php";
@@ -112,7 +114,7 @@
 </div>
 </fieldset>
 
-<fieldset>
+<fieldset id="perso_auto_propi">
     <legend>Personas autorizadas a ingresar</legend>
     <div class="c2">
 
@@ -180,7 +182,7 @@
 <button type="submit" onclick="limpiar_opcion();" id="limpiar_propietario">Limpiar</button>
 <button type="submit" id="agregar_propietario">Agregar</button>
 <button class="oculto"  onclick="eliminar_propi()" type="submit" id="eliminar_propietario">Eliminar</button>
-<button class="oculto" onclick="actualizar_propi()" type="submit" id="modificar_propietario">Modificar</button>
+<button class="oculto" type="submit" id="modificar_propietario">Modificar</button>
 </div>
 
 
@@ -195,6 +197,18 @@
 
 <script>
         $(document).ready(function() {
+
+            var accion = '';
+
+            $('#agregar_propietario').click(function() {
+            accion = 'crear';
+            });
+
+            $('#modificar_propietario').click(function() {
+            accion = 'editar';
+            });
+
+
             $("#Formulario_pro").submit(function(e) {
                 e.preventDefault(); // Evita que se recargue la página
                 
@@ -215,8 +229,20 @@ table.find('tbody tr').each(function() {
 let formData = $(this).serializeArray();
 formData.push({ name: 'pro_autorizados', value: JSON.stringify(data) });
 
+
+
+var link = '';
+
+if(accion == "crear")
+{
+    link = "PHP/archivo/emergentes/subs/accion_propietario/insertar_propietario.php";
+}else if(accion == "editar")
+{
+    link = "PHP/archivo/emergentes/subs/accion_propietario/modificar_propietario.php";
+}
+
 $.ajax({
-    url: "PHP/archivo/emergentes/subs/accion_propietario/insertar_propietario.php",
+    url: link,
     type: "POST",
     data: formData,
     success: function(respuesta) {

@@ -116,7 +116,12 @@ border: 1px solid gray;
 
 .principal_tabla_ultimos
 {
-    height: 430px;
+    height: 500px;
+}
+
+.principal_tabla_pro_extra
+{
+    height: 300px;
 }
 
 .principal_tabla_2
@@ -888,13 +893,19 @@ display: none;
 
 .ventanas_pequeñas_largo_2
 {
-    width: 800px;
+    width: 1000px;
 }
 
 .ventanas_medianas
 {
 width: 1000px;
 min-height: 250px;
+}
+
+.ventanas_medianas_pro_extra
+{
+width: 1000px;
+min-height: 500px;
 }
 
 .ventanas_medianas_propi

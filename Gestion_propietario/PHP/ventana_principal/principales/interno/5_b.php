@@ -124,6 +124,7 @@ $.ajax({
     data: formData,
     success: function(respuesta) {
         $("#respuesta_automatico").html(respuesta);
+        location.reload();
     }
 });
 }

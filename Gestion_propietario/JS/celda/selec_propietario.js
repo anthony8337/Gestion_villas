@@ -54,6 +54,9 @@ function modificar_propietario()
   var id_unir = document.getElementById('nn_id').value;
   var pro = document.getElementById('nn_propi').value;
   var tele = document.getElementById('nn_telefono').value;
+  var tele = document.getElementById('nn_telefono').value;
+  var tele2 = document.getElementById('prin_pro_tele2').value;
+  var tele3 = document.getElementById('prin_pro_tele3').value;
   var correo = document.getElementById('nn_correo').value;
   var dni = document.getElementById('nn_dni').value;
   var id_pro = document.getElementById('nn_id_pro').value;
@@ -65,9 +68,26 @@ function modificar_propietario()
   document.getElementById('txtid').value = dni;
   document.getElementById('txtcorreo').value = correo;
   document.getElementById('txttelefono').value = tele;
+  document.getElementById('txttelefono2').value = tele2;
+  document.getElementById('txttelefono3').value = tele3;
   document.getElementById('obs_propietario').value = obser;
 
+  desactivar_autorizados();
+
 }
+
+function activar_autorizados()
+{
+  document.getElementById('perso_auto_propi').style.display = 'block';
+}
+
+function desactivar_autorizados()
+{
+  document.getElementById('perso_auto_propi').style.display = 'none';
+}
+
+
+
 
 function saldo_al_dia(){
 

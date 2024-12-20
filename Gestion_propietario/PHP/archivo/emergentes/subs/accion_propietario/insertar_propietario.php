@@ -33,7 +33,7 @@ $result = $conn->query($sql);
 
 $cb_grupo_villa = $_POST['cb_grupo_villa'];
 $txt_n_villa = $_POST['txt_n_villa'];
-$cb_modelo = $_POST['cb_modelo'];
+$cb_mo_propi = $_POST['cb_mo_propi'];
 $txt_c_enee = $_POST['txt_c_enee'];
 $txtnh = $_POST['txtnh'];
 $txtbanio = $_POST['txtbanio'];
@@ -42,7 +42,7 @@ $dt_fc = $_POST['dt_fc'];
 
 
 $sql2 ="INSERT INTO villas(id_grupo, numero, cont_eeh, habitaciones, lote, id_condicion, id_estado, direccion, observacion, modelo, banios, fecha_contruc) 
-                    VALUES('$cb_grupo_villa','$txt_n_villa','$txt_c_enee','$txtnh','0','1','2',' ',' ','$cb_modelo','$txtbanio','$dt_fc')";
+                    VALUES('$cb_grupo_villa','$txt_n_villa','$txt_c_enee','$txtnh','0','1','2',' ',' ','$cb_mo_propi','$txtbanio','$dt_fc')";
 
 $result2 = $conn->query($sql2);
 
@@ -148,6 +148,68 @@ if($result8 -> num_rows > 0)
 
 }
 
+////////////
+
+
+$sql21 = "SELECT * FROM cuenta_automatica WHERE id_unir = '$id_unir' AND habilitar = 'si'";
+$result21 = $conn->query($sql21);
+
+if ($result21->num_rows > 0) {
+    while ($row = $result21->fetch_assoc()) {
+        $id_concepto = $row['id_concepto_2'];
+        $id_concepto_2 = $row['id_concepto'];
+        $valor = $row['valor'];
+        $fecha_generar = $row['fecha_generar'];
+
+        // Fecha actual
+        $desde = new DateTime();
+        $desde_str = $desde->format('Y-m-d'); // Formato para la base de datos
+
+        // Sumar un mes a la fecha actual
+        $hasta = (clone $desde)->modify('+1 month');
+        $hasta_str = $hasta->format('Y-m-d'); // Formato para la base de datos
+
+        //////////////////////
+        $sql22 = "SELECT * FROM cuentas ORDER BY codigo DESC LIMIT 1;";
+        $result22 = $conn->query($sql22);
+
+        $codigo = 0; // Por defecto, si no hay resultados
+        if ($result22->num_rows > 0) {
+            $row = $result22->fetch_assoc();
+            $codigo = intval($row["codigo"]) + 1; // Incrementar código si ya existe
+            $id_cuenta = $row['id_cuenta']; 
+        }
+        /////////////////////
+
+        $sql23 = "INSERT INTO cuentas(id_unir, id_concepto, costo, abono, desde, hasta, pagado, codigo, id_concepto_2, con_pagado) 
+                  VALUES ('$id_unir', '$id_concepto', '$valor', '0', '$desde_str', '$hasta_str', 'No pagado', '$codigo', '$id_concepto_2', 'falta')";
+        $result23 = $conn->query($sql23);
+
+        /////////////////////
+        $sql22_2 = "SELECT * FROM cuentas ORDER BY codigo DESC LIMIT 1;";
+        $result22_2 = $conn->query($sql22_2);
+
+
+        if ($result22_2->num_rows > 0) {
+            $row = $result22_2->fetch_assoc();
+
+            $id_cuenta = $row['id_cuenta']; 
+        }
+        ////////////////////
+        
+        $sql24 = "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
+         VALUES ('$valor','0','$desde_str','$id_cuenta')";
+        $result24 = $conn->query($sql24);
+        ////////////////////
+
+        if (!$result23) {
+            // Manejo de errores en caso de fallo en la inserción
+            die("Error en la consulta SQL: " . $conn->error);
+        }
+    }
+}
+
+
 if($result == true)
 {
     echo"<script>
@@ -164,6 +226,20 @@ else
 
 
 /*
+
+$sql6 = "SELECT * FROM propietarios_villas ORDER BY id_unir DESC LIMIT 1;";
+
+$result6 = $conn->query($sql6);
+
+if($result6 -> num_rows > 0)
+{
+
+    $row = $result6->fetch_assoc();
+
+    $id_unir = $row["id_unir"];
+
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -204,3 +280,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     actualizar_pro_adi();
     actualizar_villas_adicionar();
 </script>
+

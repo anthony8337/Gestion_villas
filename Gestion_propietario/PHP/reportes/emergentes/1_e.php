@@ -24,7 +24,7 @@
             <select name="hasta_reportes_villas" id="hasta_reportes_villas" oninput="actualizar_tabla_villa()"></select>
         </fieldset>
 
-    <fieldset>
+    <fieldset style="display: none;">
         <legend>Estado</legend>
 
         <select name="estado_villa" id="estado_villa" oninput="actualizar_tabla_villa()"></select>
@@ -157,7 +157,6 @@ function imprime_villas()
     document.body.removeChild(form);
 
     cerrar_ingreso_lv();
-
 }
 
 function abrirNuevaPagina_villas_correo() {

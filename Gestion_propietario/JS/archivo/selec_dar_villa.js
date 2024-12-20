@@ -42,6 +42,13 @@ function limpiar_tabla_donante() {
     }
   }
 
+  function limpiar_tabla_autorizados() {
+    var tbody = document.querySelector("#tbody_agregar_perso_adi tbody.borrar_t");
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+  }
+
   function lim_tabla_donantes()
   {
     limpiar_tabla_donante();

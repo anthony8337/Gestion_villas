@@ -99,7 +99,12 @@
 <span>Cuentas automaticas</span>
 </li>
 
-<li onclick="atajo_propietario()">
+<li onclick="personas_autorizadas_atajo(),poner_datos_propi_auto()">
+<img src="Imagenes/person-check-fill.svg">
+<span>Personas autorizadas</span>
+</li>
+
+<li onclick="atajo_propietario(),poner_datos_villa_nuevo()">
 <img src="Imagenes/person-fill(1).svg">
 <span>Edítar propietario</span>
 </li>
@@ -150,3 +155,42 @@
 </div>
 
 </div>
+
+<script>
+
+    function poner_datos_villa_nuevo()
+{
+
+    var id_unir = document.getElementById('nn_id').value;
+
+  $.ajax({
+    type: 'POST',
+    url: 'PHP/archivo/emergentes/subs/accion_propietario/datos_villa_propi.php',
+    data: 
+    {
+      id_unir:id_unir,
+    },
+    success: function(response){
+        $('#respuesta_atajo').html(response);
+    }
+});
+}
+
+function poner_datos_propi_auto()
+{
+
+    var id_unir = document.getElementById('nn_id').value;
+
+  $.ajax({
+    type: 'POST',
+    url: 'PHP/celda/emergentes/sql/tabla_autorizados.php',
+    data: 
+    {
+      id_unir:id_unir,
+    },
+    success: function(response){
+        $('#tbody_agregar_perso_adi').html(response);
+    }
+});
+}
+</script>

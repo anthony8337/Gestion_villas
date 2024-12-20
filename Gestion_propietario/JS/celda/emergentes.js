@@ -1,3 +1,21 @@
+//generar personas auto
+function cerrar_personas_autorizadas_atajo()
+{
+    document.getElementById('usu_perso_auto').style.display = 'none';
+}
+
+function personas_autorizadas_atajo()
+{
+
+    var nombre = document.getElementById('nn_propi').value;
+    var villa = document.getElementById('nn_villa').value;
+
+    document.getElementById('villa_aper').value = villa;
+    document.getElementById('pro_aper').value = nombre;
+
+    document.getElementById('usu_perso_auto').style.display = 'flex';
+}
+
 //generar cuenta ingreso
 function cerrar_ingreso_celda()
 {

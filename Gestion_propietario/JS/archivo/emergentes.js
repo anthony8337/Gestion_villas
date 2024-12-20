@@ -25,6 +25,8 @@ function ingreso()
     document.getElementById('eliminar_propietario').style.display = 'none';    
     document.getElementById('modificar_propietario').style.display = 'none';
 
+    activar_autorizados();
+
 
 }
 

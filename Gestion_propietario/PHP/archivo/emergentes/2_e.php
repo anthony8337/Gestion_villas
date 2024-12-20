@@ -40,7 +40,7 @@ for ($i=0; $i < count($titulo); $i++) {
         echo"
         <fieldset>
             <legend>$titulo[$i]</legend>
-            <select id='cb_modelo' name='cb_modelo'>
+            <select id='cb_modelo_2' name='cb_modelo_2'>
             ",
             include "PHP/archivo/emergentes/subs/accion_villas/grupo_modelo.php"
             ,"

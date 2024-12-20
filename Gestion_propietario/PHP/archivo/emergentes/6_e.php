@@ -13,7 +13,7 @@
 <div class="c2">
 <fieldset>
     <legend>Buscar concepto</legend>
-<input type="text" name="busca_concep_automa" id="busca_concep_automa" placeholder="Buscar por datos del propietario" class="buscador" oninput="bus_gc_propietario()">
+<input type="text" name="busca_concep_automa" id="busca_concep_automa" placeholder="Buscar cuenta automatica" class="buscador" oninput="buscar_cunta_auto_tabla()">
 </fieldset>
 </div>
 
