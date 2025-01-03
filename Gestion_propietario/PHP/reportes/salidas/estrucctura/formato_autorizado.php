@@ -19,7 +19,7 @@ include "PHP/reportes/salidas/estrucctura/php_autorizados/autorizados.php";
 </td>
 
 <td>
-<h4>LISTA DE VILLAS</h4>
+<h4>Lista de personas autorizadas</h4>
 </td>
 
 
@@ -62,9 +62,9 @@ include "PHP/reportes/salidas/estrucctura/php_autorizados/autorizados.php";
 <table class="tam_repo_tabla">
 
 <tr>
-        <th style="width: 33.33%;">Villas</th>
-        <th style="width: 33.33%;">Propietario</th>
-        <th style="width: 33.33%;">No. Identidad</th>
+        <th style="width: 33.33%;">Nombre</th>
+        <th style="width: 33.33%;">Número de teléfono</th>
+        <th style="width: 33.33%;">Correo electronico</th>
 </tr>
 
 <tbody>
@@ -82,7 +82,7 @@ include "PHP/reportes/salidas/estrucctura/php_autorizados/tabla_autorizados.php"
 <div class="encabezado">
 <table class="tam_repo_tabla">
 <tr>
-<th>Cantidad de registros: <?php echo htmlspecialchars($cantiddes); ?></th>
+<th></th>
 <th></th>
 <th></th>
 <th></th>

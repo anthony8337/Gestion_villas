@@ -31,7 +31,14 @@ function ingreso_lis_pro()
     actualizar_selectores_villa_saldo();
     actualizar_select_reporte();
     actualizar_tabla_saldos();
+    
 }
+
+    function actualizar_combo_saldos()
+    {
+        document.getElementById('concep_saldo_villa_desde').value = document.getElementById('desde_repo_saldo').value
+        document.getElementById('concep_saldo_villa_hasta').value = document.getElementById('hasta_repo_saldo').value
+    }
 
 //generar pro saldo
 function cerrar_ingreso_lp_sal()

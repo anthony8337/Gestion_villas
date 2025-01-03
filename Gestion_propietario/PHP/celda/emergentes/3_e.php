@@ -125,7 +125,7 @@ $.ajax({
     function abrirNuevaPagina_personas_auto() {
     nombrar_usuario();
     // IDs de los inputs que quieres enviar
-    var inputIDs = ['id_unir_aper','villa_aper','pro_aper'];
+    var inputIDs = ['id_unir_aper','villa_aper','pro_aper','nombre_usuario'];
     
     // Crea un formulario
     var form = document.createElement("form");

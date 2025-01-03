@@ -448,6 +448,8 @@ function actualizar_tabla_saldos()
             $('#tb_saldos').html(response);
         }
     });
+
+    
 }
 
 function total_credito()

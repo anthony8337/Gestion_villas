@@ -90,7 +90,7 @@
 
 <button type='button' onclick="recargar_tabla_multi()">Recargar cuentas</button>
 
-<button type='button' onclick="sele_cuentas()">Seleccionar cuentas</button>
+<button type='button' onclick="sele_cuentas()">Seleccionar todo</button>
 
 <button type="button" onclick="sele_con_multi(),actualizar_tabla_conce_multi()">Cambiar concepto</button>
 

@@ -39,4 +39,6 @@ else
 }
 ?>
 
-<script>ultimo_select();</script>
+<script>
+ultimo_select();
+</script>

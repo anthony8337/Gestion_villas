@@ -115,7 +115,8 @@
 <div class="c3">
 
 <button type="button" onclick="selec_usuario(),var_estado()">Enviar a usuario</button>
-<button type="button" onclick="decidir_estado_cuenta()">Imprimir</button>
+<button type="button" id="btn_excel_estado" >Descargar Ecxel</button>
+<button type="button" onclick="decidir_estado_cuenta()">Imprimir PDF</button>
 
 </div>
 
@@ -308,3 +309,15 @@ function abrirNuevaPagina_estado_correo_usuario() {
     
 }
 </script>
+
+
+<script>
+    $(document).ready(function () {
+    $("#btn_excel_estado").click(function () {
+        var formData = $("#form_estados").serialize();
+        window.location.href = "PHP/reportes/emergentes/excel_php_cuentas.php?" + formData;
+    });
+});
+</script>
+
+<div id="res_dos_estado"></div>

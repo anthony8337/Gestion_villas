@@ -57,15 +57,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         foreach ($tabla_cuenta_multi as $fila) {
 
+            $id_cuenta = htmlspecialchars($fila, ENT_QUOTES, 'UTF-8');
+
     if($tipo_pago == "Efectivo")
     {
     $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto,tipo_pago, forma_pago, n_referencia) 
     VALUES ('$cod_fac','$id_pro_multi','" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago','$tipo_pago','Físico','Ninguna');";
     $result = $conn->query($sql);
 
-    $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
- VALUES (0,'$total_pago','$fecha_pago','" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "');";
-$result_segundo = $conn->query($sql_segundo);
+    $sql_dentro= "UPDATE cuenta_estado SET fecha_aplicada='$fecha_pago' WHERE id_cuenta = '" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "'";
+    $result_dentro = $conn->query($sql_dentro);
 
     }
     else if($tipo_pago == "Referencia")
@@ -73,10 +74,6 @@ $result_segundo = $conn->query($sql_segundo);
     $sql= "INSERT INTO multi_pago(codigo_pago, id_unir, id_cuenta, fecha_pago, total_pago, cantidad_recibida, cantidad_devuelta, id_estado, id_pago, id_concepto,tipo_pago, forma_pago, n_referencia) 
     VALUES ('$cod_fac','$id_pro_multi','" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "','$fecha_pago','$total_pago','$cantidad_pago','$devolver_pago',1,1,'$concepto_pago','$tipo_pago','$forma_pago','$referencia');";
     $result = $conn->query($sql);
-
-    $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
- VALUES (0,'$total_pago','$fecha_pago','" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "');";
-$result_segundo = $conn->query($sql_segundo);
     }
 
             $sql_tomar = "SELECT * FROM cuentas WHERE id_cuenta ='" . htmlspecialchars($fila, ENT_QUOTES, 'UTF-8') . "'";
@@ -90,6 +87,10 @@ $result_segundo = $conn->query($sql_segundo);
             }
 
         }
+
+        $sql_segundo= "INSERT INTO cuenta_estado(costo, abono, fecha_aplicada, id_cuenta)
+        VALUES (0,'$total_pago','$fecha_pago','$id_cuenta');";
+       $result_segundo = $conn->query($sql_segundo);
 
         echo"
         <script>

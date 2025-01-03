@@ -1,3 +1,7 @@
+<script>
+    actualizar_combo_saldos();
+</script>
+
 <link rel='stylesheet' type='text/css' media='screen' href='CSS/reportes/mod_lis_pro.css'>
 
 <div id="lis_pro" class="mod">
@@ -11,21 +15,26 @@
 
 </div>
 
+<form id="form_saldos_propi">
+
 <div class="c2">
 
     <input type="hidden" name="registro_saldo" id="registro_saldo">
 
     <input style="display: none;" type="date" id="fecha_saldo" name="fecha_saldo">
 
+
+
+
     <fieldset>
         <legend>Desde</legend>
-        <select id="desde_repo_saldo" oninput="actualizar_tabla_saldos()">
+        <select id="desde_repo_saldo" oninput="actualizar_tabla_saldos(),actualizar_combo_saldos()">
         </select>
     </fieldset>
 
     <fieldset>
         <legend>Hasta</legend>
-        <select id="hasta_repo_saldo" oninput="actualizar_tabla_saldos()">
+        <select id="hasta_repo_saldo" oninput="actualizar_tabla_saldos(),actualizar_combo_saldos()">
         </select>
     </fieldset>
 
@@ -36,7 +45,7 @@
 
     <fieldset>
         <legend>Seleccionar metodo de concepto</legend>
-        <select name="concep_metodo" id="concep_metodo" oninput="id_meto(),actualizar_tabla_saldos(),total_credito_saldo()">
+        <select name="concep_metodo" id="concep_metodo" oninput="id_meto(),total_credito_saldo()">
             <option value="Concepto completo">Concepto completo</option>
             <option value="Concepto especifico">Concepto especifico</option>
         </select>
@@ -46,6 +55,14 @@
         <legend>Seleccionar concepto del saldo</legend>
         <select name="concep_saldo" id="concep_saldo" oninput="actualizar_tabla_saldos(),total_credito_saldo()"></select>
     </fieldset>
+
+<input type="hidden" name="concep_saldo_villa_desde" id="concep_saldo_villa_desde">
+
+<input type="hidden" name="concep_saldo_villa_hasta" id="concep_saldo_villa_hasta">
+
+    
+
+   
 
 
 </div>
@@ -84,10 +101,13 @@
 
 
 <button type="button" onclick="selec_usuario(),var_saldos()">Enviar a usuario</button>
-<button type="button" onclick="imprimir_saldos()">Imprimir</button>
+<button type="button" onclick="actualizar_combo_saldos()" id="btn_excel_estado_propi">Descargar Ecxel</button>
+<button type="button" onclick="imprimir_saldos()">Imprimir PDF</button>
 
 </fieldset>
 </div>
+
+</form>
 
 
 </div>
@@ -228,3 +248,14 @@ function abrirNuevaPagina_saldo_correo() {
 
 }
 </script>
+
+<script>
+    $(document).ready(function () {
+    $("#btn_excel_estado_propi").click(function () {
+        var formData = $("#form_saldos_propi").serialize();
+        actualizar_combo_saldos();
+        window.location.href = "PHP/reportes/emergentes/excel_php_cuentas.php?" + formData;
+    });
+});
+</script>
+
