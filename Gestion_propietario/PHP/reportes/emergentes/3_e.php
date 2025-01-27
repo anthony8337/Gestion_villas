@@ -11,6 +11,8 @@
 
 <form id="form_estados">
 
+<input type="hidden" id="correo_estado_excel" name="correo_estado_excel">
+
 <div class="c2">
 
 <fieldset>
@@ -89,6 +91,7 @@
         <th>Código</th>
         <th>Concepto</th>
         <th>Descripción</th>
+        <th>Estado</th>
         <th>Cargo</th>
         <th>Abono</th>
         <th>Total</th>

@@ -60,6 +60,7 @@ include "PHP/reportes/salidas/estrucctura/php_estado_cuenta/estado_php_cuentas.p
         <th>Código</th>
         <th>Concepto</th>
         <th>Descripción</th>
+        <th>Estado</th>
         <th>Cargo</th>
         <th>Abono</th>
         <th>Total</th>

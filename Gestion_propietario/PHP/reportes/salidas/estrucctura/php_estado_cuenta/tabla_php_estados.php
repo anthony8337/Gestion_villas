@@ -58,7 +58,7 @@ if($result -> num_rows > 0)
         <td>",$row["codigo"],"</td>
         <td>",$row["concepto"],"</td>
         <td>",$row["concepto_2"],"</td>
-        
+        <td>",$row["con_pagado"],"</td>
         <td>$. ",number_format($row["costo"],2),"</td>
         <td>$. ",number_format($row["abono"],2),"</td>
         <td>$. ",$t_total,"</td>

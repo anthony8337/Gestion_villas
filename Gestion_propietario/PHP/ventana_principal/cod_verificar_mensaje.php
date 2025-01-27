@@ -138,7 +138,7 @@ $subject = "Contraseña temporal"; // Asunto del correo
 
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers .= "From: acomdev123@gmail.com\r\n";
+$headers .= "From: advillas012025@gmail.com\r\n";
 
 // Enviar el correo
 if(mail($to, $subject, $message, $headers)) 

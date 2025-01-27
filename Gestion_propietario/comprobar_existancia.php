@@ -58,19 +58,29 @@ if ($resultado->num_rows > 0) {
         die("Error al leer el archivo SQL: $archivo_sql");
     }
 
-    // Dividir las consultas basadas en el delimitador `;`
-    $consultas = array_filter(explode(';', $sql));
-
-    foreach ($consultas as $consulta) {
-        $consulta = trim($consulta); // Eliminar espacios adicionales
-        if (!empty($consulta)) { // Verificar que no esté vacía
-            if (!$conexion->query($consulta)) {
-                echo "Error al ejecutar la consulta: " . $conexion->error . "<br>";
-                echo "Consulta fallida: <pre>$consulta</pre><br>";
-                die();
+    // Procesar el archivo SQL para manejar DELIMITER $$
+    $consultas = preg_split('/DELIMITER \\$\\$/', $sql);
+    foreach ($consultas as $bloque) {
+        $bloque = trim($bloque); // Eliminar espacios adicionales
+        if (!empty($bloque)) {
+            // Quitar el delimitador adicional de "END $$"
+            $sentencias = explode('$$', $bloque);
+            foreach ($sentencias as $sentencia) {
+                $sentencia = trim($sentencia);
+                if (!empty($sentencia)) {
+                    if (!$conexion->query($sentencia)) {
+                        echo "Error al ejecutar la consulta: " . $conexion->error . "<br>";
+                        echo "Consulta fallida: <pre>$sentencia</pre><br>";
+                        die();
+                    }
+                }
             }
         }
     }
+
+
+    $sql_1 = "CREATE EVENT Rutina_cuentas ON SCHEDULE EVERY 1 MONTH STARTS '2025-02-01 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO CALL ejecutar_cuentas()";
+    $result = $connection ->query($sql_1);
 
     echo "La base de datos se ha importado correctamente.";
 }

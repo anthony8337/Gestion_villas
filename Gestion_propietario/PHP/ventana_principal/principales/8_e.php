@@ -13,7 +13,7 @@
 <div class="c2">
 <fieldset>
     <legend>Buscar concepto</legend>
-<input type="text" name="bus_concep_cargo" id="bus_concep_cargo" placeholder="Buscar concepto" class="buscador" oninput="bus_propi_estado()">
+<input type="text" name="bus_concep_cargo" id="bus_concep_cargo" placeholder="Buscar concepto" class="buscador" oninput="buscar_concepto_auto()">
 </fieldset>
 </div>
 
@@ -34,3 +34,5 @@ include "PHP/ventana_principal/principales/interno/sql/accion_concepto/tabla_con
 
 </div>
 </div>
+
+<script src="JS/buscar/buscar_vi_repo.js"></script>

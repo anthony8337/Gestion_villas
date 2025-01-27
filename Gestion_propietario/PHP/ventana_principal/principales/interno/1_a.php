@@ -31,7 +31,7 @@ for ($i=0; $i < 12; $i++) {
 
 <fieldset class="ajustar_t_div sin_borde">
 
-    <div class="contenido_tabla" id="ulti_villa">
+    <div class="contenido_tabla" id="ulti_villa" style="height: 287px;  width: 500px;">
         <?php
         include "PHP/ventana_principal/principales/ulti_villas.php";
         ?>

@@ -15,117 +15,85 @@ else
 {
 }
 
-$sql = "SELECT * FROM ultimas_villas ORDER BY ultimas_villas.id_villa DESC LIMIT 10 ";
+$sql1 = "SELECT COUNT(id_unir) AS id_unir FROM `propietarios_villas`; ";
 
-$result = $conn->query($sql);
+$result1 = $conn->query($sql1);
 
-if($result -> num_rows > 0)
+$sql2 = "SELECT COUNT(con_pagado) as pagado FROM `estado_cuenta` 
+WHERE con_pagado = 'Pagado' AND MONTH(fecha_aplicada) = MONTH(CURRENT_DATE) AND YEAR(fecha_aplicada) = YEAR(CURRENT_DATE); ";
+
+$result2 = $conn->query($sql2);
+
+$sql3 = "SELECT COUNT(con_pagado) as no_pagado FROM `estado_cuenta` 
+WHERE con_pagado = 'No pagado' ";
+
+$result3 = $conn->query($sql3);
+
+$sql4 = "SELECT COUNT(con_pagado) as no_pagado FROM `estado_cuenta` 
+WHERE con_pagado = 'No pagado'  AND MONTH(fecha_aplicada) = MONTH(CURRENT_DATE) AND YEAR(fecha_aplicada) = YEAR(CURRENT_DATE);";
+
+$result4 = $conn->query($sql4);
+
+if($result1 -> num_rows > 0)
 {
-    echo"
-    <table id='tabla_ulti_villa'>
-    ";
-
-    echo"
-    <tr>
-    <th></th>
-    <th colspan='4'>Últimas villas registradas</th>
-    </tr>
-
-    <tr>
-    <th></th>
-    <th>Código</th>
-    <th>Modelo</th>
-    <th>Condición</th>
-    <th>Estado</th>
-    </tr>
-    ";
-
-    while ($row = $result->fetch_assoc()) {
-
-
-        if($row["estado"] == "1")
-        {
-            echo"
-            <tr>
-            <td></td>
-            <td>",$row["codigo"],"</td>
-            <td>",$row["modelo"],"</td>
-            ";
-
-            if($row["condicion"] == '1')
-            {
-            echo"
-            <td>Buen estado</td>
-            <td>Disponible</td>
-            </tr>
-            ";
-            }
-            else
-            {
-            echo"
-            <td>Mantenimiento</td>
-            <td>Disponible</td>
-            </tr>
-            ";
-            }
-
-        }else if($row["estado"] == "2") {
-            echo"
-            <tr>
-            <td></td>
-            <td>",$row["codigo"],"</td>
-            <td>",$row["modelo"],"</td>";
-
-            if($row["condicion"] == '1')
-            {
-            echo"
-            <td>Buen estado</td>
-            <td>Habitado</td>
-            </tr>
-            ";
-            }
-            else
-            {
-            echo"
-            <td>Mantenimiento</td>
-            <td>Habitado</td>
-            </tr>
-            ";
-            }
-        }
-
-    }
-
-    echo"
-    </table>
-    ";
+    $row = $result1->fetch_assoc();
+    $a1 = $row['id_unir'];
 }
-else
-{
-    echo"
-    <table id='tabla_ulti_villa'>
-    ";
-    echo"
-    <tr>
-    <th></th>
-    <th colspan='4'>Últimas villas registradas</th>
-    </tr>
 
-    <tr>
-    <th></th>
-    <th>Código</th>
-    <th>Modelo</th>
-    <th>Condición</th>
-    <th>Estado</th>
-    </tr>
-    ";
-    echo"
-    </table>
-No se encuentran datos.
-    ";
+if($result2 -> num_rows > 0)
+{
+    $row = $result2->fetch_assoc();
+    $a2 = $row['pagado'];
+}
+
+if($result3 -> num_rows > 0)
+{
+    $row = $result3->fetch_assoc();
+    $a3 = $row['no_pagado'];
+}
+
+if($result4 -> num_rows > 0)
+{
+    $row = $result4->fetch_assoc();
+    $a4 = $row['no_pagado'];
 }
 ?>
-</form>
 
+
+<table id='tabla_ulti_villa'>
+
+    <tr>
+    <th></th>
+    <th colspan='4'>Último Conteo</th>
+    </tr>
+
+    <tr>
+    <th></th>
+    <td><h4>Propietarios actuales</h4></td>
+    <td><h2><?php echo"$a1";?></h2></td>
+    </tr>
+
+    <tr>
+    <th></th>
+    <td><h4>Cuentas pagadas del mes</h4></td>
+    <td><h2><?php echo"$a2";?></h2></td>
+    </tr>
+
+    <tr>
+    <td></td>
+    <td><h4>Cuentas pendientes por pagar al mes</h4></td>
+    <td><h2><?php echo"$a4";?></h2></td>
+    </tr>
+
+    <tr>
+    <th></th>
+    <td><h4>Cuentas pendientes por pagar</h4></td>
+    <td><h2><?php echo"$a3";?></h2></td>
+    </tr>
+    </table>
+    
+
+
+</form>
 
 <script src="JS/principal/usuario_editar.js"></script>

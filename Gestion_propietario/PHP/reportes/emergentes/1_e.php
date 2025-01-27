@@ -31,11 +31,17 @@
 
     </fieldset>
 
-    <fieldset>
+    <fieldset style="display: none;">
         <legend>Modelo</legend>
 
         <select name="modelo_villa" id="modelo_villa" oninput="actualizar_tabla_villa()"></select>
 
+    </fieldset>
+
+    <fieldset>
+    <legend>Buscar villa</legend>
+
+<input type="text" name="bus_villa_repo" id="bus_villa_repo" oninput="buscar_vi_repo_js()">
     </fieldset>
 
 
@@ -193,3 +199,5 @@ function abrirNuevaPagina_villas_correo() {
 
 }
 </script>
+
+<script src="JS/buscar/buscar_vi_repo.js"></script>

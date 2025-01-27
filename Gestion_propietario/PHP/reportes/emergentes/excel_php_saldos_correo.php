@@ -2,9 +2,11 @@
 
 $fecha_saldo_actual = $_GET["fecha_saldo_actual"] ?? "";
 
+/*
 header("Content-Type: application/vnd.ms-excel");
 header("Content-Disposition: attachment; filename= Estado_saldos_$fecha_saldo_actual.xls");
-
+*/
+ob_start();
 
 // Conexión a la base de datos
 $servername = "localhost"; 
@@ -213,6 +215,47 @@ else
 {
     echo"No se encuentran datos";
 }
+
+
+// Obtener el contenido del archivo Excel y limpiar el buffer
+$excelContent = ob_get_clean();
+
+// Crear un archivo temporal con el contenido Excel
+$tempFilePath = tempnam(sys_get_temp_dir(), "estado_cuenta_");
+file_put_contents($tempFilePath, $excelContent);
+
+// Configuración del correo
+$to = $_GET['correo_saldos_excel'] ?? "";
+$subject = "Estado de cuenta en Excel";
+$message = "Estimado usuario,\n\nAdjunto encontrarás el Estado de cuenta en formato Excel.\n\nSaludos.";
+$boundary = md5(time());
+
+// Encabezados del correo
+$headers = "From: advillas012025@gmail.com\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
+
+// Crear el cuerpo del correo con el archivo adjunto
+$body = "--$boundary\r\n";
+$body .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$body .= "Content-Transfer-Encoding: 7bit\r\n";
+$body .= "\r\n$message\r\n";
+$body .= "--$boundary\r\n";
+$body .= "Content-Type: application/vnd.ms-excel; name=\" Estado_saldos_$fecha_saldo_actual.xls\"\r\n";
+$body .= "Content-Transfer-Encoding: base64\r\n";
+$body .= "Content-Disposition: attachment; filename=\" Estado_saldos_$fecha_saldo_actual.xls\"\r\n";
+$body .= "\r\n" . chunk_split(base64_encode(file_get_contents($tempFilePath))) . "\r\n";
+$body .= "--$boundary--";
+
+// Enviar el correo
+if (mail($to, $subject, $body, $headers)) {
+    echo "El correo se envió correctamente.";
+} else {
+    echo "Error al enviar el correo.";
+}
+
+// Eliminar el archivo temporal
+unlink($tempFilePath);
 
 ?>
 

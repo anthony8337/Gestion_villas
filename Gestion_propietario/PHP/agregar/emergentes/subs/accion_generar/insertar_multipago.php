@@ -212,6 +212,9 @@ $result = $conn->query($sql);
 
 $result2 = $conn->query($sql2);
 
+$sql_dentro= "UPDATE cuenta_estado SET fecha_aplicada='$fecha_pago' WHERE id_cuenta = '$id_cuenta'";
+$result_dentro = $conn->query($sql_dentro);
+
 if ($result == true && $result2 == true) {
 
 

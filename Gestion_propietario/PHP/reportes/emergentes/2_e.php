@@ -23,18 +23,20 @@
 
     <input style="display: none;" type="date" id="fecha_saldo" name="fecha_saldo">
 
+    <input type="hidden" id="correo_saldos_excel" name="correo_saldos_excel">
+
 
 
 
     <fieldset>
         <legend>Desde</legend>
-        <select id="desde_repo_saldo" oninput="actualizar_tabla_saldos(),actualizar_combo_saldos()">
+        <select id="desde_repo_saldo" name="desde_repo_saldo" oninput="actualizar_tabla_saldos(),actualizar_combo_saldos()">
         </select>
     </fieldset>
 
     <fieldset>
         <legend>Hasta</legend>
-        <select id="hasta_repo_saldo" oninput="actualizar_tabla_saldos(),actualizar_combo_saldos()">
+        <select id="hasta_repo_saldo" name="hasta_repo_saldo" oninput="actualizar_tabla_saldos(),actualizar_combo_saldos()">
         </select>
     </fieldset>
 
@@ -45,7 +47,7 @@
 
     <fieldset>
         <legend>Seleccionar metodo de concepto</legend>
-        <select name="concep_metodo" id="concep_metodo" oninput="id_meto(),total_credito_saldo()">
+        <select name="concep_metodo" id="concep_metodo" oninput="actualizar_tabla_saldos(),id_meto(),total_credito_saldo()">
             <option value="Concepto completo">Concepto completo</option>
             <option value="Concepto especifico">Concepto especifico</option>
         </select>
@@ -71,7 +73,7 @@
     <table id="td_saldos_cuerpo" class="contenido tabla_saldos_vista">
         <tr>
         <th></th>
-        <th>Clave</th>
+        <th>Villa</th>
         <th>Nombre</th>
         <th>Al crédito</th>
         <th>Por cobrar</th>
@@ -252,9 +254,13 @@ function abrirNuevaPagina_saldo_correo() {
 <script>
     $(document).ready(function () {
     $("#btn_excel_estado_propi").click(function () {
+
+
+
+
         var formData = $("#form_saldos_propi").serialize();
         actualizar_combo_saldos();
-        window.location.href = "PHP/reportes/emergentes/excel_php_cuentas.php?" + formData;
+        window.location.href = "PHP/reportes/emergentes/excel_php_saldos.php?" + formData;
     });
 });
 </script>

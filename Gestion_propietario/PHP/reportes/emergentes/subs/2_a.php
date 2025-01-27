@@ -39,7 +39,9 @@
 
 <div class="c3">
 
-<button type="button" onclick="decidir_documento()">Enviar por correo</button>
+<button type="button" onclick="decidir_documento()">Enviar pdf por correo</button>
+
+<button type="button" onclick="decidir_documento_ecxel()">Enviar ecxel por correo</button>
 <!--<button type="button">Enviar por whatsaap</button>-->
 </div>
 </form>
@@ -70,6 +72,21 @@ function decidir_documento()
     }
 }
 
+function decidir_documento_ecxel()
+{
+
+    var identificar = document.getElementById("identifica_envio").value;
+
+    if(identificar == "saldos")
+    {
+        excel_saldos();
+    }
+    else if(identificar == "estado_cuenta")
+    {
+   excel_estados();
+    }
+}
+
 function recargar_usuarios() {
 
 var form =$('#Enviar_docu').serialize();
@@ -84,5 +101,68 @@ $.ajax({
     }
 });
 }
+
+</script>
+
+<script>
+
+function excel_estados() {
+    // Obtener el valor del correo y asignarlo al campo correspondiente
+    document.getElementById('correo_estado_excel').value = document.getElementById('co_usuario_selec').value;
+
+    // Serializar los datos del formulario
+    var formData = $("#form_estados").serialize();
+
+    // Enviar los datos mediante AJAX
+    $.ajax({
+        url: "PHP/reportes/emergentes/excel_php_cuentas_correo.php", // Ruta al archivo PHP
+        type: "GET", // Puedes cambiar a "POST" si lo prefieres
+        data: formData,
+        success: function(response) {
+            // Mostrar un mensaje de éxito al usuario
+            alert("El archivo Excel fue enviado por correo con éxito.");
+        },
+        error: function(xhr, status, error) {
+            // Manejar errores y mostrar un mensaje al usuario
+            console.error("Error al enviar el archivo: " + error);
+            alert("Hubo un problema al enviar el archivo. Por favor, intenta nuevamente.");
+        }
+    });
+
+    // Prevenir el comportamiento predeterminado del formulario (si es necesario)
+    return false;
+}
+
+
+    function excel_saldos()
+    {
+         // Obtener el valor del correo y asignarlo al campo correspondiente
+
+         document.getElementById('correo_saldos_excel').value = document.getElementById('co_usuario_selec').value;
+
+
+// Serializar los datos del formulario
+var formData = $("#form_saldos_propi").serialize();
+
+// Enviar los datos mediante AJAX
+$.ajax({
+    url: "PHP/reportes/emergentes/excel_php_saldos_correo.php", // Ruta al archivo PHP
+    type: "GET", // Puedes cambiar a "POST" si lo prefieres
+    data: formData,
+    success: function(response) {
+        // Mostrar un mensaje de éxito al usuario
+        alert("El archivo Excel fue enviado por correo con éxito.");
+    },
+    error: function(xhr, status, error) {
+        // Manejar errores y mostrar un mensaje al usuario
+        console.error("Error al enviar el archivo: " + error);
+        alert("Hubo un problema al enviar el archivo. Por favor, intenta nuevamente.");
+    }
+});
+
+// Prevenir el comportamiento predeterminado del formulario (si es necesario)
+return false;
+    }
+
 
 </script>
